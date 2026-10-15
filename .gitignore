@@ -1,0 +1,7 @@
+.sandbox/
+__pycache__/
+*.pyc
+.venv/
+.env
+service-account*.json
+*.tmp

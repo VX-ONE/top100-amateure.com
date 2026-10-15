@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% set title = c.title %}
+{% set description = c.meta_description %}
+{% block head %}
+{% set faq_ld = [] %}
+{% for f in c.faq %}{% set _ = faq_ld.append({"@type": "Question", "name": f.q|plain, "acceptedAnswer": {"@type": "Answer", "text": f.a|plain}}) %}{% endfor %}
+<script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
+  {"@type": "Article", "headline": c.h1, "description": c.meta_description, "datePublished": meta.published_at,
+   "dateModified": meta.published_at, "inLanguage": "de", "mainEntityOfPage": canonical,
+   "publisher": {"@type": "Organization", "name": site.name}},
+  {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": site.name, "item": canonical.rsplit("/", 2)[0] + "/"},
+    {"@type": "ListItem", "position": 2, "name": c.h1, "item": canonical}]},
+  {"@type": "FAQPage", "mainEntity": faq_ld}
+]}|tojson }}</script>
+{% endblock %}
+{% block main %}
+<article class="article">
+  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; {{ topic_label }}</nav>
+  <h1>{{ c.h1 }}</h1>
+  <p class="meta">Stand: {{ published }}</p>
+  <div class="intro">{{ c.intro|md|safe }}</div>
+
+  {% if c.key_takeaways %}
+  <aside class="takeaways">
+    <h2>Das Wichtigste in Kürze</h2>
+    <ul>{% for t in c.key_takeaways %}<li>{{ t }}</li>{% endfor %}</ul>
+  </aside>
+  {% endif %}
+
+  {% for s in c.sections %}
+  <section>
+    <h2>{{ s.h2 }}</h2>
+    {{ s.body|md|safe }}
+  </section>
+  {% endfor %}
+
+  <section class="faq">
+    <h2>Häufige Fragen</h2>
+    {% for f in c.faq %}
+    <details>
+      <summary>{{ f.q }}</summary>
+      {{ f.a|md|safe }}
+    </details>
+    {% endfor %}
+  </section>
+
+  <section class="cta">
+    <p>{{ c.cta_text }}</p>
+    <p><a class="btn" href="{{ aff_url }}" rel="sponsored nofollow noopener" target="_blank">{{ cta_label }}</a></p>
+    <p class="small">Werbung: Affiliate-Link. Für dich entstehen keine Mehrkosten. Nur für Personen ab 18 Jahren.</p>
+  </section>
+
+  {% if related %}
+  <section class="related">
+    <h2>Weitere Ratgeber</h2>
+    <ul>{% for r in related %}<li><a href="/{{ r.slug }}/">{{ r.title }}</a></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+</article>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="article">
+  <h1>Impressum</h1>
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>{{ operator.name }}<br>{{ operator.address|e|replace("\n", "<br>"|safe) }}</p>
+  {% if operator.managing_directors %}<p>Vertreten durch: {{ operator.managing_directors }}</p>{% endif %}
+  {% if operator.register_number %}<h2>Registereintrag</h2>
+  <p>{% if operator.register_court %}Registergericht: {{ operator.register_court }}<br>{% endif %}Registernummer: {{ operator.register_number }}</p>{% endif %}
+  {% if operator.vat_id %}<h2>Umsatzsteuer-ID</h2>
+  <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {{ operator.vat_id }}</p>{% endif %}
+  <h2>Kontakt</h2>
+  <p>{% if operator.phone %}Telefon: {{ operator.phone }}<br>{% endif %}E-Mail: {{ operator.email }}</p>
+  <h2>Hinweis zu Werbung</h2>
+  <p>Diese Website enthält Affiliate-Links zu {{ provider }}. Wenn du über einen solchen Link ein Angebot nutzt,
+  erhalten wir unter Umständen eine Provision. Für dich entstehen dadurch keine Mehrkosten.</p>
+</article>
+{% endblock %}

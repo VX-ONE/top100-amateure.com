@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="hero">
+  <h1>{{ site.name }}</h1>
+  <p>{{ site.tagline }}</p>
+</section>
+{% for label, items in groups %}
+<section class="group">
+  <h2>{{ label }}</h2>
+  <ul>{% for i in items %}<li><a href="/{{ i.slug }}/">{{ i.title }}</a></li>{% endfor %}</ul>
+</section>
+{% else %}
+<p>Die ersten Ratgeber folgen in Kürze.</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }}</title>
+{% if description %}<meta name="description" content="{{ description }}">{% endif %}
+<link rel="canonical" href="{{ canonical }}">
+<meta name="robots" content="{{ robots }}">
+<meta name="RATING" content="RTA-5042-1996-1400-1577-RTA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title }}">
+{% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
+<meta property="og:url" content="{{ canonical }}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<div class="adnote">Werbehinweis: Dieser Ratgeber ist redaktionell, enthält aber Affiliate-Links zu {{ provider }}. Bei einer Vermittlung erhalten wir ggf. eine Provision. Inhalte nur für Personen ab 18 Jahren.</div>
+<header class="site-header">
+  <a class="brand" href="/">{{ site.name }}</a>
+</header>
+<main>
+{% block main %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <p>&copy; {{ year }} {{ site.name }} &middot; <a href="/impressum/">Impressum</a> &middot; <a href="/datenschutz/">Datenschutz</a></p>
+  <p>Nur für Erwachsene ab 18 Jahren. Links zu {{ provider }} sind Werbung (Affiliate-Links).</p>
+</footer>
+<noscript><p class="noscript">Diese Seite enthält Inhalte für Erwachsene und ist nur für Personen ab 18 Jahren bestimmt.</p></noscript>
+<script src="/agegate.js" defer></script>
+</body>
+</html>

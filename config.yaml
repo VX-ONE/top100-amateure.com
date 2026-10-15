@@ -1,0 +1,314 @@
+# ============================================================
+#  Konfiguration der Pipeline
+#  Alles, was du anpassen musst, steht im Abschnitt "MUSS ANGEPASST WERDEN".
+# ============================================================
+
+# ---------- MUSS ANGEPASST WERDEN ----------
+site:
+  name: "Cam-Ratgeber"                  # Name der Seite (Header, Titel)
+  tagline: "Unabhängige Ratgeber rund um Live-Cams: Preise, Ablauf, Sicherheit und Vergleiche."
+  base_url: "https://www.top100amateure.com"   # ohne Slash am Ende
+  # Pflichtangaben für das Impressum (Deutschland). Ohne diese Angaben startet der Live-Lauf nicht.
+  operator:
+    name: "Sales BAE GmbH"
+    address: "Uhlengrund 25b\n21244 Buchholz"   # Straße, PLZ Ort (mehrere Zeilen mit \n)
+    email: "christianmartens@hotmail.de"
+    phone: ""               # optional
+    managing_directors: "Christian Martens"  # vertretungsberechtigte Geschäftsführer (Pflicht bei GmbH)
+    register_court: ""      # z. B. Amtsgericht Hamburg
+    register_number: ""     # z. B. HRB 12345 (Pflicht bei GmbH)
+    vat_id: ""              # USt-IdNr., falls vorhanden
+
+affiliate:
+  # {subid} wird pro Seite durch den Seiten-Slug ersetzt, falls im Link enthalten.
+  # Das SubID-Format von VX Cash findest du im Partnerbereich; trage es dann hier ein,
+  # z. B. "https://vxcsh.com/1/40150?subid={subid}" (Parametername prüfen!).
+  url_template: "https://vxcsh.com/1/40150"
+  provider_name: "Visit-X"
+  cta_label: "Zum Angebot von Visit-X"
+
+gsc:
+  # Domain-Property: "sc-domain:deine-domain.de"  oder URL-Präfix: "https://deine-domain.de/"
+  property: "sc-domain:top100amateure.com"
+  # Service-Account-JSON: entweder Datei hier angeben oder Umgebungsvariable GSC_SERVICE_ACCOUNT_JSON setzen
+  service_account_file: ""
+  inspect_per_run: 150                  # URL-Inspection-Kontingent: 2000/Tag pro Property
+
+# ---------- Mengen und Qualität ----------
+limits:
+  daily_pages: 5                        # Start klein, erst erhöhen, wenn Seiten indexiert werden
+  max_daily_pages: 30                   # harte Obergrenze, auch bei manueller Angabe
+  max_attempts: 3                       # Generierungsversuche pro Seite
+  min_words: 700
+  max_similarity: 0.55                  # TF-IDF-Kosinus zu bestehenden Seiten, darüber wird nicht veröffentlicht
+  min_sections: 4
+  min_faq: 3
+
+paths:
+  data: data
+  site: site
+  reports: reports
+
+llm:
+  model: "claude-sonnet-5-5"            # Artikelgenerierung
+  screen_model: "claude-haiku-5-5"      # schnelle Vorprüfung der Keywords
+  max_tokens: 6000
+
+keywords:
+  min_tokens: 2
+  max_tokens: 7
+  cluster_similarity: 0.6               # Keywords mit ähnlichen Wörtern landen auf derselben Seite
+
+# ---------- Überwachung ----------
+monitor:
+  grace_days: 14                        # Seiten müssen so alt sein, bevor sie bewertet werden
+  min_indexed_ratio: 0.30               # darunter wird die Tagesmenge gedrosselt
+  min_sample: 10
+  min_topic_ratio: 0.20                 # darunter wird ein Themen-Cluster pausiert
+  min_topic_sample: 4
+  throttle_to: 1                        # Seiten pro Tag bei aktiver Drosselung
+
+# ---------- Themen (erlaubtes Vokabular) ----------
+# Nur Keywords, die ausschließlich aus Wörtern dieser Listen bestehen, werden verarbeitet.
+# Eigennamen, Künstlernamen und unbekannte Begriffe fallen automatisch heraus.
+# Reihenfolge = Priorität bei der Zuordnung zu einem Thema.
+topics:
+  preise:
+    - preis
+    - preise
+    - preisliste
+    - kosten
+    - kostet
+    - gebühren
+    - minutenpreis
+    - abrechnung
+    - bezahlen
+    - zahlung
+    - zahlungsmethoden
+    - guthaben
+    - aufladen
+    - coins
+    - paypal
+    - paysafe
+    - abo
+    - abonnement
+    - kündigen
+    - kündigung
+  gratis:
+    - gratis
+    - kostenlos
+    - kostenlose
+    - umsonst
+    - testen
+    - probieren
+    - ohne anmeldung
+    - ohne registrierung
+  sicherheit:
+    - anonym
+    - anonymität
+    - diskret
+    - diskretion
+    - datenschutz
+    - sicher
+    - sicherheit
+    - seriös
+    - seriosität
+    - abzocke
+    - betrug
+    - legal
+    - erlaubt
+    - jugendschutz
+    - altersverifikation
+    - privat
+    - privatsphäre
+    - abbuchung
+    - rechnung
+  ablauf:
+    - wie funktioniert
+    - funktioniert
+    - ablauf
+    - anleitung
+    - ratgeber
+    - tipps
+    - registrieren
+    - registrierung
+    - anmeldung
+    - anmelden
+    - account
+    - konto
+    - login
+    - einloggen
+    - löschen
+  technik:
+    - app
+    - handy
+    - smartphone
+    - android
+    - iphone
+    - ios
+    - browser
+    - pc
+    - tablet
+    - stream
+    - streaming
+    - qualität
+    - verbindung
+    - technik
+    - mikrofon
+  vergleich:
+    - vergleich
+    - alternative
+    - alternativen
+    - unterschied
+    - unterschiede
+    - erfahrung
+    - erfahrungen
+    - bewertung
+    - bewertungen
+    - test
+    - testbericht
+    - anbieter
+    - plattform
+    - plattformen
+    - portal
+    - portale
+    - vs
+  grundlagen:
+    - livecam
+    - livecams
+    - live cam
+    - live cams
+    - live chat
+    - livechat
+    - webcam
+    - webcams
+    - camchat
+    - cam chat
+    - videochat
+    - video chat
+    - livesex
+    - erotik
+    - cam
+    - cams
+    - chat
+
+topic_labels:
+  preise: "Preise und Abrechnung"
+  gratis: "Kostenlos testen"
+  sicherheit: "Sicherheit und Datenschutz"
+  ablauf: "Ablauf und Anleitungen"
+  technik: "Technik und Geräte"
+  vergleich: "Vergleiche und Alternativen"
+  grundlagen: "Grundlagen"
+
+vocab:
+  # Markenbegriffe sind erlaubt, begründen aber allein kein Thema
+  brand:
+    - visit-x
+    - visit x
+    - visitx
+    - visit-x.net
+  # Füllwörter und Qualifier
+  generic:
+    - die
+    - der
+    - das
+    - den
+    - dem
+    - des
+    - und
+    - oder
+    - mit
+    - ohne
+    - für
+    - von
+    - zu
+    - zum
+    - zur
+    - bei
+    - auf
+    - im
+    - in
+    - am
+    - an
+    - ist
+    - sind
+    - wie
+    - was
+    - wo
+    - wer
+    - wann
+    - warum
+    - welche
+    - welcher
+    - welches
+    - kann
+    - man
+    - gibt
+    - es
+    - ein
+    - eine
+    - einer
+    - einen
+    - sich
+    - lohnt
+    - nicht
+    - beste
+    - besten
+    - bester
+    - gute
+    - guter
+    - gut
+    - top
+    - online
+    - deutsch
+    - deutsche
+    - deutschland
+    - neu
+    - neue
+    - neuer
+    - wirklich
+    - echt
+    - echte
+    - echten
+    - frage
+    - fragen
+    - hilfe
+    - infos
+    - info
+    - mehr
+    - alle
+    - erwachsene
+    - erwachsenen
+    - ab
+    - pro
+    - minute
+    - minuten
+    - erkennen
+    - einsteiger
+
+# Keywords, die diese Zeichenfolgen enthalten, werden nie verarbeitet (Teilstring-Vergleich).
+# Eigene Namen kannst du zusätzlich in data/blocked_names.txt eintragen (eine Zeile pro Begriff).
+blocked_terms:
+  - porn
+  - nude
+  - nackt
+  - xxx
+  - leak
+  - onlyfans
+  - fansly
+  - deepfake
+  - fake
+  - promi
+  - teen
+  - minderj
+  - schülerin
+  - schueler
+  - lolita
+  - jugendlich
+  - bilder
+  - videos
+  - pics
+  - fotos
+  - torrent
+  - download
