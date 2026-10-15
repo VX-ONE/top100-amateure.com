@@ -1457,7 +1457,7 @@
     ],
     "primary": "wichsanleitung amateur",
     "slug": "wichsanleitung-amateur",
-    "status": "queued",
+    "status": "published",
     "topic": "grundlagen"
   },
   {
@@ -1696,13 +1696,13 @@
     ],
     "primary": "deutsch porno",
     "slug": "deutsch-porno",
-    "status": "queued",
+    "status": "published",
     "topic": "nischen"
   },
   {
     "added": "2026-10-15",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "impressions": 207173,
     "keywords": [
       "amateur porno",
@@ -1776,6 +1776,9 @@
       "pornos reife amateure",
       "reife amateure pornos"
     ],
+    "last_issues": [
+      "Generierung fehlgeschlagen: JSONDecodeError: Expecting ',' delimiter: line 59 column 6 (char 10677)"
+    ],
     "primary": "amateur porno",
     "slug": "amateur-porno",
     "status": "queued",
@@ -1784,7 +1787,7 @@
   {
     "added": "2026-10-15",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "impressions": 48251,
     "keywords": [
       "deutsch porno kostenlos",
@@ -1840,6 +1843,9 @@
       "rothaarig porn gratis",
       "tattoo porn gratis"
     ],
+    "last_issues": [
+      "Generierung fehlgeschlagen: JSONDecodeError: Expecting ',' delimiter: line 59 column 6 (char 9734)"
+    ],
     "primary": "deutsch porno kostenlos",
     "slug": "deutsch-porno-kostenlos",
     "status": "queued",
@@ -1848,7 +1854,7 @@
   {
     "added": "2026-10-15",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "impressions": 24132,
     "keywords": [
       "deutsch porno videos",
@@ -1877,6 +1883,9 @@
       "brünett porn videos",
       "rothaarig porn videos",
       "tattoo porn videos"
+    ],
+    "last_issues": [
+      "Generierung fehlgeschlagen: JSONDecodeError: Expecting ',' delimiter: line 51 column 6 (char 9853)"
     ],
     "primary": "deutsch porno videos",
     "slug": "deutsch-porno-videos",
@@ -2040,7 +2049,7 @@
     ],
     "primary": "paar porno",
     "slug": "paar-porno",
-    "status": "queued",
+    "status": "published",
     "topic": "nischen"
   },
   {
