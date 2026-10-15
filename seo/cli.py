@@ -24,6 +24,18 @@ def cmd_import(cfg, args) -> int:
     return 0
 
 
+def priority_bonus(c: dict, cfg: dict) -> int:
+    """Seiten mit Kaufabsicht zuerst: Marke + Frage (kosten, kündigen, seriös ...) und Österreich/Schweiz."""
+    b = (cfg["keywords"].get("priority") or {})
+    k = c["primary"]
+    bonus = 0
+    if any(t in k for t in ("visit x", "visitx", "visit-x")):
+        bonus += int(b.get("brand", 0))
+    if c.get("topic") == "dach":
+        bonus += int(b.get("dach", 0))
+    return bonus
+
+
 def harvest(cfg, store) -> dict | None:
     """Neue Keywords aus den Suchanfragen der Search Console in die Warteschlange stellen."""
     h = cfg["keywords"].get("harvest", {})
@@ -165,7 +177,7 @@ def cmd_run(cfg, args) -> int:
     clusters = store.clusters()
     paused = set(state["paused_topics"])
     queue = sorted((c for c in clusters if c["status"] == "queued" and c["topic"] not in paused),
-                   key=lambda c: (-c["impressions"], c["primary"]))
+                   key=lambda c: (-(c["impressions"] + priority_bonus(c, cfg)), c["primary"]))
     if not queue:
         print("Die Keyword-Warteschlange ist leer (oder alle Themen sind pausiert). Importiere neue Keywords.")
 

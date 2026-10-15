@@ -91,13 +91,20 @@ def _slim(c: dict) -> dict:
     return {k: v for k, v in c.items() if k != "image"}
 
 
-def _ask(cfg: dict, system: str, user: str) -> dict:
-    import anthropic  # nur bei Bedarf
+_STR = {"type": "string"}
+SCHEMAS = {
+    "title_ctr": {"type": "object", "properties": {"title": _STR, "meta_description": _STR, "h1": _STR},
+                  "required": ["title", "meta_description", "h1"]},
+    "striking": {"type": "object", "properties": {
+        "sections": {"type": "array", "items": {"type": "object", "properties": {"h2": _STR, "body": _STR},
+                                                 "required": ["h2", "body"]}},
+        "faq": {"type": "array", "items": {"type": "object", "properties": {"q": _STR, "a": _STR},
+                                            "required": ["q", "a"]}}}, "required": ["sections", "faq"]},
+}
 
-    client = anthropic.Anthropic(max_retries=5)
-    resp = client.messages.create(model=cfg["llm"]["model"], max_tokens=cfg["llm"]["max_tokens"], system=system,
-                                  messages=[{"role": "user", "content": user}])
-    return generate.parse_json("".join(b.text for b in resp.content if b.type == "text"))
+
+def _ask(cfg: dict, system: str, user: str, rule: str) -> dict:
+    return generate.ask_json(cfg, system, user, SCHEMAS[rule])
 
 
 RULE_TEXT = {
@@ -147,7 +154,7 @@ def propose(action: dict, p: dict, c: dict, cfg: dict, facts: str, queries: list
                 + ("\n\nFAKTEN über das Model (einzige zulässige Quelle):\n- " + "\n- ".join(model["facts"]) if model else
                    "\n\nFAKTEN:\n" + (facts or "(keine)"))
                 + f"\n\nAufgabe: {RULE_TEXT[rule]}")
-        change = _ask(cfg, system, user)
+        change = _ask(cfg, system, user, rule)
     if rule == "title_ctr":
         new.update({k: generate.clean_text(str(change[k])) for k in ("title", "meta_description", "h1")})
     else:

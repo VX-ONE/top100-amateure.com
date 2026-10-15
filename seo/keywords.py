@@ -261,7 +261,7 @@ def import_found(found: dict[str, dict], cfg: dict, store, use_llm: bool = True)
     used_slugs = {c["slug"] for c in clusters}
     for kw, topic, m in accepted:  # bereits nach Impressionen sortiert
         ts = _tokset(kw, vocab)
-        target = next((c for c in clusters if _jaccard(ts, _tokset(c["primary"], vocab)) >= threshold), None)
+        target = next((c for c in clusters if c["topic"] == topic and _jaccard(ts, _tokset(c["primary"], vocab)) >= threshold), None)
         if target:
             target["keywords"].append(kw)
             target["impressions"] += m["impressions"]

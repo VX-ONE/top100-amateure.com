@@ -32,6 +32,7 @@ affiliate:
   cta_label: "Zum Angebot von Visit-X"
   # Button-Text je Thema (ohne Versprechen, was dahinter passiert; der Link führt zur Anmeldung)
   topic_cta:
+    dach: "Visit-X selbst ansehen"
     preise: "Aktuelle Preise bei Visit-X ansehen"
     gratis: "Angebote bei Visit-X ansehen"
     sicherheit: "Visit-X selbst prüfen"
@@ -151,7 +152,7 @@ paths:
 llm:
   model: "claude-sonnet-5-5"            # Artikelgenerierung
   screen_model: "claude-haiku-5-5"      # schnelle Vorprüfung der Keywords
-  max_tokens: 6000
+  max_tokens: 9000
 
 keywords:
   min_tokens: 2
@@ -159,6 +160,10 @@ keywords:
   cluster_similarity: 0.6               # Keywords mit ähnlichen Wörtern landen auf derselben Seite
   # Keyword-Kreislauf: der Tageslauf übernimmt neue Suchanfragen aus der Search Console.
   # Sie durchlaufen dieselben Filter wie jeder Import (Wortliste, Sperrliste, KI-Vorprüfung).
+  # Reihenfolge der Warteschlange: Zusatzpunkte für Seiten mit Kaufabsicht (Marke + Frage) und für Österreich/Schweiz.
+  priority:
+    brand: 400000
+    dach: 150000
   harvest:
     enabled: true
     days: 28
@@ -203,6 +208,13 @@ optimize:
 # Eigennamen, Künstlernamen und unbekannte Begriffe fallen automatisch heraus.
 # Reihenfolge = Priorität bei der Zuordnung zu einem Thema.
 topics:
+  dach:
+    - österreich
+    - schweiz
+    - österreichische
+    - schweizer
+    - austria
+    - dach
   nischen:
     - deutsch
     - deutsche
@@ -400,6 +412,7 @@ topics:
 
 # Kurztext oben auf der Themenseite (Hub): sachlich, ohne Versprechen.
 topic_intro:
+  dach: "Fragen aus Österreich und der Schweiz: Zahlung, Anmeldung, Rechtslage und Jugendschutz bei Live-Cams und Videoangeboten, sachlich eingeordnet."
   nischen: "Ratgeber zu Genres und Nischen der Amateur-Erotik: was die Begriffe bedeuten, woran du legale und einvernehmliche Angebote erkennst und worauf du bei Kosten, Datenschutz und Jugendschutz achten solltest."
   preise: "Wie Preise und Abrechnung bei Live-Cams und Videoangeboten grundsätzlich funktionieren und worauf du vor dem ersten Guthaben achten solltest."
   gratis: "Was ohne Kosten möglich ist, wo die Grenzen kostenloser Angebote liegen und wie du Gratis-Aktionen einordnest."
@@ -411,6 +424,7 @@ topic_intro:
   profile: "Neutrale Informationsseiten zu Models, die bei Visit-X ein Profil haben."
 
 topic_labels:
+  dach: "Österreich und Schweiz"
   preise: "Preise und Abrechnung"
   gratis: "Kostenlos testen"
   sicherheit: "Sicherheit und Datenschutz"

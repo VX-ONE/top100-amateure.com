@@ -143,3 +143,13 @@ Filter lehnt Vulgärsprache ab (`quality.EXPLICIT`). Sie erklären das Genre, ne
   Obergrenze (`monitor.ramp`). Bei Drosselung wächst nichts.
 - **IndexNow:** neue und geänderte URLs gehen nach dem Deploy an Bing, Yandex u. a. (`indexnow` in `config.yaml`).
 - **Optimierer und Tageslauf** laden Seiten vor dem Speichern neu, damit sich beide nicht überschreiben.
+
+## Österreich und Schweiz, Kaufabsicht zuerst
+
+- Thema `dach` (`examples/keywords_dach.txt`): Seiten zu Visit-X, Live-Cams und Webcam-Chat in Österreich und der Schweiz (Zahlung,
+  Anmeldung, Rechtslage, Jugendschutz), ohne erfundene Angaben zu Zahlungsarten oder Preisen.
+- Warteschlange: Seiten mit Marke + Frage (Visit-X kosten, kündigen, seriös, Erfahrungen ...) und DACH-Seiten kommen zuerst
+  (`keywords.priority` in `config.yaml`), danach die Genre-Seiten.
+- Cluster werden nur noch innerhalb desselben Themas zusammengelegt.
+- KI-Antworten kommen als Werkzeugaufruf mit festem Schema (`generate.ask_json`). Das behebt die JSON-Fehler des ersten Laufs
+  (abgeschnittene oder fehlerhafte Antworten), `max_tokens` ist auf 9000 erhöht.

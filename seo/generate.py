@@ -27,6 +27,10 @@ INTENT_HINTS = {
     "technik": "Die Leser wollen wissen, was technisch nötig ist und wie es auf ihrem Gerät funktioniert.",
     "vergleich": "Die Leser vergleichen Angebote und brauchen verlässliche Kriterien statt Marketingaussagen.",
     "grundlagen": "Die Leser wollen eine verständliche Einführung und eine Einordnung.",
+    "dach": ("Die Leser kommen aus Österreich oder der Schweiz. Beantworte ihre Frage konkret (Anmeldung, Zahlung, Kosten, "
+             "Rechtslage, Jugendschutz) und weise darauf hin, dass sich Zahlungsarten, Währungen und Regeln je nach Land "
+             "unterscheiden können und beim Anbieter geprüft werden sollten. Keine rechtlichen Zusagen und keine "
+             "erfundenen Angaben zu Zahlungsarten oder Preisen."),
     "nischen": ("Die Leser suchen ein Genre oder eine Nische der Amateur-Erotik. Erkläre sachlich und ohne explizite "
                 "Schilderung, was der Begriff meint, wie legale und einvernehmliche Angebote zu erkennen sind "
                 "(Anbieter mit Altersprüfung, Verträgen und Einwilligung der Beteiligten), was Live-Cams und Videos "
@@ -117,6 +121,41 @@ def build_prompt(cluster: dict, cfg: dict, facts: str, other_titles: list[str], 
     return "\n\n".join(parts)
 
 
+CONTENT_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "title": {"type": "string"}, "meta_description": {"type": "string"}, "h1": {"type": "string"},
+        "intro": {"type": "string"}, "key_takeaways": {"type": "array", "items": {"type": "string"}},
+        "sections": {"type": "array", "items": {"type": "object", "properties": {
+            "h2": {"type": "string"}, "body": {"type": "string"}}, "required": ["h2", "body"]}},
+        "faq": {"type": "array", "items": {"type": "object", "properties": {
+            "q": {"type": "string"}, "a": {"type": "string"}}, "required": ["q", "a"]}},
+        "cta_text": {"type": "string"},
+    },
+    "required": ["title", "meta_description", "h1", "intro", "key_takeaways", "sections", "faq", "cta_text"],
+}
+
+
+def ask_json(cfg: dict, system: str, user: str, schema: dict, max_tokens: int | None = None) -> dict:
+    """Antwort als Werkzeugaufruf mit festem Schema: Das Ergebnis ist immer gültiges JSON."""
+    import anthropic  # nur bei Bedarf
+
+    client = anthropic.Anthropic(max_retries=5)
+    resp = client.messages.create(
+        model=cfg["llm"]["model"], max_tokens=max_tokens or cfg["llm"]["max_tokens"], system=system,
+        tools=[{"name": "antwort", "description": "Gibt das Ergebnis im vorgegebenen Format zurück.",
+                "input_schema": schema}],
+        tool_choice={"type": "tool", "name": "antwort"},
+        messages=[{"role": "user", "content": user}],
+    )
+    if getattr(resp, "stop_reason", None) == "max_tokens":
+        raise ValueError("Antwort wurde abgeschnitten (max_tokens)")
+    for b in resp.content:
+        if b.type == "tool_use":
+            return b.input
+    raise ValueError("keine strukturierte Antwort erhalten")
+
+
 def parse_json(text: str) -> dict:
     m = re.search(r"\{.*\}", text, re.S)
     if not m:
@@ -200,8 +239,7 @@ def generate(cluster: dict, cfg: dict, facts: str, other_titles: list[str],
              issues: list[str] | None = None, mock: bool = False) -> dict:
     if mock:
         return clean_content(mock_generate(cluster, cfg, issues))
-    text = call_claude(cfg, build_prompt(cluster, cfg, facts, other_titles, issues))
-    return clean_content(parse_json(text))
+    return clean_content(ask_json(cfg, SYSTEM, build_prompt(cluster, cfg, facts, other_titles, issues), CONTENT_SCHEMA))
 
 
 # ---------- Model-Profilseiten ----------
@@ -248,14 +286,4 @@ def generate_model(model: dict, cluster: dict, cfg: dict, facts: str, other_titl
                    issues: list[str] | None = None, mock: bool = False) -> dict:
     if mock:
         return clean_content(mock_generate(cluster, cfg, issues))
-    import anthropic  # nur bei Bedarf
-
-    client = anthropic.Anthropic(max_retries=5)
-    resp = client.messages.create(
-        model=cfg["llm"]["model"],
-        max_tokens=cfg["llm"]["max_tokens"],
-        system=MODEL_SYSTEM,
-        messages=[{"role": "user", "content": build_model_prompt(model, cluster, cfg, facts, other_titles, issues)}],
-    )
-    text = "".join(b.text for b in resp.content if b.type == "text")
-    return clean_content(parse_json(text))
+    return clean_content(ask_json(cfg, MODEL_SYSTEM, build_model_prompt(model, cluster, cfg, facts, other_titles, issues), CONTENT_SCHEMA))
