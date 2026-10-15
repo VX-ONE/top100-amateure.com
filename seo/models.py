@@ -40,7 +40,9 @@ def load_models(cfg: dict) -> list[dict]:
     for m in raw.get("models", []):
         name = str(m["name"]).strip()
         base = normalize(name)
-        variants = {base, base.replace(" ", "")} | {normalize(v) for v in m.get("name_variants", [])}
+        variants = {base, base.replace(" ", ""), base.replace("-", " "), base.replace("-", "")} | {normalize(v) for v in m.get("name_variants", [])}
+        split = normalize(re.sub(r"(?<=[a-zäöü])(?=[A-ZÄÖÜ])", " ", name).replace("-", " "))
+        variants.add(split)
         active = bool(m.get("active", True)) and not (variants & blocked)
         models.append({
             "name": name,
@@ -49,7 +51,9 @@ def load_models(cfg: dict) -> list[dict]:
             "variants": sorted(variants, key=len, reverse=True),
             "links": [{"label": str(link["label"]).replace("{name}", name), "url": link["url"]}
                       for link in m.get("landing_links", [])],
-            "keywords": [normalize(k) for k in m.get("keywords", [])],
+            "keywords": list(dict.fromkeys(
+                [normalize(k).replace(base.replace("-", " "), split, 1) for k in m.get("keywords", [])] +
+                [normalize(k) for k in m.get("keywords", [])])),
             "facts": [str(f).replace("{name}", name) for f in m.get("facts", [])],
         })
     return models
