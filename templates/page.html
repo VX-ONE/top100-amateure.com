@@ -5,7 +5,7 @@
 {% set faq_ld = [] %}
 {% for f in c.faq %}{% set _ = faq_ld.append({"@type": "Question", "name": f.q|plain, "acceptedAnswer": {"@type": "Answer", "text": f.a|plain}}) %}{% endfor %}
 {% set article = {"@type": "Article", "headline": c.h1, "description": c.meta_description, "datePublished": meta.published_at,
-   "dateModified": meta.published_at, "inLanguage": "de", "mainEntityOfPage": canonical,
+   "dateModified": meta.modified_at or meta.published_at, "inLanguage": "de", "mainEntityOfPage": canonical,
    "publisher": {"@type": "Organization", "name": site.name}} %}
 {% if og_image %}{% set _ = article.update({"image": og_image}) %}{% endif %}
 <script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [

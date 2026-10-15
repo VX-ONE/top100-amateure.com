@@ -93,3 +93,27 @@ KI-Vorprüfung (Namen, Minderjährige, Leaks). Bekannte und abgelehnte Anfragen 
 Ähnliche Anfragen werden bestehenden Seiten zugeordnet. Abgelehnte stehen in `data/rejected.csv`.
 Einstellungen: `keywords.harvest` in `config.yaml` (`enabled: false` schaltet den Kreislauf ab).
 Manuell: `python -m seo.cli harvest`.
+
+## Bilder (automatisch pro Seite)
+
+Zu jeder neuen Seite erzeugt die KI eine plakative Vektorgrafik (SVG) zum Thema: Gegenstände, Symbole, kurze Schrift,
+auf Wunsch auch Stiefel oder High Heels als flache Silhouette. Keine Personen, keine Körper, keine Fotos, keine Marken.
+Das SVG wird streng gefiltert (nur erlaubte Elemente, keine Skripte oder Links). Klappt die KI-Erzeugung nicht, entsteht
+eine einfache Grafik aus Farbe, Form und Titel. Dazu kommt ein Vorschaubild (PNG, 1200x630) fürs Teilen.
+Bestehende Seiten nachziehen: `python -m seo.cli images` (mit `--force` neu erzeugen).
+Werbematerial von VX Cash wird nicht verändert und nicht automatisch geholt; es kommt als Datei von dir.
+
+## Optimierer
+
+Im Tageslauf (`run`, nach der Auswertung) wertet der Optimierer Position, Klickrate und Suchanfragen je Seite aus
+(Einstellungen: `optimize` in `config.yaml`):
+
+- **title_ctr:** Position <= 10, aber kaum Klicks: Titel, Meta-Beschreibung und H1 neu.
+- **striking:** Position 8 bis 30: bis zu 2 Abschnitte und 2 FAQ zu den Suchanfragen ergänzen, die noch nicht abgedeckt sind.
+- **no_traction:** indexiert, aber nach 60 Tagen ohne Impressionen: einmal mit anderem Blickwinkel neu schreiben.
+- **not_indexed:** nur im Bericht.
+
+Schutz: Mindestalter 21 Tage, 28 Tage Pause je Seite, höchstens 3 Seiten pro Tag, jede Änderung geht durch das
+Qualitäts-Gate (Model-Seiten zusätzlich durch Sperrbegriffe und facts), die alte Fassung liegt in `data/history/`.
+Nach 21 Tagen wird verglichen. Ist die Position um 4 Plätze oder mehr schlechter, stellt der Optimierer die alte Fassung
+wieder her. Alles steht im Tagesbericht unter "Optimierung". Manuell: `python -m seo.cli optimize`.

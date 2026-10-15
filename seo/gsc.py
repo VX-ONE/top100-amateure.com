@@ -71,6 +71,17 @@ def queries(cfg: dict, svc, days: int = 28, min_impressions: int = 1, limit: int
     return out
 
 
+def page_queries(cfg: dict, svc, url: str, days: int = 28, limit: int = 25) -> list[dict]:
+    """Suchanfragen, für die eine einzelne Seite Impressionen hat."""
+    end = date.today() - timedelta(days=2)
+    body = {"startDate": (end - timedelta(days=days)).isoformat(), "endDate": end.isoformat(),
+            "dimensions": ["query"], "rowLimit": limit, "type": "web",
+            "dimensionFilterGroups": [{"filters": [{"dimension": "page", "operator": "equals", "expression": url}]}]}
+    rows = svc.searchanalytics().query(siteUrl=cfg["gsc"]["property"], body=body).execute().get("rows", [])
+    return [{"query": r["keys"][0], "clicks": int(r["clicks"]), "impressions": int(r["impressions"]),
+             "position": float(r["position"])} for r in sorted(rows, key=lambda r: -r["impressions"])]
+
+
 def evaluate_health(pages: dict[str, dict], cfg: dict, today: date | None = None) -> dict:
     """Reine Auswertung ohne API-Zugriff: Drosselung und pausierte Themen."""
     m = cfg["monitor"]

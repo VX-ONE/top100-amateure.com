@@ -5,9 +5,10 @@ import argparse
 import math
 import sys
 from datetime import date
+from pathlib import Path
 
 from . import config as cfgmod
-from . import generate, gsc, images, keywords, models as modelmod, publish, quality, render
+from . import generate, gsc, images, keywords, models as modelmod, optimize, publish, quality, render
 from .store import Store
 
 
@@ -42,6 +43,33 @@ def harvest(cfg, store) -> dict | None:
     print(f"Keyword-Kreislauf: {stats['gelesen']} Suchanfragen, neu: {stats['neu']}, "
           f"zu bestehender Seite: {stats['zu_bestehender_seite']}, abgelehnt: {stats['abgelehnt']}.")
     return stats
+
+
+def optimize_step(cfg, store, mock: bool) -> dict | None:
+    """Rankings auswerten, Seiten mit Potenzial verbessern, Verschlechterungen zurückrollen."""
+    svc = None
+    if not mock:
+        try:
+            svc = gsc.service(cfg)
+        except Exception as e:
+            print(f"Optimierer: Search Console nicht erreichbar ({type(e).__name__}: {e}).")
+    try:
+        res = optimize.run(cfg, store, svc=svc, mock=mock)
+    except Exception as e:
+        print(f"Optimierer fehlgeschlagen: {type(e).__name__}: {e}")
+        return None
+    print(f"Optimierer: {len(res['applied'])} Änderung(en), {len(res['rejected'])} verworfen, "
+          f"{len(res['effects'])} Wirkungsprüfung(en).")
+    rep = Path(cfg["_reports"]) / f"{date.today().isoformat()}.md"
+    rep.parent.mkdir(parents=True, exist_ok=True)
+    with rep.open("a", encoding="utf-8") as f:
+        f.write(optimize.report_section(res))
+    return res
+
+
+def cmd_optimize(cfg, args) -> int:
+    store = Store(cfg["_data"])
+    return 0 if optimize_step(cfg, store, args.mock) is not None else 1
 
 
 def cmd_harvest(cfg, args) -> int:
@@ -127,11 +155,12 @@ def cmd_run(cfg, args) -> int:
         print(f"Drosselung aktiv: höchstens {budget} Seite(n) heute.")
     budget -= sum(1 for p in pages.values() if p["published_at"] == today and p.get("kind") != modelmod.PAGE_KIND)
     if budget <= 0:
-        print("Das Tageslimit ist bereits erreicht.")
-        return 0
+        print("Das Tageslimit für Themenseiten ist bereits erreicht.")
+        budget = 0
 
     if not mock:
         harvest(cfg, store)
+    optimize_step(cfg, store, mock)
     clusters = store.clusters()
     paused = set(state["paused_topics"])
     queue = sorted((c for c in clusters if c["status"] == "queued" and c["topic"] not in paused),
@@ -276,6 +305,7 @@ def main(argv=None) -> int:
     p.add_argument("--limit", type=int, help="Seiten für diesen Lauf (max. max_daily_pages)")
     p.add_argument("--no-publish", action="store_true")
     p.add_argument("--no-gsc", action="store_true")
+    sub.add_parser("optimize", help="Rankings auswerten und Seiten verbessern")
     sub.add_parser("harvest", help="Neue Keywords aus den Suchanfragen der Search Console übernehmen")
     sub.add_parser("monitor", help="Indexierung und Leistung prüfen, Bericht schreiben")
     p = sub.add_parser("images", help="Bilder für Seiten ohne Bild erzeugen")
@@ -285,7 +315,7 @@ def main(argv=None) -> int:
 
     args = ap.parse_args(argv)
     cfg = cfgmod.load(args.config, sandbox=args.sandbox or args.mock)
-    return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest, "images": cmd_images,
+    return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest, "optimize": cmd_optimize, "images": cmd_images,
             "build": cmd_build, "status": cmd_status}[args.cmd](cfg, args)
 
 

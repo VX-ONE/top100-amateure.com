@@ -158,6 +158,23 @@ monitor:
   min_topic_sample: 4
   throttle_to: 1                        # Seiten pro Tag bei aktiver Drosselung
 
+# ---------- Optimierer ----------
+# Wertet täglich Position, Klickrate und Suchanfragen je Seite aus und verbessert Seiten mit Potenzial.
+# Jede Änderung geht durch das Qualitäts-Gate, die alte Fassung liegt in data/history/, und nach effect_days
+# wird sie zurückgerollt, falls die Position deutlich schlechter wurde.
+optimize:
+  enabled: true
+  min_age_days: 21          # Seiten müssen so alt sein, bevor sie angefasst werden
+  cooldown_days: 28         # Pause je Seite nach einer Änderung
+  max_per_run: 3            # höchstens so viele Seiten pro Tag
+  min_impressions: 30
+  striking_min: 8           # Position 8 bis 30: Inhalte ergänzen
+  striking_max: 30
+  ctr_floor: 0.015          # Position <= 10 und Klickrate darunter: Titel überarbeiten
+  no_traction_days: 60      # indexiert, aber ohne Impressionen: einmal neu schreiben
+  effect_days: 21
+  rollback_drop: 4          # Position um so viele Plätze schlechter: zurückrollen
+
 # ---------- Themen (erlaubtes Vokabular) ----------
 # Nur Keywords, die ausschließlich aus Wörtern dieser Listen bestehen, werden verarbeitet.
 # Eigennamen, Künstlernamen und unbekannte Begriffe fallen automatisch heraus.

@@ -99,7 +99,7 @@ def build_site(cfg: dict, store) -> dict:
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
             ctas=ctas, is_model=is_model, model_name=meta.get("model", ""),
             related=rel, topic_label=labels.get(meta["topic"], ""),
-            published=fmt_date(meta["published_at"]), robots="index,follow",
+            published=fmt_date(meta.get("modified_at") or meta["published_at"]), robots="index,follow",
         ))
 
     groups: dict[str, list[dict]] = {}
@@ -119,7 +119,7 @@ def build_site(cfg: dict, store) -> dict:
         **ctx, canonical=f"{base}/", robots="noindex,follow", title="Seite nicht gefunden", description=""))
 
     urls = [(f"{base}/", max((p["published_at"] for p in pages.values()), default=date.today().isoformat()))]
-    urls += [(f"{base}/{s}/", pages[s]["published_at"]) for s in contents]
+    urls += [(f"{base}/{s}/", pages[s].get("modified_at") or pages[s]["published_at"]) for s in contents]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sitemap += [f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls]
