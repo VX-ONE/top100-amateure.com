@@ -10,13 +10,13 @@ site:
   base_url: "https://www.top100amateure.com"   # ohne Slash am Ende
   # Pflichtangaben für das Impressum (Deutschland). Ohne diese Angaben startet der Live-Lauf nicht.
   operator:
-    name: "Sales BAE GmbH"
-    address: "Uhlengrund 25b\n21244 Buchholz"   # Straße, PLZ Ort (mehrere Zeilen mit \n)
+    name: "SalesBAE GmbH"
+    address: "Uhlengrund 25 b\n21244 Buchholz"   # Straße, PLZ Ort (mehrere Zeilen mit \n)
     email: "christianmartens@hotmail.de"
     phone: ""               # optional
     managing_directors: "Christian Martens"  # vertretungsberechtigte Geschäftsführer (Pflicht bei GmbH)
-    register_court: ""      # z. B. Amtsgericht Hamburg
-    register_number: ""     # z. B. HRB 12345 (Pflicht bei GmbH)
+    register_court: "Amtsgericht Tostedt"
+    register_number: "HRB 208544"
     vat_id: ""              # USt-IdNr., falls vorhanden
 
 affiliate:
