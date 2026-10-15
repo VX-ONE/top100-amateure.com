@@ -20,13 +20,13 @@ site:
     vat_id: ""              # USt-IdNr., falls vorhanden
 
 affiliate:
-  # {subid} wird pro Seite durch eine eigene fortlaufende Nummer ersetzt (ab subid_start).
-  # Die Zuordnung Seite -> Nummer steht in data/pages.json und im Tagesbericht.
-  # Prüfe im VX-Cash-Partnerbereich, dass der Parameter "ws" diese Nummern annimmt.
-  url_template: "https://www.flibzee.com/VX/LP/Top2Win/WM?w=40150&ws={subid}"
+  # Kampagne "Top100-Amateure" = ws=2610001 (w=40150 ist die Partner-ID). Der Link ist auf allen Seiten gleich.
+  # Optional pro Seite: {subid} im Link wird durch eine fortlaufende Nummer ab subid_start ersetzt,
+  # sobald VX Cash dafür einen eigenen Parameter anbietet (Name im Partnerbereich prüfen).
+  url_template: "https://www.flibzee.com/VX/LP/Top2Win/WM?w=40150&ws=2610001"
   subid_start: 2610100
   # Optional: eigenes Linkziel pro Thema (Themen-Schlüssel wie unter "topics"), gleiche Platzhalter erlaubt.
-  # Beispiel: grundlagen: "https://www.flibzee.com/VX/LP/DEINE-LANDINGPAGE?w=40150&ws={subid}"
+  # Beispiel: grundlagen: "https://www.flibzee.com/VX/LP/DEINE-LANDINGPAGE?w=40150&ws=2610001"
   topic_links: {}
   provider_name: "Visit-X"
   cta_label: "Zum Angebot von Visit-X"
