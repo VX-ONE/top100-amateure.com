@@ -141,6 +141,13 @@ keywords:
   min_tokens: 2
   max_tokens: 7
   cluster_similarity: 0.6               # Keywords mit ähnlichen Wörtern landen auf derselben Seite
+  # Keyword-Kreislauf: der Tageslauf übernimmt neue Suchanfragen aus der Search Console.
+  # Sie durchlaufen dieselben Filter wie jeder Import (Wortliste, Sperrliste, KI-Vorprüfung).
+  harvest:
+    enabled: true
+    days: 28
+    min_impressions: 1
+    max_queries: 500
 
 # ---------- Überwachung ----------
 monitor:

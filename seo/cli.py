@@ -23,6 +23,32 @@ def cmd_import(cfg, args) -> int:
     return 0
 
 
+def harvest(cfg, store) -> dict | None:
+    """Neue Keywords aus den Suchanfragen der Search Console in die Warteschlange stellen."""
+    h = cfg["keywords"].get("harvest", {})
+    if not h.get("enabled", False):
+        return None
+    try:
+        svc = gsc.service(cfg)
+        if svc is None:
+            print("Keyword-Kreislauf übersprungen: keine Search-Console-Zugangsdaten.")
+            return None
+        found = gsc.queries(cfg, svc, days=h.get("days", 28), min_impressions=h.get("min_impressions", 1),
+                            limit=h.get("max_queries", 500))
+    except Exception as e:
+        print(f"Keyword-Kreislauf fehlgeschlagen: {type(e).__name__}: {e}")
+        return None
+    stats = keywords.import_found(found, cfg, store)
+    print(f"Keyword-Kreislauf: {stats['gelesen']} Suchanfragen, neu: {stats['neu']}, "
+          f"zu bestehender Seite: {stats['zu_bestehender_seite']}, abgelehnt: {stats['abgelehnt']}.")
+    return stats
+
+
+def cmd_harvest(cfg, args) -> int:
+    cfg["keywords"].setdefault("harvest", {})["enabled"] = True
+    return 0 if harvest(cfg, Store(cfg["_data"])) is not None else 1
+
+
 def run_models(cfg, store, pages, state, texts, titles, facts, mock, today) -> int:
     """Erzeugt neutrale Profilseiten für aktive Models (zusätzlich zum Tageslimit der Themenseiten)."""
     if state["throttle"]["active"] or modelmod.TOPIC in state["paused_topics"]:
@@ -103,6 +129,8 @@ def cmd_run(cfg, args) -> int:
         print("Das Tageslimit ist bereits erreicht.")
         return 0
 
+    if not mock:
+        harvest(cfg, store)
     clusters = store.clusters()
     paused = set(state["paused_topics"])
     queue = sorted((c for c in clusters if c["status"] == "queued" and c["topic"] not in paused),
@@ -233,13 +261,14 @@ def main(argv=None) -> int:
     p.add_argument("--limit", type=int, help="Seiten für diesen Lauf (max. max_daily_pages)")
     p.add_argument("--no-publish", action="store_true")
     p.add_argument("--no-gsc", action="store_true")
+    sub.add_parser("harvest", help="Neue Keywords aus den Suchanfragen der Search Console übernehmen")
     sub.add_parser("monitor", help="Indexierung und Leistung prüfen, Bericht schreiben")
     sub.add_parser("build", help="Seite neu bauen")
     sub.add_parser("status", help="Stand anzeigen")
 
     args = ap.parse_args(argv)
     cfg = cfgmod.load(args.config, sandbox=args.sandbox or args.mock)
-    return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor,
+    return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest,
             "build": cmd_build, "status": cmd_status}[args.cmd](cfg, args)
 
 

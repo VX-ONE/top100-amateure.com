@@ -84,3 +84,12 @@ Nutzen führt zu Abwertung der ganzen Domain. `limits.max_daily_pages` (30) ist 
 - **Namen als Keywords:** Der Filter lässt Personen- und Künstlernamen bewusst nicht durch. Eigene Sperrbegriffe kannst du
   in `data/blocked_names.txt` (eine Zeile pro Begriff) ergänzen.
 - **Indexing API:** Wird bewusst nicht benutzt, weil Google sie nur für Stellenanzeigen und Livestreams freigibt.
+
+## Keyword-Kreislauf (Search Console)
+
+Der Tageslauf (`run`) holt vor der Seitenerzeugung die Suchanfragen der letzten 28 Tage aus der Search Console
+und übernimmt neue in die Warteschlange. Sie durchlaufen dieselben Filter wie jeder Import: Wortliste, Sperrliste,
+KI-Vorprüfung (Namen, Minderjährige, Leaks). Bekannte und abgelehnte Anfragen werden nicht erneut geprüft.
+Ähnliche Anfragen werden bestehenden Seiten zugeordnet. Abgelehnte stehen in `data/rejected.csv`.
+Einstellungen: `keywords.harvest` in `config.yaml` (`enabled: false` schaltet den Kreislauf ab).
+Manuell: `python -m seo.cli harvest`.

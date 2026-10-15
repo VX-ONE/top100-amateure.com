@@ -50,6 +50,27 @@ def performance(cfg: dict, svc, days: int = 28) -> dict[str, dict]:
                                              "position": round(r["position"], 1)} for r in rows}
 
 
+def queries(cfg: dict, svc, days: int = 28, min_impressions: int = 1, limit: int = 500) -> dict[str, dict]:
+    """Suchanfragen der eigenen Seite (Search Console), nach Impressionen sortiert."""
+    from .keywords import normalize
+
+    end = date.today() - timedelta(days=2)
+    body = {"startDate": (end - timedelta(days=days)).isoformat(), "endDate": end.isoformat(),
+            "dimensions": ["query"], "rowLimit": 5000, "type": "web"}
+    rows = svc.searchanalytics().query(siteUrl=cfg["gsc"]["property"], body=body).execute().get("rows", [])
+    out: dict[str, dict] = {}
+    for r in sorted(rows, key=lambda r: -r["impressions"]):
+        if int(r["impressions"]) < min_impressions or len(out) >= limit:
+            continue
+        k = normalize(r["keys"][0])
+        if not k:
+            continue
+        d = out.setdefault(k, {"clicks": 0, "impressions": 0})
+        d["clicks"] += int(r["clicks"])
+        d["impressions"] += int(r["impressions"])
+    return out
+
+
 def evaluate_health(pages: dict[str, dict], cfg: dict, today: date | None = None) -> dict:
     """Reine Auswertung ohne API-Zugriff: Drosselung und pausierte Themen."""
     m = cfg["monitor"]

@@ -195,9 +195,13 @@ def _jaccard(a: set[str], b: set[str]) -> float:
 
 
 def import_file(path: str, cfg: dict, store, use_llm: bool = True) -> dict:
+    return import_found(read_keywords(path), cfg, store, use_llm=use_llm)
+
+
+def import_found(found: dict[str, dict], cfg: dict, store, use_llm: bool = True) -> dict:
+    """Filtert Keywords (Vokabular, Sperrliste, KI-Vorprüfung), clustert sie und stellt sie in die Warteschlange."""
     vocab = Vocab(cfg)
     blocked = load_blocked(cfg)
-    found = read_keywords(path)
 
     clusters = store.clusters()
     pages = store.pages()
