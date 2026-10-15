@@ -1,14 +1,33 @@
 {% extends "base.html" %}
+{% macro card(i) %}
+<a class="card" href="/{{ i.slug }}/">
+  {% if i.img %}<img src="{{ i.img }}" alt="" width="1200" height="630" loading="lazy">{% endif %}
+  <span class="card-body"><strong>{{ i.title }}</strong>{% if i.text %}<span class="small">{{ i.text }}</span>{% endif %}</span>
+</a>
+{% endmacro %}
 {% block main %}
-<section class="hero">
+<section class="landing">
   <h1>{{ site.name }}</h1>
-  <p>{{ site.tagline }}</p>
+  <p class="lead">{{ site.tagline }}</p>
+  <p class="chips">{% for g in groups %}<a class="chip" href="#{{ g.topic }}">{{ g.label }} <span>{{ g.count }}</span></a>{% endfor %}</p>
+</section>
+{% if latest %}
+<section class="block">
+  <h2>Neu im Ratgeber</h2>
+  <div class="grid">{% for i in latest %}{{ card(i) }}{% endfor %}</div>
+</section>
+{% endif %}
+<section class="block">
+  <h2>Alle Themen im Überblick</h2>
+  <div class="topics">{% for g in groups %}
+    <a class="topic" href="/themen/{{ g.topic }}/" id="{{ g.topic }}"><strong>{{ g.label }}</strong><span class="small">{{ g.intro }}</span><span class="count">{{ g.count }} Ratgeber &rsaquo;</span></a>
+  {% endfor %}</div>
 </section>
 {% for g in groups %}
-<section class="group">
+<section class="block">
   <h2><a href="/themen/{{ g.topic }}/">{{ g.label }}</a></h2>
-  <ul>{% for i in g['items'] %}<li><a href="/{{ i.slug }}/">{{ i.title }}</a></li>{% endfor %}</ul>
-  {% if g.count > g['items']|length %}<p class="small"><a href="/themen/{{ g.topic }}/">Alle {{ g.count }} Ratgeber zu {{ g.label }}</a></p>{% endif %}
+  <div class="grid">{% for i in g['items'] %}{{ card(i) }}{% endfor %}</div>
+  {% if g.count > g['items']|length %}<p><a class="more" href="/themen/{{ g.topic }}/">Alle {{ g.count }} Ratgeber ansehen &rsaquo;</a></p>{% endif %}
 </section>
 {% else %}
 <p>Die ersten Ratgeber folgen in Kürze.</p>

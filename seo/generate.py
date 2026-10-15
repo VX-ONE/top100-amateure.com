@@ -31,6 +31,15 @@ INTENT_HINTS = {
              "Rechtslage, Jugendschutz) und weise darauf hin, dass sich Zahlungsarten, Währungen und Regeln je nach Land "
              "unterscheiden können und beim Anbieter geprüft werden sollten. Keine rechtlichen Zusagen und keine "
              "erfundenen Angaben zu Zahlungsarten oder Preisen."),
+    "webcam-models": ("Die Leser wollen verstehen, wie Webcam-Models und Live-Shows funktionieren: Ablauf eines Chats, Unterschied zwischen "
+                      "öffentlichem und privatem Chat, respektvoller Umgang, Auswahl nach Profil und Bewertungen, Kosten und Sicherheit. "
+                      "Keine Beschreibung sexueller Handlungen, keine Angaben zu konkreten Personen, nichts erfinden."),
+    "livecams": ("Die Leser wollen Live-Cams und Livechat verstehen: Ablauf, Chatarten, Technik, Kosten, Anonymität, Sicherheit. "
+                 "Sachlich, ohne explizite Schilderung."),
+    "videos": ("Die Leser suchen Videos und Clips für Erwachsene: wie Videoangebote (Kauf, Streaming, Abrechnung) grundsätzlich funktionieren, "
+               "woran man seriöse Anbieter erkennt, Jugendschutz und Datenschutz. Ohne explizite Schilderung."),
+    "amateure": ("Die Leser interessieren sich für Amateur-Erotik: was sie ausmacht, Unterschied zu Studioproduktionen, wie Einvernehmlichkeit "
+                 "und Altersprüfung erkennbar sind, wie man Angebote seriös prüft. Ohne explizite Schilderung."),
     "nischen": ("Die Leser suchen ein Genre oder eine Nische der Amateur-Erotik. Erkläre sachlich und ohne explizite "
                 "Schilderung, was der Begriff meint, wie legale und einvernehmliche Angebote zu erkennen sind "
                 "(Anbieter mit Altersprüfung, Verträgen und Einwilligung der Beteiligten), was Live-Cams und Videos "

@@ -83,12 +83,15 @@ def build_site(cfg: dict, store) -> dict:
         if sl in contents:
             hubs.add(mt["topic"])
 
+    ctx["nav"] = [{"topic": t, "label": labels.get(t, t)} for t in [*cfg["topics"], modelmod.TOPIC] if t in hubs]
+
     def write(rel: str, html: str) -> None:
         target = site_dir / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html, encoding="utf-8")
 
     page_tpl = env.get_template("page.html")
+    thumbs: dict[str, str] = {}
     for slug, c in contents.items():
         meta = pages[slug]
         rel = [{"slug": r, "title": contents[r]["h1"]} for r in related.get(slug, [])]
@@ -100,6 +103,8 @@ def build_site(cfg: dict, store) -> dict:
         if not ctas:
             ctas = [{"label": topic_cta.get(meta["topic"]) or ctx["cta_label"], "url": affiliate_url(cfg, meta)}]
         image = imgmod.write_files(site_dir, slug, c, cfg["site"]["name"])
+        if image:
+            thumbs[slug] = image["svg"]
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
             ctas=ctas, is_model=is_model, model_name=meta.get("model", ""),
@@ -110,9 +115,12 @@ def build_site(cfg: dict, store) -> dict:
     groups: dict[str, list[dict]] = {}
     for slug, meta in sorted(pages.items(), key=lambda x: x[1]["published_at"], reverse=True):
         if slug in contents:
-            groups.setdefault(meta["topic"], []).append({"slug": slug, "title": contents[slug]["h1"]})
+            groups.setdefault(meta["topic"], []).append({"slug": slug, "title": contents[slug]["h1"], "img": thumbs.get(slug),
+                "text": (contents[slug].get("meta_description") or "")[:150], "date": fmt_date(meta.get("modified_at") or meta["published_at"])})
     order = [t for t in [*cfg["topics"], modelmod.TOPIC] if t in groups]
-    ordered = [{"topic": t, "label": labels.get(t, t), "items": groups[t][:8], "count": len(groups[t])} for t in order]
+    ordered = [{"topic": t, "label": labels.get(t, t), "items": groups[t][:6], "count": len(groups[t]),
+                "intro": (cfg.get("topic_intro") or {}).get(t, "")} for t in order]
+    latest = sorted((i for g in groups.values() for i in g), key=lambda i: i["date"][-4:] + i["date"][3:5] + i["date"][:2], reverse=True)[:6]
     intros = cfg.get("topic_intro") or {}
     hub_tpl = env.get_template("hub.html")
     for t in order:
@@ -121,7 +129,7 @@ def build_site(cfg: dict, store) -> dict:
             canonical=f"{base}/themen/{t}/", robots="index,follow", title=f"{labels.get(t, t)}: alle Ratgeber",
             description=(intros.get(t) or labels.get(t, t))[:160], og_image=""))
     write("index.html", env.get_template("index.html").render(
-        **ctx, groups=ordered, canonical=f"{base}/", robots="index,follow",
+        **ctx, groups=ordered, latest=latest, canonical=f"{base}/", robots="index,follow",
         title=cfg["site"]["name"], description=cfg["site"]["tagline"]))
 
     for name, title in (("impressum", "Impressum"), ("datenschutz", "Datenschutzerklärung")):

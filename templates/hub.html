@@ -4,6 +4,12 @@
   <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; {{ label }}</nav>
   <h1>{{ label }}</h1>
   {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
-  <ul class="hublist">{% for i in items %}<li><a href="/{{ i.slug }}/">{{ i.title }}</a></li>{% endfor %}</ul>
+  <div class="grid">{% for i in items %}
+    <a class="card" href="/{{ i.slug }}/">
+      {% if i.img %}<img src="{{ i.img }}" alt="" width="1200" height="630" loading="lazy">{% endif %}
+      <span class="card-body"><strong>{{ i.title }}</strong>{% if i.text %}<span class="small">{{ i.text }}</span>{% endif %}</span>
+    </a>{% endfor %}
+  </div>
+  <p class="chips">{% for n in nav %}{% if n.topic != topic %}<a class="chip" href="/themen/{{ n.topic }}/">{{ n.label }}</a>{% endif %}{% endfor %}</p>
 </article>
 {% endblock %}

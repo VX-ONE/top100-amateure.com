@@ -23,6 +23,10 @@ MOTIFS = {
     "ablauf": "Schritte mit Pfeilen, Checkliste, Häkchen oder Wegweiser",
     "technik": "Smartphone, Laptop, Kamera-Symbol, Kopfhörer oder WLAN-Zeichen",
     "vergleich": "Waage, zwei Karten nebeneinander, Sterne oder Balken",
+    "webcam-models": "Webcam auf Stativ, Ringlicht, Bildschirm mit Chatfenster, Kopfhörer, Herz",
+    "livecams": "Bildschirm mit LIVE-Badge, Kamera, Sprechblasen, Herz",
+    "videos": "Play-Button, Filmstreifen, Bildschirm, Kamera, Popcorn-freie Symbole",
+    "amateure": "Smartphone-Kamera, Ringlicht, Sofa-Silhouette, Herz, Sprechblase",
     "grundlagen": "Kamera-Symbol, Sprechblasen, Herz, Bildschirm, Mikrofon oder Lippenstift",
     "profile": "Bühnenvorhang, Scheinwerfer, Sprechblasen, Sterne oder Bildschirm",
 }
@@ -74,10 +78,15 @@ def sanitize_svg(svg: str) -> str | None:
                 return None
         if el.text and _local(el.tag) in ("text", "tspan") and len(el.text) > 40:
             return None
-    root.set("xmlns", "http://www.w3.org/2000/svg")
     ET.register_namespace("", "http://www.w3.org/2000/svg")
-    out = ET.tostring(root, encoding="unicode")
-    return out.replace("ns0:", "").replace(":ns0", "")
+    out = ET.tostring(root, encoding="unicode").replace("ns0:", "").replace(":ns0", "")
+    if 'xmlns="http://www.w3.org/2000/svg"' not in out[:400]:
+        out = out.replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg"', 1)
+    try:  # muss wohlgeformtes XML sein, sonst zeigt der Browser nichts an
+        ET.fromstring(out)
+    except ET.ParseError:
+        return None
+    return out
 
 
 # ---------- Rückfall und Mock: einfache Grafik aus Farbe, Form und Kurztitel ----------

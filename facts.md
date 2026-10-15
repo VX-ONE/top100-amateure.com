@@ -17,4 +17,6 @@ Beispiele für das Format (ersetzen, nicht übernehmen):
 
 ## Eingetragene Fakten
 
-(noch keine eingetragen)
+- (geprüft am 16.10.2026, Angabe des Seitenbetreibers) Die normale Währung ist Euro; der bezahlte Betrag wird in Tokens umgewandelt, mit denen bei Visit-X bezahlt wird.
+- (geprüft am 16.10.2026, Angabe des Seitenbetreibers) Gängige Zahlungsarten bei Visit-X: Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift/Überweisung). Welche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen.
+- (geprüft am 16.10.2026, Angabe des Seitenbetreibers) Visit-X bietet Live-Cams (Webcam-Models), Videos und Amateur-Angebote.

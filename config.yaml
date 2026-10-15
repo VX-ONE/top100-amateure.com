@@ -32,6 +32,10 @@ affiliate:
   cta_label: "Zum Angebot von Visit-X"
   # Button-Text je Thema (ohne Versprechen, was dahinter passiert; der Link führt zur Anmeldung)
   topic_cta:
+    webcam-models: "Webcam-Models bei Visit-X ansehen"
+    livecams: "Live-Cams bei Visit-X ansehen"
+    videos: "Videos bei Visit-X ansehen"
+    amateure: "Amateure bei Visit-X entdecken"
     dach: "Visit-X selbst ansehen"
     preise: "Aktuelle Preise bei Visit-X ansehen"
     gratis: "Angebote bei Visit-X ansehen"
@@ -164,6 +168,11 @@ keywords:
   priority:
     brand: 400000
     dach: 150000
+    topics:
+      livecams: 60000
+      webcam-models: 60000
+      videos: 60000
+      amateure: 60000
   harvest:
     enabled: true
     days: 28
@@ -243,7 +252,6 @@ topics:
     - porno
     - pornos
     - sex
-    - sexvideos
     - nackt
     - nude
     - xxx
@@ -272,17 +280,11 @@ topics:
     - latex
     - rollenspiel
     - pov
-    - erotikvideos
-    - sexcam
-    - sexcams
-    - sexchat
-    - video
-    - videos
-    - clip
-    - clips
-    - filme
-    - live
   preise:
+    - tokens
+    - sofortüberweisung
+    - sepa
+    - kreditkarte
     - preis
     - preise
     - preisliste
@@ -333,6 +335,7 @@ topics:
     - abbuchung
     - rechnung
   ablauf:
+    - anfänger
     - wie funktioniert
     - funktioniert
     - ablauf
@@ -382,7 +385,31 @@ topics:
     - portal
     - portale
     - vs
-  grundlagen:
+  webcam-models:
+    - model
+    - models
+    - webcam model
+    - webcam models
+    - webcammodel
+    - camgirl
+    - camgirls
+    - cam girl
+    - cam girls
+    - webcamgirl
+    - webcam girl
+    - camshow
+    - cam show
+    - shows
+    - show
+    - livestream
+    - streamerin
+    - girls
+    - girl
+    - frauen
+    - männer
+    - mann
+    - couple
+  livecams:
     - livecam
     - livecams
     - live cam
@@ -395,23 +422,54 @@ topics:
     - cam chat
     - videochat
     - video chat
-    - livesex
-    - erotik
     - cam
     - cams
     - chat
+    - sexcam
+    - sexcams
+    - sexchat
+    - live
+    - privatchat
+    - cam2cam
+    - gruppenchat
+    - freechat
+  videos:
+    - video
+    - videos
+    - clip
+    - clips
+    - filme
+    - sexvideos
+    - erotikvideos
+    - amateurvideos
+    - amateurclips
+    - videostation
+    - mediathek
+    - streaming
+    - download
+    - stream
+    - streamen
+  amateure:
     - amateur
     - amateure
     - amateurerotik
-    - amateurclips
-    - amateurvideos
     - amateurcam
     - amateurcams
+    - amateurin
+    - amateurinnen
+    - hobby
+    - privat
+  grundlagen:
+    - erotik
     - joi
     - wichsanleitung
 
 # Kurztext oben auf der Themenseite (Hub): sachlich, ohne Versprechen.
 topic_intro:
+  webcam-models: "Wie Webcam-Models bei Live-Cams arbeiten, wie Shows und Chats ablaufen und worauf du bei Auswahl, Kosten und Respekt achten solltest."
+  livecams: "Live-Cams und Livechat erklärt: Ablauf, Kosten, Technik und Sicherheit, damit du vor dem ersten Besuch weißt, was dich erwartet."
+  videos: "Videos und Clips für Erwachsene: wie Videoangebote funktionieren, was sie kosten und woran du seriöse Anbieter erkennst."
+  amateure: "Amateure und Hobby-Models: was Amateur-Erotik ausmacht, worin sie sich von Studioproduktionen unterscheidet und wie du seriöse Angebote findest."
   dach: "Fragen aus Österreich und der Schweiz: Zahlung, Anmeldung, Rechtslage und Jugendschutz bei Live-Cams und Videoangeboten, sachlich eingeordnet."
   nischen: "Ratgeber zu Genres und Nischen der Amateur-Erotik: was die Begriffe bedeuten, woran du legale und einvernehmliche Angebote erkennst und worauf du bei Kosten, Datenschutz und Jugendschutz achten solltest."
   preise: "Wie Preise und Abrechnung bei Live-Cams und Videoangeboten grundsätzlich funktionieren und worauf du vor dem ersten Guthaben achten solltest."
@@ -424,6 +482,10 @@ topic_intro:
   profile: "Neutrale Informationsseiten zu Models, die bei Visit-X ein Profil haben."
 
 topic_labels:
+  webcam-models: "Webcam-Models"
+  livecams: "Live-Cams und Livechat"
+  videos: "Videos und Clips"
+  amateure: "Amateure"
   dach: "Österreich und Schweiz"
   preise: "Preise und Abrechnung"
   gratis: "Kostenlos testen"

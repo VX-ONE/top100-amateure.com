@@ -33,6 +33,7 @@ def priority_bonus(c: dict, cfg: dict) -> int:
         bonus += int(b.get("brand", 0))
     if c.get("topic") == "dach":
         bonus += int(b.get("dach", 0))
+    bonus += int((b.get("topics") or {}).get(c.get("topic"), 0))
     return bonus
 
 
