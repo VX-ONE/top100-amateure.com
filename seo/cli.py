@@ -7,7 +7,7 @@ import sys
 from datetime import date
 
 from . import config as cfgmod
-from . import generate, gsc, keywords, models as modelmod, publish, quality, render
+from . import generate, gsc, images, keywords, models as modelmod, publish, quality, render
 from .store import Store
 
 
@@ -86,6 +86,7 @@ def run_models(cfg, store, pages, state, texts, titles, facts, mock, today) -> i
             print(f"  [{model['slug']}] Versuch {attempt} abgelehnt: {issues[0]}")
         if content is None:
             continue
+        images.ensure(content, modelmod.TOPIC, model["slug"], cfg, mock=mock)
         store.save_content(model["slug"], content)
         pages[model["slug"]] = {
             "slug": model["slug"], "primary": cluster["primary"], "keywords": keywords_ok, "topic": modelmod.TOPIC,
@@ -174,6 +175,7 @@ def cmd_run(cfg, args) -> int:
             continue
 
         slug = cluster["slug"]
+        images.ensure(content, cluster["topic"], slug, cfg, mock=mock)
         store.save_content(slug, content)
         pages[slug] = {
             "slug": slug, "primary": cluster["primary"], "keywords": cluster["keywords"], "topic": cluster["topic"],
@@ -235,6 +237,19 @@ def cmd_build(cfg, args) -> int:
     return 0
 
 
+def cmd_images(cfg, args) -> int:
+    """Bilder für bestehende Seiten nachziehen (oder mit --force neu erzeugen)."""
+    store = Store(cfg["_data"])
+    pages = store.pages()
+    n = 0
+    for slug, c in store.all_content().items():
+        if slug in pages and images.ensure(c, pages[slug]["topic"], slug, cfg, mock=args.mock, force=args.force):
+            store.save_content(slug, c)
+            n += 1
+    print(f"Bilder erzeugt: {n}")
+    return 0
+
+
 def cmd_status(cfg, args) -> int:
     store = Store(cfg["_data"])
     clusters, pages, state = store.clusters(), store.pages(), store.state()
@@ -263,12 +278,14 @@ def main(argv=None) -> int:
     p.add_argument("--no-gsc", action="store_true")
     sub.add_parser("harvest", help="Neue Keywords aus den Suchanfragen der Search Console übernehmen")
     sub.add_parser("monitor", help="Indexierung und Leistung prüfen, Bericht schreiben")
+    p = sub.add_parser("images", help="Bilder für Seiten ohne Bild erzeugen")
+    p.add_argument("--force", action="store_true", help="vorhandene Bilder neu erzeugen")
     sub.add_parser("build", help="Seite neu bauen")
     sub.add_parser("status", help="Stand anzeigen")
 
     args = ap.parse_args(argv)
     cfg = cfgmod.load(args.config, sandbox=args.sandbox or args.mock)
-    return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest,
+    return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest, "images": cmd_images,
             "build": cmd_build, "status": cmd_status}[args.cmd](cfg, args)
 
 

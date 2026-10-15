@@ -8,6 +8,7 @@ from pathlib import Path
 import markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from . import images as imgmod
 from . import models as modelmod
 from .quality import article_text
 
@@ -93,8 +94,9 @@ def build_site(cfg: dict, store) -> dict:
             ctas = []
         if not ctas:
             ctas = [{"label": ctx["cta_label"], "url": affiliate_url(cfg, meta)}]
+        image = imgmod.write_files(site_dir, slug, c, cfg["site"]["name"])
         write(f"{slug}/index.html", page_tpl.render(
-            **ctx, c=c, slug=slug, meta=meta, canonical=f"{base}/{slug}/",
+            **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
             ctas=ctas, is_model=is_model, model_name=meta.get("model", ""),
             related=rel, topic_label=labels.get(meta["topic"], ""),
             published=fmt_date(meta["published_at"]), robots="index,follow",
