@@ -23,7 +23,7 @@ affiliate:
   # Kampagne "Top100-Amateure" = ws=2610001 (w=40150 ist die Partner-ID). Standardlink für alle Themenseiten; Model-Profile nutzen ihre Links aus data/models.yaml.
   # Optional pro Seite: {subid} im Link wird durch eine fortlaufende Nummer ab subid_start ersetzt,
   # sobald VX Cash dafür einen eigenen Parameter anbietet (Name im Partnerbereich prüfen).
-  url_template: "https://visit-x.world/?w=40150&ws=2610001"
+  url_template: "https://vxcsh.com/1/40150"
   subid_start: 2610100
   # Optional: eigenes Linkziel pro Thema (Themen-Schlüssel wie unter "topics"), gleiche Platzhalter erlaubt.
   # Beispiel: grundlagen: "https://www.flibzee.com/VX/LP/DEINE-LANDINGPAGE?w=40150&ws=2610001"
