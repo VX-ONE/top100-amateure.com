@@ -92,10 +92,10 @@ def write_report(cfg: dict, pages: dict, health: dict, state: dict) -> Path:
     lines.append(f"- Drosselung aktiv: {'ja' if state['throttle']['active'] else 'nein'}")
     if state["paused_topics"]:
         lines.append("- Pausierte Themen: " + ", ".join(f"{k} ({v})" for k, v in state["paused_topics"].items()))
-    lines += ["", "## Top-Seiten nach Impressionen", "", "| Seite | Thema | Indexiert | Impr. | Klicks | Pos. |", "|---|---|---|---|---|---|"]
+    lines += ["", "## Top-Seiten nach Impressionen", "", "| Seite | ws-Nr. | Thema | Indexiert | Impr. | Klicks | Pos. |", "|---|---|---|---|---|---|---|"]
     for p in sorted(pages.values(), key=lambda x: -x.get("impressions", 0))[:20]:
         flag = {True: "ja", False: "nein", None: "offen"}[p.get("indexed")]
-        lines.append(f"| {p['slug']} | {p['topic']} | {flag} | {p.get('impressions', 0)} | {p.get('clicks', 0)} | {p.get('position') or '-'} |")
+        lines.append(f"| {p['slug']} | {p.get('subid', '-')} | {p['topic']} | {flag} | {p.get('impressions', 0)} | {p.get('clicks', 0)} | {p.get('position') or '-'} |")
     waiting = [p for p in pages.values() if p.get("indexed") is False]
     if waiting:
         lines += ["", "## Noch nicht indexiert", ""]

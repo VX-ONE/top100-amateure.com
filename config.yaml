@@ -20,10 +20,14 @@ site:
     vat_id: ""              # USt-IdNr., falls vorhanden
 
 affiliate:
-  # {subid} wird pro Seite durch den Seiten-Slug ersetzt, falls im Link enthalten.
-  # Das SubID-Format von VX Cash findest du im Partnerbereich; trage es dann hier ein,
-  # z. B. "https://vxcsh.com/1/40150?subid={subid}" (Parametername prüfen!).
-  url_template: "https://vxcsh.com/1/40150"
+  # {subid} wird pro Seite durch eine eigene fortlaufende Nummer ersetzt (ab subid_start).
+  # Die Zuordnung Seite -> Nummer steht in data/pages.json und im Tagesbericht.
+  # Prüfe im VX-Cash-Partnerbereich, dass der Parameter "ws" diese Nummern annimmt.
+  url_template: "https://www.flibzee.com/VX/LP/Top2Win/WM?w=40150&ws={subid}"
+  subid_start: 2610100
+  # Optional: eigenes Linkziel pro Thema (Themen-Schlüssel wie unter "topics"), gleiche Platzhalter erlaubt.
+  # Beispiel: grundlagen: "https://www.flibzee.com/VX/LP/DEINE-LANDINGPAGE?w=40150&ws={subid}"
+  topic_links: {}
   provider_name: "Visit-X"
   cta_label: "Zum Angebot von Visit-X"
 

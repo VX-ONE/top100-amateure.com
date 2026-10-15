@@ -19,8 +19,16 @@ def plain(text: str) -> str:
     return text.replace("**", "").replace("*", "").replace("#", "").strip()
 
 
-def affiliate_url(cfg: dict, slug: str) -> str:
-    return cfg["affiliate"]["url_template"].replace("{subid}", slug)
+def affiliate_url(cfg: dict, meta: dict) -> str:
+    """Linkziel pro Seite: Themen-Link falls konfiguriert, sonst Standardlink; {subid} = Nummer der Seite."""
+    aff = cfg["affiliate"]
+    template = (aff.get("topic_links") or {}).get(meta.get("topic")) or aff["url_template"]
+    return template.replace("{subid}", str(meta.get("subid") or meta["slug"]))
+
+
+def next_subid(cfg: dict, pages: dict) -> int:
+    used = [p["subid"] for p in pages.values() if isinstance(p.get("subid"), int)]
+    return max(used) + 1 if used else int(cfg["affiliate"].get("subid_start", 1))
 
 
 def fmt_date(iso: str) -> str:
@@ -79,7 +87,7 @@ def build_site(cfg: dict, store) -> dict:
         rel = [{"slug": r, "title": contents[r]["h1"]} for r in related.get(slug, [])]
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, meta=meta, canonical=f"{base}/{slug}/",
-            aff_url=affiliate_url(cfg, slug), related=rel, topic_label=labels.get(meta["topic"], ""),
+            aff_url=affiliate_url(cfg, meta), related=rel, topic_label=labels.get(meta["topic"], ""),
             published=fmt_date(meta["published_at"]), robots="index,follow",
         ))
 

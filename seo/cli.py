@@ -95,7 +95,7 @@ def cmd_run(cfg, args) -> int:
         store.save_content(slug, content)
         pages[slug] = {
             "slug": slug, "primary": cluster["primary"], "keywords": cluster["keywords"], "topic": cluster["topic"],
-            "title": content["title"], "published_at": today,
+            "title": content["title"], "published_at": today, "subid": render.next_subid(cfg, pages),
             "url": cfg["site"]["base_url"].rstrip("/") + f"/{slug}/",
             "indexed": None, "coverage": None, "checked_at": None, "clicks": 0, "impressions": 0, "position": None,
         }
