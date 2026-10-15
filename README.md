@@ -117,3 +117,16 @@ Schutz: Mindestalter 21 Tage, 28 Tage Pause je Seite, höchstens 3 Seiten pro Ta
 Qualitäts-Gate (Model-Seiten zusätzlich durch Sperrbegriffe und facts), die alte Fassung liegt in `data/history/`.
 Nach 21 Tagen wird verglichen. Ist die Position um 4 Plätze oder mehr schlechter, stellt der Optimierer die alte Fassung
 wieder her. Alles steht im Tagesbericht unter "Optimierung". Manuell: `python -m seo.cli optimize`.
+
+## Nischen-Keywords (Genres, ohne Namen)
+
+`python scripts/build_keywords.py` erzeugt `examples/keywords_nischen.csv`: Genre-Wörter der Amateur-Erotik
+(deutsch, amateur, reife, milf, paar, swinger ... mal Kernbegriffe wie porno, nackt, anal, creampie, joi ...,
+mit Zusätzen wie kostenlos, videos, live, cam). Die Zahlen sind eine Rangfolge-Schätzung, keine Suchvolumen.
+Import: `python -m seo.cli import-keywords examples/keywords_nischen.csv`. Ähnliche Begriffe (Synonyme wie porn/porno,
+deutsche/deutsch) landen auf einer Seite. Thema: "nischen" (eigene Überschrift, eigener Hinweis an das Modell).
+
+Grenzen im Code: gesperrt sind Bezüge zu Minderjährigen, fehlender Einwilligung, Leaks, Fälschungen, versteckten
+Kameras, Familie/Inzest, Gewalt, Tieren und Extremem (Liste `blocked_terms`, Treffer am Wortanfang). Namen von Personen
+und Fremdmarken sind nicht in der Wortliste und fallen automatisch heraus. Die Artikel bleiben nicht-explizit: ein
+Filter lehnt Vulgärsprache ab (`quality.EXPLICIT`). Sie erklären das Genre, nennen legale Angebote und Alternativen.

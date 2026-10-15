@@ -180,6 +180,73 @@ optimize:
 # Eigennamen, Künstlernamen und unbekannte Begriffe fallen automatisch heraus.
 # Reihenfolge = Priorität bei der Zuordnung zu einem Thema.
 topics:
+  nischen:
+    - deutsch
+    - deutsche
+    - deutsches
+    - deutscher
+    - reife
+    - reifer
+    - milf
+    - hausfrau
+    - hausfrauen
+    - paar
+    - paare
+    - pärchen
+    - swinger
+    - mollig
+    - mollige
+    - brünett
+    - brünette
+    - blond
+    - blonde
+    - rothaarig
+    - rothaarige
+    - tattoo
+    - tätowiert
+    - porn
+    - porno
+    - pornos
+    - sex
+    - sexvideos
+    - nackt
+    - nude
+    - xxx
+    - anal
+    - creampie
+    - blowjob
+    - handjob
+    - footjob
+    - squirt
+    - fetisch
+    - bdsm
+    - dirty talk
+    - striptease
+    - strip
+    - masturbation
+    - selbstbefriedigung
+    - dildo
+    - toy
+    - toys
+    - lingerie
+    - dessous
+    - high heels
+    - heels
+    - stiefel
+    - füße
+    - latex
+    - rollenspiel
+    - pov
+    - erotikvideos
+    - sexcam
+    - sexcams
+    - sexchat
+    - video
+    - videos
+    - clip
+    - clips
+    - filme
+    - live
   preise:
     - preis
     - preise
@@ -315,6 +382,7 @@ topic_labels:
   ablauf: "Ablauf und Anleitungen"
   technik: "Technik und Geräte"
   vergleich: "Vergleiche und Alternativen"
+  nischen: "Amateur-Erotik: Genres und Nischen"
   grundlagen: "Grundlagen"
   profile: "Models bei Visit-X"
 
@@ -404,24 +472,61 @@ vocab:
     - erkennen
     - einsteiger
 
-# Keywords, die diese Zeichenfolgen enthalten, werden nie verarbeitet (Teilstring-Vergleich).
+# Keywords und Artikeltexte mit diesen Begriffen (am Wortanfang, "tier" trifft also "Tierschutz", aber nicht "Anbieter") werden nie verarbeitet.
 # Eigene Namen kannst du zusätzlich in data/blocked_names.txt eintragen (eine Zeile pro Begriff).
+# Namen, Künstlernamen und Fremdmarken fallen schon dadurch heraus, dass nur Wörter aus "topics" erlaubt sind.
 blocked_terms:
-  - porn
-  - nude
-  - nackt
-  - xxx
-  - leak
-  - onlyfans
-  - fansly
-  - deepfake
-  - fake
-  - promi
+  # Minderjährige und Jugendliche
   - teen
   - minderj
   - schülerin
   - schueler
+  - schule
   - lolita
   - jugendlich
+  - jung
+  - kinder
+  - kind
+  # fehlende Einwilligung, Leaks, Fälschungen, Überwachung
+  - leak
+  - fake
+  - deepfake
+  - heimlich
+  - versteckte kamera
+  - versteckter kamera
+  - spycam
+  - hidden
+  - betrunken
+  - schlafend
+  - vergewalt
+  - zwang
+  - gewalt
+  - erpress
+  # Familie und Verwandtschaft (Inzest-Bezug)
+  - inzest
+  - stiefmutter
+  - stiefvater
+  - stiefschwester
+  - stiefbruder
+  - stieftochter
+  - stiefsohn
+  - mutter
+  - schwester
+  - bruder
+  - tochter
+  - vater
+  - papa
+  - mama
+  - oma
+  - opa
+  # Plattformen und Personen
+  - onlyfans
+  - fansly
+  - promi
   - torrent
   - download
+  # Extremes
+  - piss
+  - scat
+  - tier
+  - folter

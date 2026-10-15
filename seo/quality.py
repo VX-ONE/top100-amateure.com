@@ -3,13 +3,16 @@ from __future__ import annotations
 
 import re
 
-from .keywords import load_blocked, normalize
+from .keywords import blocked_hit, load_blocked, normalize
 
 FAKE_EXPERIENCE = [
     "ich habe getestet", "wir haben getestet", "in meinem test", "in unserem test", "unser test ergab",
     "mein erfahrungsbericht", "unser erfahrungsbericht", "ich habe ausprobiert", "wir haben ausprobiert",
     "meine erfahrung mit", "unsere erfahrung mit",
 ]
+# Artikel bleiben nicht-explizit: Vulgärsprache und Schilderungen werden abgelehnt (ganze Wörter).
+EXPLICIT = re.compile(r"(?<![\wäöüß])(fick\w*|gefickt\w*|schwanz\w*|muschi\w*|fotze\w*|titten\w*|sperma\w*|"
+                      r"abspritz\w*|wichs(?:en|t|e)|blasen|lecken|pimmel\w*|arsch\w*|geil\w*|orgasmus\w*)(?![\wäöüß])", re.I)
 _PRICE = re.compile(r"\d+(?:[.,]\d+)?\s?(?:€|eur\b|euro\b)", re.I)
 
 
@@ -77,10 +80,12 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
     text = article_text(c)
     low = normalize(text)
 
-    for term in (load_blocked(cfg) if blocked is None else blocked):
-        if term in low:
-            issues.append(f"Gesperrter Begriff im Text: {term}")
-            break
+    hit = blocked_hit(low, load_blocked(cfg) if blocked is None else blocked)
+    if hit:
+        issues.append(f"Gesperrter Begriff im Text: {hit}")
+    m = EXPLICIT.search(text)
+    if m:
+        issues.append(f"Zu explizit ('{m.group(0)}'): sachlich und ohne Vulgärsprache formulieren.")
     for phrase in FAKE_EXPERIENCE:
         if phrase in low:
             issues.append(f"Erfundener Erfahrungsbericht ('{phrase}'): bitte neutral als Ratgeber formulieren.")

@@ -68,6 +68,14 @@ def load_blocked(cfg: dict) -> list[str]:
     return [t for t in terms if t]
 
 
+def blocked_hit(text: str, terms: list[str]) -> str | None:
+    """Erster gesperrter Begriff, der am Wortanfang im Text steht (ganze Wörter und Wortanfänge)."""
+    for term in terms:
+        if re.search(rf"(?<![\wäöüß]){re.escape(term)}", text):
+            return term
+    return None
+
+
 def classify(kw: str, cfg: dict, vocab: Vocab, blocked: list[str]) -> tuple[bool, str | None, str]:
     """Gibt (ok, thema, grund) zurück."""
     k = normalize(kw)
@@ -75,9 +83,9 @@ def classify(kw: str, cfg: dict, vocab: Vocab, blocked: list[str]) -> tuple[bool
     lo, hi = cfg["keywords"]["min_tokens"], cfg["keywords"]["max_tokens"]
     if not lo <= len(toks) <= hi:
         return False, None, f"Länge ({len(toks)} Wörter)"
-    for term in blocked:
-        if term in k:
-            return False, None, f"gesperrter Begriff: {term}"
+    hit = blocked_hit(k, blocked)
+    if hit:
+        return False, None, f"gesperrter Begriff: {hit}"
 
     rest = f" {k} "
     matched: list[str] = []
@@ -89,7 +97,7 @@ def classify(kw: str, cfg: dict, vocab: Vocab, blocked: list[str]) -> tuple[bool
     for tok in rest.split():
         if tok in vocab.words:
             matched.append(tok)
-        elif re.fullmatch(r"\d{1,4}", tok):
+        elif re.fullmatch(r"\d{1,4}", tok) and tok not in ("18", "19"):
             continue
         else:
             return False, None, f"unbekanntes Wort: {tok}"
@@ -186,8 +194,16 @@ def llm_screen(keywords: list[str], cfg: dict) -> set[str]:
 # ---------- Clustering ----------
 
 
+SYNONYMS = {"porn": "porno", "pornos": "porno", "deutsche": "deutsch", "deutsches": "deutsch", "deutscher": "deutsch",
+            "amateure": "amateur", "reifer": "reife", "hausfrauen": "hausfrau", "paare": "paar", "pärchen": "paar",
+            "mollige": "mollig", "brünette": "brünett", "blonde": "blond", "rothaarige": "rothaarig",
+            "nude": "nackt", "kostenlose": "kostenlos", "gratis": "kostenlos", "umsonst": "kostenlos",
+            "sexvideos": "videos", "erotikvideos": "videos", "video": "videos", "clip": "clips",
+            "livecams": "livecam", "cams": "cam", "sexcams": "sexcam", "toy": "toys", "heels": "heels"}
+
+
 def _tokset(kw: str, vocab: Vocab) -> set[str]:
-    return {t for t in kw.split() if t not in vocab.generic}
+    return {SYNONYMS.get(t, t) for t in kw.split() if t not in vocab.generic}
 
 
 def _jaccard(a: set[str], b: set[str]) -> float:

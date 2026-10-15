@@ -27,6 +27,11 @@ INTENT_HINTS = {
     "technik": "Die Leser wollen wissen, was technisch nötig ist und wie es auf ihrem Gerät funktioniert.",
     "vergleich": "Die Leser vergleichen Angebote und brauchen verlässliche Kriterien statt Marketingaussagen.",
     "grundlagen": "Die Leser wollen eine verständliche Einführung und eine Einordnung.",
+    "nischen": ("Die Leser suchen ein Genre oder eine Nische der Amateur-Erotik. Erkläre sachlich und ohne explizite "
+                "Schilderung, was der Begriff meint, wie legale und einvernehmliche Angebote zu erkennen sind "
+                "(Anbieter mit Altersprüfung, Verträgen und Einwilligung der Beteiligten), was Live-Cams und Videos "
+                "dazu grundsätzlich bieten, worauf bei Kosten, Datenschutz und Jugendschutz zu achten ist, und nenne "
+                "Alternativen. Keine Beschreibung von Handlungen, keine Wörter aus der Vulgärsprache."),
 }
 
 SCHEMA = """{
