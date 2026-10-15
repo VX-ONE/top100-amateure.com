@@ -83,7 +83,12 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
     text = article_text(c)
     low = normalize(text)
 
-    hit = blocked_hit(low, load_blocked(cfg) if blocked is None else blocked)
+    if blocked is None:
+        allowed = {normalize(t) for t in cfg.get("text_allowed_terms", [])}
+        terms = [t for t in load_blocked(cfg) if t not in allowed]
+    else:
+        terms = blocked
+    hit = blocked_hit(low, terms)
     if hit:
         issues.append(f"Gesperrter Begriff im Text: {hit}")
     m = EXPLICIT.search(text)

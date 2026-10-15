@@ -176,6 +176,7 @@ def cmd_run(cfg, args) -> int:
     per_topic_cap = max(1, math.ceil(budget / 2))
     topic_count: dict[str, int] = {}
     published = tried = 0
+    runlog: list[str] = []
 
     for cluster in queue:
         if published >= budget or tried >= budget * 3:
@@ -191,13 +192,16 @@ def cmd_run(cfg, args) -> int:
             except Exception as e:
                 issues = [f"Generierung fehlgeschlagen: {type(e).__name__}: {e}"]
                 print(f"  [{cluster['slug']}] Versuch {attempt}: {issues[0]}")
+                runlog.append(f"{cluster['slug']} Versuch {attempt}: {issues[0]}")
                 continue
             issues = quality.check(draft, cluster, cfg, facts, texts, relaxed=mock, titles=titles)
             if not issues:
                 content = draft
                 break
             print(f"  [{cluster['slug']}] Versuch {attempt} abgelehnt: {issues[0]}")
+            runlog.append(f"{cluster['slug']} Versuch {attempt} ({quality.word_count(draft)} Wörter): " + " | ".join(issues))
         if content is None:
+            cluster["last_issues"] = (issues or [])[:3]
             cluster["fail_count"] = cluster.get("fail_count", 0) + 1
             if cluster["fail_count"] >= 3:
                 cluster["status"] = "failed"
@@ -220,6 +224,10 @@ def cmd_run(cfg, args) -> int:
         published += 1
         print(f"  veröffentlicht: /{slug}/  ({cluster['primary']})")
 
+    if runlog:
+        lp = Path(cfg["_reports"]) / f"{today}-lauf.log"
+        lp.parent.mkdir(parents=True, exist_ok=True)
+        lp.write_text("\n".join(runlog) + "\n", encoding="utf-8")
     published += run_models(cfg, store, pages, state, texts, titles, facts, mock, today)
 
     store.save_clusters(clusters)

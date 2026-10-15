@@ -509,6 +509,9 @@ vocab:
 
 # Keywords und Artikeltexte mit diesen Begriffen (am Wortanfang, "tier" trifft also "Tierschutz", aber nicht "Anbieter") werden nie verarbeitet.
 # Eigene Namen kannst du zusätzlich in data/blocked_names.txt eintragen (eine Zeile pro Begriff).
+# Im Artikeltext dürfen die Begriffe aus text_allowed_terms vorkommen, weil Warnhinweise sie brauchen
+# ("Minderjährige haben keinen Zutritt", "Finger weg von Leaks"). Als Keyword bleiben sie gesperrt.
+text_allowed_terms: [minderj, jugendlich, kind, leak, fake, zwang, gewalt, heimlich, hidden]
 # Namen, Künstlernamen und Fremdmarken fallen schon dadurch heraus, dass nur Wörter aus "topics" erlaubt sind.
 blocked_terms:
   # Minderjährige und Jugendliche
