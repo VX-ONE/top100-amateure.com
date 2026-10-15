@@ -90,6 +90,9 @@ def valid_keywords(model: dict, cfg: dict) -> list[str]:
 def text_problems(text: str, model: dict, cfg: dict) -> list[str]:
     """Prüft den fertigen Artikel auf gesperrte Begriffe (ganze Wörter) und fremde Personennamen-Hinweise."""
     low = " " + normalize(text) + " "
+    for v in model["variants"]:
+        low = low.replace(f" {v} ", " ")
+    low = re.sub(r"\bchloe privat\b", " ", low)
     issues = []
     for term in cfg["models"]["blocked_terms"]:
         t = normalize(term)

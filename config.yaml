@@ -48,7 +48,7 @@ affiliate:
 
 models:
   per_day: 4                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)
-  min_words: 450
+  min_words: 600
   max_similarity: 0.80
   # Erlaubte Zusatzwörter in Keywords neben dem Namen. Alles andere wird aussortiert.
   keyword_words:
