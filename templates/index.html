@@ -11,6 +11,20 @@
   <p class="lead">{{ site.tagline }}</p>
   <p class="chips">{% for g in groups %}<a class="chip" href="#{{ g.topic }}">{{ g.label }} <span>{{ g.count }}</span></a>{% endfor %}</p>
 </section>
+{% if top_models %}
+<section class="block">
+  <h2>Top-Models bei Visit-X</h2>
+  <div class="grid">{% for m in top_models %}
+    <div class="card">
+      {% if m.img %}<a href="/{{ m.slug }}/"><img src="{{ m.img }}" alt="" width="1200" height="630" loading="lazy"></a>{% endif %}
+      <span class="card-body"><strong>{{ m.name }}</strong>
+        <span><a class="btn" href="{{ m.url }}" rel="sponsored nofollow noopener" target="_blank">Zum Profil bei Visit-X</a></span>
+        <a class="more" href="/{{ m.slug }}/">Infos zu {{ m.name }} &rsaquo;</a></span>
+    </div>{% endfor %}
+  </div>
+  <p><a class="more" href="/themen/profile/">Alle Models ansehen &rsaquo;</a></p>
+</section>
+{% endif %}
 {% if latest %}
 <section class="block">
   <h2>Neu im Ratgeber</h2>
