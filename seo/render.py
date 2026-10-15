@@ -8,6 +8,7 @@ from pathlib import Path
 import markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+from . import models as modelmod
 from .quality import article_text
 
 
@@ -85,9 +86,17 @@ def build_site(cfg: dict, store) -> dict:
     for slug, c in contents.items():
         meta = pages[slug]
         rel = [{"slug": r, "title": contents[r]["h1"]} for r in related.get(slug, [])]
+        is_model = meta.get("kind") == modelmod.PAGE_KIND
+        if is_model:
+            ctas = [{"label": l["label"], "url": l["url"]} for l in modelmod.links_for(cfg, meta.get("model"))]
+        else:
+            ctas = []
+        if not ctas:
+            ctas = [{"label": ctx["cta_label"], "url": affiliate_url(cfg, meta)}]
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, meta=meta, canonical=f"{base}/{slug}/",
-            aff_url=affiliate_url(cfg, meta), related=rel, topic_label=labels.get(meta["topic"], ""),
+            ctas=ctas, is_model=is_model, model_name=meta.get("model", ""),
+            related=rel, topic_label=labels.get(meta["topic"], ""),
             published=fmt_date(meta["published_at"]), robots="index,follow",
         ))
 
@@ -95,7 +104,7 @@ def build_site(cfg: dict, store) -> dict:
     for slug, meta in sorted(pages.items(), key=lambda x: x[1]["published_at"], reverse=True):
         if slug in contents:
             groups.setdefault(meta["topic"], []).append({"slug": slug, "title": contents[slug]["h1"]})
-    ordered = [(labels.get(t, t), groups[t]) for t in cfg["topics"] if t in groups]
+    ordered = [(labels.get(t, t), groups[t]) for t in [*cfg["topics"], modelmod.TOPIC] if t in groups]
     write("index.html", env.get_template("index.html").render(
         **ctx, groups=ordered, canonical=f"{base}/", robots="index,follow",
         title=cfg["site"]["name"], description=cfg["site"]["tagline"]))

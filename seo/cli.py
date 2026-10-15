@@ -7,7 +7,7 @@ import sys
 from datetime import date
 
 from . import config as cfgmod
-from . import generate, gsc, keywords, publish, quality, render
+from . import generate, gsc, keywords, models as modelmod, publish, quality, render
 from .store import Store
 
 
@@ -23,6 +23,58 @@ def cmd_import(cfg, args) -> int:
     return 0
 
 
+def run_models(cfg, store, pages, state, texts, titles, facts, mock, today) -> int:
+    """Erzeugt neutrale Profilseiten für aktive Models (zusätzlich zum Tageslimit der Themenseiten)."""
+    if state["throttle"]["active"] or modelmod.TOPIC in state["paused_topics"]:
+        return 0
+    lim = cfg["models"]
+    todo = max(0, lim["per_day"] - sum(1 for p in pages.values()
+                                       if p.get("kind") == modelmod.PAGE_KIND and p["published_at"] == today))
+    created = 0
+    for model in modelmod.load_models(cfg):
+        if created >= todo:
+            break
+        if not model["active"] or model["slug"] in pages:
+            continue
+        keywords_ok = modelmod.valid_keywords(model, cfg)
+        if not keywords_ok or not model["facts"] or not model["links"]:
+            print(f"  [{model['slug']}] übersprungen: Keywords, facts und landing_links müssen in data/models.yaml stehen.")
+            continue
+        cluster = {"slug": model["slug"], "primary": keywords_ok[0], "keywords": keywords_ok, "topic": modelmod.TOPIC}
+        issues: list[str] | None = None
+        content = None
+        for attempt in range(1, cfg["limits"]["max_attempts"] + 1):
+            try:
+                draft = generate.generate_model(model, cluster, cfg, facts, titles, issues, mock=mock)
+            except Exception as e:
+                issues = [f"Generierung fehlgeschlagen: {type(e).__name__}: {e}"]
+                print(f"  [{model['slug']}] Versuch {attempt}: {issues[0]}")
+                continue
+            issues = quality.check(draft, cluster, cfg, "\n".join(model["facts"]) + "\n" + facts, texts,
+                                   relaxed=mock, blocked=[], min_words=lim["min_words"],
+                                   max_sim_limit=lim["max_similarity"])
+            issues += modelmod.text_problems(quality.article_text(draft), model, cfg)
+            if not issues:
+                content = draft
+                break
+            print(f"  [{model['slug']}] Versuch {attempt} abgelehnt: {issues[0]}")
+        if content is None:
+            continue
+        store.save_content(model["slug"], content)
+        pages[model["slug"]] = {
+            "slug": model["slug"], "primary": cluster["primary"], "keywords": keywords_ok, "topic": modelmod.TOPIC,
+            "kind": modelmod.PAGE_KIND, "model": model["name"],
+            "title": content["title"], "published_at": today,
+            "url": cfg["site"]["base_url"].rstrip("/") + f"/{model['slug']}/",
+            "indexed": None, "coverage": None, "checked_at": None, "clicks": 0, "impressions": 0, "position": None,
+        }
+        texts[model["slug"]] = quality.article_text(content)
+        titles.append(content["title"])
+        created += 1
+        print(f"  Profilseite veröffentlicht: /{model['slug']}/  ({cluster['primary']})")
+    return created
+
+
 def cmd_run(cfg, args) -> int:
     mock = args.mock
     if not mock:
@@ -34,6 +86,9 @@ def cmd_run(cfg, args) -> int:
             return 2
 
     store = Store(cfg["_data"])
+    removed = modelmod.apply_blocklist(cfg, store)
+    if removed:
+        print(f"Model-Seiten entfernt (inaktiv oder gesperrt): {', '.join(removed)}")
     state = store.state()
     pages = store.pages()
     today = date.today().isoformat()
@@ -43,7 +98,7 @@ def cmd_run(cfg, args) -> int:
     if state["throttle"]["active"]:
         budget = min(budget, cfg["monitor"]["throttle_to"])
         print(f"Drosselung aktiv: höchstens {budget} Seite(n) heute.")
-    budget -= sum(1 for p in pages.values() if p["published_at"] == today)
+    budget -= sum(1 for p in pages.values() if p["published_at"] == today and p.get("kind") != modelmod.PAGE_KIND)
     if budget <= 0:
         print("Das Tageslimit ist bereits erreicht.")
         return 0
@@ -54,7 +109,6 @@ def cmd_run(cfg, args) -> int:
                    key=lambda c: (-c["impressions"], c["primary"]))
     if not queue:
         print("Die Keyword-Warteschlange ist leer (oder alle Themen sind pausiert). Importiere neue Keywords.")
-        return 0
 
     facts = generate.load_facts(cfg["_root"])
     contents = store.all_content()
@@ -106,11 +160,13 @@ def cmd_run(cfg, args) -> int:
         published += 1
         print(f"  veröffentlicht: /{slug}/  ({cluster['primary']})")
 
+    published += run_models(cfg, store, pages, state, texts, titles, facts, mock, today)
+
     store.save_clusters(clusters)
     store.save_pages(pages)
     info = render.build_site(cfg, store)
     print(f"Seite gebaut: {info['pages']} Seiten, {info['sitemap_urls']} Sitemap-URLs.")
-    print(f"Heute neu: {published} von {budget} geplant.")
+    print(f"Heute neu: {published} (Themenseiten geplant: {budget}).")
 
     if mock or args.no_publish:
         print("Veröffentlichung übersprungen.")
@@ -142,7 +198,11 @@ def cmd_monitor(cfg, args) -> int:
 
 
 def cmd_build(cfg, args) -> int:
-    info = render.build_site(cfg, Store(cfg["_data"]))
+    store = Store(cfg["_data"])
+    removed = modelmod.apply_blocklist(cfg, store)
+    if removed:
+        print(f"Model-Seiten entfernt (inaktiv oder gesperrt): {', '.join(removed)}")
+    info = render.build_site(cfg, store)
     print(f"Seite gebaut: {info['pages']} Seiten, {info['sitemap_urls']} Sitemap-URLs -> {cfg['_site']}")
     return 0
 

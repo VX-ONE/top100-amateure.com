@@ -47,8 +47,9 @@
 
   <section class="cta">
     <p>{{ c.cta_text }}</p>
-    <p><a class="btn" href="{{ aff_url }}" rel="sponsored nofollow noopener" target="_blank">{{ cta_label }}</a></p>
-    <p class="small">Werbung: Affiliate-Link. Für dich entstehen keine Mehrkosten. Nur für Personen ab 18 Jahren.</p>
+    <p>{% for cta in ctas %}<a class="btn" href="{{ cta.url }}" rel="sponsored nofollow noopener" target="_blank">{{ cta.label }}</a> {% endfor %}</p>
+    <p class="small">Werbung: Affiliate-Links. Für dich entstehen keine Mehrkosten. Nur für Personen ab 18 Jahren.</p>
+    {% if is_model %}<p class="small">Unabhängiger Ratgeber: Diese Seite wird weder von {{ model_name }} noch von {{ provider }} betrieben.</p>{% endif %}
   </section>
 
   {% if related %}

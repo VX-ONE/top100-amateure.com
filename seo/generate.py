@@ -177,3 +177,60 @@ def generate(cluster: dict, cfg: dict, facts: str, other_titles: list[str],
         return clean_content(mock_generate(cluster, cfg, issues))
     text = call_claude(cfg, build_prompt(cluster, cfg, facts, other_titles, issues))
     return clean_content(parse_json(text))
+
+
+# ---------- Model-Profilseiten ----------
+
+MODEL_SYSTEM = """Du bist Redakteur einer unabhängigen Informationsseite über Live-Cam- und Videoangebote für Erwachsene. Du schreibst eine neutrale, sachliche Profilseite über ein Model auf Deutsch für Leser ab 18 Jahren.
+
+Harte Regeln:
+1. Nenne ausschließlich den Bühnennamen aus der Eingabe. Keine echten Namen, kein Alter, keine Angaben zu Aussehen oder Körper, kein Wohnort, kein Privatleben, keine Social-Media-Konten, keine Aussagen über andere Personen.
+2. Über das Model und das Angebot behauptest du nur, was im Abschnitt FAKTEN steht. Keine Zahlen, keine Bewertungen, keine Auszeichnungen, keine Preise, keine Aussagen zu Inhalten, die dort nicht genannt sind. Alles Weitere formulierst du allgemein ("laut Anbieter", "die aktuellen Bedingungen stehen beim Anbieter").
+3. Keine expliziten Schilderungen und keine Beschreibung sexueller Handlungen. Die Seite informiert: was es beim Anbieter zu dem Namen gibt, wie Videos, Direkt-Chat und Live-Shows grundsätzlich funktionieren, worauf man bei Kosten, Abrechnung, Datenschutz und Jugendschutz achten sollte.
+4. Keine erfundenen Erfahrungsberichte, Testimonials oder Ich-/Wir-Tests. Keine Hinweise auf geleaktes, privates oder fremdes Material. Weise darauf hin, dass nur Inhalte genutzt werden sollten, die der Anbieter offiziell bereitstellt.
+5. Stelle klar, dass die Seite ein unabhängiger Ratgeber ist und nicht vom Model oder vom Anbieter betrieben wird.
+6. Das Hauptkeyword steht im Titel und in der Hauptüberschrift. Es darf dort wörtlich vorkommen, im Text bleibst du sachlich.
+7. Keine Links und kein HTML. Nur Markdown (Absätze, **fett**, Listen).
+Gib ausschließlich ein JSON-Objekt zurück, ohne Text davor oder danach."""
+
+
+def build_model_prompt(model: dict, cluster: dict, cfg: dict, facts: str, other_titles: list[str],
+                       issues: list[str] | None) -> str:
+    lim = cfg["models"]
+    extra = [k for k in cluster["keywords"] if k != cluster["primary"]][:10]
+    parts = [
+        f"Bühnenname des Models: {model['name']}",
+        f"Hauptkeyword: {cluster['primary']}",
+        f"Weitere Suchbegriffe, die natürlich vorkommen sollen: {', '.join(extra) if extra else '(keine)'}",
+        f"Anbieter: {cfg['affiliate']['provider_name']}",
+        f"Umfang: mindestens {lim['min_words']} Wörter, mindestens {cfg['limits']['min_sections']} Abschnitte, "
+        f"mindestens {cfg['limits']['min_faq']} FAQ-Einträge.",
+        "FAKTEN über das Model und das Angebot (einzige zulässige Quelle):\n- " + "\n- ".join(model["facts"]),
+        "Allgemeine Fakten über den Anbieter:\n" + (facts.strip() or "(keine)"),
+        "Mögliche Abschnitte: Was es bei Visit-X zu diesem Namen gibt (nur FAKTEN); Videos, Direkt-Chat und "
+        "Live-Shows allgemein erklärt; Kosten und Abrechnung, worauf man achten sollte; Jugendschutz, Datenschutz "
+        "und legale Nutzung; Alternativen und Vergleich mit anderen Angeboten.",
+    ]
+    if other_titles:
+        parts.append("Bereits vorhandene Artikel (anderer Schwerpunkt):\n- " + "\n- ".join(other_titles[-30:]))
+    if issues:
+        parts.append("Der letzte Entwurf wurde abgelehnt. Behebe diese Punkte:\n- " + "\n- ".join(issues))
+    parts.append("Antworte nur mit einem JSON-Objekt in genau diesem Format:\n" + SCHEMA)
+    return "\n\n".join(parts)
+
+
+def generate_model(model: dict, cluster: dict, cfg: dict, facts: str, other_titles: list[str],
+                   issues: list[str] | None = None, mock: bool = False) -> dict:
+    if mock:
+        return clean_content(mock_generate(cluster, cfg, issues))
+    import anthropic  # nur bei Bedarf
+
+    client = anthropic.Anthropic(max_retries=5)
+    resp = client.messages.create(
+        model=cfg["llm"]["model"],
+        max_tokens=cfg["llm"]["max_tokens"],
+        system=MODEL_SYSTEM,
+        messages=[{"role": "user", "content": build_model_prompt(model, cluster, cfg, facts, other_titles, issues)}],
+    )
+    text = "".join(b.text for b in resp.content if b.type == "text")
+    return clean_content(parse_json(text))

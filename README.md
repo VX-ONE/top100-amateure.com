@@ -51,6 +51,22 @@ werden und Traffic bringen. Läuft ohne eigenen Server über GitHub Actions und 
 | `python -m seo.cli status` | Stand der Warteschlange und der Seiten |
 | `--mock` / `--sandbox` (vor dem Befehl) | Testlauf ohne API bzw. in `.sandbox/` |
 
+## Model-Profilseiten (data/models.yaml)
+
+Zusätzlich zu den Themenseiten erzeugt die Pipeline neutrale Profilseiten für Models, die über VX Cash offiziell
+beworben werden (bis zu `models.per_day` neue Seiten pro Tag).
+
+- **Eintrag pro Model** in `data/models.yaml`: Bühnenname, Landingpage-Links mit deiner Kampagne, `facts` und `keywords`.
+- **Inhalt:** nur Aussagen aus `facts` (was du auf der offiziellen Landingpage siehst, ohne Zahlen). Keine Angaben zu
+  Aussehen, Alter, Wohnort oder Privatleben, keine expliziten Schilderungen, kein Leak- oder Fremdmaterial.
+- **Keywords:** Name plus erlaubte Zusatzwörter (`models.keyword_words` in `config.yaml`, z. B. porno, videos, live chat,
+  profil, visit x, gratis). Alles andere, etwa einzelne Praktiken, Privatangaben, "nudes", "xxx", "onlyfans", fällt automatisch heraus.
+- **Entfernen:** `active: false` setzen oder den Namen in `data/blocked_names.txt` eintragen. Die Seite verschwindet beim nächsten
+  Lauf oder mit `python -m seo.cli build`. Danach den Workflow "Tageslauf" einmal starten, damit die Änderung online geht.
+- **Kennzeichnung:** Jede Profilseite trägt den Hinweis, dass sie ein unabhängiger Ratgeber ist und nicht vom Model oder
+  vom Anbieter betrieben wird, dazu die Werbekennzeichnung.
+- Namen und Landingpages stimmst du bitte mit den Bedingungen von VX Cash und, wo nötig, mit den Models ab.
+
 ## Menge hochfahren
 
 Starte mit 5 Seiten pro Tag (`limits.daily_pages`). Erhöhe erst, wenn der Bericht nach 2 bis 3 Wochen zeigt,

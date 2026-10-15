@@ -20,16 +20,95 @@ site:
     vat_id: ""              # USt-IdNr., falls vorhanden
 
 affiliate:
-  # Kampagne "Top100-Amateure" = ws=2610001 (w=40150 ist die Partner-ID). Der Link ist auf allen Seiten gleich.
+  # Kampagne "Top100-Amateure" = ws=2610001 (w=40150 ist die Partner-ID). Standardlink für alle Themenseiten; Model-Profile nutzen ihre Links aus data/models.yaml.
   # Optional pro Seite: {subid} im Link wird durch eine fortlaufende Nummer ab subid_start ersetzt,
   # sobald VX Cash dafür einen eigenen Parameter anbietet (Name im Partnerbereich prüfen).
-  url_template: "https://www.flibzee.com/VX/LP/Top2Win/WM?w=40150&ws=2610001"
+  url_template: "https://visit-x.world/?w=40150&ws=2610001"
   subid_start: 2610100
   # Optional: eigenes Linkziel pro Thema (Themen-Schlüssel wie unter "topics"), gleiche Platzhalter erlaubt.
   # Beispiel: grundlagen: "https://www.flibzee.com/VX/LP/DEINE-LANDINGPAGE?w=40150&ws=2610001"
   topic_links: {}
   provider_name: "Visit-X"
   cta_label: "Zum Angebot von Visit-X"
+
+models:
+  per_day: 2                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)
+  min_words: 450
+  max_similarity: 0.80
+  # Erlaubte Zusatzwörter in Keywords neben dem Namen. Alles andere wird aussortiert.
+  keyword_words:
+    - porno
+    - pornos
+    - video
+    - videos
+    - live
+    - chat
+    - livechat
+    - cam
+    - livecam
+    - profil
+    - visit-x
+    - visit x
+    - visitx
+    - gratis
+    - kostenlos
+    - test
+    - kosten
+    - preise
+    - anmelden
+    - registrieren
+    - direkt-chat
+    - direktchat
+    - show
+    - shows
+    - top
+    - app
+    - und
+    - bei
+    - von
+    - mit
+    - auf
+    - online
+  # Werden zusätzlich im Artikeltext geprüft (ganze Wörter).
+  blocked_terms:
+    - nude
+    - nudes
+    - nackt
+    - xxx
+    - leak
+    - leaks
+    - leaked
+    - onlyfans
+    - fansly
+    - deepfake
+    - fake
+    - torrent
+    - download
+    - alter
+    - geburtstag
+    - wohnort
+    - adresse
+    - telefonnummer
+    - whatsapp
+    - snapchat
+    - instagram
+    - telegram
+    - tiktok
+    - privat
+    - echter name
+    - echte name
+    - freund
+    - verheiratet
+    - familie
+    - kinder
+    - footjob
+    - creampie
+    - anal
+    - gangbang
+    - squirt
+    - latex
+    - teen
+    - minderjährig
 
 gsc:
   # Domain-Property: "sc-domain:deine-domain.de"  oder URL-Präfix: "https://deine-domain.de/"
@@ -213,6 +292,7 @@ topic_labels:
   technik: "Technik und Geräte"
   vergleich: "Vergleiche und Alternativen"
   grundlagen: "Grundlagen"
+  profile: "Models bei Visit-X"
 
 vocab:
   # Markenbegriffe sind erlaubt, begründen aber allein kein Thema

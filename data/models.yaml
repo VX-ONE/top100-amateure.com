@@ -1,0 +1,38 @@
+# Neutrale Profilseiten zu Models (Bühnennamen), die über VX Cash offiziell beworben werden.
+#
+# Regeln für diese Datei:
+# - Nur Bühnennamen, wie sie auf der Plattform stehen. Keine echten Namen, keine Privatangaben.
+# - "facts": nur Aussagen, die du auf der offiziellen VX-Cash-Landingpage selbst siehst, ohne Zahlen
+#   (Zähler und Aktionen ändern sich). Die Artikel dürfen über das Model nichts behaupten, was hier nicht steht.
+# - "keywords": Name plus erlaubte Zusatzwörter (siehe config.yaml, Abschnitt models: keyword_words).
+#   Alles andere wird beim Erzeugen automatisch aussortiert.
+# - Model entfernen: "active: false" setzen oder den Namen in data/blocked_names.txt eintragen.
+#   Beim nächsten Lauf (oder Befehl "build") verschwindet die Seite.
+
+models:
+  - name: "Lia Engel"
+    active: true
+    name_variants: ["liaengel"]
+    landing_links:
+      - label: "Zum Profil von {name} bei Visit-X"
+        url: "https://www.flibzee.com/VX/LP/Top2Win/WM?w=40150&ws=2610001"
+      - label: "Zur Top 10 von {name}"
+        url: "https://www.flibzee.com/VX/LP/FreeTop10/WM?w=40150&ws=2610001"
+    facts:
+      - "{name} hat ein Profil bei Visit-X."
+      - "Auf der offiziellen Landingpage von Visit-X werden Videos von {name} genannt, die dort angesehen werden können."
+      - "Auf der offiziellen Landingpage von Visit-X wird ein Direkt-Chat mit {name} genannt."
+      - "Auf der offiziellen Landingpage von Visit-X werden Live-Shows mit Toy-Control genannt."
+      - "Auf der offiziellen Landingpage von Visit-X wird zeitweise eine Gratis-Aktion genannt. Die Bedingungen stehen auf der Seite des Anbieters."
+    keywords:
+      - lia engel porno
+      - lia engel pornos
+      - lia engel videos
+      - lia engel live chat
+      - lia engel livecam
+      - lia engel profil
+      - lia engel visit x
+      - lia engel gratis
+      - lia engel kostenlos
+      - liaengel porno
+      - liaengel videos

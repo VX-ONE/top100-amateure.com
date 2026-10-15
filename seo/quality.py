@@ -43,8 +43,11 @@ def max_similarity(text: str, existing: dict[str, str]) -> tuple[float, str | No
 
 
 def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[str, str],
-          relaxed: bool = False) -> list[str]:
-    """Gibt eine Liste von Problemen zurück. Leer = Seite darf veröffentlicht werden."""
+          relaxed: bool = False, blocked: list[str] | None = None,
+          min_words: int | None = None, max_sim_limit: float | None = None) -> list[str]:
+    """Gibt eine Liste von Problemen zurück. Leer = Seite darf veröffentlicht werden.
+
+    blocked/min_words/max_sim_limit überschreiben die Standardwerte (genutzt für Model-Profilseiten)."""
     lim = cfg["limits"]
     issues: list[str] = []
 
@@ -55,7 +58,7 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
         return issues
 
     wc = word_count(c)
-    min_words = 150 if relaxed else lim["min_words"]
+    min_words = 150 if relaxed else (min_words or lim["min_words"])
     if wc < min_words:
         issues.append(f"Zu kurz: {wc} Wörter, gefordert sind mindestens {min_words}.")
     if len(c.get("sections", [])) < lim["min_sections"]:
@@ -74,7 +77,7 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
     text = article_text(c)
     low = normalize(text)
 
-    for term in load_blocked(cfg):
+    for term in (load_blocked(cfg) if blocked is None else blocked):
         if term in low:
             issues.append(f"Gesperrter Begriff im Text: {term}")
             break
@@ -89,7 +92,7 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
             issues.append(f"Preisangabe '{m}' steht nicht in facts.md: entfernen oder allgemein formulieren.")
             break
 
-    max_sim = 0.9 if relaxed else lim["max_similarity"]
+    max_sim = 0.9 if relaxed else (max_sim_limit or lim["max_similarity"])
     sim, other = max_similarity(text, existing_texts)
     if sim >= max_sim:
         issues.append(f"Zu ähnlich zu '{other}' (Ähnlichkeit {sim:.2f}, erlaubt unter {max_sim}): "
