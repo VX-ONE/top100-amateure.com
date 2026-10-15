@@ -12,17 +12,20 @@
   article,
   {"@type": "BreadcrumbList", "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": site.name, "item": canonical.rsplit("/", 2)[0] + "/"},
-    {"@type": "ListItem", "position": 2, "name": c.h1, "item": canonical}]},
+    {"@type": "ListItem", "position": 2, "name": topic_label, "item": hub_url},
+    {"@type": "ListItem", "position": 3, "name": c.h1, "item": canonical}]},
   {"@type": "FAQPage", "mainEntity": faq_ld}
 ]}|tojson }}</script>
 {% endblock %}
 {% block main %}
 <article class="article">
-  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; {{ topic_label }}</nav>
+  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/themen/{{ meta.topic }}/">{{ topic_label }}</a></nav>
   <h1>{{ c.h1 }}</h1>
   <p class="meta">Stand: {{ published }}</p>
   {% if image %}<figure class="hero"><img src="{{ image.svg }}" alt="{{ image.alt }}" width="1200" height="630" fetchpriority="high"></figure>{% endif %}
   <div class="intro">{{ c.intro|md|safe }}</div>
+
+  <p class="cta-inline">{% for cta in ctas %}<a class="btn" href="{{ cta.url }}" rel="sponsored nofollow noopener" target="_blank">{{ cta.label }}</a> {% endfor %}<span class="small">Werbung</span></p>
 
   {% if c.key_takeaways %}
   <aside class="takeaways">

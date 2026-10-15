@@ -47,7 +47,8 @@ def max_similarity(text: str, existing: dict[str, str]) -> tuple[float, str | No
 
 def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[str, str],
           relaxed: bool = False, blocked: list[str] | None = None,
-          min_words: int | None = None, max_sim_limit: float | None = None) -> list[str]:
+          min_words: int | None = None, max_sim_limit: float | None = None,
+          titles: list[str] | None = None) -> list[str]:
     """Gibt eine Liste von Problemen zurück. Leer = Seite darf veröffentlicht werden.
 
     blocked/min_words/max_sim_limit überschreiben die Standardwerte (genutzt für Model-Profilseiten)."""
@@ -73,6 +74,8 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
     if not 80 <= len(c["meta_description"]) <= 165:
         issues.append(f"Meta-Beschreibung hat {len(c['meta_description'])} Zeichen, erlaubt sind 80 bis 165.")
 
+    if titles and normalize(c["title"]) in {normalize(t) for t in titles}:
+        issues.append("Der Titel existiert schon bei einer anderen Seite: eigenen, klar anderen Titel wählen.")
     primary = normalize(cluster["primary"])
     if primary not in normalize(c["title"] + " " + c["h1"]):
         issues.append("Das Hauptkeyword fehlt in Titel und Überschrift.")

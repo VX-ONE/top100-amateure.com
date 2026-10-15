@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="article">
+  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; {{ label }}</nav>
+  <h1>{{ label }}</h1>
+  {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
+  <ul class="hublist">{% for i in items %}<li><a href="/{{ i.slug }}/">{{ i.title }}</a></li>{% endfor %}</ul>
+</article>
+{% endblock %}

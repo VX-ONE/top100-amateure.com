@@ -122,6 +122,7 @@ def write_report(cfg: dict, pages: dict, health: dict, state: dict) -> Path:
     else:
         lines.append(f"- Indexierungsquote reifer Seiten: {health['ratio']:.0%} ({health['indexed']}/{health['mature']})")
     lines.append(f"- Drosselung aktiv: {'ja' if state['throttle']['active'] else 'nein'}")
+    lines.append(f"- Tagesmenge Themenseiten: {state.get('daily_pages') or cfg['limits']['daily_pages']} (Obergrenze {cfg['limits']['max_daily_pages']})")
     if state["paused_topics"]:
         lines.append("- Pausierte Themen: " + ", ".join(f"{k} ({v})" for k, v in state["paused_topics"].items()))
     lines += ["", "## Top-Seiten nach Impressionen", "", "| Seite | ws-Nr. | Thema | Indexiert | Impr. | Klicks | Pos. |", "|---|---|---|---|---|---|---|"]
@@ -136,6 +137,24 @@ def write_report(cfg: dict, pages: dict, health: dict, state: dict) -> Path:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return out
+
+
+def ramp(cfg: dict, state: dict, health: dict, today: date | None = None) -> None:
+    """Erhöht die Tagesmenge schrittweise, solange Google die Seiten gut indexiert (nie über max_daily_pages)."""
+    r = cfg["monitor"].get("ramp") or {}
+    today = today or date.today()
+    cur = state.get("daily_pages") or cfg["limits"]["daily_pages"]
+    if health["throttle"]:
+        return
+    if not r.get("enabled") or health["ratio"] is None or health["mature"] < cfg["monitor"]["min_sample"]:
+        return
+    if health["ratio"] < r.get("min_ratio", 0.6):
+        return
+    last = state.get("ramp_updated")
+    if last and (today - date.fromisoformat(last)).days < r.get("every_days", 7):
+        return
+    state["daily_pages"] = min(cfg["limits"]["max_daily_pages"], cur + r.get("step", 5))
+    state["ramp_updated"] = today.isoformat()
 
 
 def monitor(cfg: dict, store) -> dict:
@@ -175,6 +194,7 @@ def monitor(cfg: dict, store) -> dict:
     state = store.state()
     state["throttle"] = {"active": health["throttle"], "updated": date.today().isoformat()}
     state["paused_topics"] = health["paused"]
+    ramp(cfg, state, health)
     store.save_pages(pages)
     store.save_state(state)
     report = write_report(cfg, pages, health, state)

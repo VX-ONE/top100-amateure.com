@@ -8,7 +8,7 @@ from datetime import date
 from pathlib import Path
 
 from . import config as cfgmod
-from . import generate, gsc, images, keywords, models as modelmod, optimize, publish, quality, render
+from . import generate, gsc, images, indexnow, keywords, models as modelmod, optimize, publish, quality, render
 from .store import Store
 
 
@@ -106,7 +106,7 @@ def run_models(cfg, store, pages, state, texts, titles, facts, mock, today) -> i
                 continue
             issues = quality.check(draft, cluster, cfg, "\n".join(model["facts"]) + "\n" + facts, texts,
                                    relaxed=mock, blocked=[], min_words=lim["min_words"],
-                                   max_sim_limit=lim["max_similarity"])
+                                   max_sim_limit=lim["max_similarity"], titles=titles)
             issues += modelmod.text_problems(quality.article_text(draft), model, cfg)
             if not issues:
                 content = draft
@@ -149,7 +149,7 @@ def cmd_run(cfg, args) -> int:
     today = date.today().isoformat()
     lim = cfg["limits"]
 
-    budget = min(args.limit or lim["daily_pages"], lim["max_daily_pages"])
+    budget = min(args.limit or state.get("daily_pages") or lim["daily_pages"], lim["max_daily_pages"])
     if state["throttle"]["active"]:
         budget = min(budget, cfg["monitor"]["throttle_to"])
         print(f"Drosselung aktiv: höchstens {budget} Seite(n) heute.")
@@ -161,6 +161,7 @@ def cmd_run(cfg, args) -> int:
     if not mock:
         harvest(cfg, store)
     optimize_step(cfg, store, mock)
+    pages = store.pages()  # der Optimierer hat Seiten geändert: neu laden, sonst überschreibt das Speichern unten seine Änderungen
     clusters = store.clusters()
     paused = set(state["paused_topics"])
     queue = sorted((c for c in clusters if c["status"] == "queued" and c["topic"] not in paused),
@@ -191,14 +192,14 @@ def cmd_run(cfg, args) -> int:
                 issues = [f"Generierung fehlgeschlagen: {type(e).__name__}: {e}"]
                 print(f"  [{cluster['slug']}] Versuch {attempt}: {issues[0]}")
                 continue
-            issues = quality.check(draft, cluster, cfg, facts, texts, relaxed=mock)
+            issues = quality.check(draft, cluster, cfg, facts, texts, relaxed=mock, titles=titles)
             if not issues:
                 content = draft
                 break
             print(f"  [{cluster['slug']}] Versuch {attempt} abgelehnt: {issues[0]}")
         if content is None:
             cluster["fail_count"] = cluster.get("fail_count", 0) + 1
-            if cluster["fail_count"] >= 2:
+            if cluster["fail_count"] >= 3:
                 cluster["status"] = "failed"
                 cluster["reason"] = "; ".join(issues or [])[:300]
             continue
@@ -231,6 +232,7 @@ def cmd_run(cfg, args) -> int:
         print("Veröffentlichung übersprungen.")
         return 0
     print(publish.publish(cfg, published))
+    print(indexnow.submit(cfg, indexnow.todays_urls(pages)))
     if not args.no_gsc and published:
         try:
             svc = gsc.service(cfg)

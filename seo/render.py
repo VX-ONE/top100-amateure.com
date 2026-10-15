@@ -38,7 +38,7 @@ def fmt_date(iso: str) -> str:
     return f"{d}.{m}.{y}"
 
 
-def related_slugs(contents: dict[str, dict], n: int = 3) -> dict[str, list[str]]:
+def related_slugs(contents: dict[str, dict], n: int = 5) -> dict[str, list[str]]:
     slugs = list(contents)
     if len(slugs) < 2:
         return {s: [] for s in slugs}
@@ -77,6 +77,11 @@ def build_site(cfg: dict, store) -> dict:
     labels = cfg["topic_labels"]
     ctx = {"site": cfg["site"], "provider": cfg["affiliate"]["provider_name"],
            "cta_label": cfg["affiliate"]["cta_label"], "year": date.today().year}
+    topic_cta = cfg["affiliate"].get("topic_cta") or {}
+    hubs = set()
+    for sl, mt in pages.items():
+        if sl in contents:
+            hubs.add(mt["topic"])
 
     def write(rel: str, html: str) -> None:
         target = site_dir / rel
@@ -93,12 +98,12 @@ def build_site(cfg: dict, store) -> dict:
         else:
             ctas = []
         if not ctas:
-            ctas = [{"label": ctx["cta_label"], "url": affiliate_url(cfg, meta)}]
+            ctas = [{"label": topic_cta.get(meta["topic"]) or ctx["cta_label"], "url": affiliate_url(cfg, meta)}]
         image = imgmod.write_files(site_dir, slug, c, cfg["site"]["name"])
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
             ctas=ctas, is_model=is_model, model_name=meta.get("model", ""),
-            related=rel, topic_label=labels.get(meta["topic"], ""),
+            related=rel, topic_label=labels.get(meta["topic"], ""), hub_url=f"{base}/themen/{meta['topic']}/",
             published=fmt_date(meta.get("modified_at") or meta["published_at"]), robots="index,follow",
         ))
 
@@ -106,7 +111,15 @@ def build_site(cfg: dict, store) -> dict:
     for slug, meta in sorted(pages.items(), key=lambda x: x[1]["published_at"], reverse=True):
         if slug in contents:
             groups.setdefault(meta["topic"], []).append({"slug": slug, "title": contents[slug]["h1"]})
-    ordered = [(labels.get(t, t), groups[t]) for t in [*cfg["topics"], modelmod.TOPIC] if t in groups]
+    order = [t for t in [*cfg["topics"], modelmod.TOPIC] if t in groups]
+    ordered = [{"topic": t, "label": labels.get(t, t), "items": groups[t][:8], "count": len(groups[t])} for t in order]
+    intros = cfg.get("topic_intro") or {}
+    hub_tpl = env.get_template("hub.html")
+    for t in order:
+        write(f"themen/{t}/index.html", hub_tpl.render(
+            **ctx, topic=t, label=labels.get(t, t), intro=intros.get(t, ""), items=groups[t],
+            canonical=f"{base}/themen/{t}/", robots="index,follow", title=f"{labels.get(t, t)}: alle Ratgeber",
+            description=(intros.get(t) or labels.get(t, t))[:160], og_image=""))
     write("index.html", env.get_template("index.html").render(
         **ctx, groups=ordered, canonical=f"{base}/", robots="index,follow",
         title=cfg["site"]["name"], description=cfg["site"]["tagline"]))
@@ -119,11 +132,15 @@ def build_site(cfg: dict, store) -> dict:
         **ctx, canonical=f"{base}/", robots="noindex,follow", title="Seite nicht gefunden", description=""))
 
     urls = [(f"{base}/", max((p["published_at"] for p in pages.values()), default=date.today().isoformat()))]
+    urls += [(f"{base}/themen/{t}/", max(pages[i["slug"]]["published_at"] for i in groups[t])) for t in order]
     urls += [(f"{base}/{s}/", pages[s].get("modified_at") or pages[s]["published_at"]) for s in contents]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sitemap += [f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls]
     sitemap.append("</urlset>")
     write("sitemap.xml", "\n".join(sitemap) + "\n")
+    nowkey = (cfg.get("indexnow") or {}).get("key")
+    if nowkey and (cfg.get("indexnow") or {}).get("enabled"):
+        write(f"{nowkey}.txt", nowkey)
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {base}/sitemap.xml\n")
     return {"pages": len(contents), "sitemap_urls": len(urls)}

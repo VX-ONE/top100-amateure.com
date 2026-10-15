@@ -130,3 +130,16 @@ Grenzen im Code: gesperrt sind Bezüge zu Minderjährigen, fehlender Einwilligun
 Kameras, Familie/Inzest, Gewalt, Tieren und Extremem (Liste `blocked_terms`, Treffer am Wortanfang). Namen von Personen
 und Fremdmarken sind nicht in der Wortliste und fallen automatisch heraus. Die Artikel bleiben nicht-explizit: ein
 Filter lehnt Vulgärsprache ab (`quality.EXPLICIT`). Sie erklären das Genre, nennen legale Angebote und Alternativen.
+
+## Prüfung und Wachstum (Stand Audit)
+
+- **Blickwinkel:** Jede Seite bekommt einen festen Schwerpunkt (Kosten, Checkliste, Einsteiger, Sicherheit, Vergleich, Fehler,
+  Ablauf, Mythen, Fragen, Recht). Scheitert eine Seite am Ähnlichkeitsfilter, wird sie beim nächsten Versuch mit einem anderen
+  Blickwinkel geschrieben, erst nach drei Fehlversuchen gilt sie als gescheitert. Doppelte Titel werden abgelehnt.
+- **Themen-Hubs:** `/themen/<thema>/` listet alle Ratgeber eines Themas, die Startseite zeigt die neuesten und verlinkt dorthin.
+  Die Brotkrumen führen zum Hub (stärkt die interne Verlinkung).
+- **Button:** direkt nach der Einleitung und am Ende, Beschriftung je Thema (`affiliate.topic_cta`).
+- **Tagesmenge wächst automatisch:** Ist die Indexierungsquote reifer Seiten >= 60 %, steigt die Menge alle 7 Tage um 5 bis zur
+  Obergrenze (`monitor.ramp`). Bei Drosselung wächst nichts.
+- **IndexNow:** neue und geänderte URLs gehen nach dem Deploy an Bing, Yandex u. a. (`indexnow` in `config.yaml`).
+- **Optimierer und Tageslauf** laden Seiten vor dem Speichern neu, damit sich beide nicht überschreiben.

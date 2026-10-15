@@ -34,6 +34,25 @@ INTENT_HINTS = {
                 "Alternativen. Keine Beschreibung von Handlungen, keine Wörter aus der Vulgärsprache."),
 }
 
+ANGLES = [
+    "Kosten und Abrechnung: was man wissen und prüfen sollte",
+    "Checkliste zum Abhaken vor der Nutzung",
+    "Einsteiger-Guide: erste Schritte und typische Fragen",
+    "Sicherheit, Datenschutz und Diskretion",
+    "Vergleich und Alternativen mit klaren Kriterien",
+    "Häufige Fehler und wie man sie vermeidet",
+    "Ablauf Schritt für Schritt",
+    "Mythen und Fakten",
+    "Fragen und Antworten aus Sicht der Suchenden",
+    "Rechtliches, Jugendschutz und Einwilligung",
+]
+
+
+def pick_angle(cluster: dict) -> str:
+    import zlib
+    return ANGLES[(zlib.crc32(cluster["slug"].encode()) + cluster.get("fail_count", 0)) % len(ANGLES)]
+
+
 SCHEMA = """{
   "title": "SEO-Titel, 35-62 Zeichen, enthält das Hauptkeyword",
   "meta_description": "Beschreibung, 110-155 Zeichen, nennt den Nutzen, kein Clickbait",
@@ -83,6 +102,7 @@ def build_prompt(cluster: dict, cfg: dict, facts: str, other_titles: list[str], 
         f"Hauptkeyword: {cluster['primary']}",
         f"Weitere Suchbegriffe, die natürlich vorkommen sollen: {', '.join(extra) if extra else '(keine)'}",
         f"Thema: {cfg['topic_labels'].get(cluster['topic'], cluster['topic'])}. {INTENT_HINTS.get(cluster['topic'], '')}",
+        f"Blickwinkel dieser Seite (gibt Aufbau und Schwerpunkt vor): {pick_angle(cluster)}",
         f"Anbieter, auf den der Artikel am Ende neutral hinführt: {cfg['affiliate']['provider_name']}",
         f"Umfang: mindestens {lim['min_words']} Wörter insgesamt, mindestens {lim['min_sections']} Abschnitte, "
         f"mindestens {lim['min_faq']} FAQ-Einträge.",

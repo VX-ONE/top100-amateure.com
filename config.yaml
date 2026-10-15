@@ -30,6 +30,16 @@ affiliate:
   topic_links: {}
   provider_name: "Visit-X"
   cta_label: "Zum Angebot von Visit-X"
+  # Button-Text je Thema (ohne Versprechen, was dahinter passiert; der Link führt zur Anmeldung)
+  topic_cta:
+    preise: "Aktuelle Preise bei Visit-X ansehen"
+    gratis: "Angebote bei Visit-X ansehen"
+    sicherheit: "Visit-X selbst prüfen"
+    ablauf: "Zur Anmeldung bei Visit-X"
+    technik: "Visit-X im Browser öffnen"
+    vergleich: "Visit-X selbst vergleichen"
+    nischen: "Passende Angebote bei Visit-X ansehen"
+    grundlagen: "Zum Angebot von Visit-X"
 
 models:
   per_day: 2                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)
@@ -110,6 +120,12 @@ models:
     - teen
     - minderjährig
 
+# IndexNow: meldet neue und geänderte Seiten an Bing, Yandex und andere (nicht Google). Der Schlüssel ist öffentlich.
+indexnow:
+  enabled: true
+  key: "8febf01e7fb558e442278ab8c86bb55f"
+  delay_seconds: 150        # Wartezeit nach dem Push, bis Cloudflare die Seite ausgeliefert hat
+
 gsc:
   # Domain-Property: "sc-domain:deine-domain.de"  oder URL-Präfix: "https://deine-domain.de/"
   property: "sc-domain:top100amateure.com"
@@ -157,6 +173,13 @@ monitor:
   min_topic_ratio: 0.20                 # darunter wird ein Themen-Cluster pausiert
   min_topic_sample: 4
   throttle_to: 1                        # Seiten pro Tag bei aktiver Drosselung
+  # Wächst die Indexierungsquote (>= min_ratio bei genug reifen Seiten), steigt die Tagesmenge alle every_days Tage um step
+  # bis max_daily_pages. Bei Drosselung wächst nichts.
+  ramp:
+    enabled: true
+    min_ratio: 0.6
+    every_days: 7
+    step: 5
 
 # ---------- Optimierer ----------
 # Wertet täglich Position, Klickrate und Suchanfragen je Seite aus und verbessert Seiten mit Potenzial.
@@ -374,6 +397,18 @@ topics:
     - amateurcams
     - joi
     - wichsanleitung
+
+# Kurztext oben auf der Themenseite (Hub): sachlich, ohne Versprechen.
+topic_intro:
+  nischen: "Ratgeber zu Genres und Nischen der Amateur-Erotik: was die Begriffe bedeuten, woran du legale und einvernehmliche Angebote erkennst und worauf du bei Kosten, Datenschutz und Jugendschutz achten solltest."
+  preise: "Wie Preise und Abrechnung bei Live-Cams und Videoangeboten grundsätzlich funktionieren und worauf du vor dem ersten Guthaben achten solltest."
+  gratis: "Was ohne Kosten möglich ist, wo die Grenzen kostenloser Angebote liegen und wie du Gratis-Aktionen einordnest."
+  sicherheit: "Anonymität, Datenschutz, Abbuchungen und Seriosität: Kriterien, mit denen du Anbieter prüfst."
+  ablauf: "Schritt für Schritt: Anmeldung, Konto, Bezahlung und Nutzung, verständlich erklärt."
+  technik: "Geräte, Browser, App und Verbindung: was technisch nötig ist und wie es auf Handy und Rechner funktioniert."
+  vergleich: "Vergleiche und Alternativen mit klaren Kriterien statt Werbeversprechen."
+  grundlagen: "Einführungen zu Live-Cams, Amateurvideos und Erotik für Erwachsene."
+  profile: "Neutrale Informationsseiten zu Models, die bei Visit-X ein Profil haben."
 
 topic_labels:
   preise: "Preise und Abrechnung"
