@@ -1,10 +1,5 @@
 {% extends "base.html" %}
-{% macro card(i) %}
-<a class="card" href="/{{ i.slug }}/">
-  {% if i.img %}<img src="{{ i.img }}" alt="" width="1200" height="630" loading="lazy">{% endif %}
-  <span class="card-body"><strong>{{ i.title }}</strong>{% if i.text %}<span class="small">{{ i.text }}</span>{% endif %}</span>
-</a>
-{% endmacro %}
+{% from "_cards.html" import card, model_card %}
 {% block head %}
 <script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
   {"@type": "WebSite", "name": site.name, "url": canonical, "inLanguage": "de"},
@@ -15,47 +10,33 @@
 {% block main %}
 <section class="landing">
   <h1>Top 100 Amateure: die Top-Models bei {{ provider }}</h1>
-  <p class="lead">{{ site.tagline }}</p>
-  <p class="chips">{% for g in groups %}<a class="chip" href="#{{ g.topic }}">{{ g.label }} <span>{{ g.count }}</span></a>{% endfor %}</p>
+  <p class="lead">Finde die beliebtesten Amateur-Models, Live-Cams und Videos und erfahre, wie Kosten, Tokens und Anmeldung funktionieren.</p>
+  <div class="sections">{% for s in sec_data if s.count %}
+    <a class="section-tile s-{{ s.key }}" href="/{{ s.path }}/" style="--c:{{ s.color }}">
+      <span class="ico">{% if s.key == "models" %}<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="17" r="9" fill="currentColor"/><path d="M8 42c2-9 9-14 16-14s14 5 16 14z" fill="currentColor"/><path d="M37 6l2 4 4 .6-3 3 .7 4.4-3.7-2-3.7 2 .7-4.4-3-3 4-.6z" fill="#fde047"/></svg>{% elif s.key == "angebote" %}<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="26" rx="4" fill="currentColor"/><path d="M21 16v12l10-6z" fill="#fff"/><rect x="16" y="38" width="16" height="4" rx="2" fill="currentColor"/><circle cx="38" cy="9" r="5" fill="#ef4444"/></svg>{% else %}<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 8h14c2 0 2 1 2 3v29c-1-2-3-3-5-3H8z" fill="currentColor"/><path d="M40 8H26c-2 0-2 1-2 3v29c1-2 3-3 5-3h11z" fill="currentColor" opacity=".7"/></svg>{% endif %}</span>
+      <strong>{{ s.label }}</strong><span class="small">{{ s.intro }}</span><span class="count">{{ s.count }} {% if s.key == "models" %}Models{% else %}Artikel{% endif %} &rsaquo;</span>
+    </a>{% endfor %}
+  </div>
 </section>
-<section class="block intro-text">
-  <h2>Top 100 Amateure: die beliebtesten Amateur-Models bei {{ provider }}</h2>
-  <p>Hier findest du die Top-Models aus der Amateur-Szene bei {{ provider }}: wer gerade gefragt ist, wo du ihre Videos findest und wie du sie in der Livecam oder im Chat erreichst. Jedes Model hat eine eigene Infoseite mit Videos, Livecam und Chat im Überblick.</p>
-  <p>Dazu kommen Ratgeber zu Live-Cams, Amateur-Videos, Kosten und Bezahlung (Euro wird bei {{ provider }} in Tokens umgerechnet; bezahlt wird z. B. per Sofortüberweisung, PayPal, Kreditkarte oder SEPA) sowie zu Sicherheit und Anonymität. Alles für Erwachsene ab 18.</p>
-</section>
+
 {% if top_models %}
 <section class="block">
-  <h2>Top-Models bei Visit-X</h2>
-  <div class="grid">{% for m in top_models %}
-    <div class="card">
-      {% if m.img %}<a href="/{{ m.slug }}/"><img src="{{ m.img }}" alt="" width="1200" height="630" loading="lazy"></a>{% endif %}
-      <span class="card-body"><strong>{{ m.name }}</strong>
-        <span><a class="btn" href="{{ m.url }}" rel="sponsored nofollow noopener" target="_blank">Zum Profil bei Visit-X</a></span>
-        <a class="more" href="/{{ m.slug }}/">Infos zu {{ m.name }} &rsaquo;</a></span>
-    </div>{% endfor %}
-  </div>
-  <p><a class="more" href="/themen/profile/">Alle Models ansehen &rsaquo;</a></p>
+  <div class="block-head"><h2>Top-Models bei {{ provider }}</h2><a class="more" href="/models/">Alle {{ top_models|length }} Models &rsaquo;</a></div>
+  <div class="strip">{% for m in top_models[:10] %}{{ model_card(m) }}{% endfor %}</div>
 </section>
 {% endif %}
-{% if latest %}
-<section class="block">
-  <h2>Neu im Ratgeber</h2>
-  <div class="grid">{% for i in latest %}{{ card(i) }}{% endfor %}</div>
+
+{% for s in sec_data if s.key != "models" and s.count %}
+<section class="block" style="--c:{{ s.color }}">
+  <div class="block-head"><h2><a href="/{{ s.path }}/">{{ s.label }}</a></h2><a class="more" href="/{{ s.path }}/">Alle {{ s.count }} Artikel &rsaquo;</a></div>
+  <p class="chips">{% for t in s.tiles %}<a class="chip" href="/themen/{{ t.topic }}/">{{ t.label }} <span>{{ t.count }}</span></a>{% endfor %}</p>
+  <div class="grid">{% for i in s['items'][:3] %}{{ card(i) }}{% endfor %}</div>
 </section>
-{% endif %}
-<section class="block">
-  <h2>Alle Themen im Überblick</h2>
-  <div class="topics">{% for g in groups %}
-    <a class="topic" href="/themen/{{ g.topic }}/" id="{{ g.topic }}"><strong>{{ g.label }}</strong><span class="small">{{ g.intro }}</span><span class="count">{{ g.count }} Ratgeber &rsaquo;</span></a>
-  {% endfor %}</div>
-</section>
-{% for g in groups if g.topic != "profile" %}
-<section class="block">
-  <h2><a href="/themen/{{ g.topic }}/">{{ g.label }}</a></h2>
-  <div class="grid">{% for i in g['items'] %}{{ card(i) }}{% endfor %}</div>
-  {% if g.count > g['items']|length %}<p><a class="more" href="/themen/{{ g.topic }}/">Alle {{ g.count }} Ratgeber ansehen &rsaquo;</a></p>{% endif %}
-</section>
-{% else %}
-<p>Die ersten Ratgeber folgen in Kürze.</p>
 {% endfor %}
+
+<section class="block intro-text">
+  <h2>Über Top100 Amateure</h2>
+  <p>Hier findest du die Top-Models aus der Amateur-Szene bei {{ provider }}: wer gerade gefragt ist, wo du ihre Videos findest und wie du sie in der Livecam oder im Chat erreichst. Jedes Model hat eine eigene Infoseite.</p>
+  <p>Dazu kommen Ratgeber zu Live-Cams, Amateur-Videos, Kosten und Bezahlung (Euro wird bei {{ provider }} in Tokens umgerechnet; bezahlt wird z. B. per Sofortüberweisung, PayPal, Kreditkarte oder SEPA) sowie zu Sicherheit und Anonymität. Alles für Erwachsene ab 18.</p>
+</section>
 {% endblock %}

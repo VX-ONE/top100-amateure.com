@@ -55,6 +55,25 @@ def related_slugs(contents: dict[str, dict], n: int = 5) -> dict[str, list[str]]
     return out
 
 
+SECTIONS = [
+    {"key": "models", "path": "models", "label": "Top-Models", "color": "#be123c", "topics": ["profile"],
+     "title": "Top-Models bei Visit-X: alle Amateur-Models im Überblick",
+     "intro": "Die beliebtesten Amateur-Models bei Visit-X. Jedes Model hat eine eigene Seite mit Steckbrief, Videos, Livecam und Chat."},
+    {"key": "angebote", "path": "live-cams-videos", "label": "Live-Cams & Videos", "color": "#ea580c",
+     "topics": ["livecams", "webcam-models", "videos", "amateure", "nischen"],
+     "title": "Live-Cams, Amateur-Videos und Kategorien bei Visit-X",
+     "intro": "Live-Cams, Webcam-Models, Videos und Amateur-Kategorien: was es gibt, wie es funktioniert und wie du das Passende findest."},
+    {"key": "ratgeber", "path": "ratgeber", "label": "Ratgeber", "color": "#0f766e",
+     "topics": ["preise", "gratis", "sicherheit", "ablauf", "technik", "vergleich", "dach", "grundlagen"],
+     "title": "Ratgeber: Kosten, Tokens, Anmeldung und Sicherheit bei Visit-X",
+     "intro": "Kosten und Tokens, Zahlungsarten, Anmeldung, Sicherheit und Vergleiche: kurze, klare Antworten auf die häufigsten Fragen."},
+]
+
+
+def section_of(topic: str) -> dict:
+    return next((x for x in SECTIONS if topic in x["topics"]), SECTIONS[-1])
+
+
 def build_site(cfg: dict, store) -> dict:
     root: Path = cfg["_root"]
     site_dir: Path = cfg["_site"]
@@ -84,7 +103,8 @@ def build_site(cfg: dict, store) -> dict:
         if sl in contents:
             hubs.add(mt["topic"])
 
-    ctx["nav"] = [{"topic": t, "label": labels.get(t, t)} for t in [*cfg["topics"], modelmod.TOPIC] if t in hubs]
+    ctx["nav"] = [{"topic": t, "label": labels.get(t, t)} for t in [*cfg["topics"]] if t in hubs]
+    ctx["sections"] = SECTIONS
 
     def write(rel: str, html: str) -> None:
         target = site_dir / rel
@@ -96,7 +116,7 @@ def build_site(cfg: dict, store) -> dict:
         sl = next((k for k, v in pages.items() if v.get("kind") == modelmod.PAGE_KIND and v.get("model") == m["name"] and k in contents), None)
         links = modelmod.links_for(cfg, m["name"])
         if sl and links:
-            top_models.append({"name": m["name"], "slug": sl, "img": f"/img/{sl}.svg" if contents[sl].get("image") else None, "url": links[0]["url"]})
+            top_models.append({"name": m["name"], "slug": sl, "img": f"/img/{sl}.svg", "url": links[0]["url"]})
     ctx["top_models"] = top_models
     page_tpl = env.get_template("page.html")
     thumbs: dict[str, str] = {}
@@ -110,7 +130,12 @@ def build_site(cfg: dict, store) -> dict:
             ctas = []
         if not ctas:
             ctas = [{"label": topic_cta.get(meta["topic"]) or ctx["cta_label"], "url": affiliate_url(cfg, meta)}]
-        image = imgmod.write_files(site_dir, slug, c, cfg["site"]["name"])
+        if is_model:
+            name = meta.get("model", "")
+            c_img = dict(c, image={"svg": imgmod.model_svg(name), "alt": f"{name}: Top-Model bei {ctx['provider']}"})
+            image = imgmod.write_files(site_dir, slug, c_img, cfg["site"]["name"])
+        else:
+            image = imgmod.write_files(site_dir, slug, c, cfg["site"]["name"])
         others = [m for m in top_models if m["slug"] != slug]
         if others:
             start = zlib.crc32(slug.encode()) % len(others)
@@ -120,7 +145,8 @@ def build_site(cfg: dict, store) -> dict:
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
             ctas=ctas, is_model=is_model, model_cards=others, model_name=meta.get("model", ""),
-            related=rel, topic_label=labels.get(meta["topic"], ""), hub_url=f"{base}/themen/{meta['topic']}/",
+            related=rel, topic_label=labels.get(meta["topic"], ""), section=section_of(meta["topic"]),
+            hub_url=(f"{base}/models/" if is_model else f"{base}/themen/{meta['topic']}/"),
             published=fmt_date(meta.get("modified_at") or meta["published_at"]), robots="index,follow",
         ))
 
@@ -128,20 +154,37 @@ def build_site(cfg: dict, store) -> dict:
     for slug, meta in sorted(pages.items(), key=lambda x: x[1]["published_at"], reverse=True):
         if slug in contents:
             groups.setdefault(meta["topic"], []).append({"slug": slug, "title": contents[slug]["h1"], "img": thumbs.get(slug),
+                "kind": section_of(meta["topic"])["key"], "badge": labels.get(meta["topic"], ""), "name": meta.get("model"),
                 "text": (contents[slug].get("meta_description") or "")[:150], "date": fmt_date(meta.get("modified_at") or meta["published_at"])})
     order = [t for t in [*cfg["topics"], modelmod.TOPIC] if t in groups]
     ordered = [{"topic": t, "label": labels.get(t, t), "items": groups[t][:6], "count": len(groups[t]),
                 "intro": (cfg.get("topic_intro") or {}).get(t, "")} for t in order]
-    latest = sorted((i for g in groups.values() for i in g), key=lambda i: i["date"][-4:] + i["date"][3:5] + i["date"][:2], reverse=True)[:6]
+    latest = sorted((i for g in groups.values() for i in g if i["kind"] != "models"), key=lambda i: i["date"][-4:] + i["date"][3:5] + i["date"][:2], reverse=True)[:6]
     intros = cfg.get("topic_intro") or {}
     hub_tpl = env.get_template("hub.html")
-    for t in order:
+    hub_topics = [t for t in order if t != modelmod.TOPIC]
+    for t in hub_topics:
         write(f"themen/{t}/index.html", hub_tpl.render(
-            **ctx, topic=t, label=labels.get(t, t), intro=intros.get(t, ""), items=groups[t],
+            **ctx, topic=t, label=labels.get(t, t), intro=intros.get(t, ""), items=groups[t], section=section_of(t),
             canonical=f"{base}/themen/{t}/", robots="index,follow", title=f"{labels.get(t, t)}: alle Ratgeber",
             description=(intros.get(t) or labels.get(t, t))[:160], og_image=""))
+    sec_tpl = env.get_template("section.html")
+    sec_data = []
+    for sec in SECTIONS:
+        ts = [t for t in sec["topics"] if t in groups and t != modelmod.TOPIC]
+        items = sorted((i for t in ts for i in groups[t]), key=lambda i: i["date"][-4:] + i["date"][3:5] + i["date"][:2], reverse=True)
+        tiles = [{"topic": t, "label": labels.get(t, t), "intro": intros.get(t, ""), "count": len(groups[t])} for t in ts]
+        count = len(top_models) if sec["key"] == "models" else len(items)
+        sec_data.append(dict(sec, tiles=tiles, items=items, count=count))
+        if count:
+            write(f"{sec['path']}/index.html", sec_tpl.render(
+                **ctx, sec=sec, tiles=tiles, items=items, canonical=f"{base}/{sec['path']}/", robots="index,follow",
+                title=sec["title"], description=sec["intro"][:160], og_image=f"{base}/logo.png",
+                list_ld=[{"@type": "ListItem", "position": n + 1, "url": f"{base}/{x['slug']}/"}
+                         for n, x in enumerate(top_models if sec["key"] == "models" else items)]))
+    write("_redirects", "/themen/profile/ /models/ 301\n/themen/profile /models/ 301\n")
     write("index.html", env.get_template("index.html").render(
-        **ctx, groups=ordered, latest=latest, canonical=f"{base}/", robots="index,follow",
+        **ctx, sec_data=sec_data, latest=latest, canonical=f"{base}/", robots="index,follow",
         top_models_ld=[{"@type": "ListItem", "position": i + 1, "name": m["name"], "url": f"{base}/{m['slug']}/"}
                        for i, m in enumerate(top_models)],
         title=cfg["site"].get("home_title") or cfg["site"]["name"], description=cfg["site"]["tagline"],
@@ -155,7 +198,8 @@ def build_site(cfg: dict, store) -> dict:
         **ctx, canonical=f"{base}/", robots="noindex,follow", title="Seite nicht gefunden", description=""))
 
     urls = [(f"{base}/", max((p["published_at"] for p in pages.values()), default=date.today().isoformat()))]
-    urls += [(f"{base}/themen/{t}/", max(pages[i["slug"]]["published_at"] for i in groups[t])) for t in order]
+    urls += [(f"{base}/{x['path']}/", date.today().isoformat()) for x in sec_data if x["count"]]
+    urls += [(f"{base}/themen/{t}/", max(pages[i["slug"]]["published_at"] for i in groups[t])) for t in hub_topics]
     urls += [(f"{base}/{s}/", pages[s].get("modified_at") or pages[s]["published_at"]) for s in contents]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']

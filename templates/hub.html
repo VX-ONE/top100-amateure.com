@@ -1,15 +1,17 @@
 {% extends "base.html" %}
+{% from "_cards.html" import card %}
 {% block main %}
-<article class="article">
-  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; {{ label }}</nav>
+<nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/{{ section.path }}/">{{ section.label }}</a> &rsaquo; {{ label }}</nav>
+<section class="landing slim" style="--c:{{ section.color }}">
   <h1>{{ label }}</h1>
   {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
-  <div class="grid">{% for i in items %}
-    <a class="card" href="/{{ i.slug }}/">
-      {% if i.img %}<img src="{{ i.img }}" alt="" width="1200" height="630" loading="lazy">{% endif %}
-      <span class="card-body"><strong>{{ i.title }}</strong>{% if i.text %}<span class="small">{{ i.text }}</span>{% endif %}</span>
-    </a>{% endfor %}
-  </div>
-  <p class="chips">{% for n in nav %}{% if n.topic != topic %}<a class="chip" href="/themen/{{ n.topic }}/">{{ n.label }}</a>{% endif %}{% endfor %}</p>
-</article>
+</section>
+<div class="grid">{% for i in items %}{{ card(i) }}{% endfor %}</div>
+{% if top_models %}
+<section class="block">
+  <div class="block-head"><h2>Top-Models bei {{ provider }}</h2><a class="more" href="/models/">Alle &rsaquo;</a></div>
+  <div class="strip">{% from "_cards.html" import model_card %}{% for m in top_models[:8] %}{{ model_card(m) }}{% endfor %}</div>
+</section>
+{% endif %}
+<p class="chips">{% for n in nav %}{% if n.topic != topic %}<a class="chip" href="/themen/{{ n.topic }}/">{{ n.label }}</a>{% endif %}{% endfor %}</p>
 {% endblock %}

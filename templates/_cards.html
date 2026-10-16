@@ -1,0 +1,16 @@
+{% macro card(i) -%}
+<a class="card k-{{ i.kind }}" href="/{{ i.slug }}/">
+  {% if i.img %}<img src="{{ i.img }}" alt="" width="1200" height="630" loading="lazy">{% endif %}
+  <span class="card-body"><span class="badge">{{ i.badge }}</span><strong>{{ i.title }}</strong>{% if i.text %}<span class="small">{{ i.text }}</span>{% endif %}</span>
+</a>
+{%- endmacro %}
+{% macro model_card(m) -%}
+<div class="mcard">
+  <a href="/{{ m.slug }}/" class="mimg"><img src="{{ m.img }}" alt="{{ m.name }}" width="1200" height="630" loading="lazy"></a>
+  <div class="mbody"><a class="mname" href="/{{ m.slug }}/">{{ m.name }}</a>
+    <a class="btn btn-sm" href="{{ m.url }}" rel="sponsored nofollow noopener" target="_blank">Profil bei Visit-X</a></div>
+</div>
+{%- endmacro %}
+{% macro tile(t) -%}
+<a class="topic" href="/themen/{{ t.topic }}/"><strong>{{ t.label }}</strong><span class="small">{{ t.intro }}</span><span class="count">{{ t.count }} Artikel &rsaquo;</span></a>
+{%- endmacro %}

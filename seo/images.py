@@ -221,3 +221,34 @@ def write_files(site_dir: Path, slug: str, content: dict, site_name: str) -> dic
     except Exception as e:  # Pillow fehlt o. ä.: Seite funktioniert auch ohne Vorschaubild
         print(f"Vorschaubild für {slug} nicht erzeugt: {type(e).__name__}: {e}")
     return {"svg": f"/img/{slug}.svg", "png": png, "alt": img["alt"]}
+
+
+# ---------- Einheitliche Model-Karten (ohne KI, immer gleicher Look) ----------
+
+def _initials(name: str) -> str:
+    parts = [p for p in re.split(r"[\s\-_]+|(?<=[a-zäöü])(?=[A-ZÄÖÜ])", name) if p]
+    return "".join(p[0].upper() for p in parts[:2]) or name[:1].upper()
+
+
+def model_svg(name: str) -> str:
+    """Gleiches Layout für alle Models: Markenfarben, Monogramm, Name, Leistungen. So erkennt man sofort: Model-Profil."""
+    safe = re.sub(r"[<>&\"']", "", name)[:24]
+    ini = re.sub(r"[<>&\"']", "", _initials(name))
+    size = 92 if len(safe) <= 12 else 78 if len(safe) <= 16 else 62
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}">'
+        '<defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#be123c"/>'
+        '<stop offset="1" stop-color="#3b0764"/></linearGradient>'
+        '<radialGradient id="mh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".22"/>'
+        '<stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>'
+        f'<rect width="{W}" height="{H}" fill="url(#mg)"/>'
+        '<circle cx="1050" cy="90" r="220" fill="#fff" fill-opacity=".06"/><circle cx="120" cy="600" r="180" fill="#fff" fill-opacity=".05"/>'
+        '<circle cx="600" cy="230" r="190" fill="url(#mh)"/>'
+        '<circle cx="600" cy="230" r="128" fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".85" stroke-width="6"/>'
+        f'<text x="600" y="268" text-anchor="middle" font-size="110" font-weight="800" fill="#fff" font-family="system-ui,Arial,sans-serif">{ini}</text>'
+        '<rect x="455" y="40" width="290" height="46" rx="23" fill="#fff"/>'
+        '<text x="600" y="72" text-anchor="middle" font-size="24" font-weight="800" fill="#be123c" letter-spacing="3" font-family="system-ui,Arial,sans-serif">TOP-MODEL</text>'
+        f'<text x="600" y="472" text-anchor="middle" font-size="{size}" font-weight="800" fill="#fff" font-family="system-ui,Arial,sans-serif">{safe}</text>'
+        '<text x="600" y="548" text-anchor="middle" font-size="34" font-weight="600" fill="#fff" fill-opacity=".85" font-family="system-ui,Arial,sans-serif">Videos · Livecam · Chat</text>'
+        '<text x="1150" y="600" text-anchor="end" font-size="26" font-weight="700" fill="#fff" fill-opacity=".75" font-family="system-ui,Arial,sans-serif">bei Visit-X</text>'
+        '</svg>')

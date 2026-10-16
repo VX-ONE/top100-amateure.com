@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% from "_cards.html" import card, model_card, tile %}
+{% block head %}
+<script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
+  {"@type": "CollectionPage", "name": title, "url": canonical, "inLanguage": "de"},
+  {"@type": "ItemList", "itemListElement": list_ld},
+  {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": site.name, "item": canonical.rsplit("/", 2)[0] + "/"},
+    {"@type": "ListItem", "position": 2, "name": sec.label, "item": canonical}]}
+]}|tojson }}</script>
+{% endblock %}
+{% block main %}
+<nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; {{ sec.label }}</nav>
+<section class="landing slim" style="--c:{{ sec.color }}">
+  <h1>{{ sec.title }}</h1>
+  <p class="lead">{{ sec.intro }}</p>
+  {% if tiles %}<p class="chips">{% for t in tiles %}<a class="chip" href="#t-{{ t.topic }}">{{ t.label }} <span>{{ t.count }}</span></a>{% endfor %}</p>{% endif %}
+</section>
+{% if sec.key == "models" %}
+<div class="grid models-all">{% for m in top_models %}{{ model_card(m) }}{% endfor %}</div>
+{% else %}
+{% for t in tiles %}
+<section class="block" id="t-{{ t.topic }}">
+  <div class="block-head"><h2><a href="/themen/{{ t.topic }}/">{{ t.label }}</a></h2><a class="more" href="/themen/{{ t.topic }}/">Alle {{ t.count }} &rsaquo;</a></div>
+  <div class="grid">{% for i in items if i.badge == t.label %}{% if loop.index <= 6 %}{{ card(i) }}{% endif %}{% endfor %}</div>
+</section>
+{% endfor %}
+{% endif %}
+<section class="block">
+  <h2>Weitere Bereiche</h2>
+  <div class="sections compact">{% for s in sections if s.key != sec.key %}<a class="section-tile" href="/{{ s.path }}/" style="--c:{{ s.color }}"><strong>{{ s.label }}</strong><span class="small">{{ s.intro }}</span></a>{% endfor %}</div>
+</section>
+{% endblock %}

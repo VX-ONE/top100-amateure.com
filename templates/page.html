@@ -13,14 +13,14 @@
   article,
   {"@type": "BreadcrumbList", "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": site.name, "item": canonical.rsplit("/", 2)[0] + "/"},
-    {"@type": "ListItem", "position": 2, "name": topic_label, "item": hub_url},
+    {"@type": "ListItem", "position": 2, "name": section.label if is_model else topic_label, "item": hub_url},
     {"@type": "ListItem", "position": 3, "name": c.h1, "item": canonical}]},
   {"@type": "FAQPage", "mainEntity": faq_ld}
 ]}|tojson }}</script>
 {% endblock %}
 {% block main %}
 <article class="article">
-  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/themen/{{ meta.topic }}/">{{ topic_label }}</a></nav>
+  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/{{ section.path }}/">{{ section.label }}</a>{% if not is_model %} &rsaquo; <a href="/themen/{{ meta.topic }}/">{{ topic_label }}</a>{% endif %}</nav>
   <h1>{{ c.h1 }}</h1>
   <p class="meta">Stand: {{ published }}</p>
   {% if image %}<figure class="hero"><img src="{{ image.svg }}" alt="{{ image.alt }}" width="1200" height="630" fetchpriority="high"></figure>{% endif %}
@@ -63,12 +63,10 @@
   </section>
 
   {% if model_cards %}
+  {% from "_cards.html" import model_card %}
   <section class="block">
-    <h2>{% if is_model %}Weitere Top-Models bei {{ provider }}{% else %}Top-Models bei {{ provider }}{% endif %}</h2>
-    <div class="grid models">{% for m in model_cards %}
-      <a class="card" href="/{{ m.slug }}/">{% if m.img %}<img src="{{ m.img }}" alt="{{ m.name }}" width="1200" height="630" loading="lazy">{% endif %}<span class="card-body"><strong>{{ m.name }}</strong><span class="small">Videos, Livecam und Chat</span></span></a>
-    {% endfor %}</div>
-    <p><a class="more" href="/themen/profile/">Alle Top-Models ansehen &rsaquo;</a></p>
+    <div class="block-head"><h2>{% if is_model %}Weitere Top-Models{% else %}Top-Models bei {{ provider }}{% endif %}</h2><a class="more" href="/models/">Alle &rsaquo;</a></div>
+    <div class="strip">{% for m in model_cards %}{{ model_card(m) }}{% endfor %}</div>
   </section>
   {% endif %}
 
