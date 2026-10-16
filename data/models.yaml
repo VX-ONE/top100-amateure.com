@@ -8,11 +8,12 @@
 
 models:
   - name: Lia Engel
+    profile_url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=Liaengel
     active: true
     name_variants:
     - liaengel
     landing_links:
-    - label: Zum Profil von {name} bei Visit-X
+    - label: Aktion von {name} bei Visit-X
       url: https://www.flibzee.com/VX/LP/Top2Win/WM?w=40150&ws=2610001
     - label: Zur Top 10 von {name}
       url: https://www.flibzee.com/VX/LP/FreeTop10/WM?w=40150&ws=2610001
@@ -40,8 +41,8 @@ models:
     name_variants:
     - lanagrey
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -64,8 +65,8 @@ models:
     name_variants:
     - nelesommer
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -87,8 +88,8 @@ models:
     name_variants:
     - lucycat
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -106,8 +107,8 @@ models:
     name_variants:
     - lisasophie
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -127,8 +128,8 @@ models:
     name_variants:
     - lexyroxx
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -149,8 +150,8 @@ models:
     name_variants:
     - laracumkitten
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -172,8 +173,8 @@ models:
     name_variants:
     - hannasecret
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -195,8 +196,8 @@ models:
     name_variants:
     - mianouvelle
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -217,8 +218,8 @@ models:
     name_variants:
     - chrisliam
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -239,8 +240,8 @@ models:
     name_variants:
     - snakedave
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -261,8 +262,8 @@ models:
     name_variants:
     - monamystery
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -284,8 +285,8 @@ models:
     name_variants:
     - lenifetisch
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -306,8 +307,8 @@ models:
     name_variants:
     - lisamari
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -329,8 +330,8 @@ models:
     name_variants:
     - jayjaypink
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -351,8 +352,8 @@ models:
     name_variants:
     - mileyweasel
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -373,8 +374,8 @@ models:
     name_variants:
     - linalove
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -395,8 +396,8 @@ models:
     name_variants:
     - emmihill
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -418,8 +419,8 @@ models:
     name_variants:
     - egonkowalski
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -440,8 +441,8 @@ models:
     name_variants:
     - maryhaze
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -462,8 +463,8 @@ models:
     name_variants:
     - nelesweet
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -483,8 +484,8 @@ models:
     name_variants:
     - candysamira
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -505,8 +506,8 @@ models:
     name_variants:
     - dirtytina
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -528,8 +529,8 @@ models:
     name_variants:
     - luciebavarina
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -550,8 +551,8 @@ models:
     name_variants:
     - texaspatti
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -571,8 +572,8 @@ models:
     name_variants:
     - melinamay
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -593,8 +594,8 @@ models:
     name_variants:
     - lovinlou
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -615,8 +616,8 @@ models:
     name_variants:
     - vickyfox
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -636,8 +637,8 @@ models:
     name_variants:
     - mickymuffin
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -658,8 +659,8 @@ models:
     name_variants:
     - chloeprivat
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -680,8 +681,8 @@ models:
     name_variants:
     - marywet
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -702,8 +703,8 @@ models:
     name_variants:
     - emmasecret
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -721,8 +722,8 @@ models:
     name_variants:
     - lunaweber
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -740,8 +741,8 @@ models:
     name_variants:
     - leakirsch
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
@@ -759,8 +760,8 @@ models:
     name_variants:
     - joleelove
     landing_links:
-    - label: '{name} und weitere Top-Models bei Visit-X ansehen'
-      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=Signup&jump=videostation
+    - label: Weitere Top-Models bei Visit-X
+      url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=videostation
     facts:
     - '{name} hat ein Profil bei Visit-X.'
     - In der Top-100-Videoübersicht von Visit-X wird {name} mit Videos aufgeführt.
