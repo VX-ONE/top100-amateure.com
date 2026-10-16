@@ -94,8 +94,11 @@ def text_problems(text: str, model: dict, cfg: dict) -> list[str]:
         low = low.replace(f" {v} ", " ")
     low = re.sub(r"\bchloe privat\b", " ", low)
     issues = []
+    text_ok = {normalize(x) for x in cfg["models"].get("text_allowed_terms", [])}
     for term in cfg["models"]["blocked_terms"]:
         t = normalize(term)
+        if t in text_ok:
+            continue
         if re.search(rf"(?<![\wäöüß]){re.escape(t)}(?![\wäöüß])", low):
             issues.append(f"Gesperrter Begriff im Text: {t}")
             break

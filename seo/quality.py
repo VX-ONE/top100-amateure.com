@@ -47,6 +47,8 @@ def max_similarity(text: str, existing: dict[str, str]) -> tuple[float, str | No
 
 def keyword_in(keyword: str, text: str) -> bool:
     """Alle Wörter des Keywords kommen vor, Reihenfolge und Beugung egal ("deutsch porno" passt zu "Deutsche Pornos")."""
+    if normalize(keyword).replace(" ", "").replace("-", "") in normalize(text).replace(" ", "").replace("-", ""):
+        return True
     words = re.split(r"[\s\-]+", normalize(text))
     for t in normalize(keyword).replace("-", " ").split():
         if len(t) < 3:

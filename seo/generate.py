@@ -75,8 +75,25 @@ OFFER_ANGLES = [
 ]
 
 
+INTENT_ANGLES = [
+    (("erfahrungen", "test", "bewertung"), "Erfahrungen und Überblick: was dich erwartet, Stärken, Schwächen und für wen es passt"),
+    (("alternativen", "vergleich"), "Vergleich und Alternativen mit klaren Kriterien"),
+    (("seriös", "abzocke", "sicher", "anonym", "betrug"), "Sicherheit, Seriosität und Diskretion: woran du das erkennst"),
+    (("anmeldung", "anmelden", "registrieren", "login", "konto"), "Ablauf Schritt für Schritt"),
+    (("kündigen", "löschen", "abmelden"), "Ablauf Schritt für Schritt (Kündigen bzw. Konto löschen) und typische Stolpersteine"),
+    (("kosten", "preise", "coins", "tokens", "guthaben", "zahlungsmethoden", "paypal", "bezahlen"),
+     "Kosten und Bezahlung: Tokens, Zahlungsarten und worauf man achten sollte"),
+    (("app", "handy", "iphone", "android"), "Technik: App, Handy und Browser, was du brauchst"),
+    (("kostenlos", "gratis", "free"), "Was kostenlos geht, wo die Grenzen liegen und wie du günstig startest"),
+]
+
+
 def pick_angle(cluster: dict) -> str:
     import zlib
+    words = set(cluster.get("primary", "").split())
+    for keys, angle in INTENT_ANGLES:
+        if words & set(keys):
+            return angle
     if cluster.get("topic") in OFFER_TOPICS:
         return OFFER_ANGLES[(zlib.crc32(cluster["slug"].encode()) + cluster.get("fail_count", 0)) % len(OFFER_ANGLES)]
     return ANGLES[(zlib.crc32(cluster["slug"].encode()) + cluster.get("fail_count", 0)) % len(ANGLES)]
@@ -186,9 +203,34 @@ def ask_json(cfg: dict, system: str, user: str, schema: dict, max_tokens: int | 
         raise ValueError("Antwort wurde abgeschnitten (max_tokens)")
     for b in resp.content:
         if b.type == "tool_use":
-            return b.input
+            return _normalize(b.input, schema)
     text = "".join(getattr(b, "text", "") for b in resp.content if b.type == "text")
-    return parse_json(text)
+    return _normalize(parse_json(text), schema)
+
+
+def _normalize(data, schema: dict) -> dict:
+    """Ohne erzwungenes Werkzeug liefert das Modell manchmal verpackte Daten: das ganze Objekt als JSON-Text,
+    unter einem Hüllschlüssel ({"antwort": {...}}) oder Listen als JSON-Text. Das wird hier ausgepackt."""
+    if isinstance(data, str):
+        data = parse_json(data)
+    props = set((schema or {}).get("properties", {}))
+    if isinstance(data, dict) and props and not (props & set(data)) and len(data) == 1:
+        inner = next(iter(data.values()))
+        if isinstance(inner, str):
+            try:
+                inner = parse_json(inner)
+            except Exception:
+                pass
+        if isinstance(inner, dict):
+            data = inner
+    if isinstance(data, dict):
+        for k, v in list(data.items()):
+            if isinstance(v, str) and v.strip()[:1] in "[{":
+                try:
+                    data[k] = json.loads(v)
+                except Exception:
+                    pass
+    return data
 
 
 def parse_json(text: str) -> dict:
@@ -297,7 +339,7 @@ def build_model_prompt(model: dict, cluster: dict, cfg: dict, facts: str, other_
     lim = cfg["models"]
     extra = [k for k in cluster["keywords"] if k != cluster["primary"]][:10]
     parts = [
-        f"Bühnenname des Models: {model['name']}",
+        f"Bühnenname des Models: {model['name']} (immer exakt so schreiben, auch im Titel und in der H1)",
         f"Hauptkeyword: {cluster['primary']}",
         f"Weitere Suchbegriffe, die natürlich vorkommen sollen: {', '.join(extra) if extra else '(keine)'}",
         f"Anbieter: {cfg['affiliate']['provider_name']}",
@@ -306,6 +348,8 @@ def build_model_prompt(model: dict, cluster: dict, cfg: dict, facts: str, other_
         "FAKTEN über das Model und das Angebot (einzige zulässige Quelle):\n- " + "\n- ".join(model["facts"]),
         "Allgemeine Fakten über den Anbieter:\n" + (facts.strip() or "(keine)"),
         "Titel-Muster (abwandeln, nicht wörtlich kopieren): '<Bühnenname>: Videos, Livecam und Chat bei Visit-X'. "
+        "Ton: wie ein Fan-Guide, positiv und konkret, nicht defensiv. Keine Sätze wie 'Mehr behaupten wir nicht'. "
+        "Jugendschutz und Datenschutz nur in einem kurzen Absatz, nicht als eigener langer Abschnitt. "
         "Der erste Abschnitt heißt 'Steckbrief' und listet die FAKTEN als kurze Markdown-Liste. "
         "Danach lebendige, konkrete Abschnitte, die die FAKTEN einordnen (was Fans erwartet, wie man sie erreicht). "
         "Mögliche weitere Abschnitte: Was es bei Visit-X zu diesem Namen gibt (nur FAKTEN); Videos, Direkt-Chat und "
