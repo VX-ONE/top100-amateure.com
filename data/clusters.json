@@ -383,14 +383,11 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x kosten",
       "visit x preise"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GhdPJGU5WmxdCE1Ei'}"
     ],
     "primary": "visit x kosten",
     "slug": "visit-x-kosten",
@@ -400,14 +397,11 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x test",
       "visit x erfahrungen"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54Gf8KJ6c5wx5rYu4wR'}"
     ],
     "primary": "visit x erfahrungen",
     "slug": "visit-x-erfahrungen",
@@ -417,15 +411,12 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x seriös",
       "visit x sicher",
       "visit x abzocke"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GV46YRqEnTauJbpT1'}"
     ],
     "primary": "visit x seriös",
     "slug": "visit-x-serioes",
@@ -435,13 +426,10 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x anonym"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GngEx58QNd7bumKxA'}"
     ],
     "primary": "visit x anonym",
     "slug": "visit-x-anonym",
@@ -451,13 +439,10 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x kündigen"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GvN6bdPUtXyArfnqv'}"
     ],
     "primary": "visit x kündigen",
     "slug": "visit-x-kuendigen",
@@ -467,13 +452,10 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x account löschen"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GkAg2o893Vcj4HSUV'}"
     ],
     "primary": "visit x account löschen",
     "slug": "visit-x-account-loeschen",
@@ -483,14 +465,11 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x coins",
       "visit x guthaben aufladen"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54Gcd1WYKYnAidzDLPb'}"
     ],
     "primary": "visit x coins",
     "slug": "visit-x-coins",
@@ -500,13 +479,10 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x zahlungsmethoden"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54Gxv9TJLZ9TnVTpc42'}"
     ],
     "primary": "visit x zahlungsmethoden",
     "slug": "visit-x-zahlungsmethoden",
@@ -516,14 +492,11 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x anmeldung",
       "visit x registrieren"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54Ga7wT8AWhdtdQQMvN'}"
     ],
     "primary": "visit x anmeldung",
     "slug": "visit-x-anmeldung",
@@ -533,13 +506,10 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x app"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54Gq8aRGGWbQjzkHZ71'}"
     ],
     "primary": "visit x app",
     "slug": "visit-x-app",
@@ -549,14 +519,11 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x vergleich",
       "visit x alternativen"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GXWg3qbY4ut3X46Vz'}"
     ],
     "primary": "visit x alternativen",
     "slug": "visit-x-alternativen",
@@ -566,13 +533,10 @@
   {
     "added": "2026-10-14",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x kostenlos testen"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GshcDfJocwFRKKYnU'}"
     ],
     "primary": "visit x kostenlos testen",
     "slug": "visit-x-kostenlos-testen",
@@ -1557,7 +1521,7 @@
   {
     "added": "2026-10-15",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 207173,
     "keywords": [
       "amateur porno",
@@ -1630,9 +1594,6 @@
       "deutsche amateur porn live",
       "pornos reife amateure",
       "reife amateure pornos"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54H1TSEsKsVxN1FwKs2'}"
     ],
     "primary": "amateur porno",
     "slug": "amateur-porno",
@@ -9049,7 +9010,7 @@
   {
     "added": "2026-10-16",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x schweiz",
@@ -9074,9 +9035,6 @@
       "visit x schweiz test",
       "visit x schweiz vergleich"
     ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GPqZrpL9dXYrqjU7t'}"
-    ],
     "primary": "visit x schweiz",
     "slug": "visit-x-schweiz",
     "status": "queued",
@@ -9085,7 +9043,7 @@
   {
     "added": "2026-10-16",
     "clicks": 0,
-    "fail_count": 1,
+    "fail_count": 0,
     "impressions": 0,
     "keywords": [
       "visit x österreich",
@@ -9109,9 +9067,6 @@
       "visit x österreich sicher",
       "visit x österreich test",
       "visit x österreich vergleich"
-    ],
-    "last_issues": [
-      "Generierung fehlgeschlagen: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'tool_choice: type \"tool\" and \"any\" are not supported for this model.'}, 'request_id': 'req_011Cg54GSY3ExBvuRo2TTViV'}"
     ],
     "primary": "visit x österreich",
     "slug": "visit-x-oesterreich",

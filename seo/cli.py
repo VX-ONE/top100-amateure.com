@@ -244,6 +244,8 @@ def cmd_run(cfg, args) -> int:
             runlog.append(f"{cluster['slug']} Versuch {attempt} ({quality.word_count(draft)} Wörter): " + " | ".join(issues))
         if content is None:
             cluster["last_issues"] = (issues or [])[:3]
+            if issues and all(i.startswith("Generierung fehlgeschlagen") for i in issues) and "JSON" not in issues[0]:
+                continue  # technischer Fehler (API, Netz): zählt nicht gegen das Keyword
             cluster["fail_count"] = cluster.get("fail_count", 0) + 1
             if cluster["fail_count"] >= 3:
                 cluster["status"] = "failed"

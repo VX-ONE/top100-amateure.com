@@ -162,23 +162,33 @@ CONTENT_SCHEMA = {
 
 
 def ask_json(cfg: dict, system: str, user: str, schema: dict, max_tokens: int | None = None) -> dict:
-    """Antwort als Werkzeugaufruf mit festem Schema: Das Ergebnis ist immer gültiges JSON."""
+    """Antwort als Werkzeugaufruf mit festem Schema, damit das Ergebnis gültiges JSON ist.
+    Manche Modelle erlauben kein erzwungenes Werkzeug (tool_choice "tool"); dann wird "auto" mit klarer Anweisung
+    genutzt, und als letzter Rückfall wird JSON aus dem Text gelesen."""
     import anthropic  # nur bei Bedarf
 
     client = anthropic.Anthropic(max_retries=5)
-    resp = client.messages.create(
-        model=cfg["llm"]["model"], max_tokens=max_tokens or cfg["llm"]["max_tokens"], system=system,
-        tools=[{"name": "antwort", "description": "Gibt das Ergebnis im vorgegebenen Format zurück.",
-                "input_schema": schema}],
-        tool_choice={"type": "tool", "name": "antwort"},
-        messages=[{"role": "user", "content": user}],
-    )
+    tools = [{"name": "antwort", "description": "Gibt das fertige Ergebnis im vorgegebenen Format zurück. Immer aufrufen.",
+              "input_schema": schema}]
+    base = dict(model=cfg["llm"]["model"], max_tokens=max_tokens or cfg["llm"]["max_tokens"], tools=tools)
+    note = "\n\nGib dein Ergebnis ausschließlich über einen Aufruf des Werkzeugs \"antwort\" zurück."
+    resp = None
+    if cfg["llm"].get("tool_mode", "auto") == "force":
+        try:
+            resp = client.messages.create(**base, system=system, tool_choice={"type": "tool", "name": "antwort"},
+                                          messages=[{"role": "user", "content": user}])
+        except anthropic.BadRequestError:
+            resp = None
+    if resp is None:
+        resp = client.messages.create(**base, system=system + note, tool_choice={"type": "auto"},
+                                      messages=[{"role": "user", "content": user + note}])
     if getattr(resp, "stop_reason", None) == "max_tokens":
         raise ValueError("Antwort wurde abgeschnitten (max_tokens)")
     for b in resp.content:
         if b.type == "tool_use":
             return b.input
-    raise ValueError("keine strukturierte Antwort erhalten")
+    text = "".join(getattr(b, "text", "") for b in resp.content if b.type == "text")
+    return parse_json(text)
 
 
 def parse_json(text: str) -> dict:
