@@ -5,7 +5,8 @@
 
 # ---------- MUSS ANGEPASST WERDEN ----------
 site:
-  name: "Cam-Ratgeber"                  # Name der Seite (Header, Titel)
+  name: "Top100 Amateure"                # Name der Seite (Header, Titel, Marke)
+  home_title: "Top100 Amateure: Top-Models, Amateur-Cams und Videos bei Visit-X"
   tagline: "Top 100 Amateure: die Top-Models bei Visit-X, dazu unabhängige Ratgeber zu Live-Cams, Videos, Preisen und Sicherheit."
   base_url: "https://www.top100amateure.com"   # ohne Slash am Ende
   # Pflichtangaben für das Impressum (Deutschland). Ohne diese Angaben startet der Live-Lauf nicht.
@@ -142,6 +143,7 @@ gsc:
 limits:
   daily_pages: 5                        # Start klein, erst erhöhen, wenn Seiten indexiert werden
   max_daily_pages: 30                   # harte Obergrenze, auch bei manueller Angabe
+  max_minutes: 80             # Zeitbremse pro Lauf (Workflow-Timeout ist 120 Minuten)
   max_attempts: 3                       # Generierungsversuche pro Seite
   min_words: 700
   max_similarity: 0.55                  # TF-IDF-Kosinus zu bestehenden Seiten, darüber wird nicht veröffentlicht
@@ -495,7 +497,7 @@ topic_labels:
   vergleich: "Vergleiche und Alternativen"
   nischen: "Amateur-Erotik: Genres und Nischen"
   grundlagen: "Grundlagen"
-  profile: "Models bei Visit-X"
+  profile: "Top-Models bei Visit-X"
 
 vocab:
   # Markenbegriffe sind erlaubt, begründen aber allein kein Thema

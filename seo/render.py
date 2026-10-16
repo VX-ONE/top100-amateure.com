@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import shutil
+import zlib
 from datetime import date
 from pathlib import Path
 
@@ -90,6 +91,13 @@ def build_site(cfg: dict, store) -> dict:
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html, encoding="utf-8")
 
+    top_models = []
+    for m in modelmod.load_models(cfg):
+        sl = next((k for k, v in pages.items() if v.get("kind") == modelmod.PAGE_KIND and v.get("model") == m["name"] and k in contents), None)
+        links = modelmod.links_for(cfg, m["name"])
+        if sl and links:
+            top_models.append({"name": m["name"], "slug": sl, "img": f"/img/{sl}.svg" if contents[sl].get("image") else None, "url": links[0]["url"]})
+    ctx["top_models"] = top_models
     page_tpl = env.get_template("page.html")
     thumbs: dict[str, str] = {}
     for slug, c in contents.items():
@@ -103,11 +111,15 @@ def build_site(cfg: dict, store) -> dict:
         if not ctas:
             ctas = [{"label": topic_cta.get(meta["topic"]) or ctx["cta_label"], "url": affiliate_url(cfg, meta)}]
         image = imgmod.write_files(site_dir, slug, c, cfg["site"]["name"])
+        others = [m for m in top_models if m["slug"] != slug]
+        if others:
+            start = zlib.crc32(slug.encode()) % len(others)
+            others = (others[start:] + others[:start])[:4] if not is_model else others[:8]
         if image:
             thumbs[slug] = image["svg"]
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
-            ctas=ctas, is_model=is_model, model_name=meta.get("model", ""),
+            ctas=ctas, is_model=is_model, model_cards=others, model_name=meta.get("model", ""),
             related=rel, topic_label=labels.get(meta["topic"], ""), hub_url=f"{base}/themen/{meta['topic']}/",
             published=fmt_date(meta.get("modified_at") or meta["published_at"]), robots="index,follow",
         ))
@@ -121,12 +133,6 @@ def build_site(cfg: dict, store) -> dict:
     ordered = [{"topic": t, "label": labels.get(t, t), "items": groups[t][:6], "count": len(groups[t]),
                 "intro": (cfg.get("topic_intro") or {}).get(t, "")} for t in order]
     latest = sorted((i for g in groups.values() for i in g), key=lambda i: i["date"][-4:] + i["date"][3:5] + i["date"][:2], reverse=True)[:6]
-    top_models = []
-    for m in modelmod.load_models(cfg):
-        sl = next((k for k, v in pages.items() if v.get("kind") == modelmod.PAGE_KIND and v.get("model") == m["name"] and k in contents), None)
-        links = modelmod.links_for(cfg, m["name"])
-        if sl and links:
-            top_models.append({"name": m["name"], "slug": sl, "img": thumbs.get(sl), "url": links[0]["url"]})
     intros = cfg.get("topic_intro") or {}
     hub_tpl = env.get_template("hub.html")
     for t in order:
@@ -135,8 +141,11 @@ def build_site(cfg: dict, store) -> dict:
             canonical=f"{base}/themen/{t}/", robots="index,follow", title=f"{labels.get(t, t)}: alle Ratgeber",
             description=(intros.get(t) or labels.get(t, t))[:160], og_image=""))
     write("index.html", env.get_template("index.html").render(
-        **ctx, groups=ordered, latest=latest, top_models=top_models, canonical=f"{base}/", robots="index,follow",
-        title=cfg["site"]["name"], description=cfg["site"]["tagline"]))
+        **ctx, groups=ordered, latest=latest, canonical=f"{base}/", robots="index,follow",
+        top_models_ld=[{"@type": "ListItem", "position": i + 1, "name": m["name"], "url": f"{base}/{m['slug']}/"}
+                       for i, m in enumerate(top_models)],
+        title=cfg["site"].get("home_title") or cfg["site"]["name"], description=cfg["site"]["tagline"],
+        og_image=f"{base}/logo.png"))
 
     for name, title in (("impressum", "Impressum"), ("datenschutz", "Datenschutzerklärung")):
         write(f"{name}/index.html", env.get_template(f"{name}.html").render(

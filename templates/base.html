@@ -8,7 +8,9 @@
 <link rel="canonical" href="{{ canonical }}">
 <meta name="robots" content="{{ robots }}">
 <meta name="RATING" content="RTA-5042-1996-1400-1577-RTA">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ og_type or 'website' }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="de_DE">
 <meta property="og:title" content="{{ title }}">
 {% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
 <meta property="og:url" content="{{ canonical }}">
@@ -22,7 +24,7 @@
 <div class="adnote">Werbehinweis: Dieser Ratgeber ist redaktionell, enthält aber Affiliate-Links zu {{ provider }}. Bei einer Vermittlung erhalten wir ggf. eine Provision. Inhalte nur für Personen ab 18 Jahren.</div>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><span class="logo">&#9679;</span> {{ site.name }}</a>
+    <a class="brand" href="/"><span class="logo">&#9679;</span> Top<span class="accent">100</span> Amateure</a>
     <nav class="topnav" aria-label="Themen">{% for n in nav %}<a href="/themen/{{ n.topic }}/">{{ n.label }}</a>{% endfor %}</nav>
   </div>
 </header>

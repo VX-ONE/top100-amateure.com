@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% set title = c.title %}
 {% set description = c.meta_description %}
+{% set og_type = "article" %}
 {% block head %}
 {% set faq_ld = [] %}
 {% for f in c.faq %}{% set _ = faq_ld.append({"@type": "Question", "name": f.q|plain, "acceptedAnswer": {"@type": "Answer", "text": f.a|plain}}) %}{% endfor %}
 {% set article = {"@type": "Article", "headline": c.h1, "description": c.meta_description, "datePublished": meta.published_at,
    "dateModified": meta.modified_at or meta.published_at, "inLanguage": "de", "mainEntityOfPage": canonical,
-   "publisher": {"@type": "Organization", "name": site.name}} %}
+   "publisher": {"@type": "Organization", "name": site.name, "url": canonical.rsplit("/", 2)[0] + "/", "logo": {"@type": "ImageObject", "url": canonical.rsplit("/", 2)[0] + "/logo.png"}}, "author": {"@type": "Organization", "name": site.name + " Redaktion"}} %}
 {% if og_image %}{% set _ = article.update({"image": og_image}) %}{% endif %}
 <script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
   article,
@@ -39,6 +40,9 @@
     <h2>{{ s.h2 }}</h2>
     {{ s.body|md|safe }}
   </section>
+  {% if loop.index == 3 and ctas %}
+  <aside class="cta-mid"><p><strong>{{ c.cta_text }}</strong></p><a class="btn" href="{{ ctas[0].url }}" rel="sponsored nofollow noopener" target="_blank">{{ ctas[0].label }}</a> <span class="small">Werbung</span></aside>
+  {% endif %}
   {% endfor %}
 
   <section class="faq">
@@ -58,6 +62,16 @@
     {% if is_model %}<p class="small">Unabhängiger Ratgeber: Diese Seite wird weder von {{ model_name }} noch von {{ provider }} betrieben.</p>{% endif %}
   </section>
 
+  {% if model_cards %}
+  <section class="block">
+    <h2>{% if is_model %}Weitere Top-Models bei {{ provider }}{% else %}Top-Models bei {{ provider }}{% endif %}</h2>
+    <div class="grid models">{% for m in model_cards %}
+      <a class="card" href="/{{ m.slug }}/">{% if m.img %}<img src="{{ m.img }}" alt="{{ m.name }}" width="1200" height="630" loading="lazy">{% endif %}<span class="card-body"><strong>{{ m.name }}</strong><span class="small">Videos, Livecam und Chat</span></span></a>
+    {% endfor %}</div>
+    <p><a class="more" href="/themen/profile/">Alle Top-Models ansehen &rsaquo;</a></p>
+  </section>
+  {% endif %}
+
   {% if related %}
   <section class="related">
     <h2>Weitere Ratgeber</h2>
@@ -65,4 +79,5 @@
   </section>
   {% endif %}
 </article>
+{% if ctas %}<div class="stickycta"><a class="btn" href="{{ ctas[0].url }}" rel="sponsored nofollow noopener" target="_blank">{{ ctas[0].label }}</a><span>Werbung &middot; 18+</span></div>{% endif %}
 {% endblock %}

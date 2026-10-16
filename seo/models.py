@@ -52,7 +52,7 @@ def load_models(cfg: dict) -> list[dict]:
             "links": [{"label": str(link["label"]).replace("{name}", name), "url": link["url"]}
                       for link in m.get("landing_links", [])],
             "keywords": list(dict.fromkeys(
-                [normalize(k).replace(base.replace("-", " "), split, 1) for k in m.get("keywords", [])] +
+                [split, base.replace("-", " ")] + [normalize(k).replace(base.replace("-", " "), split, 1) for k in m.get("keywords", [])] +
                 [normalize(k) for k in m.get("keywords", [])])),
             "facts": [str(f).replace("{name}", name) for f in m.get("facts", [])],
         })

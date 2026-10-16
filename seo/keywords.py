@@ -199,7 +199,12 @@ SYNONYMS = {"porn": "porno", "pornos": "porno", "deutsche": "deutsch", "deutsche
             "mollige": "mollig", "brünette": "brünett", "blonde": "blond", "rothaarige": "rothaarig",
             "nude": "nackt", "kostenlose": "kostenlos", "gratis": "kostenlos", "umsonst": "kostenlos",
             "sexvideos": "videos", "erotikvideos": "videos", "video": "videos", "clip": "clips",
-            "livecams": "livecam", "cams": "cam", "sexcams": "sexcam", "toy": "toys", "heels": "heels"}
+            "livecams": "livecam", "cams": "cam", "sexcams": "sexcam", "toy": "toys", "heels": "heels",
+            # Suchabsicht gleich -> eine Seite statt mehrerer, die sich gegenseitig Konkurrenz machen
+            "preise": "kosten", "preis": "kosten", "kostet": "kosten", "test": "erfahrungen", "erfahrung": "erfahrungen",
+            "sicher": "seriös", "seriöse": "seriös", "abzocke": "seriös", "registrieren": "anmeldung",
+            "anmelden": "anmeldung", "registrierung": "anmeldung", "vergleich": "alternativen", "alternative": "alternativen",
+            "coins": "guthaben", "tokens": "guthaben", "aufladen": "guthaben", "kündigung": "kündigen"}
 
 
 def _tokset(kw: str, vocab: Vocab) -> set[str]:
@@ -291,3 +296,51 @@ def import_found(found: dict[str, dict], cfg: dict, store, use_llm: bool = True)
         with rejected_path.open("a", encoding="utf-8", newline="") as f:
             csv.writer(f).writerows(rejected_rows)
     return stats
+
+
+def _syn_count(kw: str) -> int:
+    return sum(1 for t in kw.split() if t in SYNONYMS)
+
+
+def best_primary(c: dict) -> None:
+    """Wartende Cluster: das Keyword mit der gebräuchlichsten Schreibweise wird Hauptkeyword (und Slug)."""
+    if c["status"] != "queued" or len(c["keywords"]) < 2:
+        return
+    best = min(c["keywords"], key=lambda k: (_syn_count(k), len(k)))
+    if _syn_count(best) < _syn_count(c["primary"]):
+        c["primary"], c["slug"] = best, slugify(best)
+
+
+def merge_duplicates(cfg: dict, store) -> int:
+    """Führt wartende Cluster mit gleicher Suchabsicht (gleiche Wortmenge nach Synonymen, gleiches Thema) zusammen.
+    Gibt es zu der Absicht schon eine Seite, wandern die Keywords dorthin. Verhindert Keyword-Kannibalisierung."""
+    vocab = Vocab(cfg)
+    clusters = store.clusters()
+    pages = store.pages()
+    groups: dict[tuple, list[dict]] = {}
+    for c in clusters:
+        if c["status"] in ("queued", "published"):
+            key = (c["topic"], frozenset(_tokset(c["primary"], vocab)))
+            groups.setdefault(key, []).append(c)
+    merged = 0
+    drop: set[str] = set()
+    for group in groups.values():
+        if len(group) < 2:
+            continue
+        group.sort(key=lambda c: (c["status"] != "published", -c["impressions"], _syn_count(c["primary"]), len(c["primary"])))
+        keep = group[0]
+        for c in group[1:]:
+            if c["status"] != "queued":
+                continue
+            keep["keywords"] = list(dict.fromkeys(keep["keywords"] + c["keywords"]))
+            keep["impressions"] += c["impressions"]
+            keep["clicks"] += c["clicks"]
+            drop.add(c["slug"])
+            merged += 1
+        best_primary(keep)
+        if keep["slug"] in pages:
+            pages[keep["slug"]]["keywords"] = keep["keywords"]
+    if merged:
+        store.save_clusters([c for c in clusters if c["slug"] not in drop])
+        store.save_pages(pages)
+    return merged

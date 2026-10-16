@@ -16,7 +16,9 @@ Harte Regeln:
 5. Keine Links und kein HTML. Nur Markdown (Absätze, **fett**, Listen).
 6. Jeder Artikel beantwortet die Suchintention hinter dem Hauptkeyword konkret und eigenständig, mit eigenem Blickwinkel. Er darf nicht wie eine Variante anderer Artikel wirken.
 7. Den Anbieter nennst du neutral und sachlich als Option oder Beispiel. Keine Heilsversprechen, kein Druck, keine Superlative ohne Beleg.
-8. Gehe auf Jugendschutz, Datenschutz und verantwortungsvolle Nutzung ein, wo es zum Thema passt.
+8. Jugendschutz, Datenschutz und Einwilligung behandelst du knapp in höchstens einem Abschnitt. Der Hauptteil beantwortet, was die Suchenden wirklich wissen oder finden wollen.
+9. Titel und H1: Hauptkeyword in natürlicher Schreibweise und Groß-/Kleinschreibung (z. B. "Deutsche Pornos" statt "deutsch porno", "Reife Frauen" statt "porno reife"), Titel klickstark und konkret, keine Doppelpunkt-Floskeln wie "Was du wissen musst".
+10. Schreibe konkret, abwechslungsreich und mit Beispielen statt Floskeln. Vermeide typische Füllsätze ("In der heutigen Zeit", "Zusammenfassend lässt sich sagen", "Es ist wichtig zu beachten").
 Gib ausschließlich ein JSON-Objekt zurück, ohne Text davor oder danach."""
 
 INTENT_HINTS = {
@@ -61,8 +63,22 @@ ANGLES = [
 ]
 
 
+# Für Suchen, bei denen Leute ein Angebot finden wollen (Genres, Livecams, Videos, Models, Amateure), passt ein
+# Ratgeber über Fehler oder Rechtliches nicht zur Suchabsicht. Diese Blickwinkel beantworten, was die Leute suchen.
+OFFER_TOPICS = {"nischen", "livecams", "videos", "webcam-models", "amateure", "dach"}
+OFFER_ANGLES = [
+    "Überblick: Wo du das findest, was es bei Visit-X dazu gibt (Live-Cams, Videos, Amateure) und wie du startest",
+    "Auswahl-Guide: worauf du bei Models, Profilen und Inhalten achtest, damit es zu deinen Vorlieben passt",
+    "Live-Cam oder Video? Unterschiede, Kosten in Tokens und was zu wem passt",
+    "Einstieg in 5 Schritten: Konto, Guthaben in Tokens aufladen, passende Models finden, Chat oder Video",
+    "Was die Kategorie ausmacht, warum sie beliebt ist und wie du die besten Inhalte dazu findest",
+]
+
+
 def pick_angle(cluster: dict) -> str:
     import zlib
+    if cluster.get("topic") in OFFER_TOPICS:
+        return OFFER_ANGLES[(zlib.crc32(cluster["slug"].encode()) + cluster.get("fail_count", 0)) % len(OFFER_ANGLES)]
     return ANGLES[(zlib.crc32(cluster["slug"].encode()) + cluster.get("fail_count", 0)) % len(ANGLES)]
 
 
@@ -279,7 +295,10 @@ def build_model_prompt(model: dict, cluster: dict, cfg: dict, facts: str, other_
         f"mindestens {cfg['limits']['min_faq']} FAQ-Einträge.",
         "FAKTEN über das Model und das Angebot (einzige zulässige Quelle):\n- " + "\n- ".join(model["facts"]),
         "Allgemeine Fakten über den Anbieter:\n" + (facts.strip() or "(keine)"),
-        "Mögliche Abschnitte: Was es bei Visit-X zu diesem Namen gibt (nur FAKTEN); Videos, Direkt-Chat und "
+        "Titel-Muster (abwandeln, nicht wörtlich kopieren): '<Bühnenname>: Videos, Livecam und Chat bei Visit-X'. "
+        "Der erste Abschnitt heißt 'Steckbrief' und listet die FAKTEN als kurze Markdown-Liste. "
+        "Danach lebendige, konkrete Abschnitte, die die FAKTEN einordnen (was Fans erwartet, wie man sie erreicht). "
+        "Mögliche weitere Abschnitte: Was es bei Visit-X zu diesem Namen gibt (nur FAKTEN); Videos, Direkt-Chat und "
         "Live-Shows allgemein erklärt; Kosten und Abrechnung, worauf man achten sollte; Jugendschutz, Datenschutz "
         "und legale Nutzung; Alternativen und Vergleich mit anderen Angeboten.",
     ]

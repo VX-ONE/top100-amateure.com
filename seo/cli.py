@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import argparse
+import time
+import json
 import math
 import sys
 from datetime import date
@@ -24,16 +26,22 @@ def cmd_import(cfg, args) -> int:
     return 0
 
 
+BRAND_INTENT = ("erfahrungen", "kosten", "seriös", "kündigen", "löschen", "anmeldung", "app", "kostenlos", "alternativen",
+                "zahlungsmethoden", "paypal", "guthaben", "coins", "anonym", "schweiz", "österreich")
+
+
 def priority_bonus(c: dict, cfg: dict) -> int:
-    """Seiten mit Kaufabsicht zuerst: Marke + Frage (kosten, kündigen, seriös ...) und Österreich/Schweiz."""
+    """Kaufnahe Suchen zuerst: Marke + Frage (Erfahrungen, Kosten, seriös ...), dann Österreich/Schweiz,
+    dann die Kernthemen (Livecams, Videos, Webcam-Models, Amateure). Reine Kombinationen ohne Absicht zuletzt."""
     b = (cfg["keywords"].get("priority") or {})
     k = c["primary"]
     bonus = 0
     if any(t in k for t in ("visit x", "visitx", "visit-x")):
-        bonus += int(b.get("brand", 0))
+        bonus += int(b.get("brand", 0)) if any(w in k for w in BRAND_INTENT) else int(b.get("brand", 0)) // 4
     if c.get("topic") == "dach":
         bonus += int(b.get("dach", 0))
     bonus += int((b.get("topics") or {}).get(c.get("topic"), 0))
+    bonus += 5000 * min(len(c.get("keywords", [])), 20)   # Cluster mit vielen Varianten = mehr Suchvolumen
     return bonus
 
 
@@ -90,6 +98,15 @@ def cmd_harvest(cfg, args) -> int:
     return 0 if harvest(cfg, Store(cfg["_data"])) is not None else 1
 
 
+MODEL_LOG: list[str] = []
+START = time.monotonic()
+
+
+def out_of_time(cfg) -> bool:
+    """Zeitbremse: rechtzeitig aufhören, damit Bauen und Veröffentlichen sicher noch vor dem Workflow-Timeout laufen."""
+    return (time.monotonic() - START) / 60 > float(cfg["limits"].get("max_minutes", 80))
+
+
 def run_models(cfg, store, pages, state, texts, titles, facts, mock, today) -> int:
     """Erzeugt neutrale Profilseiten für aktive Models (zusätzlich zum Tageslimit der Themenseiten)."""
     if state["throttle"]["active"] or modelmod.TOPIC in state["paused_topics"]:
@@ -99,7 +116,7 @@ def run_models(cfg, store, pages, state, texts, titles, facts, mock, today) -> i
                                        if p.get("kind") == modelmod.PAGE_KIND and p["published_at"] == today))
     created = 0
     for model in modelmod.load_models(cfg):
-        if created >= todo:
+        if created >= todo or out_of_time(cfg):
             break
         if not model["active"] or model["slug"] in pages:
             continue
@@ -116,6 +133,7 @@ def run_models(cfg, store, pages, state, texts, titles, facts, mock, today) -> i
             except Exception as e:
                 issues = [f"Generierung fehlgeschlagen: {type(e).__name__}: {e}"]
                 print(f"  [{model['slug']}] Versuch {attempt}: {issues[0]}")
+                MODEL_LOG.append(f"model {model['slug']} Versuch {attempt}: {issues[0]}")
                 continue
             issues = quality.check(draft, cluster, cfg, "\n".join(model["facts"]) + "\n" + facts, texts,
                                    relaxed=mock, blocked=[], min_words=lim["min_words"],
@@ -125,6 +143,7 @@ def run_models(cfg, store, pages, state, texts, titles, facts, mock, today) -> i
                 content = draft
                 break
             print(f"  [{model['slug']}] Versuch {attempt} abgelehnt: {issues[0]}")
+            MODEL_LOG.append(f"model {model['slug']} Versuch {attempt} abgelehnt: " + " | ".join(issues))
         if content is None:
             continue
         images.ensure(content, modelmod.TOPIC, model["slug"], cfg, mock=mock)
@@ -174,6 +193,9 @@ def cmd_run(cfg, args) -> int:
     if not mock:
         harvest(cfg, store)
     optimize_step(cfg, store, mock)
+    merged = keywords.merge_duplicates(cfg, store)
+    if merged:
+        print(f"Doppelte Suchabsichten zusammengeführt: {merged}")
     pages = store.pages()  # der Optimierer hat Seiten geändert: neu laden, sonst überschreibt das Speichern unten seine Änderungen
     clusters = store.clusters()
     paused = set(state["paused_topics"])
@@ -191,8 +213,15 @@ def cmd_run(cfg, args) -> int:
     published = tried = 0
     runlog: list[str] = []
 
+    refreshed = refresh_pages(cfg, store, pages, clusters, facts, texts, titles, mock, today, runlog)
+    if refreshed:
+        print(f"Neu geschrieben (data/refresh.txt): {', '.join(refreshed)}")
+
     for cluster in queue:
         if published >= budget or tried >= budget * 3:
+            break
+        if out_of_time(cfg):
+            runlog.append("Zeitbremse: Generierung für heute beendet.")
             break
         if topic_count.get(cluster["topic"], 0) >= per_topic_cap:
             continue
@@ -237,17 +266,20 @@ def cmd_run(cfg, args) -> int:
         published += 1
         print(f"  veröffentlicht: /{slug}/  ({cluster['primary']})")
 
-    if runlog:
-        lp = Path(cfg["_reports"]) / f"{today}-lauf.log"
-        lp.parent.mkdir(parents=True, exist_ok=True)
-        lp.write_text("\n".join(runlog) + "\n", encoding="utf-8")
-    published += run_models(cfg, store, pages, state, texts, titles, facts, mock, today)
+    new_models = run_models(cfg, store, pages, state, texts, titles, facts, mock, today)
+    published += new_models
+    runlog += MODEL_LOG
+    runlog.append(f"Ergebnis: {published} neue Seite(n), davon {new_models} Profilseite(n).")
+    lp = Path(cfg["_reports"]) / f"{today}-lauf.log"
+    lp.parent.mkdir(parents=True, exist_ok=True)
+    lp.write_text("\n".join(runlog) + "\n", encoding="utf-8")
 
     store.save_clusters(clusters)
     store.save_pages(pages)
     info = render.build_site(cfg, store)
     print(f"Seite gebaut: {info['pages']} Seiten, {info['sitemap_urls']} Sitemap-URLs.")
     print(f"Heute neu: {published} (Themenseiten geplant: {budget}).")
+    write_posts(cfg, store, pages, today)
 
     if mock or args.no_publish:
         print("Veröffentlichung übersprungen.")
@@ -264,6 +296,74 @@ def cmd_run(cfg, args) -> int:
         except Exception as e:
             print(f"Sitemap-Einreichung fehlgeschlagen: {e}")
     return 0
+
+
+def refresh_pages(cfg, store, pages, clusters, facts, texts, titles, mock, today, runlog) -> list[str]:
+    """Schreibt bestehende Themenseiten neu, deren Slug in data/refresh.txt steht (URL bleibt gleich).
+    Für Seiten, die mit einer alten Vorgabe entstanden sind. Höchstens 5 pro Lauf; erledigte Slugs werden entfernt."""
+    path = Path(cfg["_data"]) / "refresh.txt"
+    if not path.exists():
+        return []
+    todo = [l.strip() for l in path.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
+    by_slug = {c["slug"]: c for c in clusters}
+    done: list[str] = []
+    for slug in todo[:5]:
+        if out_of_time(cfg):
+            break
+        cluster = by_slug.get(slug)
+        if slug not in pages or cluster is None or pages[slug].get("kind") == modelmod.PAGE_KIND:
+            done.append(slug)
+            continue
+        other_texts = {k: v for k, v in texts.items() if k != slug}
+        old_title = (store.content(slug) or {}).get("title")
+        other_titles = [t for t in titles if t != old_title]
+        issues = None
+        for attempt in range(1, cfg["limits"]["max_attempts"] + 1):
+            try:
+                draft = generate.generate(cluster, cfg, facts, other_titles, issues, mock=mock)
+            except Exception as e:
+                issues = [f"Generierung fehlgeschlagen: {type(e).__name__}: {e}"]
+                runlog.append(f"refresh {slug} Versuch {attempt}: {issues[0]}")
+                continue
+            issues = quality.check(draft, cluster, cfg, facts, other_texts, relaxed=mock, titles=other_titles)
+            if issues:
+                runlog.append(f"refresh {slug} Versuch {attempt}: " + " | ".join(issues))
+                continue
+            hist = Path(store.dir) / "history" / slug
+            hist.mkdir(parents=True, exist_ok=True)
+            old = store.content(slug)
+            if old:
+                (hist / f"{today}-vor-refresh.json").write_text(json.dumps(old, ensure_ascii=False, indent=1), encoding="utf-8")
+            images.ensure(draft, cluster["topic"], slug, cfg, mock=mock)
+            store.save_content(slug, draft)
+            pages[slug]["title"] = draft["title"]
+            pages[slug]["modified_at"] = today
+            texts[slug] = quality.article_text(draft)
+            titles[:] = other_titles + [draft["title"]]
+            done.append(slug)
+            break
+    rest = [s for s in todo if s not in done]
+    path.write_text("".join(f"{s}\n" for s in rest), encoding="utf-8")
+    return [s for s in done if s in pages]
+
+
+def write_posts(cfg, store, pages, today) -> None:
+    """Fertige Kurztexte für Telegram/X zu den heute veröffentlichten Seiten (reports/<datum>-posts.md)."""
+    base = cfg["site"]["base_url"].rstrip("/")
+    todays = [(s, p) for s, p in pages.items() if p["published_at"] == today]
+    if not todays:
+        return
+    out = [f"# Posts {today}", "", "Zum Kopieren für Telegram oder X. Link führt auf die eigene Seite (mit Altersabfrage).", ""]
+    for slug, p in todays:
+        c = store.content(slug) or {}
+        if p.get("kind") == modelmod.PAGE_KIND:
+            text = f"Neu bei den Top100 Amateuren: {p.get('model')} 🔥 Videos, Livecam und Chat im Überblick 👉 {base}/{slug}/"
+        else:
+            text = f"{c.get('h1', p['title'])} 👉 {base}/{slug}/"
+        out += [f"## {p['title']}", "", text, ""]
+    path = Path(cfg["_reports"]) / f"{today}-posts.md"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(out), encoding="utf-8")
 
 
 def cmd_monitor(cfg, args) -> int:

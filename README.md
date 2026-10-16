@@ -153,3 +153,13 @@ Filter lehnt Vulgärsprache ab (`quality.EXPLICIT`). Sie erklären das Genre, ne
 - Cluster werden nur noch innerhalb desselben Themas zusammengelegt.
 - KI-Antworten kommen als Werkzeugaufruf mit festem Schema (`generate.ask_json`). Das behebt die JSON-Fehler des ersten Laufs
   (abgeschnittene oder fehlerhafte Antworten), `max_tokens` ist auf 9000 erhöht.
+
+## Neuerungen (16.10.2026)
+
+- `data/refresh.txt`: Slugs bestehender Themenseiten, die mit der aktuellen Vorgabe neu geschrieben werden (URL bleibt, alte Fassung in `data/history/`). Höchstens 5 pro Lauf, erledigte Einträge verschwinden.
+- Doppelte Suchabsichten (z. B. „visit x kosten“ und „visit x preise“) werden vor jedem Lauf zu einer Seite zusammengeführt (`keywords.merge_duplicates`). Status `parked` = bewusst zurückgestellte Kombi-Keywords ohne erkennbare Suchabsicht.
+- Priorität: Marke + Frage (Erfahrungen, Kosten, seriös …) > Österreich/Schweiz > Kernthemen > Rest.
+- Angebots-Themen (Nischen, Livecams, Videos, Webcam-Models, Amateure, DACH) bekommen Blickwinkel, die zur Suchabsicht passen (wo finden, was bietet Visit-X, Einstieg), Rechtliches nur knapp.
+- `reports/<datum>-posts.md`: fertige Kurztexte für Telegram/X zu jeder neuen Seite.
+- `limits.max_minutes`: Zeitbremse, damit Bauen und Veröffentlichen vor dem Workflow-Timeout (120 Min.) sicher laufen.
+- Profilseiten: Hauptkeyword ist der Name selbst, Steckbrief-Abschnitt, Block „Weitere Top-Models“ auf allen Seiten, Sticky-Button auf dem Handy, Zwischen-Button nach dem 3. Abschnitt.

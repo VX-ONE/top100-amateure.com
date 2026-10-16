@@ -8,7 +8,10 @@
       "livecam kosten",
       "amateur livecam kosten",
       "joi livecam kosten",
-      "livecams kosten"
+      "livecams kosten",
+      "livecam preise pro minute",
+      "livecam preise",
+      "livecams preise"
     ],
     "primary": "livecam kosten",
     "slug": "livecam-kosten",
@@ -23,25 +26,11 @@
     "keywords": [
       "live cam preise",
       "deutsch cam live",
-      "deutsche cam live"
+      "deutsche cam live",
+      "live cam kosten"
     ],
-    "primary": "live cam preise",
-    "slug": "live-cam-preise",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livecam preise pro minute",
-      "livecam preise",
-      "livecams preise"
-    ],
-    "primary": "livecam preise pro minute",
-    "slug": "livecam-preise-pro-minute",
+    "primary": "live cam kosten",
+    "slug": "live-cam-kosten",
     "status": "queued",
     "topic": "preise"
   },
@@ -104,7 +93,7 @@
     ],
     "primary": "webcam chat kostenlos",
     "slug": "webcam-chat-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -142,44 +131,20 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
+      "livecam seriös",
+      "amateur livecam seriös",
+      "livecams seriös",
       "ist livecam sicher",
       "amateur livecam sicher",
       "livecam sicher",
-      "livecams sicher"
-    ],
-    "primary": "ist livecam sicher",
-    "slug": "ist-livecam-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livecam seriös",
-      "amateur livecam seriös",
-      "livecams seriös"
-    ],
-    "primary": "livecam seriös",
-    "slug": "livecam-serioes",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
+      "livecams sicher",
       "livecam abzocke erkennen",
       "amateur livecam abzocke",
       "livecam abzocke",
       "livecams abzocke"
     ],
-    "primary": "livecam abzocke erkennen",
-    "slug": "livecam-abzocke-erkennen",
+    "primary": "livecam seriös",
+    "slug": "livecam-serioes",
     "status": "queued",
     "topic": "sicherheit"
   },
@@ -238,21 +203,6 @@
     ],
     "primary": "livecam zahlungsmethoden",
     "slug": "livecam-zahlungsmethoden",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livecam guthaben aufladen",
-      "amateur livecam guthaben aufladen",
-      "livecams guthaben aufladen"
-    ],
-    "primary": "livecam guthaben aufladen",
-    "slug": "livecam-guthaben-aufladen",
     "status": "queued",
     "topic": "preise"
   },
@@ -360,6 +310,10 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
+      "livecam vergleich",
+      "livecam anbieter vergleich",
+      "amateur livecam vergleich",
+      "livecams vergleich",
       "livecam alternativen",
       "amateur livecam alternativen",
       "livecams alternativen"
@@ -375,41 +329,10 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "livecam vergleich",
-      "livecam anbieter vergleich",
-      "amateur livecam vergleich",
-      "livecams vergleich"
-    ],
-    "primary": "livecam vergleich",
-    "slug": "livecam-vergleich",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "livecam plattformen unterschiede"
     ],
     "primary": "livecam plattformen unterschiede",
     "slug": "livecam-plattformen-unterschiede",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livecam erfahrungen",
-      "amateur livecam erfahrungen",
-      "livecams erfahrungen"
-    ],
-    "primary": "livecam erfahrungen",
-    "slug": "livecam-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -463,7 +386,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "visit x kosten"
+      "visit x kosten",
+      "visit x preise"
     ],
     "primary": "visit x kosten",
     "slug": "visit-x-kosten",
@@ -476,19 +400,7 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "visit x preise"
-    ],
-    "primary": "visit x preise",
-    "slug": "visit-x-preise",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
+      "visit x test",
       "visit x erfahrungen"
     ],
     "primary": "visit x erfahrungen",
@@ -502,49 +414,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "visit x test"
-    ],
-    "primary": "visit x test",
-    "slug": "visit-x-test",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "visit x seriös"
+      "visit x seriös",
+      "visit x sicher",
+      "visit x abzocke"
     ],
     "primary": "visit x seriös",
     "slug": "visit-x-serioes",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "visit x abzocke"
-    ],
-    "primary": "visit x abzocke",
-    "slug": "visit-x-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "visit x sicher"
-    ],
-    "primary": "visit x sicher",
-    "slug": "visit-x-sicher",
     "status": "queued",
     "topic": "sicherheit"
   },
@@ -593,20 +468,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
+      "visit x coins",
       "visit x guthaben aufladen"
-    ],
-    "primary": "visit x guthaben aufladen",
-    "slug": "visit-x-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "visit x coins"
     ],
     "primary": "visit x coins",
     "slug": "visit-x-coins",
@@ -632,20 +495,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
+      "visit x anmeldung",
       "visit x registrieren"
-    ],
-    "primary": "visit x registrieren",
-    "slug": "visit-x-registrieren",
-    "status": "queued",
-    "topic": "ablauf"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "visit x anmeldung"
     ],
     "primary": "visit x anmeldung",
     "slug": "visit-x-anmeldung",
@@ -671,23 +522,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
+      "visit x vergleich",
       "visit x alternativen"
     ],
     "primary": "visit x alternativen",
     "slug": "visit-x-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "visit x vergleich"
-    ],
-    "primary": "visit x vergleich",
-    "slug": "visit-x-vergleich",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -737,19 +576,7 @@
     "impressions": 0,
     "keywords": [
       "cam chat vergleich",
-      "amateur cam chat vergleich"
-    ],
-    "primary": "cam chat vergleich",
-    "slug": "cam-chat-vergleich",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-14",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
+      "amateur cam chat vergleich",
       "cam chat alternativen",
       "amateur cam chat alternativen"
     ],
@@ -800,8 +627,8 @@
       "deutsche amateur livecam videos",
       "deutsche amateur livecam gratis"
     ],
-    "primary": "amateure livecam",
-    "slug": "amateure-livecam",
+    "primary": "amateur livecam",
+    "slug": "amateur-livecam",
     "status": "queued",
     "topic": "grundlagen"
   },
@@ -826,8 +653,8 @@
       "deutsche amateur cam live",
       "reife amateure cam live"
     ],
-    "primary": "amateure live cam",
-    "slug": "amateure-live-cam",
+    "primary": "amateur cam",
+    "slug": "amateur-cam",
     "status": "queued",
     "topic": "grundlagen"
   },
@@ -918,22 +745,6 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur live chat erwachsene",
-      "amateur live chat jugendschutz",
-      "amateur live chat datenschutz",
-      "amateur live chat abzocke"
-    ],
-    "primary": "amateur live chat erwachsene",
-    "slug": "amateur-live-chat-erwachsene",
-    "status": "queued",
-    "topic": "grundlagen"
-  },
-  {
-    "added": "2026-10-15",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "deutsche amateure webcam"
     ],
     "primary": "deutsche amateure webcam",
@@ -947,10 +758,14 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "deutsche amateure live chat"
+      "deutsche amateure live chat",
+      "amateur live chat erwachsene",
+      "amateur live chat jugendschutz",
+      "amateur live chat datenschutz",
+      "amateur live chat abzocke"
     ],
-    "primary": "deutsche amateure live chat",
-    "slug": "deutsche-amateure-live-chat",
+    "primary": "amateur live chat erwachsene",
+    "slug": "amateur-live-chat-erwachsene",
     "status": "queued",
     "topic": "grundlagen"
   },
@@ -1014,10 +829,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateurerotik vergleich"
+      "amateurerotik vergleich",
+      "amateurerotik alternativen"
     ],
-    "primary": "amateurerotik vergleich",
-    "slug": "amateurerotik-vergleich",
+    "primary": "amateurerotik alternativen",
+    "slug": "amateurerotik-alternativen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -1109,19 +925,6 @@
     ],
     "primary": "amateurerotik erfahrungen",
     "slug": "amateurerotik-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-15",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateurerotik alternativen"
-    ],
-    "primary": "amateurerotik alternativen",
-    "slug": "amateurerotik-alternativen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -1352,19 +1155,7 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateurclips vergleich"
-    ],
-    "primary": "amateurclips vergleich",
-    "slug": "amateurclips-vergleich",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-15",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
+      "amateurclips vergleich",
       "amateurclips alternativen"
     ],
     "primary": "amateurclips alternativen",
@@ -1592,7 +1383,9 @@
     "impressions": 0,
     "keywords": [
       "amateur cams kosten",
-      "amateure kosten"
+      "amateure kosten",
+      "amateur cams preise",
+      "amateure preise"
     ],
     "primary": "amateur cams kosten",
     "slug": "amateur-cams-kosten",
@@ -1606,10 +1399,14 @@
     "impressions": 0,
     "keywords": [
       "amateur cams sicher",
-      "amateure sicher"
+      "amateure sicher",
+      "amateur cams seriös",
+      "amateure seriös",
+      "amateur cams abzocke",
+      "amateure abzocke"
     ],
-    "primary": "amateur cams sicher",
-    "slug": "amateur-cams-sicher",
+    "primary": "amateure seriös",
+    "slug": "amateure-serioes",
     "status": "queued",
     "topic": "sicherheit"
   },
@@ -1619,25 +1416,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur cams vergleich"
-    ],
-    "primary": "amateur cams vergleich",
-    "slug": "amateur-cams-vergleich",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-15",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
+      "amateur cams vergleich",
       "amateur cams alternativen",
       "amateure alternativen"
     ],
-    "primary": "amateur cams alternativen",
-    "slug": "amateur-cams-alternativen",
-    "status": "queued",
+    "primary": "amateure alternativen",
+    "slug": "amateure-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -9374,20 +9159,6 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur cams abzocke",
-      "amateure abzocke"
-    ],
-    "primary": "amateur cams abzocke",
-    "slug": "amateur-cams-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "amateur cams anmelden",
       "amateure anmelden"
     ],
@@ -9407,7 +9178,7 @@
     ],
     "primary": "amateur cams anonym",
     "slug": "amateur-cams-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -9434,7 +9205,7 @@
     ],
     "primary": "amateur cams bezahlen",
     "slug": "amateur-cams-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -9456,46 +9227,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur cams erfahrungen",
-      "amateure erfahrungen"
-    ],
-    "primary": "amateur cams erfahrungen",
-    "slug": "amateur-cams-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur cams guthaben aufladen",
-      "amateur clips guthaben aufladen",
-      "amateur erotik guthaben aufladen",
-      "amateur videos guthaben aufladen",
-      "amateure guthaben aufladen",
-      "cam girl guthaben aufladen",
-      "hobby amateure guthaben aufladen",
-      "live cam guthaben aufladen"
-    ],
-    "primary": "amateur cams guthaben aufladen",
-    "slug": "amateur-cams-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "amateur cams handy",
       "amateure handy"
     ],
     "primary": "amateur cams handy",
     "slug": "amateur-cams-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -9523,7 +9260,7 @@
     ],
     "primary": "amateur cams ohne anmeldung",
     "slug": "amateur-cams-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -9537,36 +9274,8 @@
     ],
     "primary": "amateur cams paypal",
     "slug": "amateur-cams-paypal",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur cams preise",
-      "amateure preise"
-    ],
-    "primary": "amateur cams preise",
-    "slug": "amateur-cams-preise",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur cams seriös",
-      "amateure seriös"
-    ],
-    "primary": "amateur cams seriös",
-    "slug": "amateur-cams-serioes",
-    "status": "queued",
-    "topic": "sicherheit"
   },
   {
     "added": "2026-10-16",
@@ -9575,10 +9284,12 @@
     "impressions": 0,
     "keywords": [
       "amateur cams test",
-      "amateure test"
+      "amateure test",
+      "amateur cams erfahrungen",
+      "amateure erfahrungen"
     ],
-    "primary": "amateur cams test",
-    "slug": "amateur-cams-test",
+    "primary": "amateure erfahrungen",
+    "slug": "amateure-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -9593,7 +9304,7 @@
     ],
     "primary": "amateur cams tipps",
     "slug": "amateur-cams-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -9605,8 +9316,8 @@
       "amateur cams visit x",
       "live cam visit x"
     ],
-    "primary": "amateur cams visit x",
-    "slug": "amateur-cams-visit-x",
+    "primary": "live cam visit x",
+    "slug": "live-cam-visit-x",
     "status": "queued",
     "topic": "livecams"
   },
@@ -9630,37 +9341,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur clips abzocke"
-    ],
-    "primary": "amateur clips abzocke",
-    "slug": "amateur-clips-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur clips alternativen"
-    ],
-    "primary": "amateur clips alternativen",
-    "slug": "amateur-clips-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "amateur clips anmelden"
     ],
     "primary": "amateur clips anmelden",
     "slug": "amateur-clips-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -9673,7 +9358,7 @@
     ],
     "primary": "amateur clips anonym",
     "slug": "amateur-clips-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -9686,7 +9371,7 @@
     ],
     "primary": "amateur clips app",
     "slug": "amateur-clips-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -9699,21 +9384,8 @@
     ],
     "primary": "amateur clips bezahlen",
     "slug": "amateur-clips-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur clips erfahrungen"
-    ],
-    "primary": "amateur clips erfahrungen",
-    "slug": "amateur-clips-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -9725,7 +9397,7 @@
     ],
     "primary": "amateur clips handy",
     "slug": "amateur-clips-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -9734,11 +9406,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur clips kosten"
+      "amateur clips kosten",
+      "amateur clips preise"
     ],
     "primary": "amateur clips kosten",
     "slug": "amateur-clips-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -9751,7 +9424,7 @@
     ],
     "primary": "amateur clips kostenlos",
     "slug": "amateur-clips-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -9764,7 +9437,7 @@
     ],
     "primary": "amateur clips ohne anmeldung",
     "slug": "amateur-clips-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -9777,20 +9450,7 @@
     ],
     "primary": "amateur clips paypal",
     "slug": "amateur-clips-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur clips preise"
-    ],
-    "primary": "amateur clips preise",
-    "slug": "amateur-clips-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -9803,7 +9463,7 @@
     ],
     "primary": "amateur clips schweiz",
     "slug": "amateur-clips-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -9812,11 +9472,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur clips seriös"
+      "amateur clips seriös",
+      "amateur clips sicher",
+      "amateur clips abzocke"
     ],
     "primary": "amateur clips seriös",
     "slug": "amateur-clips-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -9825,24 +9487,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur clips sicher"
+      "amateur clips test",
+      "amateur clips erfahrungen"
     ],
-    "primary": "amateur clips sicher",
-    "slug": "amateur-clips-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur clips test"
-    ],
-    "primary": "amateur clips test",
-    "slug": "amateur-clips-test",
-    "status": "queued",
+    "primary": "amateur clips erfahrungen",
+    "slug": "amateur-clips-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -9855,7 +9505,7 @@
     ],
     "primary": "amateur clips tipps",
     "slug": "amateur-clips-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -9864,11 +9514,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur clips vergleich"
+      "amateur clips vergleich",
+      "amateur clips alternativen"
     ],
-    "primary": "amateur clips vergleich",
-    "slug": "amateur-clips-vergleich",
-    "status": "queued",
+    "primary": "amateur clips alternativen",
+    "slug": "amateur-clips-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -9896,7 +9547,7 @@
     ],
     "primary": "amateur clips was ist",
     "slug": "amateur-clips-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "videos"
   },
   {
@@ -9909,7 +9560,7 @@
     ],
     "primary": "amateur clips wie funktioniert",
     "slug": "amateur-clips-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -9922,34 +9573,8 @@
     ],
     "primary": "amateur clips österreich",
     "slug": "amateur-clips-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur erotik abzocke"
-    ],
-    "primary": "amateur erotik abzocke",
-    "slug": "amateur-erotik-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur erotik alternativen"
-    ],
-    "primary": "amateur erotik alternativen",
-    "slug": "amateur-erotik-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -9974,7 +9599,7 @@
     ],
     "primary": "amateur erotik anonym",
     "slug": "amateur-erotik-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -10000,7 +9625,7 @@
     ],
     "primary": "amateur erotik bezahlen",
     "slug": "amateur-erotik-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -10022,24 +9647,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur erotik erfahrungen"
-    ],
-    "primary": "amateur erotik erfahrungen",
-    "slug": "amateur-erotik-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "amateur erotik handy"
     ],
     "primary": "amateur erotik handy",
     "slug": "amateur-erotik-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -10052,7 +9664,7 @@
     ],
     "primary": "amateur erotik ohne anmeldung",
     "slug": "amateur-erotik-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -10065,7 +9677,7 @@
     ],
     "primary": "amateur erotik paypal",
     "slug": "amateur-erotik-paypal",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -10100,7 +9712,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur erotik seriös"
+      "amateur erotik seriös",
+      "amateur erotik sicher",
+      "amateur erotik abzocke"
     ],
     "primary": "amateur erotik seriös",
     "slug": "amateur-erotik-serioes",
@@ -10113,23 +9727,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur erotik sicher"
+      "amateur erotik test",
+      "amateur erotik erfahrungen"
     ],
-    "primary": "amateur erotik sicher",
-    "slug": "amateur-erotik-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur erotik test"
-    ],
-    "primary": "amateur erotik test",
-    "slug": "amateur-erotik-test",
+    "primary": "amateur erotik erfahrungen",
+    "slug": "amateur-erotik-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -10143,7 +9745,7 @@
     ],
     "primary": "amateur erotik tipps",
     "slug": "amateur-erotik-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -10152,11 +9754,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur erotik vergleich"
+      "amateur erotik vergleich",
+      "amateur erotik alternativen"
     ],
-    "primary": "amateur erotik vergleich",
-    "slug": "amateur-erotik-vergleich",
-    "status": "queued",
+    "primary": "amateur erotik alternativen",
+    "slug": "amateur-erotik-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -10184,7 +9787,7 @@
     ],
     "primary": "amateur erotik was ist",
     "slug": "amateur-erotik-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "amateure"
   },
   {
@@ -10219,32 +9822,6 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur videos abzocke"
-    ],
-    "primary": "amateur videos abzocke",
-    "slug": "amateur-videos-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur videos alternativen"
-    ],
-    "primary": "amateur videos alternativen",
-    "slug": "amateur-videos-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "amateur videos anmelden"
     ],
     "primary": "amateur videos anmelden",
@@ -10262,7 +9839,7 @@
     ],
     "primary": "amateur videos anonym",
     "slug": "amateur-videos-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -10288,21 +9865,8 @@
     ],
     "primary": "amateur videos bezahlen",
     "slug": "amateur-videos-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur videos erfahrungen"
-    ],
-    "primary": "amateur videos erfahrungen",
-    "slug": "amateur-videos-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -10314,7 +9878,7 @@
     ],
     "primary": "amateur videos handy",
     "slug": "amateur-videos-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -10323,7 +9887,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur videos kosten"
+      "amateur videos kosten",
+      "amateur videos preise"
     ],
     "primary": "amateur videos kosten",
     "slug": "amateur-videos-kosten",
@@ -10353,7 +9918,7 @@
     ],
     "primary": "amateur videos ohne anmeldung",
     "slug": "amateur-videos-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -10366,20 +9931,7 @@
     ],
     "primary": "amateur videos paypal",
     "slug": "amateur-videos-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur videos preise"
-    ],
-    "primary": "amateur videos preise",
-    "slug": "amateur-videos-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -10401,7 +9953,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur videos seriös"
+      "amateur videos seriös",
+      "amateur videos sicher",
+      "amateur videos abzocke"
     ],
     "primary": "amateur videos seriös",
     "slug": "amateur-videos-serioes",
@@ -10414,23 +9968,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur videos sicher"
+      "amateur videos test",
+      "amateur videos erfahrungen"
     ],
-    "primary": "amateur videos sicher",
-    "slug": "amateur-videos-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateur videos test"
-    ],
-    "primary": "amateur videos test",
-    "slug": "amateur-videos-test",
+    "primary": "amateur videos erfahrungen",
+    "slug": "amateur-videos-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -10444,7 +9986,7 @@
     ],
     "primary": "amateur videos tipps",
     "slug": "amateur-videos-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -10453,11 +9995,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateur videos vergleich"
+      "amateur videos vergleich",
+      "amateur videos alternativen"
     ],
-    "primary": "amateur videos vergleich",
-    "slug": "amateur-videos-vergleich",
-    "status": "queued",
+    "primary": "amateur videos alternativen",
+    "slug": "amateur-videos-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -10470,7 +10013,7 @@
     ],
     "primary": "amateur videos was ist",
     "slug": "amateur-videos-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "videos"
   },
   {
@@ -10509,7 +10052,7 @@
     ],
     "primary": "amateure deutsch",
     "slug": "amateure-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
   },
   {
@@ -10522,34 +10065,8 @@
     ],
     "primary": "amateure was ist",
     "slug": "amateure-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "amateure"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateurinnen abzocke"
-    ],
-    "primary": "amateurinnen abzocke",
-    "slug": "amateurinnen-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateurinnen alternativen"
-    ],
-    "primary": "amateurinnen alternativen",
-    "slug": "amateurinnen-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -10561,7 +10078,7 @@
     ],
     "primary": "amateurinnen anmelden",
     "slug": "amateurinnen-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -10574,7 +10091,7 @@
     ],
     "primary": "amateurinnen anonym",
     "slug": "amateurinnen-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -10587,7 +10104,7 @@
     ],
     "primary": "amateurinnen app",
     "slug": "amateurinnen-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -10600,7 +10117,7 @@
     ],
     "primary": "amateurinnen bezahlen",
     "slug": "amateurinnen-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -10613,34 +10130,8 @@
     ],
     "primary": "amateurinnen deutsch",
     "slug": "amateurinnen-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateurinnen erfahrungen"
-    ],
-    "primary": "amateurinnen erfahrungen",
-    "slug": "amateurinnen-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateurinnen guthaben aufladen"
-    ],
-    "primary": "amateurinnen guthaben aufladen",
-    "slug": "amateurinnen-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
   },
   {
     "added": "2026-10-16",
@@ -10652,7 +10143,7 @@
     ],
     "primary": "amateurinnen handy",
     "slug": "amateurinnen-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -10661,11 +10152,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateurinnen kosten"
+      "amateurinnen kosten",
+      "amateurinnen preise"
     ],
     "primary": "amateurinnen kosten",
     "slug": "amateurinnen-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -10678,7 +10170,7 @@
     ],
     "primary": "amateurinnen kostenlos",
     "slug": "amateurinnen-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -10691,7 +10183,7 @@
     ],
     "primary": "amateurinnen ohne anmeldung",
     "slug": "amateurinnen-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -10704,20 +10196,7 @@
     ],
     "primary": "amateurinnen paypal",
     "slug": "amateurinnen-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateurinnen preise"
-    ],
-    "primary": "amateurinnen preise",
-    "slug": "amateurinnen-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -10730,7 +10209,7 @@
     ],
     "primary": "amateurinnen schweiz",
     "slug": "amateurinnen-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -10739,11 +10218,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateurinnen seriös"
+      "amateurinnen seriös",
+      "amateurinnen sicher",
+      "amateurinnen abzocke"
     ],
     "primary": "amateurinnen seriös",
     "slug": "amateurinnen-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -10752,24 +10233,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateurinnen sicher"
+      "amateurinnen test",
+      "amateurinnen erfahrungen"
     ],
-    "primary": "amateurinnen sicher",
-    "slug": "amateurinnen-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "amateurinnen test"
-    ],
-    "primary": "amateurinnen test",
-    "slug": "amateurinnen-test",
-    "status": "queued",
+    "primary": "amateurinnen erfahrungen",
+    "slug": "amateurinnen-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -10782,7 +10251,7 @@
     ],
     "primary": "amateurinnen tipps",
     "slug": "amateurinnen-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -10791,11 +10260,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateurinnen vergleich"
+      "amateurinnen vergleich",
+      "amateurinnen alternativen"
     ],
-    "primary": "amateurinnen vergleich",
-    "slug": "amateurinnen-vergleich",
-    "status": "queued",
+    "primary": "amateurinnen alternativen",
+    "slug": "amateurinnen-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -10808,7 +10278,7 @@
     ],
     "primary": "amateurinnen visit x",
     "slug": "amateurinnen-visit-x",
-    "status": "queued",
+    "status": "parked",
     "topic": "amateure"
   },
   {
@@ -10821,7 +10291,7 @@
     ],
     "primary": "amateurinnen was ist",
     "slug": "amateurinnen-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "amateure"
   },
   {
@@ -10834,7 +10304,7 @@
     ],
     "primary": "amateurinnen wie funktioniert",
     "slug": "amateurinnen-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -10847,7 +10317,7 @@
     ],
     "primary": "amateurinnen österreich",
     "slug": "amateurinnen-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -10863,32 +10333,6 @@
     "slug": "cam-girl",
     "status": "queued",
     "topic": "webcam-models"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "cam girl abzocke"
-    ],
-    "primary": "cam girl abzocke",
-    "slug": "cam-girl-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "cam girl alternativen"
-    ],
-    "primary": "cam girl alternativen",
-    "slug": "cam-girl-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -10913,7 +10357,7 @@
     ],
     "primary": "cam girl anonym",
     "slug": "cam-girl-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -10939,7 +10383,7 @@
     ],
     "primary": "cam girl bezahlen",
     "slug": "cam-girl-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -10961,24 +10405,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam girl erfahrungen"
-    ],
-    "primary": "cam girl erfahrungen",
-    "slug": "cam-girl-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "cam girl handy"
     ],
     "primary": "cam girl handy",
     "slug": "cam-girl-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -10987,7 +10418,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam girl kosten"
+      "cam girl kosten",
+      "cam girl preise"
     ],
     "primary": "cam girl kosten",
     "slug": "cam-girl-kosten",
@@ -11017,7 +10449,7 @@
     ],
     "primary": "cam girl ohne anmeldung",
     "slug": "cam-girl-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -11030,20 +10462,7 @@
     ],
     "primary": "cam girl paypal",
     "slug": "cam-girl-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "cam girl preise"
-    ],
-    "primary": "cam girl preise",
-    "slug": "cam-girl-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -11065,7 +10484,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam girl seriös"
+      "cam girl seriös",
+      "cam girl sicher",
+      "cam girl abzocke"
     ],
     "primary": "cam girl seriös",
     "slug": "cam-girl-serioes",
@@ -11078,23 +10499,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam girl sicher"
+      "cam girl test",
+      "cam girl erfahrungen"
     ],
-    "primary": "cam girl sicher",
-    "slug": "cam-girl-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "cam girl test"
-    ],
-    "primary": "cam girl test",
-    "slug": "cam-girl-test",
+    "primary": "cam girl erfahrungen",
+    "slug": "cam-girl-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -11108,7 +10517,7 @@
     ],
     "primary": "cam girl tipps",
     "slug": "cam-girl-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -11117,11 +10526,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam girl vergleich"
+      "cam girl vergleich",
+      "cam girl alternativen"
     ],
-    "primary": "cam girl vergleich",
-    "slug": "cam-girl-vergleich",
-    "status": "queued",
+    "primary": "cam girl alternativen",
+    "slug": "cam-girl-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -11169,32 +10579,6 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam2cam abzocke"
-    ],
-    "primary": "cam2cam abzocke",
-    "slug": "cam2cam-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "cam2cam alternativen"
-    ],
-    "primary": "cam2cam alternativen",
-    "slug": "cam2cam-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "cam2cam anmelden"
     ],
     "primary": "cam2cam anmelden",
@@ -11212,7 +10596,7 @@
     ],
     "primary": "cam2cam anonym",
     "slug": "cam2cam-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -11238,7 +10622,7 @@
     ],
     "primary": "cam2cam bezahlen",
     "slug": "cam2cam-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -11260,37 +10644,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam2cam erfahrungen"
-    ],
-    "primary": "cam2cam erfahrungen",
-    "slug": "cam2cam-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "cam2cam guthaben aufladen"
-    ],
-    "primary": "cam2cam guthaben aufladen",
-    "slug": "cam2cam-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "cam2cam handy"
     ],
     "primary": "cam2cam handy",
     "slug": "cam2cam-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -11299,7 +10657,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam2cam kosten"
+      "cam2cam kosten",
+      "cam2cam preise"
     ],
     "primary": "cam2cam kosten",
     "slug": "cam2cam-kosten",
@@ -11329,7 +10688,7 @@
     ],
     "primary": "cam2cam ohne anmeldung",
     "slug": "cam2cam-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -11342,20 +10701,7 @@
     ],
     "primary": "cam2cam paypal",
     "slug": "cam2cam-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "cam2cam preise"
-    ],
-    "primary": "cam2cam preise",
-    "slug": "cam2cam-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -11377,7 +10723,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam2cam seriös"
+      "cam2cam seriös",
+      "cam2cam sicher",
+      "cam2cam abzocke"
     ],
     "primary": "cam2cam seriös",
     "slug": "cam2cam-serioes",
@@ -11390,23 +10738,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam2cam sicher"
+      "cam2cam test",
+      "cam2cam erfahrungen"
     ],
-    "primary": "cam2cam sicher",
-    "slug": "cam2cam-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "cam2cam test"
-    ],
-    "primary": "cam2cam test",
-    "slug": "cam2cam-test",
+    "primary": "cam2cam erfahrungen",
+    "slug": "cam2cam-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -11420,7 +10756,7 @@
     ],
     "primary": "cam2cam tipps",
     "slug": "cam2cam-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -11429,11 +10765,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam2cam vergleich"
+      "cam2cam vergleich",
+      "cam2cam alternativen"
     ],
-    "primary": "cam2cam vergleich",
-    "slug": "cam2cam-vergleich",
-    "status": "queued",
+    "primary": "cam2cam alternativen",
+    "slug": "cam2cam-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -11459,7 +10796,7 @@
     ],
     "primary": "cam2cam was ist",
     "slug": "cam2cam-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
   },
   {
@@ -11494,37 +10831,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "camgirls abzocke"
-    ],
-    "primary": "camgirls abzocke",
-    "slug": "camgirls-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "camgirls alternativen"
-    ],
-    "primary": "camgirls alternativen",
-    "slug": "camgirls-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "camgirls anmelden"
     ],
     "primary": "camgirls anmelden",
     "slug": "camgirls-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -11537,7 +10848,7 @@
     ],
     "primary": "camgirls anonym",
     "slug": "camgirls-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -11550,7 +10861,7 @@
     ],
     "primary": "camgirls app",
     "slug": "camgirls-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -11563,7 +10874,7 @@
     ],
     "primary": "camgirls bezahlen",
     "slug": "camgirls-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -11576,34 +10887,8 @@
     ],
     "primary": "camgirls deutsch",
     "slug": "camgirls-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "camgirls erfahrungen"
-    ],
-    "primary": "camgirls erfahrungen",
-    "slug": "camgirls-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "camgirls guthaben aufladen"
-    ],
-    "primary": "camgirls guthaben aufladen",
-    "slug": "camgirls-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
   },
   {
     "added": "2026-10-16",
@@ -11615,7 +10900,7 @@
     ],
     "primary": "camgirls handy",
     "slug": "camgirls-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -11624,11 +10909,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "camgirls kosten"
+      "camgirls kosten",
+      "camgirls preise"
     ],
     "primary": "camgirls kosten",
     "slug": "camgirls-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -11641,7 +10927,7 @@
     ],
     "primary": "camgirls kostenlos",
     "slug": "camgirls-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -11654,7 +10940,7 @@
     ],
     "primary": "camgirls ohne anmeldung",
     "slug": "camgirls-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -11667,20 +10953,7 @@
     ],
     "primary": "camgirls paypal",
     "slug": "camgirls-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "camgirls preise"
-    ],
-    "primary": "camgirls preise",
-    "slug": "camgirls-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -11693,7 +10966,7 @@
     ],
     "primary": "camgirls schweiz",
     "slug": "camgirls-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -11702,11 +10975,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "camgirls seriös"
+      "camgirls seriös",
+      "camgirls sicher",
+      "camgirls abzocke"
     ],
     "primary": "camgirls seriös",
     "slug": "camgirls-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -11715,24 +10990,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "camgirls sicher"
+      "camgirls test",
+      "camgirls erfahrungen"
     ],
-    "primary": "camgirls sicher",
-    "slug": "camgirls-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "camgirls test"
-    ],
-    "primary": "camgirls test",
-    "slug": "camgirls-test",
-    "status": "queued",
+    "primary": "camgirls erfahrungen",
+    "slug": "camgirls-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -11745,7 +11008,7 @@
     ],
     "primary": "camgirls tipps",
     "slug": "camgirls-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -11754,11 +11017,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "camgirls vergleich"
+      "camgirls vergleich",
+      "camgirls alternativen"
     ],
-    "primary": "camgirls vergleich",
-    "slug": "camgirls-vergleich",
-    "status": "queued",
+    "primary": "camgirls alternativen",
+    "slug": "camgirls-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -11771,7 +11035,7 @@
     ],
     "primary": "camgirls visit x",
     "slug": "camgirls-visit-x",
-    "status": "queued",
+    "status": "parked",
     "topic": "webcam-models"
   },
   {
@@ -11784,7 +11048,7 @@
     ],
     "primary": "camgirls was ist",
     "slug": "camgirls-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "webcam-models"
   },
   {
@@ -11797,7 +11061,7 @@
     ],
     "primary": "camgirls wie funktioniert",
     "slug": "camgirls-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -11810,7 +11074,7 @@
     ],
     "primary": "camgirls österreich",
     "slug": "camgirls-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -11824,34 +11088,8 @@
     ],
     "primary": "erotik filme",
     "slug": "erotik-filme",
-    "status": "queued",
+    "status": "parked",
     "topic": "videos"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik filme abzocke"
-    ],
-    "primary": "erotik filme abzocke",
-    "slug": "erotik-filme-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik filme alternativen"
-    ],
-    "primary": "erotik filme alternativen",
-    "slug": "erotik-filme-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -11863,7 +11101,7 @@
     ],
     "primary": "erotik filme anmelden",
     "slug": "erotik-filme-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -11876,7 +11114,7 @@
     ],
     "primary": "erotik filme anonym",
     "slug": "erotik-filme-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -11889,7 +11127,7 @@
     ],
     "primary": "erotik filme app",
     "slug": "erotik-filme-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -11902,7 +11140,7 @@
     ],
     "primary": "erotik filme bezahlen",
     "slug": "erotik-filme-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -11915,35 +11153,8 @@
     ],
     "primary": "erotik filme deutsch",
     "slug": "erotik-filme-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik filme erfahrungen"
-    ],
-    "primary": "erotik filme erfahrungen",
-    "slug": "erotik-filme-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik filme guthaben aufladen",
-      "erotik videos guthaben aufladen"
-    ],
-    "primary": "erotik filme guthaben aufladen",
-    "slug": "erotik-filme-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
   },
   {
     "added": "2026-10-16",
@@ -11955,7 +11166,7 @@
     ],
     "primary": "erotik filme handy",
     "slug": "erotik-filme-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -11964,11 +11175,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik filme kosten"
+      "erotik filme kosten",
+      "erotik filme preise"
     ],
     "primary": "erotik filme kosten",
     "slug": "erotik-filme-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -11981,7 +11193,7 @@
     ],
     "primary": "erotik filme kostenlos",
     "slug": "erotik-filme-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -11994,7 +11206,7 @@
     ],
     "primary": "erotik filme ohne anmeldung",
     "slug": "erotik-filme-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -12007,20 +11219,7 @@
     ],
     "primary": "erotik filme paypal",
     "slug": "erotik-filme-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik filme preise"
-    ],
-    "primary": "erotik filme preise",
-    "slug": "erotik-filme-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -12033,7 +11232,7 @@
     ],
     "primary": "erotik filme schweiz",
     "slug": "erotik-filme-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -12042,11 +11241,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik filme seriös"
+      "erotik filme seriös",
+      "erotik filme sicher",
+      "erotik filme abzocke"
     ],
     "primary": "erotik filme seriös",
     "slug": "erotik-filme-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -12055,24 +11256,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik filme sicher"
+      "erotik filme test",
+      "erotik filme erfahrungen"
     ],
-    "primary": "erotik filme sicher",
-    "slug": "erotik-filme-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik filme test"
-    ],
-    "primary": "erotik filme test",
-    "slug": "erotik-filme-test",
-    "status": "queued",
+    "primary": "erotik filme erfahrungen",
+    "slug": "erotik-filme-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -12085,7 +11274,7 @@
     ],
     "primary": "erotik filme tipps",
     "slug": "erotik-filme-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -12094,11 +11283,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik filme vergleich"
+      "erotik filme vergleich",
+      "erotik filme alternativen"
     ],
-    "primary": "erotik filme vergleich",
-    "slug": "erotik-filme-vergleich",
-    "status": "queued",
+    "primary": "erotik filme alternativen",
+    "slug": "erotik-filme-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -12125,7 +11315,7 @@
     ],
     "primary": "erotik filme wie funktioniert",
     "slug": "erotik-filme-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -12138,7 +11328,7 @@
     ],
     "primary": "erotik filme österreich",
     "slug": "erotik-filme-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -12154,32 +11344,6 @@
     "slug": "erotik-videos",
     "status": "queued",
     "topic": "videos"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik videos abzocke"
-    ],
-    "primary": "erotik videos abzocke",
-    "slug": "erotik-videos-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik videos alternativen"
-    ],
-    "primary": "erotik videos alternativen",
-    "slug": "erotik-videos-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -12204,7 +11368,7 @@
     ],
     "primary": "erotik videos anonym",
     "slug": "erotik-videos-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -12230,21 +11394,8 @@
     ],
     "primary": "erotik videos bezahlen",
     "slug": "erotik-videos-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik videos erfahrungen"
-    ],
-    "primary": "erotik videos erfahrungen",
-    "slug": "erotik-videos-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -12256,7 +11407,7 @@
     ],
     "primary": "erotik videos handy",
     "slug": "erotik-videos-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -12265,7 +11416,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik videos kosten"
+      "erotik videos kosten",
+      "erotik videos preise"
     ],
     "primary": "erotik videos kosten",
     "slug": "erotik-videos-kosten",
@@ -12295,7 +11447,7 @@
     ],
     "primary": "erotik videos ohne anmeldung",
     "slug": "erotik-videos-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -12308,20 +11460,7 @@
     ],
     "primary": "erotik videos paypal",
     "slug": "erotik-videos-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik videos preise"
-    ],
-    "primary": "erotik videos preise",
-    "slug": "erotik-videos-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -12343,7 +11482,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik videos seriös"
+      "erotik videos seriös",
+      "erotik videos sicher",
+      "erotik videos abzocke"
     ],
     "primary": "erotik videos seriös",
     "slug": "erotik-videos-serioes",
@@ -12356,23 +11497,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik videos sicher"
+      "erotik videos test",
+      "erotik videos erfahrungen"
     ],
-    "primary": "erotik videos sicher",
-    "slug": "erotik-videos-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "erotik videos test"
-    ],
-    "primary": "erotik videos test",
-    "slug": "erotik-videos-test",
+    "primary": "erotik videos erfahrungen",
+    "slug": "erotik-videos-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -12386,7 +11515,7 @@
     ],
     "primary": "erotik videos tipps",
     "slug": "erotik-videos-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -12395,11 +11524,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik videos vergleich"
+      "erotik videos vergleich",
+      "erotik videos alternativen"
     ],
-    "primary": "erotik videos vergleich",
-    "slug": "erotik-videos-vergleich",
-    "status": "queued",
+    "primary": "erotik videos alternativen",
+    "slug": "erotik-videos-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -12434,37 +11564,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "gruppenchat abzocke"
-    ],
-    "primary": "gruppenchat abzocke",
-    "slug": "gruppenchat-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "gruppenchat alternativen"
-    ],
-    "primary": "gruppenchat alternativen",
-    "slug": "gruppenchat-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "gruppenchat anmelden"
     ],
     "primary": "gruppenchat anmelden",
     "slug": "gruppenchat-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -12477,7 +11581,7 @@
     ],
     "primary": "gruppenchat anonym",
     "slug": "gruppenchat-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -12490,7 +11594,7 @@
     ],
     "primary": "gruppenchat app",
     "slug": "gruppenchat-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -12503,7 +11607,7 @@
     ],
     "primary": "gruppenchat bezahlen",
     "slug": "gruppenchat-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -12516,34 +11620,8 @@
     ],
     "primary": "gruppenchat deutsch",
     "slug": "gruppenchat-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "gruppenchat erfahrungen"
-    ],
-    "primary": "gruppenchat erfahrungen",
-    "slug": "gruppenchat-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "gruppenchat guthaben aufladen"
-    ],
-    "primary": "gruppenchat guthaben aufladen",
-    "slug": "gruppenchat-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
   },
   {
     "added": "2026-10-16",
@@ -12555,7 +11633,7 @@
     ],
     "primary": "gruppenchat handy",
     "slug": "gruppenchat-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -12564,11 +11642,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "gruppenchat kosten"
+      "gruppenchat kosten",
+      "gruppenchat preise"
     ],
     "primary": "gruppenchat kosten",
     "slug": "gruppenchat-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -12581,7 +11660,7 @@
     ],
     "primary": "gruppenchat kostenlos",
     "slug": "gruppenchat-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -12594,7 +11673,7 @@
     ],
     "primary": "gruppenchat ohne anmeldung",
     "slug": "gruppenchat-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -12607,20 +11686,7 @@
     ],
     "primary": "gruppenchat paypal",
     "slug": "gruppenchat-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "gruppenchat preise"
-    ],
-    "primary": "gruppenchat preise",
-    "slug": "gruppenchat-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -12633,7 +11699,7 @@
     ],
     "primary": "gruppenchat schweiz",
     "slug": "gruppenchat-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -12642,11 +11708,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "gruppenchat seriös"
+      "gruppenchat seriös",
+      "gruppenchat sicher",
+      "gruppenchat abzocke"
     ],
     "primary": "gruppenchat seriös",
     "slug": "gruppenchat-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -12655,24 +11723,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "gruppenchat sicher"
+      "gruppenchat test",
+      "gruppenchat erfahrungen"
     ],
-    "primary": "gruppenchat sicher",
-    "slug": "gruppenchat-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "gruppenchat test"
-    ],
-    "primary": "gruppenchat test",
-    "slug": "gruppenchat-test",
-    "status": "queued",
+    "primary": "gruppenchat erfahrungen",
+    "slug": "gruppenchat-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -12685,7 +11741,7 @@
     ],
     "primary": "gruppenchat tipps",
     "slug": "gruppenchat-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -12694,11 +11750,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "gruppenchat vergleich"
+      "gruppenchat vergleich",
+      "gruppenchat alternativen"
     ],
-    "primary": "gruppenchat vergleich",
-    "slug": "gruppenchat-vergleich",
-    "status": "queued",
+    "primary": "gruppenchat alternativen",
+    "slug": "gruppenchat-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -12711,7 +11768,7 @@
     ],
     "primary": "gruppenchat visit x",
     "slug": "gruppenchat-visit-x",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
   },
   {
@@ -12724,7 +11781,7 @@
     ],
     "primary": "gruppenchat was ist",
     "slug": "gruppenchat-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
   },
   {
@@ -12737,7 +11794,7 @@
     ],
     "primary": "gruppenchat wie funktioniert",
     "slug": "gruppenchat-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -12750,7 +11807,7 @@
     ],
     "primary": "gruppenchat österreich",
     "slug": "gruppenchat-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -12764,34 +11821,8 @@
     ],
     "primary": "hobby amateure",
     "slug": "hobby-amateure",
-    "status": "queued",
+    "status": "parked",
     "topic": "amateure"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "hobby amateure abzocke"
-    ],
-    "primary": "hobby amateure abzocke",
-    "slug": "hobby-amateure-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "hobby amateure alternativen"
-    ],
-    "primary": "hobby amateure alternativen",
-    "slug": "hobby-amateure-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -12803,7 +11834,7 @@
     ],
     "primary": "hobby amateure anmelden",
     "slug": "hobby-amateure-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -12816,7 +11847,7 @@
     ],
     "primary": "hobby amateure anonym",
     "slug": "hobby-amateure-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -12829,7 +11860,7 @@
     ],
     "primary": "hobby amateure app",
     "slug": "hobby-amateure-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -12842,7 +11873,7 @@
     ],
     "primary": "hobby amateure bezahlen",
     "slug": "hobby-amateure-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -12855,21 +11886,8 @@
     ],
     "primary": "hobby amateure deutsch",
     "slug": "hobby-amateure-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "hobby amateure erfahrungen"
-    ],
-    "primary": "hobby amateure erfahrungen",
-    "slug": "hobby-amateure-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -12881,7 +11899,7 @@
     ],
     "primary": "hobby amateure handy",
     "slug": "hobby-amateure-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -12890,11 +11908,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "hobby amateure kosten"
+      "hobby amateure kosten",
+      "hobby amateure preise"
     ],
     "primary": "hobby amateure kosten",
     "slug": "hobby-amateure-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -12907,7 +11926,7 @@
     ],
     "primary": "hobby amateure kostenlos",
     "slug": "hobby-amateure-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -12920,7 +11939,7 @@
     ],
     "primary": "hobby amateure ohne anmeldung",
     "slug": "hobby-amateure-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -12933,20 +11952,7 @@
     ],
     "primary": "hobby amateure paypal",
     "slug": "hobby-amateure-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "hobby amateure preise"
-    ],
-    "primary": "hobby amateure preise",
-    "slug": "hobby-amateure-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -12959,7 +11965,7 @@
     ],
     "primary": "hobby amateure schweiz",
     "slug": "hobby-amateure-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -12968,11 +11974,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "hobby amateure seriös"
+      "hobby amateure seriös",
+      "hobby amateure sicher",
+      "hobby amateure abzocke"
     ],
     "primary": "hobby amateure seriös",
     "slug": "hobby-amateure-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -12981,24 +11989,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "hobby amateure sicher"
+      "hobby amateure test",
+      "hobby amateure erfahrungen"
     ],
-    "primary": "hobby amateure sicher",
-    "slug": "hobby-amateure-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "hobby amateure test"
-    ],
-    "primary": "hobby amateure test",
-    "slug": "hobby-amateure-test",
-    "status": "queued",
+    "primary": "hobby amateure erfahrungen",
+    "slug": "hobby-amateure-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -13011,7 +12007,7 @@
     ],
     "primary": "hobby amateure tipps",
     "slug": "hobby-amateure-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -13020,11 +12016,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "hobby amateure vergleich"
+      "hobby amateure vergleich",
+      "hobby amateure alternativen"
     ],
-    "primary": "hobby amateure vergleich",
-    "slug": "hobby-amateure-vergleich",
-    "status": "queued",
+    "primary": "hobby amateure alternativen",
+    "slug": "hobby-amateure-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -13037,7 +12034,7 @@
     ],
     "primary": "hobby amateure wie funktioniert",
     "slug": "hobby-amateure-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -13050,7 +12047,7 @@
     ],
     "primary": "hobby amateure österreich",
     "slug": "hobby-amateure-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -13064,34 +12061,8 @@
     ],
     "primary": "live cam",
     "slug": "live-cam",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "live cam abzocke"
-    ],
-    "primary": "live cam abzocke",
-    "slug": "live-cam-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "live cam alternativen"
-    ],
-    "primary": "live cam alternativen",
-    "slug": "live-cam-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -13103,7 +12074,7 @@
     ],
     "primary": "live cam anmelden",
     "slug": "live-cam-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -13116,7 +12087,7 @@
     ],
     "primary": "live cam anonym",
     "slug": "live-cam-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -13129,7 +12100,7 @@
     ],
     "primary": "live cam app",
     "slug": "live-cam-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -13142,7 +12113,7 @@
     ],
     "primary": "live cam bezahlen",
     "slug": "live-cam-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -13181,21 +12152,8 @@
     ],
     "primary": "live cam deutsch",
     "slug": "live-cam-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "live cam erfahrungen"
-    ],
-    "primary": "live cam erfahrungen",
-    "slug": "live-cam-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -13207,21 +12165,8 @@
     ],
     "primary": "live cam handy",
     "slug": "live-cam-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "live cam kosten"
-    ],
-    "primary": "live cam kosten",
-    "slug": "live-cam-kosten",
-    "status": "queued",
-    "topic": "preise"
   },
   {
     "added": "2026-10-16",
@@ -13233,7 +12178,7 @@
     ],
     "primary": "live cam kostenlos",
     "slug": "live-cam-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -13246,7 +12191,7 @@
     ],
     "primary": "live cam ohne anmeldung",
     "slug": "live-cam-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -13259,7 +12204,7 @@
     ],
     "primary": "live cam paypal",
     "slug": "live-cam-paypal",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -13273,7 +12218,7 @@
     ],
     "primary": "live cam schweiz",
     "slug": "live-cam-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -13282,11 +12227,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "live cam seriös"
+      "live cam seriös",
+      "live cam sicher",
+      "live cam abzocke"
     ],
     "primary": "live cam seriös",
     "slug": "live-cam-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -13295,24 +12242,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "live cam sicher"
+      "live cam test",
+      "live cam erfahrungen"
     ],
-    "primary": "live cam sicher",
-    "slug": "live-cam-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "live cam test"
-    ],
-    "primary": "live cam test",
-    "slug": "live-cam-test",
-    "status": "queued",
+    "primary": "live cam erfahrungen",
+    "slug": "live-cam-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -13325,7 +12260,7 @@
     ],
     "primary": "live cam tipps",
     "slug": "live-cam-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -13334,11 +12269,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "live cam vergleich"
+      "live cam vergleich",
+      "live cam alternativen"
     ],
-    "primary": "live cam vergleich",
-    "slug": "live-cam-vergleich",
-    "status": "queued",
+    "primary": "live cam alternativen",
+    "slug": "live-cam-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -13351,7 +12287,7 @@
     ],
     "primary": "live cam wie funktioniert",
     "slug": "live-cam-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -13365,7 +12301,7 @@
     ],
     "primary": "live cam österreich",
     "slug": "live-cam-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -13378,7 +12314,7 @@
     ],
     "primary": "live cams deutsch guthaben aufladen",
     "slug": "live-cams-deutsch-guthaben-aufladen",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
   },
   {
@@ -13391,7 +12327,7 @@
     ],
     "primary": "live cams deutsch visit x",
     "slug": "live-cams-deutsch-visit-x",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
   },
   {
@@ -13415,10 +12351,13 @@
     "impressions": 0,
     "keywords": [
       "livecam test",
-      "livecams test"
+      "livecams test",
+      "livecam erfahrungen",
+      "amateur livecam erfahrungen",
+      "livecams erfahrungen"
     ],
-    "primary": "livecam test",
-    "slug": "livecam-test",
+    "primary": "livecam erfahrungen",
+    "slug": "livecam-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -13447,34 +12386,8 @@
     ],
     "primary": "livecam was ist",
     "slug": "livecam-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livechat abzocke"
-    ],
-    "primary": "livechat abzocke",
-    "slug": "livechat-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livechat alternativen"
-    ],
-    "primary": "livechat alternativen",
-    "slug": "livechat-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -13499,7 +12412,7 @@
     ],
     "primary": "livechat anonym",
     "slug": "livechat-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -13525,33 +12438,7 @@
     ],
     "primary": "livechat bezahlen",
     "slug": "livechat-bezahlen",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livechat erfahrungen"
-    ],
-    "primary": "livechat erfahrungen",
-    "slug": "livechat-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livechat guthaben aufladen"
-    ],
-    "primary": "livechat guthaben aufladen",
-    "slug": "livechat-guthaben-aufladen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -13564,7 +12451,7 @@
     ],
     "primary": "livechat handy",
     "slug": "livechat-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -13573,7 +12460,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "livechat kosten"
+      "livechat kosten",
+      "livechat preise"
     ],
     "primary": "livechat kosten",
     "slug": "livechat-kosten",
@@ -13603,7 +12491,7 @@
     ],
     "primary": "livechat ohne anmeldung",
     "slug": "livechat-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -13616,20 +12504,7 @@
     ],
     "primary": "livechat paypal",
     "slug": "livechat-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livechat preise"
-    ],
-    "primary": "livechat preise",
-    "slug": "livechat-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -13651,7 +12526,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "livechat seriös"
+      "livechat seriös",
+      "livechat sicher",
+      "livechat abzocke"
     ],
     "primary": "livechat seriös",
     "slug": "livechat-serioes",
@@ -13664,23 +12541,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "livechat sicher"
+      "livechat test",
+      "livechat erfahrungen"
     ],
-    "primary": "livechat sicher",
-    "slug": "livechat-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "livechat test"
-    ],
-    "primary": "livechat test",
-    "slug": "livechat-test",
+    "primary": "livechat erfahrungen",
+    "slug": "livechat-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -13694,7 +12559,7 @@
     ],
     "primary": "livechat tipps",
     "slug": "livechat-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -13703,11 +12568,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "livechat vergleich"
+      "livechat vergleich",
+      "livechat alternativen"
     ],
-    "primary": "livechat vergleich",
-    "slug": "livechat-vergleich",
-    "status": "queued",
+    "primary": "livechat alternativen",
+    "slug": "livechat-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -13733,7 +12599,7 @@
     ],
     "primary": "livechat was ist",
     "slug": "livechat-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
   },
   {
@@ -13768,32 +12634,6 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "privatchat abzocke"
-    ],
-    "primary": "privatchat abzocke",
-    "slug": "privatchat-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "privatchat alternativen"
-    ],
-    "primary": "privatchat alternativen",
-    "slug": "privatchat-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "privatchat anmelden"
     ],
     "primary": "privatchat anmelden",
@@ -13811,7 +12651,7 @@
     ],
     "primary": "privatchat anonym",
     "slug": "privatchat-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -13837,7 +12677,7 @@
     ],
     "primary": "privatchat bezahlen",
     "slug": "privatchat-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -13859,37 +12699,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "privatchat erfahrungen"
-    ],
-    "primary": "privatchat erfahrungen",
-    "slug": "privatchat-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "privatchat guthaben aufladen"
-    ],
-    "primary": "privatchat guthaben aufladen",
-    "slug": "privatchat-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "privatchat handy"
     ],
     "primary": "privatchat handy",
     "slug": "privatchat-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -13898,7 +12712,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "privatchat kosten"
+      "privatchat kosten",
+      "privatchat preise"
     ],
     "primary": "privatchat kosten",
     "slug": "privatchat-kosten",
@@ -13928,7 +12743,7 @@
     ],
     "primary": "privatchat ohne anmeldung",
     "slug": "privatchat-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -13941,20 +12756,7 @@
     ],
     "primary": "privatchat paypal",
     "slug": "privatchat-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "privatchat preise"
-    ],
-    "primary": "privatchat preise",
-    "slug": "privatchat-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -13976,7 +12778,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "privatchat seriös"
+      "privatchat seriös",
+      "privatchat sicher",
+      "privatchat abzocke"
     ],
     "primary": "privatchat seriös",
     "slug": "privatchat-serioes",
@@ -13989,23 +12793,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "privatchat sicher"
+      "privatchat test",
+      "privatchat erfahrungen"
     ],
-    "primary": "privatchat sicher",
-    "slug": "privatchat-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "privatchat test"
-    ],
-    "primary": "privatchat test",
-    "slug": "privatchat-test",
+    "primary": "privatchat erfahrungen",
+    "slug": "privatchat-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -14019,7 +12811,7 @@
     ],
     "primary": "privatchat tipps",
     "slug": "privatchat-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -14028,11 +12820,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "privatchat vergleich"
+      "privatchat vergleich",
+      "privatchat alternativen"
     ],
-    "primary": "privatchat vergleich",
-    "slug": "privatchat-vergleich",
-    "status": "queued",
+    "primary": "privatchat alternativen",
+    "slug": "privatchat-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -14058,7 +12851,7 @@
     ],
     "primary": "privatchat was ist",
     "slug": "privatchat-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
   },
   {
@@ -14093,37 +12886,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "sexcam abzocke"
-    ],
-    "primary": "sexcam abzocke",
-    "slug": "sexcam-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "sexcam alternativen"
-    ],
-    "primary": "sexcam alternativen",
-    "slug": "sexcam-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "sexcam anmelden"
     ],
     "primary": "sexcam anmelden",
     "slug": "sexcam-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -14136,7 +12903,7 @@
     ],
     "primary": "sexcam anonym",
     "slug": "sexcam-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -14149,7 +12916,7 @@
     ],
     "primary": "sexcam app",
     "slug": "sexcam-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -14162,33 +12929,7 @@
     ],
     "primary": "sexcam bezahlen",
     "slug": "sexcam-bezahlen",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "sexcam erfahrungen"
-    ],
-    "primary": "sexcam erfahrungen",
-    "slug": "sexcam-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "sexcam guthaben aufladen"
-    ],
-    "primary": "sexcam guthaben aufladen",
-    "slug": "sexcam-guthaben-aufladen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -14201,7 +12942,7 @@
     ],
     "primary": "sexcam handy",
     "slug": "sexcam-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -14210,11 +12951,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "sexcam kosten"
+      "sexcam kosten",
+      "sexcam preise"
     ],
     "primary": "sexcam kosten",
     "slug": "sexcam-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -14227,7 +12969,7 @@
     ],
     "primary": "sexcam kostenlos",
     "slug": "sexcam-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -14240,7 +12982,7 @@
     ],
     "primary": "sexcam ohne anmeldung",
     "slug": "sexcam-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -14253,20 +12995,7 @@
     ],
     "primary": "sexcam paypal",
     "slug": "sexcam-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "sexcam preise"
-    ],
-    "primary": "sexcam preise",
-    "slug": "sexcam-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -14279,7 +13008,7 @@
     ],
     "primary": "sexcam schweiz",
     "slug": "sexcam-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -14288,11 +13017,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "sexcam seriös"
+      "sexcam seriös",
+      "sexcam sicher",
+      "sexcam abzocke"
     ],
     "primary": "sexcam seriös",
     "slug": "sexcam-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -14301,24 +13032,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "sexcam sicher"
+      "sexcam test",
+      "sexcam erfahrungen"
     ],
-    "primary": "sexcam sicher",
-    "slug": "sexcam-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "sexcam test"
-    ],
-    "primary": "sexcam test",
-    "slug": "sexcam-test",
-    "status": "queued",
+    "primary": "sexcam erfahrungen",
+    "slug": "sexcam-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -14331,7 +13050,7 @@
     ],
     "primary": "sexcam tipps",
     "slug": "sexcam-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -14340,11 +13059,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "sexcam vergleich"
+      "sexcam vergleich",
+      "sexcam alternativen"
     ],
-    "primary": "sexcam vergleich",
-    "slug": "sexcam-vergleich",
-    "status": "queued",
+    "primary": "sexcam alternativen",
+    "slug": "sexcam-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -14357,7 +13077,7 @@
     ],
     "primary": "sexcam visit x",
     "slug": "sexcam-visit-x",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
   },
   {
@@ -14370,7 +13090,7 @@
     ],
     "primary": "sexcam was ist",
     "slug": "sexcam-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
   },
   {
@@ -14383,7 +13103,7 @@
     ],
     "primary": "sexcam wie funktioniert",
     "slug": "sexcam-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -14396,7 +13116,7 @@
     ],
     "primary": "sexcam österreich",
     "slug": "sexcam-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -14412,32 +13132,6 @@
     "slug": "video-chat",
     "status": "queued",
     "topic": "livecams"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video chat abzocke"
-    ],
-    "primary": "video chat abzocke",
-    "slug": "video-chat-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video chat alternativen"
-    ],
-    "primary": "video chat alternativen",
-    "slug": "video-chat-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -14462,7 +13156,7 @@
     ],
     "primary": "video chat anonym",
     "slug": "video-chat-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -14488,7 +13182,7 @@
     ],
     "primary": "video chat bezahlen",
     "slug": "video-chat-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -14510,40 +13204,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video chat erfahrungen"
-    ],
-    "primary": "video chat erfahrungen",
-    "slug": "video-chat-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video chat guthaben aufladen",
-      "video clips guthaben aufladen",
-      "webcam chat guthaben aufladen",
-      "videos streamen guthaben aufladen"
-    ],
-    "primary": "video chat guthaben aufladen",
-    "slug": "video-chat-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "video chat handy"
     ],
     "primary": "video chat handy",
     "slug": "video-chat-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -14552,7 +13217,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video chat kosten"
+      "video chat kosten",
+      "video chat preise"
     ],
     "primary": "video chat kosten",
     "slug": "video-chat-kosten",
@@ -14582,7 +13248,7 @@
     ],
     "primary": "video chat ohne anmeldung",
     "slug": "video-chat-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -14595,20 +13261,7 @@
     ],
     "primary": "video chat paypal",
     "slug": "video-chat-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video chat preise"
-    ],
-    "primary": "video chat preise",
-    "slug": "video-chat-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -14630,7 +13283,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video chat seriös"
+      "video chat seriös",
+      "video chat sicher",
+      "video chat abzocke"
     ],
     "primary": "video chat seriös",
     "slug": "video-chat-serioes",
@@ -14643,23 +13298,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video chat sicher"
+      "video chat test",
+      "video chat erfahrungen"
     ],
-    "primary": "video chat sicher",
-    "slug": "video-chat-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video chat test"
-    ],
-    "primary": "video chat test",
-    "slug": "video-chat-test",
+    "primary": "video chat erfahrungen",
+    "slug": "video-chat-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -14673,7 +13316,7 @@
     ],
     "primary": "video chat tipps",
     "slug": "video-chat-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -14682,11 +13325,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video chat vergleich"
+      "video chat vergleich",
+      "video chat alternativen"
     ],
-    "primary": "video chat vergleich",
-    "slug": "video-chat-vergleich",
-    "status": "queued",
+    "primary": "video chat alternativen",
+    "slug": "video-chat-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -14698,8 +13342,8 @@
       "video chat visit x",
       "webcam chat visit x"
     ],
-    "primary": "video chat visit x",
-    "slug": "video-chat-visit-x",
+    "primary": "webcam chat visit x",
+    "slug": "webcam-chat-visit-x",
     "status": "queued",
     "topic": "livecams"
   },
@@ -14740,34 +13384,8 @@
     ],
     "primary": "video clips",
     "slug": "video-clips",
-    "status": "queued",
+    "status": "parked",
     "topic": "videos"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video clips abzocke"
-    ],
-    "primary": "video clips abzocke",
-    "slug": "video-clips-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video clips alternativen"
-    ],
-    "primary": "video clips alternativen",
-    "slug": "video-clips-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -14779,7 +13397,7 @@
     ],
     "primary": "video clips anmelden",
     "slug": "video-clips-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -14792,7 +13410,7 @@
     ],
     "primary": "video clips anonym",
     "slug": "video-clips-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -14805,7 +13423,7 @@
     ],
     "primary": "video clips app",
     "slug": "video-clips-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -14818,7 +13436,7 @@
     ],
     "primary": "video clips bezahlen",
     "slug": "video-clips-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -14831,21 +13449,8 @@
     ],
     "primary": "video clips deutsch",
     "slug": "video-clips-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video clips erfahrungen"
-    ],
-    "primary": "video clips erfahrungen",
-    "slug": "video-clips-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -14857,7 +13462,7 @@
     ],
     "primary": "video clips handy",
     "slug": "video-clips-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -14866,11 +13471,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video clips kosten"
+      "video clips kosten",
+      "video clips preise"
     ],
     "primary": "video clips kosten",
     "slug": "video-clips-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -14883,7 +13489,7 @@
     ],
     "primary": "video clips kostenlos",
     "slug": "video-clips-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -14896,7 +13502,7 @@
     ],
     "primary": "video clips ohne anmeldung",
     "slug": "video-clips-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -14909,20 +13515,7 @@
     ],
     "primary": "video clips paypal",
     "slug": "video-clips-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video clips preise"
-    ],
-    "primary": "video clips preise",
-    "slug": "video-clips-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -14935,7 +13528,7 @@
     ],
     "primary": "video clips schweiz",
     "slug": "video-clips-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -14944,11 +13537,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video clips seriös"
+      "video clips seriös",
+      "video clips sicher",
+      "video clips abzocke"
     ],
     "primary": "video clips seriös",
     "slug": "video-clips-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -14957,24 +13552,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video clips sicher"
+      "video clips test",
+      "video clips erfahrungen"
     ],
-    "primary": "video clips sicher",
-    "slug": "video-clips-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "video clips test"
-    ],
-    "primary": "video clips test",
-    "slug": "video-clips-test",
-    "status": "queued",
+    "primary": "video clips erfahrungen",
+    "slug": "video-clips-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -14987,7 +13570,7 @@
     ],
     "primary": "video clips tipps",
     "slug": "video-clips-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -14996,11 +13579,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video clips vergleich"
+      "video clips vergleich",
+      "video clips alternativen"
     ],
-    "primary": "video clips vergleich",
-    "slug": "video-clips-vergleich",
-    "status": "queued",
+    "primary": "video clips alternativen",
+    "slug": "video-clips-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -15013,7 +13597,7 @@
     ],
     "primary": "video clips wie funktioniert",
     "slug": "video-clips-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15026,34 +13610,8 @@
     ],
     "primary": "video clips österreich",
     "slug": "video-clips-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videostation abzocke"
-    ],
-    "primary": "videostation abzocke",
-    "slug": "videostation-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videostation alternativen"
-    ],
-    "primary": "videostation alternativen",
-    "slug": "videostation-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -15078,7 +13636,7 @@
     ],
     "primary": "videostation anonym",
     "slug": "videostation-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -15104,7 +13662,7 @@
     ],
     "primary": "videostation bezahlen",
     "slug": "videostation-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -15126,37 +13684,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videostation erfahrungen"
-    ],
-    "primary": "videostation erfahrungen",
-    "slug": "videostation-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videostation guthaben aufladen"
-    ],
-    "primary": "videostation guthaben aufladen",
-    "slug": "videostation-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "videostation handy"
     ],
     "primary": "videostation handy",
     "slug": "videostation-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -15165,7 +13697,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videostation kosten"
+      "videostation kosten",
+      "videostation preise"
     ],
     "primary": "videostation kosten",
     "slug": "videostation-kosten",
@@ -15195,7 +13728,7 @@
     ],
     "primary": "videostation ohne anmeldung",
     "slug": "videostation-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -15208,20 +13741,7 @@
     ],
     "primary": "videostation paypal",
     "slug": "videostation-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videostation preise"
-    ],
-    "primary": "videostation preise",
-    "slug": "videostation-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -15243,7 +13763,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videostation seriös"
+      "videostation seriös",
+      "videostation sicher",
+      "videostation abzocke"
     ],
     "primary": "videostation seriös",
     "slug": "videostation-serioes",
@@ -15256,23 +13778,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videostation sicher"
+      "videostation test",
+      "videostation erfahrungen"
     ],
-    "primary": "videostation sicher",
-    "slug": "videostation-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videostation test"
-    ],
-    "primary": "videostation test",
-    "slug": "videostation-test",
+    "primary": "videostation erfahrungen",
+    "slug": "videostation-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -15286,7 +13796,7 @@
     ],
     "primary": "videostation tipps",
     "slug": "videostation-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15295,11 +13805,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videostation vergleich"
+      "videostation vergleich",
+      "videostation alternativen"
     ],
-    "primary": "videostation vergleich",
-    "slug": "videostation-vergleich",
-    "status": "queued",
+    "primary": "videostation alternativen",
+    "slug": "videostation-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -15325,7 +13836,7 @@
     ],
     "primary": "videostation was ist",
     "slug": "videostation-was-ist",
-    "status": "queued",
+    "status": "parked",
     "topic": "videos"
   },
   {
@@ -15365,34 +13876,8 @@
     ],
     "primary": "webcam chat",
     "slug": "webcam-chat",
-    "status": "queued",
+    "status": "parked",
     "topic": "livecams"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam chat abzocke"
-    ],
-    "primary": "webcam chat abzocke",
-    "slug": "webcam-chat-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam chat alternativen"
-    ],
-    "primary": "webcam chat alternativen",
-    "slug": "webcam-chat-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -15404,7 +13889,7 @@
     ],
     "primary": "webcam chat anmelden",
     "slug": "webcam-chat-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15417,7 +13902,7 @@
     ],
     "primary": "webcam chat app",
     "slug": "webcam-chat-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -15430,7 +13915,7 @@
     ],
     "primary": "webcam chat bezahlen",
     "slug": "webcam-chat-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -15443,21 +13928,8 @@
     ],
     "primary": "webcam chat deutsch",
     "slug": "webcam-chat-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam chat erfahrungen"
-    ],
-    "primary": "webcam chat erfahrungen",
-    "slug": "webcam-chat-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -15469,7 +13941,7 @@
     ],
     "primary": "webcam chat handy",
     "slug": "webcam-chat-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -15478,11 +13950,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam chat kosten"
+      "webcam chat kosten",
+      "webcam chat preise"
     ],
     "primary": "webcam chat kosten",
     "slug": "webcam-chat-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -15495,7 +13968,7 @@
     ],
     "primary": "webcam chat paypal",
     "slug": "webcam-chat-paypal",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -15504,24 +13977,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam chat preise"
-    ],
-    "primary": "webcam chat preise",
-    "slug": "webcam-chat-preise",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam chat seriös"
+      "webcam chat seriös",
+      "webcam chat sicher",
+      "webcam chat abzocke"
     ],
     "primary": "webcam chat seriös",
     "slug": "webcam-chat-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -15530,24 +13992,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam chat sicher"
+      "webcam chat test",
+      "webcam chat erfahrungen"
     ],
-    "primary": "webcam chat sicher",
-    "slug": "webcam-chat-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam chat test"
-    ],
-    "primary": "webcam chat test",
-    "slug": "webcam-chat-test",
-    "status": "queued",
+    "primary": "webcam chat erfahrungen",
+    "slug": "webcam-chat-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -15560,7 +14010,7 @@
     ],
     "primary": "webcam chat tipps",
     "slug": "webcam-chat-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15569,11 +14019,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam chat vergleich"
+      "webcam chat vergleich",
+      "webcam chat alternativen"
     ],
-    "primary": "webcam chat vergleich",
-    "slug": "webcam-chat-vergleich",
-    "status": "queued",
+    "primary": "webcam chat alternativen",
+    "slug": "webcam-chat-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -15586,7 +14037,7 @@
     ],
     "primary": "webcam chat wie funktioniert",
     "slug": "webcam-chat-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15600,34 +14051,8 @@
     ],
     "primary": "webcam girls",
     "slug": "webcam-girls",
-    "status": "queued",
+    "status": "parked",
     "topic": "webcam-models"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam girls abzocke"
-    ],
-    "primary": "webcam girls abzocke",
-    "slug": "webcam-girls-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam girls alternativen"
-    ],
-    "primary": "webcam girls alternativen",
-    "slug": "webcam-girls-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -15639,7 +14064,7 @@
     ],
     "primary": "webcam girls anmelden",
     "slug": "webcam-girls-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15652,7 +14077,7 @@
     ],
     "primary": "webcam girls anonym",
     "slug": "webcam-girls-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -15665,7 +14090,7 @@
     ],
     "primary": "webcam girls app",
     "slug": "webcam-girls-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -15678,7 +14103,7 @@
     ],
     "primary": "webcam girls bezahlen",
     "slug": "webcam-girls-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -15691,36 +14116,8 @@
     ],
     "primary": "webcam girls deutsch",
     "slug": "webcam-girls-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam girls erfahrungen"
-    ],
-    "primary": "webcam girls erfahrungen",
-    "slug": "webcam-girls-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam girls guthaben aufladen",
-      "webcam model guthaben aufladen",
-      "webcam models guthaben aufladen"
-    ],
-    "primary": "webcam girls guthaben aufladen",
-    "slug": "webcam-girls-guthaben-aufladen",
-    "status": "queued",
-    "topic": "preise"
   },
   {
     "added": "2026-10-16",
@@ -15732,7 +14129,7 @@
     ],
     "primary": "webcam girls handy",
     "slug": "webcam-girls-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -15741,11 +14138,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam girls kosten"
+      "webcam girls kosten",
+      "webcam girls preise"
     ],
     "primary": "webcam girls kosten",
     "slug": "webcam-girls-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -15758,7 +14156,7 @@
     ],
     "primary": "webcam girls kostenlos",
     "slug": "webcam-girls-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -15771,7 +14169,7 @@
     ],
     "primary": "webcam girls ohne anmeldung",
     "slug": "webcam-girls-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -15784,20 +14182,7 @@
     ],
     "primary": "webcam girls paypal",
     "slug": "webcam-girls-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam girls preise"
-    ],
-    "primary": "webcam girls preise",
-    "slug": "webcam-girls-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -15810,7 +14195,7 @@
     ],
     "primary": "webcam girls schweiz",
     "slug": "webcam-girls-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -15819,11 +14204,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam girls seriös"
+      "webcam girls seriös",
+      "webcam girls sicher",
+      "webcam girls abzocke"
     ],
     "primary": "webcam girls seriös",
     "slug": "webcam-girls-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -15832,24 +14219,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam girls sicher"
+      "webcam girls test",
+      "webcam girls erfahrungen"
     ],
-    "primary": "webcam girls sicher",
-    "slug": "webcam-girls-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam girls test"
-    ],
-    "primary": "webcam girls test",
-    "slug": "webcam-girls-test",
-    "status": "queued",
+    "primary": "webcam girls erfahrungen",
+    "slug": "webcam-girls-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -15862,7 +14237,7 @@
     ],
     "primary": "webcam girls tipps",
     "slug": "webcam-girls-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15871,11 +14246,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam girls vergleich"
+      "webcam girls vergleich",
+      "webcam girls alternativen"
     ],
-    "primary": "webcam girls vergleich",
-    "slug": "webcam-girls-vergleich",
-    "status": "queued",
+    "primary": "webcam girls alternativen",
+    "slug": "webcam-girls-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -15903,7 +14279,7 @@
     ],
     "primary": "webcam girls wie funktioniert",
     "slug": "webcam-girls-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15916,7 +14292,7 @@
     ],
     "primary": "webcam girls österreich",
     "slug": "webcam-girls-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -15930,34 +14306,8 @@
     ],
     "primary": "webcam model",
     "slug": "webcam-model",
-    "status": "queued",
+    "status": "parked",
     "topic": "webcam-models"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam model abzocke"
-    ],
-    "primary": "webcam model abzocke",
-    "slug": "webcam-model-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam model alternativen"
-    ],
-    "primary": "webcam model alternativen",
-    "slug": "webcam-model-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -15969,7 +14319,7 @@
     ],
     "primary": "webcam model anmelden",
     "slug": "webcam-model-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -15982,7 +14332,7 @@
     ],
     "primary": "webcam model anonym",
     "slug": "webcam-model-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -15995,7 +14345,7 @@
     ],
     "primary": "webcam model app",
     "slug": "webcam-model-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -16008,7 +14358,7 @@
     ],
     "primary": "webcam model bezahlen",
     "slug": "webcam-model-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16021,21 +14371,8 @@
     ],
     "primary": "webcam model deutsch",
     "slug": "webcam-model-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam model erfahrungen"
-    ],
-    "primary": "webcam model erfahrungen",
-    "slug": "webcam-model-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -16047,7 +14384,7 @@
     ],
     "primary": "webcam model handy",
     "slug": "webcam-model-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -16056,11 +14393,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam model kosten"
+      "webcam model kosten",
+      "webcam model preise"
     ],
     "primary": "webcam model kosten",
     "slug": "webcam-model-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16073,7 +14411,7 @@
     ],
     "primary": "webcam model kostenlos",
     "slug": "webcam-model-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -16086,7 +14424,7 @@
     ],
     "primary": "webcam model ohne anmeldung",
     "slug": "webcam-model-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -16099,20 +14437,7 @@
     ],
     "primary": "webcam model paypal",
     "slug": "webcam-model-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam model preise"
-    ],
-    "primary": "webcam model preise",
-    "slug": "webcam-model-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16125,7 +14450,7 @@
     ],
     "primary": "webcam model schweiz",
     "slug": "webcam-model-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -16134,11 +14459,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam model seriös"
+      "webcam model seriös",
+      "webcam model sicher",
+      "webcam model abzocke"
     ],
     "primary": "webcam model seriös",
     "slug": "webcam-model-serioes",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -16147,24 +14474,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam model sicher"
+      "webcam model test",
+      "webcam model erfahrungen"
     ],
-    "primary": "webcam model sicher",
-    "slug": "webcam-model-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam model test"
-    ],
-    "primary": "webcam model test",
-    "slug": "webcam-model-test",
-    "status": "queued",
+    "primary": "webcam model erfahrungen",
+    "slug": "webcam-model-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -16177,7 +14492,7 @@
     ],
     "primary": "webcam model tipps",
     "slug": "webcam-model-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16186,11 +14501,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam model vergleich"
+      "webcam model vergleich",
+      "webcam model alternativen"
     ],
-    "primary": "webcam model vergleich",
-    "slug": "webcam-model-vergleich",
-    "status": "queued",
+    "primary": "webcam model alternativen",
+    "slug": "webcam-model-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -16203,7 +14519,7 @@
     ],
     "primary": "webcam model wie funktioniert",
     "slug": "webcam-model-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16216,7 +14532,7 @@
     ],
     "primary": "webcam model österreich",
     "slug": "webcam-model-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -16232,32 +14548,6 @@
     "slug": "webcam-models",
     "status": "queued",
     "topic": "webcam-models"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam models abzocke"
-    ],
-    "primary": "webcam models abzocke",
-    "slug": "webcam-models-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam models alternativen"
-    ],
-    "primary": "webcam models alternativen",
-    "slug": "webcam-models-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -16282,7 +14572,7 @@
     ],
     "primary": "webcam models anonym",
     "slug": "webcam-models-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -16308,7 +14598,7 @@
     ],
     "primary": "webcam models bezahlen",
     "slug": "webcam-models-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16330,24 +14620,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam models erfahrungen"
-    ],
-    "primary": "webcam models erfahrungen",
-    "slug": "webcam-models-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
       "webcam models handy"
     ],
     "primary": "webcam models handy",
     "slug": "webcam-models-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -16356,7 +14633,8 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam models kosten"
+      "webcam models kosten",
+      "webcam models preise"
     ],
     "primary": "webcam models kosten",
     "slug": "webcam-models-kosten",
@@ -16386,7 +14664,7 @@
     ],
     "primary": "webcam models ohne anmeldung",
     "slug": "webcam-models-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -16399,20 +14677,7 @@
     ],
     "primary": "webcam models paypal",
     "slug": "webcam-models-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam models preise"
-    ],
-    "primary": "webcam models preise",
-    "slug": "webcam-models-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16434,7 +14699,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam models seriös"
+      "webcam models seriös",
+      "webcam models sicher",
+      "webcam models abzocke"
     ],
     "primary": "webcam models seriös",
     "slug": "webcam-models-serioes",
@@ -16447,23 +14714,11 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam models sicher"
+      "webcam models test",
+      "webcam models erfahrungen"
     ],
-    "primary": "webcam models sicher",
-    "slug": "webcam-models-sicher",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "webcam models test"
-    ],
-    "primary": "webcam models test",
-    "slug": "webcam-models-test",
+    "primary": "webcam models erfahrungen",
+    "slug": "webcam-models-erfahrungen",
     "status": "queued",
     "topic": "vergleich"
   },
@@ -16477,7 +14732,7 @@
     ],
     "primary": "webcam models tipps",
     "slug": "webcam-models-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16486,11 +14741,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam models vergleich"
+      "webcam models vergleich",
+      "webcam models alternativen"
     ],
-    "primary": "webcam models vergleich",
-    "slug": "webcam-models-vergleich",
-    "status": "queued",
+    "primary": "webcam models alternativen",
+    "slug": "webcam-models-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -16530,7 +14786,7 @@
     ],
     "primary": "amateur cams für anfänger",
     "slug": "amateur-cams-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16544,7 +14800,7 @@
     ],
     "primary": "amateur cams kreditkarte",
     "slug": "amateur-cams-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16558,7 +14814,7 @@
     ],
     "primary": "amateur cams sepa",
     "slug": "amateur-cams-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16572,7 +14828,7 @@
     ],
     "primary": "amateur cams sofortüberweisung",
     "slug": "amateur-cams-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16582,11 +14838,19 @@
     "impressions": 0,
     "keywords": [
       "amateur cams tokens",
-      "amateure tokens"
+      "amateure tokens",
+      "amateur cams guthaben aufladen",
+      "amateur clips guthaben aufladen",
+      "amateur erotik guthaben aufladen",
+      "amateur videos guthaben aufladen",
+      "amateure guthaben aufladen",
+      "cam girl guthaben aufladen",
+      "hobby amateure guthaben aufladen",
+      "live cam guthaben aufladen"
     ],
-    "primary": "amateur cams tokens",
-    "slug": "amateur-cams-tokens",
-    "status": "queued",
+    "primary": "cam girl guthaben aufladen",
+    "slug": "cam-girl-guthaben-aufladen",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16599,7 +14863,7 @@
     ],
     "primary": "amateur clips für anfänger",
     "slug": "amateur-clips-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16612,7 +14876,7 @@
     ],
     "primary": "amateur clips kreditkarte",
     "slug": "amateur-clips-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16625,7 +14889,7 @@
     ],
     "primary": "amateur clips sepa",
     "slug": "amateur-clips-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16638,7 +14902,7 @@
     ],
     "primary": "amateur clips sofortüberweisung",
     "slug": "amateur-clips-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16651,7 +14915,7 @@
     ],
     "primary": "amateur clips tokens",
     "slug": "amateur-clips-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16664,7 +14928,7 @@
     ],
     "primary": "amateur erotik für anfänger",
     "slug": "amateur-erotik-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16677,7 +14941,7 @@
     ],
     "primary": "amateur erotik kreditkarte",
     "slug": "amateur-erotik-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16690,7 +14954,7 @@
     ],
     "primary": "amateur erotik sepa",
     "slug": "amateur-erotik-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16703,7 +14967,7 @@
     ],
     "primary": "amateur erotik sofortüberweisung",
     "slug": "amateur-erotik-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16716,7 +14980,7 @@
     ],
     "primary": "amateur erotik tokens",
     "slug": "amateur-erotik-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16729,7 +14993,7 @@
     ],
     "primary": "amateur videos für anfänger",
     "slug": "amateur-videos-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16742,7 +15006,7 @@
     ],
     "primary": "amateur videos kreditkarte",
     "slug": "amateur-videos-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16755,7 +15019,7 @@
     ],
     "primary": "amateur videos sepa",
     "slug": "amateur-videos-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16768,7 +15032,7 @@
     ],
     "primary": "amateur videos sofortüberweisung",
     "slug": "amateur-videos-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16781,7 +15045,7 @@
     ],
     "primary": "amateur videos tokens",
     "slug": "amateur-videos-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16794,7 +15058,7 @@
     ],
     "primary": "amateurinnen für anfänger",
     "slug": "amateurinnen-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16807,7 +15071,7 @@
     ],
     "primary": "amateurinnen kreditkarte",
     "slug": "amateurinnen-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16820,7 +15084,7 @@
     ],
     "primary": "amateurinnen sepa",
     "slug": "amateurinnen-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16833,7 +15097,7 @@
     ],
     "primary": "amateurinnen sofortüberweisung",
     "slug": "amateurinnen-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16842,11 +15106,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "amateurinnen tokens"
+      "amateurinnen tokens",
+      "amateurinnen guthaben aufladen"
     ],
     "primary": "amateurinnen tokens",
     "slug": "amateurinnen-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16859,7 +15124,7 @@
     ],
     "primary": "cam girl für anfänger",
     "slug": "cam-girl-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16872,7 +15137,7 @@
     ],
     "primary": "cam girl kreditkarte",
     "slug": "cam-girl-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16885,7 +15150,7 @@
     ],
     "primary": "cam girl sepa",
     "slug": "cam-girl-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16898,7 +15163,7 @@
     ],
     "primary": "cam girl sofortüberweisung",
     "slug": "cam-girl-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16911,7 +15176,7 @@
     ],
     "primary": "cam girl tokens",
     "slug": "cam-girl-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16924,7 +15189,7 @@
     ],
     "primary": "cam2cam für anfänger",
     "slug": "cam2cam-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -16937,7 +15202,7 @@
     ],
     "primary": "cam2cam kreditkarte",
     "slug": "cam2cam-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16950,7 +15215,7 @@
     ],
     "primary": "cam2cam sepa",
     "slug": "cam2cam-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16963,7 +15228,7 @@
     ],
     "primary": "cam2cam sofortüberweisung",
     "slug": "cam2cam-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16972,11 +15237,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "cam2cam tokens"
+      "cam2cam tokens",
+      "cam2cam guthaben aufladen"
     ],
     "primary": "cam2cam tokens",
     "slug": "cam2cam-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -16989,7 +15255,7 @@
     ],
     "primary": "camgirls für anfänger",
     "slug": "camgirls-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17002,7 +15268,7 @@
     ],
     "primary": "camgirls kreditkarte",
     "slug": "camgirls-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17015,7 +15281,7 @@
     ],
     "primary": "camgirls sepa",
     "slug": "camgirls-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17028,7 +15294,7 @@
     ],
     "primary": "camgirls sofortüberweisung",
     "slug": "camgirls-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17037,11 +15303,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "camgirls tokens"
+      "camgirls tokens",
+      "camgirls guthaben aufladen"
     ],
     "primary": "camgirls tokens",
     "slug": "camgirls-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17054,7 +15321,7 @@
     ],
     "primary": "erotik filme für anfänger",
     "slug": "erotik-filme-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17067,7 +15334,7 @@
     ],
     "primary": "erotik filme kreditkarte",
     "slug": "erotik-filme-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17080,7 +15347,7 @@
     ],
     "primary": "erotik filme sepa",
     "slug": "erotik-filme-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17093,7 +15360,7 @@
     ],
     "primary": "erotik filme sofortüberweisung",
     "slug": "erotik-filme-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17102,11 +15369,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "erotik filme tokens"
+      "erotik filme tokens",
+      "erotik filme guthaben aufladen",
+      "erotik videos guthaben aufladen"
     ],
     "primary": "erotik filme tokens",
     "slug": "erotik-filme-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17119,7 +15388,7 @@
     ],
     "primary": "erotik videos für anfänger",
     "slug": "erotik-videos-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17132,7 +15401,7 @@
     ],
     "primary": "erotik videos kreditkarte",
     "slug": "erotik-videos-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17145,7 +15414,7 @@
     ],
     "primary": "erotik videos sepa",
     "slug": "erotik-videos-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17158,7 +15427,7 @@
     ],
     "primary": "erotik videos sofortüberweisung",
     "slug": "erotik-videos-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17171,7 +15440,7 @@
     ],
     "primary": "erotik videos tokens",
     "slug": "erotik-videos-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17184,7 +15453,7 @@
     ],
     "primary": "gruppenchat für anfänger",
     "slug": "gruppenchat-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17197,7 +15466,7 @@
     ],
     "primary": "gruppenchat kreditkarte",
     "slug": "gruppenchat-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17210,7 +15479,7 @@
     ],
     "primary": "gruppenchat sepa",
     "slug": "gruppenchat-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17223,7 +15492,7 @@
     ],
     "primary": "gruppenchat sofortüberweisung",
     "slug": "gruppenchat-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17232,11 +15501,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "gruppenchat tokens"
+      "gruppenchat tokens",
+      "gruppenchat guthaben aufladen"
     ],
     "primary": "gruppenchat tokens",
     "slug": "gruppenchat-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17249,7 +15519,7 @@
     ],
     "primary": "hobby amateure für anfänger",
     "slug": "hobby-amateure-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17262,7 +15532,7 @@
     ],
     "primary": "hobby amateure kreditkarte",
     "slug": "hobby-amateure-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17275,7 +15545,7 @@
     ],
     "primary": "hobby amateure sepa",
     "slug": "hobby-amateure-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17288,7 +15558,7 @@
     ],
     "primary": "hobby amateure sofortüberweisung",
     "slug": "hobby-amateure-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17301,7 +15571,7 @@
     ],
     "primary": "hobby amateure tokens",
     "slug": "hobby-amateure-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17314,7 +15584,7 @@
     ],
     "primary": "live cam für anfänger",
     "slug": "live-cam-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17327,7 +15597,7 @@
     ],
     "primary": "live cam kreditkarte",
     "slug": "live-cam-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17340,7 +15610,7 @@
     ],
     "primary": "live cam sepa",
     "slug": "live-cam-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17353,7 +15623,7 @@
     ],
     "primary": "live cam sofortüberweisung",
     "slug": "live-cam-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17366,7 +15636,7 @@
     ],
     "primary": "live cam tokens",
     "slug": "live-cam-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17380,7 +15650,7 @@
     ],
     "primary": "livecam für anfänger",
     "slug": "livecam-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17394,7 +15664,7 @@
     ],
     "primary": "livecam kreditkarte",
     "slug": "livecam-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17408,7 +15678,7 @@
     ],
     "primary": "livecam sepa",
     "slug": "livecam-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17422,7 +15692,7 @@
     ],
     "primary": "livecam sofortüberweisung",
     "slug": "livecam-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17432,7 +15702,10 @@
     "impressions": 0,
     "keywords": [
       "livecam tokens",
-      "livecams tokens"
+      "livecams tokens",
+      "livecam guthaben aufladen",
+      "amateur livecam guthaben aufladen",
+      "livecams guthaben aufladen"
     ],
     "primary": "livecam tokens",
     "slug": "livecam-tokens",
@@ -17449,7 +15722,7 @@
     ],
     "primary": "livechat für anfänger",
     "slug": "livechat-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17462,7 +15735,7 @@
     ],
     "primary": "livechat kreditkarte",
     "slug": "livechat-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17475,7 +15748,7 @@
     ],
     "primary": "livechat sepa",
     "slug": "livechat-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17488,7 +15761,7 @@
     ],
     "primary": "livechat sofortüberweisung",
     "slug": "livechat-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17497,11 +15770,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "livechat tokens"
+      "livechat tokens",
+      "livechat guthaben aufladen"
     ],
     "primary": "livechat tokens",
     "slug": "livechat-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17514,7 +15788,7 @@
     ],
     "primary": "privatchat für anfänger",
     "slug": "privatchat-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17527,7 +15801,7 @@
     ],
     "primary": "privatchat kreditkarte",
     "slug": "privatchat-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17540,7 +15814,7 @@
     ],
     "primary": "privatchat sepa",
     "slug": "privatchat-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17553,7 +15827,7 @@
     ],
     "primary": "privatchat sofortüberweisung",
     "slug": "privatchat-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17562,11 +15836,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "privatchat tokens"
+      "privatchat tokens",
+      "privatchat guthaben aufladen"
     ],
     "primary": "privatchat tokens",
     "slug": "privatchat-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17579,7 +15854,7 @@
     ],
     "primary": "sexcam für anfänger",
     "slug": "sexcam-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17592,7 +15867,7 @@
     ],
     "primary": "sexcam kreditkarte",
     "slug": "sexcam-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17605,7 +15880,7 @@
     ],
     "primary": "sexcam sepa",
     "slug": "sexcam-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17618,7 +15893,7 @@
     ],
     "primary": "sexcam sofortüberweisung",
     "slug": "sexcam-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17627,11 +15902,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "sexcam tokens"
+      "sexcam tokens",
+      "sexcam guthaben aufladen"
     ],
     "primary": "sexcam tokens",
     "slug": "sexcam-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17644,7 +15920,7 @@
     ],
     "primary": "video chat für anfänger",
     "slug": "video-chat-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17657,7 +15933,7 @@
     ],
     "primary": "video chat kreditkarte",
     "slug": "video-chat-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17670,7 +15946,7 @@
     ],
     "primary": "video chat sepa",
     "slug": "video-chat-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17683,7 +15959,7 @@
     ],
     "primary": "video chat sofortüberweisung",
     "slug": "video-chat-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17692,11 +15968,15 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "video chat tokens"
+      "video chat tokens",
+      "video chat guthaben aufladen",
+      "video clips guthaben aufladen",
+      "webcam chat guthaben aufladen",
+      "videos streamen guthaben aufladen"
     ],
-    "primary": "video chat tokens",
-    "slug": "video-chat-tokens",
-    "status": "queued",
+    "primary": "webcam chat guthaben aufladen",
+    "slug": "webcam-chat-guthaben-aufladen",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17709,7 +15989,7 @@
     ],
     "primary": "video clips für anfänger",
     "slug": "video-clips-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17722,7 +16002,7 @@
     ],
     "primary": "video clips kreditkarte",
     "slug": "video-clips-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17735,7 +16015,7 @@
     ],
     "primary": "video clips sepa",
     "slug": "video-clips-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17748,7 +16028,7 @@
     ],
     "primary": "video clips sofortüberweisung",
     "slug": "video-clips-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17761,7 +16041,7 @@
     ],
     "primary": "video clips tokens",
     "slug": "video-clips-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17775,34 +16055,8 @@
     ],
     "primary": "videos streamen",
     "slug": "videos-streamen",
-    "status": "queued",
+    "status": "parked",
     "topic": "videos"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videos streamen abzocke"
-    ],
-    "primary": "videos streamen abzocke",
-    "slug": "videos-streamen-abzocke",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videos streamen alternativen"
-    ],
-    "primary": "videos streamen alternativen",
-    "slug": "videos-streamen-alternativen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -17814,7 +16068,7 @@
     ],
     "primary": "videos streamen anmelden",
     "slug": "videos-streamen-anmelden",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17827,7 +16081,7 @@
     ],
     "primary": "videos streamen anonym",
     "slug": "videos-streamen-anonym",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -17840,7 +16094,7 @@
     ],
     "primary": "videos streamen app",
     "slug": "videos-streamen-app",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -17853,7 +16107,7 @@
     ],
     "primary": "videos streamen bezahlen",
     "slug": "videos-streamen-bezahlen",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17866,21 +16120,8 @@
     ],
     "primary": "videos streamen deutsch",
     "slug": "videos-streamen-deutsch",
-    "status": "queued",
+    "status": "parked",
     "topic": "nischen"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videos streamen erfahrungen"
-    ],
-    "primary": "videos streamen erfahrungen",
-    "slug": "videos-streamen-erfahrungen",
-    "status": "queued",
-    "topic": "vergleich"
   },
   {
     "added": "2026-10-16",
@@ -17892,7 +16133,7 @@
     ],
     "primary": "videos streamen für anfänger",
     "slug": "videos-streamen-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -17905,7 +16146,7 @@
     ],
     "primary": "videos streamen handy",
     "slug": "videos-streamen-handy",
-    "status": "queued",
+    "status": "parked",
     "topic": "technik"
   },
   {
@@ -17914,11 +16155,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videos streamen kosten"
+      "videos streamen kosten",
+      "videos streamen preise"
     ],
     "primary": "videos streamen kosten",
     "slug": "videos-streamen-kosten",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17931,7 +16173,7 @@
     ],
     "primary": "videos streamen kostenlos",
     "slug": "videos-streamen-kostenlos",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -17944,7 +16186,7 @@
     ],
     "primary": "videos streamen kreditkarte",
     "slug": "videos-streamen-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17957,7 +16199,7 @@
     ],
     "primary": "videos streamen ohne anmeldung",
     "slug": "videos-streamen-ohne-anmeldung",
-    "status": "queued",
+    "status": "parked",
     "topic": "gratis"
   },
   {
@@ -17970,20 +16212,7 @@
     ],
     "primary": "videos streamen paypal",
     "slug": "videos-streamen-paypal",
-    "status": "queued",
-    "topic": "preise"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videos streamen preise"
-    ],
-    "primary": "videos streamen preise",
-    "slug": "videos-streamen-preise",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -17996,7 +16225,7 @@
     ],
     "primary": "videos streamen schweiz",
     "slug": "videos-streamen-schweiz",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -18009,7 +16238,7 @@
     ],
     "primary": "videos streamen sepa",
     "slug": "videos-streamen-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18018,24 +16247,13 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videos streamen seriös"
+      "videos streamen seriös",
+      "videos streamen sicher",
+      "videos streamen abzocke"
     ],
     "primary": "videos streamen seriös",
     "slug": "videos-streamen-serioes",
-    "status": "queued",
-    "topic": "sicherheit"
-  },
-  {
-    "added": "2026-10-16",
-    "clicks": 0,
-    "fail_count": 0,
-    "impressions": 0,
-    "keywords": [
-      "videos streamen sicher"
-    ],
-    "primary": "videos streamen sicher",
-    "slug": "videos-streamen-sicher",
-    "status": "queued",
+    "status": "parked",
     "topic": "sicherheit"
   },
   {
@@ -18048,7 +16266,7 @@
     ],
     "primary": "videos streamen sofortüberweisung",
     "slug": "videos-streamen-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18057,11 +16275,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videos streamen test"
+      "videos streamen test",
+      "videos streamen erfahrungen"
     ],
-    "primary": "videos streamen test",
-    "slug": "videos-streamen-test",
-    "status": "queued",
+    "primary": "videos streamen erfahrungen",
+    "slug": "videos-streamen-erfahrungen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -18074,7 +16293,7 @@
     ],
     "primary": "videos streamen tipps",
     "slug": "videos-streamen-tipps",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -18087,7 +16306,7 @@
     ],
     "primary": "videos streamen tokens",
     "slug": "videos-streamen-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18096,11 +16315,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videos streamen vergleich"
+      "videos streamen vergleich",
+      "videos streamen alternativen"
     ],
-    "primary": "videos streamen vergleich",
-    "slug": "videos-streamen-vergleich",
-    "status": "queued",
+    "primary": "videos streamen alternativen",
+    "slug": "videos-streamen-alternativen",
+    "status": "parked",
     "topic": "vergleich"
   },
   {
@@ -18113,7 +16333,7 @@
     ],
     "primary": "videos streamen visit x",
     "slug": "videos-streamen-visit-x",
-    "status": "queued",
+    "status": "parked",
     "topic": "videos"
   },
   {
@@ -18126,7 +16346,7 @@
     ],
     "primary": "videos streamen wie funktioniert",
     "slug": "videos-streamen-wie-funktioniert",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -18139,7 +16359,7 @@
     ],
     "primary": "videos streamen österreich",
     "slug": "videos-streamen-oesterreich",
-    "status": "queued",
+    "status": "parked",
     "topic": "dach"
   },
   {
@@ -18152,7 +16372,7 @@
     ],
     "primary": "videostation für anfänger",
     "slug": "videostation-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -18165,7 +16385,7 @@
     ],
     "primary": "videostation kreditkarte",
     "slug": "videostation-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18178,7 +16398,7 @@
     ],
     "primary": "videostation sepa",
     "slug": "videostation-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18191,7 +16411,7 @@
     ],
     "primary": "videostation sofortüberweisung",
     "slug": "videostation-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18200,11 +16420,12 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "videostation tokens"
+      "videostation tokens",
+      "videostation guthaben aufladen"
     ],
     "primary": "videostation tokens",
     "slug": "videostation-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18217,7 +16438,7 @@
     ],
     "primary": "webcam chat für anfänger",
     "slug": "webcam-chat-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -18230,7 +16451,7 @@
     ],
     "primary": "webcam chat kreditkarte",
     "slug": "webcam-chat-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18243,7 +16464,7 @@
     ],
     "primary": "webcam chat sepa",
     "slug": "webcam-chat-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18256,7 +16477,7 @@
     ],
     "primary": "webcam chat sofortüberweisung",
     "slug": "webcam-chat-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18269,7 +16490,7 @@
     ],
     "primary": "webcam chat tokens",
     "slug": "webcam-chat-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18282,7 +16503,7 @@
     ],
     "primary": "webcam girls für anfänger",
     "slug": "webcam-girls-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -18295,7 +16516,7 @@
     ],
     "primary": "webcam girls kreditkarte",
     "slug": "webcam-girls-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18308,7 +16529,7 @@
     ],
     "primary": "webcam girls sepa",
     "slug": "webcam-girls-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18321,7 +16542,7 @@
     ],
     "primary": "webcam girls sofortüberweisung",
     "slug": "webcam-girls-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18330,11 +16551,14 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "webcam girls tokens"
+      "webcam girls tokens",
+      "webcam girls guthaben aufladen",
+      "webcam model guthaben aufladen",
+      "webcam models guthaben aufladen"
     ],
     "primary": "webcam girls tokens",
     "slug": "webcam-girls-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18347,7 +16571,7 @@
     ],
     "primary": "webcam model für anfänger",
     "slug": "webcam-model-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -18360,7 +16584,7 @@
     ],
     "primary": "webcam model kreditkarte",
     "slug": "webcam-model-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18373,7 +16597,7 @@
     ],
     "primary": "webcam model sepa",
     "slug": "webcam-model-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18386,7 +16610,7 @@
     ],
     "primary": "webcam model sofortüberweisung",
     "slug": "webcam-model-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18399,7 +16623,7 @@
     ],
     "primary": "webcam model tokens",
     "slug": "webcam-model-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18412,7 +16636,7 @@
     ],
     "primary": "webcam models für anfänger",
     "slug": "webcam-models-fuer-anfaenger",
-    "status": "queued",
+    "status": "parked",
     "topic": "ablauf"
   },
   {
@@ -18425,7 +16649,7 @@
     ],
     "primary": "webcam models kreditkarte",
     "slug": "webcam-models-kreditkarte",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18438,7 +16662,7 @@
     ],
     "primary": "webcam models sepa",
     "slug": "webcam-models-sepa",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18451,7 +16675,7 @@
     ],
     "primary": "webcam models sofortüberweisung",
     "slug": "webcam-models-sofortueberweisung",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   },
   {
@@ -18464,7 +16688,7 @@
     ],
     "primary": "webcam models tokens",
     "slug": "webcam-models-tokens",
-    "status": "queued",
+    "status": "parked",
     "topic": "preise"
   }
 ]

@@ -45,6 +45,18 @@ def max_similarity(text: str, existing: dict[str, str]) -> tuple[float, str | No
     return float(sims[i]), slugs[i]
 
 
+def keyword_in(keyword: str, text: str) -> bool:
+    """Alle Wörter des Keywords kommen vor, Reihenfolge und Beugung egal ("deutsch porno" passt zu "Deutsche Pornos")."""
+    words = re.split(r"[\s\-]+", normalize(text))
+    for t in normalize(keyword).replace("-", " ").split():
+        if len(t) < 3:
+            continue
+        stem = t[:max(4, len(t) - 2)]
+        if not any(w.startswith(stem) for w in words):
+            return False
+    return True
+
+
 def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[str, str],
           relaxed: bool = False, blocked: list[str] | None = None,
           min_words: int | None = None, max_sim_limit: float | None = None,
@@ -76,8 +88,7 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
 
     if titles and normalize(c["title"]) in {normalize(t) for t in titles}:
         issues.append("Der Titel existiert schon bei einer anderen Seite: eigenen, klar anderen Titel wählen.")
-    primary = normalize(cluster["primary"])
-    if primary not in normalize(c["title"] + " " + c["h1"]):
+    if not keyword_in(cluster["primary"], c["title"] + " " + c["h1"]):
         issues.append("Das Hauptkeyword fehlt in Titel und Überschrift.")
 
     text = article_text(c)

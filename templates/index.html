@@ -5,11 +5,23 @@
   <span class="card-body"><strong>{{ i.title }}</strong>{% if i.text %}<span class="small">{{ i.text }}</span>{% endif %}</span>
 </a>
 {% endmacro %}
+{% block head %}
+<script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
+  {"@type": "WebSite", "name": site.name, "url": canonical, "inLanguage": "de"},
+  {"@type": "Organization", "name": site.name, "url": canonical, "logo": canonical + "logo.png"},
+  {"@type": "ItemList", "name": "Top-Models bei " + provider, "itemListElement": top_models_ld}
+]}|tojson }}</script>
+{% endblock %}
 {% block main %}
 <section class="landing">
-  <h1>{{ site.name }}</h1>
+  <h1>Top 100 Amateure: die Top-Models bei {{ provider }}</h1>
   <p class="lead">{{ site.tagline }}</p>
   <p class="chips">{% for g in groups %}<a class="chip" href="#{{ g.topic }}">{{ g.label }} <span>{{ g.count }}</span></a>{% endfor %}</p>
+</section>
+<section class="block intro-text">
+  <h2>Top 100 Amateure: die beliebtesten Amateur-Models bei {{ provider }}</h2>
+  <p>Hier findest du die Top-Models aus der Amateur-Szene bei {{ provider }}: wer gerade gefragt ist, wo du ihre Videos findest und wie du sie in der Livecam oder im Chat erreichst. Jedes Model hat eine eigene Infoseite mit Videos, Livecam und Chat im Überblick.</p>
+  <p>Dazu kommen Ratgeber zu Live-Cams, Amateur-Videos, Kosten und Bezahlung (Euro wird bei {{ provider }} in Tokens umgerechnet; bezahlt wird z. B. per Sofortüberweisung, PayPal, Kreditkarte oder SEPA) sowie zu Sicherheit und Anonymität. Alles für Erwachsene ab 18.</p>
 </section>
 {% if top_models %}
 <section class="block">
@@ -37,7 +49,7 @@
     <a class="topic" href="/themen/{{ g.topic }}/" id="{{ g.topic }}"><strong>{{ g.label }}</strong><span class="small">{{ g.intro }}</span><span class="count">{{ g.count }} Ratgeber &rsaquo;</span></a>
   {% endfor %}</div>
 </section>
-{% for g in groups %}
+{% for g in groups if g.topic != "profile" %}
 <section class="block">
   <h2><a href="/themen/{{ g.topic }}/">{{ g.label }}</a></h2>
   <div class="grid">{% for i in g['items'] %}{{ card(i) }}{% endfor %}</div>

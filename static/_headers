@@ -6,3 +6,5 @@
   Cache-Control: public, max-age=86400
 /agegate.js
   Cache-Control: public, max-age=86400
+/img/*
+  Cache-Control: public, max-age=604800
