@@ -55,7 +55,7 @@ affiliate:
     grundlagen: "Zum Angebot von Visit-X"
 
 models:
-  per_day: 4                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)
+  per_day: 8                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)
   min_words: 600
   # Diese Sperrwörter gelten nur für Keywords, nicht im Fließtext (dort kommen sie in Hinweisen vor, z. B. "E-Mail-Adresse", "Alter von 18", "keine Leaks").
   text_allowed_terms: [alter, adresse, download, leak, leaks, leaked, wohnort, privat, fake]
@@ -184,6 +184,7 @@ keywords:
       webcam-models: 60000
       videos: 60000
       amateure: 60000
+      nischen: -150000            # allgemeine Nischen ranken kaum gegen Tube-Seiten: nach hinten
   harvest:
     enabled: true
     days: 28
