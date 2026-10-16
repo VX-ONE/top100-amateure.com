@@ -1,0 +1,62 @@
+{
+  "cta_text": "Wenn du dir die Angebote und die aktuellen Anmeldeschritte selbst ansehen möchtest, findest du beides direkt bei Visit-X.",
+  "faq": [
+    {
+      "a": "Dazu nenne ich keine konkreten Angaben, da sich Konditionen ändern können. Prüfe vor dem Absenden des Formulars die aktuellen Hinweise des Anbieters. Kosten entstehen in der Regel erst, wenn du Tokens auflädst und bezahlte Angebote nutzt.",
+      "q": "Ist die Visit X Anmeldung kostenpflichtig?"
+    },
+    {
+      "a": "Gängig sind Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift/Überweisung). Welche Methode bei dir verfügbar ist, zeigt Visit-X beim Aufladen an.",
+      "q": "Welche Zahlungsarten kann ich nach dem Registrieren nutzen?"
+    },
+    {
+      "a": "Die normale Währung ist Euro. Der Betrag, den du zahlst, wird in Tokens umgewandelt, und mit diesen Tokens bezahlst du bei Visit-X. Den aktuellen Umrechnungswert siehst du beim Aufladen.",
+      "q": "Was sind Tokens und wie hängen sie mit Euro zusammen?"
+    },
+    {
+      "a": "Prüfe zuerst den Spam-Ordner und ob du dich bei der E-Mail-Adresse vertippt hast. Warte einige Minuten und fordere die Mail bei Bedarf erneut an. Hilft das nicht, wende dich an den Support des Anbieters.",
+      "q": "Die Bestätigungsmail kommt nicht an. Was kann ich tun?"
+    },
+    {
+      "a": "Du musst keinen Klarnamen als Benutzernamen verwenden und solltest das auch nicht tun. Welche Daten der Anbieter darüber hinaus verlangt, etwa für Zahlungen, hängt von den aktuellen Vorgaben ab. Lies dazu die Datenschutzhinweise.",
+      "q": "Kann ich mich anonym registrieren?"
+    }
+  ],
+  "h1": "Visit X Anmeldung",
+  "image": {
+    "alt": "Drei nummerierte Schritte mit Pfeilen und Häkchen, daneben eine Checkliste auf rosa-dunklem Hintergrund",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\">\n<defs>\n<linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#be185d\" />\n<stop offset=\"1\" stop-color=\"#3b0a24\" />\n</linearGradient>\n</defs>\n<rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" />\n<circle cx=\"1080\" cy=\"80\" r=\"170\" fill=\"#ffffff\" opacity=\"0.06\" />\n<circle cx=\"90\" cy=\"600\" r=\"150\" fill=\"#ffffff\" opacity=\"0.06\" />\n<text x=\"600\" y=\"150\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"92\" fill=\"#ffffff\" text-anchor=\"middle\">Anmeldung</text>\n<text x=\"600\" y=\"215\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"40\" fill=\"#fbcfe8\" text-anchor=\"middle\">in 3 Schritten</text>\n<g>\n<rect x=\"120\" y=\"290\" width=\"260\" height=\"240\" rx=\"28\" fill=\"#ffffff\" />\n<circle cx=\"250\" cy=\"355\" r=\"42\" fill=\"#be185d\" />\n<text x=\"250\" y=\"373\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"52\" fill=\"#ffffff\" text-anchor=\"middle\">1</text>\n<rect x=\"170\" y=\"425\" width=\"160\" y2=\"0\" height=\"14\" rx=\"7\" fill=\"#f9a8d4\" />\n<rect x=\"190\" y=\"460\" width=\"120\" height=\"14\" rx=\"7\" fill=\"#fbcfe8\" />\n</g>\n<g>\n<rect x=\"470\" y=\"290\" width=\"260\" height=\"240\" rx=\"28\" fill=\"#ffffff\" />\n<circle cx=\"600\" cy=\"355\" r=\"42\" fill=\"#be185d\" />\n<text x=\"600\" y=\"373\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"52\" fill=\"#ffffff\" text-anchor=\"middle\">2</text>\n<rect x=\"520\" y=\"425\" width=\"160\" height=\"14\" rx=\"7\" fill=\"#f9a8d4\" />\n<rect x=\"540\" y=\"460\" width=\"120\" height=\"14\" rx=\"7\" fill=\"#fbcfe8\" />\n</g>\n<g>\n<rect x=\"820\" y=\"290\" width=\"260\" height=\"240\" rx=\"28\" fill=\"#ffffff\" />\n<circle cx=\"950\" cy=\"355\" r=\"42\" fill=\"#be185d\" />\n<polyline points=\"930,356 945,371 972,340\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\n<rect x=\"870\" y=\"425\" width=\"160\" height=\"14\" rx=\"7\" fill=\"#f9a8d4\" />\n<rect x=\"890\" y=\"460\" width=\"120\" height=\"14\" rx=\"7\" fill=\"#fbcfe8\" />\n</g>\n<g fill=\"#fbcfe8\">\n<polygon points=\"395,395 440,395 440,375 460,410 440,445 440,425 395,425\" />\n<polygon points=\"745,395 790,395 790,375 810,410 790,445 790,425 745,425\" />\n</g>\n</svg>"
+  },
+  "intro": "Wer sich bei Visit-X anmelden möchte, durchläuft in der Regel vier Stationen: Altersbestätigung, Eingabe der Kontodaten, Bestätigung der Angaben und – falls gewünscht – das Aufladen von Tokens. Die genauen Formularfelder und Zwischenschritte kann der Anbieter jederzeit ändern. Prüfe sie deshalb direkt auf der Anmeldeseite und halte dich an die dort angezeigten Hinweise.\n\nDiese Seite ist als Fragen-und-Antworten-Leitfaden aufgebaut. Sie beantwortet das, was Suchende vor einer Registrierung typischerweise wissen wollen: Was brauche ich vorab? Was kostet die Anmeldung? Wie funktioniert das Bezahlen? Und was tue ich, wenn etwas nicht klappt? Der Text richtet sich ausschließlich an Erwachsene ab 18 Jahren.",
+  "key_takeaways": [
+    "Die Visit X Anmeldung folgt typischerweise einem festen Ablauf: Alter bestätigen, Daten eingeben, Konto bestätigen, optional aufladen.",
+    "Bezahlt wird mit Tokens: Der in Euro gezahlte Betrag wird in Tokens umgewandelt.",
+    "Gängige Zahlungsarten sind Sofort, PayPal, Kreditkarte und SEPA; welche verfügbar ist, zeigt Visit-X beim Aufladen.",
+    "Nutze eine eigene, erreichbare E-Mail-Adresse und ein starkes, einmaliges Passwort.",
+    "Aktuelle Bedingungen und Kosten immer direkt beim Anbieter prüfen."
+  ],
+  "meta_description": "Visit X Anmeldung einfach erklärt: Antworten auf die häufigsten Fragen zu Registrierung, Aufladen mit Tokens und Zahlungsarten.",
+  "sections": [
+    {
+      "body": "Für eine Registrierung brauchst du nur wenig Vorbereitung. Hilfreich ist diese kurze Checkliste:\n\n- **Volljährigkeit:** Das Angebot ist ausschließlich für Personen ab 18 Jahren gedacht.\n- **Eine eigene E-Mail-Adresse,** auf die du Zugriff hast. Sie wird häufig für Bestätigungen und die Kontowiederherstellung gebraucht.\n- **Ein sicheres Passwort,** das du nirgendwo sonst verwendest. Ein Passwortmanager hilft dabei.\n- **Eine Zahlungsmethode,** falls du später Tokens aufladen willst. Für das bloße Anlegen eines Kontos ist das in der Regel nicht der erste Schritt.\n- **Ein Gerät in privater Umgebung,** damit niemand ungewollt mitsieht.\n\nWelche Angaben genau abgefragt werden, steht im aktuellen Anmeldeformular. Gib nur Daten an, die dort als erforderlich gekennzeichnet sind.",
+      "h2": "Was brauche ich, bevor ich mich registriere?"
+    },
+    {
+      "body": "Die Reihenfolge kann sich im Detail unterscheiden, das Grundmuster ist aber meist gleich:\n\n1. **Anmeldeseite öffnen.** Rufe die Seite des Anbieters direkt über die Adresszeile deines Browsers auf, nicht über unbekannte Werbebanner oder Weiterleitungen.\n2. **Alter bestätigen.** Du bestätigst, dass du volljährig bist.\n3. **Zugangsdaten festlegen.** Dazu gehören üblicherweise ein Benutzername und ein Passwort. Wähle einen Namen, der keine Rückschlüsse auf deine echte Identität zulässt.\n4. **E-Mail-Adresse angeben und bestätigen.** Falls eine Bestätigungsmail verschickt wird, folge den Anweisungen darin. Schau bei Bedarf auch im Spam-Ordner nach.\n5. **Bedingungen und Datenschutzhinweise lesen.** Nimm dir kurz Zeit dafür, bevor du zustimmst.\n6. **Konto nutzen oder aufladen.** Erst wenn du Leistungen bezahlen möchtest, ist ein Guthaben in Tokens nötig.\n\nWer „visit x registrieren“ sucht, meint meist genau diesen Ablauf. Weicht das, was du auf dem Bildschirm siehst, deutlich davon ab, sind die Angaben des Anbieters maßgeblich.",
+      "h2": "Wie läuft die Visit X Anmeldung Schritt für Schritt ab?"
+    },
+    {
+      "body": "Die normale Währung ist Euro. Der Betrag, den du bezahlst, wird bei Visit-X in Tokens umgewandelt, und mit diesen Tokens werden die Angebote bezahlt. Das ist wichtig für die Kostenkontrolle: Du siehst nicht jede Leistung direkt in Euro, sondern in Tokens. Rechne deshalb vor einer Nutzung nach, was ein Token für dich wert ist.\n\nAls gängige Zahlungsarten nennt der Seitenbetreiber:\n\n- Sofort bzw. Sofortüberweisung\n- PayPal\n- Kreditkarte\n- SEPA (Lastschrift/Überweisung)\n\nWelche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen. Konkrete Beträge, Pakete oder Preise pro Minute solltest du immer dort prüfen, da sie sich ändern können. Ein sinnvoller Tipp: Starte mit einem kleinen Betrag, den du bewusst festlegst, und lade nicht aus dem Impuls heraus nach.",
+      "h2": "Wie funktioniert das Aufladen nach der Registrierung?"
+    },
+    {
+      "body": "Visit-X bietet Live-Cams mit Webcam-Models, Videos und Amateur-Angebote. Vor dem ersten Aufladen lohnt sich die Frage, welches Format zu dir passt: Live-Cams sind interaktiv und werden in der Regel nach Zeit oder Leistung abgerechnet, Videos sind dagegen vorab aufgenommen und eher planbar.\n\nBei Amateur-Angeboten gilt: Nutze nur Inhalte, bei denen die Beteiligten ausdrücklich zugestimmt haben. Lade nichts herunter, speichere nichts und gib nichts weiter, was urheberrechtlich geschützt ist oder dessen Herkunft unklar wirkt. Mitschnitte und Weiterverbreitung können rechtliche Folgen haben.",
+      "h2": "Was gibt es nach der Anmeldung zu entdecken?"
+    },
+    {
+      "body": "Ein paar Gewohnheiten schützen dich bei jeder Registrierung auf einer Erwachsenenplattform:\n\n- Prüfe, dass die Adresse im Browser korrekt ist und die Verbindung verschlüsselt ist.\n- Verwende kein Passwort doppelt und gib es nie an Dritte weiter.\n- Achte darauf, wie Abbuchungen auf Kontoauszügen oder Zahlungsdiensten erscheinen, wenn andere Zugriff darauf haben könnten.\n- Lies die Datenschutzhinweise des Anbieters, bevor du Daten eingibst.\n- Teile keine persönlichen Daten in Chats, auch nicht auf Nachfrage.\n\nAuch Jugendschutz gehört dazu: Sorge dafür, dass Minderjährige keinen Zugriff auf dein Konto oder dein Gerät haben.",
+      "h2": "Sicherheit und Privatsphäre bei der Anmeldung"
+    }
+  ],
+  "title": "Visit X Anmeldung: Schritt für Schritt zum Konto"
+}

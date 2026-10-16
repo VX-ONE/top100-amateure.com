@@ -1,1 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c2410c" /><stop offset="1" stop-color="#431407" /></linearGradient><linearGradient id="sc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb923c" /><stop offset="1" stop-color="#9a3412" /></linearGradient></defs><rect width="1200" height="630" fill="url(#bg)" /><circle cx="1050" cy="90" r="160" fill="#ffffff" opacity="0.06" /><circle cx="120" cy="520" r="140" fill="#000000" opacity="0.12" /><rect x="380" y="50" width="440" height="330" rx="26" fill="#1c0a04" stroke="#ffffff" stroke-width="6" /><rect x="402" y="72" width="396" height="270" rx="12" fill="url(#sc)" /><polygon points="570,380 630,380 650,430 550,430" fill="#1c0a04" stroke="#ffffff" stroke-width="4" /><rect x="510" y="426" width="180" height="16" rx="8" fill="#ffffff" /><path d="M600 300 C530 250 520 180 565 170 C588 165 600 182 600 192 C600 182 612 165 635 170 C680 180 670 250 600 300Z" fill="#ffffff" /><rect x="420" y="90" width="100" height="38" rx="19" fill="#dc2626" /><circle cx="445" cy="109" r="9" fill="#ffffff" /><text x="462" y="116" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="22" fill="#ffffff">LIVE</text><rect x="90" y="190" width="220" height="150" rx="22" fill="#ffffff" /><rect x="130" y="165" width="80" height="35" rx="10" fill="#ffffff" /><circle cx="200" cy="265" r="52" fill="#431407" /><circle cx="200" cy="265" r="32" fill="#fb923c" /><circle cx="178" cy="250" r="9" fill="#ffffff" opacity="0.8" /><circle cx="276" cy="216" r="9" fill="#dc2626" /><path d="M890 90 h190 a24 24 0 0 1 24 24 v70 a24 24 0 0 1 -24 24 h-120 l-40 36 v-36 h-30 a24 24 0 0 1 -24 -24 v-70 a24 24 0 0 1 24 -24z" fill="#ffffff" opacity="0.95" /><circle cx="940" cy="150" r="10" fill="#c2410c" /><circle cx="985" cy="150" r="10" fill="#c2410c" /><circle cx="1030" cy="150" r="10" fill="#c2410c" /><path d="M880 270 h130 a22 22 0 0 1 22 22 v50 a22 22 0 0 1 -22 22 h-70 l-30 28 v-28 h-30 a22 22 0 0 1 -22 -22 v-50 a22 22 0 0 1 22 -22z" fill="#fb923c" /><path d="M905 317 h100" stroke="#ffffff" stroke-width="10" stroke-linecap="round" /><rect x="170" y="370" width="70" height="120" rx="35" fill="#ffffff" transform="rotate(-18 205 430)" /><path d="M135 450 C150 520 240 530 270 465" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" transform="translate(30 -10)" /><text x="600" y="580" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="84" fill="#ffffff">Nischen im Vergleich</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c2410c" />
+<stop offset="1" stop-color="#431407" />
+</linearGradient>
+<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7c2d12" />
+<stop offset="1" stop-color="#1c0802" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1050" cy="80" r="170" fill="#ffffff" opacity="0.07" />
+<circle cx="90" cy="540" r="130" fill="#ffffff" opacity="0.07" />
+<g>
+<rect x="130" y="70" width="560" height="360" rx="26" fill="#fff7ed" />
+<rect x="152" y="92" width="516" height="316" rx="14" fill="url(#sc)" />
+<polygon points="380,185 380,315 490,250" fill="#fff7ed" />
+<rect x="175" y="112" width="110" height="42" rx="21" fill="#dc2626" />
+<circle cx="202" cy="133" r="9" fill="#ffffff" />
+<text x="220" y="143" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="28" fill="#ffffff">LIVE</text>
+<rect x="380" y="430" width="60" height="40" fill="#fff7ed" />
+<rect x="290" y="468" width="240" height="22" rx="11" fill="#fff7ed" />
+</g>
+<g>
+<path d="M740 100 H1050 Q1080 100 1080 130 V215 Q1080 245 1050 245 H900 L850 295 V245 H770 Q740 245 740 215 V130 Q740 100 770 100 Z" fill="#ffedd5" />
+<circle cx="820" cy="172" r="14" fill="#c2410c" />
+<circle cx="880" cy="172" r="14" fill="#c2410c" />
+<circle cx="940" cy="172" r="14" fill="#c2410c" />
+<path d="M800 300 H1100 Q1130 300 1130 330 V390 Q1130 420 1100 420 H1060 V470 L1000 420 H800 Q770 420 770 390 V330 Q770 300 800 300 Z" fill="#fb923c" />
+<path d="M950 395 C905 360 905 325 935 325 C945 325 952 331 955 337 C958 331 965 325 975 325 C1005 325 1005 360 960 395 Z" fill="#ffffff" />
+</g>
+<g>
+<rect x="740" y="470" width="44" height="70" rx="22" fill="#fff7ed" />
+<path d="M722 505 Q722 560 762 560 Q802 560 802 505" fill="none" stroke="#fff7ed" stroke-width="8" stroke-linecap="round" />
+<line x1="762" y1="560" x2="762" y2="585" stroke="#fff7ed" stroke-width="8" stroke-linecap="round" />
+</g>
+<text x="600" y="590" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="76" fill="#ffffff" transform="translate(-170 -10)">Live auf Deutsch</text>
+</svg>

@@ -1,1 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c2410c" /><stop offset="1" stop-color="#431407" /></linearGradient></defs><rect width="1200" height="630" fill="url(#bg)" /><circle cx="1080" cy="80" r="180" fill="#fff" opacity="0.06" /><circle cx="90" cy="560" r="150" fill="#fff" opacity="0.06" /><g><rect x="130" y="130" width="250" height="150" rx="30" fill="#fff" /><polygon points="190,275 190,330 250,275" fill="#fff" /><polyline points="200,205 245,248 315,160" fill="none" stroke="#c2410c" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" /></g><g><rect x="820" y="130" width="250" height="150" rx="30" fill="#fff" /><polygon points="1010,275 1010,330 950,275" fill="#fff" /><path d="M945 245 L901 201 A29 29 0 0 1 945 164 A29 29 0 0 1 989 201 Z" fill="#c2410c" /></g><g><rect x="460" y="150" width="280" height="190" rx="26" fill="#fff" /><rect x="545" y="118" width="110" height="44" rx="10" fill="#fff" /><circle cx="600" cy="245" r="70" fill="#431407" /><circle cx="600" cy="245" r="50" fill="#c2410c" /><path d="M600 268 L578 246 A13 13 0 0 1 600 229 A13 13 0 0 1 622 246 Z" fill="#fff" /><circle cx="700" cy="188" r="10" fill="#c2410c" /></g><g><circle cx="745" cy="355" r="46" fill="#fde68a" /><text x="745" y="370" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="40" text-anchor="middle" fill="#431407">18+</text></g><text x="600" y="520" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="116" text-anchor="middle" fill="#fff">Einvernehmlich</text><rect x="420" y="555" width="360" height="10" rx="5" fill="#fde68a" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c2410c" />
+<stop offset="1" stop-color="#431407" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.4" r="0.5">
+<stop offset="0" stop-color="#fdba74" stop-opacity="0.45" />
+<stop offset="1" stop-color="#fdba74" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="600" cy="200" r="330" fill="url(#glow)" />
+<g>
+<rect x="420" y="60" width="360" height="245" rx="22" fill="#fff7ed" />
+<rect x="440" y="80" width="320" height="205" rx="10" fill="#7c2d12" />
+<path d="M600 255 C530 205 535 140 572 135 C590 133 600 148 600 156 C600 148 610 133 628 135 C665 140 670 205 600 255Z" fill="#fb923c" />
+<rect x="570" y="305" width="60" height="45" fill="#fed7aa" />
+<rect x="500" y="350" width="200" height="20" rx="10" fill="#fff7ed" />
+</g>
+<g>
+<rect x="90" y="90" width="270" height="130" rx="42" fill="#ffedd5" />
+<polygon points="260,215 250,275 315,215" fill="#ffedd5" />
+<circle cx="170" cy="155" r="14" fill="#c2410c" />
+<circle cx="225" cy="155" r="14" fill="#c2410c" />
+<circle cx="280" cy="155" r="14" fill="#c2410c" />
+</g>
+<g>
+<rect x="850" y="120" width="270" height="130" rx="42" fill="#fdba74" />
+<polygon points="950,245 960,305 890,245" fill="#fdba74" />
+<path d="M985 218 C940 185 942 148 966 144 C978 143 985 153 985 159 C985 153 992 143 1004 144 C1028 148 1030 185 985 218Z" fill="#9a3412" />
+</g>
+<g>
+<rect x="110" y="320" width="210" height="120" rx="18" fill="#fff7ed" />
+<rect x="150" y="298" width="70" height="30" rx="8" fill="#fff7ed" />
+<circle cx="215" cy="380" r="46" fill="#7c2d12" />
+<circle cx="215" cy="380" r="28" fill="#fb923c" />
+<circle cx="285" cy="346" r="8" fill="#c2410c" />
+</g>
+<g>
+<rect x="905" y="320" width="70" height="115" rx="35" fill="#fff7ed" />
+<path d="M885 395 C885 460 995 460 995 395" fill="none" stroke="#fff7ed" stroke-width="14" stroke-linecap="round" />
+<line x1="940" y1="450" x2="940" y2="480" stroke="#fff7ed" stroke-width="14" stroke-linecap="round" />
+<line x1="905" y1="485" x2="975" y2="485" stroke="#fff7ed" stroke-width="14" stroke-linecap="round" />
+<line x1="920" y1="350" x2="960" y2="350" stroke="#c2410c" stroke-width="6" />
+<line x1="920" y1="375" x2="960" y2="375" stroke="#c2410c" stroke-width="6" />
+</g>
+<text x="600" y="565" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="125" fill="#ffffff">Paar-Erotik</text>
+</svg>

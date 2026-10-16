@@ -420,7 +420,7 @@
     ],
     "primary": "visit x seriös",
     "slug": "visit-x-serioes",
-    "status": "queued",
+    "status": "published",
     "topic": "sicherheit"
   },
   {
@@ -500,7 +500,7 @@
     ],
     "primary": "visit x anmeldung",
     "slug": "visit-x-anmeldung",
-    "status": "queued",
+    "status": "published",
     "topic": "ablauf"
   },
   {
@@ -527,7 +527,7 @@
     ],
     "primary": "visit x alternativen",
     "slug": "visit-x-alternativen",
-    "status": "queued",
+    "status": "published",
     "topic": "vergleich"
   },
   {
@@ -9037,7 +9037,7 @@
     ],
     "primary": "visit x schweiz",
     "slug": "visit-x-schweiz",
-    "status": "queued",
+    "status": "published",
     "topic": "dach"
   },
   {
@@ -9070,7 +9070,7 @@
     ],
     "primary": "visit x österreich",
     "slug": "visit-x-oesterreich",
-    "status": "queued",
+    "status": "published",
     "topic": "dach"
   },
   {

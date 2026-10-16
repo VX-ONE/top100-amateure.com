@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0f766e" />
+<stop offset="1" stop-color="#042f2e" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1050" cy="90" r="160" fill="#ffffff" opacity="0.06" />
+<circle cx="120" cy="560" r="130" fill="#ffffff" opacity="0.06" />
+<g>
+<rect x="590" y="170" width="20" height="300" fill="#fbbf24" />
+<polygon points="540,490 660,490 690,520 510,520" fill="#fbbf24" />
+<circle cx="600" cy="165" r="22" fill="#fcd34d" />
+<polygon points="260,205 940,170 940,186 260,221" fill="#fcd34d" />
+<line x1="290" y1="213" x2="200" y2="340" stroke="#fcd34d" stroke-width="6" />
+<line x1="290" y1="213" x2="380" y2="340" stroke="#fcd34d" stroke-width="6" />
+<line x1="910" y1="178" x2="820" y2="300" stroke="#fcd34d" stroke-width="6" />
+<line x1="910" y1="178" x2="1000" y2="300" stroke="#fcd34d" stroke-width="6" />
+<path d="M170,340 H410 Q400,400 290,410 Q180,400 170,340 Z" fill="#fbbf24" />
+<path d="M790,260 H1030 Q1020,320 910,330 Q800,320 790,260 Z" fill="#fbbf24" />
+</g>
+<g>
+<rect x="215" y="248" width="150" height="90" rx="10" fill="#ffffff" transform="rotate(-4 290 293)" />
+<rect x="215" y="268" width="150" height="16" fill="#0f766e" transform="rotate(-4 290 293)" />
+<rect x="835" y="170" width="150" height="90" rx="10" fill="#ffffff" transform="rotate(-4 910 215)" />
+<rect x="835" y="190" width="150" height="16" fill="#042f2e" transform="rotate(-4 910 215)" />
+</g>
+<g fill="#fcd34d">
+<rect x="70" y="420" width="50" height="90" />
+<rect x="135" y="390" width="50" height="120" />
+<rect x="200" y="450" width="50" height="60" />
+<rect x="950" y="420" width="50" height="90" />
+<rect x="1015" y="460" width="50" height="50" />
+<rect x="1080" y="380" width="50" height="130" />
+</g>
+<text x="600" y="590" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="76" fill="#ffffff" text-anchor="middle">Kosten im Vergleich</text>
+<text x="600" y="95" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="50" fill="#fcd34d" text-anchor="middle">★ ★ ★ ★ ★</text>
+</svg>
