@@ -56,6 +56,7 @@ def load_models(cfg: dict) -> list[dict]:
                 [normalize(k) for k in m.get("keywords", [])])),
             "facts": [str(f).replace("{name}", name) for f in m.get("facts", [])],
             "profile_url": str(m.get("profile_url") or ""),
+            "platform_name": str(m.get("platform_name") or ""),
         })
     return models
 
@@ -116,7 +117,8 @@ def links_for(cfg: dict, name: str) -> list[dict]:
     tpl = model.get("profile_url") or (cfg["affiliate"].get("profile_template") or "")
     if tpl:
         from urllib.parse import quote
-        url = tpl.replace("{name}", quote(name))
+        platform = model.get("platform_name") or name
+        url = tpl.replace("{name_lc}", quote(platform.lower())).replace("{name}", quote(platform))
         links = [{"label": f"Profil von {name} bei Visit-X", "url": url}] + [l for l in links if l["url"] != url]
     return links
 

@@ -95,9 +95,11 @@ def build_site(cfg: dict, store) -> dict:
     contents = {s: c for s, c in store.all_content().items() if s in pages}
     related = related_slugs(contents)
     labels = cfg["topic_labels"]
-    std = cfg["affiliate"]["url_template"].split("?")[0]
+    import re as _re
+    _pc = _re.search(r"[?&](pc=[^&]+)", cfg["affiliate"]["url_template"])
     def has_bonus(url: str) -> bool:
-        return bool(cfg["affiliate"].get("bonus")) and url.split("?")[0] == std
+        """Bonus hängt am Aktionscode (pc=...) des Standardlinks: jeder Link mit demselben Code zeigt den Hinweis."""
+        return bool(cfg["affiliate"].get("bonus")) and bool(_pc) and _pc.group(1) in url
     ctx = {"bonus": cfg["affiliate"].get("bonus") or {}, "site": cfg["site"], "provider": cfg["affiliate"]["provider_name"],
            "cta_label": cfg["affiliate"]["cta_label"], "year": date.today().year}
     topic_cta = cfg["affiliate"].get("topic_cta") or {}

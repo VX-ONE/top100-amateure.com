@@ -8,6 +8,7 @@
 
 models:
   - name: Lia Engel
+    platform_name: Liaengel
     active: true
     name_variants:
     - liaengel
