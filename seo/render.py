@@ -95,7 +95,10 @@ def build_site(cfg: dict, store) -> dict:
     contents = {s: c for s, c in store.all_content().items() if s in pages}
     related = related_slugs(contents)
     labels = cfg["topic_labels"]
-    ctx = {"site": cfg["site"], "provider": cfg["affiliate"]["provider_name"],
+    std = cfg["affiliate"]["url_template"].split("?")[0]
+    def has_bonus(url: str) -> bool:
+        return bool(cfg["affiliate"].get("bonus")) and url.split("?")[0] == std
+    ctx = {"bonus": cfg["affiliate"].get("bonus") or {}, "site": cfg["site"], "provider": cfg["affiliate"]["provider_name"],
            "cta_label": cfg["affiliate"]["cta_label"], "year": date.today().year}
     topic_cta = cfg["affiliate"].get("topic_cta") or {}
     hubs = set()
@@ -119,7 +122,8 @@ def build_site(cfg: dict, store) -> dict:
         sl = next((k for k, v in pages.items() if v.get("kind") == modelmod.PAGE_KIND and v.get("model") == m["name"] and k in contents), None)
         links = modelmod.links_for(cfg, m["name"])
         if sl and links:
-            top_models.append({"name": m["name"], "slug": sl, "img": f"/img/{sl}.svg", "url": links[0]["url"]})
+            top_models.append({"name": m["name"], "slug": sl, "img": f"/img/{sl}.svg", "url": links[0]["url"],
+                               "bonus": has_bonus(links[0]["url"])})
     ctx["top_models"] = top_models
     page_tpl = env.get_template("page.html")
     thumbs: dict[str, str] = {}
@@ -133,6 +137,8 @@ def build_site(cfg: dict, store) -> dict:
             ctas = []
         if not ctas:
             ctas = [{"label": topic_cta.get(meta["topic"]) or ctx["cta_label"], "url": affiliate_url(cfg, meta)}]
+        for x in ctas:
+            x["bonus"] = has_bonus(x["url"])
         if is_model:
             name = meta.get("model", "")
             c_img = dict(c, image={"svg": imgmod.model_svg(name), "alt": f"{name}: Top-Model bei {ctx['provider']}"})
@@ -187,7 +193,7 @@ def build_site(cfg: dict, store) -> dict:
                          for n, x in enumerate(top_models if sec["key"] == "models" else items)]))
     write("_redirects", "/themen/profile/ /models/ 301\n/themen/profile /models/ 301\n")
     write("index.html", env.get_template("index.html").render(
-        **ctx, sec_data=sec_data, latest=latest, canonical=f"{base}/", robots="index,follow",
+        **ctx, sec_data=sec_data, latest=latest, bonus_url=cfg["affiliate"]["url_template"], canonical=f"{base}/", robots="index,follow",
         top_models_ld=[{"@type": "ListItem", "position": i + 1, "name": m["name"], "url": f"{base}/{m['slug']}/"}
                        for i, m in enumerate(top_models)],
         title=cfg["site"].get("home_title") or cfg["site"]["name"], description=cfg["site"]["tagline"],

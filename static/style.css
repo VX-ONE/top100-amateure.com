@@ -117,3 +117,15 @@ main{max-width:1080px}.article{max-width:760px;margin:0 auto}
  .grid>.card img{aspect-ratio:1200/630;object-fit:contain;align-self:center;margin-left:8px;border-radius:8px}
  .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.chips::-webkit-scrollbar{display:none}.chip{white-space:nowrap}
 }
+
+/* ---- Aufladebonus ---- */
+.bonus-hero{display:flex;align-items:center;gap:14px;margin:6px 0 14px;padding:14px 16px;border-radius:14px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#be123c,#f97316);box-shadow:0 8px 22px rgba(190,18,60,.3)}
+.bonus-hero .gift{font-size:34px;line-height:1}
+.bonus-hero strong{font-size:20px;display:block}
+.bonus-hero .small{display:block;color:#fff;opacity:.9;font-size:13px}
+.bonus-hero .go{margin-left:auto;font-weight:800;white-space:nowrap;background:#fff;color:#be123c;padding:8px 14px;border-radius:999px}
+.bonus-bar{display:flex;gap:10px;align-items:center;margin:16px 0 0;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,rgba(190,18,60,.12),rgba(249,115,22,.12));border:1px solid rgba(190,18,60,.25)}
+.bonus-bar .gift{font-size:22px}
+.bonus-big{font-size:24px;font-weight:800;margin:6px 0 2px;color:var(--accent)}
+.mbonus{font-size:12px;font-weight:700;color:var(--accent);text-align:center}
+@media(max-width:560px){.bonus-hero{flex-wrap:wrap}.bonus-hero .go{margin-left:0;width:100%;text-align:center}}

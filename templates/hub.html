@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_cards.html" import card %}
+{% from "_cards.html" import card with context %}
 {% block main %}
 <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/{{ section.path }}/">{{ section.label }}</a> &rsaquo; {{ label }}</nav>
 <section class="landing slim" style="--c:{{ section.color }}">
@@ -10,7 +10,7 @@
 {% if top_models %}
 <section class="block">
   <div class="block-head"><h2>Top-Models bei {{ provider }}</h2><a class="more" href="/models/">Alle &rsaquo;</a></div>
-  <div class="strip">{% from "_cards.html" import model_card %}{% for m in top_models[:8] %}{{ model_card(m) }}{% endfor %}</div>
+  <div class="strip">{% from "_cards.html" import model_card with context %}{% for m in top_models[:8] %}{{ model_card(m) }}{% endfor %}</div>
 </section>
 {% endif %}
 <p class="chips">{% for n in nav %}{% if n.topic != topic %}<a class="chip" href="/themen/{{ n.topic }}/">{{ n.label }}</a>{% endif %}{% endfor %}</p>

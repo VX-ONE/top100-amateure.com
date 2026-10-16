@@ -8,7 +8,7 @@
 <div class="mcard">
   <a href="/{{ m.slug }}/" class="mimg"><img src="{{ m.img }}" alt="{{ m.name }}" width="1200" height="630" loading="lazy"></a>
   <div class="mbody"><a class="mname" href="/{{ m.slug }}/">{{ m.name }}</a>
-    <a class="btn btn-sm" href="{{ m.url }}" rel="sponsored nofollow noopener" target="_blank">Profil bei Visit-X</a></div>
+    <a class="btn btn-sm" href="{{ m.url }}" rel="sponsored nofollow noopener" target="_blank">Profil bei Visit-X</a>{% if m.bonus %}<span class="mbonus">🎁 {{ bonus.badge }}</span>{% endif %}</div>
 </div>
 {%- endmacro %}
 {% macro tile(t) -%}

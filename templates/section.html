@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_cards.html" import card, model_card, tile %}
+{% from "_cards.html" import card, model_card, tile with context %}
 {% block head %}
 <script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
   {"@type": "CollectionPage", "name": title, "url": canonical, "inLanguage": "de"},

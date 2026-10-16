@@ -31,6 +31,13 @@ affiliate:
   topic_links: {}
   provider_name: "Visit-X"
   cta_label: "Zum Angebot von Visit-X"
+  # Aufladebonus des Standardlinks (url_template). Wird überall dort gezeigt, wo ein Button auf den Standardlink führt.
+  bonus:
+    badge: "100 % Aufladebonus"
+    short: "100 % Bonus sichern"
+    note: "Über unseren Link bekommst du bei Visit-X 100 % Bonus auf deine Aufladung. Es gelten die Bedingungen von Visit-X."
+  # Deeplink auf Model-Profile: {name} = Bühnenname. Leer = Standardlink. Muster aus dem VX-Cash-Partnerbereich eintragen.
+  profile_template: ""
   # Button-Text je Thema (ohne Versprechen, was dahinter passiert; der Link führt zur Anmeldung)
   topic_cta:
     webcam-models: "Webcam-Models bei Visit-X ansehen"

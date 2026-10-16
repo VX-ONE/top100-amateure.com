@@ -55,6 +55,7 @@ def load_models(cfg: dict) -> list[dict]:
                 [split, base.replace("-", " ")] + [normalize(k).replace(base.replace("-", " "), split, 1) for k in m.get("keywords", [])] +
                 [normalize(k) for k in m.get("keywords", [])])),
             "facts": [str(f).replace("{name}", name) for f in m.get("facts", [])],
+            "profile_url": str(m.get("profile_url") or ""),
         })
     return models
 
@@ -106,8 +107,18 @@ def text_problems(text: str, model: dict, cfg: dict) -> list[str]:
 
 
 def links_for(cfg: dict, name: str) -> list[dict]:
+    """Links eines Models. Ist ein Profil-Deeplink hinterlegt (pro Model "profile_url" oder affiliate.profile_template),
+    kommt er zuerst: Nutzer landen direkt auf dem Profil statt auf der allgemeinen Videoseite."""
     model = get_model(cfg, name)
-    return model["links"] if model else []
+    if not model:
+        return []
+    links = list(model["links"])
+    tpl = model.get("profile_url") or (cfg["affiliate"].get("profile_template") or "")
+    if tpl:
+        from urllib.parse import quote
+        url = tpl.replace("{name}", quote(name))
+        links = [{"label": f"Profil von {name} bei Visit-X", "url": url}] + [l for l in links if l["url"] != url]
+    return links
 
 
 def apply_blocklist(cfg: dict, store) -> list[str]:
