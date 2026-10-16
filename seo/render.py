@@ -103,6 +103,9 @@ def build_site(cfg: dict, store) -> dict:
         if sl in contents:
             hubs.add(mt["topic"])
 
+    import hashlib
+    ctx["asset_v"] = hashlib.md5(b"".join((root / "static" / f).read_bytes() for f in ("style.css", "agegate.js")
+                                         if (root / "static" / f).exists())).hexdigest()[:10]
     ctx["nav"] = [{"topic": t, "label": labels.get(t, t)} for t in [*cfg["topics"]] if t in hubs]
     ctx["sections"] = SECTIONS
 
