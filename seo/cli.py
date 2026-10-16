@@ -313,7 +313,13 @@ def refresh_pages(cfg, store, pages, clusters, facts, texts, titles, mock, today
         if out_of_time(cfg):
             break
         cluster = by_slug.get(slug)
-        if slug not in pages or cluster is None or pages[slug].get("kind") == modelmod.PAGE_KIND:
+        model = None
+        if slug in pages and pages[slug].get("kind") == modelmod.PAGE_KIND:
+            model = modelmod.get_model(cfg, pages[slug].get("model", ""))
+            if model:
+                kws = modelmod.valid_keywords(model, cfg)
+                cluster = {"slug": slug, "primary": pages[slug]["primary"], "keywords": kws, "topic": modelmod.TOPIC}
+        if slug not in pages or cluster is None or (pages[slug].get("kind") == modelmod.PAGE_KIND and not model):
             done.append(slug)
             continue
         other_texts = {k: v for k, v in texts.items() if k != slug}
@@ -322,12 +328,22 @@ def refresh_pages(cfg, store, pages, clusters, facts, texts, titles, mock, today
         issues = None
         for attempt in range(1, cfg["limits"]["max_attempts"] + 1):
             try:
-                draft = generate.generate(cluster, cfg, facts, other_titles, issues, mock=mock)
+                if model:
+                    draft = generate.generate_model(model, cluster, cfg, facts, other_titles, issues, mock=mock)
+                else:
+                    draft = generate.generate(cluster, cfg, facts, other_titles, issues, mock=mock)
             except Exception as e:
                 issues = [f"Generierung fehlgeschlagen: {type(e).__name__}: {e}"]
                 runlog.append(f"refresh {slug} Versuch {attempt}: {issues[0]}")
                 continue
-            issues = quality.check(draft, cluster, cfg, facts, other_texts, relaxed=mock, titles=other_titles)
+            if model:
+                lim = cfg["models"]
+                issues = quality.check(draft, cluster, cfg, "\n".join(model["facts"]) + "\n" + facts, other_texts,
+                                       relaxed=mock, blocked=[], min_words=lim["min_words"],
+                                       max_sim_limit=lim["max_similarity"], titles=other_titles)
+                issues += modelmod.text_problems(quality.article_text(draft), model, cfg)
+            else:
+                issues = quality.check(draft, cluster, cfg, facts, other_texts, relaxed=mock, titles=other_titles)
             if issues:
                 runlog.append(f"refresh {slug} Versuch {attempt}: " + " | ".join(issues))
                 continue
