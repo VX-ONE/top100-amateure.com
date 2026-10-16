@@ -37,7 +37,7 @@ affiliate:
     short: "100 % Bonus sichern"
     note: "Über unseren Link bekommst du bei Visit-X 100 % Bonus auf deine Aufladung. Es gelten die Bedingungen von Visit-X."
   # Deeplink auf Model-Profile: {name} = Bühnenname. Leer = Standardlink. Muster aus dem VX-Cash-Partnerbereich eintragen.
-  profile_template: "https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump={name}"
+  profile_template: ""
   # Button-Text je Thema (ohne Versprechen, was dahinter passiert; der Link führt zur Anmeldung)
   topic_cta:
     webcam-models: "Webcam-Models bei Visit-X ansehen"

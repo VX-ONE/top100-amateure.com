@@ -8,7 +8,6 @@
 
 models:
   - name: Lia Engel
-    profile_url: https://m.visit-x.net/de/cams/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow=jump=Liaengel
     active: true
     name_variants:
     - liaengel
