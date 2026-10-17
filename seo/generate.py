@@ -18,6 +18,7 @@ Harte Regeln:
 7. Den Anbieter nennst du neutral und sachlich als Option oder Beispiel. Keine Heilsversprechen, kein Druck, keine Superlative ohne Beleg.
 8. Jugendschutz, Datenschutz und Einwilligung behandelst du knapp in höchstens einem Abschnitt. Der Hauptteil beantwortet, was die Suchenden wirklich wissen oder finden wollen.
 9. Titel und H1: Hauptkeyword in natürlicher Schreibweise und Groß-/Kleinschreibung (z. B. "Deutsche Pornos" statt "deutsch porno", "Reife Frauen" statt "porno reife"), Titel klickstark und konkret, keine Doppelpunkt-Floskeln wie "Was du wissen musst".
+11. SEO-Gliederung: Der erste Satz der Einleitung enthält das Hauptkeyword. Mindestens drei H2-Überschriften enthalten das Hauptkeyword oder eine der weiteren Suchbegriffe (Longtail-Varianten) in natürlicher Form. Längere Abschnitte gliederst du im Text mit "### " (H3) und bei Bedarf "#### " (H4); niemals "#" oder "##" im Text verwenden. Die FAQ-Fragen formulierst du so, wie Leute bei Google fragen (W-Fragen mit dem Keyword).
 10. Schreibe konkret, abwechslungsreich und mit Beispielen statt Floskeln. Vermeide typische Füllsätze ("In der heutigen Zeit", "Zusammenfassend lässt sich sagen", "Es ist wichtig zu beachten").
 Gib ausschließlich ein JSON-Objekt zurück, ohne Text davor oder danach."""
 
@@ -350,7 +351,10 @@ def build_model_prompt(model: dict, cluster: dict, cfg: dict, facts: str, other_
         "Titel-Muster (abwandeln, nicht wörtlich kopieren): '<Bühnenname>: Videos, Livecam und Chat bei Visit-X'. "
         "Ton: wie ein Fan-Guide, positiv und konkret, nicht defensiv. Keine Sätze wie 'Mehr behaupten wir nicht'. "
         "Jugendschutz und Datenschutz nur in einem kurzen Absatz, nicht als eigener langer Abschnitt. "
-        "Der erste Abschnitt heißt 'Steckbrief' und listet die FAKTEN als kurze Markdown-Liste. "
+        "Der erste Abschnitt heißt 'Steckbrief: <Bühnenname>' und listet die FAKTEN als kurze Markdown-Liste. "
+        "Weitere H2-Überschriften enthalten den Bühnennamen plus Suchbegriff, z. B. '<Bühnenname> Videos', "
+        "'<Bühnenname> Livecam und Chat', '<Bühnenname> kostenlos? Kosten und Tokens', 'Fragen zu <Bühnenname>'. "
+        "Keine allgemeinen H2 ohne Namen. In längeren Abschnitten H3-Zwischenüberschriften mit '### '. "
         "Danach lebendige, konkrete Abschnitte, die die FAKTEN einordnen (was Fans erwartet, wie man sie erreicht). "
         "Mögliche weitere Abschnitte: Was es bei Visit-X zu diesem Namen gibt (nur FAKTEN); Videos, Direkt-Chat und "
         "Live-Shows allgemein erklärt; Kosten und Abrechnung, worauf man achten sollte; Jugendschutz, Datenschutz "

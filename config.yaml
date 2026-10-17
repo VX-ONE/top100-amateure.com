@@ -152,6 +152,7 @@ gsc:
 limits:
   daily_pages: 5                        # Start klein, erst erhöhen, wenn Seiten indexiert werden
   max_daily_pages: 30                   # harte Obergrenze, auch bei manueller Angabe
+  refresh_per_run: 6           # Seiten aus data/refresh.txt, die pro Lauf neu geschrieben werden
   max_minutes: 80             # Zeitbremse pro Lauf (Workflow-Timeout ist 120 Minuten)
   max_attempts: 3                       # Generierungsversuche pro Seite
   min_words: 700

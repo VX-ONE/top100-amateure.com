@@ -92,6 +92,11 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
         issues.append("Der Titel existiert schon bei einer anderen Seite: eigenen, klar anderen Titel wählen.")
     if not keyword_in(cluster["primary"], c["title"] + " " + c["h1"]):
         issues.append("Das Hauptkeyword fehlt in Titel und Überschrift.")
+    core = [w for w in normalize(cluster["primary"]).replace("-", " ").split() if len(w) >= 3]
+    h2_hits = sum(1 for s in c.get("sections", [])
+                  if any(re.search(rf"\b{re.escape(w[:max(4, len(w) - 2)])}", normalize(s.get("h2", ""))) for w in core))
+    if core and h2_hits < 2:
+        issues.append("Zu wenige H2-Überschriften mit dem Hauptkeyword oder einer Variante (mindestens 2).")
 
     text = article_text(c)
     low = normalize(text)

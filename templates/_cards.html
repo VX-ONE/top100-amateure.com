@@ -1,16 +1,16 @@
 {% macro card(i) -%}
 <a class="card k-{{ i.kind }}" href="/{{ i.slug }}/">
-  {% if i.img %}<img src="{{ i.img }}" alt="" width="1200" height="630" loading="lazy">{% endif %}
-  <span class="card-body"><span class="badge">{{ i.badge }}</span><strong>{{ i.title }}</strong>{% if i.text %}<span class="small">{{ i.text }}</span>{% endif %}</span>
+  {% if i.img %}<img src="{{ i.img }}" alt="{{ i.title }}" width="1200" height="630" loading="lazy">{% endif %}
+  <span class="card-body"><span class="badge">{{ i.badge }}</span><h3>{{ i.title }}</h3>{% if i.text %}<span class="small">{{ i.text }}</span>{% endif %}</span>
 </a>
 {%- endmacro %}
 {% macro model_card(m) -%}
 <div class="mcard">
   <a href="/{{ m.slug }}/" class="mimg"><img src="{{ m.img }}" alt="{{ m.name }}" width="1200" height="630" loading="lazy"></a>
-  <div class="mbody"><a class="mname" href="/{{ m.slug }}/">{{ m.name }}</a>
+  <div class="mbody"><h3><a class="mname" href="/{{ m.slug }}/">{{ m.name }}</a></h3>
     <a class="btn btn-sm" href="{{ m.url }}" rel="sponsored nofollow noopener" target="_blank">Profil bei Visit-X</a>{% if m.bonus %}<span class="mbonus">🎁 {{ bonus.badge }}</span>{% endif %}</div>
 </div>
 {%- endmacro %}
 {% macro tile(t) -%}
-<a class="topic" href="/themen/{{ t.topic }}/"><strong>{{ t.label }}</strong><span class="small">{{ t.intro }}</span><span class="count">{{ t.count }} Artikel &rsaquo;</span></a>
+<a class="topic" href="/themen/{{ t.topic }}/"><h3>{{ t.label }}</h3><span class="small">{{ t.intro }}</span><span class="count">{{ t.count }} Artikel &rsaquo;</span></a>
 {%- endmacro %}

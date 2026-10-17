@@ -50,7 +50,7 @@
     <h2>Häufige Fragen</h2>
     {% for f in c.faq %}
     <details>
-      <summary>{{ f.q }}</summary>
+      <summary><h3>{{ f.q }}</h3></summary>
       {{ f.a|md|safe }}
     </details>
     {% endfor %}
@@ -67,16 +67,16 @@
   {% if model_cards %}
   {% from "_cards.html" import model_card with context %}
   <section class="block">
-    <div class="block-head"><h2>{% if is_model %}Weitere Top-Models{% else %}Top-Models bei {{ provider }}{% endif %}</h2><a class="more" href="/models/">Alle &rsaquo;</a></div>
+    <div class="block-head"><h2>{% if is_model %}Weitere Top-Models bei {{ provider }}{% else %}Top-Models bei {{ provider }}{% endif %}</h2><a class="more" href="/models/">Alle &rsaquo;</a></div>
     <div class="strip">{% for m in model_cards %}{{ model_card(m) }}{% endfor %}</div>
   </section>
   {% endif %}
 
   {% if related %}
-  <section class="related">
-    <h2>Weitere Ratgeber</h2>
+  <nav class="related" aria-label="Weitere Ratgeber">
+    <p class="block-title">Weitere Ratgeber</p>
     <ul>{% for r in related %}<li><a href="/{{ r.slug }}/">{{ r.title }}</a></li>{% endfor %}</ul>
-  </section>
+  </nav>
   {% endif %}
 </article>
 {% if ctas %}<div class="stickycta"><a class="btn" href="{{ ctas[0].url }}" rel="sponsored nofollow noopener" target="_blank">{% if ctas[0].bonus %}🎁 {{ bonus.short }}{% else %}{{ ctas[0].label }}{% endif %}</a><span>Werbung &middot; 18+</span></div>{% endif %}

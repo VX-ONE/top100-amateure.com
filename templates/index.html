@@ -15,7 +15,7 @@
   <div class="sections">{% for s in sec_data if s.count %}
     <a class="section-tile s-{{ s.key }}" href="/{{ s.path }}/" style="--c:{{ s.color }}">
       <span class="ico">{% if s.key == "models" %}<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="17" r="9" fill="currentColor"/><path d="M8 42c2-9 9-14 16-14s14 5 16 14z" fill="currentColor"/><path d="M37 6l2 4 4 .6-3 3 .7 4.4-3.7-2-3.7 2 .7-4.4-3-3 4-.6z" fill="#fde047"/></svg>{% elif s.key == "angebote" %}<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="26" rx="4" fill="currentColor"/><path d="M21 16v12l10-6z" fill="#fff"/><rect x="16" y="38" width="16" height="4" rx="2" fill="currentColor"/><circle cx="38" cy="9" r="5" fill="#ef4444"/></svg>{% else %}<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 8h14c2 0 2 1 2 3v29c-1-2-3-3-5-3H8z" fill="currentColor"/><path d="M40 8H26c-2 0-2 1-2 3v29c1-2 3-3 5-3h11z" fill="currentColor" opacity=".7"/></svg>{% endif %}</span>
-      <strong>{{ s.label }}</strong><span class="small">{{ s.intro }}</span><span class="count">{{ s.count }} {% if s.key == "models" %}Models{% else %}Artikel{% endif %} &rsaquo;</span>
+      <h2 class="tile-h">{{ s.label }}</h2><span class="small">{{ s.intro }}</span><span class="count">{{ s.count }} {% if s.key == "models" %}Models{% else %}Artikel{% endif %} &rsaquo;</span>
     </a>{% endfor %}
   </div>
 </section>

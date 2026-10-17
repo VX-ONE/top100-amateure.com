@@ -309,7 +309,7 @@ def refresh_pages(cfg, store, pages, clusters, facts, texts, titles, mock, today
     todo = [l.strip() for l in path.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
     by_slug = {c["slug"]: c for c in clusters}
     done: list[str] = []
-    for slug in todo[:5]:
+    for slug in todo[:int(cfg["limits"].get("refresh_per_run", 5))]:
         if out_of_time(cfg):
             break
         cluster = by_slug.get(slug)

@@ -6,6 +6,7 @@
   <h1>{{ label }}</h1>
   {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
 </section>
+<h2>Alle Artikel: {{ label }}</h2>
 <div class="grid">{% for i in items %}{{ card(i) }}{% endfor %}</div>
 {% if top_models %}
 <section class="block">

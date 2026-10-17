@@ -129,3 +129,14 @@ main{max-width:1080px}.article{max-width:760px;margin:0 auto}
 .bonus-big{font-size:24px;font-weight:800;margin:6px 0 2px;color:var(--accent)}
 .mbonus{font-size:12px;font-weight:700;color:var(--accent);text-align:center}
 @media(max-width:560px){.bonus-hero{flex-wrap:wrap}.bonus-hero .go{margin-left:0;width:100%;text-align:center}}
+
+/* Überschriften in Karten/Kacheln wie bisher aussehen lassen */
+.card-body h3,.mbody h3,.topic h3,.section-tile h3,.section-tile .tile-h{margin:0;font-size:16px;line-height:1.3;font-weight:700}
+.section-tile h3,.section-tile .tile-h{font-size:19px}
+.mbody h3 a{color:var(--fg);text-decoration:none}
+.block-title{font-size:22px;font-weight:700;margin:0}
+.related .block-title{margin:32px 0 8px}
+summary h3{display:inline;font-size:17px;margin:0}
+.article h3{font-size:19px;margin:24px 0 6px}.article h4{font-size:17px;margin:18px 0 4px}
+@media(max-width:760px){.grid>.card .card-body h3{font-size:15px}}
+summary h3{font-size:16px;font-weight:600}

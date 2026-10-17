@@ -1,6 +1,7 @@
 """Statische Seite aus den gespeicherten Inhalten bauen (HTML, Sitemap, robots.txt)."""
 from __future__ import annotations
 
+import re
 import shutil
 import zlib
 from datetime import date
@@ -15,7 +16,10 @@ from .quality import article_text
 
 
 def md(text: str) -> str:
-    return markdown.markdown(text or "", extensions=["sane_lists"])
+    """Markdown -> HTML. Im Fließtext sind nur H3/H4 erlaubt: H1 und H2 setzt das Template (saubere Gliederung)."""
+    text = re.sub(r"(?m)^#{1,2}\s+", "### ", text or "")
+    text = re.sub(r"(?m)^#{5,6}\s+", "#### ", text)
+    return markdown.markdown(text, extensions=["sane_lists"])
 
 
 def plain(text: str) -> str:
@@ -177,7 +181,7 @@ def build_site(cfg: dict, store) -> dict:
     for t in hub_topics:
         write(f"themen/{t}/index.html", hub_tpl.render(
             **ctx, topic=t, label=labels.get(t, t), intro=intros.get(t, ""), items=groups[t], section=section_of(t),
-            canonical=f"{base}/themen/{t}/", robots="index,follow", title=f"{labels.get(t, t)}: alle Ratgeber",
+            canonical=f"{base}/themen/{t}/", robots="index,follow", title=f"{labels.get(t, t)} bei Visit-X: Ratgeber | {cfg['site']['name']}",
             description=(intros.get(t) or labels.get(t, t))[:160], og_image=""))
     sec_tpl = env.get_template("section.html")
     sec_data = []

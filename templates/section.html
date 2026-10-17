@@ -17,6 +17,7 @@
   {% if tiles %}<p class="chips">{% for t in tiles %}<a class="chip" href="#t-{{ t.topic }}">{{ t.label }} <span>{{ t.count }}</span></a>{% endfor %}</p>{% endif %}
 </section>
 {% if sec.key == "models" %}
+<h2>Alle Top-Models bei {{ provider }} im Überblick</h2>
 <div class="grid models-all">{% for m in top_models %}{{ model_card(m) }}{% endfor %}</div>
 {% else %}
 {% for t in tiles %}
@@ -28,6 +29,6 @@
 {% endif %}
 <section class="block">
   <h2>Weitere Bereiche</h2>
-  <div class="sections compact">{% for s in sections if s.key != sec.key %}<a class="section-tile" href="/{{ s.path }}/" style="--c:{{ s.color }}"><strong>{{ s.label }}</strong><span class="small">{{ s.intro }}</span></a>{% endfor %}</div>
+  <div class="sections compact">{% for s in sections if s.key != sec.key %}<a class="section-tile" href="/{{ s.path }}/" style="--c:{{ s.color }}"><h3>{{ s.label }}</h3><span class="small">{{ s.intro }}</span></a>{% endfor %}</div>
 </section>
 {% endblock %}
