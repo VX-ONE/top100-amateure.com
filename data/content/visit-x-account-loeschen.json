@@ -1,0 +1,69 @@
+{
+  "cta_text": "Wenn du Visit-X mit Live-Cams, Videos und Amateur-Angeboten später wieder nutzen möchtest, kannst du dir das Angebot in Ruhe ansehen und vorab die aktuellen Bedingungen des Anbieters lesen.",
+  "faq": [
+    {
+      "a": "Das hängt davon ab, welche Funktionen der Anbieter im Kundenbereich aktuell anbietet. Schau in den Kontoeinstellungen und in der Hilfe nach. Gibt es dort keine Option, ist der Weg über eine schriftliche Anfrage an den Kundenservice üblich.",
+      "q": "Kann ich meinen Visit-X-Account selbst löschen?"
+    },
+    {
+      "a": "Ob Restguthaben verfällt oder erstattet wird, regeln die Bedingungen von Visit-X. Prüfe das vor der Löschung und gib Tokens im Zweifel vorher aus. Eine automatische Rückzahlung solltest du nicht annehmen.",
+      "q": "Was passiert mit meinen Tokens, wenn ich das Konto lösche?"
+    },
+    {
+      "a": "Es lohnt sich, die Zahlungsfreigaben im eigenen PayPal-Konto zu prüfen und die Kartenabrechnung in den Folgemonaten zu kontrollieren. Bei unberechtigten Abbuchungen ist deine Bank oder dein Zahlungsdienst Ansprechpartner.",
+      "q": "Muss ich bei PayPal oder Kreditkarte noch etwas tun?"
+    },
+    {
+      "a": "In der Regel nicht. Rechne damit, dass die Löschung endgültig ist. Wenn du unsicher bist, nutze das Konto einfach eine Weile nicht, statt es sofort zu löschen.",
+      "q": "Kann ich ein gelöschtes Konto wiederherstellen?"
+    },
+    {
+      "a": "Nein, dann besteht das Konto samt gespeicherten Daten weiter. Wenn du die Daten entfernen lassen willst, musst du die Löschung ausdrücklich veranlassen und dir die Bestätigung aufheben.",
+      "q": "Reicht es, die App oder die Seite nicht mehr zu nutzen?"
+    }
+  ],
+  "h1": "Visit X Account löschen: der Ablauf Schritt für Schritt",
+  "image": {
+    "alt": "Checkliste mit drei Schritten, Häkchen und Pfeilen auf dunkelgrünem Hintergrund, dazu das Wort \"Schritt für Sc",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\"><defs><linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#0f766e\" /><stop offset=\"1\" stop-color=\"#042f2e\" /></linearGradient></defs><rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" /><circle cx=\"1050\" cy=\"90\" r=\"160\" fill=\"#ffffff\" opacity=\"0.06\" /><circle cx=\"100\" cy=\"560\" r=\"140\" fill=\"#ffffff\" opacity=\"0.06\" /><g><rect x=\"90\" y=\"70\" width=\"520\" height=\"340\" rx=\"28\" fill=\"#ffffff\" /><rect x=\"90\" y=\"70\" width=\"520\" height=\"70\" rx=\"28\" fill=\"#99f6e4\" /><rect x=\"90\" y=\"110\" width=\"520\" height=\"30\" fill=\"#99f6e4\" /><circle cx=\"145\" cy=\"105\" r=\"10\" fill=\"#0f766e\" /><circle cx=\"180\" cy=\"105\" r=\"10\" fill=\"#0f766e\" opacity=\"0.6\" /><circle cx=\"215\" cy=\"105\" r=\"10\" fill=\"#0f766e\" opacity=\"0.3\" /><g fill=\"none\" stroke=\"#0f766e\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"130,195 148,214 180,176\" /><polyline points=\"130,277 148,296 180,258\" /></g><rect x=\"215\" y=\"187\" width=\"320\" height=\"22\" rx=\"11\" fill=\"#042f2e\" opacity=\"0.8\" /><rect x=\"215\" y=\"269\" width=\"270\" height=\"22\" rx=\"11\" fill=\"#042f2e\" opacity=\"0.8\" /><rect x=\"128\" y=\"338\" width=\"56\" height=\"56\" rx=\"12\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"8\" /><rect x=\"215\" y=\"351\" width=\"220\" height=\"22\" rx=\"11\" fill=\"#042f2e\" opacity=\"0.35\" /></g><g fill=\"#99f6e4\"><polygon points=\"660,200 760,200 760,170 830,240 760,310 760,280 660,280\" /><polygon points=\"860,200 960,200 960,170 1030,240 960,310 960,280 860,280\" /></g><g><circle cx=\"1105\" cy=\"240\" r=\"58\" fill=\"#ffffff\" /><polyline points=\"1078,240 1098,262 1134,218\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\" /></g><text x=\"90\" y=\"560\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"110\" fill=\"#ffffff\">Schritt für Schritt</text></svg>"
+  },
+  "intro": "Wer seinen Visit-X-Account löschen will, geht am sichersten in dieser Reihenfolge vor: Restguthaben klären, Zahlungsarten prüfen, Löschung oder Kündigung über den Anbieter anstoßen und die Bestätigung aufbewahren. Welche Schaltfläche oder welches Formular dafür vorgesehen ist, kann sich ändern. Prüfe deshalb vor dem Start die aktuellen Angaben des Anbieters im Kundenbereich und in der Hilfe.\n\nDieser Ratgeber liefert dir keinen Menüpfad, der morgen veraltet sein könnte. Er zeigt dir stattdessen den Ablauf, der bei fast jedem Online-Konto funktioniert, und die Stellen, an denen es in der Praxis hakt: übrig gebliebene Tokens, hinterlegte Zahlungsdaten, falsche Absenderadressen und fehlende Bestätigungen.",
+  "key_takeaways": [
+    "Erst Guthaben und Zahlungsart klären, dann den Account löschen. Danach lässt sich vieles nicht mehr ändern.",
+    "Löschen, Sperren und bloßes Nichtmehrnutzen sind drei verschiedene Dinge.",
+    "Heb die Bestätigung der Löschung auf und prüfe danach Kontoauszug, PayPal oder Kreditkartenabrechnung.",
+    "Konkrete Fristen und Regeln zu Restguthaben stehen in den Bedingungen von Visit-X. Verlass dich nicht auf Annahmen."
+  ],
+  "meta_description": "Visit X Account löschen: Ablauf in klaren Schritten, mit Checkliste für Restguthaben, Zahlungsart und Daten – plus typische Stolpersteine.",
+  "sections": [
+    {
+      "body": "Bevor du irgendetwas anklickst, entscheide, was du erreichen willst. Die Begriffe werden oft vermischt, haben aber unterschiedliche Folgen:\n\n- **Konto löschen:** Das Profil und die damit verbundenen Daten sollen entfernt werden. In der Regel ist das nicht rückgängig zu machen.\n- **Kündigen bzw. Zahlungen beenden:** Wiederkehrende Abbuchungen oder hinterlegte Zahlungsermächtigungen sollen enden. Das Konto kann dabei bestehen bleiben.\n- **Pausieren:** Du lädst einfach nichts mehr auf und loggst dich nicht mehr ein. Das Konto existiert weiter, samt gespeicherter Daten.\n\nWenn du nur eine Auszeit brauchst, reicht oft die dritte Variante. Wenn du die Daten loswerden willst, ist die Löschung der richtige Weg. Prüfe beim Anbieter, ob Löschung und Kündigung getrennt behandelt werden.",
+      "h2": "Löschen, kündigen, pausieren: Was willst du eigentlich?"
+    },
+    {
+      "body": "Eine kurze Checkliste erspart dir später Nachfragen:\n\n1. **Restguthaben prüfen.** Bei Visit-X wird der bezahlte Euro-Betrag in Tokens umgewandelt, mit denen du bezahlst. Schau nach, wie viele Tokens noch auf dem Konto liegen. Ob und wie Restguthaben verfällt oder erstattet wird, regeln die Bedingungen des Anbieters. Lies sie vorher und geh nicht davon aus, dass eine Rückzahlung automatisch erfolgt.\n2. **Zahlungsart notieren.** Gängig sind laut Angabe des Seitenbetreibers Sofortüberweisung, PayPal, Kreditkarte und SEPA. Welche Methode du genutzt hast, brauchst du für die spätere Kontrolle.\n3. **Zugangsdaten bereithalten.** Benutzername und die E-Mail-Adresse des Kontos sollten dir zur Verfügung stehen. Ohne Zugriff auf das Postfach wird es bei Bestätigungsmails schwierig.\n4. **Eigene Daten sichern, falls nötig.** Rechnungen oder Zahlungsbelege solltest du dir vorher herunterladen oder als Screenshot speichern. Nach der Löschung kommst du eventuell nicht mehr heran.\n5. **Datum festhalten.** Notiere, wann du die Löschung veranlasst hast.",
+      "h2": "Vorbereitung: Diese Punkte klärst du vor dem Löschen"
+    },
+    {
+      "body": "So gehst du vor. Die Bezeichnungen der Menüpunkte können abweichen.\n\n1. **Einloggen.** Melde dich mit deinen Zugangsdaten im Kundenbereich an. Wenn du das Passwort vergessen hast, setze es zuerst zurück.\n2. **Kontobereich öffnen.** Suche in den Konto-, Profil- oder Einstellungsseiten nach Punkten wie Kontodaten, Mein Konto oder Hilfe. Die Hilfe oder der Kundenservice nennt den aktuell vorgesehenen Weg.\n3. **Löschung bzw. Kündigung beantragen.** Folge dem vom Anbieter vorgesehenen Weg. Gibt es keine Schaltfläche, ist in der Regel eine schriftliche Anfrage über das Kontakt- oder Supportformular der Ersatz. Schreibe darin den Benutzernamen, die Konto-E-Mail und die klare Bitte, das Konto zu löschen.\n4. **Bestätigung abwarten.** Warte auf die Bestätigungsmail oder die Rückmeldung des Supports. Schau auch im Spam-Ordner nach.\n5. **Bestätigung aufbewahren.** Speichere die Mail oder mache einen Screenshot. Sie ist dein Nachweis, falls später etwas abgebucht wird.\n6. **Nachkontrolle.** Prüfe in den Folgewochen Kontoauszug, PayPal-Aktivitäten oder Kreditkartenabrechnung. Es sollten keine neuen Abbuchungen auftauchen.",
+      "h2": "Visit X Account löschen: der Ablauf in sechs Schritten"
+    },
+    {
+      "body": "Die meisten Probleme sind banal. Diese Fälle tauchen bei Kontolöschungen immer wieder auf:\n\n- **Falsche Absenderadresse:** Schreibst du von einer anderen E-Mail-Adresse als der im Konto hinterlegten, kann der Anbieter dich nicht zuordnen. Nutze die Konto-Adresse.\n- **Löschung nur angekündigt, nicht bestätigt:** Ohne Rückmeldung weißt du nicht, ob die Anfrage angekommen ist. Frage nach, wenn nach einer angemessenen Zeit nichts kommt.\n- **Restguthaben vergessen:** Wer vorher nicht nachsieht, verliert eventuell Tokens. Gib sie vorher aus oder kläre die Erstattung vorab.\n- **Hinterlegte Zahlungsdaten bleiben aktiv:** Bei PayPal kannst du in den eigenen Einstellungen prüfen, ob eine Zahlungsfreigabe für den Händler besteht, und sie dort widerrufen. Bei Kreditkarte und SEPA hilft ein Blick auf neue Abbuchungen. Bei Unklarheiten ist deine Bank der richtige Ansprechpartner.\n- **Zweitkonten:** Wer mehrfach registriert war, übersieht leicht ein altes Konto. Prüfe alte Postfächer nach Registrierungs- oder Rechnungsmails.\n- **Neu-Anmeldung aus Versehen:** Eine erneute Anmeldung mit gleicher E-Mail kann ein neues Konto anlegen. Das merkst du spätestens, wenn wieder Mails eintreffen.\n- **Impulsives Löschen:** Wenn du nur genervt bist, warte eine Nacht. Gelöschte Konten lassen sich meist nicht wiederherstellen.",
+      "h2": "Typische Stolpersteine und wie du sie umgehst"
+    },
+    {
+      "body": "Beim Löschen geht es auch um deine personenbezogenen Daten. Nach der DSGVO kannst du grundsätzlich die Löschung verlangen, wobei gesetzliche Aufbewahrungspflichten, etwa für Rechnungen, Ausnahmen begründen können. Wie der Anbieter damit umgeht, steht in seiner Datenschutzerklärung. Frag im Zweifel ausdrücklich nach.\n\nDie Plattform ist nur für Volljährige gedacht. Nutze ausschließlich Angebote, bei denen alle Beteiligten ausdrücklich eingewilligt haben, und gib keine Zugangsdaten an Dritte weiter. Wer sein Konto aufgibt, sollte außerdem auf dem Gerät gespeicherte Passwörter und Browserdaten entfernen.",
+      "h2": "Daten, Privatsphäre und Einwilligung im Blick"
+    },
+    {
+      "body": "Bleibt eine Antwort aus oder wird die Löschung abgelehnt, geh stufenweise vor:\n\n1. Wiederhole die Anfrage schriftlich mit Datum, Benutzername und Verweis auf deine erste Nachricht.\n2. Setze eine angemessene Frist, zum Beispiel zwei Wochen, und halte sie schriftlich fest.\n3. Wende dich bei Datenschutzfragen an die zuständige Datenschutzbehörde oder bei unberechtigten Abbuchungen an deine Bank bzw. deinen Zahlungsdienst.\n\nHeb den gesamten Schriftverkehr auf. Das ist deine wichtigste Grundlage bei Streit.",
+      "h2": "Wenn die Löschung nicht klappt"
+    },
+    {
+      "body": "Nicht jeder, der „Account löschen“ sucht, will wirklich alle Spuren tilgen. Manche wollen nur ungeplante Ausgaben stoppen. Dann helfen Maßnahmen ohne Löschung: Lade nur Beträge auf, die du bewusst ausgeben willst, und prüfe vor jeder Aufladung die angebotene Zahlungsmethode. Da bei Visit-X mit Tokens bezahlt wird, siehst du jederzeit, wie viel Guthaben bleibt.\n\nWenn du später zurückkehrst: Laut Angabe des Seitenbetreibers gibt es über den Link dieser Seite einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X, die du vorher lesen solltest.",
+      "h2": "Konto behalten und trotzdem Kosten im Griff haben"
+    }
+  ],
+  "title": "Visit X Account löschen – Schritte und Stolpersteine"
+}

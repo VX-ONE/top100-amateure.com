@@ -391,7 +391,7 @@
     ],
     "primary": "visit x kosten",
     "slug": "visit-x-kosten",
-    "status": "queued",
+    "status": "published",
     "topic": "preise"
   },
   {
@@ -405,7 +405,7 @@
     ],
     "primary": "visit x erfahrungen",
     "slug": "visit-x-erfahrungen",
-    "status": "queued",
+    "status": "published",
     "topic": "vergleich"
   },
   {
@@ -433,7 +433,7 @@
     ],
     "primary": "visit x anonym",
     "slug": "visit-x-anonym",
-    "status": "queued",
+    "status": "published",
     "topic": "sicherheit"
   },
   {
@@ -459,7 +459,7 @@
     ],
     "primary": "visit x account löschen",
     "slug": "visit-x-account-loeschen",
-    "status": "queued",
+    "status": "published",
     "topic": "ablauf"
   },
   {
@@ -473,7 +473,7 @@
     ],
     "primary": "visit x coins",
     "slug": "visit-x-coins",
-    "status": "queued",
+    "status": "published",
     "topic": "preise"
   },
   {
