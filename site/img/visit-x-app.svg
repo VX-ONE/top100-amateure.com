@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#be185d" />
+<stop offset="1" stop-color="#3b0a24" />
+</linearGradient>
+<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fbcfe8" />
+<stop offset="1" stop-color="#f472b6" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1050" cy="90" r="160" fill="#ffffff" opacity="0.07" />
+<circle cx="100" cy="580" r="180" fill="#000000" opacity="0.15" />
+<g>
+<rect x="560" y="250" width="540" height="300" rx="20" fill="#1f0613" />
+<rect x="578" y="268" width="504" height="264" rx="8" fill="url(#sc)" />
+<path d="M520 550 H1140 L1110 580 H550 Z" fill="#e5e7eb" />
+<circle cx="830" cy="400" r="50" fill="#3b0a24" />
+<circle cx="830" cy="400" r="30" fill="#f9a8d4" />
+<rect x="800" y="338" width="60" height="14" rx="5" fill="#3b0a24" />
+<polygon points="815,380 815,420 850,400" fill="#3b0a24" />
+</g>
+<g>
+<rect x="880" y="320" width="190" height="300" rx="30" fill="#111827" />
+<rect x="894" y="345" width="162" height="250" rx="14" fill="#ffffff" />
+<circle cx="975" cy="332" r="5" fill="#6b7280" />
+<path d="M920 430 Q975 380 1030 430" fill="none" stroke="#be185d" stroke-width="10" stroke-linecap="round" />
+<path d="M938 458 Q975 425 1012 458" fill="none" stroke="#be185d" stroke-width="10" stroke-linecap="round" />
+<circle cx="975" cy="485" r="9" fill="#be185d" />
+<rect x="925" y="520" width="100" height="30" rx="15" fill="#3b0a24" />
+</g>
+<g fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round">
+<path d="M90 300 A100 100 0 0 1 290 300" opacity="0" />
+<path d="M400 260 V230 A110 110 0 0 1 400 260" opacity="0" />
+</g>
+<g>
+<path d="M120 230 A90 90 0 0 1 300 230" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" />
+<rect x="100" y="215" width="44" height="80" rx="18" fill="#ffffff" />
+<rect x="276" y="215" width="44" height="80" rx="18" fill="#ffffff" />
+</g>
+<text x="80" y="450" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="130" fill="#ffffff">Visit X</text>
+<text x="80" y="570" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="110" fill="#fbcfe8">App</text>
+</svg>

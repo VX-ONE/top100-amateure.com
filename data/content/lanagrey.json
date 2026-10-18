@@ -1,73 +1,69 @@
 {
-  "cta_text": "Wenn du dir das offizielle Profil von LanaGrey ansehen möchtest, findest du es bei Visit-X, wo die aktuellen Bedingungen und Preise einsehbar sind.",
+  "cta_text": "Wenn du dir das Profil von LanaGrey selbst ansehen möchtest, findest du Videos, Livecam und die aktuellen Bedingungen direkt bei Visit-X.",
   "faq": [
     {
-      "a": "LanaGrey hat ein Profil bei Visit-X. Dort findest du ihre Videos, die auch in der Top-100-Videoübersicht des Anbieters aufgeführt werden, und die Livecam. Am sichersten ist der Weg über das offizielle Portal.",
-      "q": "Wo finde ich LanaGrey?"
+      "a": "LanaGrey ist der Bühnenname eines Models mit Profil bei Visit-X. Sie gilt als neues Gesicht der deutschen Amateurszene, ist in der Livecam aktiv und in Sozialen Netzwerken sehr bekannt. Weitere Angaben macht diese Seite bewusst nicht.",
+      "q": "Wer ist LanaGrey?"
     },
     {
-      "a": "Es erscheinen etwa zwei Videos pro Woche. Den genauen Stand und die aktuellen Veröffentlichungen zeigt das Profil bei Visit-X.",
+      "a": "Es erscheinen etwa zwei Videos pro Woche. In der Top-100-Videoübersicht von Visit-X wird LanaGrey mit Videos aufgeführt. Den aktuellen Stand siehst du direkt auf dem Profil.",
       "q": "Wie oft erscheinen neue Videos von LanaGrey?"
     },
     {
-      "a": "LanaGrey spricht Deutsch, Englisch und Polnisch. Das ist vor allem im Live-Bereich hilfreich, wenn du direkt kommunizieren möchtest.",
+      "a": "LanaGrey spricht Deutsch, Englisch und Polnisch. Im Chat kannst du also in einer dieser Sprachen schreiben.",
       "q": "Welche Sprachen spricht LanaGrey?"
     },
     {
-      "a": "Welche Inhalte bei Visit-X kostenfrei sind und welche Tokens kosten, bestimmt der Anbieter. Die aktuellen Bedingungen stehen beim Anbieter. Bezahlt wird in Tokens, die du in Euro auflädst.",
-      "q": "Gibt es LanaGrey gratis oder kostenlos?"
+      "a": "Ob bestimmte Inhalte ohne Bezahlung verfügbar sind, bestimmt Visit-X und kann sich ändern. Bezahlt wird mit Tokens, die aus deinem Euro-Betrag umgewandelt werden. Die aktuellen Bedingungen stehen beim Anbieter.",
+      "q": "Gibt es LanaGrey kostenlos?"
     },
     {
-      "a": "Du lädst in Euro auf, der Betrag wird in Tokens umgewandelt. Gängig sind Sofortüberweisung, PayPal, Kreditkarte und SEPA. Welche Methode verfügbar ist, zeigt Visit-X beim Aufladen.",
-      "q": "Wie bezahle ich bei Visit-X?"
+      "a": "Gängig sind Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA. Welche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen.",
+      "q": "Welche Zahlungsarten gibt es bei Visit-X?"
     },
     {
-      "a": "Nein. Diese Seite ist ein unabhängiger Ratgeber und wird weder von LanaGrey noch von Visit-X betrieben.",
-      "q": "Betreibt LanaGrey diese Seite?"
+      "a": "Über den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X.",
+      "q": "Gibt es einen Bonus beim Aufladen?"
+    },
+    {
+      "a": "Nein, diese Seite ist ein unabhängiger Ratgeber. Sie wird weder von LanaGrey noch von Visit-X betrieben.",
+      "q": "Wird diese Seite von LanaGrey oder Visit-X betrieben?"
     }
   ],
   "h1": "LanaGrey (Lana Grey): Videos, Livecam und Chat bei Visit-X",
   "image": {
-    "alt": "Bühnenvorhang mit Scheinwerfern, Bildschirm, Sprechblasen und Sternen auf blauem Hintergrund, dazu das Wort La",
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\">\n<defs>\n<linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#1d4ed8\" />\n<stop offset=\"1\" stop-color=\"#0b1b4d\" />\n</linearGradient>\n<linearGradient id=\"beam\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#ffffff\" stop-opacity=\"0.45\" />\n<stop offset=\"1\" stop-color=\"#ffffff\" stop-opacity=\"0\" />\n</linearGradient>\n<linearGradient id=\"cur\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n<stop offset=\"0\" stop-color=\"#0b1b4d\" />\n<stop offset=\"0.5\" stop-color=\"#1d4ed8\" />\n<stop offset=\"1\" stop-color=\"#0b1b4d\" />\n</linearGradient>\n</defs>\n<rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" />\n<polygon points=\"260,70 140,630 420,630\" fill=\"url(#beam)\" />\n<polygon points=\"940,70 780,630 1060,630\" fill=\"url(#beam)\" />\n<circle cx=\"260\" cy=\"60\" r=\"30\" fill=\"#fde68a\" />\n<circle cx=\"940\" cy=\"60\" r=\"30\" fill=\"#fde68a\" />\n<rect x=\"0\" y=\"0\" width=\"150\" height=\"630\" fill=\"url(#cur)\" opacity=\"0.9\" />\n<rect x=\"1050\" y=\"0\" width=\"150\" height=\"630\" fill=\"url(#cur)\" opacity=\"0.9\" />\n<path d=\"M0 0H190Q120 200 150 630H0Z\" fill=\"#0b1b4d\" opacity=\"0.7\" />\n<path d=\"M1200 0H1010Q1080 200 1050 630H1200Z\" fill=\"#0b1b4d\" opacity=\"0.7\" />\n<rect x=\"400\" y=\"110\" width=\"400\" height=\"250\" rx=\"18\" fill=\"#0b1b4d\" stroke=\"#fff\" stroke-width=\"10\" />\n<rect x=\"420\" y=\"130\" width=\"360\" height=\"210\" rx=\"8\" fill=\"#3b82f6\" />\n<polygon points=\"570,190 570,280 650,235\" fill=\"#fff\" />\n<rect x=\"570\" y=\"360\" width=\"60\" height=\"25\" fill=\"#fff\" />\n<rect x=\"520\" y=\"385\" width=\"160\" height=\"14\" rx=\"7\" fill=\"#fff\" />\n<path d=\"M215 150h150a20 20 0 0 1 20 20v70a20 20 0 0 1-20 20h-100l-40 35v-35h-10a20 20 0 0 1-20-20v-70a20 20 0 0 1 20-20z\" fill=\"#fff\" />\n<circle cx=\"250\" cy=\"205\" r=\"9\" fill=\"#1d4ed8\" />\n<circle cx=\"290\" cy=\"205\" r=\"9\" fill=\"#1d4ed8\" />\n<circle cx=\"330\" cy=\"205\" r=\"9\" fill=\"#1d4ed8\" />\n<path d=\"M985 120h-130a20 20 0 0 0-20 20v60a20 20 0 0 0 20 20h10v30l35-30h85a20 20 0 0 0 20-20v-60a20 20 0 0 0-20-20z\" fill=\"#fde68a\" />\n<polygon points=\"920,145 927,165 948,165 931,177 937,197 920,185 903,197 909,177 892,165 913,165\" fill=\"#1d4ed8\" />\n<polygon points=\"330,60 337,80 358,80 341,92 347,112 330,100 313,112 319,92 302,80 323,80\" fill=\"#fde68a\" opacity=\"0\" />\n<polygon points=\"600,60 606,76 623,76 609,86 614,102 600,92 586,102 591,86 577,76 594,76\" fill=\"#fde68a\" />\n<polygon points=\"1000,470 1006,485 1022,485 1009,494 1014,509 1000,500 986,509 991,494 978,485 994,485\" fill=\"#fde68a\" />\n<polygon points=\"200,470 206,485 222,485 209,494 214,509 200,500 186,509 191,494 178,485 194,485\" fill=\"#fde68a\" />\n<text x=\"600\" y=\"520\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"130\" fill=\"#fff\" text-anchor=\"middle\">LanaGrey</text>\n<rect x=\"360\" y=\"545\" width=\"480\" height=\"10\" rx=\"5\" fill=\"#fde68a\" />\n</svg>"
+    "alt": "Titelbild zum Thema LanaGrey (Lana Grey): Videos, Livecam und Chat bei Visit-X",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\"><defs><linearGradient id=\"g\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#1d4ed8\"/><stop offset=\"1\" stop-color=\"#0b1b4d\"/></linearGradient></defs><rect width=\"1200\" height=\"630\" fill=\"url(#g)\"/><circle cx=\"880\" cy=\"300\" r=\"170\" fill=\"#fff\" fill-opacity=\".12\"/><circle cx=\"960\" cy=\"400\" r=\"90\" fill=\"#fff\" fill-opacity=\".14\"/><text x=\"70\" y=\"340\" font-size=\"84\" font-weight=\"800\" fill=\"#fff\" font-family=\"system-ui,Arial,sans-serif\">LanaGrey Lana Grey</text></svg>"
   },
-  "intro": "Wer nach **lana grey** oder **lanagrey** sucht, landet meist bei einem Profil auf Visit-X: LanaGrey hat dort ein eigenes Profil, ist in der Livecam aktiv und wird in der Top-100-Videoübersicht des Anbieters mit Videos aufgeführt. Sie gilt als neues Gesicht der deutschen Amateurszene, und etwa zwei neue Videos pro Woche sorgen für regelmäßigen Nachschub.\n\nDiese Seite ist ein **unabhängiger Ratgeber**. Sie wird weder von LanaGrey noch von Visit-X betrieben. Hier findest du einen Überblick zu Profil, Videos und Livecam sowie praktische Hinweise zu Tokens, Zahlungsarten und sicherer Nutzung. Die Seite richtet sich ausschließlich an Personen ab 18 Jahren.",
+  "intro": "Wer nach **lana grey** sucht, landet meist bei einem konkreten Ziel: dem Profil von **LanaGrey** bei Visit-X. Dort gibt es Videos, und LanaGrey ist in der Livecam aktiv. Sie gilt als neues Gesicht der deutschen Amateurszene und spricht Deutsch, Englisch und Polnisch.\n\nDiese Seite ist ein **unabhängiger Ratgeber**. Sie wird weder von LanaGrey noch von Visit-X betrieben. Hier findest du eine Einordnung dazu, was Fans erwartet, wie Videos, Direkt-Chat und Live-Shows grundsätzlich funktionieren und worauf du bei Tokens und Abrechnung achten solltest. Die Seite ist ausschließlich für Leser ab 18 Jahren gedacht.",
   "key_takeaways": [
-    "LanaGrey hat ein Profil bei Visit-X und ist dort in der Livecam aktiv.",
-    "Laut Anbieterübersicht erscheinen etwa zwei Videos pro Woche; LanaGrey wird in der Top-100-Videoübersicht aufgeführt.",
-    "LanaGrey spricht Deutsch, Englisch und Polnisch.",
-    "Bezahlt wird bei Visit-X in Tokens, die du in Euro auflädst; die Zahlungsarten zeigt Visit-X beim Aufladen.",
+    "LanaGrey hat ein Profil bei Visit-X, wird in der Top-100-Videoübersicht mit Videos geführt und ist in der Livecam aktiv.",
+    "Es erscheinen etwa zwei Videos pro Woche; LanaGrey spricht Deutsch, Englisch und Polnisch.",
+    "Bezahlt wird bei Visit-X mit Tokens, die aus deinem Euro-Betrag umgewandelt werden.",
+    "Über den Link dieser Seite gibt es laut Angabe einen 100-%-Aufladebonus; es gelten die Bedingungen von Visit-X.",
     "Nutze nur Inhalte, die der Anbieter offiziell bereitstellt."
   ],
-  "meta_description": "LanaGrey bei Visit-X: Profil, Videos im Zwei-pro-Woche-Rhythmus, Livecam, Sprachen sowie Infos zu Tokens, Zahlungsarten und Aufladebonus.",
+  "meta_description": "LanaGrey bei Visit-X: Profil, Videos, Livecam und Chat im Überblick – dazu Infos zu Tokens, Zahlungsarten und dem Aufladebonus.",
   "sections": [
     {
-      "body": "Das steht zu LanaGrey fest:\n\n- **Bühnenname:** LanaGrey\n- **Anbieter:** Visit-X, dort mit eigenem Profil\n- **Videos:** In der Top-100-Videoübersicht von Visit-X wird LanaGrey mit Videos aufgeführt\n- **Rhythmus:** etwa zwei Videos pro Woche\n- **Livecam:** aktiv\n- **Sprachen:** Deutsch, Englisch und Polnisch\n- **Einordnung:** neues Gesicht der deutschen Amateurszene\n- **Social Media:** in Sozialen Netzwerken sehr bekannt, veröffentlicht dort regelmäßig Videos\n\nMehr Angaben braucht es für den Einstieg nicht. Alles Weitere, etwa aktuelle Online-Zeiten oder Details zu einzelnen Videos, zeigt das Profil direkt bei Visit-X.",
-      "h2": "Steckbrief"
+      "body": "Das Wichtigste zu **LanaGrey** auf einen Blick:\n\n- Profil: LanaGrey hat ein Profil bei Visit-X.\n- Videos: In der Top-100-Videoübersicht von Visit-X wird LanaGrey mit Videos aufgeführt.\n- Szene: LanaGrey gilt als neues Gesicht der deutschen Amateurszene.\n- Rhythmus: Es erscheinen etwa zwei Videos pro Woche.\n- Livecam: LanaGrey ist in der Livecam aktiv.\n- Sprachen: Deutsch, Englisch und Polnisch.\n- Bekanntheit: LanaGrey ist in Sozialen Netzwerken sehr bekannt und veröffentlicht regelmäßig Videos.\n\nMehr als diese Punkte braucht es für den Einstieg nicht: Das **lana grey profil** bei Visit-X ist der zentrale Anlaufpunkt, und alles Weitere siehst du direkt dort.",
+      "h2": "Steckbrief: LanaGrey"
     },
     {
-      "body": "Das Besondere an LanaGrey ist die Kombination aus mehreren Kanälen. Auf Visit-X gibt es das **lana grey profil** als zentrale Anlaufstelle, dort laufen Videos und Livecam zusammen. Mit etwa zwei Videos pro Woche gibt es regelmäßig etwas Neues. Wer öfter vorbeischaut, verpasst also kaum etwas.\n\nDazu kommt die Sprachvielfalt. Dass LanaGrey Deutsch, Englisch und Polnisch spricht, ist vor allem im Live-Bereich praktisch. Deutschsprachige Fans können sich direkt verständigen, und wer lieber Englisch oder Polnisch nutzt, hat ebenfalls eine Option. Die Einordnung als neues Gesicht der deutschen Amateurszene passt dazu: Der Fokus liegt auf einem Amateurformat statt auf einer Studioproduktion.\n\nLanaGrey ist außerdem in Sozialen Netzwerken sehr bekannt und stellt dort regelmäßig Videos ein. Wer sie dort kennengelernt hat, findet bei Visit-X das offizielle Profil mit dem Angebot des Anbieters.",
-      "h2": "Was Fans bei LanaGrey erwartet"
+      "body": "### Was dich bei den Videos erwartet\n\nWer **lana grey videos** sucht, findet sie bei Visit-X, wo LanaGrey in der Top-100-Videoübersicht aufgeführt wird. Mit etwa zwei neuen Videos pro Woche lohnt sich ein regelmäßiger Blick auf das Profil. Wer die Reihe verfolgt, sieht neue Veröffentlichungen so schnell wie möglich.\n\nDass LanaGrey auch in Sozialen Netzwerken sehr bekannt ist und dort regelmäßig Videos veröffentlicht, passt zu diesem Rhythmus: Es handelt sich um eine Amateurin, die mit kontinuierlicher Präsenz arbeitet.\n\n### Offizielle Quellen nutzen\n\nSuchanfragen wie **lana grey porno** oder **lanagrey porno** führen leider auch zu zweifelhaften Seiten. Nutze nur Inhalte, die der Anbieter offiziell bereitstellt. Kopien auf fremden Seiten sind oft unseriös oder rechtlich problematisch, und du unterstützt damit nicht die Person, die die Videos macht. Die offiziellen Videos mit aktuellen Preisen findest du auf dem Profil bei Visit-X.",
+      "h2": "LanaGrey Videos bei Visit-X"
     },
     {
-      "body": "Visit-X bietet Live-Cams mit Webcam-Models, Videos und Amateur-Angebote. LanaGrey ist dort in zwei Bereichen zu finden:\n\n- **Videos:** Die Top-100-Videoübersicht führt LanaGrey mit Videos auf. Wer gezielt nach **lana grey videos** sucht, nutzt am besten die Suche im Portal oder das Profil.\n- **Livecam:** LanaGrey ist in der Livecam aktiv. Ob sie gerade online ist, siehst du im Profil bzw. in der Live-Übersicht.\n\nSuchanfragen wie **lana grey porno** oder **lanagrey porno** führen oft zu Seiten Dritter. Verlässlich ist nur der offizielle Weg über den Anbieter. So weißt du, dass Inhalte regulär bereitgestellt werden und die Bedingungen klar sind.",
-      "h2": "Was es bei Visit-X zu diesem Namen gibt"
+      "body": "### Livecam: direkt dabei sein\n\nNeben den Videos ist LanaGrey in der Livecam aktiv. Wer nach **lana grey livecam** oder **lana grey live chat** sucht, will meist wissen, wie das abläuft. Grundsätzlich zeigt Visit-X auf dem Profil an, ob ein Model gerade online ist. Ist das der Fall, kannst du den Live-Bereich öffnen.\n\nWelche Optionen es genau gibt, etwa Gruppenansicht oder privater Chat, und was sie kosten, legt Visit-X fest. Die aktuellen Bedingungen stehen beim Anbieter. Sinnvoll ist ein Blick auf die Preisangabe, bevor du eine Sitzung startest.\n\n### Chat und Sprachen\n\nIm Direkt-Chat schreibst du mit dem Model in Echtzeit. Praktisch: LanaGrey spricht Deutsch, Englisch und Polnisch. Du kannst also auf Deutsch schreiben, aber auch auf Englisch, wenn dir das lieber ist.\n\nEin paar Tipps für den Chat:\n\n- Schreibe höflich und konkret, das macht den Austausch angenehmer.\n- Halte dich an die Regeln des Anbieters.\n- Gib keine privaten Daten wie Adresse oder Kontaktdaten weiter.",
+      "h2": "LanaGrey Livecam und Chat"
     },
     {
-      "body": "Die Formate unterscheiden sich vor allem darin, wie direkt du mit dem Model in Kontakt kommst:\n\n- **Videos** sind aufgezeichnete Inhalte. Du entscheidest selbst, wann du sie ansiehst. Meist siehst du vorab Titel und Beschreibung, und die Kosten stehen beim jeweiligen Video.\n- **Live-Cam und Live-Shows** finden in Echtzeit statt. Beim **lana grey livecam**-Angebot kommt es also darauf an, wann LanaGrey online ist.\n- **Direkt-Chat** bedeutet, dass du im Live-Bereich schreibst oder dich direkt austauschst. Welche Chat-Optionen es bei einem Profil gibt und was sie kosten, zeigt Visit-X im Profil.\n\nWer den **lana grey live chat** nutzen möchte, achtet am besten vor dem Start auf die angezeigten Preise pro Minute oder Aktion und auf die gewählte Sprache. Sprachen sind hier ein Vorteil, denn Deutsch, Englisch und Polnisch lassen sich im Gespräch frei wählen.",
-      "h2": "Videos, Direkt-Chat und Live-Shows allgemein erklärt"
+      "body": "### Wie die Bezahlung funktioniert\n\nViele suchen nach **lana grey gratis** oder **lana grey kostenlos**. Ob und welche Inhalte beim Anbieter ohne Bezahlung zugänglich sind, entscheidet Visit-X und kann sich ändern. Verlässlich ist nur die Anzeige auf dem Profil und in den Bedingungen.\n\nFür bezahlte Angebote gilt: Die normale Währung ist Euro. Der bezahlte Betrag wird in **Tokens** umgewandelt, mit denen du bei Visit-X zahlst. Gängige Zahlungsarten sind Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift oder Überweisung). Welche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen.\n\n### Aufladebonus\n\nÜber den Link dieser Seite gibt es bei Visit-X einen **100-%-Aufladebonus**, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X.\n\nWer sich bei **lana grey visit x** umsieht, sollte vor dem Aufladen kurz prüfen:\n\n- Wie viele Tokens kostet das gewünschte Video oder der Live-Bereich?\n- Welche Zahlungsart passt zu deinem Wunsch nach Diskretion?\n- Welche Bedingungen gelten für den Bonus?\n\nLade zunächst nur einen Betrag auf, den du wirklich ausgeben möchtest.",
+      "h2": "LanaGrey kostenlos? Kosten und Tokens"
     },
     {
-      "body": "Die normale Währung ist Euro. Den Betrag, den du bezahlst, wandelt Visit-X in **Tokens** um, und mit diesen Tokens wird im Portal bezahlt. Gängige Zahlungsarten sind Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift oder Überweisung). Welche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen.\n\nBei Suchen nach **lana grey gratis** oder **lana grey kostenlos** gilt: Welche Inhalte kostenfrei sind und welche Tokens kosten, legt der Anbieter fest. Die aktuellen Bedingungen stehen beim Anbieter, und vor jeder Buchung zeigt Visit-X die Preise an.\n\nZum Aufladen: Über den Link dieser Seite gibt es laut Angabe des Seitenbetreibers (geprüft am 17.10.2026) bei Visit-X einen **100-%-Aufladebonus**, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X.\n\n**Praktische Tipps:**\n\n- Lade zunächst einen kleinen Betrag auf und lege dir ein eigenes Limit fest.\n- Prüfe den Preis pro Minute oder Video, bevor du startest.\n- Kontrolliere den Kontoauszug, damit du die Abbuchung nachvollziehen kannst.",
-      "h2": "Kosten und Abrechnung: worauf du achten solltest"
-    },
-    {
-      "body": "Die Nutzung ist nur ab 18 Jahren erlaubt, und der Anbieter prüft das Alter über seine eigenen Verfahren. Gib persönliche Daten sparsam weiter und nutze ein starkes Passwort. Nutze zudem nur Inhalte, die Visit-X offiziell bereitstellt. Für Material von anderen Quellen sind die Herkunft und die Rechte nicht geklärt.",
-      "h2": "Jugendschutz, Datenschutz und legale Nutzung"
-    },
-    {
-      "body": "Wer sich neben LanaGrey weiter umsehen möchte, findet bei Visit-X zahlreiche weitere Webcam-Models und Amateur-Angebote. Beim Vergleich lohnt der Blick auf drei Punkte: Wie transparent sind die Preise, welche Zahlungsarten gibt es, und wie leicht lässt sich das Konto verwalten?\n\nGrundsätzlich gilt: Wenn du ein bestimmtes Profil verfolgen willst, ist ein Anbieter mit einem festen Profil und regelmäßigen Videos praktisch. Wenn du eher stöbern möchtest, helfen Übersichten wie die Top-100-Videoliste. Weitere Ratgeber auf dieser Seite behandeln Kosten, Tokens und Anmeldung bei Visit-X ausführlicher.",
-      "h2": "Alternativen und Vergleich mit anderen Angeboten"
+      "body": "Visit-X richtet sich nur an Erwachsene. Die Altersprüfung gehört dazu, und du solltest nur persönliche Daten angeben, die der Anbieter wirklich braucht. Zahlungsdaten gibst du nur im offiziellen Bezahlbereich ein, und deine Zugangsdaten gehören nur dir.\n\nWenn dir das Profil von **LanaGrey** gefällt, lohnt sich ein Blick auf weitere Angebote der deutschen Amateurszene bei Visit-X, denn der Anbieter hat neben Videos auch Live-Cams mit Webcam-Models und Amateur-Angebote. So kannst du Profile vergleichen und das Format wählen, das zu dir passt.\n\n**lanagrey** ist damit ein guter Einstieg, wenn du ein Amateur-Profil mit Videos und Livecam aus einer Hand suchst.",
+      "h2": "LanaGrey: Jugendschutz, Datenschutz und Alternativen"
     }
   ],
   "title": "LanaGrey (Lana Grey): Videos, Livecam & Chat bei Visit-X"

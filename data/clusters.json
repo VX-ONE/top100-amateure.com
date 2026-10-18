@@ -446,7 +446,7 @@
     ],
     "primary": "visit x kündigen",
     "slug": "visit-x-kuendigen",
-    "status": "queued",
+    "status": "published",
     "topic": "preise"
   },
   {
@@ -486,7 +486,7 @@
     ],
     "primary": "visit x zahlungsmethoden",
     "slug": "visit-x-zahlungsmethoden",
-    "status": "queued",
+    "status": "published",
     "topic": "preise"
   },
   {
@@ -513,7 +513,7 @@
     ],
     "primary": "visit x app",
     "slug": "visit-x-app",
-    "status": "queued",
+    "status": "published",
     "topic": "technik"
   },
   {
@@ -540,7 +540,7 @@
     ],
     "primary": "visit x kostenlos testen",
     "slug": "visit-x-kostenlos-testen",
-    "status": "queued",
+    "status": "published",
     "topic": "gratis"
   },
   {
@@ -8890,7 +8890,7 @@
     ],
     "primary": "amateur cams schweiz",
     "slug": "amateur-cams-schweiz",
-    "status": "queued",
+    "status": "published",
     "topic": "dach"
   },
   {

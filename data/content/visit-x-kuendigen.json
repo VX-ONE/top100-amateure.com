@@ -1,0 +1,62 @@
+{
+  "cta_text": "Wenn du Visit-X weiter nutzen oder noch einmal in Ruhe prüfen möchtest, findest du dort die aktuellen Angaben zu Tokens, Zahlungsarten und Bedingungen.",
+  "faq": [
+    {
+      "a": "Prüfe zuerst dein Guthaben und deine Zahlungsart, löse dann in den Kontoeinstellungen oder über den Kundenservice die Beendigung bzw. Löschung aus und sichere die Bestätigung. Die genauen Menüpunkte und Fristen legt Visit-X fest, schau also in die aktuellen Angaben des Anbieters.",
+      "q": "Wie kann ich Visit X kündigen?"
+    },
+    {
+      "a": "Nicht unbedingt. Beim Kündigen beendest du ein mögliches laufendes Modell, beim Löschen werden Konto und Daten entfernt. Es kann sinnvoll sein, beides zu tun, vor allem wenn du deine Daten nicht weiter speichern lassen willst.",
+      "q": "Ist Visit X kündigen dasselbe wie das Konto löschen?"
+    },
+    {
+      "a": "Der aufgeladene Betrag wird in Tokens umgewandelt. Ob Restguthaben erstattet wird oder verfällt, bestimmen die Bedingungen des Anbieters. Am sichersten ist es, das Guthaben vorher zu verbrauchen oder die Rückzahlung vor der Löschung zu klären.",
+      "q": "Was passiert mit meinem Guthaben, wenn ich Visit X kündige?"
+    },
+    {
+      "a": "Bei PayPal kannst du in den Einstellungen automatische Zahlungen einsehen und entziehen. Bei Kreditkarte oder Lastschrift hilft die Kontrolle der Abrechnungen. Das ersetzt aber nicht die Beendigung beim Anbieter selbst.",
+      "q": "Wie stoppe ich Zahlungen an Visit X bei PayPal oder Kreditkarte?"
+    },
+    {
+      "a": "In der Regel bekommst du eine Bestätigung auf der Seite oder per E-Mail. Speichere diese und prüfe in den nächsten Wochen deine Zahlungsquellen. Kommt keine Bestätigung, frage beim Kundenservice nach.",
+      "q": "Woran erkenne ich, ob meine Visit-X-Kündigung angekommen ist?"
+    }
+  ],
+  "h1": "Visit X kündigen – Schritt für Schritt und mit den typischen Stolpersteinen",
+  "image": {
+    "alt": "Weißes Preisschild mit rotem Kreuz neben Münzstapeln, dazu das Wort „Kündigen“ auf dunkelrotem Verlauf",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\">\n<defs>\n<linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#b91d47\" />\n<stop offset=\"1\" stop-color=\"#4a0f2a\" />\n</linearGradient>\n</defs>\n<rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" />\n<circle cx=\"1050\" cy=\"90\" r=\"160\" fill=\"#ffffff\" opacity=\"0.06\" />\n<circle cx=\"100\" cy=\"600\" r=\"200\" fill=\"#ffffff\" opacity=\"0.05\" />\n<text x=\"70\" y=\"330\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"130\" fill=\"#ffffff\">Kündigen</text>\n<rect x=\"70\" y=\"360\" width=\"300\" height=\"10\" rx=\"5\" fill=\"#ffd45c\" />\n<g>\n<rect x=\"90\" y=\"540\" width=\"160\" height=\"22\" fill=\"#d68f0f\" />\n<ellipse cx=\"170\" cy=\"562\" rx=\"80\" ry=\"24\" fill=\"#d68f0f\" />\n<ellipse cx=\"170\" cy=\"540\" rx=\"80\" ry=\"24\" fill=\"#ffd45c\" />\n<rect x=\"90\" y=\"518\" width=\"160\" height=\"22\" fill=\"#d68f0f\" />\n<ellipse cx=\"170\" cy=\"540\" rx=\"80\" ry=\"24\" fill=\"#d68f0f\" />\n<ellipse cx=\"170\" cy=\"518\" rx=\"80\" ry=\"24\" fill=\"#ffd45c\" />\n<rect x=\"90\" y=\"496\" width=\"160\" height=\"22\" fill=\"#d68f0f\" />\n<ellipse cx=\"170\" cy=\"518\" rx=\"80\" ry=\"24\" fill=\"#d68f0f\" />\n<ellipse cx=\"170\" cy=\"496\" rx=\"80\" ry=\"24\" fill=\"#ffd45c\" />\n<ellipse cx=\"170\" cy=\"496\" rx=\"50\" ry=\"13\" fill=\"none\" stroke=\"#d68f0f\" stroke-width=\"5\" />\n</g>\n<g transform=\"rotate(-10 900 310)\">\n<path d=\"M760 200 H980 L1080 310 L980 420 H760 Q740 420 740 400 V220 Q740 200 760 200 Z\" fill=\"#ffffff\" />\n<circle cx=\"1010\" cy=\"310\" r=\"16\" fill=\"#7a1735\" />\n<line x1=\"825\" y1=\"255\" x2=\"935\" y2=\"365\" stroke=\"#b91d47\" stroke-width=\"28\" stroke-linecap=\"round\" />\n<line x1=\"935\" y1=\"255\" x2=\"825\" y2=\"365\" stroke=\"#b91d47\" stroke-width=\"28\" stroke-linecap=\"round\" />\n</g>\n<circle cx=\"1010\" cy=\"530\" r=\"55\" fill=\"#d68f0f\" />\n<circle cx=\"1010\" cy=\"524\" r=\"55\" fill=\"#ffd45c\" />\n<circle cx=\"1010\" cy=\"524\" r=\"36\" fill=\"none\" stroke=\"#d68f0f\" stroke-width=\"6\" />\n<circle cx=\"800\" cy=\"545\" r=\"38\" fill=\"#d68f0f\" />\n<circle cx=\"800\" cy=\"540\" r=\"38\" fill=\"#ffd45c\" />\n<circle cx=\"800\" cy=\"540\" r=\"24\" fill=\"none\" stroke=\"#d68f0f\" stroke-width=\"5\" />\n</svg>"
+  },
+  "intro": "Wer Visit X kündigen möchte, muss zuerst klären, was genau beendet werden soll: das Konto, eine wiederkehrende Zahlung oder nur die Nutzung des vorhandenen Guthabens. Diese drei Dinge sind nicht dasselbe, und genau hier entstehen die meisten Missverständnisse.\n\nDiese Seite führt dich in sechs Schritten durch den Ablauf, von der Bestandsaufnahme bis zur Kontrolle deines Kontoauszugs. Konkrete Menüpunkte, Fristen und Bedingungen kann sich der Anbieter jederzeit ändern. Prüfe sie deshalb vor der Umsetzung in den aktuellen Angaben von Visit-X, statt dich auf Hörensagen zu verlassen.",
+  "key_takeaways": [
+    "Kündigen, Konto löschen und Zahlungsmethode trennen sind drei verschiedene Schritte.",
+    "Prüfe vor dem Ende dein Token-Guthaben, denn der bezahlte Euro-Betrag wird in Tokens umgewandelt.",
+    "Sichere Bestätigungen per Screenshot oder E-Mail, damit du im Zweifel etwas in der Hand hast.",
+    "Kontrolliere nach dem Ende Kontoauszug, PayPal oder Kreditkarte auf unerwartete Abbuchungen.",
+    "Konkrete Fristen und Menüpunkte gibt allein Visit-X vor. Lies die aktuellen Angaben des Anbieters."
+  ],
+  "meta_description": "Visit X kündigen: Ablauf in sechs Schritten, Unterschied zwischen Kündigen und Löschen, Guthaben, Zahlungsarten und typische Stolpersteine.",
+  "sections": [
+    {
+      "body": "Bevor du irgendetwas anklickst, lohnt eine kurze Einordnung. Bei Plattformen mit Guthabenmodell gibt es meist mehrere Ebenen, die du getrennt betrachten solltest.\n\n- **Konto löschen:** Dein Profil und die damit verbundenen Daten sollen entfernt werden. Das ist die endgültigste Variante.\n- **Nutzung beenden:** Du loggst dich einfach nicht mehr ein und lädst nichts mehr auf. Das Konto bleibt dabei bestehen.\n- **Zahlungsmethode trennen:** Du entziehst PayPal, Kreditkarte oder Lastschrift die Berechtigung, damit nichts mehr abgebucht werden kann.\n\nBei Visit-X wird der bezahlte Euro-Betrag in Tokens umgewandelt, mit denen du innerhalb der Plattform bezahlst. Das spricht dafür, dass du vor allem über das Aufladen steuerst, was dich Geld kostet. Ob in deinem Fall irgendeine wiederkehrende Zahlung läuft, kannst du nur in deinem Konto und in den Angaben des Anbieters prüfen. Nimm das nicht einfach an, sondern schau nach.\n\n### Warum die Unterscheidung wichtig ist\n\nWer nur sein Konto löscht, aber eine Zahlungsfreigabe bei PayPal oder der Bank bestehen lässt, hat ein loses Ende. Wer umgekehrt nur die Zahlungsart entfernt, aber das Konto behält, hat weiterhin ein Profil mit Daten. Je nach Ziel brauchst du also einen Teil oder alle Schritte unten.",
+      "h2": "Kündigen, löschen, pausieren: Was du bei Visit X wirklich beenden willst"
+    },
+    {
+      "body": "Die Reihenfolge ist bewusst so gewählt, dass du kein Guthaben verschenkst und keine losen Enden zurücklässt.\n\n### Schritt 1 bis 3: Bestand prüfen\n\n1. **Guthaben ansehen.** Melde dich an und schau, wie viele Tokens noch auf dem Konto sind. Übrig gebliebenes Guthaben kannst du vor dem Ende noch nutzen, etwa für ein Video oder einen Live-Chat. Ob und unter welchen Bedingungen eine Rückzahlung möglich ist, regelt der Anbieter. Lies dazu die aktuellen Bedingungen.\n2. **Zahlungsübersicht öffnen.** Notiere, welche Zahlungsart du für Aufladungen genutzt hast. Gängig sind laut Angaben des Seitenbetreibers Sofortüberweisung, PayPal, Kreditkarte und SEPA. Welche Methode angeboten wird, zeigt Visit-X beim Aufladen.\n3. **Laufende Zahlungen suchen.** Sieh im Konto und in deinen E-Mails nach, ob eine automatische Aufladung oder ein anderes wiederkehrendes Modell eingerichtet wurde. Falls ja, ist dies der wichtigste Punkt, den du beenden musst.\n\n### Schritt 4 bis 6: Beenden und kontrollieren\n\n4. **Kündigung oder Löschung beim Anbieter auslösen.** Suche in den Kontoeinstellungen oder im Hilfebereich nach den Optionen zum Beenden bzw. Löschen. Die genaue Bezeichnung und der Ort können sich ändern. Gibt es dort keinen Weg, bleibt der Kontakt zum Kundenservice über die offiziellen Angaben des Anbieters.\n5. **Bestätigung sichern.** Mache einen Screenshot der Bestätigungsseite und speichere die Bestätigungsmail samt Datum. Das ist dein Beleg, falls später etwas unklar ist.\n6. **Zahlungsquelle nachkontrollieren.** Schau in den folgenden Wochen auf Kontoauszug, PayPal-Aktivitäten oder Kreditkartenabrechnung. Taucht eine Buchung auf, die du nicht erwartest, wende dich zuerst an den Anbieter und halte deine Bestätigung bereit.",
+      "h2": "Visit X kündigen: Der Ablauf in 6 Schritten"
+    },
+    {
+      "body": "Meistens scheitert es nicht an der Technik, sondern an kleinen Details.\n\n### Falsche Erwartung: Konto weg heißt nicht automatisch Geld zurück\n\nWer sein Konto beendet, geht oft davon aus, dass restliches Guthaben erstattet wird. Das ist nicht selbstverständlich. Guthaben, das schon in Tokens umgewandelt wurde, unterliegt den Regeln des Anbieters. Verbrauche es deshalb lieber vorher oder kläre die Rückerstattung vorab schriftlich.\n\n### Stolperstein: Mehrere Zugänge oder E-Mail-Adressen\n\nWer sich irgendwann mit einer anderen Adresse registriert hat, sucht oft im falschen Konto. Prüfe alle E-Mail-Postfächer, auch den Spam-Ordner, nach Mails des Anbieters, bevor du denkst, du hättest nie ein zweites Konto gehabt.\n\n### Stolperstein: Zahlungsfreigabe bleibt bestehen\n\nBei PayPal kannst du in den Einstellungen prüfen, welchen Händlern du eine automatische Zahlung erlaubt hast. Bei Kreditkarte und Lastschrift hilft ein Blick in die Abrechnungen. Entziehst du dort die Freigabe, ist das ein zusätzlicher Sicherheitsgurt, ersetzt aber nicht die Kündigung beim Anbieter.\n\n### Stolperstein: Diskrete Abbuchungstexte\n\nAuf Kontoauszügen steht nicht immer der bekannte Plattformname. Wer eine Buchung nicht zuordnen kann, sollte zuerst die Aufladehistorie im Konto mit dem Auszug vergleichen, bevor eine Rückbuchung bei der Bank angestoßen wird. Eine vorschnelle Rückbuchung kann zu Problemen mit dem Konto führen.\n\n### Stolperstein: Bonusaktionen\n\nBonusangebote machen es verlockend, noch einmal aufzuladen. Wer ohnehin kündigen will, sollte nur so viel aufladen, wie er auch nutzt.",
+      "h2": "Typische Stolpersteine beim Visit X kündigen"
+    },
+    {
+      "body": "Beim Beenden geht es auch um deine Privatsphäre. Wenn du das Konto löschen lässt, frage nach, welche Daten entfernt werden und welche etwa aus steuerlichen oder rechtlichen Gründen für eine Zeit aufbewahrt werden dürfen. Das ist bei Anbietern mit Zahlungsvorgängen üblich.\n\nLösche außerdem Zugangsdaten aus dem Passwortmanager, entferne Lesezeichen und Browser-Autofill und prüfe, ob auf deinem Gerät eine App installiert ist, die du ebenfalls entfernen willst. Nutze Visit-X wie jede Erotikplattform nur als Erwachsener ab 18 und nur mit Angeboten, bei denen alle Beteiligten ausdrücklich eingewilligt haben.",
+      "h2": "Visit X kündigen und Daten schützen"
+    },
+    {
+      "body": "Manchmal ist der Wunsch zu kündigen eigentlich der Wunsch, Kosten in den Griff zu bekommen. Dann kann es reichen, die Nutzung anders zu steuern.\n\n- **Budget festlegen:** Lade nur kleine Beträge auf und setze dir einen festen Rahmen pro Monat.\n- **Formate vergleichen:** Live-Cams, Videos und Amateur-Angebote werden unterschiedlich abgerechnet. Schau dir vor jeder Nutzung die aktuellen Angaben zum Preis in Tokens an.\n- **Zahlungsart bewusst wählen:** Wer Abbuchungen im Blick behalten will, wählt die Methode, die er am leichtesten kontrollieren kann.\n\nÜber den Link dieser Seite gibt es laut Angabe des Seitenbetreibers bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X. Ein Bonus ist nur dann sinnvoll, wenn du das Guthaben auch tatsächlich nutzen willst.",
+      "h2": "Wenn du nicht kündigen, sondern günstiger weitermachen willst"
+    }
+  ],
+  "title": "Visit X kündigen in 6 Schritten – und woran es hakt"
+}

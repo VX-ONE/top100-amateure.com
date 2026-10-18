@@ -1,0 +1,66 @@
+{
+  "cta_text": "Wenn Gerät und Browser bereit sind, kannst du dir Visit-X mit Live-Cams, Videos und Amateur-Angeboten in Ruhe ansehen und die aktuellen Bedingungen des Aufladebonus prüfen.",
+  "faq": [
+    {
+      "a": "Ob aktuell eine eigene App angeboten wird, kann sich ändern. Prüfe das in den offiziellen Angaben von Visit-X und im Store deines Geräts. Unabhängig davon ist der Zugang über einen aktuellen Browser auf Smartphone, Tablet und Computer in der Regel die flexibelste Lösung.",
+      "q": "Gibt es eine Visit X App?"
+    },
+    {
+      "a": "Öffne die offizielle Seite im Browser deines Smartphones, etwa Safari oder Chrome, und melde dich an. Für schnellen Zugriff kannst du ein Lesezeichen setzen oder die Seite zum Startbildschirm hinzufügen. Eine Installation ist dafür nicht nötig.",
+      "q": "Wie nutze ich Visit-X auf dem Handy ohne App?"
+    },
+    {
+      "a": "Du brauchst ein aktuelles Gerät mit modernem Browser, eine stabile Internetverbindung und funktionierenden Ton. Eine Kamera oder ein Mikrofon ist nur nötig, wenn du aktiv mit Bild oder Ton teilnehmen willst. Zum Aufladen brauchst du außerdem eine der angebotenen Zahlungsarten.",
+      "q": "Was brauche ich technisch für die Visit X App oder den Browser-Zugang?"
+    },
+    {
+      "a": "Du zahlst in Euro, der Betrag wird in Tokens umgewandelt. Genannt werden Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA. Welche Methode verfügbar ist, zeigt Visit-X beim Aufladen.",
+      "q": "Wie bezahle ich in der Visit X App oder im Browser?"
+    },
+    {
+      "a": "Meist liegt es an einer schwachen oder überlasteten Verbindung. Wechsle ins WLAN, schließe andere Apps und Tabs und aktualisiere den Browser. Hilft das nicht, teste einen anderen Browser oder ein anderes Gerät.",
+      "q": "Warum ruckelt der Live-Stream auf meinem Smartphone?"
+    }
+  ],
+  "h1": "Visit X App: Was du auf Handy und Browser brauchst",
+  "image": {
+    "alt": "Smartphone und Laptop mit Kamera-Symbol, WLAN-Zeichen und Kopfhörer auf pinkem Verlaufshintergrund, Schrift „V",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\">\n<defs>\n<linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#be185d\" />\n<stop offset=\"1\" stop-color=\"#3b0a24\" />\n</linearGradient>\n<linearGradient id=\"sc\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#fbcfe8\" />\n<stop offset=\"1\" stop-color=\"#f472b6\" />\n</linearGradient>\n</defs>\n<rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" />\n<circle cx=\"1050\" cy=\"90\" r=\"160\" fill=\"#ffffff\" opacity=\"0.07\" />\n<circle cx=\"100\" cy=\"580\" r=\"180\" fill=\"#000000\" opacity=\"0.15\" />\n<g>\n<rect x=\"560\" y=\"250\" width=\"540\" height=\"300\" rx=\"20\" fill=\"#1f0613\" />\n<rect x=\"578\" y=\"268\" width=\"504\" height=\"264\" rx=\"8\" fill=\"url(#sc)\" />\n<path d=\"M520 550 H1140 L1110 580 H550 Z\" fill=\"#e5e7eb\" />\n<circle cx=\"830\" cy=\"400\" r=\"50\" fill=\"#3b0a24\" />\n<circle cx=\"830\" cy=\"400\" r=\"30\" fill=\"#f9a8d4\" />\n<rect x=\"800\" y=\"338\" width=\"60\" height=\"14\" rx=\"5\" fill=\"#3b0a24\" />\n<polygon points=\"815,380 815,420 850,400\" fill=\"#3b0a24\" />\n</g>\n<g>\n<rect x=\"880\" y=\"320\" width=\"190\" height=\"300\" rx=\"30\" fill=\"#111827\" />\n<rect x=\"894\" y=\"345\" width=\"162\" height=\"250\" rx=\"14\" fill=\"#ffffff\" />\n<circle cx=\"975\" cy=\"332\" r=\"5\" fill=\"#6b7280\" />\n<path d=\"M920 430 Q975 380 1030 430\" fill=\"none\" stroke=\"#be185d\" stroke-width=\"10\" stroke-linecap=\"round\" />\n<path d=\"M938 458 Q975 425 1012 458\" fill=\"none\" stroke=\"#be185d\" stroke-width=\"10\" stroke-linecap=\"round\" />\n<circle cx=\"975\" cy=\"485\" r=\"9\" fill=\"#be185d\" />\n<rect x=\"925\" y=\"520\" width=\"100\" height=\"30\" rx=\"15\" fill=\"#3b0a24\" />\n</g>\n<g fill=\"none\" stroke=\"#ffffff\" stroke-width=\"16\" stroke-linecap=\"round\">\n<path d=\"M90 300 A100 100 0 0 1 290 300\" opacity=\"0\" />\n<path d=\"M400 260 V230 A110 110 0 0 1 400 260\" opacity=\"0\" />\n</g>\n<g>\n<path d=\"M120 230 A90 90 0 0 1 300 230\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"18\" stroke-linecap=\"round\" />\n<rect x=\"100\" y=\"215\" width=\"44\" height=\"80\" rx=\"18\" fill=\"#ffffff\" />\n<rect x=\"276\" y=\"215\" width=\"44\" height=\"80\" rx=\"18\" fill=\"#ffffff\" />\n</g>\n<text x=\"80\" y=\"450\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"130\" fill=\"#ffffff\">Visit X</text>\n<text x=\"80\" y=\"570\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"110\" fill=\"#fbcfe8\">App</text>\n</svg>"
+  },
+  "intro": "Wer nach der Visit X App sucht, will meist wissen, ob er Visit-X auf dem Smartphone nutzen kann und ob dafür ein extra Programm nötig ist. Die ehrliche Antwort: Für Live-Cams und Videos ist in der Regel ein aktueller Browser mit stabiler Internetverbindung der wichtigste Baustein. Ob und in welcher Form der Anbieter aktuell eine eigene App bereitstellt, ändert sich gelegentlich. Prüfe das deshalb vor der Nutzung direkt in den offiziellen Angaben von Visit-X und im Store deines Geräts.\n\nDieser Ratgeber konzentriert sich auf die Technik: Welches Gerät reicht, worauf es bei Browser, Verbindung und Ton ankommt und wie du typische Probleme löst. Er ist für Leser ab 18 Jahren gedacht und bleibt bewusst bei Hardware, Software und Einstellungen. Zum Schluss findest du eine kurze Checkliste, mit der du in wenigen Minuten startklar bist.",
+  "key_takeaways": [
+    "Für Live-Cams und Videos zählen vor allem ein aktueller Browser, eine stabile Verbindung und funktionierender Ton.",
+    "Ob es aktuell eine eigene Visit X App gibt, prüfst du in den offiziellen Anbieterangaben und im Store deines Geräts.",
+    "Handy, Tablet und Computer unterscheiden sich vor allem bei Bildschirmgröße, Bedienung und Privatsphäre-Einstellungen.",
+    "Bezahlt wird in Euro, umgewandelt in Tokens; welche Zahlungsart verfügbar ist, zeigt Visit-X beim Aufladen.",
+    "Nutze nur offizielle Quellen für App oder Zugang und halte Gerät und Browser aktuell."
+  ],
+  "meta_description": "Visit X App oder Browser? Welche Technik du für Live-Cams und Videos brauchst, wie es auf Handy und Tablet läuft und was bei Problemen hilft.",
+  "sections": [
+    {
+      "body": "Eine **App** ist ein Programm, das du über den Store deines Geräts installierst. Eine **Browser-Seite** rufst du dagegen einfach über Safari, Chrome, Firefox oder einen anderen Browser auf. Beide Wege können denselben Inhalt zeigen, unterscheiden sich aber im Alltag.\n\n### Vorteile des Browsers\n\n- Keine Installation, keine Updates über den Store, kein Speicherplatz für ein Programm.\n- Funktioniert auf Smartphone, Tablet, Laptop und Desktop-PC gleichermaßen.\n- Du kannst den privaten Modus nutzen, sodass lokal weniger Verlauf gespeichert wird.\n\n### Mögliche Vorteile einer App\n\n- Schnellerer Zugriff über ein Symbol auf dem Startbildschirm.\n- Manchmal bessere Anpassung an kleine Displays oder Benachrichtigungen.\n\nOb eine App all das tatsächlich bietet, hängt vom Anbieter ab. Verlass dich nicht auf Behauptungen Dritter, sondern auf die aktuellen Angaben von Visit-X selbst.",
+      "h2": "Visit X App oder Browser: Was ist technisch der Unterschied?"
+    },
+    {
+      "body": "Moderne Smartphones bringen alles Nötige mit: Kamera ist für Zuschauer nicht erforderlich, wichtig sind Display, Lautsprecher oder Kopfhörer und eine Internetverbindung.\n\n### iPhone und iPad\n\nAuf Apple-Geräten läuft der Zugang normalerweise über Safari. Halte iOS aktuell, weil ältere Systemversionen bei Videowiedergabe und Sicherheitsfunktionen Probleme machen können. Wenn du die Seite öfter nutzt, kannst du sie über das Teilen-Menü zum Home-Bildschirm hinzufügen. Das ist eine Browser-Verknüpfung, keine App im engeren Sinn.\n\n### Android-Smartphones und Tablets\n\nUnter Android funktionieren in der Regel Chrome und andere gängige Browser. Auch hier gilt: System und Browser aktuell halten. Falls du eine App suchst, nutze ausschließlich den offiziellen Store und prüfe, ob der Herausgeber zum Anbieter passt. Installationsdateien aus unbekannten Quellen sind ein Sicherheitsrisiko und tabu.\n\n### Hoch- oder Querformat?\n\nFür Live-Streams ist das Querformat meist angenehmer, weil Bild und Bedienelemente mehr Platz haben. Auf dem Tablet ist die Darstellung oft näher an der Desktop-Ansicht.",
+      "h2": "Visit X App auf dem Handy: iPhone, Android und Tablet"
+    },
+    {
+      "body": "Live-Streams brauchen mehr Stabilität als reine Webseiten. Diese Punkte sind entscheidend:\n\n- **Aktueller Browser:** Neue Versionen unterstützen Videowiedergabe und Sicherheitsstandards zuverlässig.\n- **Stabile Verbindung:** WLAN in der Nähe des Routers ist meist besser als schwaches Mobilfunknetz. Konkrete Mindestgeschwindigkeiten nennt der Anbieter bei Bedarf selbst.\n- **Datenvolumen:** Videostreams verbrauchen Daten. Mit begrenztem Mobilfunktarif lohnt sich ein Blick auf den Verbrauch.\n- **Ton:** Kopfhörer sind diskreter und liefern oft besseren Klang als Gerätelautsprecher.\n- **Cookies und JavaScript:** Beides sollte aktiviert sein, sonst funktionieren Login oder Player unter Umständen nicht.\n- **Werbe- und Tracking-Blocker:** Manche Erweiterungen stören den Player. Teste im Zweifel ohne sie.\n\nEine Webcam oder ein Mikrofon brauchst du nur, wenn du aktiv mit Bild oder Ton teilnehmen willst. Für das reine Zuschauen ist beides nicht nötig.",
+      "h2": "Technische Voraussetzungen für Live-Cams und Videos"
+    },
+    {
+      "body": "Bei Visit-X ist Euro die normale Währung. Der bezahlte Betrag wird in **Tokens** umgewandelt, mit denen du im Angebot bezahlst. Als gängige Zahlungsarten nennt der Anbieter Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift oder Überweisung). Welche Methode bei dir tatsächlich angeboten wird, siehst du beim Aufladen.\n\nTechnisch heißt das auf dem Handy: Für PayPal und Banking brauchst du meist Zugangsdaten oder deine Banking-App, und der Wechsel zwischen Browser und Bank-App sollte reibungslos klappen. Erlaube dem Browser dafür gegebenenfalls Pop-ups oder Weiterleitungen der Zahlungsseite. Kontrolliere die URL in der Adresszeile und das Schloss-Symbol, bevor du Zahlungsdaten eingibst.\n\nÜber den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X, die du vor dem Aufladen in Ruhe lesen solltest.",
+      "h2": "Aufladen und Bezahlen auf dem Smartphone"
+    },
+    {
+      "body": "Die meisten Störungen lassen sich mit wenigen Schritten eingrenzen.\n\n### Bild ruckelt oder friert ein\n\nWechsle von Mobilfunk auf WLAN, schließe andere Apps und Tabs und starte den Stream neu. Bei mehreren Geräten im Netz hilft es, andere Streams oder große Aktualisierungen zu pausieren.\n\n### Kein Ton\n\nPrüfe Lautstärke, Stummschalter am iPhone und den Ausgabekanal (Bluetooth-Kopfhörer verbinden sich manchmal unbemerkt). Teste, ob andere Videos Ton haben.\n\n### Anmeldung oder Zahlung klappt nicht\n\nLösche zwischengespeicherte Daten des Browsers, aktiviere Cookies und probiere einen anderen Browser. Ein VPN oder strenger Datenschutzmodus kann Zahlungsprüfungen blockieren.\n\n### Seite wird falsch dargestellt\n\nAktualisiere den Browser und lade die Seite neu. Wechsle bei Bedarf zwischen mobiler Ansicht und Desktop-Ansicht.",
+      "h2": "Visit X App oder Browser: Probleme erkennen und beheben"
+    },
+    {
+      "body": "Nutze nur offizielle Zugänge und Stores, halte dein Gerät aktuell und sichere es mit Bildschirmsperre. Auf geteilten Geräten empfiehlt sich der private Modus, und Benachrichtigungen solltest du so einstellen, dass keine Inhalte auf dem Sperrbildschirm erscheinen. Der Dienst ist nur für Volljährige, und es sollten ausschließlich Angebote genutzt werden, bei denen alle Beteiligten ausdrücklich zugestimmt haben.",
+      "h2": "Sicherheit und Privatsphäre am Gerät"
+    }
+  ],
+  "title": "Visit X App: Handy, Browser und was du brauchst"
+}
