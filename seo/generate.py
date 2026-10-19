@@ -120,11 +120,35 @@ def clean_text(s: str) -> str:
     return s.strip()
 
 
+def _as_list(v) -> list:
+    if isinstance(v, str):
+        try:
+            v = json.loads(v)
+        except Exception:
+            return []
+    return v if isinstance(v, list) else []
+
+
+def _as_dict(v) -> dict | None:
+    if isinstance(v, str):
+        try:
+            v = json.loads(v)
+        except Exception:
+            return None
+    return v if isinstance(v, dict) else None
+
+
 def clean_content(c: dict) -> dict:
+    """Bereinigt die Antwort. Robust gegen verpackte Werte (Listen/Objekte als JSON-Text), die das Modell
+    ohne erzwungenes Werkzeug manchmal liefert."""
     out = {k: clean_text(v) if isinstance(v, str) else v for k, v in c.items()}
-    out["key_takeaways"] = [clean_text(x) for x in c.get("key_takeaways", [])]
-    out["sections"] = [{"h2": clean_text(s["h2"]), "body": clean_text(s["body"])} for s in c.get("sections", [])]
-    out["faq"] = [{"q": clean_text(f["q"]), "a": clean_text(f["a"])} for f in c.get("faq", [])]
+    out["key_takeaways"] = [clean_text(str(x)) for x in _as_list(c.get("key_takeaways", []))]
+    secs = [_as_dict(x) for x in _as_list(c.get("sections", []))]
+    out["sections"] = [{"h2": clean_text(str(x.get("h2", ""))), "body": clean_text(str(x.get("body", "")))}
+                       for x in secs if x and x.get("h2") and x.get("body")]
+    faqs = [_as_dict(x) for x in _as_list(c.get("faq", []))]
+    out["faq"] = [{"q": clean_text(str(x.get("q", ""))), "a": clean_text(str(x.get("a", "")))}
+                  for x in faqs if x and x.get("q") and x.get("a")]
     return out
 
 
