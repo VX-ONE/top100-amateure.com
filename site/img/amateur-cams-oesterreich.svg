@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0f766e" />
+<stop offset="1" stop-color="#042f2e" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#5eead4" stop-opacity="0.45" />
+<stop offset="1" stop-color="#5eead4" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="800" cy="260" r="330" fill="url(#glow)" />
+<circle cx="110" cy="540" r="150" fill="#042f2e" opacity="0.5" />
+<circle cx="1120" cy="90" r="110" fill="#0f766e" opacity="0.6" />
+<g>
+<rect x="560" y="90" width="520" height="320" rx="24" fill="#021a19" />
+<rect x="580" y="110" width="480" height="280" rx="10" fill="#134e4a" />
+<rect x="580" y="110" width="480" height="280" rx="10" fill="#2dd4bf" opacity="0.18" />
+<polygon points="780,410 860,410 880,470 760,470" fill="#021a19" />
+<rect x="710" y="465" width="220" height="22" rx="11" fill="#021a19" />
+<circle cx="820" cy="250" r="78" fill="#042f2e" />
+<circle cx="820" cy="250" r="58" fill="#0f766e" />
+<circle cx="820" cy="250" r="30" fill="#021a19" />
+<circle cx="808" cy="238" r="9" fill="#ccfbf1" opacity="0.8" />
+<circle cx="1030" cy="136" r="9" fill="#f87171" />
+</g>
+<g>
+<path d="M590 150 h150 a22 22 0 0 1 22 22 v60 a22 22 0 0 1 -22 22 h-95 l-35 30 v-30 h-20 a22 22 0 0 1 -22 -22 v-60 a22 22 0 0 1 22 -22z" fill="#ffffff" transform="translate(-130 120) scale(0.9)" />
+<circle cx="480" cy="305" r="9" fill="#0f766e" />
+<circle cx="510" cy="305" r="9" fill="#0f766e" />
+<circle cx="540" cy="305" r="9" fill="#0f766e" />
+</g>
+<path d="M980 400 c-40 -30 -70 -60 -70 -90 a40 40 0 0 1 70 -25 a40 40 0 0 1 70 25 c0 30 -30 60 -70 90z" fill="#fb7185" transform="translate(0 0)" />
+<g>
+<rect x="1090" y="440" width="50" height="90" rx="25" fill="#ccfbf1" />
+<path d="M1075 505 a40 40 0 0 0 80 0" fill="none" stroke="#ccfbf1" stroke-width="8" />
+<line x1="1115" y1="545" x2="1115" y2="575" stroke="#ccfbf1" stroke-width="8" />
+</g>
+<text x="70" y="480" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="112" fill="#ffffff">Einstieg</text>
+<rect x="74" y="505" width="300" height="12" rx="6" fill="#5eead4" />
+<text x="74" y="570" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="40" fill="#99f6e4">in 5 Schritten</text>
+</svg>

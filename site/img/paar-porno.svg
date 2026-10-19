@@ -4,46 +4,41 @@
 <stop offset="0" stop-color="#c2410c" />
 <stop offset="1" stop-color="#431407" />
 </linearGradient>
-<radialGradient id="glow" cx="0.5" cy="0.4" r="0.5">
-<stop offset="0" stop-color="#fdba74" stop-opacity="0.45" />
-<stop offset="1" stop-color="#fdba74" stop-opacity="0" />
+<radialGradient id="sc" cx="0.5" cy="0.5" r="0.7">
+<stop offset="0" stop-color="#fb923c" />
+<stop offset="1" stop-color="#7c2d12" />
 </radialGradient>
 </defs>
 <rect width="1200" height="630" fill="url(#bg)" />
-<circle cx="600" cy="200" r="330" fill="url(#glow)" />
+<circle cx="1080" cy="80" r="150" fill="#ffffff" opacity="0.06" />
+<circle cx="90" cy="560" r="130" fill="#ffffff" opacity="0.06" />
 <g>
-<rect x="420" y="60" width="360" height="245" rx="22" fill="#fff7ed" />
-<rect x="440" y="80" width="320" height="205" rx="10" fill="#7c2d12" />
-<path d="M600 255 C530 205 535 140 572 135 C590 133 600 148 600 156 C600 148 610 133 628 135 C665 140 670 205 600 255Z" fill="#fb923c" />
-<rect x="570" y="305" width="60" height="45" fill="#fed7aa" />
-<rect x="500" y="350" width="200" height="20" rx="10" fill="#fff7ed" />
+<rect x="350" y="90" width="500" height="320" rx="24" fill="#2a0b03" stroke="#fff7ed" stroke-width="8" />
+<rect x="374" y="114" width="452" height="272" rx="10" fill="url(#sc)" />
+<path d="M600 345 C520 285 520 205 570 205 C590 205 600 222 600 232 C600 222 610 205 630 205 C680 205 680 285 600 345 Z" fill="#fff7ed" />
+<rect x="570" y="410" width="60" height="40" fill="#fff7ed" />
+<rect x="500" y="448" width="200" height="16" rx="8" fill="#fff7ed" />
 </g>
 <g>
-<rect x="90" y="90" width="270" height="130" rx="42" fill="#ffedd5" />
-<polygon points="260,215 250,275 315,215" fill="#ffedd5" />
-<circle cx="170" cy="155" r="14" fill="#c2410c" />
-<circle cx="225" cy="155" r="14" fill="#c2410c" />
-<circle cx="280" cy="155" r="14" fill="#c2410c" />
+<rect x="95" y="250" width="200" height="140" rx="20" fill="#fff7ed" />
+<rect x="145" y="224" width="70" height="32" rx="8" fill="#fff7ed" />
+<circle cx="195" cy="320" r="48" fill="#431407" />
+<circle cx="195" cy="320" r="30" fill="#c2410c" />
+<circle cx="184" cy="309" r="8" fill="#fff7ed" opacity="0.7" />
+<circle cx="265" cy="278" r="9" fill="#dc2626" />
 </g>
 <g>
-<rect x="850" y="120" width="270" height="130" rx="42" fill="#fdba74" />
-<polygon points="950,245 960,305 890,245" fill="#fdba74" />
-<path d="M985 218 C940 185 942 148 966 144 C978 143 985 153 985 159 C985 153 992 143 1004 144 C1028 148 1030 185 985 218Z" fill="#9a3412" />
+<rect x="890" y="130" width="220" height="130" rx="34" fill="#fff7ed" />
+<polygon points="930,255 970,255 925,305" fill="#fff7ed" />
+<path d="M1000 225 C960 195 960 165 983 165 C993 165 1000 173 1000 180 C1000 173 1007 165 1017 165 C1040 165 1040 195 1000 225 Z" fill="#c2410c" />
+<rect x="910" y="340" width="200" height="100" rx="30" fill="#fdba74" />
+<polygon points="1060,435 1090,435 1085,480" fill="#fdba74" />
+<circle cx="960" cy="390" r="12" fill="#431407" />
+<circle cx="1010" cy="390" r="12" fill="#431407" />
+<circle cx="1060" cy="390" r="12" fill="#431407" />
 </g>
-<g>
-<rect x="110" y="320" width="210" height="120" rx="18" fill="#fff7ed" />
-<rect x="150" y="298" width="70" height="30" rx="8" fill="#fff7ed" />
-<circle cx="215" cy="380" r="46" fill="#7c2d12" />
-<circle cx="215" cy="380" r="28" fill="#fb923c" />
-<circle cx="285" cy="346" r="8" fill="#c2410c" />
-</g>
-<g>
-<rect x="905" y="320" width="70" height="115" rx="35" fill="#fff7ed" />
-<path d="M885 395 C885 460 995 460 995 395" fill="none" stroke="#fff7ed" stroke-width="14" stroke-linecap="round" />
-<line x1="940" y1="450" x2="940" y2="480" stroke="#fff7ed" stroke-width="14" stroke-linecap="round" />
-<line x1="905" y1="485" x2="975" y2="485" stroke="#fff7ed" stroke-width="14" stroke-linecap="round" />
-<line x1="920" y1="350" x2="960" y2="350" stroke="#c2410c" stroke-width="6" />
-<line x1="920" y1="375" x2="960" y2="375" stroke="#c2410c" stroke-width="6" />
-</g>
-<text x="600" y="565" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="125" fill="#ffffff">Paar-Erotik</text>
+<path d="M170 140 C140 118 140 94 158 94 C165 94 170 100 170 106 C170 100 175 94 182 94 C200 94 200 118 170 140 Z" fill="#fff7ed" opacity="0.9" />
+<path d="M280 470 C260 455 260 438 272 438 C277 438 280 442 280 446 C280 442 283 438 288 438 C300 438 300 455 280 470 Z" fill="#fdba74" />
+<rect x="130" y="500" width="940" height="100" rx="24" fill="#431407" opacity="0.65" />
+<text x="600" y="574" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="86" fill="#ffffff">Pärchen-Erotik</text>
 </svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#be185d" />
+<stop offset="1" stop-color="#3b0a24" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.25" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="850" cy="270" r="300" fill="url(#glow)" />
+<circle cx="120" cy="560" r="140" fill="#ffffff" opacity="0.06" />
+<circle cx="1120" cy="80" r="110" fill="#ffffff" opacity="0.06" />
+<g>
+<rect x="560" y="110" width="520" height="330" rx="26" fill="#1f0613" />
+<rect x="582" y="132" width="476" height="286" rx="14" fill="#f9a8d4" />
+<rect x="582" y="132" width="476" height="286" rx="14" fill="#be185d" opacity="0.45" />
+<rect x="780" y="440" width="80" height="50" fill="#1f0613" />
+<rect x="710" y="488" width="220" height="22" rx="11" fill="#1f0613" />
+<circle cx="820" cy="262" r="84" fill="#ffffff" />
+<path d="M770 232 h-10 a10 10 0 0 0 -10 10 v40 a10 10 0 0 0 10 10 h10 z" fill="none" />
+<rect x="752" y="226" width="96" height="72" rx="12" fill="#3b0a24" />
+<polygon points="848,250 888,228 888,296 848,274" fill="#3b0a24" />
+<circle cx="796" cy="262" r="20" fill="#f9a8d4" />
+<circle cx="796" cy="262" r="9" fill="#3b0a24" />
+<circle cx="1028" cy="162" r="12" fill="#ef4444" />
+<text x="1008" y="168" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="20" fill="#ffffff" text-anchor="end">LIVE</text>
+</g>
+<g>
+<path d="M470 150 h150 a24 24 0 0 1 24 24 v70 a24 24 0 0 1 -24 24 h-90 l-40 34 v-34 h-20 a24 24 0 0 1 -24 -24 v-70 a24 24 0 0 1 24 -24 z" fill="#ffffff" transform="translate(-200 40)" />
+<circle cx="300" cy="234" r="9" fill="#be185d" />
+<circle cx="340" cy="234" r="9" fill="#be185d" />
+<circle cx="380" cy="234" r="9" fill="#be185d" />
+</g>
+<path d="M980 520 c-60 -40 -90 -70 -90 -102 a42 42 0 0 1 90 -14 a42 42 0 0 1 90 14 c0 32 -30 62 -90 102 z" fill="#fb7185" transform="translate(-70 0) scale(0.9) translate(100 50)" />
+<g>
+<rect x="1090" y="360" width="50" height="100" rx="25" fill="#ffffff" transform="translate(-60 -10)" />
+<path d="M1010 440 a55 55 0 0 0 110 0" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" transform="translate(-60 -10)" />
+<line x1="1055" y1="495" x2="1055" y2="525" stroke="#ffffff" stroke-width="10" stroke-linecap="round" transform="translate(-60 -10)" />
+</g>
+<text x="70" y="450" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="104" fill="#ffffff">Live</text>
+<text x="70" y="550" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="84" fill="#f9a8d4">oder Video?</text>
+</svg>

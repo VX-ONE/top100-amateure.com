@@ -1,1 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c2410c" /><stop offset="1" stop-color="#431407" /></linearGradient><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb923c" /><stop offset="1" stop-color="#c2410c" /></linearGradient></defs><rect width="1200" height="630" fill="url(#b)" /><circle cx="600" cy="230" r="230" fill="#fb923c" opacity="0.15" /><rect x="360" y="70" width="480" height="300" rx="24" fill="#1c0a04" /><rect x="384" y="94" width="432" height="252" rx="8" fill="url(#s)" /><polygon points="565,150 565,290 695,220" fill="#fff" /><rect x="570" y="370" width="60" height="40" fill="#1c0a04" /><rect x="500" y="408" width="200" height="16" rx="8" fill="#1c0a04" /><rect x="70" y="110" width="220" height="130" rx="22" fill="#fed7aa" /><rect x="120" y="88" width="80" height="30" rx="8" fill="#fed7aa" /><circle cx="175" cy="175" r="48" fill="#431407" /><circle cx="175" cy="175" r="30" fill="#c2410c" /><circle cx="175" cy="175" r="12" fill="#fed7aa" /><circle cx="256" cy="136" r="9" fill="#c2410c" /><rect x="150" y="300" width="50" height="90" rx="25" fill="#fed7aa" /><path d="M130 350 Q130 420 175 420 Q220 420 220 350" fill="none" stroke="#fed7aa" stroke-width="8" stroke-linecap="round" /><line x1="175" y1="420" x2="175" y2="452" stroke="#fed7aa" stroke-width="8" /><line x1="145" y1="454" x2="205" y2="454" stroke="#fed7aa" stroke-width="8" stroke-linecap="round" /><rect x="880" y="90" width="240" height="120" rx="30" fill="#fff" /><polygon points="920,208 965,208 925,250" fill="#fff" /><circle cx="950" cy="150" r="14" fill="#c2410c" /><circle cx="1000" cy="150" r="14" fill="#c2410c" /><circle cx="1050" cy="150" r="14" fill="#c2410c" /><rect x="930" y="270" width="200" height="100" rx="28" fill="#fdba74" /><polygon points="1085,368 1040,368 1092,405" fill="#fdba74" /><path d="M1030 348 C990 318 1000 288 1020 288 C1030 288 1030 298 1030 300 C1030 298 1030 288 1040 288 C1060 288 1070 318 1030 348 Z" fill="#9a3412" /><rect y="480" width="1200" height="150" fill="#431407" opacity="0.6" /><text x="600" y="568" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="82" fill="#fff">Gute Inhalte finden</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c2410c" />
+<stop offset="1" stop-color="#431407" />
+</linearGradient>
+<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fb923c" />
+<stop offset="1" stop-color="#9a3412" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1080" cy="60" r="150" fill="#fff" opacity="0.06" />
+<circle cx="100" cy="470" r="120" fill="#fff" opacity="0.06" />
+<g>
+<rect x="400" y="60" width="400" height="280" rx="26" fill="#1f0a04" />
+<rect x="420" y="80" width="360" height="240" rx="14" fill="url(#sc)" />
+<circle cx="600" cy="200" r="56" fill="#fff" opacity="0.95" />
+<polygon points="583,170 583,230 632,200" fill="#c2410c" />
+<rect x="570" y="340" width="60" height="42" fill="#1f0a04" />
+<rect x="490" y="380" width="220" height="18" rx="9" fill="#1f0a04" />
+</g>
+<g>
+<rect x="150" y="165" width="80" height="34" rx="8" fill="#fed7aa" />
+<rect x="100" y="190" width="220" height="150" rx="24" fill="#ffedd5" />
+<circle cx="210" cy="265" r="55" fill="#431407" />
+<circle cx="210" cy="265" r="36" fill="#c2410c" />
+<circle cx="196" cy="251" r="10" fill="#fff" opacity="0.8" />
+<circle cx="285" cy="220" r="10" fill="#c2410c" />
+</g>
+<g>
+<path d="M860 80 H1090 Q1110 80 1110 100 V180 Q1110 200 1090 200 H960 L920 240 V200 H880 Q860 200 860 180 V100 Q860 80 880 80 Z" fill="#fff" />
+<path d="M985 168 C930 135 940 100 962 100 C975 100 985 110 985 118 C985 110 995 100 1008 100 C1030 100 1040 135 985 168 Z" fill="#c2410c" />
+<path d="M820 255 H930 Q945 255 945 270 V315 Q945 330 930 330 H880 V362 L850 330 H835 Q820 330 820 315 V270 Q820 255 835 255 Z" fill="#fed7aa" />
+<circle cx="850" cy="293" r="8" fill="#431407" />
+<circle cx="882" cy="293" r="8" fill="#431407" />
+<circle cx="914" cy="293" r="8" fill="#431407" />
+</g>
+<g>
+<rect x="1005" y="260" width="50" height="90" rx="25" fill="#ffedd5" />
+<path d="M990 320 Q990 375 1030 375 Q1070 375 1070 320" fill="none" stroke="#ffedd5" stroke-width="10" stroke-linecap="round" />
+<line x1="1030" y1="375" x2="1030" y2="405" stroke="#ffedd5" stroke-width="10" stroke-linecap="round" />
+<line x1="1005" y1="408" x2="1055" y2="408" stroke="#ffedd5" stroke-width="10" stroke-linecap="round" />
+</g>
+<rect x="0" y="450" width="1200" height="180" fill="#1f0a04" opacity="0.45" />
+<text x="600" y="565" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="118" fill="#fff">Amateur-Guide</text>
+</svg>
