@@ -6,9 +6,10 @@
    "title": "Wenn der Wald ruft …!",
    "duration": "08:48",
    "vx_path": "/de/amateur/emmi-hill/videos/28422526-wenn-der-wald-ruft/",
-   "status": "new",
+   "status": "published",
    "seen": "2026-10-20",
-   "fails": 1
+   "fails": 1,
+   "published_at": "2026-10-20"
   },
   {
    "id": "28421058",
