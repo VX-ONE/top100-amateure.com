@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c2410c" />
+<stop offset="1" stop-color="#431407" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#fdba74" stop-opacity="0.55" />
+<stop offset="1" stop-color="#fdba74" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="800" cy="270" r="330" fill="url(#glow)" />
+<circle cx="110" cy="540" r="140" fill="#431407" opacity="0.35" />
+<circle cx="1120" cy="90" r="100" fill="#fdba74" opacity="0.15" />
+<g>
+<rect x="520" y="90" width="520" height="330" rx="26" fill="#1c0a04" />
+<rect x="545" y="115" width="470" height="280" rx="12" fill="#fed7aa" />
+<rect x="545" y="115" width="470" height="280" rx="12" fill="#fb923c" opacity="0.5" />
+<rect x="760" y="420" width="40" height="55" fill="#1c0a04" />
+<rect x="680" y="470" width="200" height="22" rx="11" fill="#1c0a04" />
+<circle cx="780" cy="102" r="6" fill="#fb923c" />
+</g>
+<g>
+<rect x="640" y="190" width="140" height="100" rx="18" fill="#431407" />
+<polygon points="780,225 840,195 840,285 780,255" fill="#431407" />
+<circle cx="710" cy="240" r="30" fill="#fed7aa" />
+<circle cx="710" cy="240" r="16" fill="#c2410c" />
+<circle cx="716" cy="234" r="5" fill="#fff" />
+</g>
+<g>
+<path d="M860 140 h120 a18 18 0 0 1 18 18 v50 a18 18 0 0 1 -18 18 h-70 l-30 28 v-28 h-20 a18 18 0 0 1 -18 -18 v-50 a18 18 0 0 1 18 -18z" fill="#fff" />
+<circle cx="890" cy="183" r="8" fill="#c2410c" />
+<circle cx="920" cy="183" r="8" fill="#c2410c" />
+<circle cx="950" cy="183" r="8" fill="#c2410c" />
+</g>
+<g>
+<path d="M590 300 h110 a16 16 0 0 1 16 16 v40 a16 16 0 0 1 -16 16 h-70 l-24 -22 h-16 a16 16 0 0 1 -16 -16 v-18 a16 16 0 0 1 16 -16z" fill="#fdba74" />
+<path d="M880 330 c-30 -28 -60 -58 -30 -82 c14 -11 28 -4 30 8 c2 -12 16 -19 30 -8 c30 24 0 54 -30 82z" fill="#dc2626" />
+</g>
+<g>
+<rect x="1070" y="300" width="44" height="90" rx="22" fill="#fff" />
+<path d="M1054 350 a38 38 0 0 0 76 0" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" />
+<line x1="1092" y1="388" x2="1092" y2="420" stroke="#fff" stroke-width="8" />
+<line x1="1070" y1="420" x2="1114" y2="420" stroke="#fff" stroke-width="8" stroke-linecap="round" />
+</g>
+<text x="70" y="270" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="104" fill="#fff">Webcam</text>
+<text x="70" y="375" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="104" fill="#fed7aa">Chat</text>
+<rect x="74" y="405" width="200" height="12" rx="6" fill="#fff" />
+<text x="74" y="480" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="40" fill="#fff">Einstieg in 5 Schritten</text>
+</svg>

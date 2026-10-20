@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#be185d" />
+<stop offset="1" stop-color="#3b0a24" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.25" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="800" cy="260" r="330" fill="url(#glow)" />
+<circle cx="1100" cy="80" r="120" fill="#ffffff" fill-opacity="0.06" />
+<circle cx="80" cy="580" r="150" fill="#ffffff" fill-opacity="0.06" />
+<g>
+<rect x="500" y="90" width="600" height="380" rx="26" fill="#1f0614" />
+<rect x="525" y="115" width="550" height="330" rx="12" fill="#f9a8d4" />
+<rect x="525" y="115" width="550" height="330" rx="12" fill="#be185d" fill-opacity="0.35" />
+<polygon points="760,470 840,470 870,540 730,540" fill="#1f0614" />
+<rect x="680" y="535" width="240" height="22" rx="11" fill="#1f0614" />
+<circle cx="800" cy="102" r="6" fill="#f9a8d4" />
+</g>
+<g>
+<rect x="650" y="190" width="200" height="140" rx="22" fill="#ffffff" />
+<polygon points="850,235 930,195 930,325 850,285" fill="#ffffff" />
+<circle cx="745" cy="260" r="48" fill="#3b0a24" />
+<circle cx="745" cy="260" r="30" fill="#be185d" />
+<circle cx="733" cy="248" r="9" fill="#ffffff" fill-opacity="0.8" />
+<circle cx="675" cy="213" r="7" fill="#be185d" />
+</g>
+<g>
+<path d="M440 330 h210 a30 30 0 0 1 30 30 v70 a30 30 0 0 1 -30 30 h-120 l-50 45 v-45 h-40 a30 30 0 0 1 -30 -30 v-70 a30 30 0 0 1 30 -30z" fill="#fce7f3" transform="translate(-250 0) scale(0.85) translate(300 40)" />
+<circle cx="190" cy="395" r="9" fill="#be185d" />
+<circle cx="230" cy="395" r="9" fill="#be185d" />
+<circle cx="270" cy="395" r="9" fill="#be185d" />
+</g>
+<path d="M1000 400 c-40 -40 -100 -10 -70 35 c20 28 70 60 70 60 c0 0 50 -32 70 -60 c30 -45 -30 -75 -70 -35z" fill="#f43f5e" transform="translate(-10 -40)" />
+<path d="M930 120 h-90 a22 22 0 0 0 -22 22 v50 a22 22 0 0 0 22 22 h20 v28 l34 -28 h36 a22 22 0 0 0 22 -22 v-50 a22 22 0 0 0 -22 -22z" fill="#ffffff" fill-opacity="0" />
+<text x="70" y="200" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="120" fill="#ffffff">Webcam</text>
+<text x="70" y="315" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="120" fill="#ffffff">Chat</text>
+<rect x="74" y="338" width="220" height="12" rx="6" fill="#f9a8d4" />
+</svg>

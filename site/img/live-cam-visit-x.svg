@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c2410c" />
+<stop offset="1" stop-color="#431407" />
+</linearGradient>
+<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fed7aa" />
+<stop offset="1" stop-color="#fb923c" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1050" cy="90" r="160" fill="#ffffff" opacity="0.06" />
+<circle cx="100" cy="560" r="130" fill="#ffffff" opacity="0.06" />
+<g>
+<rect x="640" y="110" width="460" height="300" rx="24" fill="#1c0a03" />
+<rect x="660" y="130" width="420" height="260" rx="12" fill="url(#sc)" />
+<circle cx="870" cy="245" r="60" fill="#c2410c" opacity="0.35" />
+<polygon cx="0" points="850,215 850,275 905,245" fill="#ffffff" />
+<rect x="680" y="148" width="92" height="34" rx="17" fill="#dc2626" />
+<circle cx="700" cy="165" r="7" fill="#ffffff" />
+<text x="712" y="173" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="22" fill="#ffffff">LIVE</text>
+<rect x="840" y="410" width="60" height="40" fill="#1c0a03" />
+<rect x="780" y="450" width="180" height="20" rx="10" fill="#1c0a03" />
+</g>
+<g>
+<rect x="540" y="330" width="120" height="76" rx="14" fill="#fff7ed" />
+<circle cx="600" cy="368" r="24" fill="#431407" />
+<circle cx="600" cy="368" r="12" fill="#fb923c" />
+<rect x="580" y="316" width="40" height="18" rx="6" fill="#fff7ed" />
+</g>
+<g>
+<path d="M600 130 h-200 a30 30 0 0 0 -30 30 v70 a30 30 0 0 0 30 30 h20 v36 l40 -36 h140 a30 30 0 0 0 30 -30 v-70 a30 30 0 0 0 -30 -30z" fill="#fff7ed" transform="translate(-200 0) translate(200 0) scale(0.75) translate(130 40)" />
+<circle cx="420" cy="215" r="9" fill="#c2410c" />
+<circle cx="460" cy="215" r="9" fill="#c2410c" />
+<circle cx="500" cy="215" r="9" fill="#c2410c" />
+</g>
+<path d="M980 480 c-40 -30 -70 -60 -70 -90 a35 35 0 0 1 70 -10 a35 35 0 0 1 70 10 c0 30 -30 60 -70 90z" transform="translate(30 20) scale(0.9)" fill="#ef4444" />
+<text x="80" y="450" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="130" fill="#ffffff">LIVE CAM</text>
+<rect x="84" y="475" width="300" height="12" rx="6" fill="#fb923c" />
+</svg>
