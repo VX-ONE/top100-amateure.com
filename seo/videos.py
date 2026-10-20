@@ -144,11 +144,15 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
             try:
                 for n in (1, 2, 3):
                     page.goto(f"{VX}/de/amateur/{platform(m)}/videos/?page={n}", wait_until="domcontentloaded", timeout=45000)
-                    try:
-                        page.wait_for_selector('a[href*="/videos/"]', timeout=15000)
+                    try:  # Videokacheln werden per JavaScript nachgeladen: warten, bis echte Video-Links da sind
+                        page.wait_for_function(
+                            "() => document.querySelectorAll('a[href*=\"/videos/\"]').length && "
+                            "[...document.querySelectorAll('a[href*=\"/videos/\"]')].filter(a => /\\/videos\\/\\d{5,}-/.test(a.getAttribute('href')||'')).length >= 8",
+                            timeout=30000)
                     except Exception:
                         pass
-                    time.sleep(1.5)
+                    page.mouse.wheel(0, 4000)
+                    time.sleep(2)
                     for a in page.evaluate(LIST_JS):
                         mt = re.search(r"/videos/(\d+)-([^/]+)/?", a["href"])
                         if not mt or any(f["id"] == mt.group(1) for f in found):
@@ -191,7 +195,10 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
                 else:
                     try:
                         page.goto(VX + v["vx_path"], wait_until="domcontentloaded", timeout=45000)
-                        page.wait_for_timeout(2500)
+                        try:
+                            page.wait_for_function("() => document.body.innerText.includes('Stichworte')", timeout=20000)
+                        except Exception:
+                            page.wait_for_timeout(3000)
                         v.update(parse_detail(page.evaluate(DETAIL_JS), m["name"], v["title"]))
                     except Exception as e:
                         log(f"  [{slug}] Video {v['id']}: {type(e).__name__}")
