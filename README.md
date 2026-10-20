@@ -163,3 +163,12 @@ Filter lehnt Vulgärsprache ab (`quality.EXPLICIT`). Sie erklären das Genre, ne
 - `reports/<datum>-posts.md`: fertige Kurztexte für Telegram/X zu jeder neuen Seite.
 - `limits.max_minutes`: Zeitbremse, damit Bauen und Veröffentlichen vor dem Workflow-Timeout (120 Min.) sicher laufen.
 - Profilseiten: Hauptkeyword ist der Name selbst, Steckbrief-Abschnitt, Block „Weitere Top-Models“ auf allen Seiten, Sticky-Button auf dem Handy, Zwischen-Button nach dem 3. Abschnitt.
+
+## Video-Operator (Videoseiten der Top-Models)
+
+- `python -m seo.cli videos` liest für die ersten 30 aktiven Models (Reihenfolge in `data/models.yaml`) die neuesten Videos bei Visit-X ein (Playwright/Chromium), schreibt pro neuem Video eine eigene, nicht explizite Seite und veröffentlicht.
+- Läuft automatisch mittwochs und sonntags (`.github/workflows/videos.yml`), manuell über „Run workflow“.
+- Seiten: `/<model>/videos/` und `/<model>/videos/<id>-<titel>/` mit eigenem Cover, Länge, Datum, FAQ und Button „Jetzt direkt zum Video“ (Deeplink mit Partnerdaten aus `videos.params`) plus Bonus-Hinweis.
+- Gesperrte Titel (Familie, Schlaf/Heimlich, Schule, Jugend …) werden übersprungen: `videos.blocked_terms` in `config.yaml`.
+- Daten: `data/videos/<model>.json`, Texte: `data/videos/content/<id>.json`, Protokoll: `reports/<datum>-videos.log`.
+- Freigabe für die Nutzung von Videotiteln/-infos: VX Cash (Georg Krause), 20.10.2026.

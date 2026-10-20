@@ -407,6 +407,32 @@ def cmd_build(cfg, args) -> int:
     return 0
 
 
+def cmd_videos(cfg, args) -> int:
+    """Video-Operator: neue Videos der Top-Models einlesen, Texte erzeugen, Seite bauen und veröffentlichen."""
+    from . import videos as vidmod
+    store = Store(cfg["_data"])
+    log_lines: list[str] = []
+    def log(msg):
+        print(msg)
+        log_lines.append(msg)
+    if not args.skip_scrape:
+        st = vidmod.scrape(cfg, store, only=args.only, log=log)
+        log(f"Einlesen: {st}")
+    st = vidmod.generate(cfg, store, mock=args.mock, log=log)
+    log(f"Texte: {st}")
+    info = render.build_site(cfg, store)
+    log(f"Seite gebaut: {info['pages']} Seiten, {info['sitemap_urls']} Sitemap-URLs.")
+    today = date.today().isoformat()
+    lp = Path(cfg["_reports"]) / f"{today}-videos.log"
+    lp.parent.mkdir(parents=True, exist_ok=True)
+    lp.write_text("\n".join(log_lines) + "\n", encoding="utf-8")
+    if args.mock or args.no_publish:
+        print("Veröffentlichung übersprungen.")
+        return 0
+    print(publish.publish(cfg, st.get("erzeugt", 0)))
+    return 0
+
+
 def cmd_images(cfg, args) -> int:
     """Bilder für bestehende Seiten nachziehen (oder mit --force neu erzeugen)."""
     store = Store(cfg["_data"])
@@ -451,13 +477,17 @@ def main(argv=None) -> int:
     sub.add_parser("monitor", help="Indexierung und Leistung prüfen, Bericht schreiben")
     p = sub.add_parser("images", help="Bilder für Seiten ohne Bild erzeugen")
     p.add_argument("--force", action="store_true", help="vorhandene Bilder neu erzeugen")
+    p = sub.add_parser("videos", help="Video-Operator: neue Videos der Top-Models einlesen und Videoseiten bauen")
+    p.add_argument("--skip-scrape", action="store_true", help="nur Texte erzeugen und bauen")
+    p.add_argument("--only", nargs="*", help="nur diese Model-Slugs einlesen")
+    p.add_argument("--no-publish", action="store_true")
     sub.add_parser("build", help="Seite neu bauen")
     sub.add_parser("status", help="Stand anzeigen")
 
     args = ap.parse_args(argv)
     cfg = cfgmod.load(args.config, sandbox=args.sandbox or args.mock)
     return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest, "optimize": cmd_optimize, "images": cmd_images,
-            "build": cmd_build, "status": cmd_status}[args.cmd](cfg, args)
+            "build": cmd_build, "status": cmd_status, "videos": cmd_videos}[args.cmd](cfg, args)
 
 
 if __name__ == "__main__":

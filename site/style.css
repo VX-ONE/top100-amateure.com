@@ -143,3 +143,10 @@ summary h3{font-size:16px;font-weight:600}
 
 .howto{display:block;font-size:13px;color:var(--muted);margin-top:4px}
 .cta .howto{margin:4px 0 10px}
+/* ---- Videoseiten ---- */
+.vcover{position:relative;display:block;margin:16px 0 8px;border-radius:14px;overflow:hidden}
+.vcover img{display:block;width:100%;height:auto}
+.vplay{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;font-weight:700;padding:8px 16px;border-radius:999px;font-size:15px;white-space:nowrap}
+.vmeta{list-style:none;padding:0;margin:8px 0 16px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;color:var(--muted)}
+.vcta{background:var(--grad);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;text-align:center}
+.vcta .btn{font-size:17px}.vcta .bonus-big{margin:12px 0 2px}

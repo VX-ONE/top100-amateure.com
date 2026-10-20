@@ -11,6 +11,7 @@ import markdown
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from . import images as imgmod
+from . import videos as vidmod
 from . import models as modelmod
 from .quality import article_text
 
@@ -131,6 +132,7 @@ def build_site(cfg: dict, store) -> dict:
             top_models.append({"name": m["name"], "slug": sl, "img": f"/img/{sl}.svg", "url": links[0]["url"],
                                "bonus": has_bonus(links[0]["url"])})
     ctx["top_models"] = top_models
+    collected = vidmod.collect(cfg, store)
     page_tpl = env.get_template("page.html")
     thumbs: dict[str, str] = {}
     for slug, c in contents.items():
@@ -159,7 +161,7 @@ def build_site(cfg: dict, store) -> dict:
             thumbs[slug] = image["svg"]
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
-            ctas=ctas, is_model=is_model, model_cards=others, model_name=meta.get("model", ""),
+            ctas=ctas, is_model=is_model, model_cards=others, vids=(collected.get(slug) or {}).get("videos", [])[:6], vids_total=len((collected.get(slug) or {}).get("videos", [])), model_name=meta.get("model", ""),
             related=rel, topic_label=labels.get(meta["topic"], ""), section=section_of(meta["topic"]),
             hub_url=(f"{base}/models/" if is_model else f"{base}/themen/{meta['topic']}/"),
             published=fmt_date(meta.get("modified_at") or meta["published_at"]), robots="index,follow",
@@ -212,10 +214,12 @@ def build_site(cfg: dict, store) -> dict:
     write("404.html", env.get_template("404.html").render(
         **ctx, canonical=f"{base}/", robots="noindex,follow", title="Seite nicht gefunden", description=""))
 
+    video_urls = vidmod.render(cfg, store, env, ctx, write, site_dir, base, collected)
     urls = [(f"{base}/", max((p["published_at"] for p in pages.values()), default=date.today().isoformat()))]
     urls += [(f"{base}/{x['path']}/", date.today().isoformat()) for x in sec_data if x["count"]]
     urls += [(f"{base}/themen/{t}/", max(pages[i["slug"]]["published_at"] for i in groups[t])) for t in hub_topics]
     urls += [(f"{base}/{s}/", pages[s].get("modified_at") or pages[s]["published_at"]) for s in contents]
+    urls += video_urls
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sitemap += [f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls]

@@ -64,6 +64,13 @@
     {% if is_model %}<p class="small">Unabhängiger Ratgeber: Diese Seite wird weder von {{ model_name }} noch von {{ provider }} betrieben.</p>{% endif %}
   </section>
 
+  {% if vids %}
+  <section class="block">
+    <div class="block-head"><h2>Neueste {{ model_name }} Videos</h2><a class="more" href="/{{ slug }}/videos/">Alle {{ vids_total }} Videos &rsaquo;</a></div>
+    <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ model_name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
+  </section>
+  {% endif %}
+
   {% if model_cards %}
   {% from "_cards.html" import model_card with context %}
   <section class="block">

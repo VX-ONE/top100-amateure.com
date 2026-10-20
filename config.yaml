@@ -55,6 +55,19 @@ affiliate:
     nischen: "Passende Angebote bei Visit-X ansehen"
     grundlagen: "Zum Angebot von Visit-X"
 
+# Video-Unterseiten der Top-Models (Operator läuft mittwochs und sonntags, .github/workflows/videos.yml)
+videos:
+  top_models: 30              # erste N aktive Models aus data/models.yaml (Reihenfolge = Top-Liste)
+  per_model: 30               # neueste N Videos je Model
+  generate_per_run: 150       # neue Videoseiten pro Lauf (Rest folgt im nächsten Lauf)
+  llm_model: "claude-haiku-5-5"
+  params: "w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"   # Partnerdaten, werden an den Video-Link gehängt
+  new_per_model_per_run: 10   # höchstens so viele neue Videos je Model und Lauf einlesen
+  # Zusätzlich gesperrt (Wortanfang) für Videotitel/-beschreibungen: Familie, Schlaf/Heimlich, Schule, Jugend
+  blocked_terms: [stief, bruder, schwester, papa, vater, tochter, sohn, onkel, tante, cousin, oma, opa, schulm, schüler, schoolgirl,
+                  geweckt, schlaf, schläft, betrunk, heimlich, versteckt, hidden, spycam, zwang, erzwung, vergewalt, inzest,
+                  minderj, teen, lolita, kind, jugend, nachhilfe]
+
 models:
   per_day: 8                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)
   min_words: 600
