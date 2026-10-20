@@ -52,7 +52,7 @@ def save_content(cfg: dict, vid: str, c: dict) -> None:
 
 def settings(cfg: dict) -> dict:
     s = {"top_models": 30, "per_model": 30, "new_per_model_per_run": 10, "generate_per_run": 150, "params": "",
-         "llm_model": None, "blocked_terms": []}
+         "llm_model": None, "blocked_terms": [], "workers": 6}
     s.update(cfg.get("videos") or {})
     return s
 
@@ -306,25 +306,35 @@ def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
         queues.append((m, slug, data, q))
     budget = s["generate_per_run"]
     llm_cfg = dict(cfg, llm=dict(cfg["llm"], model=s["llm_model"] or cfg["llm"]["model"], max_tokens=3000))
-    while budget > 0 and any(q for *_, q in queues):
+    jobs = []                                  # reihum, neueste zuerst
+    while len(jobs) < budget and any(q for *_, q in queues):
         for m, slug, data, q in queues:
-            if not q or budget <= 0:
+            if q and len(jobs) < budget:
+                jobs.append((m, slug, data, q.pop(0)))
+
+    def work(job):
+        m, slug, data, v = job
+        msgs = []
+        for attempt in range(2):
+            try:
+                c = mock_content(m, v) if mock else gen.ask_json(llm_cfg, VIDEO_SYSTEM, build_prompt(m, v, facts), VIDEO_SCHEMA)
+                c = gen.clean_content(c) | {"seo_title": gen.clean_text(c.get("seo_title", "")),
+                                            "cover_line": gen.clean_text(c.get("cover_line", ""))[:26]}
+            except Exception as e:
+                msgs.append(f"  [{slug}/{v['id']}] Fehler: {type(e).__name__}: {e}")
                 continue
-            v = q.pop(0)
-            content = None
-            for attempt in range(2):
-                try:
-                    c = mock_content(m, v) if mock else gen.ask_json(llm_cfg, VIDEO_SYSTEM, build_prompt(m, v, facts), VIDEO_SCHEMA)
-                    c = gen.clean_content(c) | {"seo_title": gen.clean_text(c.get("seo_title", "")),
-                                                "cover_line": gen.clean_text(c.get("cover_line", ""))[:26]}
-                except Exception as e:
-                    log(f"  [{slug}/{v['id']}] Fehler: {type(e).__name__}: {e}")
-                    continue
-                issues = [] if mock else check(c, m, v)
-                if not issues:
-                    content = c
-                    break
-                log(f"  [{slug}/{v['id']}] verworfen: {', '.join(issues)}")
+            issues = [] if mock else check(c, m, v)
+            if not issues:
+                return c, msgs
+            msgs.append(f"  [{slug}/{v['id']}] verworfen: {', '.join(issues)}")
+        return None, msgs
+
+    from concurrent.futures import ThreadPoolExecutor
+    started = time.time()
+    with ThreadPoolExecutor(max_workers=int(s.get("workers", 6))) as ex:
+        for (m, slug, data, v), (content, msgs) in zip(jobs, ex.map(work, jobs)):
+            for x in msgs:
+                log(x)
             if content:
                 save_content(cfg, v["id"], content)
                 v["status"] = "published"
@@ -335,8 +345,8 @@ def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
                 if v["fails"] >= 3:
                     v["status"] = "failed"
                 stats["verworfen"] += 1
-            budget -= 1
             save(cfg, slug, data)
+    log(f"  {len(jobs)} Videos in {int(time.time() - started)} s bearbeitet")
     return stats
 
 

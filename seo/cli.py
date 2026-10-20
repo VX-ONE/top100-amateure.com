@@ -418,6 +418,8 @@ def cmd_videos(cfg, args) -> int:
     if not args.skip_scrape:
         st = vidmod.scrape(cfg, store, only=args.only, log=log)
         log(f"Einlesen: {st}")
+    if args.max:
+        cfg.setdefault("videos", {})["generate_per_run"] = args.max
     st = vidmod.generate(cfg, store, mock=args.mock, log=log)
     log(f"Texte: {st}")
     info = render.build_site(cfg, store)
@@ -480,6 +482,7 @@ def main(argv=None) -> int:
     p = sub.add_parser("videos", help="Video-Operator: neue Videos der Top-Models einlesen und Videoseiten bauen")
     p.add_argument("--skip-scrape", action="store_true", help="nur Texte erzeugen und bauen")
     p.add_argument("--only", nargs="*", help="nur diese Model-Slugs einlesen")
+    p.add_argument("--max", type=int, help="maximal so viele Videotexte in diesem Lauf erzeugen")
     p.add_argument("--no-publish", action="store_true")
     sub.add_parser("build", help="Seite neu bauen")
     sub.add_parser("status", help="Stand anzeigen")

@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: "17 5 * * 0,3"   # sonntags und mittwochs 05:17 UTC
   workflow_dispatch:
+    inputs:
+      skip_scrape:
+        description: "Nur Texte erzeugen (Videos nicht neu einlesen)"
+        type: boolean
+        default: false
+      max:
+        description: "Maximal so viele Videotexte erzeugen (leer = config)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -23,7 +32,8 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt playwright
-      - run: python -m playwright install --with-deps chromium
+      - if: ${{ !inputs.skip_scrape }}
+        run: python -m playwright install --with-deps chromium
       - name: Git-Identität
         run: |
           git config user.name "seo-bot"
@@ -31,4 +41,6 @@ jobs:
       - name: Neue Videos einlesen, Seiten erzeugen, veröffentlichen
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python -m seo.cli videos
+          SKIP: ${{ inputs.skip_scrape && '--skip-scrape' || '' }}
+          MAX: ${{ inputs.max && format('--max {0}', inputs.max) || '' }}
+        run: python -m seo.cli videos $SKIP $MAX

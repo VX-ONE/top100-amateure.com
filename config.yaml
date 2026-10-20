@@ -66,7 +66,11 @@ videos:
   # Zusätzlich gesperrt (Wortanfang) für Videotitel/-beschreibungen: Familie, Schlaf/Heimlich, Schule, Jugend
   blocked_terms: [stief, bruder, schwester, papa, vater, tochter, sohn, onkel, tante, cousin, oma, opa, schulm, schüler, schoolgirl,
                   geweckt, schlaf, schläft, betrunk, heimlich, versteckt, hidden, spycam, zwang, erzwung, vergewalt, inzest,
-                  minderj, teen, lolita, kind, jugend, nachhilfe]
+                  minderj, teen, lolita, kind, jugend, nachhilfe, daddy, mami, mommy, mein junge, famili, buben, bengel,
+                  schul, mitschül, dorfjugend, junges girl, junge frucht, entjungfert, deflower, weckt, spanner, voyeur, voyer,
+                  hackt, gefilmt ohne, observiert, stalker, ohne erlaubnis, sittenstrolch, ausgenutzt, nutzt es schamlos,
+                  kofferraum, statt anzeige, brauch den job, gummi ab, schwänger, geschwänger, brutal, natursekt, abgepisst, pinkel,
+                  wildpinkler, falle, masche, aus versehen, cheerleader, überraschend abgefickt]
 
 models:
   per_day: 8                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)
