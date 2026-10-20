@@ -166,6 +166,17 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
                 log(f"  [{slug}] Liste nicht lesbar: {type(e).__name__}: {e}")
                 continue
             stats["models"] += 1
+            if len(found) < 3 and not stats.get("debug"):
+                stats["debug"] = 1
+                try:
+                    txt = page.evaluate("() => document.body.innerText")
+                    log(f"  DEBUG {page.url} | Titel: {page.title()} | Textlänge {len(txt)} | Links: "
+                        f"{page.evaluate('() => document.querySelectorAll(\"a\").length')}")
+                    log("  DEBUG Text: " + re.sub(r"\s+", " ", txt)[:1500])
+                    log("  DEBUG gefunden: " + json.dumps(found[:3], ensure_ascii=False))
+                    page.screenshot(path=str(Path(cfg["_reports"]) / "videos-debug.png"))
+                except Exception as e:
+                    log(f"  DEBUG fehlgeschlagen: {e}")
             added = 0
             for v in found[: s["per_model"]]:
                 if v["id"] in known or not v["title"]:
