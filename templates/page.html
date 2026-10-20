@@ -26,7 +26,7 @@
   {% if image %}<figure class="hero"><img src="{{ image.svg }}" alt="{{ image.alt }}" width="1200" height="630" fetchpriority="high"></figure>{% endif %}
   <div class="intro">{{ c.intro|md|safe }}</div>
 
-  {% if ctas[0].bonus %}<p class="bonus-bar"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> über unseren Link. <span class="small">Bedingungen bei {{ provider }}.</span></span></p>{% endif %}
+  {% if ctas[0].bonus %}<p class="bonus-bar"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> über unseren Link. <span class="small">Bedingungen bei {{ provider }}.</span>{% if bonus.howto %}<span class="howto">✓ {{ bonus.howto }}</span>{% endif %}</span></p>{% endif %}
   <p class="cta-inline">{% for cta in ctas %}<a class="btn" href="{{ cta.url }}" rel="sponsored nofollow noopener" target="_blank">{{ cta.label }}</a> {% endfor %}<span class="small">Werbung</span></p>
 
   {% if c.key_takeaways %}
@@ -57,7 +57,7 @@
   </section>
 
   <section class="cta">
-    {% if ctas[0].bonus %}<p class="bonus-big">🎁 {{ bonus.badge }}</p><p class="small">{{ bonus.note }}</p>{% endif %}
+    {% if ctas[0].bonus %}<p class="bonus-big">🎁 {{ bonus.badge }}</p><p class="small">{{ bonus.note }}</p>{% if bonus.howto %}<p class="howto">✓ {{ bonus.howto }}</p>{% endif %}{% endif %}
     <p>{{ c.cta_text }}</p>
     <p>{% for cta in ctas %}<a class="btn" href="{{ cta.url }}" rel="sponsored nofollow noopener" target="_blank">{{ cta.label }}</a> {% endfor %}</p>
     <p class="small">Werbung: Affiliate-Links. Für dich entstehen keine Mehrkosten. Nur für Personen ab 18 Jahren.</p>

@@ -36,6 +36,7 @@ affiliate:
     badge: "100 % Aufladebonus"
     short: "100 % Bonus sichern"
     note: "Über unseren Link bekommst du bei Visit-X 100 % Bonus auf deine Aufladung. Es gelten die Bedingungen von Visit-X."
+    howto: "Auf Visit-X einfach auf „Kostenlos anmelden“ tippen: Der Gutscheincode für den Bonus ist über unseren Link automatisch hinterlegt."
   # Deeplink auf Model-Profile: {name} = Bühnenname. Leer = Standardlink. Muster aus dem VX-Cash-Partnerbereich eintragen.
   profile_template: "https://m.visit-x.net/de/amateur/{name_lc}/videos/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"
   # Button-Text je Thema (ohne Versprechen, was dahinter passiert; der Link führt zur Anmeldung)

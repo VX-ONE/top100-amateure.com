@@ -140,3 +140,6 @@ summary h3{display:inline;font-size:17px;margin:0}
 .article h3{font-size:19px;margin:24px 0 6px}.article h4{font-size:17px;margin:18px 0 4px}
 @media(max-width:760px){.grid>.card .card-body h3{font-size:15px}}
 summary h3{font-size:16px;font-weight:600}
+
+.howto{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+.cta .howto{margin:4px 0 10px}

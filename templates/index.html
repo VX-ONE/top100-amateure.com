@@ -10,7 +10,7 @@
 {% block main %}
 <section class="landing">
   <h1>Top 100 Amateure: die Top-Models bei {{ provider }}</h1>
-  {% if bonus %}<a class="bonus-hero" href="{{ bonus_url }}" rel="sponsored nofollow noopener" target="_blank"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> bei {{ provider }} über unseren Link<span class="small">Doppeltes Guthaben auf deine Aufladung. Bedingungen bei {{ provider }}. Werbung, 18+.</span></span><span class="go">Sichern &rsaquo;</span></a>{% endif %}
+  {% if bonus %}<a class="bonus-hero" href="{{ bonus_url }}" rel="sponsored nofollow noopener" target="_blank"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> bei {{ provider }} über unseren Link<span class="small">Doppeltes Guthaben auf deine Aufladung. Gutscheincode wird automatisch hinterlegt, einfach kostenlos anmelden. Bedingungen bei {{ provider }}. Werbung, 18+.</span></span><span class="go">Sichern &rsaquo;</span></a>{% endif %}
   <p class="lead">Finde die beliebtesten Amateur-Models, Live-Cams und Videos und erfahre, wie Kosten, Tokens und Anmeldung funktionieren.</p>
   <div class="sections">{% for s in sec_data if s.count %}
     <a class="section-tile s-{{ s.key }}" href="/{{ s.path }}/" style="--c:{{ s.color }}">

@@ -21,3 +21,4 @@ Beispiele für das Format (ersetzen, nicht übernehmen):
 - (geprüft am 16.10.2026, Angabe des Seitenbetreibers) Gängige Zahlungsarten bei Visit-X: Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift/Überweisung). Welche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen.
 - (geprüft am 16.10.2026, Angabe des Seitenbetreibers) Visit-X bietet Live-Cams (Webcam-Models), Videos und Amateur-Angebote.
 - (geprüft am 17.10.2026, Angabe des Seitenbetreibers) Über den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus (doppeltes Guthaben auf die Aufladung). Es gelten die Bedingungen von Visit-X.
+- (geprüft am 20.10.2026, Angabe des Seitenbetreibers) Über den Link dieser Seite landet man zuerst im Angebot von Visit-X (Videos); die Anmeldung startet man selbst über „Kostenlos anmelden“. Der Gutscheincode für den Aufladebonus ist dabei automatisch hinterlegt und muss nicht eingegeben werden.
