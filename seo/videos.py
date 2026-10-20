@@ -473,7 +473,7 @@ def collect(cfg: dict, store) -> dict[str, dict]:
             c = load_content(cfg, v["id"])
             if not c:
                 continue
-            vids.append({**v, "c": c, "url": f"/{slug}/videos/{page_slug(v)}/", "img": f"/img/v/{v['id']}.svg",
+            vids.append({**v, "title": clean_title(v["title"]), "c": c, "url": f"/{slug}/videos/{page_slug(v)}/", "img": f"/img/v/{v['id']}.svg",
                          "link": deeplink(cfg, v["vx_path"]), "secs": mmss(v.get("duration", ""))})
         vids.sort(key=lambda x: (x.get("date", ""), x["id"]), reverse=True)
         if vids:
