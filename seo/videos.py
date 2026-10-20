@@ -305,7 +305,7 @@ def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
         q.sort(key=lambda v: v.get("date", ""), reverse=True)
         queues.append((m, slug, data, q))
     budget = s["generate_per_run"]
-    llm_cfg = dict(cfg, llm=dict(cfg["llm"], model=s["llm_model"] or cfg["llm"]["model"], max_tokens=3000))
+    llm_cfg = dict(cfg, llm=dict(cfg["llm"], model=s["llm_model"] or cfg["llm"]["model"], max_tokens=8000))
     jobs = []                                  # reihum, neueste zuerst
     while len(jobs) < budget and any(q for *_, q in queues):
         for m, slug, data, q in queues:

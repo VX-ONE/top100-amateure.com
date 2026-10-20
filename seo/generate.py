@@ -225,7 +225,10 @@ def ask_json(cfg: dict, system: str, user: str, schema: dict, max_tokens: int | 
         resp = client.messages.create(**base, system=system + note, tool_choice={"type": "auto"},
                                       messages=[{"role": "user", "content": user + note}])
     if getattr(resp, "stop_reason", None) == "max_tokens":
-        raise ValueError("Antwort wurde abgeschnitten (max_tokens)")
+        kinds = ",".join(b.type for b in resp.content)
+        txt = "".join(getattr(b, "text", "") for b in resp.content if b.type == "text")
+        raise ValueError(f"Antwort wurde abgeschnitten (max_tokens; Blöcke: {kinds}; "
+                         f"out={getattr(resp.usage, 'output_tokens', '?')}; Text: {txt[:200]!r})")
     for b in resp.content:
         if b.type == "tool_use":
             return _normalize(b.input, schema)
