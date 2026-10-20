@@ -16,7 +16,7 @@
 {% block main %}
 <article class="article">
   <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/models/">Top-Models</a> &rsaquo; <a href="/{{ model_slug }}/">{{ m.name }}</a> &rsaquo; <a href="/{{ model_slug }}/videos/">Videos</a></nav>
-  <h1>{{ v.title }} – {{ m.name }} Video</h1>
+  <h1>{{ c.h1 or (v.title ~ ' – ' ~ m.name ~ ' Video') }}</h1>
   <a class="vcover" href="{{ v.link }}" rel="sponsored nofollow noopener" target="_blank"><img src="{{ v.img }}" alt="{{ m.name }} Video: {{ v.title }}" width="1200" height="630" fetchpriority="high"></a>
   <ul class="vmeta">
     {% if v.duration %}<li><strong>Länge:</strong> {{ v.duration }} min</li>{% endif %}

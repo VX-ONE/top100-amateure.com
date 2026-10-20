@@ -20,6 +20,7 @@ from pathlib import Path
 from . import images as imgmod
 from . import models as modelmod
 from .keywords import blocked_hit, load_blocked, normalize, slugify
+from .quality import EXPLICIT as EXPL
 
 VX = "https://www.visit-x.net"
 
@@ -233,8 +234,7 @@ Antworte nur über das Werkzeug "antwort"."""
 VIDEO_SCHEMA = {
     "type": "object",
     "properties": {
-        "seo_title": {"type": "string", "description": "35-60 Zeichen, enthält Bühnenname + 'Video' + Kern des Titels (entschärft)"},
-        "meta_description": {"type": "string", "description": "120-155 Zeichen, nennt Model, Länge und Nutzen, nicht explizit"},
+        "meta_description": {"type": "string", "description": "120-155 Zeichen, nennt Model, ein Themen-Stichwort, Länge und Nutzen, nicht explizit"},
         "intro": {"type": "string", "description": "2-3 Sätze, erster Satz enthält '<Bühnenname> Video'"},
         "sections": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "object", "properties": {
             "h2": {"type": "string", "description": "enthält den Bühnennamen"}, "body": {"type": "string", "description": "60-120 Wörter"}},
@@ -243,27 +243,113 @@ VIDEO_SCHEMA = {
             "q": {"type": "string"}, "a": {"type": "string"}}, "required": ["q", "a"]}},
         "cover_line": {"type": "string", "description": "Kurzer, nicht expliziter Cover-Text, max. 26 Zeichen"},
     },
-    "required": ["seo_title", "meta_description", "intro", "sections", "faq", "cover_line"],
+    "required": ["meta_description", "intro", "sections", "faq", "cover_line"],
 }
 
 
+VULGAR = re.compile(r"(?<![\wäöüß])(cum\w*|creampie\w*|anal\w*|squirt\w*|dildo\w*|bbc|bwc|pussy|fuck\w*|sex\w*|porno\w*|"
+                    r"gangbang\w*|orgie\w*|deepthroat|facial|footjob|blowjob|handjob|joi|cei|wix\w*|schlampe\w*|hure\w*|"
+                    r"l[oö]ch\w*|nass\w*|feucht\w*|spritz\w*|besam\w*|lesbo\w*|strap\w*|dreier|vierer|milf\w*|notgeil\w*|"
+                    r"versaut\w*|pervers\w*|zerst[oö]r\w*|gnadenlos|hart|heftig\w*|xxx*l|xl|omg|wtf|ao|dp|pov|uncut|ladung\w*|"
+                    r"sahne|eier|kehlen\w*|rachen\w*|dirty\w*|talk|fist\w*|plug\w*|toy\w*|vibrator|nackt\w*|cock|dick|ass|"
+                    r"bitch\w*|slut\w*|lick|suck|stöpsel|stopf\w*|reit\w*|ritt|benutz\w*|abgeschleppt|fremdfick\w*|fremdgeh\w*|"
+                    r"fremdgefickt|prügel|zerfickt|weggefickt|durchgefickt)(?![\wäöüß])", re.I)
+STOP = {"und", "oder", "mit", "der", "die", "das", "den", "dem", "des", "ein", "eine", "einem", "einen", "einer", "mich", "mir",
+        "mein", "meine", "meinen", "meinem", "dich", "dir", "dein", "deine", "ich", "du", "er", "sie", "es", "wir", "ihr", "uns",
+        "ist", "sind", "war", "wird", "werden", "hat", "haben", "bis", "zum", "zur", "vom", "von", "auf", "aus", "für", "fuer",
+        "nach", "vor", "bei", "im", "in", "am", "an", "als", "wie", "was", "wer", "wenn", "dann", "noch", "nur", "so", "statt",
+        "nicht", "kein", "keine", "jetzt", "endlich", "einfach", "total", "mega", "super", "krass", "komplett", "richtig",
+        "the", "and", "with", "my", "me", "you", "your", "for", "of", "to", "on", "in", "part", "teil", "classic", "titel",
+        "ganz", "sein", "seine", "seinen", "seinem", "ihre", "ihren", "ihrem", "beim", "lass", "darf", "will", "geht", "gehts",
+        "eskaliert", "eskalation", "minuten", "min", "stunden", "special", "best", "of", "neue", "neuer", "neues", "erste",
+        "ersten", "erster", "erstes", "mal", "voll", "volle", "kann", "habe", "keinen", "aber", "sorry", "lässt", "sich", "hier",
+        "völlig", "mehr", "gehen", "endet", "fürs", "inkl", "während", "heißer", "heisse", "heiße", "dicker", "saftige",
+        "lecke", "jähriger", "durchgenommen", "flutet", "privater", "wieder", "immer", "alles", "alle", "jeden", "jeder",
+        "dreist", "dreister", "dreiste", "spontan", "spontaner", "spontane", "macht", "machen", "bringt", "kommt", "gibt"}
+ACRONYMS = {"BBC", "BWC", "XXL", "XXXL", "XL", "JOI", "AO", "POV", "DP", "MFF", "OMG", "WTF", "ONS", "OP", "US", "FKK", "SOS",
+            "WG", "DVD", "ASMR", "MILF", "MILFS", "XMAS", "GFE", "CEI", "DT", "BTS"}
+ROOTS = ("schwanz", "fick", "fotz", "titt", "sperma", "musch", "arsch", "geil", "wichs", "wixx", "pimmel", "schlamp", "porno",
+         "cum", "sex", "orgas", "leck", "spritz", "pussy", "fuck", "squirt", "anal", "creampie", "blas", "notgeil", "hure")
+TAIL_STOP = {"und", "oder", "mit", "der", "die", "das", "den", "dem", "des", "ein", "eine", "einem", "einen", "einer", "in", "im",
+             "am", "an", "auf", "aus", "für", "zum", "zur", "vom", "von", "bis", "&", "+", "-", "–", "sich", "lässt", "ist",
+             "war", "wird", "mich", "mir", "ich", "du", "mein", "meine", "meinen", "dein", "deine", "sein", "seine", "ihr", "ihre",
+             "uns", "unser", "geilem", "geilen", "noch", "nicht", "so", "wie", "beim", "bei", "nach", "vor", "als", "es", "er", "sie"}
+
+
+def clean_title(t: str) -> str:
+    """Videotitel lesbar machen: Emojis/Sonderzeichen raus, Satzzeichen bündeln, GROSSBUCHSTABEN normalisieren."""
+    t = re.sub(r"[^\w\s.,:;!?&+#'’´\-–/()%€]", "", t, flags=re.U)
+    t = re.sub(r"([!?.])[!?.]+", r"\1", t)
+    t = re.sub(r"\s*/+\s*", " – ", t).strip(" /-–")
+    words = []
+    for w in t.split():
+        core = re.sub(r"\W", "", w)
+        if core.isupper() and core not in ACRONYMS and not re.search(r"\d", core) and len(core) > 1:
+            w = w[0] + w[1:].lower() if (w[0].isalpha() and (len(core) > 3 or not words)) else w.lower()
+        words.append(w)
+    t = re.sub(r"\s+", " ", " ".join(words)).strip()
+    t = re.sub(r"\s+([!?.,:;])", r"\1", t)
+    return (t[0].upper() + t[1:]) if t else "Video"
+
+
+def title_core(t: str, limit: int) -> str:
+    t = clean_title(t).rstrip(".,:;–- ")
+    if len(t) <= limit:
+        return t
+    ws = t[:limit + 1].split(" ")
+    ws = ws[:-1] if len(ws) > 1 else ws
+    while len(ws) > 2 and ws[-1].lower().strip(".,:;!?") in TAIL_STOP:
+        ws.pop()
+    return " ".join(ws).rstrip(".,:;–-& ") or t[:limit]
+
+
+def seo_title(m: dict, v: dict) -> str:
+    suffix = f" – {m['name']} Video"
+    return title_core(v["title"], max(24, 68 - len(suffix))) + suffix
+
+
+def topic_hints(title: str, name: str) -> list[str]:
+    own = {normalize(x) for x in re.split(r"[\s\-_]+", name)} | {normalize(name)}
+    out = []
+    for w in re.findall(r"[A-Za-zÄÖÜäöüß][\w\-’´']{2,}", clean_title(title)):
+        lw = w.lower().strip("-’´'")
+        if len(lw) < 4 or lw in STOP or normalize(lw) in own or VULGAR.fullmatch(lw) or EXPL.fullmatch(lw):
+            continue
+        if VULGAR.search(lw) or EXPL.search(lw) or any(r in lw for r in ROOTS):
+            continue
+        if lw not in [o.lower() for o in out]:
+            out.append(w if not w.isupper() else w.capitalize())
+    return out[:6]
+
+
 def build_prompt(m: dict, v: dict, facts: str) -> str:
+    hints = topic_hints(v["title"], m["name"])
+    meta = f"Länge: {v.get('duration') or 'unbekannt'} Minuten | mit Ton"
+    if v.get("date"):
+        meta += f" | veröffentlicht am {v['date']}"
     return "\n".join([
         f"Bühnenname: {m['name']}",
-        f"Videotitel (Original, nur als Suchbegriff verwenden): {v['title']}",
-        f"Länge: {v.get('duration') or 'unbekannt'} | Veröffentlicht: {v.get('date') or 'unbekannt'} | mit Ton",
+        f"Videotitel (Original, nur als Bezug, nicht zitieren): {v['title']}",
+        "Neutrale Themen-Stichworte aus dem Titel: " + (", ".join(hints) if hints else
+            "keine – dann Format, Länge und Stil des Models einordnen"),
+        meta,
         "Model-Fakten:\n- " + "\n- ".join(m["facts"][:8]),
         "Anbieter-Fakten:\n" + facts,
-        "Abschnitte (Vorschlag): 'Worum es in diesem <Name> Video geht' (allgemein), 'So schaust du das <Name> Video bei Visit-X' "
-        "(Tokens, Zahlungsarten, kostenlos anmelden, Bonus), 'Mehr <Name> Videos und Livecam'.",
-        "FAQ: z. B. Wie lang ist das Video? Wo kann ich es ansehen? Gibt es mehr Videos von <Name>? Was kostet es?",
+        "WICHTIG für Einzigartigkeit: Greife die Themen-Stichworte (Setting, Ort, Anlass, Rollenspiel, Outfit) in neutralen Worten "
+        "auf. Intro und erster Abschnitt müssen sich klar auf genau dieses Video beziehen, nicht allgemein auf das Model. "
+        "Die erste H2 enthält den Bühnennamen und ein Themen-Stichwort (falls vorhanden).",
+        "Abschnitte: 1) Thema und Einordnung dieses Videos (Stichworte, Länge, Format), 2) 'So schaust du das <Name> Video bei Visit-X' "
+        "(Euro werden in Tokens umgerechnet, Zahlungsarten, kostenlos anmelden: über unseren Link ist der Gutscheincode für den "
+        "100 % Aufladebonus automatisch hinterlegt), 3) optional 'Mehr <Name> Videos und Livecam'.",
+        "Nicht schreiben: dass ein Datum unbekannt ist, 'laut Seitenbetreiber', 'diese Seite erklärt'. Keine Floskeln.",
+        "FAQ (3-4): z. B. Wie lang ist das <Name> Video zu <Stichwort>? Wo kann ich es ansehen? Was kostet es? Gibt es mehr Videos von <Name>?",
     ])
 
 
 def mock_content(m: dict, v: dict) -> dict:
     n = m["name"]
     body = (f"Dieses {n} Video ist {v.get('duration') or 'einige Minuten'} lang. " * 12).strip()
-    return {"seo_title": f"{n} Video: {v['title'][:30]}", "meta_description": f"{n} Video ({v.get('duration')}) bei Visit-X: Infos, Länge und so schaust du es mit Bonus.",
+    return {"meta_description": f"{n} Video ({v.get('duration')}) bei Visit-X: Infos, Länge und so schaust du es mit Bonus.",
             "intro": f"Dieses {n} Video stellen wir dir hier vor.", "cover_line": "Neues Video",
             "sections": [{"h2": f"Worum es im {n} Video geht", "body": body}, {"h2": f"So schaust du das {n} Video", "body": body}],
             "faq": [{"q": "Wie lang ist das Video?", "a": f"{v.get('duration')} Minuten."}] * 3}
@@ -272,7 +358,7 @@ def mock_content(m: dict, v: dict) -> dict:
 def check(c: dict, m: dict, v: dict) -> list[str]:
     from . import quality
     issues = []
-    text = " ".join([c.get("seo_title", ""), c.get("meta_description", ""), c.get("intro", "")] +
+    text = " ".join([c.get("meta_description", ""), c.get("intro", "")] +
                     [s["body"] + " " + s["h2"] for s in c.get("sections", [])] + [f["q"] + " " + f["a"] for f in c.get("faq", [])])
     if quality.EXPLICIT.search(text):
         issues.append("explizite Wörter")
@@ -318,7 +404,7 @@ def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
         for attempt in range(2):
             try:
                 c = mock_content(m, v) if mock else gen.ask_json(llm_cfg, VIDEO_SYSTEM, build_prompt(m, v, facts), VIDEO_SCHEMA)
-                c = gen.clean_content(c) | {"seo_title": gen.clean_text(c.get("seo_title", "")),
+                c = gen.clean_content(c) | {"seo_title": seo_title(m, v), "h1": f"{clean_title(v['title'])} – {m['name']} Video",
                                             "cover_line": gen.clean_text(c.get("cover_line", ""))[:26]}
             except Exception as e:
                 msgs.append(f"  [{slug}/{v['id']}] Fehler: {type(e).__name__}: {e}")
