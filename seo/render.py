@@ -224,11 +224,21 @@ def build_site(cfg: dict, store) -> dict:
     urls += [(f"{base}/themen/{t}/", max(pages[i["slug"]]["published_at"] for i in groups[t])) for t in hub_topics]
     urls += [(f"{base}/{s}/", pages[s].get("modified_at") or pages[s]["published_at"]) for s in contents]
     urls += video_urls
-    sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
-               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    sitemap += [f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls]
-    sitemap.append("</urlset>")
-    write("sitemap.xml", "\n".join(sitemap) + "\n")
+    def _sm(items):
+        out = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+        out += [f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in items]
+        return "\n".join(out + ["</urlset>"]) + "\n"
+    model_urls = {f"{base}/{s}/" for s in contents if pages[s].get("topic") == modelmod.TOPIC} | {f"{base}/models/"}
+    vid_set = {u for u, _ in video_urls}
+    parts = {"sitemap-seiten.xml": [x for x in urls if x[0] not in model_urls and x[0] not in vid_set],
+             "sitemap-models.xml": [x for x in urls if x[0] in model_urls],
+             "sitemap-videos.xml": [x for x in urls if x[0] in vid_set]}
+    idx = ['<?xml version="1.0" encoding="UTF-8"?>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for name, items in parts.items():
+        if items:
+            write(name, _sm(items))
+            idx.append(f"  <sitemap><loc>{base}/{name}</loc><lastmod>{max(d for _, d in items)}</lastmod></sitemap>")
+    write("sitemap.xml", "\n".join(idx + ["</sitemapindex>"]) + "\n")
     nowkey = (cfg.get("indexnow") or {}).get("key")
     if nowkey and (cfg.get("indexnow") or {}).get("enabled"):
         write(f"{nowkey}.txt", nowkey)

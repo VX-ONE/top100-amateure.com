@@ -3,6 +3,10 @@
 {% set items = [] %}{% for r in vids %}{% set _ = items.append({"@type": "ListItem", "position": loop.index, "url": canonical.split("/" + model_slug + "/")[0] + r.url, "name": r.title}) %}{% endfor %}
 <script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
   {"@type": "CollectionPage", "name": title, "url": canonical, "inLanguage": "de"},
+  {"@type": "BreadcrumbList", "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": site.name, "item": canonical.split("/" + model_slug + "/")[0] + "/"},
+    {"@type": "ListItem", "position": 2, "name": m.name, "item": canonical.split("/videos/")[0] + "/"},
+    {"@type": "ListItem", "position": 3, "name": m.name + " Videos", "item": canonical}]},
   {"@type": "ItemList", "itemListElement": items}]}|tojson }}</script>
 {% endblock %}
 {% block main %}

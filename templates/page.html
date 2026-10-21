@@ -26,7 +26,7 @@
   <nav class="mtabs" aria-label="{{ model_name }}">
     <a class="on" href="/{{ slug }}/" aria-current="page">Profil</a>
     {% if vids %}<a href="/{{ slug }}/videos/">▶ Alle {{ vids_total }} Videos von {{ model_name }}</a>{% endif %}
-    {% if ctas %}<a class="ext" href="{{ ctas[0].url }}" rel="sponsored nofollow noopener" target="_blank">Livecam &amp; Chat</a>{% endif %}
+    {% if ctas %}<a class="ext" href="{{ ctas[0].url }}" rel="sponsored nofollow noopener" target="_blank">Zu {{ model_name }} bei {{ provider }}</a>{% endif %}
   </nav>
   {% endif %}
   <p class="meta">Stand: {{ published }}</p>

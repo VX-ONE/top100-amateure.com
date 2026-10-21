@@ -297,6 +297,13 @@ def clean_title(t: str) -> str:
     return (t[0].upper() + t[1:]) if t else "Video"
 
 
+def trim(t: str, limit: int) -> str:
+    t = (t or "").strip()
+    if len(t) <= limit:
+        return t
+    return t[:limit].rsplit(" ", 1)[0].rstrip(".,:;–- ") + " …"
+
+
 def title_core(t: str, limit: int) -> str:
     t = clean_title(t).rstrip(".,:;–- ")
     if len(t) <= limit:
@@ -482,7 +489,13 @@ def collect(cfg: dict, store) -> dict[str, dict]:
                 continue
             vids.append({**v, "title": clean_title(v["title"]), "c": c, "url": f"/{slug}/videos/{page_slug(v)}/", "img": f"/img/v/{v['id']}.svg",
                          "link": deeplink(cfg, v["vx_path"]), "secs": mmss(v.get("duration", ""))})
-        vids.sort(key=lambda x: (x.get("date", ""), x["id"]), reverse=True)
+        vids.sort(key=lambda x: (x.get("date", ""), int(x["id"])), reverse=True)
+        seen = {}
+        for x in vids:   # doppelte Seitentitel (z. B. Serien) -> vollen Titel verwenden
+            seen.setdefault(x["c"]["seo_title"], []).append(x)
+        for t, xs in seen.items():
+            for x in xs:
+                x["title_tag"] = t if len(xs) == 1 else f"{clean_title(x['title'])} – {m['name']} Video"
         if vids:
             out[slug] = {"model": m, "videos": vids}
     return out
@@ -497,16 +510,18 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
         for i, v in enumerate(vids):
             (site_dir / "img" / "v" / f"{v['id']}.svg").write_text(
                 video_svg(m["name"], v["c"].get("cover_line") or "Neues Video", v.get("duration", "")), encoding="utf-8")
-            related = [x for x in vids if x["id"] != v["id"]][:6]
+            n = len(vids)   # rotierendes Fenster: jedes Video bekommt Links von seinen Nachbarn
+            related = [vids[(i + k) % n] for k in range(1, min(7, n))]
+            prev_v, next_v = (vids[i - 1] if i > 0 else None), (vids[i + 1] if i + 1 < n else None)
             write(v["url"].strip("/") + "/index.html", vt.render(
-                **ctx, v=v, c=v["c"], m=m, model_slug=slug, related=related, canonical=base + v["url"],
-                robots="index,follow", title=v["c"]["seo_title"], description=v["c"]["meta_description"],
+                **ctx, v=v, c=v["c"], m=m, model_slug=slug, related=related, prev_v=prev_v, next_v=next_v, canonical=base + v["url"],
+                robots="index,follow", title=v["title_tag"], description=trim(v["c"]["meta_description"], 158),
                 og_image="", og_type="article"))
             urls.append((base + v["url"], v.get("published_at") or date.today().isoformat()))
         write(f"{slug}/videos/index.html", it.render(
             **ctx, m=m, model_slug=slug, vids=vids, model_link=deeplink(cfg, f"/de/amateur/{platform(m)}/videos/"),
             canonical=f"{base}/{slug}/videos/", robots="index,follow",
-            title=f"{m['name']} Videos: die neuesten Clips im Überblick",
+            title=f"{m['name']} Videos: alle {len(vids)} neuen Clips im Überblick",
             description=f"Alle neuen {m['name']} Videos bei Visit-X: Titel, Länge und Datum im Überblick. Direkt ansehen mit 100 % Aufladebonus.",
             og_image=""))
         urls.append((f"{base}/{slug}/videos/", max(v.get("published_at", "") for v in vids) or date.today().isoformat()))

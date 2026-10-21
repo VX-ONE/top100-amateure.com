@@ -157,3 +157,7 @@ summary h3{font-size:16px;font-weight:600}
 .mtabs a.on{background:var(--accent);color:var(--accent-fg)}
 .mtabs a.ext{border-color:var(--line);color:var(--fg)}
 @media (max-width:600px){.mtabs a{flex:1 1 auto;justify-content:center;padding:10px 12px}}
+
+.pager{display:flex;justify-content:space-between;gap:12px;margin:22px 0 8px;font-size:15px}
+.pager a{flex:1 1 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--fg);background:var(--card)}
+.pager a[rel=next]{text-align:right}

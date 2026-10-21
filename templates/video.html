@@ -47,7 +47,8 @@
   <div class="grid">{% for r in related %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ m.name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
   </section>
   {% endif %}
-  <p><a class="more" href="/{{ model_slug }}/">&lsaquo; Zurück zum Profil von {{ m.name }}</a></p>
+  <nav class="pager" aria-label="Weitere Videos">{% if prev_v %}<a href="{{ prev_v.url }}" rel="prev">&lsaquo; {{ prev_v.title }}</a>{% endif %}{% if next_v %}<a href="{{ next_v.url }}" rel="next">{{ next_v.title }} &rsaquo;</a>{% endif %}</nav>
+  <p><a class="more" href="/{{ model_slug }}/videos/">Alle {{ m.name }} Videos</a> · <a class="more" href="/{{ model_slug }}/">Profil von {{ m.name }}</a></p>
 </article>
 <div class="stickycta"><a class="btn" href="{{ v.link }}" rel="sponsored nofollow noopener" target="_blank">▶ Zum Video{% if bonus %} · 🎁 100 %{% endif %}</a><span>Werbung · 18+</span></div>
 {% endblock %}

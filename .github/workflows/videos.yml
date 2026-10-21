@@ -13,6 +13,10 @@ on:
         description: "Maximal so viele Videotexte erzeugen (leer = config)"
         type: string
         default: ""
+      ping_all:
+        description: "Alle URLs per IndexNow melden"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -41,6 +45,8 @@ jobs:
       - name: Neue Videos einlesen, Seiten erzeugen, veröffentlichen
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          PING: ${{ inputs.ping_all && '--ping-all' || '' }}
           SKIP: ${{ inputs.skip_scrape && '--skip-scrape' || '' }}
           MAX: ${{ inputs.max && format('--max {0}', inputs.max) || '' }}
-        run: python -m seo.cli videos $SKIP $MAX
+        run: python -m seo.cli videos $SKIP $MAX $PING

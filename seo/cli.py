@@ -432,6 +432,23 @@ def cmd_videos(cfg, args) -> int:
         print("Veröffentlichung übersprungen.")
         return 0
     print(publish.publish(cfg, st.get("erzeugt", 0)))
+    base = cfg["site"]["base_url"].rstrip("/")
+    if args.ping_all:
+        import re as _re
+        site = Path(cfg["_site"])
+        urls = [u for f in sorted(site.glob("sitemap-*.xml")) for u in _re.findall(r"<loc>([^<]+)</loc>", f.read_text(encoding="utf-8"))]
+    else:
+        urls = [base + v["url"] for d in vidmod.collect(cfg, store).values() for v in d["videos"]
+                if v.get("published_at") == today]
+        if urls:
+            urls += [f"{base}/videos/"]
+    print(indexnow.submit(cfg, urls))
+    if urls:
+        try:
+            svc = gsc.service(cfg)
+            print("Sitemap eingereicht:", gsc.submit_sitemap(cfg, svc) if svc else "keine Search-Console-Zugangsdaten")
+        except Exception as e:
+            print(f"Sitemap-Einreichung fehlgeschlagen: {e}")
     return 0
 
 
@@ -483,6 +500,7 @@ def main(argv=None) -> int:
     p.add_argument("--skip-scrape", action="store_true", help="nur Texte erzeugen und bauen")
     p.add_argument("--only", nargs="*", help="nur diese Model-Slugs einlesen")
     p.add_argument("--max", type=int, help="maximal so viele Videotexte in diesem Lauf erzeugen")
+    p.add_argument("--ping-all", action="store_true", help="alle Sitemap-URLs per IndexNow melden")
     p.add_argument("--no-publish", action="store_true")
     sub.add_parser("build", help="Seite neu bauen")
     sub.add_parser("status", help="Stand anzeigen")
