@@ -9,6 +9,11 @@
 <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/videos/">Videos</a> &rsaquo; <a href="/{{ model_slug }}/">{{ m.name }}</a> &rsaquo; Videos</nav>
 <section class="landing slim" style="--c:#be123c">
   <h1>{{ m.name }} Videos: die neuesten Clips</h1>
+  <nav class="mtabs" aria-label="{{ m.name }}">
+    <a href="/{{ model_slug }}/">Profil</a>
+    <a class="on" href="/{{ model_slug }}/videos/" aria-current="page">▶ Alle {{ vids|length }} Videos</a>
+    {% if model_link %}<a class="ext" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">Bei {{ provider }} ansehen</a>{% endif %}
+  </nav>
   <p class="lead">Hier findest du die neuesten {{ m.name }} Videos bei {{ provider }} mit Länge und Datum. Jedes Video hat eine eigene Seite mit Infos und dem direkten Link{% if bonus %}, inklusive {{ bonus.badge }} über unseren Link{% endif %}.</p>
 </section>
 {% if model_link %}<p><a class="btn" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">▶ Alle {{ m.name }} Videos bei {{ provider }}</a></p>{% endif %}

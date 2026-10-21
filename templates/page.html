@@ -22,6 +22,13 @@
 <article class="article">
   <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/{{ section.path }}/">{{ section.label }}</a>{% if not is_model %} &rsaquo; <a href="/themen/{{ meta.topic }}/">{{ topic_label }}</a>{% endif %}</nav>
   <h1>{{ c.h1 }}</h1>
+  {% if is_model %}
+  <nav class="mtabs" aria-label="{{ model_name }}">
+    <a class="on" href="/{{ slug }}/" aria-current="page">Profil</a>
+    {% if vids %}<a href="/{{ slug }}/videos/">▶ Alle {{ vids_total }} Videos von {{ model_name }}</a>{% endif %}
+    {% if ctas %}<a class="ext" href="{{ ctas[0].url }}" rel="sponsored nofollow noopener" target="_blank">Livecam &amp; Chat</a>{% endif %}
+  </nav>
+  {% endif %}
   <p class="meta">Stand: {{ published }}</p>
   {% if image %}<figure class="hero"><img src="{{ image.svg }}" alt="{{ image.alt }}" width="1200" height="630" fetchpriority="high"></figure>{% endif %}
   <div class="intro">{{ c.intro|md|safe }}</div>
@@ -65,7 +72,7 @@
   </section>
 
   {% if vids %}
-  <section class="block">
+  <section class="block" id="videos">
     <div class="block-head"><h2>Neueste {{ model_name }} Videos</h2><a class="more" href="/{{ slug }}/videos/">Alle {{ vids_total }} Videos &rsaquo;</a></div>
     <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ model_name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
   </section>

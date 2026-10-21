@@ -150,3 +150,10 @@ summary h3{font-size:16px;font-weight:600}
 .vmeta{list-style:none;padding:0;margin:8px 0 16px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;color:var(--muted)}
 .vcta{background:var(--grad);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;text-align:center}
 .vcta .btn{font-size:17px}.vcta .bonus-big{margin:12px 0 2px}
+
+/* Model-Menü (Profil | Videos | Livecam) */
+.mtabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.mtabs a{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);font-weight:700;font-size:15px;text-decoration:none;background:var(--bg)}
+.mtabs a.on{background:var(--accent);color:var(--accent-fg)}
+.mtabs a.ext{border-color:var(--line);color:var(--fg)}
+@media (max-width:600px){.mtabs a{flex:1 1 auto;justify-content:center;padding:10px 12px}}
