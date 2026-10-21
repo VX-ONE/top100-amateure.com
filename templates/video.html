@@ -35,6 +35,7 @@
   {% for s in c.sections %}
   <section><h2>{{ s.h2 }}</h2>{{ s.body|md|safe }}</section>
   {% endfor %}
+  {% if key_guides %}<aside class="guides-box"><p class="block-title">Gut zu wissen vor dem Anmelden</p><ul>{% for g in key_guides[:5] %}<li><a href="/{{ g.slug }}/">{{ g.label }}</a></li>{% endfor %}</ul></aside>{% endif %}
   <section class="faq"><h2>Fragen zum {{ m.name }} Video</h2>
   {% for f in c.faq %}<details><summary><h3>{{ f.q }}</h3></summary>{{ f.a|md|safe }}</details>{% endfor %}
   </section>

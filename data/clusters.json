@@ -387,7 +387,8 @@
     "impressions": 0,
     "keywords": [
       "visit x kosten",
-      "visit x preise"
+      "visit x preise",
+      "kostet visit x geld"
     ],
     "primary": "visit x kosten",
     "slug": "visit-x-kosten",
@@ -401,7 +402,9 @@
     "impressions": 0,
     "keywords": [
       "visit x test",
-      "visit x erfahrungen"
+      "visit x erfahrungen",
+      "visit x was ist das",
+      "was ist visit x"
     ],
     "primary": "visit x erfahrungen",
     "slug": "visit-x-erfahrungen",
@@ -442,7 +445,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "visit x kündigen"
+      "visit x kündigen",
+      "visit x vip kündigen",
+      "visit x abo kündigen"
     ],
     "primary": "visit x kündigen",
     "slug": "visit-x-kuendigen",
@@ -455,7 +460,9 @@
     "fail_count": 0,
     "impressions": 0,
     "keywords": [
-      "visit x account löschen"
+      "visit x account löschen",
+      "visit x konto löschen",
+      "visit x profil löschen"
     ],
     "primary": "visit x account löschen",
     "slug": "visit-x-account-loeschen",
@@ -469,7 +476,9 @@
     "impressions": 0,
     "keywords": [
       "visit x coins",
-      "visit x guthaben aufladen"
+      "visit x guthaben aufladen",
+      "visit x coins kaufen",
+      "visit x guthaben kaufen"
     ],
     "primary": "visit x coins",
     "slug": "visit-x-coins",
@@ -496,7 +505,10 @@
     "impressions": 0,
     "keywords": [
       "visit x anmeldung",
-      "visit x registrieren"
+      "visit x registrieren",
+      "visit x benutzername vergessen",
+      "visit x login",
+      "visit x passwort vergessen"
     ],
     "primary": "visit x anmeldung",
     "slug": "visit-x-anmeldung",

@@ -9,6 +9,7 @@
    "dateModified": meta.modified_at or meta.published_at, "inLanguage": "de", "mainEntityOfPage": canonical,
    "publisher": {"@type": "Organization", "name": site.name, "url": canonical.rsplit("/", 2)[0] + "/", "logo": {"@type": "ImageObject", "url": canonical.rsplit("/", 2)[0] + "/logo.png"}}, "author": {"@type": "Organization", "name": site.name + " Redaktion"}} %}
 {% if og_image %}{% set _ = article.update({"image": og_image}) %}{% endif %}
+{% if is_model and vx_profile %}{% set _ = article.update({"about": {"@type": "Person", "name": model_name, "url": vx_profile}}) %}{% endif %}
 <script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
   article,
   {"@type": "BreadcrumbList", "itemListElement": [

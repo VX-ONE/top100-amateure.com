@@ -64,7 +64,7 @@ SECTIONS = [
     {"key": "models", "path": "models", "label": "Top-Models", "color": "#be123c", "topics": ["profile"],
      "title": "Top-Models bei Visit-X: alle Amateur-Models im Überblick",
      "intro": "Die beliebtesten Amateur-Models bei Visit-X. Jedes Model hat eine eigene Seite mit Steckbrief, Videos, Livecam und Chat."},
-    {"key": "angebote", "path": "live-cams-videos", "label": "Live-Cams & Videos", "color": "#ea580c",
+    {"key": "angebote", "path": "live-cams-videos", "label": "Live-Cams & Kategorien", "color": "#ea580c",
      "topics": ["livecams", "webcam-models", "videos", "amateure", "nischen"],
      "title": "Live-Cams, Amateur-Videos und Kategorien bei Visit-X",
      "intro": "Live-Cams, Webcam-Models, Videos und Amateur-Kategorien: was es gibt, wie es funktioniert und wie du das Passende findest."},
@@ -77,6 +77,13 @@ SECTIONS = [
 
 def section_of(topic: str) -> dict:
     return next((x for x in SECTIONS if topic in x["topics"]), SECTIONS[-1])
+
+
+def _vx_profile(cfg: dict, name: str) -> str:
+    m = modelmod.get_model(cfg, name) if name else None
+    if not m:
+        return ""
+    return f"https://www.visit-x.net/de/amateur/{(m.get('platform_name') or m['name']).lower()}/"
 
 
 def build_site(cfg: dict, store) -> dict:
@@ -118,6 +125,13 @@ def build_site(cfg: dict, store) -> dict:
                                          if (root / "static" / f).exists())).hexdigest()[:10]
     ctx["nav"] = [{"topic": t, "label": labels.get(t, t)} for t in [*cfg["topics"]] if t in hubs]
     ctx["sections"] = SECTIONS
+    _key = ["visit-x-kosten", "visit-x-erfahrungen", "visit-x-serioes", "visit-x-anmeldung", "visit-x-kostenlos-testen",
+            "visit-x-zahlungsmethoden", "visit-x-coins", "visit-x-kuendigen"]
+    _lab = {"visit-x-kosten": "Visit-X Kosten", "visit-x-erfahrungen": "Visit-X Erfahrungen", "visit-x-serioes": "Ist Visit-X seriös?",
+            "visit-x-anmeldung": "Visit-X Anmeldung", "visit-x-kostenlos-testen": "Visit-X kostenlos testen",
+            "visit-x-zahlungsmethoden": "Visit-X Zahlungsmethoden", "visit-x-coins": "Visit-X Coins & Tokens",
+            "visit-x-kuendigen": "Visit-X kündigen"}
+    ctx["key_guides"] = [{"slug": k, "label": _lab[k]} for k in _key if k in pages]
 
     def write(rel: str, html: str) -> None:
         target = site_dir / rel
@@ -165,7 +179,7 @@ def build_site(cfg: dict, store) -> dict:
             thumbs[slug] = image["svg"]
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
-            ctas=ctas, is_model=is_model, model_cards=others, vids=(collected.get(slug) or {}).get("videos", [])[:6], vids_total=len((collected.get(slug) or {}).get("videos", [])), model_name=meta.get("model", ""),
+            ctas=ctas, is_model=is_model, model_cards=others, vx_profile=_vx_profile(cfg, meta.get("model", "")) if is_model else "", vids=(collected.get(slug) or {}).get("videos", [])[:6], vids_total=len((collected.get(slug) or {}).get("videos", [])), model_name=meta.get("model", ""),
             related=rel, topic_label=labels.get(meta["topic"], ""), section=section_of(meta["topic"]),
             hub_url=(f"{base}/models/" if is_model else f"{base}/themen/{meta['topic']}/"),
             published=fmt_date(meta.get("modified_at") or meta["published_at"]), robots="index,follow",
@@ -188,7 +202,7 @@ def build_site(cfg: dict, store) -> dict:
         write(f"themen/{t}/index.html", hub_tpl.render(
             **ctx, topic=t, label=labels.get(t, t), intro=intros.get(t, ""), items=groups[t], section=section_of(t),
             canonical=f"{base}/themen/{t}/", robots="index,follow", title=f"{labels.get(t, t)} bei Visit-X: Ratgeber | {cfg['site']['name']}",
-            description=(intros.get(t) or labels.get(t, t))[:160], og_image=""))
+            description=((intros.get(t) or labels.get(t, t)).rstrip(".") + f". {len(groups[t])} Ratgeber-Artikel zu {labels.get(t, t)} im Überblick.")[:158], og_image=""))
     sec_tpl = env.get_template("section.html")
     sec_data = []
     for sec in SECTIONS:

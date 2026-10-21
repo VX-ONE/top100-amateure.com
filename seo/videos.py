@@ -317,7 +317,8 @@ def title_core(t: str, limit: int) -> str:
 
 def seo_title(m: dict, v: dict) -> str:
     suffix = f" – {m['name']} Video"
-    return title_core(v["title"], max(24, 68 - len(suffix))) + suffix
+    t = title_core(v["title"], max(24, 68 - len(suffix))) + suffix
+    return t + " bei Visit-X" if len(t) < 40 else t
 
 
 def topic_hints(title: str, name: str) -> list[str]:
@@ -491,8 +492,8 @@ def collect(cfg: dict, store) -> dict[str, dict]:
                          "link": deeplink(cfg, v["vx_path"]), "secs": mmss(v.get("duration", ""))})
         vids.sort(key=lambda x: (x.get("date", ""), int(x["id"])), reverse=True)
         seen = {}
-        for x in vids:   # doppelte Seitentitel (z. B. Serien) -> vollen Titel verwenden
-            seen.setdefault(x["c"]["seo_title"], []).append(x)
+        for x in vids:   # Seitentitel immer frisch bilden; doppelte (z. B. Serien) -> vollen Titel verwenden
+            seen.setdefault(seo_title(m, x), []).append(x)
         for t, xs in seen.items():
             for x in xs:
                 x["title_tag"] = t if len(xs) == 1 else f"{clean_title(x['title'])} – {m['name']} Video"

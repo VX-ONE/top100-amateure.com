@@ -161,3 +161,16 @@ summary h3{font-size:16px;font-weight:600}
 .pager{display:flex;justify-content:space-between;gap:12px;margin:22px 0 8px;font-size:15px}
 .pager a{flex:1 1 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--fg);background:var(--card)}
 .pager a[rel=next]{text-align:right}
+
+/* Mobile: alle Bereiche sichtbar (2x2) statt seitlich scrollen */
+@media (max-width:760px){
+  .topnav{display:grid;grid-template-columns:1fr 1fr;gap:8px;overflow:visible;white-space:normal;padding-bottom:6px}
+  .topnav a{justify-content:center;padding:10px 8px;border:1px solid var(--line);border-radius:10px;min-height:44px;font-size:14px;text-align:center}
+  .footnav a{display:inline-block;padding:8px 6px}
+  .crumbs a{display:inline-block;padding:6px 0}
+}
+.footnav.guides{margin-top:10px;font-size:14px}
+.footnav.guides strong{margin-right:6px}
+.guides-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 18px 10px;margin:22px 0}
+.guides-box ul{margin:6px 0 0;padding-left:18px}.guides-box li{margin:6px 0}
+@media (max-width:760px){.topnav{gap:6px}.topnav a{padding:7px 6px;min-height:40px;font-size:13px;white-space:nowrap;gap:5px}.site-header .wrap{padding-bottom:4px}}
