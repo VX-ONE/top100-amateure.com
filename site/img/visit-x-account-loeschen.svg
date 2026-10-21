@@ -1,1 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f766e" /><stop offset="1" stop-color="#042f2e" /></linearGradient></defs><rect width="1200" height="630" fill="url(#bg)" /><circle cx="1050" cy="90" r="160" fill="#ffffff" opacity="0.06" /><circle cx="100" cy="560" r="140" fill="#ffffff" opacity="0.06" /><g><rect x="90" y="70" width="520" height="340" rx="28" fill="#ffffff" /><rect x="90" y="70" width="520" height="70" rx="28" fill="#99f6e4" /><rect x="90" y="110" width="520" height="30" fill="#99f6e4" /><circle cx="145" cy="105" r="10" fill="#0f766e" /><circle cx="180" cy="105" r="10" fill="#0f766e" opacity="0.6" /><circle cx="215" cy="105" r="10" fill="#0f766e" opacity="0.3" /><g fill="none" stroke="#0f766e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><polyline points="130,195 148,214 180,176" /><polyline points="130,277 148,296 180,258" /></g><rect x="215" y="187" width="320" height="22" rx="11" fill="#042f2e" opacity="0.8" /><rect x="215" y="269" width="270" height="22" rx="11" fill="#042f2e" opacity="0.8" /><rect x="128" y="338" width="56" height="56" rx="12" fill="none" stroke="#0f766e" stroke-width="8" /><rect x="215" y="351" width="220" height="22" rx="11" fill="#042f2e" opacity="0.35" /></g><g fill="#99f6e4"><polygon points="660,200 760,200 760,170 830,240 760,310 760,280 660,280" /><polygon points="860,200 960,200 960,170 1030,240 960,310 960,280 860,280" /></g><g><circle cx="1105" cy="240" r="58" fill="#ffffff" /><polyline points="1078,240 1098,262 1134,218" fill="none" stroke="#0f766e" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /></g><text x="90" y="560" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="110" fill="#ffffff">Schritt für Schritt</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0f766e" />
+<stop offset="1" stop-color="#042f2e" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1080" cy="90" r="180" fill="#ffffff" opacity="0.06" />
+<circle cx="90" cy="560" r="150" fill="#ffffff" opacity="0.06" />
+<g>
+<rect x="70" y="70" width="330" height="200" rx="24" fill="#ffffff" />
+<circle cx="140" cy="170" r="42" fill="#0f766e" />
+<polyline points="118,170 134,188 164,150" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="205" y="140" width="160" cy="0" height="16" rx="8" fill="#0f766e" opacity="0.5" />
+<rect x="205" y="176" width="110" height="16" rx="8" fill="#0f766e" opacity="0.3" />
+</g>
+<g>
+<rect x="435" y="70" width="330" height="200" rx="24" fill="#ffffff" />
+<circle cx="505" cy="170" r="42" fill="#0f766e" />
+<polyline points="483,170 499,188 529,150" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="570" y="140" width="160" height="16" rx="8" fill="#0f766e" opacity="0.5" />
+<rect x="570" y="176" width="110" height="16" rx="8" fill="#0f766e" opacity="0.3" />
+</g>
+<g>
+<rect x="800" y="70" width="330" height="200" rx="24" fill="#ffffff" />
+<circle cx="870" cy="170" r="42" fill="#0f766e" />
+<polyline points="848,170 864,188 894,150" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="935" y="140" width="160" height="16" rx="8" fill="#0f766e" opacity="0.5" />
+<rect x="935" y="176" width="110" height="16" rx="8" fill="#0f766e" opacity="0.3" />
+</g>
+<polygon points="402,150 424,170 402,190" fill="#5eead4" />
+<polygon points="767,150 789,170 767,190" fill="#5eead4" />
+<text x="600" y="430" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="116" fill="#ffffff">Account löschen</text>
+<rect x="300" y="470" width="600" height="10" rx="5" fill="#5eead4" />
+<text x="600" y="560" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="48" fill="#99f6e4">Schritt für Schritt</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9" /><stop offset="1" stop-color="#1e1b4b" /></linearGradient>
+<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a78bfa" /><stop offset="1" stop-color="#4c1d95" /></linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1100" cy="560" r="160" fill="#ffffff" opacity="0.06" />
+<circle cx="80" cy="80" r="120" fill="#ffffff" opacity="0.06" />
+<text x="600" y="130" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="88" fill="#ffffff" text-anchor="middle">Livecam oder Video?</text>
+<g>
+<rect x="130" y="210" width="400" height="270" rx="22" fill="#0f0a2e" />
+<rect x="148" y="228" width="364" height="234" rx="10" fill="url(#sc)" />
+<rect x="148" y="480" width="0" height="0" />
+<polygon points="300,480 360,480 375,540 285,540" fill="#0f0a2e" />
+<rect x="240" y="538" width="180" height="16" rx="8" fill="#0f0a2e" />
+<rect x="168" y="246" width="110" height="42" rx="21" fill="#ef4444" />
+<circle cx="194" cy="267" r="9" fill="#ffffff" />
+<text x="212" y="278" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="30" fill="#ffffff">LIVE</text>
+<path d="M330 420 C280 385 285 340 315 340 C327 340 330 350 330 350 C330 350 335 340 347 340 C377 340 380 385 330 420 Z" fill="#ffffff" />
+</g>
+<g>
+<rect x="85" y="165" width="130" height="70" rx="18" fill="#ffffff" />
+<polygon points="120,230 120,262 150,230" fill="#ffffff" />
+<circle cx="120" cy="200" r="8" fill="#6d28d9" /><circle cx="150" cy="200" r="8" fill="#6d28d9" /><circle cx="180" cy="200" r="8" fill="#6d28d9" />
+</g>
+<g>
+<rect x="670" y="230" width="390" height="250" rx="22" fill="#ffffff" />
+<rect x="690" y="250" width="350" height="170" rx="10" fill="#312e81" />
+<circle cx="865" cy="335" r="48" fill="#ffffff" />
+<polygon points="850,310 850,360 892,335" fill="#6d28d9" />
+<rect x="690" y="445" width="350" height="12" rx="6" fill="#c4b5fd" />
+<rect x="690" y="445" width="200" height="12" rx="6" fill="#6d28d9" />
+<circle cx="890" cy="451" r="12" fill="#6d28d9" />
+</g>
+<g>
+<rect x="960" y="170" width="150" height="70" rx="18" fill="#f9a8d4" />
+<polygon points="1060,235 1090,235 1080,266" fill="#f9a8d4" />
+<path d="M1035 218 C1005 198 1008 180 1022 180 C1030 180 1035 187 1035 187 C1035 187 1040 180 1048 180 C1062 180 1065 198 1035 218 Z" fill="#9d174d" />
+</g>
+<g>
+<circle cx="600" cy="380" r="52" fill="#fbbf24" />
+<text x="600" y="402" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="62" fill="#1e1b4b" text-anchor="middle">?</text>
+</g>
+<g>
+<rect x="760" y="520" width="150" height="70" rx="14" fill="#0f0a2e" />
+<rect x="790" y="506" width="50" height="20" rx="6" fill="#0f0a2e" />
+<circle cx="835" cy="555" r="26" fill="#a78bfa" />
+<circle cx="835" cy="555" r="14" fill="#1e1b4b" />
+<circle cx="885" cy="538" r="6" fill="#ef4444" />
+</g>
+</svg>

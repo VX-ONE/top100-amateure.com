@@ -6,32 +6,27 @@
 </linearGradient>
 </defs>
 <rect width="1200" height="630" fill="url(#bg)" />
-<circle cx="1050" cy="90" r="160" fill="#ffffff" opacity="0.06" />
-<circle cx="100" cy="600" r="200" fill="#ffffff" opacity="0.05" />
-<text x="70" y="330" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="130" fill="#ffffff">Kündigen</text>
-<rect x="70" y="360" width="300" height="10" rx="5" fill="#ffd45c" />
+<circle cx="1080" cy="90" r="150" fill="#ffffff" opacity="0.06" />
+<circle cx="100" cy="600" r="120" fill="#ffffff" opacity="0.06" />
+<text x="70" y="250" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="120" fill="#ffffff">KÜNDIGEN</text>
+<rect x="70" y="285" width="260" height="10" rx="5" fill="#f4c542" />
 <g>
-<rect x="90" y="540" width="160" height="22" fill="#d68f0f" />
-<ellipse cx="170" cy="562" rx="80" ry="24" fill="#d68f0f" />
-<ellipse cx="170" cy="540" rx="80" ry="24" fill="#ffd45c" />
-<rect x="90" y="518" width="160" height="22" fill="#d68f0f" />
-<ellipse cx="170" cy="540" rx="80" ry="24" fill="#d68f0f" />
-<ellipse cx="170" cy="518" rx="80" ry="24" fill="#ffd45c" />
-<rect x="90" y="496" width="160" height="22" fill="#d68f0f" />
-<ellipse cx="170" cy="518" rx="80" ry="24" fill="#d68f0f" />
-<ellipse cx="170" cy="496" rx="80" ry="24" fill="#ffd45c" />
-<ellipse cx="170" cy="496" rx="50" ry="13" fill="none" stroke="#d68f0f" stroke-width="5" />
+<circle cx="840" cy="235" r="62" fill="#f4c542" stroke="#c98f10" stroke-width="8" />
+<circle cx="840" cy="235" r="40" fill="none" stroke="#c98f10" stroke-width="5" />
+<text x="840" y="254" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="52" fill="#c98f10">€</text>
+<circle cx="970" cy="205" r="50" fill="#f7d36b" stroke="#c98f10" stroke-width="7" />
+<circle cx="970" cy="205" r="32" fill="none" stroke="#c98f10" stroke-width="4" />
+<text x="970" y="222" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="44" fill="#c98f10">€</text>
 </g>
-<g transform="rotate(-10 900 310)">
-<path d="M760 200 H980 L1080 310 L980 420 H760 Q740 420 740 400 V220 Q740 200 760 200 Z" fill="#ffffff" />
-<circle cx="1010" cy="310" r="16" fill="#7a1735" />
-<line x1="825" y1="255" x2="935" y2="365" stroke="#b91d47" stroke-width="28" stroke-linecap="round" />
-<line x1="935" y1="255" x2="825" y2="365" stroke="#b91d47" stroke-width="28" stroke-linecap="round" />
-</g>
-<circle cx="1010" cy="530" r="55" fill="#d68f0f" />
-<circle cx="1010" cy="524" r="55" fill="#ffd45c" />
-<circle cx="1010" cy="524" r="36" fill="none" stroke="#d68f0f" stroke-width="6" />
-<circle cx="800" cy="545" r="38" fill="#d68f0f" />
-<circle cx="800" cy="540" r="38" fill="#ffd45c" />
-<circle cx="800" cy="540" r="24" fill="none" stroke="#d68f0f" stroke-width="5" />
+<rect x="760" y="300" width="340" height="220" rx="28" fill="#2d0a1a" />
+<rect x="760" y="300" width="340" height="70" rx="28" fill="#7a1535" />
+<rect x="760" y="340" width="340" height="30" fill="#7a1535" />
+<rect x="1010" y="395" width="110" height="76" rx="20" fill="#f4c542" />
+<circle cx="1047" cy="433" r="11" fill="#2d0a1a" />
+<line x1="790" y1="500" x2="980" y2="500" stroke="#b91d47" stroke-width="6" stroke-linecap="round" />
+<polygon points="90,470 150,410 400,410 400,530 150,530" fill="#ffffff" />
+<circle cx="150" cy="470" r="13" fill="#b91d47" />
+<text x="275" y="494" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="72" fill="#b91d47">0 €</text>
+<circle cx="565" cy="470" r="62" fill="none" stroke="#ffffff" stroke-width="16" />
+<line x1="521" y1="514" x2="609" y2="426" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
 </svg>
