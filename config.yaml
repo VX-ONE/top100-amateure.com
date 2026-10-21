@@ -64,13 +64,16 @@ videos:
   params: "w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"   # Partnerdaten, werden an den Video-Link gehängt
   new_per_model_per_run: 10   # höchstens so viele neue Videos je Model und Lauf einlesen
   # Zusätzlich gesperrt (Wortanfang) für Videotitel/-beschreibungen: Familie, Schlaf/Heimlich, Schule, Jugend
-  blocked_terms: [stief, bruder, schwester, papa, vater, tochter, sohn, onkel, tante, cousin, oma, opa, schulm, schüler, schoolgirl,
-                  geweckt, schlaf, schläft, betrunk, heimlich, versteckt, hidden, spycam, zwang, erzwung, vergewalt, inzest,
-                  minderj, teen, lolita, kind, jugend, nachhilfe, daddy, mami, mommy, mein junge, famili, buben, bengel,
-                  schul, mitschül, dorfjugend, junges girl, junge frucht, entjungfert, deflower, weckt, spanner, voyeur, voyer,
-                  hackt, gefilmt ohne, observiert, stalker, ohne erlaubnis, sittenstrolch, ausgenutzt, nutzt es schamlos,
-                  kofferraum, statt anzeige, brauch den job, gummi ab, schwänger, geschwänger, brutal, natursekt, abgepisst, pinkel,
-                  wildpinkler, falle, masche, aus versehen, cheerleader, überraschend abgefickt]
+  # Nur für Videos (unabhängig von der Keyword-Sperrliste): ausgeschlossen bleiben Minderjährigen-Bezug und fehlende
+  # Einwilligung (heimliche Aufnahmen, Schlaf/Rausch, Zwang, Stealthing, Ausnutzen). Stief-/Familien-Rollenspiele unter
+  # Erwachsenen, Natursekt, Voyeur/Exhibitionismus usw. sind erlaubt.
+  blocked_terms: [teen, schülerin, schuelerin, schulmädchen, schulmaedchen, schoolgirl, nachhilfe, minderj, lolita, kind,
+                  jugend, dorfjugend, junges girl, junge frucht, mein junge, buben, bengel, brüderchen, schwesterchen, stiefbrüderchen, stiefschwesterchen,
+                  daddy s kleines, doktorspiel, doktor spielt, inzest,
+                  heimlich gefilmt, versteckte kamera, hidden, spycam, hackt, zugriff auf, geweckt, weckt mich, schläft,
+                  schlafend, im schlaf, betrunk, zwang, erzwung, vergewalt, ohne erlaubnis, gummi ab, schwängertrick,
+                  schwänger-trick, aus versehen, statt anzeige, brauch den job, ausgenutzt, nutzt es schamlos, observiert,
+                  stalker, verfolgt]
 
 models:
   per_day: 8                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)

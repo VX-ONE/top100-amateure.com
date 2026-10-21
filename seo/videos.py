@@ -58,6 +58,11 @@ def settings(cfg: dict) -> dict:
     return s
 
 
+def video_blocked(cfg: dict) -> list[str]:
+    """Eigene Sperrliste für Videos (die Keyword-Sperrliste ist für Themenseiten gedacht und hier zu breit)."""
+    return [normalize(t) for t in settings(cfg)["blocked_terms"] if normalize(t)]
+
+
 def model_pages(cfg: dict, store) -> list[tuple[dict, str]]:
     """(Model, Seiten-Slug) für die ersten N aktiven Models, die bei uns schon eine Profilseite haben."""
     pages = store.pages()
@@ -131,7 +136,7 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
     from playwright.sync_api import sync_playwright
 
     s = settings(cfg)
-    blocked = load_blocked(cfg) + [normalize(t) for t in s["blocked_terms"]]
+    blocked = video_blocked(cfg)
     stats = {"models": 0, "neu": 0, "gesperrt": 0, "fehler": 0}
     with sync_playwright() as p:
         browser = p.chromium.launch()
@@ -341,6 +346,8 @@ def build_prompt(m: dict, v: dict, facts: str) -> str:
         "Abschnitte: 1) Thema und Einordnung dieses Videos (Stichworte, Länge, Format), 2) 'So schaust du das <Name> Video bei Visit-X' "
         "(Euro werden in Tokens umgerechnet, Zahlungsarten, kostenlos anmelden: über unseren Link ist der Gutscheincode für den "
         "100 % Aufladebonus automatisch hinterlegt), 3) optional 'Mehr <Name> Videos und Livecam'.",
+        "Stief-/Familienbegriffe im Titel sind Rollenspiele unter erwachsenen Darstellern: als 'Rollenspiel' oder 'Tabu-Fantasie' "
+        "einordnen, keine echte Verwandtschaft behaupten.",
         "Nicht schreiben: dass ein Datum unbekannt ist, 'laut Seitenbetreiber', 'diese Seite erklärt'. Keine Floskeln.",
         "FAQ (3-4): z. B. Wie lang ist das <Name> Video zu <Stichwort>? Wo kann ich es ansehen? Was kostet es? Gibt es mehr Videos von <Name>?",
     ])
