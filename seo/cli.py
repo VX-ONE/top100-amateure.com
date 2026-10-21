@@ -431,7 +431,7 @@ def cmd_videos(cfg, args) -> int:
     if args.mock or args.no_publish:
         print("Veröffentlichung übersprungen.")
         return 0
-    print(publish.publish(cfg, st.get("erzeugt", 0)))
+    log(publish.publish(cfg, st.get("erzeugt", 0)))
     base = cfg["site"]["base_url"].rstrip("/")
     if args.ping_all:
         import re as _re
@@ -442,13 +442,14 @@ def cmd_videos(cfg, args) -> int:
                 if v.get("published_at") == today]
         if urls:
             urls += [f"{base}/videos/"]
-    print(indexnow.submit(cfg, urls))
+    log(indexnow.submit(cfg, urls))
     if urls:
         try:
             svc = gsc.service(cfg)
-            print("Sitemap eingereicht:", gsc.submit_sitemap(cfg, svc) if svc else "keine Search-Console-Zugangsdaten")
+            log(f"Sitemap eingereicht: {gsc.submit_sitemap(cfg, svc) if svc else 'keine Search-Console-Zugangsdaten'}")
         except Exception as e:
-            print(f"Sitemap-Einreichung fehlgeschlagen: {e}")
+            log(f"Sitemap-Einreichung fehlgeschlagen: {e}")
+    lp.write_text("\n".join(log_lines) + "\n", encoding="utf-8")   # Protokoll inkl. Meldungen (nächster Lauf committet es)
     return 0
 
 
