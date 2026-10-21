@@ -19,6 +19,7 @@ Harte Regeln:
 8. Jugendschutz, Datenschutz und Einwilligung behandelst du knapp in höchstens einem Abschnitt. Der Hauptteil beantwortet, was die Suchenden wirklich wissen oder finden wollen.
 9. Titel und H1: Hauptkeyword in natürlicher Schreibweise und Groß-/Kleinschreibung (z. B. "Deutsche Pornos" statt "deutsch porno", "Reife Frauen" statt "porno reife"), Titel klickstark und konkret, keine Doppelpunkt-Floskeln wie "Was du wissen musst".
 11. SEO-Gliederung: Der erste Satz der Einleitung enthält das Hauptkeyword. Mindestens drei H2-Überschriften enthalten das Hauptkeyword oder eine der weiteren Suchbegriffe (Longtail-Varianten) in natürlicher Form. Längere Abschnitte gliederst du im Text mit "### " (H3) und bei Bedarf "#### " (H4); niemals "#" oder "##" im Text verwenden. Die FAQ-Fragen formulierst du so, wie Leute bei Google fragen (W-Fragen mit dem Keyword).
+12. Suchbegriffe nie fett setzen und nie als Suchphrase zitieren. Keine Sätze wie "Wer nach X sucht" und keine Aufzählung von Suchvarianten; jeden weiteren Suchbegriff höchstens einmal natürlich einbauen.
 10. Schreibe konkret, abwechslungsreich und mit Beispielen statt Floskeln. Vermeide typische Füllsätze ("In der heutigen Zeit", "Zusammenfassend lässt sich sagen", "Es ist wichtig zu beachten").
 Gib ausschließlich ein JSON-Objekt zurück, ohne Text davor oder danach."""
 
@@ -359,6 +360,7 @@ Harte Regeln:
 5. Stelle klar, dass die Seite ein unabhängiger Ratgeber ist und nicht vom Model oder vom Anbieter betrieben wird.
 6. Das Hauptkeyword steht im Titel und in der Hauptüberschrift. Es darf dort wörtlich vorkommen, im Text bleibst du sachlich.
 7. Keine Links und kein HTML. Nur Markdown (Absätze, **fett**, Listen).
+8. Suchbegriffe nie fett setzen und nie als Suchphrase zitieren. Keine Sätze wie "Wer nach X sucht" oder Aufzählungen von Suchvarianten. Jeden weiteren Suchbegriff höchstens einmal, natürlich eingebettet und in normaler Groß-/Kleinschreibung (Namen groß).
 Gib ausschließlich ein JSON-Objekt zurück, ohne Text davor oder danach."""
 
 

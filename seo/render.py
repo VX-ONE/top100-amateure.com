@@ -79,6 +79,25 @@ def section_of(topic: str) -> dict:
     return next((x for x in SECTIONS if topic in x["topics"]), SECTIONS[-1])
 
 
+def _fix_case(c: dict, primary: str) -> dict:
+    """Kleingeschriebenes Haupt-Keyword im Fließtext ('**lana grey**') als Namen schreiben ('**Lana Grey**')."""
+    import re as _r
+    if not primary or primary != primary.lower():
+        return c
+    proper = " ".join(w[:1].upper() + w[1:] for w in primary.split())
+    rx = _r.compile(rf"(?<![\w/.-]){_r.escape(primary)}(?![\w/.-])")
+    bold_kw = _r.compile(r"\*\*([a-zäöüß0-9][a-zäöüß0-9 \-]{2,60})\*\*")   # fett gesetzte Suchvarianten entschärfen
+    def fx(v):
+        if isinstance(v, str):
+            return bold_kw.sub(r"\1", rx.sub(proper, v))
+        if isinstance(v, list):
+            return [fx(x) for x in v]
+        if isinstance(v, dict):
+            return {k: (fx(x) if k not in ("slug", "url", "image") else x) for k, x in v.items()}
+        return v
+    return fx(c)
+
+
 def _vx_profile(cfg: dict, name: str) -> str:
     m = modelmod.get_model(cfg, name) if name else None
     if not m:
@@ -158,6 +177,7 @@ def build_site(cfg: dict, store) -> dict:
         rel = [{"slug": r, "title": contents[r]["h1"]} for r in related.get(slug, [])]
         is_model = meta.get("kind") == modelmod.PAGE_KIND
         if is_model:
+            c = _fix_case(c, meta.get("primary", ""))
             ctas = [{"label": l["label"], "url": l["url"]} for l in modelmod.links_for(cfg, meta.get("model"))]
         else:
             ctas = []

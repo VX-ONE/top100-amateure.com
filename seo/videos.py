@@ -234,6 +234,7 @@ Harte Regeln:
 3. Die Originalbeschreibung NICHT übernehmen oder nah umschreiben, sondern komplett eigene Sätze.
 4. Keine Links, kein HTML, Markdown nur für **fett** und Listen. Keine Überschriften im Fließtext.
 5. Den Bühnennamen immer exakt so schreiben, wie in den DATEN angegeben.
+6. Suchbegriffe nie fett setzen oder als Suchphrase zitieren; keine Sätze wie "Wer nach X sucht".
 Antworte nur über das Werkzeug "antwort"."""
 
 VIDEO_SCHEMA = {

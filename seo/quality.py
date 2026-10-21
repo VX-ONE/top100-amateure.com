@@ -1,6 +1,7 @@
 """Qualitäts-Gate: Seiten, die hier durchfallen, werden nicht veröffentlicht."""
 from __future__ import annotations
 
+import json
 import re
 
 from .keywords import blocked_hit, load_blocked, normalize
@@ -112,6 +113,11 @@ def check(c: dict, cluster: dict, cfg: dict, facts: str, existing_texts: dict[st
     m = EXPLICIT.search(text)
     if m:
         issues.append(f"Zu explizit ('{m.group(0)}'): sachlich und ohne Vulgärsprache formulieren.")
+    raw = json.dumps(c, ensure_ascii=False)
+    stuffed = len(re.findall(r"(?i)\bnach \*\*[^*]{2,60}\*\* (?:sucht|suchst|googelt)|\*\*[a-zäöüß0-9 \-]{3,60}\*\* (?:sucht|suchst)", raw))
+    if stuffed:
+        issues.append("Keyword-Stuffing: keine Sätze wie 'Wer nach **…** sucht' und keine fett gesetzten Suchbegriffe; "
+                      "Suchbegriffe nur natürlich und in normaler Schreibweise einbauen.")
     for phrase in FAKE_EXPERIENCE:
         if phrase in low:
             issues.append(f"Erfundener Erfahrungsbericht ('{phrase}'): bitte neutral als Ratgeber formulieren.")

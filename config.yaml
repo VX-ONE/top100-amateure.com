@@ -176,7 +176,7 @@ gsc:
 limits:
   daily_pages: 5                        # Start klein, erst erhöhen, wenn Seiten indexiert werden
   max_daily_pages: 30                   # harte Obergrenze, auch bei manueller Angabe
-  refresh_per_run: 6           # Seiten aus data/refresh.txt, die pro Lauf neu geschrieben werden
+  refresh_per_run: 10          # Seiten aus data/refresh.txt, die pro Lauf neu geschrieben werden
   max_minutes: 80             # Zeitbremse pro Lauf (Workflow-Timeout ist 120 Minuten)
   max_attempts: 3                       # Generierungsversuche pro Seite
   min_words: 700
@@ -203,7 +203,7 @@ keywords:
   # Reihenfolge der Warteschlange: Zusatzpunkte für Seiten mit Kaufabsicht (Marke + Frage) und für Österreich/Schweiz.
   priority:
     brand: 400000
-    dach: 150000
+    dach: 0                     # 21.10.: je Land 4 Seiten vorhanden, weitere würden kannibalisieren
     topics:
       livecams: 60000
       webcam-models: 60000
