@@ -133,6 +133,10 @@ def build_site(cfg: dict, store) -> dict:
                                "bonus": has_bonus(links[0]["url"])})
     ctx["top_models"] = top_models
     collected = vidmod.collect(cfg, store)
+    ctx["has_videos"] = bool(collected)
+    ctx["videostation"] = cfg["affiliate"].get("videostation_url") or cfg["affiliate"]["url_template"]
+    newest_videos = sorted((dict(v, model=d["model"]["name"]) for d in collected.values() for v in d["videos"]),
+                           key=lambda v: int(v["id"]), reverse=True)
     page_tpl = env.get_template("page.html")
     thumbs: dict[str, str] = {}
     for slug, c in contents.items():
@@ -201,7 +205,7 @@ def build_site(cfg: dict, store) -> dict:
                          for n, x in enumerate(top_models if sec["key"] == "models" else items)]))
     write("_redirects", "/themen/profile/ /models/ 301\n/themen/profile /models/ 301\n")
     write("index.html", env.get_template("index.html").render(
-        **ctx, sec_data=sec_data, latest=latest, bonus_url=cfg["affiliate"]["url_template"], canonical=f"{base}/", robots="index,follow",
+        **ctx, sec_data=sec_data, latest=latest, new_videos=newest_videos[:8], videos_total=len(newest_videos), bonus_url=cfg["affiliate"]["url_template"], canonical=f"{base}/", robots="index,follow",
         top_models_ld=[{"@type": "ListItem", "position": i + 1, "name": m["name"], "url": f"{base}/{m['slug']}/"}
                        for i, m in enumerate(top_models)],
         title=cfg["site"].get("home_title") or cfg["site"]["name"], description=cfg["site"]["tagline"],

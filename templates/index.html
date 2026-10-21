@@ -35,6 +35,12 @@
 </section>
 {% endfor %}
 
+{% if new_videos %}
+<section class="block" style="--c:#be123c">
+  <div class="block-head"><h2><a href="/videos/">Neue Videos der Top-Models</a></h2><a class="more" href="/videos/">Alle {{ videos_total }} Videos &rsaquo;</a></div>
+  <div class="grid">{% for r in new_videos %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ r.model }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.model }} · {{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
+</section>
+{% endif %}
 <section class="block intro-text">
   <h2>Über Top100 Amateure</h2>
   <p>Hier findest du die Top-Models aus der Amateur-Szene bei {{ provider }}: wer gerade gefragt ist, wo du ihre Videos findest und wie du sie in der Livecam oder im Chat erreichst. Jedes Model hat eine eigene Infoseite.</p>

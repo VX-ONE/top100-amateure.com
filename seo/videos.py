@@ -504,9 +504,21 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
                 og_image="", og_type="article"))
             urls.append((base + v["url"], v.get("published_at") or date.today().isoformat()))
         write(f"{slug}/videos/index.html", it.render(
-            **ctx, m=m, model_slug=slug, vids=vids, canonical=f"{base}/{slug}/videos/", robots="index,follow",
+            **ctx, m=m, model_slug=slug, vids=vids, model_link=deeplink(cfg, f"/de/amateur/{platform(m)}/videos/"),
+            canonical=f"{base}/{slug}/videos/", robots="index,follow",
             title=f"{m['name']} Videos: die neuesten Clips im Überblick",
             description=f"Alle neuen {m['name']} Videos bei Visit-X: Titel, Länge und Datum im Überblick. Direkt ansehen mit 100 % Aufladebonus.",
             og_image=""))
         urls.append((f"{base}/{slug}/videos/", max(v.get("published_at", "") for v in vids) or date.today().isoformat()))
+    if collected:   # Gesamtübersicht /videos/
+        allv = sorted((dict(v, model=d["model"]["name"]) for d in collected.values() for v in d["videos"]),
+                      key=lambda v: int(v["id"]), reverse=True)
+        models = [{"name": d["model"]["name"], "slug": sl, "count": len(d["videos"]), "img": f"/img/{sl}.svg"}
+                  for sl, d in collected.items()]
+        write("videos/index.html", env.get_template("videos_hub.html").render(
+            **ctx, vids=allv[:48], models=models, total=len(allv), canonical=f"{base}/videos/", robots="index,follow",
+            title="Amateur Videos der Top-Models bei Visit-X: neue Clips",
+            description=f"{len(allv)} Amateur-Videos der Top-Models bei Visit-X: neueste Clips, Länge und direkter Link. "
+                        "Mit 100 % Aufladebonus über unseren Link.", og_image=""))
+        urls.append((f"{base}/videos/", date.today().isoformat()))
     return urls

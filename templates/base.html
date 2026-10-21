@@ -25,14 +25,14 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/"><span class="logo">&#9679;</span> Top<span class="accent">100</span> Amateure</a>
-    <nav class="topnav" aria-label="Bereiche">{% for s in sections %}<a href="/{{ s.path }}/" style="--c:{{ s.color }}"><i></i>{{ s.label }}</a>{% endfor %}</nav>
+    <nav class="topnav" aria-label="Bereiche">{% for s in sections %}<a href="/{{ s.path }}/" style="--c:{{ s.color }}"><i></i>{{ s.label }}</a>{% endfor %}{% if has_videos %}<a href="/videos/" style="--c:#be123c"><i></i>Videos</a>{% endif %}</nav>
   </div>
 </header>
 <main>
 {% block main %}{% endblock %}
 </main>
 <footer class="site-footer">
-  <nav class="footnav">{% for s in sections %}<a href="/{{ s.path }}/"><strong>{{ s.label }}</strong></a>{% endfor %}{% for n in nav %}<a href="/themen/{{ n.topic }}/">{{ n.label }}</a>{% endfor %}</nav>
+  <nav class="footnav">{% for s in sections %}<a href="/{{ s.path }}/"><strong>{{ s.label }}</strong></a>{% endfor %}{% if has_videos %}<a href="/videos/"><strong>Videos</strong></a>{% endif %}{% for n in nav %}<a href="/themen/{{ n.topic }}/">{{ n.label }}</a>{% endfor %}</nav>
   <p>&copy; {{ year }} {{ site.name }} &middot; <a href="/impressum/">Impressum</a> &middot; <a href="/datenschutz/">Datenschutz</a></p>
   <p>Nur für Erwachsene ab 18 Jahren. Links zu {{ provider }} sind Werbung (Affiliate-Links).</p>
 </footer>

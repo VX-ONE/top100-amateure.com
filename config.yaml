@@ -28,7 +28,10 @@ affiliate:
   subid_start: 2610100
   # Optional: eigenes Linkziel pro Thema (Themen-Schlüssel wie unter "topics"), gleiche Platzhalter erlaubt.
   # Beispiel: grundlagen: "https://www.flibzee.com/VX/LP/DEINE-LANDINGPAGE?w=40150&ws=2610001"
-  topic_links: {}
+  topic_links:
+    videos: "https://m.visit-x.net/de/videos/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"
+  # Video Station (Linkziel für alle "Videos ansehen"-Buttons ohne bestimmtes Model)
+  videostation_url: "https://m.visit-x.net/de/videos/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"
   provider_name: "Visit-X"
   cta_label: "Zum Angebot von Visit-X"
   # Aufladebonus des Standardlinks (url_template). Wird überall dort gezeigt, wo ein Button auf den Standardlink führt.

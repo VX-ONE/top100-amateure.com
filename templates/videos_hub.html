@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block head %}
+{% set items = [] %}{% for r in vids %}{% set _ = items.append({"@type": "ListItem", "position": loop.index, "url": canonical.rstrip("/").rsplit("/videos", 1)[0] + r.url, "name": r.model ~ " – " ~ r.title}) %}{% endfor %}
+<script type="application/ld+json">{{ {"@context": "https://schema.org", "@graph": [
+  {"@type": "CollectionPage", "name": title, "url": canonical, "inLanguage": "de"},
+  {"@type": "ItemList", "itemListElement": items}]}|tojson }}</script>
+{% endblock %}
+{% block main %}
+<nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; Videos</nav>
+<section class="landing slim" style="--c:#be123c">
+  <h1>Amateur Videos der Top-Models bei {{ provider }}</h1>
+  <p class="lead">{{ total }} neue Clips der beliebtesten Amateur-Models: jedes Video mit eigener Seite, Länge und direktem Link{% if bonus %}, inklusive {{ bonus.badge }} über unseren Link{% endif %}.</p>
+  <p><a class="btn" href="{{ videostation }}" rel="sponsored nofollow noopener" target="_blank">▶ Zur Video Station von {{ provider }}</a></p>
+  {% if bonus %}<p class="howto">✓ Einfach kostenlos anmelden: Der Gutscheincode ist über unseren Link automatisch hinterlegt.</p>{% endif %}
+</section>
+<section class="block">
+  <div class="block-head"><h2>Videos nach Model</h2></div>
+  <div class="strip">{% for m in models %}<div class="mcard">
+    <a href="/{{ m.slug }}/videos/" class="mimg"><img src="{{ m.img }}" alt="{{ m.name }} Videos" width="1200" height="630" loading="lazy"></a>
+    <div class="mbody"><h3><a class="mname" href="/{{ m.slug }}/videos/">{{ m.name }} Videos</a></h3><span class="small">{{ m.count }} Videos</span></div>
+  </div>{% endfor %}</div>
+</section>
+<section class="block">
+  <div class="block-head"><h2>Neueste Amateur Videos</h2></div>
+  <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ r.model }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.model }} · {{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
+</section>
+{% endblock %}
