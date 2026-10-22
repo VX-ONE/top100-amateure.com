@@ -416,8 +416,11 @@ def cmd_videos(cfg, args) -> int:
         print(msg)
         log_lines.append(msg)
     if not args.skip_scrape:
-        st = vidmod.scrape(cfg, store, only=args.only, log=log)
+        st = vidmod.scrape_api(cfg, store, only=args.only, log=log)
         log(f"Einlesen: {st}")
+        if not st["models"]:   # Schnittstelle gar nicht erreichbar -> Browser als Rückfall
+            st = vidmod.scrape(cfg, store, only=args.only, log=log)
+            log(f"Einlesen (Browser): {st}")
     if args.max:
         cfg.setdefault("videos", {})["generate_per_run"] = args.max
     st = vidmod.generate(cfg, store, mock=args.mock, log=log)

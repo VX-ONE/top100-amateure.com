@@ -220,6 +220,99 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
     return stats
 
 
+VXQL_QUERY = ("query VideoSearch($first:Int,$offset:Int,$order:SearchOrder,$filter:SearchFilter){search{videos("
+              "search:\"\",first:$first,offset:$offset,order:$order,filter:$filter){total items{video{id title duration "
+              "linkVX(internal:true) ageRating model{id name}}}}}}")
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+      "Chrome/141.0.0.0 Safari/537.36")
+
+
+def _http(url: str, data: bytes | None = None, headers: dict | None = None, timeout: int = 40) -> str:
+    import urllib.request
+    h = {"User-Agent": UA, "Accept-Language": "de-DE,de;q=0.9", "Accept": "*/*"}
+    h.update(headers or {})
+    req = urllib.request.Request(url, data=data, headers=h)
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read().decode("utf-8", "replace")
+
+
+def _secs(n) -> str:
+    n = int(n or 0)
+    h, rest = divmod(n, 3600)
+    m, s = divmod(rest, 60)
+    return f"{h:02d}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}"
+
+
+def api_videos(name_lc: str, first: int = 30, model_id: int | None = None) -> tuple[int | None, list[dict]]:
+    """Neueste Videos eines Models über die Datenschnittstelle der Visit-X-Seite (wie der Browser sie lädt).
+    Gibt (Model-ID, Liste) zurück. Speichert nur ID, Titel, Länge und Link – keine Profildaten."""
+    html = _http(f"{VX}/de/amateur/{name_lc}/videos/")
+    at = re.search(r'"accessToken":"([^"]+)"', html)
+    vt = re.search(r'"vxqlAccessToken":"([^"]+)"', html)
+    if not vt:
+        raise RuntimeError("kein Zugangstoken in der Seite")
+    if not model_id:
+        if not at:
+            raise RuntimeError("keine Model-ID ermittelbar")
+        actor = json.loads(_http(f"{VX}/rest/v1/actor/getActorDataByIdOrName/{name_lc}?language=de&access_token={at.group(1)}"))
+        model_id = int((actor.get("actorData") or {}).get("id") or 0) or None
+        if not model_id:
+            raise RuntimeError("Model-ID nicht gefunden")
+    body = json.dumps({"query": VXQL_QUERY, "variables": {"first": first, "offset": 0, "order": "newest",
+                       "filter": {"includedModelIds": [model_id]}}}).encode()
+    res = json.loads(_http(f"{VX}/vxql?language=de", data=body, headers={
+        "Content-Type": "application/json", "Authorization": f"Bearer {vt.group(1)}",
+        "Origin": VX, "Referer": f"{VX}/de/amateur/{name_lc}/videos/"}))
+    items = (((res.get("data") or {}).get("search") or {}).get("videos") or {}).get("items") or []
+    out = []
+    for it in items:
+        v = it.get("video") or {}
+        link = v.get("linkVX") or ""
+        mt = re.search(r"/videos/(\d+)-([^/?#]+)/?", link)
+        if not mt or not v.get("title"):
+            continue
+        out.append({"id": str(v["id"]), "vx_slug": mt.group(2), "title": v["title"].strip(), "duration": _secs(v.get("duration")),
+                    "vx_path": re.sub(r"^https?://[^/]+", "", link).split("?")[0]})
+    return model_id, out
+
+
+def scrape_api(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
+    """Video-Operator ohne Browser: fragt je Top-Model die neuesten Videos ab und legt neue als 'new' an."""
+    s = settings(cfg)
+    blocked = video_blocked(cfg)
+    stats = {"models": 0, "neu": 0, "gesperrt": 0, "fehler": 0, "quelle": "api"}
+    for m, slug in model_pages(cfg, store):
+        if only and slug not in only:
+            continue
+        data = load(cfg, slug)
+        try:
+            mid, found = api_videos(platform(m), first=s["per_model"], model_id=data.get("vx_model_id"))
+        except Exception as e:
+            stats["fehler"] += 1
+            log(f"  [{slug}] Schnittstelle nicht lesbar: {type(e).__name__}: {e}")
+            continue
+        stats["models"] += 1
+        data["vx_model_id"] = mid
+        known = {v["id"] for v in data["videos"]}
+        added = 0
+        for v in found:
+            if v["id"] in known:
+                continue
+            if added >= s["new_per_model_per_run"]:
+                break
+            added += 1
+            hit = blocked_hit(normalize(v["title"]), blocked)
+            v.update(status="skipped", blocked=hit) if hit else v.update(status="new")
+            stats["gesperrt" if hit else "neu"] += 1
+            v["seen"] = date.today().isoformat()
+            data["videos"].append(v)
+        data.update(model=m["name"], platform=platform(m), updated=date.today().isoformat())
+        save(cfg, slug, data)
+        log(f"  [{slug}] {len(found)} Videos abgefragt, neu: {added}")
+        time.sleep(1.5)   # schonend: eine Anfrage pro Sekunde
+    return stats
+
+
 # ---------------------------------------------------------------- 2. Texte
 
 VIDEO_SYSTEM = """Du bist SEO-Redakteur einer deutschen Informationsseite über Amateur-Models bei Visit-X (nur für Erwachsene).
