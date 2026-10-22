@@ -1,74 +1,70 @@
 {
-  "cta_text": "Wenn du dir das Profil, die Videos und die Livecam von JayJayPink selbst ansehen möchtest, findest du alles Weitere direkt bei Visit-X.",
+  "cta_text": "Wenn du dir das Angebot selbst ansehen möchtest, kommst du über den Link auf dieser Seite zu Visit-X. Die aktuellen Bedingungen findest du dort.",
   "faq": [
     {
-      "a": "JayJayPink hat ein Profil bei Visit-X und wird dort in der Top-100-Videoübersicht mit Videos geführt. Am zuverlässigsten gelangst du über die Suche oder die Videoübersicht beim Anbieter zum Profil.",
+      "a": "JayJayPink hat ein Profil bei Visit-X. Über den Link dieser Seite kommst du zuerst ins Video-Angebot des Anbieters und kannst von dort ihr Profil aufrufen.",
       "q": "Wo finde ich JayJayPink?"
     },
     {
-      "a": "Es erscheinen etwa zwei Videos pro Woche. Das ist ein ungefährer Rhythmus. Aktuelle Titel und Termine zeigt Visit-X im Profil.",
+      "a": "Laut den vorliegenden Angaben erscheinen etwa zwei Videos pro Woche. Sie wird außerdem in der Top-100-Videoübersicht von Visit-X mit Videos aufgeführt.",
       "q": "Wie oft erscheinen neue Videos von JayJayPink?"
     },
     {
-      "a": "JayJayPink ist relativ häufig in der Livecam. Feste Zeiten sind nicht bekannt, ob gerade eine Show läuft, siehst du im Profil bei Visit-X.",
-      "q": "Ist JayJayPink live in der Livecam?"
+      "a": "Ja, sie ist relativ häufig in der Livecam. Feste Zeiten gibt es nicht. Ob sie gerade online ist, siehst du in der Übersicht bei Visit-X.",
+      "q": "Ist JayJayPink oft in der Livecam?"
     },
     {
-      "a": "Bezahlt wird bei Visit-X in Tokens, die du in Euro auflädst. Welche Inhalte im Einzelfall ohne Kosten zugänglich sind, legt der Anbieter fest. Die aktuellen Bedingungen stehen beim Anbieter.",
-      "q": "Gibt es JayJayPink gratis oder kostenlos?"
+      "a": "Du lädst in Euro auf, der Betrag wird in Tokens umgewandelt. Gängig sind Sofort, PayPal, Kreditkarte und SEPA. Welche Methode verfügbar ist, zeigt Visit-X beim Aufladen.",
+      "q": "Wie bezahle ich bei Visit-X?"
     },
     {
-      "a": "Gängig sind Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift/Überweisung). Welche Methode angeboten wird, zeigt Visit-X beim Aufladen.",
-      "q": "Welche Zahlungsarten gibt es bei Visit-X?"
+      "a": "Über den Link dieser Seite gibt es einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Der Gutscheincode ist automatisch hinterlegt. Es gelten die Bedingungen von Visit-X.",
+      "q": "Gibt es einen Bonus beim Aufladen?"
     },
     {
-      "a": "Über den Link dieser Seite gibt es laut Angabe des Seitenbetreibers einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung (geprüft am 17.10.2026). Es gelten die Bedingungen von Visit-X.",
-      "q": "Gibt es einen Aufladebonus?"
+      "a": "Nein, die Seite ist ein unabhängiger Ratgeber. Sie wird weder vom Model noch vom Anbieter betrieben.",
+      "q": "Wird diese Seite von JayJayPink oder Visit-X betrieben?"
     }
   ],
-  "h1": "JayJayPink (Jay Jay Pink): Videos, Livecam und Chat bei Visit-X",
+  "h1": "JayJayPink: Videos, Livecam und Chat bei Visit-X",
   "image": {
-    "alt": "Titelbild zum Thema JayJayPink (Jay Jay Pink): Videos, Livecam und Chat bei Visit-X",
-    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\"><defs><linearGradient id=\"g\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#6d28d9\"/><stop offset=\"1\" stop-color=\"#1e1b4b\"/></linearGradient></defs><rect width=\"1200\" height=\"630\" fill=\"url(#g)\"/><circle cx=\"880\" cy=\"300\" r=\"170\" fill=\"#fff\" fill-opacity=\".12\"/><circle cx=\"960\" cy=\"400\" r=\"90\" fill=\"#fff\" fill-opacity=\".14\"/><text x=\"70\" y=\"340\" font-size=\"84\" font-weight=\"800\" fill=\"#fff\" font-family=\"system-ui,Arial,sans-serif\">JayJayPink Jay Jay</text></svg>"
+    "alt": "Bühnenvorhang, Scheinwerfer, Bildschirm mit Play-Symbol, Sprechblasen und Sterne auf violettem Verlauf",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\"><defs><linearGradient id=\"b\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#6d28d9\" /><stop offset=\"1\" stop-color=\"#1e1b4b\" /></linearGradient><linearGradient id=\"c\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#9d174d\" /><stop offset=\"1\" stop-color=\"#db2777\" /></linearGradient></defs><rect width=\"1200\" height=\"630\" fill=\"url(#b)\" /><polygon points=\"310,0 360,0 640,430 420,430\" fill=\"#fff\" opacity=\".1\" /><polygon points=\"890,0 840,0 560,430 780,430\" fill=\"#fff\" opacity=\".1\" /><path d=\"M0 0H310Q230 300 285 470H0Z\" fill=\"url(#c)\" /><path d=\"M1200 0H890Q970 300 915 470H1200Z\" fill=\"url(#c)\" /><path d=\"M80 0Q60 250 90 470M170 0Q150 250 190 470\" stroke=\"#831843\" stroke-width=\"8\" fill=\"none\" opacity=\".5\" /><path d=\"M1120 0Q1140 250 1110 470M1030 0Q1050 250 1010 470\" stroke=\"#831843\" stroke-width=\"8\" fill=\"none\" opacity=\".5\" /><rect x=\"360\" y=\"70\" width=\"480\" height=\"270\" rx=\"22\" fill=\"#0f0c2e\" stroke=\"#f9a8d4\" stroke-width=\"10\" /><polygon points=\"565,140 565,270 685,205\" fill=\"#f472b6\" /><rect x=\"570\" y=\"340\" width=\"60\" height=\"36\" fill=\"#f9a8d4\" /><rect x=\"510\" y=\"376\" width=\"180\" height=\"16\" rx=\"8\" fill=\"#f9a8d4\" /><ellipse cx=\"250\" cy=\"150\" rx=\"100\" ry=\"55\" fill=\"#fff\" /><polygon points=\"290,195 340,250 320,190\" fill=\"#fff\" /><circle cx=\"210\" cy=\"150\" r=\"12\" fill=\"#6d28d9\" /><circle cx=\"250\" cy=\"150\" r=\"12\" fill=\"#6d28d9\" /><circle cx=\"290\" cy=\"150\" r=\"12\" fill=\"#6d28d9\" /><ellipse cx=\"960\" cy=\"230\" rx=\"95\" ry=\"52\" fill=\"#f472b6\" /><polygon points=\"920,270 880,330 940,275\" fill=\"#f472b6\" /><path d=\"M915 230H1005M915 212H985M915 248H975\" stroke=\"#fff\" stroke-width=\"10\" stroke-linecap=\"round\" /><g fill=\"#fde047\"><path transform=\"translate(1040 90) scale(1.4)\" d=\"M0-30L7-10L29-9L11 4L18 24L0 12L-18 24L-11 4L-29-9L-7-10Z\" /><path transform=\"translate(330 400)\" d=\"M0-30L7-10L29-9L11 4L18 24L0 12L-18 24L-11 4L-29-9L-7-10Z\" /><path transform=\"translate(880 410) scale(.8)\" d=\"M0-30L7-10L29-9L11 4L18 24L0 12L-18 24L-11 4L-29-9L-7-10Z\" /></g><rect y=\"470\" width=\"1200\" height=\"160\" fill=\"#1e1b4b\" opacity=\".75\" /><text x=\"600\" y=\"580\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"96\" fill=\"#fff\" text-anchor=\"middle\">Livecam &amp; Chat</text></svg>"
   },
-  "intro": "Wer nach **jay jay pink** oder **jayjaypink** sucht, landet meist bei einer Frage: Wo gibt es das Profil, die Videos und die Livecam? Die Antwort: **JayJayPink hat ein Profil bei Visit-X**, wird dort in der Top-100-Videoübersicht mit Videos geführt und ist laut Fakten relativ häufig in der Livecam zu finden.\n\nDiese Seite ist ein **unabhängiger Ratgeber**. Sie wird weder vom Model noch von Visit-X betrieben. Hier findest du einen kompakten Steckbrief, eine Einordnung zu Videos, Livecam und Chat sowie Hinweise zu Kosten, Tokens und legaler Nutzung. Die Seite richtet sich ausschließlich an Leser ab 18 Jahren.",
+  "intro": "JayJayPink ist bei Visit-X gleich auf zwei Wegen zu finden: mit regelmäßig erscheinenden Videos und in der Livecam. Laut den vorliegenden Angaben erscheinen etwa zwei Videos pro Woche, und in der Cam ist sie relativ häufig online. Wer ihr Angebot kennenlernen will, hat also mehrere Einstiegsmöglichkeiten, je nachdem, ob man lieber Clips ansieht oder direkt in den Chat geht.\n\nDiese Seite ist ein unabhängiger Ratgeber für Erwachsene ab 18 Jahren. Sie wird weder von JayJayPink noch von Visit-X betrieben. Hier steht, was es beim Anbieter zu dem Namen gibt, wie Videos, Direkt-Chat und Live-Shows grundsätzlich funktionieren und worauf du bei Kosten, Abrechnung und sicherer Nutzung achten solltest.",
   "key_takeaways": [
-    "JayJayPink hat ein Profil bei Visit-X und taucht in der Top-100-Videoübersicht mit Videos auf.",
-    "Es erscheinen etwa zwei Videos pro Woche, und JayJayPink ist relativ häufig in der Livecam.",
-    "Bezahlt wird bei Visit-X in Tokens; der aufgeladene Euro-Betrag wird umgewandelt.",
-    "Über den Link dieser Seite gibt es laut Angabe einen 100-%-Aufladebonus, es gelten die Bedingungen von Visit-X.",
+    "JayJayPink hat ein Profil bei Visit-X und wird in der Top-100-Videoübersicht mit Videos aufgeführt.",
+    "Es erscheinen etwa zwei Videos pro Woche; außerdem ist sie relativ häufig in der Livecam.",
+    "Bezahlt wird bei Visit-X mit Tokens, die du in Euro auflädst (Sofort, PayPal, Kreditkarte, SEPA).",
+    "Über den Link dieser Seite gibt es einen 100-%-Aufladebonus; es gelten die Bedingungen von Visit-X.",
     "Nutze nur Inhalte, die der Anbieter offiziell bereitstellt."
   ],
-  "meta_description": "JayJayPink bei Visit-X: Profil, Videos im Rhythmus von etwa zwei pro Woche, Livecam und Chat. Dazu Infos zu Tokens, Kosten und Aufladebonus.",
+  "meta_description": "Alles Wichtige zu JayJayPink bei Visit-X: Videos, Livecam und Chat, Kosten in Tokens und Aufladebonus – unabhängiger Ratgeber für Erwachsene.",
   "sections": [
     {
-      "body": "Das ist der aktuelle Stand zu JayJayPink bei Visit-X auf einen Blick:\n\n- **Bühnenname:** JayJayPink\n- **Anbieter:** Visit-X, dort gibt es ein eigenes Profil\n- **Videos:** In der Top-100-Videoübersicht von Visit-X wird JayJayPink mit Videos aufgeführt\n- **Rhythmus:** Es erscheinen etwa zwei Videos pro Woche\n- **Produktion:** JayJayPink dreht viel mit professionellen Agenturen\n- **Livecam:** JayJayPink ist relativ häufig in der Livecam\n\nMehr Details, etwa zu einzelnen Titeln, Preisen oder aktuellen Online-Zeiten, zeigt Visit-X direkt im Profil. Dort stehen die jeweils gültigen Angaben.",
+      "body": "Die wichtigsten Punkte auf einen Blick. Mehr als diese Angaben gehört nicht in den Steckbrief, alles Weitere zeigt dir das Profil beim Anbieter selbst:\n\n- JayJayPink hat ein Profil bei Visit-X.\n- In der Top-100-Videoübersicht von Visit-X wird JayJayPink mit Videos aufgeführt.\n- Es erscheinen etwa zwei Videos pro Woche.\n- JayJayPink dreht viel mit professionellen Agenturen.\n- JayJayPink ist relativ häufig in der Livecam.\n- Nach außen wirkt JayJayPink wie das schüchterne Mädchen von nebenan, zeigt in der Cam aber eine ganz andere Seite.\n- Sie beschreibt sich als sehr offen und hat in ihrer Cam-Zeit schon viele Vorlieben mit Fans geteilt.\n- Neben der Cam dreht JayJayPink auch Videos.\n\nDas Bild, das sich daraus ergibt: ein Name mit zwei Standbeinen, Video und Livecam, die sich gut ergänzen.",
       "h2": "Steckbrief: JayJayPink"
     },
     {
-      "body": "### Regelmäßig neues Material\n\nWer gezielt nach **jay jay pink videos** sucht, findet bei Visit-X einen Anlaufpunkt, der laufend gepflegt wird: Es erscheinen etwa zwei Videos pro Woche. Für Fans heißt das, dass sich ein regelmäßiger Blick ins Profil lohnt, statt nur einmal vorbeizuschauen.\n\n### Produktionen mit Agenturen\n\nJayJayPink dreht viel mit professionellen Agenturen. Das ist eine Information zur Produktionsweise, nicht mehr und nicht weniger. Welche Titel gerade verfügbar sind und wie sie gestaltet sind, siehst du bei Visit-X in der Videoübersicht und im Profil.\n\n### Orientierung in der Top-100-Übersicht\n\nDass JayJayPink in der Top-100-Videoübersicht von Visit-X mit Videos geführt wird, hilft bei der Orientierung: Du musst nicht lange suchen, sondern kannst den Namen in der Übersicht oder über die Suche ansteuern. Preise und Vorschaubilder zeigt der Anbieter bei den einzelnen Videos.",
-      "h2": "JayJayPink Videos: Was Fans erwartet"
+      "body": "### Was dich bei den Clips erwartet\n\nDass JayJayPink in der Top-100-Videoübersicht von Visit-X mit Videos aufgeführt wird, zeigt: Ihre Clips sind fester Teil des Video-Angebots. Mit etwa zwei neuen Videos pro Woche lohnt es sich, hin und wieder reinzuschauen, statt nur einmal zu stöbern.\n\nWeil sie viel mit professionellen Agenturen dreht, kannst du Produktionen erwarten, die als Agenturarbeit entstehen. Daneben dreht sie auch abseits der Cam eigene Videos. Wie die einzelnen Clips im Detail aussehen, siehst du in der Vorschau und Beschreibung beim Anbieter.\n\n### So findest du die Videos\n\nÜber den Link dieser Seite landest du zuerst im Video-Angebot von Visit-X. Dort kannst du dich durch die Übersichten klicken und das Profil von JayJayPink bei Visit X aufrufen. Preise und Laufzeiten einzelner Videos können sich ändern; die aktuellen Bedingungen stehen beim Anbieter.\n\nEin Tipp für Fans: Schau öfter in die Neuerscheinungen. Bei einem Rhythmus von etwa zwei Videos pro Woche sammelt sich schnell einiges an.",
+      "h2": "JayJayPink Videos"
     },
     {
-      "body": "### Häufig live dabei\n\nNeben den Videos ist die **jay jay pink livecam** für viele der spannendere Teil. JayJayPink ist relativ häufig in der Livecam. Feste Zeiten nennen die Fakten nicht, deshalb ist der beste Weg der Blick ins Profil bei Visit-X: Dort siehst du, ob gerade ein Stream läuft.\n\n### So funktionieren Live-Cam und Direkt-Chat grundsätzlich\n\nBei Visit-X gibt es Live-Cams mit Webcam-Models, Videos und Amateur-Angebote. Live-Shows laufen in Echtzeit. Der **jay jay pink live chat** bzw. der Direkt-Chat ist dabei grundsätzlich die Möglichkeit, per Text zu kommunizieren. Welche Funktionen in welchem Modus nutzbar sind und was sie kosten, legt der Anbieter fest. Die aktuellen Bedingungen stehen beim Anbieter, am besten liest du sie vor dem Start in Ruhe durch.\n\n### Tipps für den Einstieg\n\n- Schau zuerst ins Profil und prüfe, ob eine Show läuft.\n- Lies vor dem Start nach, wie die Abrechnung der jeweiligen Funktion funktioniert.\n- Lade zunächst einen überschaubaren Betrag auf und behalte dein Guthaben im Blick.",
+      "body": "### Die Cam als zweite Seite\n\nJayJayPink ist relativ häufig in der Livecam. Genau dort zeigt sich laut den Angaben der Kontrast zu ihrem Auftreten nach außen: Während sie sonst wie das schüchterne Mädchen von nebenan wirkt, präsentiert sie sich in der Cam ganz anders. Sie beschreibt sich selbst als sehr offen und hat in ihrer Cam-Zeit schon viele Vorlieben mit Fans geteilt.\n\n### Wie Live-Shows und Direkt-Chat grundsätzlich funktionieren\n\nBei Visit-X siehst du in der Übersicht, welche Models gerade online sind. Du öffnest den Raum eines Models, und je nach Format kannst du zuschauen, im Live Chat schreiben oder eine private Verbindung starten. Abgerechnet wird in Tokens, meist nach Zeit oder nach gebuchter Funktion.\n\nWichtig zu wissen:\n\n- Welche Optionen ein Raum anbietet, legt das Model im Rahmen der Anbieterregeln fest.\n- Die Preise pro Minute oder Funktion zeigt Visit-X vor dem Start an. Lies sie, bevor du bestätigst.\n- Online-Zeiten sind nicht festgelegt. „Relativ häufig“ heißt nicht, dass sie zu jeder Tageszeit da ist.\n\nAm besten schaust du zu verschiedenen Zeiten vorbei und achtest in der Übersicht darauf, ob JayJayPink gerade online ist.",
       "h2": "JayJayPink Livecam und Chat"
     },
     {
-      "body": "Das **jay jay pink profil** bei Visit-X ist die zentrale Anlaufstelle: Es bündelt Videos und den Zugang zur Livecam. Wer nach **jay jay pink visit x** sucht, sollte direkt dort starten, statt über Drittseiten zu gehen. Auch bei Schreibweisen wie „jayjaypink“ lohnt sich die Suche im Anbieterbereich selbst.\n\nWichtig: Nutze nur Inhalte, die Visit-X offiziell bereitstellt. Wer nach „jay jay pink porno“ oder „jayjaypink porno“ sucht, sollte beim Anbieter bleiben. Dort sind Inhalte offiziell und legal eingestellt. Auf anderen Seiten kursierendes Material ist keine verlässliche Quelle und sollte nicht genutzt werden.",
-      "h2": "JayJayPink Profil bei Visit-X finden"
-    },
-    {
-      "body": "### Wie bezahlt wird\n\nViele suchen nach **jay jay pink gratis** oder **jay jay pink kostenlos**. Fest steht: Bei Visit-X wird mit Tokens bezahlt. Die normale Währung ist Euro, der aufgeladene Betrag wird in Tokens umgewandelt. Welche Inhalte oder Funktionen im Einzelfall ohne Token zugänglich sind und welche nicht, entscheidet der Anbieter. Das siehst du im Profil und bei den einzelnen Angeboten.\n\n### Zahlungsarten\n\nGängige Zahlungsarten bei Visit-X sind:\n\n- Sofort bzw. Sofortüberweisung\n- PayPal\n- Kreditkarte\n- SEPA (Lastschrift/Überweisung)\n\nWelche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen. (Stand der Prüfung: 16.10.2026, Angabe des Seitenbetreibers.)\n\n### Aufladebonus\n\nÜber den Link dieser Seite gibt es bei Visit-X laut Angabe des Seitenbetreibers einen **100-%-Aufladebonus**, also doppeltes Guthaben auf die Aufladung (geprüft am 17.10.2026). Es gelten die Bedingungen von Visit-X. Lies sie vor der Aufladung, damit du weißt, wofür sich das Guthaben nutzen lässt.",
+      "body": "### So wird bezahlt\n\nBei Visit-X ist Euro die normale Währung. Der Betrag, den du auflädst, wird in Tokens umgewandelt, mit denen du dann Videos, Chats und Shows bezahlst. Gängige Zahlungsarten sind Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift oder Überweisung). Welche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen.\n\nOb und welche Inhalte gratis zugänglich sind, entscheidet der Anbieter. Die Anmeldung selbst startest du über „Kostenlos anmelden“. Das bedeutet aber nicht automatisch, dass alle Videos oder Cam-Shows ohne Tokens nutzbar sind. Die aktuellen Bedingungen stehen beim Anbieter.\n\n### Aufladebonus über den Link dieser Seite\n\nÜber den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf deine Aufladung. Den Gutscheincode musst du nicht eingeben, er ist automatisch hinterlegt. Es gelten die Bedingungen von Visit-X.\n\n### Tipps zur Kostenkontrolle\n\n- Lade zunächst einen kleinen Betrag auf und schau, wie schnell Tokens verbraucht sind.\n- Prüfe vor jedem privaten Chat den Minutenpreis.\n- Behalte dein Guthaben im Konto im Blick.",
       "h2": "JayJayPink kostenlos? Kosten und Tokens"
     },
     {
-      "body": "Der Zugang zu Erwachsenenangeboten ist nur für Volljährige gedacht, Visit-X setzt dafür eigene Jugendschutzmaßnahmen ein. Gib persönliche Daten sparsam an, nutze ein sicheres Passwort und achte bei Zahlungen auf die Angaben beim Aufladen. Zur diskreten Nutzung findest du beim Anbieter die jeweiligen Datenschutzhinweise.\n\nDiese Seite ist ein unabhängiger Ratgeber und wird weder von JayJayPink noch von Visit-X betrieben.",
-      "h2": "JayJayPink und die legale, sichere Nutzung"
+      "body": "Visit-X richtet sich ausschließlich an Erwachsene ab 18 Jahren, und der Zugang ist entsprechend gesichert. Gib persönliche Daten nur beim Anbieter selbst ein, wähle ein starkes Passwort und teile Zugangsdaten nicht. Nutze ausschließlich Inhalte, die der Anbieter offiziell bereitstellt. Das gilt auch für JayJayPink Porno-Clips und alle anderen Erwachsenenangebote. Material aus fremden oder unklaren Quellen ist tabu.",
+      "h2": "JayJayPink Profil: sicher und legal nutzen"
     },
     {
-      "body": "Wenn gerade keine Show läuft oder du Abwechslung suchst, bietet Visit-X neben JayJayPink weitere Live-Cams, Videos und Amateur-Angebote. So kannst du dich zwischen Videos zum späteren Ansehen und Live-Shows entscheiden, je nachdem, ob du lieber feste Inhalte oder den Echtzeit-Kontakt möchtest.\n\nFür den Vergleich lohnt sich ein Blick auf Kosten pro Angebot, die Abrechnung in Tokens und die Zahlungsarten. Vergleiche die Bedingungen direkt beim Anbieter.",
+      "body": "Visit-X bietet neben Live-Cams mit Webcam-Models auch Videos und Amateur-Angebote. Wenn dir bei JayJayPink der Mix aus Clips und Cam gefällt, lohnt der Blick auf andere Profile mit ähnlichem Aufbau: Manche Models setzen stärker auf Livecam, andere vor allem auf Videos.\n\nBeim Vergleich helfen ein paar einfache Fragen: Wie oft erscheinen neue Videos? Wie häufig ist das Model online? Passen Preise und Zahlungsarten zu dir? Auf Basis der Angaben beim Anbieter kannst du so in Ruhe entscheiden, welches Angebot für dich am besten passt.",
       "h2": "JayJayPink im Vergleich: Alternativen bei Visit-X"
     }
   ],
-  "title": "JayJayPink (Jay Jay Pink): Videos & Livecam bei Visit-X"
+  "title": "JayJayPink: Videos, Livecam & Chat bei Visit-X"
 }

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#be185d" />
+<stop offset="1" stop-color="#3b0a24" />
+</linearGradient>
+<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#f472b6" />
+<stop offset="1" stop-color="#be185d" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1100" cy="560" r="180" fill="#ffffff" opacity="0.06" />
+<circle cx="80" cy="80" r="120" fill="#ffffff" opacity="0.06" />
+<g>
+<rect x="430" y="60" width="340" height="230" rx="20" fill="#3b0a24" stroke="#ffffff" stroke-width="10" />
+<rect x="448" y="78" width="304" height="194" rx="8" fill="url(#sc)" />
+<circle cx="600" cy="175" r="52" fill="#ffffff" />
+<polygon points="585,148 585,202 630,175" fill="#be185d" />
+<rect x="570" y="290" width="60" height="40" fill="#ffffff" />
+<rect x="500" y="326" width="200" height="16" rx="8" fill="#ffffff" />
+</g>
+<g>
+<rect x="150" y="165" width="80" height="34" rx="8" fill="#ffffff" />
+<rect x="100" y="190" width="240" height="150" rx="24" fill="#ffffff" />
+<circle cx="220" cy="265" r="55" fill="#be185d" />
+<circle cx="220" cy="265" r="34" fill="#3b0a24" />
+<circle cx="205" cy="250" r="9" fill="#ffffff" opacity="0.7" />
+<circle cx="300" cy="217" r="10" fill="#be185d" />
+<rect x="120" y="210" width="40" height="14" rx="5" fill="#f9a8d4" />
+</g>
+<g>
+<rect x="850" y="70" width="250" height="130" rx="32" fill="#ffffff" />
+<polygon points="900,195 878,245 945,195" fill="#ffffff" />
+<path d="M975 172 C920 135 928 98 955 98 C967 98 975 106 975 114 C975 106 983 98 995 98 C1022 98 1030 135 975 172 Z" fill="#be185d" />
+<rect x="890" y="250" width="220" height="90" rx="28" fill="#f9a8d4" />
+<polygon points="1050,335 1085,380 1010,335" fill="#f9a8d4" />
+<circle cx="950" cy="295" r="12" fill="#3b0a24" />
+<circle cx="1000" cy="295" r="12" fill="#3b0a24" />
+<circle cx="1050" cy="295" r="12" fill="#3b0a24" />
+</g>
+<g>
+<rect x="800" y="380" width="44" height="80" rx="22" fill="#ffffff" />
+<path d="M788 430 C788 475 856 475 856 430" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+<line x1="822" y1="468" x2="822" y2="495" stroke="#ffffff" stroke-width="8" />
+<line x1="800" y1="497" x2="844" y2="497" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+</g>
+<text x="560" y="575" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="130" fill="#ffffff">NISCHEN</text>
+</svg>

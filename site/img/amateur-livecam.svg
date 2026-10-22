@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#6d28d9" />
+<stop offset="1" stop-color="#1e1b4b" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#a78bfa" stop-opacity="0.6" />
+<stop offset="1" stop-color="#a78bfa" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="850" cy="270" r="330" fill="url(#glow)" />
+<circle cx="80" cy="560" r="150" fill="#4c1d95" opacity="0.5" />
+<circle cx="1150" cy="70" r="110" fill="#4c1d95" opacity="0.5" />
+<g>
+<rect x="560" y="90" width="520" height="320" rx="24" fill="#0f0d2e" />
+<rect x="582" y="112" width="476" height="276" rx="10" fill="#312e81" />
+<rect x="780" y="410" width="80" height="50" fill="#0f0d2e" />
+<rect x="710" y="456" width="220" height="22" rx="11" fill="#0f0d2e" />
+<rect x="640" y="190" width="200" height="130" rx="22" fill="#fff" />
+<polygon points="840,235 910,200 910,310 840,275" fill="#fff" />
+<circle cx="725" cy="255" r="40" fill="#6d28d9" />
+<circle cx="725" cy="255" r="22" fill="#c4b5fd" />
+<circle cx="812" cy="212" r="7" fill="#ef4444" />
+</g>
+<g>
+<path d="M930 130 h110 a16 16 0 0 1 16 16 v60 a16 16 0 0 1 -16 16 h-60 l-26 24 v-24 h-24 a16 16 0 0 1 -16 -16 v-60 a16 16 0 0 1 16 -16z" fill="#f0abfc" />
+<circle cx="950" cy="176" r="7" fill="#1e1b4b" />
+<circle cx="985" cy="176" r="7" fill="#1e1b4b" />
+<circle cx="1020" cy="176" r="7" fill="#1e1b4b" />
+</g>
+<g>
+<path d="M1010 330 c-30 -22 -60 -48 -60 -72 c0 -22 32 -34 60 -10 c28 -24 60 -12 60 10 c0 24 -30 50 -60 72z" fill="#fb7185" />
+</g>
+<g>
+<rect x="400" y="130" width="90" height="190" rx="45" fill="#fff" />
+<path d="M370 270 a75 75 0 0 0 150 0" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" />
+<line x1="445" y1="345" x2="445" y2="410" stroke="#fff" stroke-width="16" />
+<line x1="395" y1="415" x2="495" y2="415" stroke="#fff" stroke-width="16" stroke-linecap="round" />
+<line x1="420" y1="170" x2="470" y2="170" stroke="#6d28d9" stroke-width="7" />
+<line x1="420" y1="200" x2="470" y2="200" stroke="#6d28d9" stroke-width="7" />
+<line x1="420" y1="230" x2="470" y2="230" stroke="#6d28d9" stroke-width="7" />
+</g>
+<text x="70" y="540" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="104" fill="#fff">Mythen &amp; Fakten</text>
+<rect x="74" y="568" width="300" height="12" rx="6" fill="#f0abfc" />
+</svg>

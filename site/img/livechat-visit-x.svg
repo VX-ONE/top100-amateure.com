@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4ed8" /><stop offset="1" stop-color="#0b1b4d" /></linearGradient>
+<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#60a5fa" /><stop offset="1" stop-color="#1e40af" /></linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="140" cy="500" r="190" fill="#ffffff" opacity="0.05" />
+<circle cx="1100" cy="80" r="170" fill="#ffffff" opacity="0.06" />
+<rect x="380" y="40" width="440" height="310" rx="24" fill="#07102e" stroke="#ffffff" stroke-width="6" />
+<rect x="400" y="60" width="400" height="270" rx="10" fill="url(#sc)" />
+<rect x="540" y="160" width="160" height="110" rx="16" fill="#ffffff" />
+<polygon points="700,200 760,170 760,260 700,230" fill="#ffffff" />
+<circle cx="610" cy="215" r="38" fill="#1d4ed8" />
+<circle cx="610" cy="215" r="22" fill="#0b1b4d" />
+<circle cx="600" cy="205" r="7" fill="#ffffff" />
+<rect x="555" y="145" width="40" height="15" rx="5" fill="#ffffff" />
+<rect x="420" y="80" width="104" height="40" rx="20" fill="#e11d48" />
+<circle cx="444" cy="100" r="9" fill="#ffffff" />
+<text x="460" y="108" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="24" fill="#ffffff">LIVE</text>
+<polygon points="570,350 630,350 640,392 560,392" fill="#e2e8f0" />
+<rect x="500" y="388" width="200" height="16" rx="8" fill="#ffffff" />
+<path d="M110 110 H320 Q345 110 345 135 V205 Q345 230 320 230 H250 L210 275 L215 230 H110 Q85 230 85 205 V135 Q85 110 110 110Z" fill="#ffffff" />
+<circle cx="150" cy="170" r="14" fill="#1d4ed8" />
+<circle cx="215" cy="170" r="14" fill="#1d4ed8" />
+<circle cx="280" cy="170" r="14" fill="#1d4ed8" />
+<path d="M880 60 H1070 Q1095 60 1095 85 V145 Q1095 170 1070 170 H1050 L1055 212 L1010 170 H880 Q855 170 855 145 V85 Q855 60 880 60Z" fill="#bfdbfe" />
+<rect x="885" y="95" width="170" y2="0" height="14" rx="7" fill="#1d4ed8" />
+<rect x="885" y="123" width="110" height="14" rx="7" fill="#1d4ed8" />
+<path d="M980 350 C915 305 915 245 953 245 C970 245 980 257 980 266 C980 257 990 245 1007 245 C1045 245 1045 305 980 350Z" fill="#ff4d6d" />
+<path d="M270 330 C235 305 235 270 257 270 C267 270 270 278 270 283 C270 278 275 270 285 270 C305 270 305 305 270 330Z" fill="#ff4d6d" opacity="0.9" />
+<g font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="28" text-anchor="middle">
+<circle cx="420" cy="450" r="26" fill="#ffffff" /><text x="420" y="460" fill="#1d4ed8">1</text>
+<circle cx="510" cy="450" r="26" fill="#ffffff" /><text x="510" y="460" fill="#1d4ed8">2</text>
+<circle cx="600" cy="450" r="26" fill="#ffffff" /><text x="600" y="460" fill="#1d4ed8">3</text>
+<circle cx="690" cy="450" r="26" fill="#ffffff" /><text x="690" y="460" fill="#1d4ed8">4</text>
+<circle cx="780" cy="450" r="26" fill="#ffffff" /><text x="780" y="460" fill="#1d4ed8">5</text>
+</g>
+<text x="600" y="575" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="88" fill="#ffffff">Livechat-Einstieg</text>
+</svg>
