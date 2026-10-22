@@ -299,9 +299,20 @@
    "status": "published",
    "seen": "2026-10-20",
    "published_at": "2026-10-21"
+  },
+  {
+   "id": "28426548",
+   "vx_slug": "chef-ich-mache-alles-fuer-etwas-mehr-gehalt-wichsanleitung",
+   "title": "CHEF! ICH MACHE ALLES FÜR ETWAS MEHR GEHALT! WICHSANLEITUNG!",
+   "duration": "11:34",
+   "vx_path": "/de/amateur/lanagrey/videos/28426548-chef-ich-mache-alles-fuer-etwas-mehr-gehalt-wichsanleitung/",
+   "status": "published",
+   "seen": "2026-10-22",
+   "published_at": "2026-10-22"
   }
  ],
  "model": "LanaGrey",
  "platform": "lanagrey",
- "updated": "2026-10-21"
+ "updated": "2026-10-22",
+ "vx_model_id": 12135526
 }
