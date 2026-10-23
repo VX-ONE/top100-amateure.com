@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c2410c" />
+<stop offset="1" stop-color="#431407" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<text x="600" y="175" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="120" fill="#ffffff" text-anchor="middle">ALTERNATIVEN</text>
+<rect x="70" y="250" width="290" height="300" rx="22" fill="#ffffff" />
+<rect x="840" y="250" width="290" height="300" rx="22" fill="#ffffff" />
+<g fill="#f59e0b">
+<g transform="translate(150,305)"><polygon points="0,-18 4.4,-6.1 17.1,-5.6 7.1,2.3 10.6,14.6 0,7.5 -10.6,14.6 -7.1,2.3 -17.1,-5.6 -4.4,-6.1" /></g>
+<g transform="translate(215,305)"><polygon points="0,-18 4.4,-6.1 17.1,-5.6 7.1,2.3 10.6,14.6 0,7.5 -10.6,14.6 -7.1,2.3 -17.1,-5.6 -4.4,-6.1" /></g>
+<g transform="translate(280,305)"><polygon points="0,-18 4.4,-6.1 17.1,-5.6 7.1,2.3 10.6,14.6 0,7.5 -10.6,14.6 -7.1,2.3 -17.1,-5.6 -4.4,-6.1" /></g>
+<g transform="translate(920,305)"><polygon points="0,-18 4.4,-6.1 17.1,-5.6 7.1,2.3 10.6,14.6 0,7.5 -10.6,14.6 -7.1,2.3 -17.1,-5.6 -4.4,-6.1" /></g>
+<g transform="translate(985,305)"><polygon points="0,-18 4.4,-6.1 17.1,-5.6 7.1,2.3 10.6,14.6 0,7.5 -10.6,14.6 -7.1,2.3 -17.1,-5.6 -4.4,-6.1" /></g>
+<g transform="translate(1050,305)"><polygon points="0,-18 4.4,-6.1 17.1,-5.6 7.1,2.3 10.6,14.6 0,7.5 -10.6,14.6 -7.1,2.3 -17.1,-5.6 -4.4,-6.1" /></g>
+</g>
+<g fill="#c2410c">
+<circle cx="110" cy="380" r="15" /><circle cx="110" cy="440" r="15" /><circle cx="110" cy="500" r="15" />
+<circle cx="880" cy="380" r="15" /><circle cx="880" cy="440" r="15" /><circle cx="880" cy="500" r="15" />
+</g>
+<g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="103,380 108,386 118,374" /><polyline points="103,440 108,446 118,434" /><polyline points="103,500 108,506 118,494" />
+<polyline points="873,380 878,386 888,374" /><polyline points="873,440 878,446 888,434" /><polyline points="873,500 878,506 888,494" />
+</g>
+<g fill="#fdba74">
+<rect x="140" y="371" width="190" height="18" rx="9" />
+<rect x="140" y="431" width="130" height="18" rx="9" />
+<rect x="140" y="491" width="160" height="18" rx="9" />
+<rect x="910" y="371" width="150" height="18" rx="9" />
+<rect x="910" y="431" width="200" height="18" rx="9" />
+<rect x="910" y="491" width="110" height="18" rx="9" />
+</g>
+<g stroke="#ffffff" stroke-width="8" stroke-linecap="round" fill="none">
+<line x1="600" y1="270" x2="600" y2="535" />
+<line x1="470" y1="300" x2="730" y2="300" />
+<line x1="470" y1="300" x2="425" y2="430" stroke-width="4" />
+<line x1="470" y1="300" x2="515" y2="430" stroke-width="4" />
+<line x1="730" y1="300" x2="685" y2="430" stroke-width="4" />
+<line x1="730" y1="300" x2="775" y2="430" stroke-width="4" />
+</g>
+<circle cx="600" cy="270" r="16" fill="#f59e0b" />
+<path d="M410 430 H530 Q520 480 470 480 Q420 480 410 430 Z" fill="#fdba74" />
+<path d="M670 430 H790 Q780 480 730 480 Q680 480 670 430 Z" fill="#fdba74" />
+<path d="M530 560 L545 535 H655 L670 560 Z" fill="#ffffff" />
+</svg>

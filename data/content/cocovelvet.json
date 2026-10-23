@@ -1,0 +1,66 @@
+{
+  "cta_text": "Wenn du dir CocoVelvet und das Angebot selbst ansehen möchtest, findest du alles Weitere beim Anbieter Visit-X.",
+  "faq": [
+    {
+      "a": "CocoVelvet hat ein Profil bei Visit-X. Über den Link dieser Seite gelangst du zuerst in den Videobereich des Anbieters und kannst von dort das Profil ansteuern.",
+      "q": "Wo finde ich CocoVelvet?"
+    },
+    {
+      "a": "Du lädst Guthaben in Euro auf, der Betrag wird in Tokens umgewandelt. Gängig sind Sofortüberweisung, PayPal, Kreditkarte und SEPA. Welche Methoden verfügbar sind, zeigt Visit-X beim Aufladen.",
+      "q": "Wie bezahle ich bei Visit-X?"
+    },
+    {
+      "a": "Laut Seitenbetreiber gibt es über den Link dieser Seite einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Der Code ist automatisch hinterlegt. Es gelten die Bedingungen von Visit-X.",
+      "q": "Gibt es einen Bonus beim Aufladen?"
+    },
+    {
+      "a": "Nein. Die Seite ist ein unabhängiger Ratgeber und weder mit dem Model noch mit dem Anbieter verbunden. Verbindliche Angaben zu Inhalten, Preisen und Bedingungen findest du bei Visit-X.",
+      "q": "Wird diese Seite von CocoVelvet oder Visit-X betrieben?"
+    }
+  ],
+  "h1": "CocoVelvet: Profil, Videos und Livecam bei Visit-X",
+  "image": {
+    "alt": "Bühnenvorhang mit Scheinwerfer, Bildschirm mit Play-Symbol, Sprechblasen und Sternen auf violettem Verlauf",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\">\n<defs>\n<linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#6d28d9\" />\n<stop offset=\"1\" stop-color=\"#1e1b4b\" />\n</linearGradient>\n<linearGradient id=\"cu\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n<stop offset=\"0\" stop-color=\"#4c1d95\" />\n<stop offset=\"0.5\" stop-color=\"#7c3aed\" />\n<stop offset=\"1\" stop-color=\"#4c1d95\" />\n</linearGradient>\n<radialGradient id=\"lt\" cx=\"0.5\" cy=\"0\" r=\"1\">\n<stop offset=\"0\" stop-color=\"#fef9c3\" stop-opacity=\"0.85\" />\n<stop offset=\"1\" stop-color=\"#fef9c3\" stop-opacity=\"0\" />\n</radialGradient>\n</defs>\n<rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" />\n<polygon points=\"600,40 330,630 870,630\" fill=\"url(#lt)\" />\n<rect x=\"0\" y=\"0\" width=\"1200\" height=\"40\" fill=\"#1e1b4b\" />\n<path d=\"M0 0H210C190 150 250 300 200 450C180 520 200 580 210 630H0Z\" fill=\"url(#cu)\" />\n<path d=\"M1200 0H990C1010 150 950 300 1000 450C1020 520 1000 580 990 630H1200Z\" fill=\"url(#cu)\" />\n<path d=\"M70 0C60 200 90 400 70 630\" stroke=\"#1e1b4b\" stroke-width=\"6\" fill=\"none\" opacity=\"0.5\" />\n<path d=\"M140 0C130 200 160 400 140 630\" stroke=\"#1e1b4b\" stroke-width=\"6\" fill=\"none\" opacity=\"0.5\" />\n<path d=\"M1130 0C1140 200 1110 400 1130 630\" stroke=\"#1e1b4b\" stroke-width=\"6\" fill=\"none\" opacity=\"0.5\" />\n<path d=\"M1060 0C1070 200 1040 400 1060 630\" stroke=\"#1e1b4b\" stroke-width=\"6\" fill=\"none\" opacity=\"0.5\" />\n<rect x=\"400\" y=\"90\" width=\"400\" height=\"250\" rx=\"20\" fill=\"#0f0d2e\" stroke=\"#fde047\" stroke-width=\"10\" />\n<rect x=\"420\" y=\"110\" width=\"360\" height=\"210\" rx=\"8\" fill=\"#a78bfa\" />\n<circle cx=\"600\" cy=\"215\" r=\"58\" fill=\"#fff\" />\n<polygon points=\"583,185 583,245 633,215\" fill=\"#6d28d9\" />\n<rect x=\"570\" y=\"340\" width=\"60\" height=\"22\" fill=\"#fde047\" />\n<rect x=\"520\" y=\"360\" width=\"160\" height=\"14\" rx=\"7\" fill=\"#fde047\" />\n<path d=\"M250 110H370Q390 110 390 130V180Q390 200 370 200H310L280 230V200H250Q230 200 230 180V130Q230 110 250 110Z\" fill=\"#fff\" />\n<circle cx=\"275\" cy=\"155\" r=\"8\" fill=\"#6d28d9\" />\n<circle cx=\"310\" cy=\"155\" r=\"8\" fill=\"#6d28d9\" />\n<circle cx=\"345\" cy=\"155\" r=\"8\" fill=\"#6d28d9\" />\n<path d=\"M850 250H950Q970 250 970 270V310Q970 330 950 330H940V360L910 330H850Q830 330 830 310V270Q830 250 850 250Z\" fill=\"#fde047\" />\n<polygon points=\"900,262 906,280 925,280 910,291 916,309 900,298 884,309 890,291 875,280 894,280\" fill=\"#6d28d9\" />\n<polygon points=\"860,120 868,145 894,145 873,160 881,185 860,170 839,185 847,160 826,145 852,145\" fill=\"#fde047\" />\n<polygon points=\"1000,70 1005,85 1021,85 1008,95 1013,110 1000,101 987,110 992,95 979,85 995,85\" fill=\"#fff\" />\n<polygon points=\"330,270 335,285 351,285 338,295 343,310 330,301 317,310 322,295 309,285 325,285\" fill=\"#fde047\" />\n<text x=\"600\" y=\"520\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"110\" fill=\"#fff\" text-anchor=\"middle\" stroke=\"#1e1b4b\" stroke-width=\"3\">CocoVelvet</text>\n<text x=\"600\" y=\"580\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"40\" fill=\"#fde047\" text-anchor=\"middle\">Profil &amp; Videos</text>\n</svg>"
+  },
+  "intro": "CocoVelvet hat ein Profil bei Visit-X und gehört dort laut Anbieter zu den beliebtesten Amateur-Models in der Favoritenliste. Sie beschreibt sich selbst als sinnlich und verspielt und lädt dazu ein, ihre verführerische Seite zu entdecken. Diese Seite zeigt dir, was du zum Namen wissen kannst und wie du sinnvoll startest.\n\nDu liest hier einen unabhängigen Ratgeber. Die Seite wird weder von CocoVelvet noch von Visit-X betrieben. Wir ordnen ein, wie Videos, Direkt-Chat und Live-Shows grundsätzlich funktionieren und worauf du bei Kosten und Abrechnung achten solltest. Aktuelle Inhalte, Preise und Bedingungen stehen immer direkt beim Anbieter.",
+  "key_takeaways": [
+    "CocoVelvet hat ein Profil bei Visit-X und zählt laut Anbieter zu den beliebtesten Amateur-Models in der Favoritenliste.",
+    "Sie beschreibt sich als sinnlich und verspielt und lädt dazu ein, ihre verführerische Seite zu entdecken.",
+    "Bezahlt wird bei Visit-X in Tokens; der Euro-Betrag wird beim Aufladen umgewandelt.",
+    "Über den Link dieser Seite gibt es laut Seitenbetreiber einen 100-%-Aufladebonus, es gelten die Bedingungen von Visit-X.",
+    "Nutze nur Inhalte, die der Anbieter offiziell bereitstellt."
+  ],
+  "meta_description": "Profil-Guide zu CocoVelvet bei Visit-X: Was es zum Namen gibt, wie Videos und Livecam funktionieren und worauf man bei Tokens achtet.",
+  "sections": [
+    {
+      "body": "Die folgenden Punkte sind alles, was sich über CocoVelvet und ihr Angebot hier belegen lässt:\n\n- **Bühnenname:** CocoVelvet\n- **Anbieter:** Visit-X, dort mit eigenem Profil\n- **Einordnung:** gehört zu den beliebtesten Amateur-Models in der Favoritenliste von Visit-X\n- **Selbstbeschreibung:** sinnlich und verspielt, mit der Einladung, ihre verführerische Seite zu entdecken\n\nWeitere Details, etwa zu Themen, Zeiten oder einzelnen Inhalten, findest du im Profil bei Visit-X. Dort gelten die Angaben des Anbieters und des Models.",
+      "h2": "Steckbrief: CocoVelvet"
+    },
+    {
+      "body": "### Was dich im Videobereich erwartet\n\nVisit-X bietet neben Live-Cams auch Videos und Amateur-Angebote. Der Link dieser Seite führt dich laut Seitenbetreiber zuerst in den Videobereich von Visit-X. Von dort aus kannst du dich in Ruhe umsehen und das Profil von CocoVelvet ansteuern.\n\nVideos haben einen praktischen Vorteil: Du bist nicht an eine Uhrzeit gebunden. Du entscheidest selbst, wann du etwas ansiehst, und musst nicht darauf warten, dass jemand online ist. Welche Videos zu CocoVelvet gehören und wie sie abgerechnet werden, zeigt dir Visit-X auf der jeweiligen Profil- oder Videoseite.\n\n### Worauf du bei Videos achten kannst\n\n- Lies Titel und Beschreibung, bevor du etwas freischaltest.\n- Prüfe den Preis in Tokens, damit du die Kosten einschätzen kannst.\n- Bleib bei offiziellen Inhalten, die der Anbieter selbst bereitstellt.",
+      "h2": "CocoVelvet Videos"
+    },
+    {
+      "body": "### So laufen Live-Shows und Direkt-Chat grundsätzlich ab\n\nBei Live-Cams siehst du Models in Echtzeit und kannst dich über den Chat melden. Ob CocoVelvet gerade online ist, erkennst du im Profil bei Visit-X. Ist sie nicht live, lohnt sich ein späterer Besuch oder ein Blick in die Favoritenfunktion des Anbieters, sofern sie dir dort angeboten wird.\n\nIm Direkt-Chat schreibst du dem Model, und es antwortet nach eigenem Ermessen. Ein respektvoller Ton kommt in der Regel besser an als Drängen. Die Regeln zu Shows und Chat legen Visit-X und die Models fest, sie können sich ändern. Sieh deshalb vor dem Start nach, was in deinem Fall gilt.\n\n### Tipps für einen entspannten Einstieg\n\n- Starte mit einem kleinen Guthaben und steigere es nur bei Bedarf.\n- Behalte den Token-Verbrauch im Blick, besonders bei längeren Sitzungen.\n- Lies die Hinweise im Profil, bevor du Fragen stellst.",
+      "h2": "CocoVelvet Livecam und Chat"
+    },
+    {
+      "body": "### Wie bezahlt wird\n\nBei Visit-X ist die normale Währung Euro. Der bezahlte Betrag wird in Tokens umgewandelt, mit denen du bei Visit-X bezahlst. Gängige Zahlungsarten sind Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift oder Überweisung). Welche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen.\n\n### Aufladebonus und Anmeldung\n\nÜber den Link dieser Seite gibt es laut Seitenbetreiber bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X. Die Anmeldung startest du selbst über den Button „Kostenlos anmelden“. Der Gutscheincode für den Aufladebonus ist dabei automatisch hinterlegt, du musst ihn nicht eingeben.\n\nWichtig: Ein Bonus ersetzt keine Kostenkontrolle. Lies vorab, wie der Anbieter Tokens und Bonusguthaben behandelt, und setze dir ein Budget, bevor du Videos oder Shows nutzt.",
+      "h2": "CocoVelvet kostenlos? Kosten und Tokens"
+    },
+    {
+      "body": "Wenn du dir ein Bild machen möchtest, hilft ein Blick auf mehrere Profile. Die Favoritenliste von Visit-X zeigt, welche Amateur-Models bei Nutzern besonders gefragt sind, und CocoVelvet gehört dort laut Anbieter zu den beliebtesten. Das sagt etwas über die Resonanz aus, aber nichts darüber, ob der Stil zu dir passt.\n\nVergleiche daher Profiltexte, Auftritt und Preise. Manche mögen den verspielten, sinnlichen Ton, den CocoVelvet für sich beschreibt, andere bevorzugen eine andere Art. Mit einem kleinen Startguthaben kannst du in Ruhe testen, ohne dich festzulegen.",
+      "h2": "CocoVelvet und andere Amateur-Models im Vergleich"
+    },
+    {
+      "body": "Das Angebot richtet sich ausschließlich an Personen ab 18 Jahren. Gib persönliche Daten sparsam weiter, nutze ein sicheres Passwort und zahle nur über die vom Anbieter angebotenen Wege. Nutze ausschließlich Inhalte, die Visit-X offiziell bereitstellt, und keine Kopien oder Material aus anderen Quellen.",
+      "h2": "Jugendschutz, Datenschutz und legale Nutzung"
+    },
+    {
+      "body": "Die häufigsten Fragen beantworten wir im Folgenden kurz. Alles Weitere, vor allem aktuelle Bedingungen, klärst du direkt beim Anbieter.",
+      "h2": "Fragen zu CocoVelvet"
+    }
+  ],
+  "title": "CocoVelvet: Profil, Videos und Livecam bei Visit-X"
+}

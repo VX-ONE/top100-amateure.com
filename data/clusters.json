@@ -667,7 +667,7 @@
     ],
     "primary": "amateur cam",
     "slug": "amateur-cam",
-    "status": "queued",
+    "status": "published",
     "topic": "grundlagen"
   },
   {
@@ -1242,7 +1242,7 @@
     ],
     "primary": "amateur joi",
     "slug": "amateur-joi",
-    "status": "queued",
+    "status": "published",
     "topic": "grundlagen"
   },
   {
@@ -16723,5 +16723,44 @@
     "slug": "webcam-models-tokens",
     "status": "parked",
     "topic": "preise"
+  },
+  {
+    "added": "2026-10-23",
+    "clicks": 0,
+    "fail_count": 0,
+    "impressions": 6,
+    "keywords": [
+      "visit x models"
+    ],
+    "primary": "visit x models",
+    "slug": "visit-x-models",
+    "status": "published",
+    "topic": "webcam-models"
+  },
+  {
+    "added": "2026-10-23",
+    "clicks": 0,
+    "fail_count": 0,
+    "impressions": 1,
+    "keywords": [
+      "visit-x alternative"
+    ],
+    "primary": "visit-x alternative",
+    "slug": "visit-x-alternative",
+    "status": "published",
+    "topic": "vergleich"
+  },
+  {
+    "added": "2026-10-23",
+    "clicks": 0,
+    "fail_count": 0,
+    "impressions": 1,
+    "keywords": [
+      "visitx models"
+    ],
+    "primary": "visitx models",
+    "slug": "visitx-models",
+    "status": "published",
+    "topic": "webcam-models"
   }
 ]

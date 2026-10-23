@@ -1,1 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c2410c" /><stop offset="1" stop-color="#431407" /></linearGradient><radialGradient id="gl" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fde68a" stop-opacity="0.45" /><stop offset="1" stop-color="#fde68a" stop-opacity="0" /></radialGradient></defs><rect width="1200" height="630" fill="url(#bg)" /><circle cx="900" cy="270" r="230" fill="url(#gl)" /><rect x="893" y="390" width="14" height="100" fill="#1f0a04" /><circle cx="900" cy="270" r="120" fill="none" stroke="#fde68a" stroke-width="22" /><circle cx="900" cy="270" r="97" fill="none" stroke="#fff7ed" stroke-width="3" opacity="0.6" /><rect x="860" y="200" width="80" height="140" rx="14" fill="#1c1917" /><rect x="868" y="214" width="64" height="110" rx="6" fill="#fdba74" /><circle cx="900" cy="207" r="3.5" fill="#78716c" /><circle cx="900" cy="270" r="16" fill="#c2410c" /><circle cx="900" cy="270" r="7" fill="#fff7ed" /><rect x="1020" y="70" width="110" height="80" rx="22" fill="#fff7ed" /><polygon points="1050,148 1075,148 1048,182" fill="#fff7ed" /><g transform="translate(35,-15)"><path d="M1040 145 C1015 128 1018 106 1030 106 C1036 106 1040 111 1040 115 C1040 111 1044 106 1050 106 C1062 106 1065 128 1040 145Z" fill="#dc2626" transform="translate(0,12)" /></g><rect x="700" y="425" width="440" height="90" rx="34" fill="#1f0a04" /><rect x="690" y="470" width="460" height="70" rx="22" fill="#2b0f06" /><rect x="670" y="440" width="56" height="110" rx="24" fill="#1f0a04" /><rect x="1114" y="440" width="56" height="110" rx="24" fill="#1f0a04" /><rect x="710" y="540" width="16" height="24" fill="#1f0a04" /><rect x="1114" y="540" width="16" height="24" fill="#1f0a04" /><text x="60" y="300" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="84" fill="#ffffff">Einstieg</text><text x="60" y="394" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="84" fill="#ffffff">in 5 Schritten</text><rect x="64" y="424" width="220" height="10" rx="5" fill="#fde68a" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c2410c" />
+<stop offset="1" stop-color="#431407" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#fde68a" stop-opacity="0.55" />
+<stop offset="1" stop-color="#fde68a" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="880" cy="270" r="260" fill="url(#glow)" />
+<g fill="#2a0c03" opacity="0.85">
+<rect x="650" y="450" width="460" height="80" rx="24" />
+<rect x="620" y="470" width="90" height="100" rx="30" />
+<rect x="1050" y="470" width="90" height="100" rx="30" />
+<rect x="640" y="540" width="500" height="40" rx="14" />
+</g>
+<g stroke="#1c0802" stroke-width="10" stroke-linecap="round">
+<line x1="880" y1="415" x2="880" y2="560" />
+<line x1="880" y1="540" x2="830" y2="600" />
+<line x1="880" y1="540" x2="930" y2="600" />
+</g>
+<circle cx="880" cy="270" r="140" fill="none" stroke="#fef3c7" stroke-width="28" />
+<circle cx="880" cy="270" r="126" fill="none" stroke="#fbbf24" stroke-width="4" />
+<rect x="835" y="190" width="90" height="170" rx="16" fill="#1c0802" stroke="#fff" stroke-width="5" />
+<rect x="845" y="210" width="70" height="125" rx="6" fill="#7c2d12" />
+<circle cx="880" cy="200" r="5" fill="#fbbf24" />
+<circle cx="880" cy="272" r="26" fill="#fde68a" />
+<circle cx="880" cy="272" r="14" fill="#431407" />
+<circle cx="880" cy="347" r="6" fill="#fff" />
+<path d="M1080 150 C1030 110 1040 60 1080 80 C1120 60 1130 110 1080 150 Z" fill="#fff" transform="translate(0 10)" />
+<g>
+<rect x="590" y="70" width="160" height="96" rx="26" fill="#fff" />
+<polygon points="650,160 640,205 690,160" fill="#fff" />
+<circle cx="640" cy="118" r="9" fill="#c2410c" />
+<circle cx="670" cy="118" r="9" fill="#c2410c" />
+<circle cx="700" cy="118" r="9" fill="#c2410c" />
+</g>
+<g font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="92" fill="#fff">
+<text x="60" y="320"><tspan>Einstieg in</tspan></text>
+<text x="60" y="425"><tspan>5 Schritten</tspan></text>
+</g>
+<rect x="64" y="460" width="260" height="12" rx="6" fill="#fbbf24" />
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#b91d47" />
+<stop offset="1" stop-color="#4a0f2a" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="800" cy="260" r="330" fill="url(#glow)" />
+<g>
+<rect x="580" y="100" width="440" height="270" rx="18" fill="#2a0817" />
+<rect x="598" y="118" width="404" height="234" rx="8" fill="#ffe3ec" />
+<rect x="620" y="140" width="210" height="46" rx="23" fill="#b91d47" />
+<rect x="770" y="204" width="210" height="46" rx="23" fill="#4a0f2a" />
+<rect x="620" y="268" width="170" height="46" rx="23" fill="#b91d47" />
+<circle cx="646" cy="163" r="8" fill="#fff" />
+<circle cx="680" cy="163" r="8" fill="#fff" />
+<circle cx="714" cy="163" r="8" fill="#fff" />
+<path d="M875 240 C835 215 850 195 875 212 C900 195 915 215 875 240 Z" fill="#fff" />
+<rect x="640" y="286" width="110" height="10" rx="5" fill="#fff" />
+<rect x="785" y="360" width="30" height="40" fill="#2a0817" />
+<rect x="720" y="398" width="160" height="16" rx="8" fill="#2a0817" />
+</g>
+<g>
+<line x1="1100" y1="350" x2="1050" y2="540" stroke="#1d0510" stroke-width="12" stroke-linecap="round" />
+<line x1="1100" y1="350" x2="1150" y2="540" stroke="#1d0510" stroke-width="12" stroke-linecap="round" />
+<line x1="1100" y1="350" x2="1100" y2="550" stroke="#1d0510" stroke-width="12" stroke-linecap="round" />
+<circle cx="1100" cy="270" r="78" fill="none" stroke="#fff3c4" stroke-width="22" />
+<circle cx="1100" cy="270" r="56" fill="#2a0817" opacity="0.35" />
+<rect x="1070" y="245" width="60" height="50" rx="10" fill="#1d0510" />
+<circle cx="1100" cy="270" r="15" fill="#6fd3ff" />
+<circle cx="1100" cy="270" r="6" fill="#0b2a3a" />
+</g>
+<g>
+<path d="M660 540 A75 75 0 0 1 810 540" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" />
+<rect x="640" y="520" width="38" height="68" rx="16" fill="#fff" />
+<rect x="792" y="520" width="38" height="68" rx="16" fill="#fff" />
+</g>
+<path d="M920 560 C850 515 880 470 920 500 C960 470 990 515 920 560 Z" fill="#ff7a9c" />
+<text x="70" y="290" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="140" fill="#fff">Profil</text>
+<text x="70" y="430" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="140" fill="#fff">finden</text>
+<rect x="75" y="460" width="300" height="12" rx="6" fill="#ff7a9c" />
+</svg>
