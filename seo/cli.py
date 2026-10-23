@@ -397,6 +397,15 @@ def cmd_monitor(cfg, args) -> int:
     return 0
 
 
+def cmd_status_report(cfg, args) -> int:
+    """Täglicher Statusbericht (Search Console + Pipeline) nach reports/<datum>-status.md."""
+    from . import status
+    text, path = status.build(cfg, Store(cfg["_data"]))
+    print(text)
+    print(f"\nBericht: {path}")
+    return 0
+
+
 def cmd_build(cfg, args) -> int:
     store = Store(cfg["_data"])
     removed = modelmod.apply_blocklist(cfg, store)
@@ -506,13 +515,14 @@ def main(argv=None) -> int:
     p.add_argument("--max", type=int, help="maximal so viele Videotexte in diesem Lauf erzeugen")
     p.add_argument("--ping-all", action="store_true", help="alle Sitemap-URLs per IndexNow melden")
     p.add_argument("--no-publish", action="store_true")
+    sub.add_parser("status-report", help="Täglichen Statusbericht schreiben (Search Console + Pipeline)")
     sub.add_parser("build", help="Seite neu bauen")
     sub.add_parser("status", help="Stand anzeigen")
 
     args = ap.parse_args(argv)
     cfg = cfgmod.load(args.config, sandbox=args.sandbox or args.mock)
     return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest, "optimize": cmd_optimize, "images": cmd_images,
-            "build": cmd_build, "status": cmd_status, "videos": cmd_videos}[args.cmd](cfg, args)
+            "build": cmd_build, "status": cmd_status, "status-report": cmd_status_report, "videos": cmd_videos}[args.cmd](cfg, args)
 
 
 if __name__ == "__main__":
