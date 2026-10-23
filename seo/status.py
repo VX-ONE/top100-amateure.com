@@ -159,7 +159,7 @@ def build(cfg: dict, store) -> tuple[str, Path]:
                   f"| Letzte 28 Tage | {m28['clicks']} | {m28['impr']} | {_fmt_pct(m28['ctr'])} | {_fmt_pos(m28['pos'])} |", ""]
         if daily:
             lines += ["### Verlauf (14 Tage)", "", "| Tag | Klicks | Impressionen | Ø-Position |", "|---|---|---|---|"]
-            lines += [f"| {datetime.fromisoformat(r['keys'][0]).strftime('%a %d.%m.')} | {int(r['clicks'])} | {int(r['impressions'])} "
+            lines += [f"| {['Mo','Di','Mi','Do','Fr','Sa','So'][datetime.fromisoformat(r['keys'][0]).weekday()] + datetime.fromisoformat(r['keys'][0]).strftime(' %d.%m.')} | {int(r['clicks'])} | {int(r['impressions'])} "
                       f"| {_fmt_pos(r['position'])} |" for r in daily[::-1]]
             lines.append("")
         # nach Seitentyp
