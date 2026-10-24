@@ -294,11 +294,12 @@ def scrape_api(cfg: dict, store, only: list[str] | None = None, log=print) -> di
         stats["models"] += 1
         data["vx_model_id"] = mid
         known = {v["id"] for v in data["videos"]}
+        cap = s["per_model"] if not known else s["new_per_model_per_run"]   # neues Model: gleich alle 30 übernehmen
         added = 0
         for v in found:
             if v["id"] in known:
                 continue
-            if added >= s["new_per_model_per_run"]:
+            if added >= cap:
                 break
             added += 1
             hit = blocked_hit(normalize(v["title"]), blocked)

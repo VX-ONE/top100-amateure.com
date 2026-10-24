@@ -52,7 +52,7 @@ def _fmt_pct(x):
 
 
 def _delta(a, b, kind="num"):
-    if b in (None, 0) or a is None:
+    if b in (None, 0) or a is None or (kind != "pos" and b < 20):   # zu kleine Vergleichsbasis: keine Prozentangabe
         return ""
     if kind == "pos":  # kleiner ist besser
         d = a - b

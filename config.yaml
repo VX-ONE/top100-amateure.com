@@ -60,7 +60,7 @@ affiliate:
 
 # Video-Unterseiten der Top-Models (Operator läuft mittwochs und sonntags, .github/workflows/videos.yml)
 videos:
-  top_models: 30              # erste N aktive Models aus data/models.yaml (Reihenfolge = Top-Liste)
+  top_models: 50              # erste N aktive Models aus data/models.yaml (Reihenfolge = Top-Liste)
   per_model: 30               # neueste N Videos je Model
   generate_per_run: 150       # neue Videoseiten pro Lauf (Rest folgt im nächsten Lauf)
   llm_model: "claude-haiku-5-5"
