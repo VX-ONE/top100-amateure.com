@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#be185d" />
+<stop offset="1" stop-color="#3b0a24" />
+</linearGradient>
+<radialGradient id="gl" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+<linearGradient id="sc" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fb7185" />
+<stop offset="1" stop-color="#9d174d" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="800" cy="300" r="320" fill="url(#gl)" />
+<circle cx="80" cy="560" r="150" fill="#ffffff" opacity="0.06" />
+<circle cx="1150" cy="70" r="110" fill="#ffffff" opacity="0.06" />
+<g>
+<rect x="520" y="110" width="580" height="360" rx="26" fill="#1f0614" />
+<rect x="542" y="132" width="536" height="316" rx="14" fill="url(#sc)" />
+<polygon points="770,470 850,470 880,540 740,540" fill="#1f0614" />
+<rect x="690" y="535" width="240" height="22" rx="11" fill="#1f0614" />
+<circle cx="810" cy="300" r="70" fill="#ffffff" opacity="0.9" />
+<polygon points="790,262 790,338 850,300" fill="#be185d" />
+<rect x="566" y="154" width="126" height="46" rx="23" fill="#ef4444" />
+<circle cx="592" cy="177" r="9" fill="#ffffff" />
+<text x="610" y="187" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="28" fill="#ffffff">LIVE</text>
+</g>
+<g>
+<rect x="150" y="150" width="250" height="150" rx="75" fill="#ffffff" />
+<polygon points="210,285 200,340 260,292" fill="#ffffff" />
+<circle cx="215" cy="225" r="14" fill="#be185d" />
+<circle cx="275" cy="225" r="14" fill="#be185d" />
+<circle cx="335" cy="225" r="14" fill="#be185d" />
+</g>
+<g>
+<rect x="400" y="330" width="190" height="110" rx="55" fill="#fbcfe8" />
+<polygon points="540,430 570,480 510,435" fill="#fbcfe8" />
+<path d="M495 405 C455 380 455 350 480 350 C490 350 495 357 495 360 C495 357 500 350 510 350 C535 350 535 380 495 405 Z" fill="#be185d" />
+</g>
+<g>
+<rect x="170" y="400" width="130" height="90" rx="16" fill="#1f0614" />
+<circle cx="235" cy="445" r="32" fill="#e5e7eb" />
+<circle cx="235" cy="445" r="20" fill="#374151" />
+<circle cx="228" cy="438" r="6" fill="#ffffff" />
+<rect x="215" y="490" width="40" height="20" fill="#1f0614" />
+<rect x="190" y="506" width="90" height="12" rx="6" fill="#1f0614" />
+</g>
+<text x="80" y="595" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="84" fill="#ffffff" stroke="#3b0a24" stroke-width="2">Amateur Cams</text>
+</svg>

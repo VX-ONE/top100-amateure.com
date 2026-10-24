@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#b91d47" />
+<stop offset="1" stop-color="#4a0f2a" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="900" cy="270" r="260" fill="url(#glow)" />
+
+<g>
+<rect x="640" y="110" width="440" height="290" rx="20" fill="#2a0818" />
+<rect x="660" y="130" width="400" height="250" rx="10" fill="#fff5f8" />
+<rect x="680" y="150" width="210" height="36" rx="18" fill="#b91d47" />
+<rect x="830" y="200" width="210" height="36" rx="18" fill="#4a0f2a" />
+<rect x="680" y="250" width="250" height="36" rx="18" fill="#b91d47" />
+<rect x="780" y="300" width="260" height="36" rx="18" fill="#4a0f2a" />
+<rect x="840" y="400" width="40" height="50" fill="#2a0818" />
+<rect x="780" y="450" width="160" height="16" rx="8" fill="#2a0818" />
+</g>
+
+<path d="M985 70 C965 40 925 55 940 90 C950 110 985 130 985 130 C985 130 1020 110 1030 90 C1045 55 1005 40 985 70 Z" fill="#ff6b8f" />
+
+<g>
+<line x1="330" y1="330" x2="330" y2="500" stroke="#1a0510" stroke-width="12" />
+<line x1="330" y1="500" x2="250" y2="580" stroke="#1a0510" stroke-width="12" stroke-linecap="round" />
+<line x1="330" y1="500" x2="410" y2="580" stroke="#1a0510" stroke-width="12" stroke-linecap="round" />
+<line x1="330" y1="500" x2="330" y2="585" stroke="#1a0510" stroke-width="12" stroke-linecap="round" />
+<circle cx="330" cy="220" r="125" fill="none" stroke="#ffe3ec" stroke-width="26" />
+<circle cx="330" cy="220" r="125" fill="none" stroke="#ffffff" stroke-width="8" />
+<rect x="290" y="185" width="80" height="70" rx="16" fill="#1a0510" />
+<circle cx="330" cy="220" r="22" fill="#4a0f2a" stroke="#ff6b8f" stroke-width="6" />
+<circle cx="330" cy="220" r="8" fill="#ffffff" />
+<rect x="318" y="255" width="24" height="75" fill="#1a0510" />
+</g>
+
+<g>
+<path d="M500 440 C500 340 600 340 600 440" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
+<rect x="480" y="420" width="36" height="70" rx="14" fill="#ff6b8f" />
+<rect x="584" y="420" width="36" height="70" rx="14" fill="#ff6b8f" />
+</g>
+
+<text x="600" y="560" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="84" fill="#ffffff">Live oder Video?</text>
+</svg>

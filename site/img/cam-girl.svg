@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0f766e" />
+<stop offset="1" stop-color="#042f2e" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="860" cy="270" r="260" fill="url(#glow)" />
+
+<rect x="560" y="120" width="500" height="320" rx="22" fill="#021f1e" />
+<rect x="580" y="140" width="460" height="280" rx="10" fill="#134e4a" />
+<rect x="600" y="160" width="270" height="240" rx="8" fill="#2dd4bf" opacity="0.35" />
+<circle cx="735" cy="250" r="50" fill="#99f6e4" opacity="0.6" />
+<path d="M650 400 Q735 300 820 400 Z" fill="#99f6e4" opacity="0.6" />
+<rect x="885" y="160" width="140" height="44" rx="12" fill="#ffffff" />
+<rect x="900" y="215" width="125" height="44" rx="12" fill="#5eead4" />
+<rect x="885" y="270" width="140" height="44" rx="12" fill="#ffffff" />
+<rect x="900" y="325" width="125" height="44" rx="12" fill="#5eead4" />
+<rect x="885" y="378" width="140" height="22" rx="10" fill="#0f766e" />
+<rect x="790" y="440" width="40" height="40" fill="#021f1e" />
+<rect x="710" y="478" width="200" height="16" rx="8" fill="#021f1e" />
+
+<path d="M985 120 C950 80 900 120 985 185 C1070 120 1020 80 985 120 Z" fill="#fb7185" />
+
+<circle cx="300" cy="230" r="125" fill="none" stroke="#fef9c3" stroke-width="26" />
+<circle cx="300" cy="230" r="125" fill="none" stroke="#ffffff" stroke-width="8" />
+<rect x="272" y="200" width="56" height="56" rx="12" fill="#0b1f1e" />
+<circle cx="300" cy="228" r="18" fill="#0f766e" />
+<circle cx="300" cy="228" r="8" fill="#5eead4" />
+<rect x="294" y="256" width="12" height="150" fill="#0b1f1e" />
+<polyline points="300,400 240,500" fill="none" stroke="#0b1f1e" stroke-width="12" stroke-linecap="round" />
+<polyline points="300,400 360,500" fill="none" stroke="#0b1f1e" stroke-width="12" stroke-linecap="round" />
+<polyline points="300,400 300,510" fill="none" stroke="#0b1f1e" stroke-width="12" stroke-linecap="round" />
+
+<path d="M440 440 C440 350 560 350 560 440" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" />
+<rect x="420" y="430" width="36" height="64" rx="14" fill="#ffffff" />
+<rect x="544" y="430" width="36" height="64" rx="14" fill="#ffffff" />
+
+<text x="600" y="580" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="76" fill="#ffffff">Live-Chat</text>
+</svg>
