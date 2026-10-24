@@ -14,12 +14,12 @@ from pathlib import Path
 from . import gsc
 from . import videos as vidmod
 
-LAG = 2  # Search-Console-Daten kommen mit ca. 2 Tagen Verzögerung
+LAG = 0  # dataState "all" liefert auch frische Daten; das letzte Datum mit Daten wird angezeigt
 
 
 def _query(cfg, svc, start: date, end: date, dims: list[str], limit: int = 1000) -> list[dict]:
     body = {"startDate": start.isoformat(), "endDate": end.isoformat(), "dimensions": dims,
-            "rowLimit": limit, "type": "web"}
+            "rowLimit": limit, "type": "web", "dataState": "all"}  # inkl. noch nicht finaler (frischer) Daten
     return svc.searchanalytics().query(siteUrl=cfg["gsc"]["property"], body=body).execute().get("rows", [])
 
 
@@ -120,7 +120,12 @@ def build(cfg: dict, store) -> tuple[str, Path]:
         perf_ok = False
     else:
         perf_ok = True
-        end = today - timedelta(days=LAG)
+        try:   # letzter Tag, für den Google schon Daten liefert (inkl. frischer Daten)
+            recent = _query(cfg, svc, today - timedelta(days=10), today, ["date"])
+            end = max((date.fromisoformat(r["keys"][0]) for r in recent), default=today - timedelta(days=3))
+        except Exception:
+            end = today - timedelta(days=3)
+        lag_days = (today - end).days
         w1s, w0s, w0e = end - timedelta(days=6), end - timedelta(days=13), end - timedelta(days=7)
         try:
             cur = _tot(_query(cfg, svc, w1s, end, ["date"]))
@@ -137,6 +142,9 @@ def build(cfg: dict, store) -> tuple[str, Path]:
     # ---------- Kurzfazit
     fazit = []
     if perf_ok:
+        if lag_days > 3:
+            fazit.append(f"Hinweis: Google hat seit {end.strftime('%d.%m.')} keine neuen Daten gemeldet ({lag_days} Tage Verzögerung) – "
+                         "die Zahlen ändern sich erst, wenn Google nachliefert.")
         fazit.append(f"Letzte 7 Tage ({w1s.strftime('%d.%m.')}–{end.strftime('%d.%m.')}): **{cur['clicks']} Klicks** "
                      f"und **{cur['impr']} Impressionen**{_delta(cur['impr'], prev['impr'])} bei Ø-Position {_fmt_pos(cur['pos'])}.")
     fazit.append(f"Heute neu: {len(new_pages)} Seite(n), {len(refreshed)} überarbeitet, "
@@ -151,7 +159,8 @@ def build(cfg: dict, store) -> tuple[str, Path]:
 
     if perf_ok:
         lines += ["## Leistung in der Google-Suche", "",
-                  f"Daten bis {end.strftime('%d.%m.%Y')} (Search Console liefert mit ca. {LAG} Tagen Verzögerung).", "",
+                  f"Daten bis einschließlich {end.strftime('%d.%m.%Y')} – das ist der letzte Tag, den Google bisher gemeldet hat "
+                  f"({lag_days} Tage Verzögerung; jüngere Tage können noch unvollständig sein).", "",
                   "| Zeitraum | Klicks | Impressionen | CTR | Ø-Position |", "|---|---|---|---|---|",
                   f"| Letzte 7 Tage | {cur['clicks']}{_delta(cur['clicks'], prev['clicks'])} | {cur['impr']}{_delta(cur['impr'], prev['impr'])} "
                   f"| {_fmt_pct(cur['ctr'])} | {_fmt_pos(cur['pos'])}{_delta(cur['pos'], prev['pos'], 'pos')} |",
