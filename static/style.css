@@ -71,7 +71,7 @@ main{max-width:1080px}.article{max-width:760px;margin:0 auto}
 .landing{position:relative;overflow:hidden}
 .landing.slim{padding:24px 22px;margin-top:10px;border-left:5px solid var(--c,var(--accent))}
 .landing.slim h1{font-size:clamp(24px,5vw,34px)}
-.sections{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.sections{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
 .sections.compact{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));margin-top:0}
 .section-tile{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:16px;background:var(--bg);border:1px solid var(--line);border-top:5px solid var(--c);text-decoration:none;color:var(--fg);transition:transform .15s,box-shadow .15s}
 .section-tile:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
@@ -180,3 +180,5 @@ summary h3{font-size:16px;font-weight:600}
 #consent .cbtn{display:flex;gap:8px;justify-content:flex-end}
 #consent button{min-height:42px;padding:8px 16px;border-radius:999px;font-weight:700;cursor:pointer;border:1.5px solid var(--accent);background:var(--bg);color:var(--accent)}
 #consent button.yes{background:var(--accent);color:var(--accent-fg)}
+
+@media (max-width:1000px) and (min-width:761px){.sections{grid-template-columns:repeat(2,1fr)}}
