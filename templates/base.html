@@ -35,10 +35,11 @@
 <footer class="site-footer">
   <nav class="footnav">{% for s in sections %}<a href="/{{ s.path }}/"><strong>{{ s.label }}</strong></a>{% endfor %}{% if has_videos %}<a href="/videos/"><strong>Videos</strong></a>{% endif %}{% for n in nav %}<a href="/themen/{{ n.topic }}/">{{ n.label }}</a>{% endfor %}</nav>
   {% if key_guides %}<nav class="footnav guides" aria-label="Wichtige Ratgeber"><strong>Wichtige Ratgeber:</strong>{% for g in key_guides %}<a href="/{{ g.slug }}/">{{ g.label }}</a>{% endfor %}</nav>{% endif %}
-  <p>&copy; {{ year }} {{ site.name }} &middot; <a href="/impressum/">Impressum</a> &middot; <a href="/datenschutz/">Datenschutz</a></p>
+  <p>&copy; {{ year }} {{ site.name }} &middot; <a href="/impressum/">Impressum</a> &middot; <a href="/datenschutz/">Datenschutz</a>{% if site.ga_id %} &middot; <a href="/datenschutz/" data-consent-open>Cookie-Einstellungen</a>{% endif %}</p>
   <p>Nur für Erwachsene ab 18 Jahren. Links zu {{ provider }} sind Werbung (Affiliate-Links).</p>
 </footer>
 <noscript><p class="noscript">Diese Seite enthält Inhalte für Erwachsene und ist nur für Personen ab 18 Jahren bestimmt.</p></noscript>
 <script src="/agegate.js?v={{ asset_v }}" defer></script>
+{% if site.ga_id %}<script>window.GA_ID="{{ site.ga_id }}";</script><script src="/consent.js?v={{ asset_v }}" defer></script>{% endif %}
 </body>
 </html>

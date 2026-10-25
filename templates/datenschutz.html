@@ -5,9 +5,17 @@
   <h2>Verantwortlicher</h2>
   <p>{{ operator.name }}, {{ operator.address|replace("\n", ", ") }}, E-Mail: {{ operator.email }}</p>
   <h2>Cookies und Tracking</h2>
-  <p>Diese Website setzt keine Cookies und keine Analyse- oder Tracking-Dienste ein. Beim Bestätigen der
-  Altersabfrage wird im Browser lokal ein Merker gespeichert (Local Storage), damit die Abfrage nicht bei
-  jedem Seitenaufruf erscheint. Dieser Merker verlässt dein Gerät nicht.</p>
+  <p>Beim Bestätigen der Altersabfrage und bei deiner Cookie-Auswahl wird im Browser lokal ein Merker gespeichert
+  (Local Storage), damit die Abfrage nicht bei jedem Seitenaufruf erscheint. Dieser Merker verlässt dein Gerät nicht.</p>
+  {% if site.ga_id %}<h2>Google Analytics</h2>
+  <p>Nur wenn du im Cookie-Hinweis auf „Akzeptieren“ klickst, nutzen wir Google Analytics 4, einen Webanalysedienst der
+  Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei werden Cookies gesetzt und Nutzungsdaten
+  (z. B. aufgerufene Seiten, Verweildauer, Klicks auf Links zu {{ provider }}, Gerät, Browser, ungefährer Standort; die
+  IP-Adresse wird von Google gekürzt) an Google übertragen und ausgewertet. Eine Übermittlung in die USA ist möglich;
+  Google ist unter dem EU-US Data Privacy Framework zertifiziert. Rechtsgrundlage ist deine Einwilligung
+  (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Du kannst sie jederzeit über
+  <a href="/datenschutz/" data-consent-open>Cookie-Einstellungen</a> widerrufen. Ohne Einwilligung wird Google Analytics nicht geladen.
+  Speicherdauer bei Google: entsprechend der in Google Analytics eingestellten Aufbewahrungsdauer (Standard 2 Monate). Weitere Informationen: https://policies.google.com/privacy</p>{% endif %}
   <h2>Hosting und Server-Logfiles</h2>
   <p>Die Website wird bei einem externen Hosting-Anbieter betrieben. Beim Aufruf werden technisch notwendige
   Daten (IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles verarbeitet.

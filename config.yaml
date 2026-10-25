@@ -9,6 +9,7 @@ site:
   home_title: "Top100 Amateure: Top-Models, Amateur-Cams und Videos bei Visit-X"
   tagline: "Top 100 Amateure: die Top-Models bei Visit-X, dazu unabhängige Ratgeber zu Live-Cams, Videos, Preisen und Sicherheit."
   base_url: "https://www.top100amateure.com"   # ohne Slash am Ende
+  ga_id: "G-LDNCBZWVG7"                  # Google Analytics 4 (lädt nur nach Einwilligung im Cookie-Hinweis)
   # Pflichtangaben für das Impressum (Deutschland). Ohne diese Angaben startet der Live-Lauf nicht.
   operator:
     name: "SalesBAE GmbH"

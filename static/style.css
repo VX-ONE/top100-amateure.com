@@ -174,3 +174,9 @@ summary h3{font-size:16px;font-weight:600}
 .guides-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 18px 10px;margin:22px 0}
 .guides-box ul{margin:6px 0 0;padding-left:18px}.guides-box li{margin:6px 0}
 @media (max-width:760px){.topnav{gap:6px}.topnav a{padding:7px 6px;min-height:40px;font-size:13px;white-space:nowrap;gap:5px}.site-header .wrap{padding-bottom:4px}}
+/* Cookie-Einwilligung */
+#consent{position:fixed;left:12px;right:12px;bottom:84px;z-index:60;max-width:620px;margin:0 auto;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:14px 16px;font-size:14px}
+#consent p{margin:0 0 10px}
+#consent .cbtn{display:flex;gap:8px;justify-content:flex-end}
+#consent button{min-height:42px;padding:8px 16px;border-radius:999px;font-weight:700;cursor:pointer;border:1.5px solid var(--accent);background:var(--bg);color:var(--accent)}
+#consent button.yes{background:var(--accent);color:var(--accent-fg)}
