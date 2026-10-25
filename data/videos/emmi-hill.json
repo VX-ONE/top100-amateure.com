@@ -386,10 +386,20 @@
    "indexed": true,
    "coverage": "Gesendet und indexiert",
    "checked_at": "2026-10-24T07:12:57+00:00"
+  },
+  {
+   "id": "28431870",
+   "vx_slug": "es-wird-heiss",
+   "title": "ES WIRD HEIß!",
+   "duration": "07:17",
+   "vx_path": "/de/amateur/emmi-hill/videos/28431870-es-wird-heiss/",
+   "status": "published",
+   "seen": "2026-10-25",
+   "published_at": "2026-10-25"
   }
  ],
  "model": "Emmi-Hill",
  "platform": "emmi-hill",
- "updated": "2026-10-24",
+ "updated": "2026-10-25",
  "vx_model_id": 12340004
 }
