@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#6d28d9" />
+<stop offset="1" stop-color="#1e1b4b" />
+</linearGradient>
+<linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#a78bfa" />
+<stop offset="1" stop-color="#4c1d95" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1050" cy="90" r="160" fill="#ffffff" opacity="0.06" />
+<circle cx="120" cy="560" r="130" fill="#ffffff" opacity="0.06" />
+<g>
+<rect x="580" y="90" width="520" height="340" rx="28" fill="#0f0c2e" />
+<rect x="600" y="110" width="480" height="300" rx="14" fill="url(#scr)" />
+<rect x="800" y="430" width="80" height="50" fill="#0f0c2e" />
+<rect x="740" y="478" width="200" height="22" rx="11" fill="#0f0c2e" />
+<rect x="622" y="130" width="120" cy="0" height="44" rx="22" fill="#ef4444" />
+<circle cx="650" cy="152" r="9" fill="#fff" />
+<text x="668" y="162" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="28" fill="#fff">LIVE</text>
+<circle cx="840" cy="270" r="62" fill="#ffffff" opacity="0.9" />
+<polygon points="822,238 822,302 874,270" fill="#6d28d9" />
+</g>
+<g>
+<rect x="470" y="300" width="150" height="100" rx="18" fill="#1e1b4b" stroke="#fff" stroke-width="6" />
+<polygon points="620,330 690,295 690,405 620,370" fill="#1e1b4b" stroke="#fff" stroke-width="6" stroke-linejoin="round" />
+<circle cx="545" cy="350" r="30" fill="#a78bfa" />
+<circle cx="545" cy="350" r="14" fill="#1e1b4b" />
+</g>
+<path d="M1010 450 C990 420 940 430 950 470 C958 500 1010 525 1010 525 C1010 525 1062 500 1070 470 C1080 430 1030 420 1010 450 Z" fill="#f43f5e" />
+<g>
+<path d="M440 120 h210 a24 24 0 0 1 24 24 v60 a24 24 0 0 1 -24 24 h-120 l-40 34 v-34 h-50 a24 24 0 0 1 -24 -24 v-60 a24 24 0 0 1 24 -24 z" fill="#fff" opacity="0.95" transform="translate(-200 0) scale(0.85) translate(110 30)" />
+<circle cx="260" cy="190" r="9" fill="#6d28d9" />
+<circle cx="300" cy="190" r="9" fill="#6d28d9" />
+<circle cx="340" cy="190" r="9" fill="#6d28d9" />
+</g>
+<path d="M130 330 h170 a20 20 0 0 1 20 20 v50 a20 20 0 0 1 -20 20 h-30 v30 l-40 -30 h-100 a20 20 0 0 1 -20 -20 v-50 a20 20 0 0 1 20 -20 z" fill="#c4b5fd" />
+<text x="70" y="580" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="120" fill="#fff">LIVE-CAMS</text>
+</svg>

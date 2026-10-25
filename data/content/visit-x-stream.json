@@ -1,0 +1,66 @@
+{
+  "cta_text": "Wenn du Gerät, Netz und Zahlungsweg vorbereitet hast, kannst du dir das Angebot von Visit-X in Ruhe ansehen und selbst entscheiden, ob es zu dir passt.",
+  "faq": [
+    {
+      "a": "In der Regel genügen ein aktueller Browser, ein Gerät mit aktuellem Betriebssystem, Ton und eine stabile Internetverbindung. Kamera und Mikrofon brauchst du zum reinen Zuschauen nicht. Aktuelle Anforderungen nennt der Anbieter selbst, prüfe sie vor der Nutzung.",
+      "q": "Was brauche ich technisch für einen Visit X Stream?"
+    },
+    {
+      "a": "Die Sicherheit hängt stark von deinem Gerät und Netz ab. Eine Bildschirmsperre, aktuelle Updates, ausgeblendete Benachrichtigungsvorschau und ein Heimnetz statt öffentlichem WLAN senken die Risiken deutlich. Gib Zugangsdaten nur auf der echten Anbieterseite ein.",
+      "q": "Wie sicher ist ein Visit X Stream auf dem Handy?"
+    },
+    {
+      "a": "Ja, normalerweise landen besuchte Seiten im Verlauf, dazu kommen Cookies und eventuell gespeicherte Logins. Der private Modus verhindert die lokale Speicherung, macht dich aber nicht unsichtbar. Auf geteilten Geräten solltest du ein eigenes Benutzerkonto verwenden.",
+      "q": "Hinterlässt ein Visit X Stream Spuren im Browser?"
+    },
+    {
+      "a": "Davon ist abzuraten. Aufzeichnen und Weitergeben berührt Urheber- und Persönlichkeitsrechte der Beteiligten und kann rechtliche Folgen haben. Nutze Inhalte nur so, wie es die Bedingungen des Anbieters erlauben.",
+      "q": "Kann ich einen Visit X Stream aufzeichnen oder teilen?"
+    },
+    {
+      "a": "Du lädst in Euro auf, der Betrag wird in Tokens umgewandelt. Gängig sind Sofort, PayPal, Kreditkarte und SEPA, die verfügbaren Optionen zeigt Visit-X beim Aufladen. Prüfe nach der ersten Buchung, wie sie in deiner Abrechnung erscheint, und ob andere Personen Einblick in das Konto haben.",
+      "q": "Wie bezahle ich bei Visit X diskret?"
+    }
+  ],
+  "h1": "Visit X Stream: Technik, Datenschutz und Diskretion",
+  "image": {
+    "alt": "Smartphone mit Kamera-Symbol, Vorhängeschloss und WLAN-Zeichen auf weinrotem Verlauf, dazu das Wort Diskretion",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\">\n<defs>\n<linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#b91d47\" />\n<stop offset=\"1\" stop-color=\"#4a0f2a\" />\n</linearGradient>\n<linearGradient id=\"scr\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#ff7a9c\" />\n<stop offset=\"1\" stop-color=\"#7a1738\" />\n</linearGradient>\n</defs>\n<rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" />\n<circle cx=\"980\" cy=\"120\" r=\"220\" fill=\"#ffffff\" opacity=\"0.06\" />\n<circle cx=\"1100\" cy=\"560\" r=\"180\" fill=\"#ffffff\" opacity=\"0.06\" />\n<g transform=\"rotate(-6 880 330)\">\n<rect x=\"740\" y=\"90\" width=\"280\" height=\"500\" rx=\"40\" fill=\"#1e0613\" />\n<rect x=\"756\" y=\"110\" width=\"248\" height=\"460\" rx=\"26\" fill=\"url(#scr)\" />\n<rect x=\"840\" y=\"122\" width=\"80\" height=\"14\" rx=\"7\" fill=\"#1e0613\" />\n<circle cx=\"880\" cy=\"290\" r=\"62\" fill=\"#1e0613\" />\n<circle cx=\"880\" cy=\"290\" r=\"42\" fill=\"#ffffff\" />\n<circle cx=\"880\" cy=\"290\" r=\"22\" fill=\"#b91d47\" />\n<circle cx=\"870\" cy=\"280\" r=\"6\" fill=\"#ffffff\" />\n<rect x=\"820\" y=\"400\" width=\"120\" height=\"90\" rx=\"14\" fill=\"#ffffff\" />\n<path d=\"M842 400 V375 a38 38 0 0 1 76 0 V400\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"14\" />\n<circle cx=\"880\" cy=\"440\" r=\"12\" fill=\"#4a0f2a\" />\n<rect x=\"874\" y=\"445\" width=\"12\" height=\"28\" rx=\"5\" fill=\"#4a0f2a\" />\n</g>\n<g fill=\"none\" stroke=\"#ffffff\" stroke-width=\"16\" stroke-linecap=\"round\">\n<path d=\"M560 150 a110 110 0 0 1 -0 0\" />\n<path d=\"M530 130 a150 150 0 0 1 210 0\" opacity=\"0.5\" />\n<path d=\"M555 165 a105 105 0 0 1 160 0\" opacity=\"0.75\" />\n<path d=\"M580 200 a60 60 0 0 1 110 0\" />\n</g>\n<circle cx=\"635\" cy=\"235\" r=\"14\" fill=\"#ffffff\" />\n<text x=\"70\" y=\"400\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"120\" fill=\"#ffffff\">DISKRET</text>\n<rect x=\"74\" y=\"430\" width=\"300\" height=\"12\" rx=\"6\" fill=\"#ff7a9c\" />\n<text x=\"74\" y=\"500\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"40\" fill=\"#ffd3df\">Technik &amp; Datenschutz</text>\n</svg>"
+  },
+  "intro": "Ein Visit X Stream läuft in der Regel direkt im Browser oder auf dem Smartphone und braucht dafür kaum mehr als ein aktuelles Gerät, eine stabile Verbindung und ein Konto. Die eigentliche Frage ist selten, ob es funktioniert, sondern wie du es so einrichtest, dass Daten, Zahlungen und Spuren auf dem Gerät unter deiner Kontrolle bleiben.\n\nDieser Ratgeber geht deshalb vom Schutz deiner Privatsphäre aus: Welche technischen Voraussetzungen sind sinnvoll, welche Einstellungen auf Handy, Tablet und Rechner helfen, worauf du im WLAN achtest und wie du Zahlung und Konto diskret hältst. Am Ende steht ein neutraler Blick darauf, wie der Einstieg bei Visit-X abläuft.",
+  "key_takeaways": [
+    "Für einen Stream genügen meist ein aktueller Browser, ein aktuelles Betriebssystem und eine stabile Internetverbindung.",
+    "Diskretion entsteht vor allem auf deinem Gerät: Benachrichtigungen, Browserverlauf, Bildschirmsperre und Nutzerkonten.",
+    "Öffentliche oder fremde WLAN-Netze sind für Konto und Zahlung keine gute Umgebung.",
+    "Prüfe vor jeder Aufladung, welche Zahlungsart angeboten wird und wie sie in deiner Abrechnung erscheint.",
+    "Streams nicht mitschneiden oder weitergeben: Das betrifft Urheber- und Persönlichkeitsrechte der Beteiligten."
+  ],
+  "meta_description": "Visit X Stream sicher nutzen: Technik, Geräte-Einstellungen, Netzwerk und Zahlung im Überblick, damit Datenschutz und Diskretion gewahrt bleiben.",
+  "sections": [
+    {
+      "body": "Die Anforderungen sind überschaubar. Konkrete Mindestwerte gibt der Anbieter vor, prüfe sie daher vor der Nutzung in den aktuellen Hinweisen von Visit-X. Als Orientierung gilt:\n\n- **Gerät:** Smartphone, Tablet, Laptop oder Desktop-Rechner mit Lautsprecher oder Kopfhörern.\n- **Browser:** eine aktuelle Version von Chrome, Firefox, Safari oder Edge. Veraltete Browser verursachen Darstellungsfehler und haben oft bekannte Sicherheitslücken.\n- **Betriebssystem:** mit den neuesten Sicherheitsupdates, sonst bleiben Lücken offen, die mit dem Stream nichts zu tun haben, aber deine Daten gefährden.\n- **Verbindung:** stabil statt nur schnell. Ein schwaches WLAN führt zu Rucklern, ein wechselndes Mobilfunknetz zu Abbrüchen.\n\n### Warum Updates auch ein Datenschutzthema sind\n\nBrowser und Betriebssystem schließen mit Updates regelmäßig Sicherheitslücken. Wer Streams auf einem Gerät nutzt, das seit Jahren keine Updates bekommt, riskiert mehr als ein ruckelndes Bild: Schadsoftware kann Eingaben mitlesen, auch Passwörter und Zahlungsdaten.\n\n### Ton, Kamera und Mikrofon\n\nFür das reine Zuschauen brauchst du weder Kamera noch Mikrofon. Erlaube diese Zugriffe nur, wenn du sie bewusst nutzen willst, und prüfe in den Browser-Einstellungen, welche Seiten darauf zugreifen dürfen. Im Zweifel gilt: lieber verweigern und bei Bedarf später freigeben.",
+      "h2": "Visit X Stream: Das brauchst du technisch"
+    },
+    {
+      "body": "Der Browser ist auf allen Geräten der übliche Zugang. Ob und in welcher Form zusätzlich eine App angeboten wird, solltest du direkt beim Anbieter prüfen. Entscheidend ist, wie du das Gerät absicherst.\n\n### Smartphone und Tablet\n\n- **Bildschirmsperre** mit PIN, Fingerabdruck oder Gesichtserkennung aktivieren.\n- **Vorschau von Benachrichtigungen** auf dem Sperrbildschirm ausblenden, damit keine Inhalte sichtbar aufpoppen.\n- **Bildschirmfreigabe und Spiegelung** (etwa auf den Fernseher) vor dem Start prüfen und trennen.\n- **Automatisches Ausfüllen** von Passwörtern nur mit gesichertem Passwortmanager nutzen.\n\n### Laptop und Desktop\n\n- Ein **eigenes Benutzerkonto** am Rechner verhindert, dass andere Haushaltsmitglieder Verlauf und gespeicherte Logins sehen.\n- Der **private Modus** des Browsers speichert keinen Verlauf und keine Cookies nach dem Schließen. Er macht dich aber nicht unsichtbar: Anbieter, Arbeitgeber oder Netzbetreiber können weiterhin Verbindungen sehen.\n- **Geteilte Geräte** (Arbeitsrechner, Familien-PC) sind für ein Konto grundsätzlich ungeeignet.\n\n### Browser-Verlauf und gespeicherte Daten\n\nLöschst du Verlauf, Cookies und Formulardaten regelmäßig, bleiben weniger Spuren zurück. Achte außerdem darauf, dass der Browser keine Zahlungsdaten speichert, wenn mehrere Personen das Gerät nutzen.",
+      "h2": "Visit X Stream auf Handy, Tablet und PC einrichten"
+    },
+    {
+      "body": "Auch wenn der Stream selbst funktioniert, hängt viel von der Umgebung ab, in der du ihn nutzt.\n\n### Heimnetz statt öffentliches WLAN\n\nIn Hotel-, Café- oder Arbeitsplatz-Netzen ist unklar, wer den Datenverkehr einsehen kann und wer das Netz verwaltet. Für Anmeldung und Zahlung ist das keine gute Umgebung. Im eigenen Heimnetz solltest du ein starkes WLAN-Passwort und aktuelle Router-Firmware verwenden.\n\n### Was ein VPN leistet und was nicht\n\nEin VPN verschlüsselt die Verbindung zwischen deinem Gerät und dem VPN-Anbieter und verbirgt deine IP-Adresse vor der besuchten Seite. Es ersetzt aber keine Gerätesicherheit und verschiebt das Vertrauen nur zum VPN-Betreiber. Wenn du eines nutzt, wähle einen Dienst mit nachvollziehbarer Datenschutzerklärung. Ob das mit den Nutzungsbedingungen des Anbieters vereinbar ist, prüfst du am besten vorab selbst.\n\n### Typische Fallen\n\n- Phishing-Mails oder Nachrichten, die angeblich vom Anbieter kommen und zur Eingabe von Zugangsdaten auffordern.\n- Nachgebaute Seiten mit ähnlicher Adresse. Prüfe die Adresszeile und das Schloss-Symbol, bevor du Daten eingibst.\n- Das gleiche Passwort für mehrere Dienste. Nutze ein eigenes, langes Passwort.\n- Browser-Erweiterungen unbekannter Herkunft, die Seiteninhalte mitlesen können.",
+      "h2": "Sicher streamen: WLAN, VPN und Mitleser"
+    },
+    {
+      "body": "Bei Visit-X wird in Euro aufgeladen, der Betrag wird in Tokens umgewandelt, mit denen du bezahlst. Als gängige Zahlungsarten nennt der Seitenbetreiber Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift oder Überweisung). Welche Methode im Einzelfall verfügbar ist, zeigt Visit-X beim Aufladen.\n\n### Worauf du bei der Zahlungsart achtest\n\n- **Abrechnung:** Schau dir nach der ersten Aufladung an, wie die Buchung in Kontoauszug, Kreditkartenabrechnung oder PayPal-Verlauf erscheint. Teilst du ein Konto mit anderen, ist das entscheidend.\n- **Benachrichtigungen:** E-Mails von Zahlungsdiensten oder Banking-Apps können Beträge anzeigen. Passe die Vorschau an.\n- **Kontrolle:** Lade nur Beträge auf, die du bewusst ausgeben willst, und prüfe regelmäßig Kontostand und Buchungen.\n\n### E-Mail-Adresse und Zugangsdaten\n\nEine eigene E-Mail-Adresse, die du nur für dieses Konto nutzt, hält Postfächer getrennt. Aktiviere, wo möglich, zusätzliche Sicherheitsfunktionen und speichere Passwörter ausschließlich in einem Passwortmanager. Wie du ein Konto später wieder schließt, regelt der Anbieter in seinen Hinweisen.",
+      "h2": "Zahlung und Konto diskret halten"
+    },
+    {
+      "body": "Nutze nur Angebote, bei denen alle Beteiligten ausdrücklich zugestimmt haben und die rechtlich einwandfrei sind. Das gilt besonders bei Amateur-Inhalten. Der Zugang ist ausschließlich Erwachsenen ab 18 Jahren vorbehalten; Geräte, auf denen Minderjährige Zugriff haben, sollten durch Jugendschutzeinstellungen und getrennte Nutzerkonten abgesichert sein.\n\nStreams und Videos gehören nicht auf Speicher, in Chats oder in soziale Netzwerke. Mitschneiden und Weitergeben verletzt in der Regel Urheber- und Persönlichkeitsrechte der Beteiligten und kann rechtliche Folgen haben. Wer die Privatsphäre anderer achtet, schützt auch die eigene.",
+      "h2": "Einwilligung, Recht und Jugendschutz kurz erklärt"
+    },
+    {
+      "body": "Visit-X bietet Live-Cams mit Webcam-Models, Videos und Amateur-Angebote. Über den Link dieser Seite landest du zunächst im Angebot von Visit-X mit den Videos. Die Anmeldung startest du selbst über „Kostenlos anmelden“.\n\nÜber diesen Link gibt es laut Seitenbetreiber einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Der Gutscheincode ist dabei automatisch hinterlegt und muss nicht eingegeben werden. Es gelten die Bedingungen von Visit-X, lies sie vor der Aufladung in Ruhe durch. Gehe die Checkliste oben vor der ersten Anmeldung einmal durch, dann sind Gerät, Netz und Zahlungsweg vorbereitet.",
+      "h2": "Einstieg bei Visit-X: So läuft er ab"
+    }
+  ],
+  "title": "Visit X Stream: sicher und diskret auf Handy und PC"
+}

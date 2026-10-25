@@ -1,0 +1,65 @@
+{
+  "cta_text": "Wenn du dir die Preise und Zahlungsarten in Ruhe ansehen möchtest, kannst du das Angebot von Visit-X unverbindlich prüfen und selbst entscheiden, ob es zu deinem Budget passt.",
+  "faq": [
+    {
+      "a": "Tokens sind das Guthaben, mit dem du bei Visit-X bezahlst. Du zahlst einen Euro-Betrag ein, der in Tokens umgewandelt wird. Die konkrete Umrechnung siehst du vor der Aufladung beim Anbieter.",
+      "q": "Was sind VisitX Tokens?"
+    },
+    {
+      "a": "Gängig sind Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift oder Überweisung). Welche Methode im Einzelfall verfügbar ist, zeigt Visit-X beim Aufladen.",
+      "q": "Welche Zahlungsarten gibt es für VisitX Tokens?"
+    },
+    {
+      "a": "Lege vorab ein festes Budget fest und lade zunächst nur kleine Beträge auf. Lies die Preisangaben vor jedem Start, achte auf zeitbasierte Abrechnung und vergleiche deine Buchungen regelmäßig mit dem Kontoauszug.",
+      "q": "Wie behalte ich die Kosten bei VisitX Tokens im Griff?"
+    },
+    {
+      "a": "Über den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X. Der Gutscheincode ist automatisch hinterlegt.",
+      "q": "Gibt es für VisitX Tokens einen Aufladebonus?"
+    }
+  ],
+  "h1": "VisitX Tokens verstehen – Aufladen, Bezahlen und Kosten im Blick",
+  "image": {
+    "alt": "Stapel goldener Münzen, Preisschild und Taschenrechner auf blauem Hintergrund mit dem Wort Tokens",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\">\n<defs>\n<linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#1d4ed8\" />\n<stop offset=\"1\" stop-color=\"#0b1b4d\" />\n</linearGradient>\n<linearGradient id=\"gold\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#fde68a\" />\n<stop offset=\"1\" stop-color=\"#f59e0b\" />\n</linearGradient>\n</defs>\n<rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" />\n<circle cx=\"1050\" cy=\"90\" r=\"170\" fill=\"#ffffff\" opacity=\"0.06\" />\n<circle cx=\"120\" cy=\"560\" r=\"150\" fill=\"#ffffff\" opacity=\"0.06\" />\n<text x=\"70\" y=\"270\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"150\" fill=\"#ffffff\">Tokens</text>\n<text x=\"76\" y=\"350\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"46\" fill=\"#fde68a\">Kosten im Blick</text>\n<g transform=\"translate(70,420)\">\n<rect width=\"330\" height=\"130\" rx=\"20\" fill=\"#ffffff\" opacity=\"0.12\" />\n<circle cx=\"65\" cy=\"65\" r=\"40\" fill=\"url(#gold)\" stroke=\"#b45309\" stroke-width=\"6\" />\n<text x=\"65\" y=\"82\" text-anchor=\"middle\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"46\" fill=\"#b45309\">T</text>\n<path d=\"M135 50h150M135 80h110\" stroke=\"#ffffff\" stroke-width=\"12\" stroke-linecap=\"round\" />\n</g>\n<g transform=\"translate(700,330)\">\n<ellipse cx=\"120\" cy=\"240\" rx=\"130\" ry=\"30\" fill=\"#000\" opacity=\"0.25\" />\n<g>\n<ellipse cx=\"120\" cy=\"205\" rx=\"110\" ry=\"32\" fill=\"#b45309\" />\n<rect x=\"10\" y=\"170\" width=\"220\" height=\"35\" fill=\"#f59e0b\" />\n<ellipse cx=\"120\" cy=\"170\" rx=\"110\" ry=\"32\" fill=\"url(#gold)\" />\n<rect x=\"10\" y=\"135\" width=\"220\" height=\"35\" fill=\"#f59e0b\" />\n<ellipse cx=\"120\" cy=\"135\" rx=\"110\" ry=\"32\" fill=\"url(#gold)\" />\n<rect x=\"10\" y=\"100\" width=\"220\" height=\"35\" fill=\"#f59e0b\" />\n<ellipse cx=\"120\" cy=\"100\" rx=\"110\" ry=\"32\" fill=\"url(#gold)\" stroke=\"#b45309\" stroke-width=\"4\" />\n<text x=\"120\" y=\"115\" text-anchor=\"middle\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"40\" fill=\"#b45309\">T</text>\n</g>\n</g>\n<g transform=\"translate(560,70) rotate(-12)\">\n<polygon points=\"0,60 60,0 260,0 260,120 60,120\" fill=\"#ffffff\" />\n<circle cx=\"50\" cy=\"60\" r=\"12\" fill=\"#1d4ed8\" />\n<text x=\"150\" y=\"82\" text-anchor=\"middle\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"58\" fill=\"#0b1b4d\">€ 9,90</text>\n</g>\n<g transform=\"translate(960,300)\">\n<rect width=\"190\" height=\"270\" rx=\"22\" fill=\"#e2e8f0\" />\n<rect x=\"18\" y=\"18\" width=\"154\" height=\"62\" rx=\"8\" fill=\"#0b1b4d\" />\n<text x=\"160\" y=\"64\" text-anchor=\"end\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"40\" fill=\"#86efac\">25,00</text>\n<g fill=\"#1d4ed8\">\n<rect x=\"18\" y=\"100\" width=\"40\" height=\"34\" rx=\"8\" />\n<rect x=\"75\" y=\"100\" width=\"40\" height=\"34\" rx=\"8\" />\n<rect x=\"132\" y=\"100\" width=\"40\" height=\"34\" rx=\"8\" />\n<rect x=\"18\" y=\"150\" width=\"40\" height=\"34\" rx=\"8\" />\n<rect x=\"75\" y=\"150\" width=\"40\" height=\"34\" rx=\"8\" />\n<rect x=\"132\" y=\"150\" width=\"40\" height=\"34\" rx=\"8\" />\n<rect x=\"18\" y=\"200\" width=\"40\" height=\"34\" rx=\"8\" />\n<rect x=\"75\" y=\"200\" width=\"40\" height=\"34\" rx=\"8\" />\n</g>\n<rect x=\"132\" y=\"200\" width=\"40\" height=\"52\" rx=\"8\" fill=\"#f59e0b\" />\n</g>\n</svg>"
+  },
+  "intro": "VisitX Tokens sind die interne Währung der Plattform: Du zahlst einen Betrag in Euro ein, er wird in Tokens umgewandelt, und mit diesen Tokens bezahlst du anschließend Inhalte und Leistungen bei Visit-X. Du kaufst also kein Abo mit festem Preis, sondern lädst Guthaben auf und gibst es nach Bedarf aus.\n\nDieser Artikel konzentriert sich auf die praktische Seite: Wie läuft die Umrechnung von Euro in Tokens grundsätzlich ab, welche Zahlungsarten gibt es, wie behältst du dein Budget im Griff und was solltest du beim Aufladebonus beachten? Konkrete Tokenpreise und Tarife nennen wir bewusst nicht, weil sie sich ändern können. Prüfe sie vor jeder Aufladung direkt beim Anbieter. Der Artikel richtet sich ausschließlich an Erwachsene ab 18 Jahren.",
+  "key_takeaways": [
+    "Der eingezahlte Euro-Betrag wird bei Visit-X in Tokens umgewandelt, mit denen du bezahlst.",
+    "Gängige Zahlungsarten sind Sofort, PayPal, Kreditkarte und SEPA; welche im Einzelfall angeboten wird, siehst du beim Aufladen.",
+    "Ein festes Budget und kleine Aufladungen verhindern, dass du den Überblick über deine Ausgaben verlierst.",
+    "Über den Link dieser Seite gibt es einen 100-%-Aufladebonus, es gelten die Bedingungen von Visit-X."
+  ],
+  "meta_description": "Wie funktionieren VisitX Tokens? Euro-Guthaben, Zahlungsarten, Aufladebonus und Budget-Tipps sachlich erklärt, damit du die Kosten im Blick behältst.",
+  "sections": [
+    {
+      "body": "Das Prinzip ähnelt einer Prepaid-Karte oder einem Guthabenkonto. Die normale Währung ist Euro. Wenn du einen Betrag einzahlst, rechnet Visit-X ihn in Tokens um. Diese Tokens sind dein Guthaben auf der Plattform, und von ihm werden Leistungen abgezogen, wenn du etwas nutzt.\n\nDer Vorteil dieses Modells: Du bestimmst selbst, wie viel Geld du überhaupt einsetzt. Mehr als dein aufgeladenes Guthaben wird dafür nicht verbraucht. Der Nachteil: Wer Tokens nicht in Euro zurückrechnet, verliert leicht das Gefühl für den tatsächlichen Wert. Rechne deshalb gelegentlich nach, was ein Besuch dich in Euro gekostet hat.\n\n### Worauf du bei der Umrechnung achten solltest\n\n- Prüfe vor dem Aufladen, wie viele Tokens du für welchen Euro-Betrag bekommst.\n- Schau dir an, ob Preise im Angebot in Tokens oder pro Zeiteinheit angegeben sind.\n- Lies nach, ob es Mindestbeträge für die Aufladung gibt.\n- Beachte die aktuellen Angaben des Anbieters, denn Konditionen können sich ändern.",
+      "h2": "Was VisitX Tokens sind und wie aus Euro Guthaben wird"
+    },
+    {
+      "body": "Gängige Zahlungsarten bei Visit-X sind Sofort bzw. Sofortüberweisung, PayPal, Kreditkarte und SEPA (Lastschrift oder Überweisung). Welche Methode dir im Einzelfall angeboten wird, zeigt Visit-X direkt beim Aufladen. Verlass dich deshalb nicht darauf, dass jede Methode jederzeit verfügbar ist.\n\n### Eine Methode passend wählen\n\nDie Entscheidung hängt weniger von der Plattform ab als von deinen Gewohnheiten:\n\n- **Schnelligkeit:** Wer sofort Guthaben braucht, wählt in der Regel eine Methode, bei der die Zahlung unmittelbar bestätigt wird. Eine klassische Überweisung kann dagegen länger dauern.\n- **Kontrolle:** Bei Zahlungen mit Kreditkarte oder PayPal siehst du Buchungen oft in einer zusätzlichen Übersicht. Das hilft beim Nachvollziehen.\n- **Kontoauszug:** Überlege, wer Zugriff auf deine Auszüge hat. Schau vorab nach, unter welchem Namen die Abbuchung erscheint, und prüfe diese Angabe beim Anbieter.\n\nGib Zahlungsdaten nur auf der offiziellen Seite des Anbieters ein und nie über Links aus Nachrichten oder Fremdseiten.",
+      "h2": "VisitX Tokens aufladen: Zahlungsarten im Überblick"
+    },
+    {
+      "body": "Visit-X bietet Live-Cams (Webcam-Models), Videos und Amateur-Angebote. Alle diese Bereiche laufen über dasselbe Guthaben, aber nicht unbedingt nach demselben Abrechnungsmuster. Bei Live-Angeboten wird häufig nach Zeit abgerechnet, bei Videos eher pro Inhalt. Wie das konkret geregelt ist, steht bei dem jeweiligen Angebot. Das solltest du vor dem Start lesen.\n\n### Typische Kostenfallen\n\n- **Zeit vergessen:** Bei zeitbasierter Abrechnung läuft das Guthaben im Hintergrund weiter, solange die Sitzung offen ist.\n- **Zusatzoptionen:** Besondere Funktionen oder private Sitzungen können anders abgerechnet werden als der normale Zugang. Prüfe die Anzeige, bevor du bestätigst.\n- **Spontankäufe:** Wer mitten in einer Sitzung nachlädt, gibt oft mehr aus als geplant.\n\nEin einfacher Grundsatz: Lies den Preishinweis, bevor du etwas startest, nicht danach.",
+      "h2": "Wofür VisitX Tokens ausgegeben werden"
+    },
+    {
+      "body": "Weil du Guthaben aufladen musst, hast du ein natürliches Limit. Du solltest es bewusst nutzen.\n\n1. **Monatsrahmen festlegen:** Entscheide vorab, wie viel du maximal ausgeben möchtest, und halte dich daran.\n2. **Klein anfangen:** Lade zunächst einen überschaubaren Betrag auf, um das Abrechnungssystem kennenzulernen.\n3. **Nicht aus Frust nachladen:** Ist das Guthaben aufgebraucht, ist das ein guter Zeitpunkt für eine Pause.\n4. **Kontostand prüfen:** Schau regelmäßig auf dein Tokenguthaben und vergleiche es mit deinen Buchungen.\n5. **Buchungen kontrollieren:** Gleiche die Abbuchungen auf Konto oder Kreditkarte mit deinen Aufladungen ab.\n\nBei Unstimmigkeiten wendest du dich zuerst an den Support des Anbieters und bewahrst Belege und Bestätigungs-E-Mails auf.",
+      "h2": "Budget für VisitX Tokens festlegen"
+    },
+    {
+      "body": "Über den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Es gelten die Bedingungen von Visit-X. Der Gutscheincode ist dabei automatisch hinterlegt und muss nicht eingegeben werden.\n\nEin Bonus ist ein Zusatz, aber kein Grund, mehr einzuzahlen als geplant. Gehe zur Einordnung so vor:\n\n- Lies die Bonusbedingungen, etwa zu Mindestbetrag, Zeitraum oder Verwendung des Bonusguthabens.\n- Rechne mit deinem eigenen Budget, nicht mit dem verdoppelten Guthaben. Der Bonus ist nur sinnvoll, wenn du den eingezahlten Betrag ohnehin ausgeben wolltest.\n- Prüfe nach der Aufladung, ob das Guthaben wie erwartet gutgeschrieben wurde.",
+      "h2": "Aufladebonus bei VisitX Tokens richtig einordnen"
+    },
+    {
+      "body": "Nutze Angebote nur als Erwachsener und nur dort, wo alle Beteiligten ausdrücklich zugestimmt haben. Das gilt besonders bei Amateur-Inhalten. Lade keine Inhalte herunter oder teile sie weiter, denn das kann gegen Urheber- und Persönlichkeitsrechte verstoßen. Verwende ein starkes, einmaliges Passwort für dein Konto und teile deine Zugangsdaten nicht. Entscheide bewusst, welche persönlichen Angaben du preisgibst.",
+      "h2": "Sicherheit, Datenschutz und Einwilligung kurz erklärt"
+    },
+    {
+      "body": "Der Link führt dich zuerst ins Angebot von Visit-X, konkret in den Bereich Videos. Die Anmeldung startest du selbst über „Kostenlos anmelden“. Danach siehst du beim Aufladen, welche Zahlungsarten verfügbar sind und wie viele Tokens du für deinen Betrag erhältst. Nimm dir diesen Moment Zeit und bestätige erst, wenn Betrag und Bedingungen für dich klar sind.",
+      "h2": "So startest du über den Link dieser Seite"
+    }
+  ],
+  "title": "VisitX Tokens verstehen – Aufladen, Zahlen, Budget"
+}

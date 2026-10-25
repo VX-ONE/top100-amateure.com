@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#b91d47" />
+<stop offset="1" stop-color="#4a0f2a" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1100" cy="560" r="200" fill="#ffffff" opacity="0.06" />
+<circle cx="80" cy="60" r="140" fill="#ffffff" opacity="0.05" />
+<text x="60" y="290" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="170" fill="#ffffff">Live</text>
+<text x="60" y="400" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="90" fill="#ffffff">oder Video</text>
+<rect x="60" y="430" width="260" height="10" rx="5" fill="#ff7a9c" />
+<path transform="translate(150,540) scale(1.1)" d="M0 -20 C-10 -50 -55 -35 -40 0 C-30 25 -5 40 0 55 C5 40 30 25 40 0 C55 -35 10 -50 0 -20 Z" fill="#ff7a9c" />
+<rect x="620" y="60" width="520" height="330" rx="22" fill="#2a0818" />
+<rect x="640" y="80" width="480" height="290" rx="10" fill="#fff3f6" />
+<rect x="660" y="100" width="230" height="170" rx="8" fill="#b91d47" />
+<polygon points="745,150 745,220 805,185" fill="#ffffff" />
+<rect x="660" y="290" width="230" height="10" rx="5" fill="#e9b7c5" />
+<rect x="660" y="290" width="90" height="10" rx="5" fill="#b91d47" />
+<rect x="915" y="100" width="185" height="44" rx="14" fill="#f4c6d3" />
+<rect x="930" y="118" width="120" height="8" rx="4" fill="#b91d47" />
+<rect x="935" y="155" width="165" height="44" rx="14" fill="#b91d47" />
+<rect x="950" y="173" width="110" height="8" rx="4" fill="#ffffff" />
+<rect x="915" y="210" width="185" height="44" rx="14" fill="#f4c6d3" />
+<rect x="930" y="228" width="90" height="8" rx="4" fill="#b91d47" />
+<rect x="915" y="320" width="185" height="32" rx="16" fill="#ffffff" stroke="#b91d47" stroke-width="3" />
+<rect x="855" y="390" width="50" height="55" fill="#2a0818" />
+<ellipse cx="880" cy="450" rx="90" ry="14" fill="#2a0818" />
+<line x1="1060" y1="550" x2="1015" y2="618" stroke="#ffffff" stroke-width="9" stroke-linecap="round" />
+<line x1="1060" y1="550" x2="1105" y2="618" stroke="#ffffff" stroke-width="9" stroke-linecap="round" />
+<line x1="1060" y1="550" x2="1060" y2="618" stroke="#ffffff" stroke-width="9" stroke-linecap="round" />
+<circle cx="1060" cy="480" r="68" fill="#ffd0dc" opacity="0.25" />
+<circle cx="1060" cy="480" r="68" fill="none" stroke="#ffffff" stroke-width="14" />
+<circle cx="1060" cy="480" r="26" fill="#1c1c24" />
+<circle cx="1060" cy="480" r="12" fill="#4a6fa5" />
+<circle cx="1055" cy="475" r="4" fill="#ffffff" />
+<path d="M660 545 C660 445 800 445 800 545" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
+<rect x="642" y="520" width="38" height="68" rx="15" fill="#ffd0dc" />
+<rect x="780" y="520" width="38" height="68" rx="15" fill="#ffd0dc" />
+</svg>

@@ -9326,11 +9326,12 @@
     "added": "2026-10-16",
     "clicks": 0,
     "fail_count": 0,
-    "impressions": 1,
+    "impressions": 4,
     "keywords": [
       "amateur cams visit x",
       "live cam visit x",
-      "visit x cam"
+      "visit x cam",
+      "visit x live"
     ],
     "primary": "live cam visit x",
     "slug": "live-cam-visit-x",
@@ -13160,7 +13161,7 @@
     ],
     "primary": "video chat",
     "slug": "video-chat",
-    "status": "queued",
+    "status": "published",
     "topic": "livecams"
   },
   {
@@ -16791,5 +16792,57 @@
     "slug": "visitx-model",
     "status": "published",
     "topic": "webcam-models"
+  },
+  {
+    "added": "2026-10-25",
+    "clicks": 0,
+    "fail_count": 0,
+    "impressions": 1,
+    "keywords": [
+      "visit x livestream"
+    ],
+    "primary": "visit x livestream",
+    "slug": "visit-x-livestream",
+    "status": "published",
+    "topic": "webcam-models"
+  },
+  {
+    "added": "2026-10-25",
+    "clicks": 0,
+    "fail_count": 0,
+    "impressions": 1,
+    "keywords": [
+      "visit x model"
+    ],
+    "primary": "visit x model",
+    "slug": "visit-x-model",
+    "status": "published",
+    "topic": "webcam-models"
+  },
+  {
+    "added": "2026-10-25",
+    "clicks": 0,
+    "fail_count": 0,
+    "impressions": 1,
+    "keywords": [
+      "visit x stream"
+    ],
+    "primary": "visit x stream",
+    "slug": "visit-x-stream",
+    "status": "published",
+    "topic": "technik"
+  },
+  {
+    "added": "2026-10-25",
+    "clicks": 0,
+    "fail_count": 0,
+    "impressions": 1,
+    "keywords": [
+      "visitx tokens"
+    ],
+    "primary": "visitx tokens",
+    "slug": "visitx-tokens",
+    "status": "published",
+    "topic": "preise"
   }
 ]

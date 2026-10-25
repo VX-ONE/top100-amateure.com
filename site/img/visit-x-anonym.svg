@@ -1,1 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#be185d" /><stop offset="1" stop-color="#3b0a24" /></linearGradient><linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#f9a8d4" /></linearGradient></defs><rect width="1200" height="630" fill="url(#bg)" /><circle cx="880" cy="315" r="270" fill="#ffffff" opacity="0.07" /><circle cx="880" cy="315" r="200" fill="#ffffff" opacity="0.07" /><path d="M880 80 L1050 140 L1050 320 Q1050 440 880 540 Q710 440 710 320 L710 140 Z" fill="url(#sh)" /><path d="M880 112 L1022 160 L1022 320 Q1022 418 880 502 Q738 418 738 320 L738 160 Z" fill="#3b0a24" opacity="0.9" /><g fill="none" stroke="#f9a8d4" stroke-width="9" stroke-linecap="round"><path d="M810 340 Q810 250 880 250 Q950 250 950 340" /><path d="M830 380 Q830 275 880 275 Q930 275 930 350 L930 385" /><path d="M850 400 L850 330 Q850 300 880 300 Q910 300 910 330 L910 410" /><path d="M880 330 L880 420" /><path d="M825 410 Q840 440 860 455" /></g><circle cx="880" cy="215" r="0" fill="#fff" /><rect x="80" y="400" width="140" height="110" rx="16" fill="#ffffff" /><path d="M110 400 V365 Q110 310 150 310 Q190 310 190 365 V400" fill="none" stroke="#ffffff" stroke-width="16" /><circle cx="150" cy="445" r="16" fill="#be185d" /><rect x="143" y="450" width="14" height="36" rx="5" fill="#be185d" /><text x="80" y="200" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="120" fill="#ffffff">Diskret</text><text x="84" y="268" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="40" fill="#fbcfe8">Sicher &amp; anonym</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#be185d" />
+<stop offset="1" stop-color="#3b0a24" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.25" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="860" cy="300" r="330" fill="url(#glow)" />
+<circle cx="1100" cy="90" r="140" fill="#ffffff" fill-opacity="0.06" />
+<circle cx="90" cy="560" r="170" fill="#ffffff" fill-opacity="0.06" />
+<g>
+<path d="M860 70 L1030 125 L1030 300 C1030 410 960 485 860 535 C760 485 690 410 690 300 L690 125 Z" fill="#ffffff" />
+<path d="M860 100 L1002 146 L1002 298 C1002 392 944 458 860 504 C776 458 718 392 718 298 L718 146 Z" fill="#be185d" />
+<path d="M815 270 L815 235 C815 210 835 193 860 193 C885 193 905 210 905 235 L905 270" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+<rect x="793" y="265" width="134" height="102" rx="16" fill="#ffffff" />
+<circle cx="860" cy="305" r="14" fill="#3b0a24" />
+<rect x="854" y="308" width="12" height="35" rx="5" fill="#3b0a24" />
+</g>
+<g transform="translate(1000 470) rotate(-35)">
+<circle cx="0" cy="0" r="32" fill="none" stroke="#ffffff" stroke-width="12" />
+<rect x="30" y="-6" width="130" height="12" fill="#ffffff" />
+<rect x="120" y="6" width="12" height="26" fill="#ffffff" />
+<rect x="144" y="6" width="12" height="18" fill="#ffffff" />
+</g>
+<text x="70" y="330" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="130" fill="#ffffff">Diskret</text>
+<rect x="75" y="365" width="220" height="12" rx="6" fill="#ffffff" fill-opacity="0.8" />
+<text x="75" y="450" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="44" fill="#ffffff" fill-opacity="0.9">Sicher &amp; seriös</text>
+</svg>

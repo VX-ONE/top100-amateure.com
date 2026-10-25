@@ -1,1 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#be185d" /><stop offset="1" stop-color="#3b0a24" /></linearGradient><radialGradient id="gl" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.35" /><stop offset="1" stop-color="#fff" stop-opacity="0" /></radialGradient></defs><rect width="1200" height="630" fill="url(#bg)" /><circle cx="900" cy="300" r="330" fill="url(#gl)" /><path d="M900 80L1070 145V300C1070 415 995 490 900 535C805 490 730 415 730 300V145Z" fill="#fff" /><path d="M900 112L1040 165V300C1040 395 982 458 900 498C818 458 760 395 760 300V165Z" fill="#3b0a24" /><path d="M868 295V262a32 32 0 0 1 64 0V295" fill="none" stroke="#fff" stroke-width="15" /><rect x="845" y="290" width="110" height="90" rx="14" fill="#fff" /><circle cx="900" cy="327" r="12" fill="#be185d" /><rect x="895" y="333" width="10" height="26" rx="4" fill="#be185d" /><text x="80" y="290" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="150" fill="#fff">Seriös?</text><polygon points="80,350 290,350 290,570 265,555 240,570 215,555 185,570 160,555 135,570 105,555 80,570" fill="#fff" /><rect x="105" y="380" width="130" height="14" rx="7" fill="#be185d" /><rect x="105" y="414" width="160" height="12" rx="6" fill="#3b0a24" opacity="0.5" /><rect x="105" y="444" width="140" height="12" rx="6" fill="#3b0a24" opacity="0.5" /><rect x="105" y="474" width="100" height="12" rx="6" fill="#3b0a24" opacity="0.5" /><circle cx="385" cy="500" r="52" fill="#fbbf24" /><circle cx="385" cy="500" r="38" fill="none" stroke="#fff" stroke-width="5" opacity="0.8" /><text x="385" y="520" text-anchor="middle" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="56" fill="#fff">€</text><circle cx="480" cy="530" r="38" fill="#fbbf24" opacity="0.9" /><circle cx="480" cy="530" r="27" fill="none" stroke="#fff" stroke-width="4" opacity="0.8" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#be185d" />
+<stop offset="1" stop-color="#3b0a24" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.25" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="880" cy="300" r="300" fill="url(#glow)" />
+<circle cx="1100" cy="80" r="120" fill="#ffffff" fill-opacity="0.06" />
+<circle cx="90" cy="580" r="150" fill="#ffffff" fill-opacity="0.06" />
+<path d="M880 90 L1050 150 L1050 320 C1050 430 970 500 880 540 C790 500 710 430 710 320 L710 150 Z" fill="#ffffff" />
+<path d="M880 120 L1022 170 L1022 320 C1022 410 955 472 880 508 C805 472 738 410 738 320 L738 170 Z" fill="#3b0a24" />
+<path d="M850 270 L850 245 C850 225 862 213 880 213 C898 213 910 225 910 245 L910 270" fill="none" stroke="#ffffff" stroke-width="16" stroke-linecap="round" />
+<rect x="828" y="268" width="104" height="82" rx="12" fill="#ffffff" />
+<circle cx="880" cy="302" r="13" fill="#be185d" />
+<rect x="874" y="305" width="12" height="28" rx="5" fill="#be185d" />
+<circle cx="1010" cy="470" r="52" fill="#16a34a" />
+<polyline points="985,470 1003,490 1038,448" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+<g fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" opacity="0.9">
+<path d="M640 560 C620 530 620 490 640 460" />
+<path d="M610 565 C585 525 585 480 612 440" />
+<path d="M670 555 C655 530 655 500 668 478" />
+</g>
+<g transform="translate(110 500) rotate(-20)">
+<circle cx="0" cy="0" r="30" fill="none" stroke="#ffffff" stroke-width="12" />
+<rect x="28" y="-6" width="120" height="12" fill="#ffffff" />
+<rect x="104" y="6" width="12" height="26" fill="#ffffff" />
+<rect x="128" y="6" width="12" height="18" fill="#ffffff" />
+</g>
+<text x="70" y="270" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="130" fill="#ffffff">Seriös</text>
+<text x="70" y="395" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="130" fill="#ffffff">prüfen</text>
+<rect x="74" y="425" width="300" height="12" rx="6" fill="#f9a8d4" />
+</svg>
