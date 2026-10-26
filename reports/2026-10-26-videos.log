@@ -47,39 +47,33 @@
   [rubyrubinoffi] 30 Videos abgefragt, neu: 0
   [bibixxx] 30 Videos abgefragt, neu: 0
   [cherryxmarry] 15 Videos abgefragt, neu: 0
-  [wunschfee] 30 Videos abgefragt, neu: 1
-Einlesen: {'models': 50, 'neu': 1, 'gesperrt': 0, 'fehler': 0, 'quelle': 'api'}
-  [lia-engel] Backlog: 200 ältere Videos vorgemerkt
-  [lanagrey] Backlog: 252 ältere Videos vorgemerkt
-  [nelesommer] Backlog: 54 ältere Videos vorgemerkt
-  [lisa-sophie] Backlog: 269 ältere Videos vorgemerkt
-  [lexyroxx] Backlog: 270 ältere Videos vorgemerkt
-  [lara-cumkitten] Backlog: 269 ältere Videos vorgemerkt
-  [hannasecret] Backlog: 269 ältere Videos vorgemerkt
-  [mia-nouvelle] Backlog: 180 ältere Videos vorgemerkt
-  [chrisliam] Backlog: 201 ältere Videos vorgemerkt
-  [snakedave] Backlog: 88 ältere Videos vorgemerkt
-  [monamystery] Backlog: 147 ältere Videos vorgemerkt
-  [lenifetisch] Backlog: 262 ältere Videos vorgemerkt
-  [lisa-mari] Backlog: 0 ältere Videos vorgemerkt
-  [jayjaypink] Backlog: 256 ältere Videos vorgemerkt
-  [miley-weasel] Backlog: 267 ältere Videos vorgemerkt
-  [linalove] Backlog: 119 ältere Videos vorgemerkt
-  [emmi-hill] Backlog: 217 ältere Videos vorgemerkt
-  [egon-kowalski] Backlog: 148 ältere Videos vorgemerkt
-  [maryhaze] Backlog: 43 ältere Videos vorgemerkt
-  [nelesweet] Backlog: 12 ältere Videos vorgemerkt
-  [candysamira] Backlog: 267 ältere Videos vorgemerkt
-  [dirtytina] Backlog: 267 ältere Videos vorgemerkt
-  [lucie-bavarina] Backlog: 77 ältere Videos vorgemerkt
-  [texaspatti] Backlog: 267 ältere Videos vorgemerkt
-  [melina-may] Backlog: 268 ältere Videos vorgemerkt
-  [lovinlou] Backlog: 0 ältere Videos vorgemerkt
-  [vickyfox] Backlog: 82 ältere Videos vorgemerkt
-  [micky-muffin] Backlog: 232 ältere Videos vorgemerkt
-  [chloe-privat] Backlog: 268 ältere Videos vorgemerkt
-  [marywet] Backlog: 268 ältere Videos vorgemerkt
-Backfill: {'vorgemerkt': 5519, 'freigegeben': 246, 'gesperrt': 4, 'offen': 5269, 'pensum': 250}
-  247 Videos in 772 s bearbeitet
-Texte: {'erzeugt': 247, 'verworfen': 0}
-Seite gebaut: 138 Seiten, 1800 Sitemap-URLs.
+  [wunschfee] 30 Videos abgefragt, neu: 0
+Einlesen: {'models': 50, 'neu': 0, 'gesperrt': 0, 'fehler': 0, 'quelle': 'api'}
+Anreichern: {'models': 47, 'ergaenzt': 6833, 'zurueckgezogen': 363}
+Backfill: {'vorgemerkt': 0, 'freigegeben': 0, 'gesperrt': 0, 'offen': 4958, 'pensum': 250}
+  [lia-engel/28367622] verworfen: explizite Wörter ('GEILER')
+  [nelesommer/28433917] verworfen: explizite Wörter ('FICK')
+  [monamystery/28429180] Fehler: ValueError: Antwort wurde abgeschnitten (max_tokens; Blöcke: thinking,tool_use; out=8000; Text: '')
+  [lucie-bavarina/28410525] verworfen: explizite Wörter ('Schwanz'), Formulierung aus der Originalbeschreibung übernommen – komplett eigene Worte
+  [lucie-bavarina/28410525] verworfen: Formulierung aus der Originalbeschreibung übernommen – komplett eigene Worte
+  [melina-may/28412527] verworfen: explizite Wörter ('geilen')
+  [marywet/28356718] verworfen: Formulierung aus der Originalbeschreibung übernommen – komplett eigene Worte
+  [mia-nouvelle/28119921] Fehler: ValueError: Antwort wurde abgeschnitten (max_tokens; Blöcke: thinking,tool_use; out=8000; Text: '')
+  [mia-nouvelle/28119921] Fehler: ValueError: Antwort wurde abgeschnitten (max_tokens; Blöcke: thinking,tool_use; out=8000; Text: '')
+  [nelesweet/28332418] verworfen: Standardsatz verwendet ('über unseren link landest du zuerst im videoangebot')
+  [joleelove/28151753] verworfen: Standardsatz verwendet ('gängige zahlungsarten sind')
+  [lisa-sophie/28421076] verworfen: Formulierung aus der Originalbeschreibung übernommen – komplett eigene Worte
+  [chloe-privat/28402802] verworfen: explizite Wörter ('Abspritzmöglichkeiten')
+  [lisa-sophie/28416932] verworfen: explizite Wörter ('Orgasmus')
+  [lara-cumkitten/28403897] Fehler: ValueError: Antwort wurde abgeschnitten (max_tokens; Blöcke: thinking,tool_use; out=8000; Text: '')
+  [chrisliam/28397401] Fehler: ValueError: Antwort wurde abgeschnitten (max_tokens; Blöcke: thinking,tool_use; out=8000; Text: '')
+  [miley-weasel/28407277] verworfen: explizite Wörter ('Wichsen')
+  [lovinlou/28337089] verworfen: explizite Wörter ('Orgasmus')
+  [vickyfox/28356849] Fehler: ValueError: Antwort wurde abgeschnitten (max_tokens; Blöcke: thinking,tool_use; out=8000; Text: '')
+  [chloe-privat/28392716] verworfen: explizite Wörter ('Orgasmus'), Formulierung aus der Originalbeschreibung übernommen – komplett eigene Worte
+  [lady-khaleesi/2202372] verworfen: Formulierung aus der Originalbeschreibung übernommen – komplett eigene Worte
+  [lia-engel/28261583] verworfen: Standardsatz verwendet ('gängige zahlungsarten sind')
+  [chrisliam/28378408] Fehler: ValueError: Antwort wurde abgeschnitten (max_tokens; Blöcke: thinking,tool_use; out=8000; Text: '')
+  200 Videos in 1027 s bearbeitet
+Texte: {'erzeugt': 0, 'verworfen': 0, 'ueberarbeitet': 198, 'ueberarbeitung_fehlgeschlagen': 2}
+Seite gebaut: 138 Seiten, 1745 Sitemap-URLs.
