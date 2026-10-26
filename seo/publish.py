@@ -22,7 +22,16 @@ def publish(cfg: dict, new_pages: int) -> str:
     r = _git(root, "commit", "-m", msg)
     if r.returncode != 0:
         return f"Commit fehlgeschlagen: {r.stderr.strip()}"
-    r = _git(root, "push")
-    if r.returncode != 0:
-        return f"Push fehlgeschlagen: {r.stderr.strip()}"
-    return f"Veröffentlicht: {msg}"
+    # Parallel gepushte Änderungen (z. B. Code-Updates) übernehmen und erneut versuchen,
+    # damit die Arbeit eines Laufs nie verloren geht. Bei Konflikten in erzeugten Dateien gewinnt dieser Lauf.
+    for attempt in range(4):
+        r = _git(root, "push")
+        if r.returncode == 0:
+            return f"Veröffentlicht: {msg}" + (f" (nach {attempt} Wiederholung(en))" if attempt else "")
+        pr = _git(root, "pull", "--rebase", "-X", "theirs")
+        if pr.returncode != 0:
+            _git(root, "rebase", "--abort")
+            pr = _git(root, "pull", "--no-rebase", "-X", "ours", "--no-edit")
+            if pr.returncode != 0:
+                return f"Push fehlgeschlagen, Abgleich nicht möglich: {pr.stderr.strip()[:300]}"
+    return f"Push fehlgeschlagen: {r.stderr.strip()}"
