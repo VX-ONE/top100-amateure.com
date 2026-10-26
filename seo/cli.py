@@ -430,6 +430,8 @@ def cmd_videos(cfg, args) -> int:
         if not st["models"]:   # Schnittstelle gar nicht erreichbar -> Browser als Rückfall
             st = vidmod.scrape(cfg, store, only=args.only, log=log)
             log(f"Einlesen (Browser): {st}")
+        en = vidmod.enrich(cfg, store, log=log)
+        log(f"Anreichern: {en}")
         bf = vidmod.backfill(cfg, store, log=log)
         log(f"Backfill: {bf}")
     if args.max:

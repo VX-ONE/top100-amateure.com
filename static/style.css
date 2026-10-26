@@ -189,3 +189,8 @@ summary h3{font-size:16px;font-weight:600}
 .pagination .gap{border:0;min-width:20px}
 
 .paynote{font-size:13px;color:var(--muted);margin:6px 0 0}
+
+.tipbox{background:var(--card);border-left:4px solid var(--accent);border-radius:10px;padding:8px 16px;margin:18px 0}
+.tipbox p{margin:6px 0}
+.vtags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+.vtags span{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--muted)}

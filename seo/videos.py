@@ -222,7 +222,7 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
 
 VXQL_QUERY = ("query VideoSearch($first:Int,$offset:Int,$order:SearchOrder,$filter:SearchFilter){search{videos("
               "search:\"\",first:$first,offset:$offset,order:$order,filter:$filter){total items{video{id title duration "
-              "linkVX(internal:true) ageRating model{id name}}}}}}")
+              "description tags released linkVX(internal:true) ageRating model{id name}}}}}}")
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/141.0.0.0 Safari/537.36")
 
@@ -272,7 +272,10 @@ def api_videos(name_lc: str, first: int = 30, model_id: int | None = None, offse
         if not mt or not v.get("title"):
             continue
         out.append({"id": str(v["id"]), "vx_slug": mt.group(2), "title": v["title"].strip(), "duration": _secs(v.get("duration")),
-                    "vx_path": re.sub(r"^https?://[^/]+", "", link).split("?")[0]})
+                    "vx_path": re.sub(r"^https?://[^/]+", "", link).split("?")[0],
+                    "description": re.sub(r"https?://\S+", "", (v.get("description") or "")).strip()[:3000],
+                    "tags": [t.strip() for t in (v.get("tags") or []) if isinstance(t, str) and t.strip()][:25],
+                    "date": (v.get("released") or "")[:10]})
     return model_id, out
 
 
@@ -302,7 +305,7 @@ def scrape_api(cfg: dict, store, only: list[str] | None = None, log=print) -> di
             if added >= cap:
                 break
             added += 1
-            hit = blocked_hit(normalize(v["title"]), blocked)
+            hit = blocked_hit(normalize(v["title"] + " " + v.get("description", "")), blocked)
             v.update(status="skipped", blocked=hit) if hit else v.update(status="new")
             stats["gesperrt" if hit else "neu"] += 1
             v["seen"] = date.today().isoformat()
@@ -387,7 +390,7 @@ def backfill(cfg: dict, store, log=print) -> dict:
             if not q or stats["freigegeben"] + stats["gesperrt"] >= per_day:
                 continue
             v = q.pop(0)
-            hit = blocked_hit(normalize(v["title"]), blocked)
+            hit = blocked_hit(normalize(v["title"] + " " + v.get("description", "")), blocked)
             if hit:
                 v.update(status="skipped", blocked=hit)
                 stats["gesperrt"] += 1
@@ -401,37 +404,138 @@ def backfill(cfg: dict, store, log=print) -> dict:
     return stats
 
 
+def enrich(cfg: dict, store, log=print, max_models: int = 60) -> dict:
+    """Ergänzt Beschreibung, Stichworte und Datum für bereits erfasste Videos (für einzigartige Texte und Sortierung).
+    Prüft dabei die Sperrliste erneut mit Titel + Beschreibung; betroffene Seiten werden zurückgezogen."""
+    blocked = video_blocked(cfg)
+    stats = {"models": 0, "ergaenzt": 0, "zurueckgezogen": 0}
+    for m, slug in model_pages(cfg, store)[:max_models]:
+        data = load(cfg, slug)
+        missing = {v["id"] for v in data["videos"] if "description" not in v and v.get("status") in ("published", "new", "backlog")}
+        if not missing:
+            continue
+        mid, offset, changed = data.get("vx_model_id"), 0, False
+        try:
+            while missing and offset < 1500:
+                mid, chunk = api_videos(platform(m), first=50, model_id=mid, offset=offset)
+                if not chunk:
+                    break
+                by = {v["id"]: v for v in chunk}
+                for v in data["videos"]:
+                    if v["id"] in missing and v["id"] in by:
+                        src = by[v["id"]]
+                        v["description"], v["tags"] = src["description"], src["tags"]
+                        if src["date"]:
+                            v["date"] = src["date"]
+                        missing.discard(v["id"])
+                        stats["ergaenzt"] += 1
+                        changed = True
+                        hit = blocked_hit(normalize(v["title"] + " " + v["description"]), blocked)
+                        if hit and v.get("status") in ("published", "new", "backlog"):
+                            v.update(status="withdrawn" if v["status"] == "published" else "skipped", blocked=hit)
+                            stats["zurueckgezogen"] += 1
+                offset += len(chunk)
+                time.sleep(1.2)
+        except Exception as e:
+            log(f"  [{slug}] Anreichern unvollständig: {type(e).__name__}: {e}")
+        for v in data["videos"]:          # nicht mehr auffindbare Videos nicht erneut anfragen
+            if v["id"] in missing:
+                v.setdefault("description", "")
+        data["vx_model_id"] = mid
+        if changed or missing:
+            save(cfg, slug, data)
+        stats["models"] += 1
+    return stats
+
+
 # ---------------------------------------------------------------- 2. Texte
 
-VIDEO_SYSTEM = """Du bist SEO-Redakteur einer deutschen Informationsseite über Amateur-Models bei Visit-X (nur für Erwachsene).
-Du schreibst eine eigenständige Begleitseite zu EINEM Video eines Models. Die Seite soll für Suchen wie
-"<Model> Video", "<Model> Videos", "<Model> <Videotitel>" ranken und einzigartig sein (kein Duplicate Content).
+VIDEO_SYSTEM = """Du bist Redakteur einer deutschen Erotik-Infoseite (nur für Erwachsene) und schreibst eine eigenständige
+Begleitseite zu EINEM Video eines Amateur-Models bei Visit-X. Die Seite soll für "<Model> <Videotitel>" und "<Model> Video"
+ranken und für Google einen eigenen, hilfreichen Wert haben (kein Thin Content, kein Duplicate Content).
+
+Stil: prickelnd, verführerisch, mit Kopfkino und Augenzwinkern – wie ein guter Teaser. Konkret zu DIESEM Video:
+Setting, Ausgangssituation, Rollen/Story, Stimmung, Outfit, Ort, Tempo, Format. Abwechslungsreiche Sätze, keine Floskeln.
 
 Harte Regeln:
-1. Nicht explizit: keine Beschreibung sexueller Handlungen, keine Vulgärwörter, keine Körperbeschreibungen. Den Inhalt
-   des Videos ordnest du nur allgemein ein (Stimmung, Setting, Format, Länge), so wie ein Programmhinweis.
-2. Nichts erfinden: Nur Angaben aus den DATEN verwenden (Titel, Länge, Datum, Model-Fakten, Anbieter-Fakten).
-   Keine Angaben zu Alter, Wohnort, Privatleben.
-3. Die Originalbeschreibung NICHT übernehmen oder nah umschreiben, sondern komplett eigene Sätze.
-4. Keine Links, kein HTML, Markdown nur für **fett** und Listen. Keine Überschriften im Fließtext.
-5. Den Bühnennamen immer exakt so schreiben, wie in den DATEN angegeben.
-6. Suchbegriffe nie fett setzen oder als Suchphrase zitieren; keine Sätze wie "Wer nach X sucht".
+1. Andeuten statt beschreiben: keine expliziten Wörter, keine Schilderung sexueller Handlungen, keine Körperteile,
+   keine Vulgärsprache. Erotik entsteht über Stimmung, Spannung und Situation.
+2. Nichts erfinden: Inhalt nur aus Titel, BESCHREIBUNG und Stichworten; Angebotsfakten nur aus den DATEN.
+   Keine Angaben zu Alter, Wohnort, Privatleben, echten Namen.
+3. Die BESCHREIBUNG ist nur Kontext: vollständig in eigenen Worten, niemals Sätze oder Satzteile übernehmen.
+4. Familienbegriffe sind Rollenspiele erwachsener Darsteller – so einordnen.
+5. Vorgegebene Struktur (Abschnitte, Tipp, FAQ-Themen, Einstieg) genau einhalten; jede H2 enthält den Bühnennamen
+   oder einen konkreten Bezug zum Video. Keine Standard-Sätze über Zahlungsarten/Anmeldung im Fließtext,
+   das steht schon im Button-Bereich – außer der Tipp verlangt es.
+6. Bühnennamen exakt wie angegeben. Suchbegriffe nie fett, keine Sätze wie "Wer nach X sucht".
+7. Keine Links, kein HTML, Markdown nur für Listen.
 Antworte nur über das Werkzeug "antwort"."""
 
 VIDEO_SCHEMA = {
     "type": "object",
     "properties": {
-        "meta_description": {"type": "string", "description": "120-155 Zeichen, nennt Model, ein Themen-Stichwort, Länge und Nutzen, nicht explizit"},
-        "intro": {"type": "string", "description": "2-3 Sätze, erster Satz enthält '<Bühnenname> Video'"},
-        "sections": {"type": "array", "minItems": 2, "maxItems": 3, "items": {"type": "object", "properties": {
-            "h2": {"type": "string", "description": "enthält den Bühnennamen"}, "body": {"type": "string", "description": "60-120 Wörter"}},
+        "meta_description": {"type": "string", "description": "130-155 Zeichen, konkret zum Video (Setting/Story), nennt Model und Länge, neugierig machend, nicht explizit"},
+        "intro": {"type": "string", "description": "2-3 Sätze im vorgegebenen Einstiegs-Stil; erster Satz enthält den Bühnennamen und einen konkreten Bezug zum Video"},
+        "highlights": {"type": "array", "minItems": 3, "maxItems": 4, "items": {"type": "string"},
+                       "description": "Kurz notiert: 3-4 knappe Stichpunkte (je max. 12 Wörter) zu Setting, Stimmung, Format dieses Videos"},
+        "sections": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "properties": {
+            "h2": {"type": "string"}, "body": {"type": "string", "description": "70-130 Wörter, konkret zu diesem Video"}},
             "required": ["h2", "body"]}},
-        "faq": {"type": "array", "minItems": 3, "maxItems": 4, "items": {"type": "object", "properties": {
-            "q": {"type": "string"}, "a": {"type": "string"}}, "required": ["q", "a"]}},
-        "cover_line": {"type": "string", "description": "Kurzer, nicht expliziter Cover-Text, max. 26 Zeichen"},
+        "tip": {"type": "object", "properties": {"title": {"type": "string"}, "body": {"type": "string", "description": "40-70 Wörter"}},
+                "required": ["title", "body"]},
+        "faq": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "properties": {
+            "q": {"type": "string"}, "a": {"type": "string", "description": "1-3 Sätze"}}, "required": ["q", "a"]}},
+        "cover_line": {"type": "string", "description": "Kurzer, nicht expliziter Cover-Text zum Video, max. 26 Zeichen"},
     },
-    "required": ["meta_description", "intro", "sections", "faq", "cover_line"],
+    "required": ["meta_description", "intro", "highlights", "sections", "tip", "faq", "cover_line"],
 }
+VIDEO_VERSION = 2
+
+ARCHETYPES = [
+    "Worum es in diesem {n} Video geht – Ausgangssituation und Story in eigenen Worten",
+    "Stimmung und Szene – Ort, Licht, Outfit, Tempo, wie die Spannung aufgebaut wird",
+    "Für wen sich das Video lohnt – welche Vorlieben und Fantasien es bedient (angedeutet)",
+    "Was diesen Clip von {n} besonders macht – Idee, Rolle, Twist, Persönlichkeit",
+    "Hinter dem Titel – was der Titel verspricht und wie das Video es einlöst",
+    "Länge, Format und Rhythmus – kurzer Teaser oder ausgedehnter Film, Kamera, Perspektive",
+    "Rollenspiel und Charaktere – wer spielt wen, welche Dynamik (nur wenn im Video vorhanden, sonst Story)",
+    "{n} in diesem Video – wie sie/er sich hier zeigt, passend zu den Model-Fakten",
+]
+TIPS = [
+    "Bonus: über unseren Link ist der Gutscheincode für 100 % Aufladebonus automatisch hinterlegt – einfach kostenlos anmelden",
+    "Bezahlen: PayPal, Apple Pay, Kreditkarte, Sofortüberweisung oder SEPA; Euro werden in Tokens umgerechnet",
+    "Tokens: wie Euro in Tokens umgerechnet werden und warum der Aufladebonus das Guthaben verdoppelt",
+    "Mehr von {n}: bei Visit-X gibt es weitere Videos und die Livecam – Profil im Blick behalten",
+    "Erst schauen, dann entscheiden: über unseren Link landest du direkt beim Video und meldest dich selbst kostenlos an",
+    "Ähnliche Clips: auf unserer {n}-Übersicht findest du alle Videos chronologisch sortiert",
+]
+FAQ_INTENTS = [
+    "Worum geht es im Video (Story/Setting, angedeutet)?", "Wie lang ist das Video?", "Wo kann ich das Video ansehen?",
+    "Was kostet das Video / wie funktionieren Tokens?", "Gibt es einen Bonus beim Aufladen?", "Welche Zahlungsarten gibt es?",
+    "Wie viele Videos hat {n}?", "Kann ich {n} auch live in der Livecam sehen?", "Für wen ist das Video geeignet?",
+    "Brauche ich ein Konto, um das Video zu sehen?",
+]
+INTRO_STYLES = ["mit einer neugierig machenden Frage beginnen", "direkt mitten in der Szene beginnen (Ort/Situation)",
+                "mit dem Model und seinem Stil beginnen", "mit einem überraschenden Detail aus Titel oder Beschreibung beginnen"]
+BOILER = ["gängige zahlungsarten sind", "die anmeldung startest du selbst", "welche methode dir angeboten wird",
+          "zeigt visit-x beim aufladen", "über unseren link landest du zuerst im videoangebot", "du findest es im videoangebot"]
+
+
+def _pick(seq: list, k: int, seed: str) -> list:
+    import random as _r
+    rnd = _r.Random(seed)
+    return rnd.sample(seq, k)
+
+
+def clean_tags(tags: list[str]) -> list[str]:
+    out = []
+    for t in tags or []:
+        lw = t.lower().strip()
+        if not lw or VULGAR.search(lw) or any(r in lw for r in ROOTS) or EXPL.search(lw) or len(lw) > 30:
+            continue
+        if lw not in [o.lower() for o in out]:
+            out.append(t.strip())
+    return out[:8]
 
 
 VULGAR = re.compile(r"(?<![\wäöüß])(cum\w*|creampie\w*|anal\w*|squirt\w*|dildo\w*|bbc|bwc|pussy|fuck\w*|sex\w*|porno\w*|"
@@ -517,96 +621,157 @@ def topic_hints(title: str, name: str) -> list[str]:
     return out[:6]
 
 
-def build_prompt(m: dict, v: dict, facts: str) -> str:
-    hints = topic_hints(v["title"], m["name"])
+def build_prompt(m: dict, v: dict, facts: str, siblings: list[dict] | None = None) -> str:
+    n = m["name"]
+    seed = v["id"]
+    arche = [x.format(n=n) for x in _pick(ARCHETYPES, 3, seed + "a")]
+    tip = _pick(TIPS, 1, seed + "t")[0].format(n=n)
+    faqs = [x.format(n=n) for x in _pick(FAQ_INTENTS, 3, seed + "f")]
+    style = _pick(INTRO_STYLES, 1, seed + "i")[0]
+    hints = topic_hints(v["title"], n)
+    tags = clean_tags(v.get("tags") or [])
     meta = f"Länge: {v.get('duration') or 'unbekannt'} Minuten | mit Ton"
     if v.get("date"):
-        meta += f" | veröffentlicht am {v['date']}"
-    return "\n".join([
-        f"Bühnenname: {m['name']}",
-        f"Videotitel (Original, nur als Bezug, nicht zitieren): {v['title']}",
-        "Neutrale Themen-Stichworte aus dem Titel: " + (", ".join(hints) if hints else
-            "keine – dann Format, Länge und Stil des Models einordnen"),
+        meta += f" | veröffentlicht am {v['date'][8:10]}.{v['date'][5:7]}.{v['date'][0:4]}"
+    sib = [s_["title"] for s_ in (siblings or []) if s_.get("id") != v["id"]][:6]
+    desc = (v.get("description") or "").strip()
+    parts = [
+        f"Bühnenname: {n}",
+        f"Videotitel: {v['title']}",
+        "BESCHREIBUNG des Models (nur als Kontext, nicht übernehmen; explizite Details nur andeuten):\n" + (desc[:1800] or "(keine)"),
+        "Stichworte: " + (", ".join(tags) if tags else "(keine)") + " | Themen aus dem Titel: " + (", ".join(hints) or "(keine)"),
         meta,
-        "Model-Fakten:\n- " + "\n- ".join(m["facts"][:8]),
-        "Anbieter-Fakten:\n" + facts,
-        "WICHTIG für Einzigartigkeit: Greife die Themen-Stichworte (Setting, Ort, Anlass, Rollenspiel, Outfit) in neutralen Worten "
-        "auf. Intro und erster Abschnitt müssen sich klar auf genau dieses Video beziehen, nicht allgemein auf das Model. "
-        "Die erste H2 enthält den Bühnennamen und ein Themen-Stichwort (falls vorhanden).",
-        "Abschnitte: 1) Thema und Einordnung dieses Videos (Stichworte, Länge, Format), 2) 'So schaust du das <Name> Video bei Visit-X' "
-        "(Euro werden in Tokens umgerechnet, Zahlungsarten, kostenlos anmelden: über unseren Link ist der Gutscheincode für den "
-        "100 % Aufladebonus automatisch hinterlegt), 3) optional 'Mehr <Name> Videos und Livecam'.",
-        "Stief-/Familienbegriffe im Titel sind Rollenspiele unter erwachsenen Darstellern: als 'Rollenspiel' oder 'Tabu-Fantasie' "
-        "einordnen, keine echte Verwandtschaft behaupten.",
-        "Nicht schreiben: dass ein Datum unbekannt ist, 'laut Seitenbetreiber', 'diese Seite erklärt'. Keine Floskeln.",
-        "FAQ (3-4): z. B. Wie lang ist das <Name> Video zu <Stichwort>? Wo kann ich es ansehen? Was kostet es? Gibt es mehr Videos von <Name>?",
-    ])
+        "Model-Fakten:\n- " + "\n- ".join(m["facts"][:6]),
+        "Anbieter-Fakten (nur für Tipp/FAQ):\n" + facts,
+        f"Einstieg: {style}.",
+        "Die drei Abschnitte (H2 frei formulieren, mit Bühnennamen oder konkretem Videobezug):\n1. " + "\n2. ".join(arche[:2]) + "\n3. " + arche[2],
+        f"Tipp-Box (Titel + Text): {tip}",
+        "FAQ – genau diese drei Themen, als natürliche Google-Fragen mit Bühnennamen: " + " | ".join(faqs),
+    ]
+    if sib:
+        parts.append("Weitere Videos dieses Models (nur zur Abgrenzung, NICHT beschreiben): " + " | ".join(sib))
+    parts.append("Diese Formulierungen NICHT verwenden: " + " | ".join(BOILER))
+    return "\n".join(parts)
 
 
 def mock_content(m: dict, v: dict) -> dict:
     n = m["name"]
-    body = (f"Dieses {n} Video ist {v.get('duration') or 'einige Minuten'} lang. " * 12).strip()
-    return {"meta_description": f"{n} Video ({v.get('duration')}) bei Visit-X: Infos, Länge und so schaust du es mit Bonus.",
-            "intro": f"Dieses {n} Video stellen wir dir hier vor.", "cover_line": "Neues Video",
-            "sections": [{"h2": f"Worum es im {n} Video geht", "body": body}, {"h2": f"So schaust du das {n} Video", "body": body}],
+    body = (f"Dieses {n} Video ist {v.get('duration') or 'einige Minuten'} lang und hat eine eigene Stimmung. " * 9).strip()
+    return {"meta_description": f"{n} Video ({v.get('duration')}) bei Visit-X: Story, Stimmung und wie du es mit Bonus ansiehst.",
+            "intro": f"Dieses {n} Video stellen wir dir hier vor.", "cover_line": "Neues Video", "highlights": ["Setting", "Stimmung", "Format"],
+            "sections": [{"h2": f"Worum es im {n} Video geht", "body": body}, {"h2": f"Stimmung bei {n}", "body": body},
+                         {"h2": f"Für wen das {n} Video passt", "body": body}],
+            "tip": {"title": "Tipp", "body": body[:200]},
             "faq": [{"q": "Wie lang ist das Video?", "a": f"{v.get('duration')} Minuten."}] * 3}
 
 
-def check(c: dict, m: dict, v: dict) -> list[str]:
-    from . import quality
+def _shingles(t: str, k: int = 5) -> set:
+    w = re.findall(r"\w+", t.lower())
+    return {" ".join(w[i:i + k]) for i in range(len(w) - k + 1)}
+
+
+def content_text(c: dict) -> str:
+    return " ".join([c.get("meta_description", ""), c.get("intro", ""), " ".join(c.get("highlights") or [])] +
+                    [s_["body"] + " " + s_["h2"] for s_ in c.get("sections", [])] +
+                    [(c.get("tip") or {}).get("title", "") + " " + (c.get("tip") or {}).get("body", "")] +
+                    [f["q"] + " " + f["a"] for f in c.get("faq", [])])
+
+
+def check(c: dict, m: dict, v: dict, sibling_texts: list[str] | None = None) -> list[str]:
     issues = []
-    text = " ".join([c.get("meta_description", ""), c.get("intro", "")] +
-                    [s["body"] + " " + s["h2"] for s in c.get("sections", [])] + [f["q"] + " " + f["a"] for f in c.get("faq", [])])
-    if quality.EXPLICIT.search(text):
-        issues.append("explizite Wörter")
+    text = content_text(c)
+    if EXPL.search(text):
+        issues.append(f"explizite Wörter ('{EXPL.search(text).group(0)}')")
     words = len(text.split())
-    if words < 220:
-        issues.append(f"zu kurz ({words} Wörter)")
-    if normalize(m["name"]).replace("-", " ") not in normalize(c.get("seo_title", "")).replace("-", " ") and \
-            normalize(m["name"]).replace("-", "") not in normalize(c.get("seo_title", "")).replace("-", ""):
-        issues.append("Name fehlt im Titel")
+    if words < 380:
+        issues.append(f"zu kurz ({words} Wörter, mindestens 380)")
+    low = normalize(text)
     desc = normalize(v.get("description", ""))
-    for chunk in re.findall(r"(?:\S+\s+){7}\S+", desc)[:30]:   # 8-Wort-Folgen aus der Originalbeschreibung
-        if chunk in normalize(text):
-            issues.append("Originalbeschreibung übernommen")
+    for chunk in re.findall(r"(?:\S+\s+){5}\S+", desc)[:80]:   # 6-Wort-Folgen aus der Originalbeschreibung
+        if chunk in low:
+            issues.append("Formulierung aus der Originalbeschreibung übernommen – komplett eigene Worte")
             break
-    if not 25 <= len(c.get("seo_title", "")) <= 70:
-        issues.append("Titellänge")
+    for b in BOILER:
+        if b in low:
+            issues.append(f"Standardsatz verwendet ('{b}')")
+            break
+    sh = _shingles(text)
+    for t in sibling_texts or []:
+        o = _shingles(t)
+        if sh and o and len(sh & o) / len(sh | o) > 0.12:
+            issues.append("zu ähnlich zu einer anderen Videoseite dieses Models – andere Formulierungen")
+            break
+    if len(c.get("sections", [])) != 3 or not c.get("tip") or len(c.get("highlights") or []) < 3:
+        issues.append("Struktur unvollständig (3 Abschnitte, Tipp, 3-4 Stichpunkte)")
     return issues
 
 
 def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
+    """Erzeugt Texte für neue Videos und schreibt bestehende Videoseiten schrittweise auf Textversion 2 um
+    (Beschreibung als Kontext, wechselnde Struktur, Ähnlichkeitsprüfung gegen andere Videos desselben Models)."""
     from . import generate as gen
     s = settings(cfg)
     facts = gen.load_facts(cfg["_root"])
-    stats = {"erzeugt": 0, "verworfen": 0}
-    # Reihum über die Models, damit alle früh Videos bekommen (neueste zuerst)
-    queues = []
+    stats = {"erzeugt": 0, "verworfen": 0, "ueberarbeitet": 0, "ueberarbeitung_fehlgeschlagen": 0}
+    new_q, ref_q, sib = [], [], {}
     for m, slug in model_pages(cfg, store):
         data = load(cfg, slug)
-        q = [v for v in data["videos"] if v.get("status") == "new"]
-        q.sort(key=lambda v: int(v["id"]), reverse=True)   # Video-IDs von Visit-X sind chronologisch
-        queues.append((m, slug, data, q))
-    budget = s["generate_per_run"]
+        vids = sorted(data["videos"], key=lambda v: int(v["id"]), reverse=True)
+        sib[slug] = [v for v in vids if v.get("status") == "published"]
+        q = [v for v in vids if v.get("status") == "new"]
+        r = []
+        for v in vids:
+            if v.get("status") != "published" or v.get("refresh_fails", 0) >= 2:
+                continue
+            c = load_content(cfg, v["id"]) or {}
+            if c.get("version", 1) < VIDEO_VERSION:
+                r.append(v)
+        new_q.append((m, slug, data, q))
+        ref_q.append((m, slug, data, r))
+
+    def round_robin(queues, budget):
+        jobs = []
+        while len(jobs) < budget and any(q for *_, q in queues):
+            for m, slug, data, q in queues:
+                if q and len(jobs) < budget:
+                    jobs.append((m, slug, data, q.pop(0)))
+        return jobs
+
+    jobs = [(j, False) for j in round_robin(new_q, s["generate_per_run"])]
+    jobs += [(j, True) for j in round_robin(ref_q, int(s.get("refresh_per_run", 0)))]
     llm_cfg = dict(cfg, llm=dict(cfg["llm"], model=s["llm_model"] or cfg["llm"]["model"], max_tokens=8000))
-    jobs = []                                  # reihum, neueste zuerst
-    while len(jobs) < budget and any(q for *_, q in queues):
-        for m, slug, data, q in queues:
-            if q and len(jobs) < budget:
-                jobs.append((m, slug, data, q.pop(0)))
+
+    def sibling_texts(slug, v, k=6):
+        lst = sib.get(slug, [])
+        ids = [x["id"] for x in lst]
+        i = ids.index(v["id"]) if v["id"] in ids else 0
+        near = [x for x in lst[max(0, i - k): i + k + 1] if x["id"] != v["id"]]
+        out = []
+        for x in near:
+            c = load_content(cfg, x["id"]) or {}
+            if c.get("version", 1) >= VIDEO_VERSION:
+                out.append(content_text(c))
+        return near, out
 
     def work(job):
-        m, slug, data, v = job
-        msgs = []
+        (m, slug, data, v), _ = job
+        near, texts = sibling_texts(slug, v)
+        msgs, issues = [], None
         for attempt in range(2):
             try:
-                c = mock_content(m, v) if mock else gen.ask_json(llm_cfg, VIDEO_SYSTEM, build_prompt(m, v, facts), VIDEO_SCHEMA)
+                prompt = build_prompt(m, v, facts, near)
+                if issues:
+                    prompt += "\nDer letzte Entwurf wurde abgelehnt. Behebe: " + "; ".join(issues)
+                c = mock_content(m, v) if mock else gen.ask_json(llm_cfg, VIDEO_SYSTEM, prompt, VIDEO_SCHEMA)
                 c = gen.clean_content(c) | {"seo_title": seo_title(m, v), "h1": f"{clean_title(v['title'])} – {m['name']} Video",
-                                            "cover_line": gen.clean_text(c.get("cover_line", ""))[:26]}
+                                            "cover_line": gen.clean_text(c.get("cover_line", ""))[:26], "version": VIDEO_VERSION}
+                c["highlights"] = [gen.clean_text(x) for x in (c.get("highlights") or []) if isinstance(x, str)][:4]
+                if isinstance(c.get("tip"), dict):
+                    c["tip"] = {"title": gen.clean_text(c["tip"].get("title", "")), "body": gen.clean_text(c["tip"].get("body", ""))}
             except Exception as e:
                 msgs.append(f"  [{slug}/{v['id']}] Fehler: {type(e).__name__}: {e}")
                 continue
-            issues = [] if mock else check(c, m, v)
+            issues = [] if mock else check(c, m, v, texts)
             if not issues:
                 return c, msgs
             msgs.append(f"  [{slug}/{v['id']}] verworfen: {', '.join(issues)}")
@@ -615,14 +780,21 @@ def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
     from concurrent.futures import ThreadPoolExecutor
     started = time.time()
     with ThreadPoolExecutor(max_workers=int(s.get("workers", 6))) as ex:
-        for (m, slug, data, v), (content, msgs) in zip(jobs, ex.map(work, jobs)):
+        for ((m, slug, data, v), is_refresh), (content, msgs) in zip(jobs, ex.map(work, jobs)):
             for x in msgs:
                 log(x)
             if content:
                 save_content(cfg, v["id"], content)
-                v["status"] = "published"
-                v["published_at"] = date.today().isoformat()
-                stats["erzeugt"] += 1
+                if is_refresh:
+                    v["refreshed_at"] = date.today().isoformat()
+                    stats["ueberarbeitet"] += 1
+                else:
+                    v["status"] = "published"
+                    v["published_at"] = date.today().isoformat()
+                    stats["erzeugt"] += 1
+            elif is_refresh:
+                v["refresh_fails"] = v.get("refresh_fails", 0) + 1
+                stats["ueberarbeitung_fehlgeschlagen"] += 1
             else:
                 v["fails"] = v.get("fails", 0) + 1
                 if v["fails"] >= 3:
@@ -670,9 +842,9 @@ def collect(cfg: dict, store) -> dict[str, dict]:
             c = load_content(cfg, v["id"])
             if not c:
                 continue
-            vids.append({**v, "title": clean_title(v["title"]), "c": c, "url": f"/{slug}/videos/{page_slug(v)}/", "img": f"/img/v/{v['id']}.svg",
+            vids.append({**v, "title": clean_title(v["title"]), "tags_clean": clean_tags(v.get("tags") or []), "c": c, "url": f"/{slug}/videos/{page_slug(v)}/", "img": f"/img/v/{v['id']}.svg",
                          "link": deeplink(cfg, v["vx_path"]), "secs": mmss(v.get("duration", ""))})
-        vids.sort(key=lambda x: (x.get("date", ""), int(x["id"])), reverse=True)
+        vids.sort(key=lambda x: int(x["id"]), reverse=True)   # Visit-X-IDs sind chronologisch (neueste zuerst)
         seen = {}
         for x in vids:   # Seitentitel immer frisch bilden; doppelte (z. B. Serien) -> vollen Titel verwenden
             seen.setdefault(seo_title(m, x), []).append(x)

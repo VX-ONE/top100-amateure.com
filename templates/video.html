@@ -33,9 +33,12 @@
     <p class="small">Werbung · Nur für Erwachsene ab 18 · Bedingungen bei {{ provider }}</p>
   </div>
   <div class="intro">{{ c.intro|md|safe }}</div>
+  {% if c.highlights %}<aside class="takeaways"><p class="block-title">Kurz notiert</p><ul>{% for h in c.highlights %}<li>{{ h }}</li>{% endfor %}</ul></aside>{% endif %}
   {% for s in c.sections %}
   <section><h2>{{ s.h2 }}</h2>{{ s.body|md|safe }}</section>
+  {% if loop.first and c.tip and c.tip.body %}<aside class="tipbox"><p class="block-title">💡 {{ c.tip.title or "Tipp" }}</p><p>{{ c.tip.body }}</p></aside>{% endif %}
   {% endfor %}
+  {% if v.tags_clean %}<p class="vtags">{% for t in v.tags_clean %}<span>#{{ t }}</span>{% endfor %}</p>{% endif %}
   {% if key_guides %}<aside class="guides-box"><p class="block-title">Gut zu wissen vor dem Anmelden</p><ul>{% for g in key_guides[:5] %}<li><a href="/{{ g.slug }}/">{{ g.label }}</a></li>{% endfor %}</ul></aside>{% endif %}
   <section class="faq"><h2>Fragen zum {{ m.name }} Video</h2>
   {% for f in c.faq %}<details><summary><h3>{{ f.q }}</h3></summary>{{ f.a|md|safe }}</details>{% endfor %}
