@@ -10,18 +10,23 @@
   {"@type": "ItemList", "itemListElement": items}]}|tojson }}</script>
 {% endblock %}
 {% block main %}
-<nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/videos/">Videos</a> &rsaquo; <a href="/{{ model_slug }}/">{{ m.name }}</a> &rsaquo; Videos</nav>
+<nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/videos/">Videos</a> &rsaquo; <a href="/{{ model_slug }}/">{{ m.name }}</a> &rsaquo; {% if page_no and page_no > 1 %}<a href="/{{ model_slug }}/videos/">Videos</a> &rsaquo; Seite {{ page_no }}{% else %}Videos{% endif %}</nav>
 <section class="landing slim" style="--c:#be123c">
-  <h1>{{ m.name }} Videos: die neuesten Clips</h1>
+  <h1>{{ m.name }} Videos{% if page_no and page_no > 1 %} – Seite {{ page_no }}{% else %}: die neuesten Clips{% endif %}</h1>
   <nav class="mtabs" aria-label="{{ m.name }}">
     <a href="/{{ model_slug }}/">Profil</a>
-    <a class="on" href="/{{ model_slug }}/videos/" aria-current="page">▶ Alle {{ vids|length }} Videos</a>
+    <a class="on" href="/{{ model_slug }}/videos/" aria-current="page">▶ Alle {{ total or vids|length }} Videos</a>
     {% if model_link %}<a class="ext" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">Bei {{ provider }} ansehen</a>{% endif %}
   </nav>
   <p class="lead">Hier findest du die neuesten {{ m.name }} Videos bei {{ provider }} mit Länge und Datum. Jedes Video hat eine eigene Seite mit Infos und dem direkten Link{% if bonus %}, inklusive {{ bonus.badge }} über unseren Link{% endif %}.</p>
 </section>
 {% if model_link %}<p><a class="btn" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">▶ Alle {{ m.name }} Videos bei {{ provider }}</a></p>{% endif %}
-<h2>Alle {{ vids|length }} {{ m.name }} Videos im Überblick</h2>
+<h2>{% if pages_n and pages_n > 1 %}{{ m.name }} Videos {{ offset + 1 }}–{{ offset + vids|length }} von {{ total }} (neueste zuerst){% else %}Alle {{ vids|length }} {{ m.name }} Videos im Überblick{% endif %}</h2>
 <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ m.name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min{% if r.date %} · {{ r.date[8:10] }}.{{ r.date[5:7] }}.{{ r.date[0:4] }}{% endif %}</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
+{% if pages_n and pages_n > 1 %}<nav class="pagination" aria-label="Seiten">
+  {% if prev_url %}<a href="{{ prev_url }}" rel="prev">&lsaquo; Neuere</a>{% endif %}
+  {% for p in range(1, pages_n + 1) %}{% if p == page_no %}<span class="cur">{{ p }}</span>{% elif p == 1 %}<a href="/{{ model_slug }}/videos/">1</a>{% elif p == pages_n or (p - page_no)|abs <= 2 %}<a href="/{{ model_slug }}/videos/seite/{{ p }}/">{{ p }}</a>{% elif (p - page_no)|abs == 3 %}<span class="gap">…</span>{% endif %}{% endfor %}
+  {% if next_url %}<a href="{{ next_url }}" rel="next">Ältere &rsaquo;</a>{% endif %}
+</nav>{% endif %}
 <p><a class="more" href="/{{ model_slug }}/">&lsaquo; Zum Profil von {{ m.name }}</a></p>
 {% endblock %}

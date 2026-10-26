@@ -14,7 +14,7 @@ from __future__ import annotations
 import json
 import re
 import time
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 from . import images as imgmod
@@ -243,7 +243,7 @@ def _secs(n) -> str:
     return f"{h:02d}:{m:02d}:{s:02d}" if h else f"{m:02d}:{s:02d}"
 
 
-def api_videos(name_lc: str, first: int = 30, model_id: int | None = None) -> tuple[int | None, list[dict]]:
+def api_videos(name_lc: str, first: int = 30, model_id: int | None = None, offset: int = 0) -> tuple[int | None, list[dict]]:
     """Neueste Videos eines Models über die Datenschnittstelle der Visit-X-Seite (wie der Browser sie lädt).
     Gibt (Model-ID, Liste) zurück. Speichert nur ID, Titel, Länge und Link – keine Profildaten."""
     html = _http(f"{VX}/de/amateur/{name_lc}/videos/")
@@ -258,7 +258,7 @@ def api_videos(name_lc: str, first: int = 30, model_id: int | None = None) -> tu
         model_id = int((actor.get("actorData") or {}).get("id") or 0) or None
         if not model_id:
             raise RuntimeError("Model-ID nicht gefunden")
-    body = json.dumps({"query": VXQL_QUERY, "variables": {"first": first, "offset": 0, "order": "newest",
+    body = json.dumps({"query": VXQL_QUERY, "variables": {"first": first, "offset": offset, "order": "newest",
                        "filter": {"includedModelIds": [model_id]}}}).encode()
     res = json.loads(_http(f"{VX}/vxql?language=de", data=body, headers={
         "Content-Type": "application/json", "Authorization": f"Bearer {vt.group(1)}",
@@ -311,6 +311,83 @@ def scrape_api(cfg: dict, store, only: list[str] | None = None, log=print) -> di
         save(cfg, slug, data)
         log(f"  [{slug}] {len(found)} Videos abgefragt, neu: {added}")
         time.sleep(1.5)   # schonend: eine Anfrage pro Sekunde
+    return stats
+
+
+def backfill(cfg: dict, store, log=print) -> dict:
+    """Ältere Videos der Top-Models schrittweise aufnehmen (chronologisch: von neu nach alt).
+    1) Einmalig je Model bis zu backfill_max Videos als 'backlog' vormerken.
+    2) Täglich backfill_per_day davon reihum (je Model das jeweils neueste noch offene) auf 'new' setzen.
+    Automatische Bremse: sind ältere Backfill-Seiten schlecht indexiert, wird das Tagespensum gesenkt."""
+    s = settings(cfg)
+    n_models, cap, per_day = int(s.get("backfill_models", 0)), int(s.get("backfill_max", 0)), int(s.get("backfill_per_day", 0))
+    stats = {"vorgemerkt": 0, "freigegeben": 0, "gesperrt": 0, "offen": 0, "pensum": per_day}
+    if not (n_models and cap and per_day):
+        return stats
+    blocked = video_blocked(cfg)
+    models = model_pages(cfg, store)[:n_models]
+    datas = {}
+    for m, slug in models:
+        data = load(cfg, slug)
+        datas[slug] = data
+        if data.get("backlog_done"):
+            continue
+        known = {v["id"] for v in data["videos"]}
+        mid, offset, added = data.get("vx_model_id"), 0, 0
+        try:
+            while offset < cap:
+                mid, chunk = api_videos(platform(m), first=min(50, cap - offset), model_id=mid, offset=offset)
+                if not chunk:
+                    break
+                for v in chunk:
+                    if v["id"] not in known:
+                        v.update(status="backlog", source="backfill", seen=date.today().isoformat())
+                        data["videos"].append(v)
+                        known.add(v["id"])
+                        added += 1
+                offset += len(chunk)
+                time.sleep(1.2)
+        except Exception as e:
+            log(f"  [{slug}] Backlog nicht vollständig lesbar: {type(e).__name__}: {e}")
+            save(cfg, slug, data)
+            continue
+        data["vx_model_id"], data["backlog_done"] = mid, date.today().isoformat()
+        save(cfg, slug, data)
+        stats["vorgemerkt"] += added
+        log(f"  [{slug}] Backlog: {added} ältere Videos vorgemerkt")
+    # Bremse: Indexierungsquote älterer Backfill-Seiten (mind. 10 Tage alt, von der Search Console geprüft)
+    old = (date.today() - timedelta(days=10)).isoformat()
+    checked = [v for d in datas.values() for v in d["videos"]
+               if v.get("source") == "backfill" and v.get("status") == "published" and (v.get("published_at") or "9") <= old and "indexed" in v]
+    if len(checked) >= 40:
+        ratio = sum(1 for v in checked if v["indexed"]) / len(checked)
+        if ratio < 0.4:
+            per_day = max(25, per_day // 5)
+            log(f"  Backfill gebremst: nur {ratio:.0%} der älteren Backfill-Seiten indexiert -> {per_day} pro Tag")
+    stats["pensum"] = per_day
+    # Reihum freigeben, je Model das neueste noch offene Video zuerst
+    queues = []
+    for m, slug in models:
+        q = sorted((v for v in datas[slug]["videos"] if v.get("status") == "backlog"), key=lambda v: -int(v["id"]))
+        if q:
+            queues.append((slug, q))
+    touched = set()
+    while stats["freigegeben"] + stats["gesperrt"] < per_day and any(q for _, q in queues):
+        for slug, q in queues:
+            if not q or stats["freigegeben"] + stats["gesperrt"] >= per_day:
+                continue
+            v = q.pop(0)
+            hit = blocked_hit(normalize(v["title"]), blocked)
+            if hit:
+                v.update(status="skipped", blocked=hit)
+                stats["gesperrt"] += 1
+            else:
+                v["status"] = "new"
+                stats["freigegeben"] += 1
+            touched.add(slug)
+    for slug in touched:
+        save(cfg, slug, datas[slug])
+    stats["offen"] = sum(len(q) for _, q in queues)
     return stats
 
 
@@ -498,7 +575,7 @@ def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
     for m, slug in model_pages(cfg, store):
         data = load(cfg, slug)
         q = [v for v in data["videos"] if v.get("status") == "new"]
-        q.sort(key=lambda v: v.get("date", ""), reverse=True)
+        q.sort(key=lambda v: int(v["id"]), reverse=True)   # Video-IDs von Visit-X sind chronologisch
         queues.append((m, slug, data, q))
     budget = s["generate_per_run"]
     llm_cfg = dict(cfg, llm=dict(cfg["llm"], model=s["llm_model"] or cfg["llm"]["model"], max_tokens=8000))
@@ -614,13 +691,23 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
                 robots="index,follow", title=v["title_tag"], description=trim(v["c"]["meta_description"], 158),
                 og_image="", og_type="article"))
             urls.append((base + v["url"], v.get("published_at") or date.today().isoformat()))
-        write(f"{slug}/videos/index.html", it.render(
-            **ctx, m=m, model_slug=slug, vids=vids, model_link=deeplink(cfg, f"/de/amateur/{platform(m)}/videos/"),
-            canonical=f"{base}/{slug}/videos/", robots="index,follow",
-            title=f"{m['name']} Videos: alle {len(vids)} neuen Clips im Überblick",
-            description=f"Alle neuen {m['name']} Videos bei Visit-X: Titel, Länge und Datum im Überblick. Direkt ansehen mit 100 % Aufladebonus.",
-            og_image=""))
-        urls.append((f"{base}/{slug}/videos/", max(v.get("published_at", "") for v in vids) or date.today().isoformat()))
+        per = int(settings(cfg).get("index_per_page", 30))
+        pages_n = max(1, -(-len(vids) // per))
+        for pno in range(1, pages_n + 1):
+            chunk = vids[(pno - 1) * per: pno * per]
+            path = f"{slug}/videos/" + (f"seite/{pno}/" if pno > 1 else "")
+            prev_url = None if pno == 1 else (f"/{slug}/videos/" if pno == 2 else f"/{slug}/videos/seite/{pno - 1}/")
+            next_url = f"/{slug}/videos/seite/{pno + 1}/" if pno < pages_n else None
+            suffix = f" – Seite {pno}" if pno > 1 else ""
+            write(path + "index.html", it.render(
+                **ctx, m=m, model_slug=slug, vids=chunk, total=len(vids), page_no=pno, pages_n=pages_n, offset=(pno - 1) * per,
+                prev_url=prev_url, next_url=next_url, model_link=deeplink(cfg, f"/de/amateur/{platform(m)}/videos/"),
+                canonical=f"{base}/{path}", robots="index,follow",
+                title=f"{m['name']} Videos: alle {len(vids)} Clips im Überblick{suffix}",
+                description=(f"Alle {len(vids)} {m['name']} Videos bei Visit-X, neueste zuerst: Titel und Länge im Überblick{suffix}. "
+                             f"Direkt ansehen mit 100 % Aufladebonus.")[:158],
+                og_image=""))
+            urls.append((f"{base}/{path}", max((v.get("published_at", "") for v in chunk), default="") or date.today().isoformat()))
     if collected:   # Gesamtübersicht /videos/
         allv = sorted((dict(v, model=d["model"]["name"]) for d in collected.values() for v in d["videos"]),
                       key=lambda v: int(v["id"]), reverse=True)

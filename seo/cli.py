@@ -430,6 +430,8 @@ def cmd_videos(cfg, args) -> int:
         if not st["models"]:   # Schnittstelle gar nicht erreichbar -> Browser als Rückfall
             st = vidmod.scrape(cfg, store, only=args.only, log=log)
             log(f"Einlesen (Browser): {st}")
+        bf = vidmod.backfill(cfg, store, log=log)
+        log(f"Backfill: {bf}")
     if args.max:
         cfg.setdefault("videos", {})["generate_per_run"] = args.max
     st = vidmod.generate(cfg, store, mock=args.mock, log=log)

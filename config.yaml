@@ -63,9 +63,13 @@ affiliate:
 videos:
   top_models: 50              # erste N aktive Models aus data/models.yaml (Reihenfolge = Top-Liste)
   per_model: 30               # neueste N Videos je Model
-  generate_per_run: 150       # neue Videoseiten pro Lauf (Rest folgt im nächsten Lauf)
+  generate_per_run: 320       # neue Videoseiten pro Lauf (Rest folgt im nächsten Lauf)
   llm_model: "claude-haiku-5-5"
   params: "w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"   # Partnerdaten, werden an den Video-Link gehängt
+  backfill_models: 30         # ältere Videos für die ersten N Top-Models nachziehen (chronologisch rückwärts)
+  backfill_max: 300           # bis zu so viele Videos je Model insgesamt (neueste zuerst)
+  backfill_per_day: 250       # so viele ältere Videos pro Tag freigeben (automatische Bremse bei schlechter Indexierung)
+  index_per_page: 30          # Videos je Übersichtsseite /<model>/videos/
   new_per_model_per_run: 10   # höchstens so viele neue Videos je Model und Lauf einlesen
   # Zusätzlich gesperrt (Wortanfang) für Videotitel/-beschreibungen: Familie, Schlaf/Heimlich, Schule, Jugend
   # Nur für Videos (unabhängig von der Keyword-Sperrliste): ausgeschlossen bleiben Minderjährigen-Bezug und fehlende

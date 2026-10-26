@@ -110,6 +110,7 @@ def build(cfg: dict, store) -> tuple[str, Path]:
     m_new = re.search(r"Einlesen: \{[^}]*'neu': (\d+)", vtext)
     m_txt = re.search(r"Texte: \{'erzeugt': (\d+)", vtext)
     m_fail = re.search(r"Einlesen: \{[^}]*'fehler': (\d+)", vtext)
+    m_bf = re.search(r"Backfill: \{[^}]*'freigegeben': (\d+)[^}]*'offen': (\d+)[^}]*'pensum': (\d+)", vtext)
     new_pages = [s for s, p in pages.items() if p.get("published_at") == today.isoformat()]
     refreshed = [s for s, p in pages.items() if p.get("modified_at") == today.isoformat()]
     vids_total = sum(1 for f in vidmod.vdir(cfg).glob("*.json")
@@ -241,6 +242,8 @@ def build(cfg: dict, store) -> tuple[str, Path]:
               f"- Überarbeitete Seiten: {len(refreshed)}" + (f" ({', '.join(refreshed[:10])})" if refreshed else ""),
               f"- Video-Operator: {m_new.group(1) if m_new else '–'} neue Videos erkannt, "
               f"{m_txt.group(1) if m_txt else '–'} Videoseiten erzeugt; insgesamt {vids_total} Videoseiten live",
+              (f"- Ältere Videos (Ausbau Top 30): heute {m_bf.group(1)} freigegeben, noch {m_bf.group(2)} offen, Tagespensum {m_bf.group(3)}"
+               if m_bf else "- Ältere Videos (Ausbau Top 30): heute kein Lauf"),
               "", "_Traffic-Quelle: nur Google Search Console. Klicks auf Visit-X und Umsätze siehst du in VX Cash "
               "(Kampagne ws=2610001, Themenseiten mit eigener ws-Nummer)._", ""]
     text = "\n".join(lines)
