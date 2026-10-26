@@ -43,6 +43,7 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Seite bauen (aktueller Stand) und Audit ausführen
         if: steps.due.outputs.run == 'yes'
+        timeout-minutes: 40
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
           GH_TOKEN: ${{ github.token }}
@@ -50,11 +51,11 @@ jobs:
           python -m seo.cli build
           python -m seo.cli audit
       - name: Bericht speichern
-        if: steps.due.outputs.run == 'yes'
+        if: always() && steps.due.outputs.run == 'yes'
         run: |
           git config user.name "seo-bot"
           git config user.email "seo-bot@users.noreply.github.com"
-          git add reports/*-audit.md reports/audit
+          git add reports/*-audit.* reports/audit 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Audit $(date +%Y-%m-%d)"
           git pull --rebase -q -X theirs && git push -q
       - name: Als GitHub-Issue zustellen

@@ -28,7 +28,8 @@ from urllib.parse import parse_qs, urljoin, urlparse
 
 from . import quality
 
-UA = "Mozilla/5.0 (compatible; Top100-Audit/1.0; +https://www.top100amateure.com/)"
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 "
+      "Top100-Audit/1.0")
 AFF_PARAMS = {"w": "40150", "ws": "2610001", "pc": "2XITGA"}
 
 # Gewichtung der Gesamtnote (Summe 100): Inhalte, Indexierung und Umsatz zählen am meisten,
@@ -716,7 +717,7 @@ def workflow_checks(F: Findings, metrics: dict) -> None:
 
 # ---------------------------------------------------------------- Live-Prüfungen (nur im Runner sinnvoll)
 
-def _fetch(url: str, method: str = "GET", follow: bool = True, timeout: int = 20):
+def _fetch(url: str, method: str = "GET", follow: bool = True, timeout: int = 10):
     class NoRedir(urllib.request.HTTPRedirectHandler):
         def redirect_request(self, *a, **k):
             return None
@@ -746,13 +747,18 @@ def live_checks(c: dict, F: Findings, metrics: dict, cfg: dict, withdrawn: list[
     random.seed(date.today().toordinal())
     sample = [p for p, d in pages.items() if d["kind"] != "Videoseite"] + random.sample(vids, min(sample_videos, len(vids)))
     bad, ttfb = [], []
-    for p in sample:
+
+    def one(p):
         s, h, dt, final, _ = _fetch(base + p, method="HEAD")
-        if s == 405:
+        if s in (405, 403, None):
             s, h, dt, final, _ = _fetch(base + p)
-        ttfb.append(dt)
-        if s != 200 or urlparse(final).path != p:
-            bad.append(f"{p} → {s} {final if urlparse(final).path != p else ''}".strip())
+        return p, s, dt, final
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(8) as ex:
+        for p, s, dt, final in ex.map(one, sample):
+            ttfb.append(dt)
+            if s != 200 or urlparse(final).path != p:
+                bad.append(f"{p} → {s} {final if urlparse(final).path != p else ''}".strip())
     metrics.update(live_checked=len(sample), live_bad=len(bad), ttfb_median_ms=round(st.median(ttfb) * 1000),
                    ttfb_p90_ms=round(sorted(ttfb)[int(len(ttfb) * 0.9) - 1] * 1000))
     F.check("Crawling & Indexability", "Live: Seiten liefern 200 ohne Weiterleitung", _ok(len(bad), len(sample)))
@@ -848,7 +854,7 @@ def browser_checks(c: dict, F: Findings, metrics: dict) -> None:
                     except Exception:
                         pass
                 try:
-                    pg.goto(c["base"] + p, wait_until="load", timeout=60000)
+                    pg.goto(c["base"] + p, wait_until="load", timeout=30000)
                     out[f"{kind} ({mode})"] = pg.evaluate(js_metrics)
                 except Exception as e:
                     out[f"{kind} ({mode})"] = {"error": str(e)[:120]}
@@ -1144,14 +1150,23 @@ def report(F: Findings, metrics: dict, sc: dict, total, coverage, prev: dict | N
     return "\n".join(L)
 
 
-def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: bool = True, log=print) -> tuple[str, Path]:
+def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: bool = True, log=None) -> tuple[str, Path]:
     root = Path(root or ".")
+    logf = root / "reports" / f"{date.today().isoformat()}-audit.log"
+    t_start = time.time()
+
+    def log(msg, _p=print):   # Fortschritt auch in Datei (Runner-Logs sind von außen nicht lesbar)
+        line = f"[{time.time() - t_start:6.0f}s] {msg}"
+        _p(line, flush=True)
+        with logf.open("a", encoding="utf-8") as fh:
+            fh.write(line + "\n")
     F = Findings()
     metrics: dict = {}
     log("Audit: lokaler Crawl …")
     c = crawl_local(cfg, store, root)
     offline_checks(c, F, cfg, metrics)
     repo_checks(F, metrics, root)
+    log(f"Audit: Offline-Prüfungen fertig ({metrics['urls_total']} URLs)")
     workflow_checks(F, metrics)
     # zurückgezogene Videoseiten (für die Live-Prüfung)
     withdrawn = []
@@ -1169,13 +1184,14 @@ def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: 
     if live:
         log("Audit: Live-Prüfung …")
         ok_live = live_checks(c, F, metrics, cfg, withdrawn)
+        log(f"Audit: Live-Prüfung fertig (erreichbar: {ok_live}, Fehler: {metrics.get('live_bad')}, TTFB {metrics.get('ttfb_median_ms')} ms)")
         if ok_live and browser:
             log("Audit: Labormessung …")
             try:
                 browser_checks(c, F, metrics)
             except Exception as e:
                 F.check("Core Web Vitals", "Labormessung", None, f"Fehler: {e}")
-    log("Audit: Search Console …")
+    log("Audit: Search Console …" + (f" (Labor: {len(metrics.get('lab', {}))} Messungen)" if metrics.get("lab") else ""))
     try:
         gsc_checks(cfg, F, metrics, c)
     except Exception as e:
