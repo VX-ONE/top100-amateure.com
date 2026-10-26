@@ -33,6 +33,8 @@ affiliate:
     videos: "https://m.visit-x.net/de/videos/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"
   # Video Station (Linkziel für alle "Videos ansehen"-Buttons ohne bestimmtes Model)
   videostation_url: "https://m.visit-x.net/de/videos/?w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"
+  # Kleiner Hinweis unter den Buttons zu Visit-X
+  payment_note: "Bezahlen bei Visit-X: PayPal, Apple Pay, Kreditkarte, Sofortüberweisung oder SEPA"
   provider_name: "Visit-X"
   cta_label: "Zum Angebot von Visit-X"
   # Aufladebonus des Standardlinks (url_template). Wird überall dort gezeigt, wo ein Button auf den Standardlink führt.

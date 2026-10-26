@@ -22,3 +22,4 @@ Beispiele für das Format (ersetzen, nicht übernehmen):
 - (geprüft am 16.10.2026, Angabe des Seitenbetreibers) Visit-X bietet Live-Cams (Webcam-Models), Videos und Amateur-Angebote.
 - (geprüft am 17.10.2026, Angabe des Seitenbetreibers) Über den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus (doppeltes Guthaben auf die Aufladung). Es gelten die Bedingungen von Visit-X.
 - (geprüft am 20.10.2026, Angabe des Seitenbetreibers) Über den Link dieser Seite landet man zuerst im Angebot von Visit-X (Videos); die Anmeldung startet man selbst über „Kostenlos anmelden“. Der Gutscheincode für den Aufladebonus ist dabei automatisch hinterlegt und muss nicht eingegeben werden.
+- (geprüft am 26.10.2026, Angabe des Seitenbetreibers) Bei Visit-X kann man u. a. mit PayPal, Apple Pay, Kreditkarte, Sofortüberweisung und SEPA bezahlen; welche Methoden angezeigt werden, hängt vom Gerät und Land ab.

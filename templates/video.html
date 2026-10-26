@@ -27,6 +27,7 @@
   </ul>
   <div class="vcta">
     <a class="btn" href="{{ v.link }}" rel="sponsored nofollow noopener" target="_blank">▶ Jetzt direkt zum Video</a>
+    {% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}
     {% if bonus %}<p class="bonus-big">🎁 {{ bonus.badge }}</p>
     <p class="howto">✓ Einfach kostenlos anmelden: Der Gutscheincode für die doppelte Aufladung ist über unseren Link automatisch hinterlegt.</p>{% endif %}
     <p class="small">Werbung · Nur für Erwachsene ab 18 · Bedingungen bei {{ provider }}</p>
@@ -41,6 +42,7 @@
   </section>
   <div class="vcta">
     <a class="btn" href="{{ v.link }}" rel="sponsored nofollow noopener" target="_blank">▶ Jetzt doppelten Bonus sichern und Video ansehen</a>
+    {% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}
     <p class="howto">✓ Auf {{ provider }} einfach auf „Kostenlos anmelden“ tippen, der Gutscheincode ist hinterlegt.</p>
   </div>
   {% if related %}

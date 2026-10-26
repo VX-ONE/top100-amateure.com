@@ -61,29 +61,45 @@ def _delta(a, b, kind="num"):
     return f" ({'+' if d >= 0 else ''}{d:.0f} %)"
 
 
-def inspect_videos(cfg, svc, sample: int = 60) -> dict:
-    """Prüft täglich eine Stichprobe Videoseiten per URL-Inspection (noch nie geprüfte zuerst)."""
+def inspect_videos(cfg, svc, sample: int = 200) -> dict:
+    """Prüft täglich Videoseiten per URL-Inspection.
+    Reihenfolge: nie geprüfte (mind. 3 Tage alt) -> nicht indexierte (alle 3 Tage erneut) -> indexierte (alle 14 Tage,
+    um Seiten zu erkennen, die aus dem Index fallen). Nicht indexierte und herausgefallene Seiten werden markiert,
+    damit sie per IndexNow erneut gemeldet und intern stärker verlinkt werden."""
     base = cfg["site"]["base_url"].rstrip("/")
+    today = date.today()
     store_all = []
     for f in sorted(vidmod.vdir(cfg).glob("*.json")):
         d = json.loads(f.read_text(encoding="utf-8"))
         for v in d.get("videos", []):
             if v.get("status") == "published":
                 store_all.append((f, d, v))
-    todo = sorted(store_all, key=lambda x: (x[2].get("indexed") is True, x[2].get("checked_at") or ""))
+    def due(v):
+        pub = v.get("published_at") or ""
+        last = (v.get("checked_at") or "")[:10]
+        if "indexed" not in v:
+            return (0, pub) if pub and pub <= (today - timedelta(days=3)).isoformat() else None
+        if not v["indexed"]:
+            return (1, last) if last <= (today - timedelta(days=3)).isoformat() else None
+        return (2, last) if last <= (today - timedelta(days=14)).isoformat() else None
+    todo = sorted(((due(v), f, d, v) for f, d, v in store_all if due(v) is not None), key=lambda x: x[0])
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    changed, checked = set(), 0
-    for f, d, v in todo:
+    changed, checked, dropped, recovered = set(), 0, [], 0
+    for _, f, d, v in todo:
         if checked >= sample:
             break
-        if v.get("indexed") and (v.get("checked_at") or "") > (date.today() - timedelta(days=14)).isoformat():
-            continue
         url = f"{base}/{f.stem}/videos/{vidmod.page_slug(v)}/"
         try:
             r = gsc.inspect(cfg, svc, url)
         except Exception as e:
             print(f"Video-Inspection abgebrochen: {e}")
             break
+        if v.get("indexed") is True and not r["indexed"]:
+            v["dropped_at"] = today.isoformat()
+            dropped.append(url)
+        if v.get("indexed") is False and r["indexed"]:
+            recovered += 1
+            v.pop("dropped_at", None)
         v["indexed"], v["coverage"], v["checked_at"] = r["indexed"], r["coverage"], now
         changed.add(f)
         checked += 1
@@ -92,8 +108,20 @@ def inspect_videos(cfg, svc, sample: int = 60) -> dict:
         f.write_text(json.dumps(files[f], ensure_ascii=False, indent=1), encoding="utf-8")
     pub = [v for _, _, v in store_all]
     known = [v for v in pub if "indexed" in v]
+    mature = [v for v in known if (v.get("published_at") or "9") <= (today - timedelta(days=10)).isoformat()]
+    not_idx = [f"{base}/{f.stem}/videos/{vidmod.page_slug(v)}/" for f, _, v in store_all if v.get("indexed") is False]
+    # Nicht indexierte erneut melden (Bing/Yandex über IndexNow; Google über Sitemap + interne Verlinkung)
+    ping = ""
+    if not_idx:
+        try:
+            from . import indexnow
+            ping = indexnow.submit(cfg, not_idx[:2000], wait=False)
+        except Exception as e:
+            ping = f"IndexNow fehlgeschlagen: {e}"
     return {"published": len(pub), "checked_ever": len(known), "indexed": sum(1 for v in known if v["indexed"]),
-            "checked_today": checked}
+            "checked_today": checked, "dropped_today": dropped, "recovered_today": recovered,
+            "not_indexed": len(not_idx), "mature_checked": len(mature),
+            "mature_ratio": (sum(1 for v in mature if v["indexed"]) / len(mature)) if mature else None, "ping": ping}
 
 
 def build(cfg: dict, store) -> tuple[str, Path]:
@@ -222,14 +250,23 @@ def build(cfg: dict, store) -> tuple[str, Path]:
     vstat = None
     if svc is not None:
         try:
-            vstat = inspect_videos(cfg, svc, sample=int((cfg.get("status") or {}).get("video_inspect_per_day", 60)))
+            vstat = inspect_videos(cfg, svc, sample=int((cfg.get("status") or {}).get("video_inspect_per_day", 200)))
             idx_rows.append(f"| Videoseiten | {vstat['published']} | {vstat['checked_ever']} | {vstat['indexed']} |")
         except Exception as e:
             print(f"Video-Indexprüfung fehlgeschlagen: {e}")
     lines += ["## Indexierung (URL-Prüfung der Search Console)", "",
               "| Seitentyp | Veröffentlicht | Davon geprüft | Davon indexiert |", "|---|---|---|---|", *idx_rows, ""]
     if vstat:
-        lines += [f"Videoseiten werden täglich stichprobenartig geprüft (heute {vstat['checked_today']}).", ""]
+        mr = vstat["mature_ratio"]
+        lines += [f"Heute {vstat['checked_today']} Videoseiten bei Google geprüft. Nicht indexiert: {vstat['not_indexed']} "
+                  f"(erneut per IndexNow gemeldet und intern zusätzlich verlinkt). Wieder im Index: {vstat['recovered_today']}.",
+                  f"Indexierungsquote der Videoseiten, die älter als 10 Tage sind: "
+                  f"{'noch zu wenig Daten' if mr is None else f'{mr:.0%}'} ({vstat['mature_checked']} geprüft). "
+                  "Unter 60 % bremst der Ausbau automatisch auf 50 pro Tag, unter 40 % pausiert er.", ""]
+        if vstat["dropped_today"]:
+            lines += [f"**Achtung: {len(vstat['dropped_today'])} Videoseite(n) heute aus dem Index gefallen:**", ""]
+            lines += [f"- {u.replace(cfg['site']['base_url'].rstrip('/'), '')}" for u in vstat["dropped_today"][:15]]
+            lines.append("")
     not_idx = [p for p in pages.values() if p.get("indexed") is False][:10]
     if not_idx:
         lines += ["Noch nicht indexiert (Auswahl):", ""]

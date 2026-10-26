@@ -355,15 +355,25 @@ def backfill(cfg: dict, store, log=print) -> dict:
         save(cfg, slug, data)
         stats["vorgemerkt"] += added
         log(f"  [{slug}] Backlog: {added} ältere Videos vorgemerkt")
-    # Bremse: Indexierungsquote älterer Backfill-Seiten (mind. 10 Tage alt, von der Search Console geprüft)
+    # Bremse: Indexierungsquote aller Videoseiten, die mind. 10 Tage alt und von der Search Console geprüft sind,
+    # plus Seiten, die in den letzten 7 Tagen aus dem Index gefallen sind. Videoseiten bringen den Traffic -> lieber langsamer.
     old = (date.today() - timedelta(days=10)).isoformat()
-    checked = [v for d in datas.values() for v in d["videos"]
-               if v.get("source") == "backfill" and v.get("status") == "published" and (v.get("published_at") or "9") <= old and "indexed" in v]
-    if len(checked) >= 40:
+    week = (date.today() - timedelta(days=7)).isoformat()
+    allv = [v for f in vdir(cfg).glob("*.json") for v in json.loads(f.read_text(encoding="utf-8")).get("videos", [])]
+    checked = [v for v in allv if v.get("status") == "published" and (v.get("published_at") or "9") <= old and "indexed" in v]
+    drops = sum(1 for v in allv if (v.get("dropped_at") or "") >= week)
+    if len(checked) >= 50:
         ratio = sum(1 for v in checked if v["indexed"]) / len(checked)
+        stats["indexquote"] = round(ratio, 2)
         if ratio < 0.4:
-            per_day = max(25, per_day // 5)
-            log(f"  Backfill gebremst: nur {ratio:.0%} der älteren Backfill-Seiten indexiert -> {per_day} pro Tag")
+            per_day = 0
+            log(f"  Backfill PAUSIERT: nur {ratio:.0%} der Videoseiten (>=10 Tage) indexiert")
+        elif ratio < 0.6:
+            per_day = min(per_day, 50)
+            log(f"  Backfill gebremst: {ratio:.0%} der Videoseiten (>=10 Tage) indexiert -> {per_day} pro Tag")
+    if drops >= 10 and per_day > 50:
+        per_day = 50
+        log(f"  Backfill gebremst: {drops} Videoseiten in 7 Tagen aus dem Index gefallen -> {per_day} pro Tag")
     stats["pensum"] = per_day
     # Reihum freigeben, je Model das neueste noch offene Video zuerst
     queues = []
@@ -715,6 +725,7 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
                   for sl, d in collected.items()]
         write("videos/index.html", env.get_template("videos_hub.html").render(
             **ctx, vids=allv[:48], models=models, total=len(allv), canonical=f"{base}/videos/", robots="index,follow",
+            discover=[v for v in allv[48:] if v.get("indexed") is False][:48],
             title="Amateur Videos der Top-Models bei Visit-X: neue Clips",
             description=f"{len(allv)} Amateur-Videos der Top-Models bei Visit-X: neueste Clips, Länge und direkter Link. "
                         "Mit 100 % Aufladebonus über unseren Link.", og_image=""))

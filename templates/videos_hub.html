@@ -11,6 +11,7 @@
   <h1>Amateur Videos der Top-Models bei {{ provider }}</h1>
   <p class="lead">{{ total }} neue Clips der beliebtesten Amateur-Models: jedes Video mit eigener Seite, Länge und direktem Link{% if bonus %}, inklusive {{ bonus.badge }} über unseren Link{% endif %}.</p>
   <p><a class="btn" href="{{ videostation }}" rel="sponsored nofollow noopener" target="_blank">▶ Zur Video Station von {{ provider }}</a></p>
+{% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}
   {% if bonus %}<p class="howto">✓ Einfach kostenlos anmelden: Der Gutscheincode ist über unseren Link automatisch hinterlegt.</p>{% endif %}
 </section>
 <section class="block">
@@ -24,4 +25,10 @@
   <div class="block-head"><h2>Neueste Amateur Videos</h2></div>
   <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ r.model }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.model }} · {{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
 </section>
+{% if discover %}
+<section class="block">
+  <div class="block-head"><h2>Weitere Videos entdecken</h2></div>
+  <div class="grid">{% for r in discover %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ r.model }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.model }} · {{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
+</section>
+{% endif %}
 {% endblock %}

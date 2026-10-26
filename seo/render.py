@@ -144,6 +144,7 @@ def build_site(cfg: dict, store) -> dict:
                                          if (root / "static" / f).exists())).hexdigest()[:10]
     ctx["nav"] = [{"topic": t, "label": labels.get(t, t)} for t in [*cfg["topics"]] if t in hubs]
     ctx["sections"] = SECTIONS
+    ctx["payment_note"] = cfg["affiliate"].get("payment_note", "")
     _key = ["visit-x-kosten", "visit-x-erfahrungen", "visit-x-serioes", "visit-x-anmeldung", "visit-x-kostenlos-testen",
             "visit-x-zahlungsmethoden", "visit-x-coins", "visit-x-kuendigen"]
     _lab = {"visit-x-kosten": "Visit-X Kosten", "visit-x-erfahrungen": "Visit-X Erfahrungen", "visit-x-serioes": "Ist Visit-X seriös?",
