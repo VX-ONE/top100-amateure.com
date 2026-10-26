@@ -378,6 +378,14 @@ def backfill(cfg: dict, store, log=print) -> dict:
         per_day = 50
         log(f"  Backfill gebremst: {drops} Videoseiten in 7 Tagen aus dem Index gefallen -> {per_day} pro Tag")
     stats["pensum"] = per_day
+    # Tagespensum gilt pro Kalendertag, auch wenn der Operator mehrfach läuft
+    state_f = vdir(cfg) / "_backfill_state.json"
+    try:
+        st = json.loads(state_f.read_text(encoding="utf-8"))
+    except Exception:
+        st = {}
+    done_today = st.get("count", 0) if st.get("date") == date.today().isoformat() else 0
+    per_day = max(0, per_day - done_today)
     # Reihum freigeben, je Model das neueste noch offene Video zuerst
     queues = []
     for m, slug in models:
@@ -400,6 +408,8 @@ def backfill(cfg: dict, store, log=print) -> dict:
             touched.add(slug)
     for slug in touched:
         save(cfg, slug, datas[slug])
+    state_f.write_text(json.dumps({"date": date.today().isoformat(),
+                                   "count": done_today + stats["freigegeben"] + stats["gesperrt"]}), encoding="utf-8")
     stats["offen"] = sum(len(q) for _, q in queues)
     return stats
 
