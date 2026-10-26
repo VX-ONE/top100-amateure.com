@@ -406,6 +406,15 @@ def cmd_status_report(cfg, args) -> int:
     return 0
 
 
+def cmd_audit(cfg, args) -> int:
+    """Zweiwöchentlicher Voll-Audit (Masterprompt) nach reports/<datum>-audit.md + reports/audit/<datum>.json."""
+    from . import audit
+    text, path = audit.run(cfg, Store(cfg["_data"]), live=not args.offline, browser=not args.no_browser)
+    print(text)
+    print(f"\nBericht: {path}")
+    return 0
+
+
 def cmd_build(cfg, args) -> int:
     store = Store(cfg["_data"])
     removed = modelmod.apply_blocklist(cfg, store)
@@ -531,13 +540,16 @@ def main(argv=None) -> int:
     p.add_argument("--ping-all", action="store_true", help="alle Sitemap-URLs per IndexNow melden")
     p.add_argument("--no-publish", action="store_true")
     sub.add_parser("status-report", help="Täglichen Statusbericht schreiben (Search Console + Pipeline)")
+    a = sub.add_parser("audit", help="Voll-Audit nach Masterprompt (alle zwei Wochen)")
+    a.add_argument("--offline", action="store_true", help="ohne Live-Prüfung der ausgelieferten Seite")
+    a.add_argument("--no-browser", action="store_true", help="ohne Labormessung (Playwright)")
     sub.add_parser("build", help="Seite neu bauen")
     sub.add_parser("status", help="Stand anzeigen")
 
     args = ap.parse_args(argv)
     cfg = cfgmod.load(args.config, sandbox=args.sandbox or args.mock)
     return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest, "optimize": cmd_optimize, "images": cmd_images,
-            "build": cmd_build, "status": cmd_status, "status-report": cmd_status_report, "videos": cmd_videos}[args.cmd](cfg, args)
+            "build": cmd_build, "status": cmd_status, "status-report": cmd_status_report, "audit": cmd_audit, "videos": cmd_videos}[args.cmd](cfg, args)
 
 
 if __name__ == "__main__":

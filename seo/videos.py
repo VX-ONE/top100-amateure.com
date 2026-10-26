@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import Counter
 import time
 from datetime import date, timedelta
 from pathlib import Path
@@ -742,8 +743,8 @@ def check(c: dict, m: dict, v: dict, sibling_texts: list[str] | None = None) -> 
         if sh and o and len(sh & o) / len(sh | o) > 0.12:
             issues.append("zu ähnlich zu einer anderen Videoseite dieses Models – andere Formulierungen")
             break
-    if len(c.get("sections", [])) != 3 or not c.get("tip") or len(c.get("highlights") or []) < 3:
-        issues.append("Struktur unvollständig (3 Abschnitte, Tipp, 3-4 Stichpunkte)")
+    if len(c.get("sections", [])) != 3 or not c.get("tip") or len(c.get("highlights") or []) < 3 or len(c.get("faq") or []) < 3:
+        issues.append("Struktur unvollständig (3 Abschnitte, Tipp, 3-4 Stichpunkte, 3 Fragen mit q und a)")
     return issues
 
 
@@ -907,6 +908,11 @@ def collect(cfg: dict, store) -> dict[str, dict]:
         for t, xs in seen.items():
             for x in xs:
                 x["title_tag"] = t if len(xs) == 1 else f"{clean_title(x['title'])} – {m['name']} Video"
+        dup = Counter(x["title_tag"] for x in vids)
+        for x in vids:   # gleicher Originaltitel bei mehreren Videos (Doppel-Upload, Teil 1/2): Datum bzw. Länge ergänzen
+            if dup[x["title_tag"]] > 1:
+                d = x.get("date") or ""
+                x["title_tag"] += f" vom {d[8:10]}.{d[5:7]}.{d[:4]}" if len(d) >= 10 else f" ({x.get('duration', '')} min)"
         if vids:
             out[slug] = {"model": m, "videos": vids}
     return out

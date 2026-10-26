@@ -9,9 +9,8 @@
     {"@type": "ListItem", "position": 1, "name": site.name, "item": root},
     {"@type": "ListItem", "position": 2, "name": m.name, "item": root + model_slug + "/"},
     {"@type": "ListItem", "position": 3, "name": m.name + " Videos", "item": root + model_slug + "/videos/"},
-    {"@type": "ListItem", "position": 4, "name": v.title, "item": canonical}]},
-  {"@type": "FAQPage", "mainEntity": faq_ld}
-]}|tojson }}</script>
+    {"@type": "ListItem", "position": 4, "name": v.title, "item": canonical}]}
+] + ([{"@type": "FAQPage", "mainEntity": faq_ld}] if faq_ld else [])}|tojson }}</script>
 {% endblock %}
 {% block main %}
 <article class="article">

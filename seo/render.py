@@ -1,6 +1,7 @@
 """Statische Seite aus den gespeicherten Inhalten bauen (HTML, Sitemap, robots.txt)."""
 from __future__ import annotations
 
+import hashlib
 import re
 import shutil
 import zlib
@@ -105,6 +106,44 @@ def _vx_profile(cfg: dict, name: str) -> str:
     return f"https://www.visit-x.net/de/amateur/{(m.get('platform_name') or m['name']).lower()}/"
 
 
+def _security_headers(cfg: dict, site_dir: Path) -> None:
+    """Ergänzt Sicherheitsheader in _headers. Die CSP erlaubt nur eigene Skripte, das eine Inline-Skript mit der
+    GA-ID (per Hash) und Google Analytics; JSON-LD ist ein Datenblock und von script-src nicht betroffen."""
+    import base64
+    hp = site_dir / "_headers"
+    if not hp.exists():
+        return
+    ga = cfg["site"].get("ga_id")
+    hashes = []
+    if ga:
+        inline = f'window.GA_ID="{ga}";'
+        hashes.append("'sha256-" + base64.b64encode(hashlib.sha256(inline.encode()).digest()).decode() + "'")
+    # Hosts laut Google-Leitfaden für GA4 mit CSP (inkl. Google Signals)
+    gtm = "https://*.googletagmanager.com"
+    gac = ("https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com "
+           "https://*.g.doubleclick.net https://*.google.com")
+    csp = "; ".join([
+        "default-src 'self'",
+        "script-src 'self' " + " ".join(hashes) + (f" {gtm}" if ga else ""),
+        "style-src 'self' 'unsafe-inline'",
+        "img-src 'self' data: https:",
+        "connect-src 'self'" + (f" {gac}" if ga else ""),
+        "font-src 'self'",
+        "frame-ancestors 'none'",
+        "base-uri 'self'",
+        "form-action 'self'",
+        "object-src 'none'",
+        "upgrade-insecure-requests",
+    ])
+    extra = ("  Strict-Transport-Security: max-age=31536000; includeSubDomains\n"
+             f"  Content-Security-Policy: {csp}\n"
+             "  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()\n")
+    txt = hp.read_text(encoding="utf-8")
+    if "Content-Security-Policy" not in txt:
+        txt = txt.replace("/*\n", "/*\n" + extra, 1)
+        hp.write_text(txt, encoding="utf-8")
+
+
 def build_site(cfg: dict, store) -> dict:
     root: Path = cfg["_root"]
     site_dir: Path = cfg["_site"]
@@ -118,6 +157,7 @@ def build_site(cfg: dict, store) -> dict:
         for item in static.iterdir():
             if item.is_file():
                 shutil.copy2(item, site_dir / item.name)
+    _security_headers(cfg, site_dir)
 
     env = Environment(loader=FileSystemLoader(root / "templates"), autoescape=select_autoescape(["html"]))
     env.filters["md"] = md
