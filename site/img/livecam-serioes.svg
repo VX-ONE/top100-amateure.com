@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#b91d47" />
+<stop offset="1" stop-color="#4a0f2a" />
+</linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.25" />
+<stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="860" cy="300" r="320" fill="url(#glow)" />
+<circle cx="1100" cy="80" r="120" fill="#ffffff" opacity="0.06" />
+<circle cx="100" cy="580" r="150" fill="#ffffff" opacity="0.06" />
+<path d="M860 90 L1040 150 L1040 310 Q1040 440 860 520 Q680 440 680 310 L680 150 Z" fill="#ffffff" />
+<path d="M860 120 L1012 172 L1012 308 Q1012 418 860 488 Q708 418 708 308 L708 172 Z" fill="#4a0f2a" />
+<path d="M815 290 L815 262 A45 45 0 0 1 905 262 L905 290" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" />
+<rect x="785" y="285" width="150" height="120" rx="18" fill="#ffffff" />
+<circle cx="860" cy="332" r="18" fill="#b91d47" />
+<polygon points="852,340 868,340 874,378 846,378" fill="#b91d47" />
+<g transform="translate(560 500) rotate(-25)">
+<circle cx="0" cy="0" r="38" fill="none" stroke="#ffffff" stroke-width="14" />
+<rect x="34" y="-7" width="150" height="14" fill="#ffffff" />
+<rect x="130" y="7" width="14" height="30" fill="#ffffff" />
+<rect x="156" y="7" width="14" height="22" fill="#ffffff" />
+</g>
+<text x="70" y="330" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="150" fill="#ffffff">Sicher</text>
+<rect x="76" y="364" width="300" height="12" rx="6" fill="#ffffff" opacity="0.8" />
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#b91d47" />
+<stop offset="1" stop-color="#4a0f2a" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1050" cy="90" r="150" fill="#ffffff" opacity="0.06" />
+<circle cx="100" cy="580" r="170" fill="#ffffff" opacity="0.06" />
+<g>
+<rect x="640" y="90" width="460" height="300" rx="24" fill="#2a0718" />
+<rect x="662" y="112" width="416" height="256" rx="10" fill="#f7d6e0" />
+<polygon points="840,170 840,310 960,240" fill="#b91d47" />
+<rect x="835" y="390" width="30" height="50" fill="#2a0718" />
+<rect x="780" y="440" width="140" height="18" rx="9" fill="#2a0718" />
+</g>
+<g>
+<rect x="690" y="470" width="190" height="120" rx="18" fill="#ffffff" />
+<rect x="725" y="452" width="70" height="26" rx="8" fill="#ffffff" />
+<circle cx="785" cy="530" r="38" fill="#b91d47" />
+<circle cx="785" cy="530" r="22" fill="#4a0f2a" />
+<circle cx="850" cy="492" r="7" fill="#b91d47" />
+</g>
+<g>
+<path d="M920 470 h150 a22 22 0 0 1 22 22 v60 a22 22 0 0 1 -22 22 h-90 l-30 28 v-28 h-30 a22 22 0 0 1 -22 -22 v-60 a22 22 0 0 1 22 -22z" fill="#f7d6e0" />
+<circle cx="950" cy="522" r="8" fill="#b91d47" />
+<circle cx="995" cy="522" r="8" fill="#b91d47" />
+<circle cx="1040" cy="522" r="8" fill="#b91d47" />
+</g>
+<path d="M1120 420 c-30 -30 -70 0 -40 30 l40 36 l40 -36 c30 -30 -10 -60 -40 -30z" fill="#ffffff" transform="translate(-30 -20) scale(0.9)" />
+<text x="60" y="260" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="92" fill="#ffffff">Quellen</text>
+<text x="60" y="360" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="92" fill="#ffffff">im Vergleich</text>
+<rect x="64" y="395" width="260" height="10" rx="5" fill="#f7a8bf" />
+</svg>
