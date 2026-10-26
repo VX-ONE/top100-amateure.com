@@ -430,16 +430,27 @@ def cmd_videos(cfg, args) -> int:
         if not st["models"]:   # Schnittstelle gar nicht erreichbar -> Browser als Rückfall
             st = vidmod.scrape(cfg, store, only=args.only, log=log)
             log(f"Einlesen (Browser): {st}")
-        en = vidmod.enrich(cfg, store, log=log)
-        log(f"Anreichern: {en}")
-        bf = vidmod.backfill(cfg, store, log=log)
-        log(f"Backfill: {bf}")
+        import traceback
+        for name, fn in (("Anreichern", vidmod.enrich), ("Backfill", vidmod.backfill)):
+            try:
+                log(f"{name}: {fn(cfg, store, log=log)}")
+            except Exception as e:
+                log(f"{name} FEHLER: {type(e).__name__}: {e}\n{traceback.format_exc()[-1500:]}")
     if args.max:
         cfg.setdefault("videos", {})["generate_per_run"] = args.max
-    st = vidmod.generate(cfg, store, mock=args.mock, log=log)
+    try:
+        st = vidmod.generate(cfg, store, mock=args.mock, log=log)
+    except Exception as e:
+        import traceback
+        log(f"Texte FEHLER: {type(e).__name__}: {e}\n{traceback.format_exc()[-1500:]}")
+        st = {"erzeugt": 0}
     log(f"Texte: {st}")
-    info = render.build_site(cfg, store)
-    log(f"Seite gebaut: {info['pages']} Seiten, {info['sitemap_urls']} Sitemap-URLs.")
+    try:
+        info = render.build_site(cfg, store)
+        log(f"Seite gebaut: {info['pages']} Seiten, {info['sitemap_urls']} Sitemap-URLs.")
+    except Exception as e:
+        import traceback
+        log(f"BAU FEHLER: {type(e).__name__}: {e}\n{traceback.format_exc()[-2000:]}")
     today = date.today().isoformat()
     lp = Path(cfg["_reports"]) / f"{today}-videos.log"
     lp.parent.mkdir(parents=True, exist_ok=True)

@@ -764,6 +764,12 @@ def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
         return near, out
 
     def work(job):
+        try:
+            return _work(job)
+        except Exception as e:
+            return None, [f"  [{job[0][1]}/{job[0][3]['id']}] unerwarteter Fehler: {type(e).__name__}: {e}"]
+
+    def _work(job):
         (m, slug, data, v), _ = job
         near, texts = sibling_texts(slug, v)
         msgs, issues = [], None
@@ -775,13 +781,22 @@ def generate(cfg: dict, store, mock: bool = False, log=print) -> dict:
                 c = mock_content(m, v) if mock else gen.ask_json(llm_cfg, VIDEO_SYSTEM, prompt, VIDEO_SCHEMA)
                 c = gen.clean_content(c) | {"seo_title": seo_title(m, v), "h1": f"{clean_title(v['title'])} – {m['name']} Video",
                                             "cover_line": gen.clean_text(c.get("cover_line", ""))[:26], "version": VIDEO_VERSION}
-                c["highlights"] = [gen.clean_text(x) for x in (c.get("highlights") or []) if isinstance(x, str)][:4]
-                if isinstance(c.get("tip"), dict):
-                    c["tip"] = {"title": gen.clean_text(c["tip"].get("title", "")), "body": gen.clean_text(c["tip"].get("body", ""))}
+                hl = c.get("highlights")
+                if isinstance(hl, str):
+                    hl = [x.strip(" -•*") for x in hl.splitlines() if x.strip(" -•*")]
+                c["highlights"] = [gen.clean_text(x) for x in (hl or []) if isinstance(x, str)][:4]
+                tip = c.get("tip")
+                if isinstance(tip, str):
+                    tip = {"title": "Tipp", "body": tip}
+                c["tip"] = {"title": gen.clean_text((tip or {}).get("title", "")), "body": gen.clean_text((tip or {}).get("body", ""))} \
+                    if isinstance(tip, dict) else {"title": "", "body": ""}
+                c["sections"] = [x for x in (c.get("sections") or []) if isinstance(x, dict) and x.get("body")]
+                c["faq"] = [x for x in (c.get("faq") or []) if isinstance(x, dict) and x.get("q") and x.get("a")]
+                issues = [] if mock else check(c, m, v, texts)
             except Exception as e:
                 msgs.append(f"  [{slug}/{v['id']}] Fehler: {type(e).__name__}: {e}")
+                issues = None
                 continue
-            issues = [] if mock else check(c, m, v, texts)
             if not issues:
                 return c, msgs
             msgs.append(f"  [{slug}/{v['id']}] verworfen: {', '.join(issues)}")
