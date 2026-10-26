@@ -78,13 +78,16 @@ videos:
   # Nur für Videos (unabhängig von der Keyword-Sperrliste): ausgeschlossen bleiben Minderjährigen-Bezug und fehlende
   # Einwilligung (heimliche Aufnahmen, Schlaf/Rausch, Zwang, Stealthing, Ausnutzen). Stief-/Familien-Rollenspiele unter
   # Erwachsenen, Natursekt, Voyeur/Exhibitionismus usw. sind erlaubt.
+  # "wort!" = nur als ganzes Wort (z. B. "im schlaf!" trifft nicht "im Schlafzimmer").
   blocked_terms: [teen, schülerin, schuelerin, schulmädchen, schulmaedchen, schoolgirl, nachhilfe, minderj, lolita, kind,
                   jugend, dorfjugend, junges girl, junge frucht, mein junge, buben, bengel, brüderchen, schwesterchen, stiefbrüderchen, stiefschwesterchen,
                   daddy s kleines, doktorspiel, doktor spielt, inzest,
-                  heimlich gefilmt, versteckte kamera, hidden, spycam, hackt, zugriff auf, geweckt, weckt mich, schläft,
-                  schlafend, im schlaf, betrunk, zwang, erzwung, vergewalt, ohne erlaubnis, gummi ab, schwängertrick,
+                  heimlich gefilmt, versteckte kamera, hidden cam, spycam, hackt, zugriff auf, geweckt, weckt mich,
+                  schlafend, "im schlaf!", betrunk, zwang, erzwung, vergewalt, ohne erlaubnis, gummi ab, schwängertrick,
                   schwänger-trick, aus versehen, statt anzeige, brauch den job, ausgenutzt, nutzt es schamlos, observiert,
                   stalker, verfolgt]
+  # Manuell geprüft: Sperrbegriff kommt nur harmlos vor (Therme „aus Versehen verirrt“, „Wetter ausgenutzt“, engl. „kind of“).
+  allow_ids: ["28427081", "28349710", "28235386"]
 
 models:
   per_day: 8                  # neue Profilseiten pro Tag (zusätzlich zu limits.daily_pages)

@@ -71,8 +71,11 @@ def load_blocked(cfg: dict) -> list[str]:
 def blocked_hit(text: str, terms: list[str]) -> str | None:
     """Erster gesperrter Begriff, der am Wortanfang im Text steht (ganze Wörter und Wortanfänge)."""
     for term in terms:
-        if re.search(rf"(?<![\wäöüß]){re.escape(term)}", text):
-            return term
+        exact = term.endswith("!")  # "wort!" = nur als ganzes Wort, nicht als Wortanfang
+        core = term[:-1] if exact else term
+        tail = r"(?![\wäöüß])" if exact else ""
+        if re.search(rf"(?<![\wäöüß]){re.escape(core)}{tail}", text):
+            return core
     return None
 
 

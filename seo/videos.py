@@ -60,7 +60,19 @@ def settings(cfg: dict) -> dict:
 
 def video_blocked(cfg: dict) -> list[str]:
     """Eigene Sperrliste für Videos (die Keyword-Sperrliste ist für Themenseiten gedacht und hier zu breit)."""
-    return [normalize(t) for t in settings(cfg)["blocked_terms"] if normalize(t)]
+    out = []
+    for t in settings(cfg)["blocked_terms"]:
+        t = str(t).strip()
+        exact = t.endswith("!")
+        n = normalize(t.rstrip("!"))
+        if n:
+            out.append(n + "!" if exact else n)
+    return out
+
+
+def video_allowed(cfg: dict) -> set[str]:
+    """Manuell geprüfte Video-IDs, bei denen ein Sperrbegriff nachweislich harmlos ist (z. B. „im Schlafzimmer")."""
+    return {str(i) for i in (settings(cfg).get("allow_ids") or [])}
 
 
 def model_pages(cfg: dict, store) -> list[tuple[dict, str]]:
@@ -137,6 +149,7 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
 
     s = settings(cfg)
     blocked = video_blocked(cfg)
+    allowed = video_allowed(cfg)
     stats = {"models": 0, "neu": 0, "gesperrt": 0, "fehler": 0}
     with sync_playwright() as p:
         browser = p.chromium.launch()
@@ -194,7 +207,7 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
                 if added >= s["new_per_model_per_run"]:
                     break
                 added += 1
-                hit = blocked_hit(normalize(v["title"]), blocked)
+                hit = None if str(v["id"]) in allowed else blocked_hit(normalize(v["title"]), blocked)
                 if hit:
                     v.update(status="skipped", reason=f"gesperrt: {hit}")
                     stats["gesperrt"] += 1
@@ -208,7 +221,7 @@ def scrape(cfg: dict, store, only: list[str] | None = None, log=print) -> dict:
                         v.update(parse_detail(page.evaluate(DETAIL_JS), m["name"], v["title"]))
                     except Exception as e:
                         log(f"  [{slug}] Video {v['id']}: {type(e).__name__}")
-                    hit = blocked_hit(normalize(v["title"] + " " + v.get("description", "") + " " + " ".join(v.get("tags", []))), blocked)
+                    hit = None if str(v["id"]) in allowed else blocked_hit(normalize(v["title"] + " " + v.get("description", "") + " " + " ".join(v.get("tags", []))), blocked)
                     v.update(status="skipped", reason=f"gesperrt: {hit}") if hit else v.update(status="new")
                     stats["gesperrt" if hit else "neu"] += 1
                 v["seen"] = date.today().isoformat()
@@ -283,6 +296,7 @@ def scrape_api(cfg: dict, store, only: list[str] | None = None, log=print) -> di
     """Video-Operator ohne Browser: fragt je Top-Model die neuesten Videos ab und legt neue als 'new' an."""
     s = settings(cfg)
     blocked = video_blocked(cfg)
+    allowed = video_allowed(cfg)
     stats = {"models": 0, "neu": 0, "gesperrt": 0, "fehler": 0, "quelle": "api"}
     for m, slug in model_pages(cfg, store):
         if only and slug not in only:
@@ -305,7 +319,7 @@ def scrape_api(cfg: dict, store, only: list[str] | None = None, log=print) -> di
             if added >= cap:
                 break
             added += 1
-            hit = blocked_hit(normalize(v["title"] + " " + v.get("description", "")), blocked)
+            hit = None if str(v["id"]) in allowed else blocked_hit(normalize(v["title"] + " " + v.get("description", "")), blocked)
             v.update(status="skipped", blocked=hit) if hit else v.update(status="new")
             stats["gesperrt" if hit else "neu"] += 1
             v["seen"] = date.today().isoformat()
@@ -328,6 +342,7 @@ def backfill(cfg: dict, store, log=print) -> dict:
     if not (n_models and cap and per_day):
         return stats
     blocked = video_blocked(cfg)
+    allowed = video_allowed(cfg)
     models = model_pages(cfg, store)[:n_models]
     datas = {}
     for m, slug in models:
@@ -398,7 +413,7 @@ def backfill(cfg: dict, store, log=print) -> dict:
             if not q or stats["freigegeben"] + stats["gesperrt"] >= per_day:
                 continue
             v = q.pop(0)
-            hit = blocked_hit(normalize(v["title"] + " " + v.get("description", "")), blocked)
+            hit = None if str(v["id"]) in allowed else blocked_hit(normalize(v["title"] + " " + v.get("description", "")), blocked)
             if hit:
                 v.update(status="skipped", blocked=hit)
                 stats["gesperrt"] += 1
@@ -418,9 +433,25 @@ def enrich(cfg: dict, store, log=print, max_models: int = 60) -> dict:
     """Ergänzt Beschreibung, Stichworte und Datum für bereits erfasste Videos (für einzigartige Texte und Sortierung).
     Prüft dabei die Sperrliste erneut mit Titel + Beschreibung; betroffene Seiten werden zurückgezogen."""
     blocked = video_blocked(cfg)
-    stats = {"models": 0, "ergaenzt": 0, "zurueckgezogen": 0}
+    allowed = video_allowed(cfg)
+    stats = {"models": 0, "ergaenzt": 0, "zurueckgezogen": 0, "wiederhergestellt": 0}
     for m, slug in model_pages(cfg, store)[:max_models]:
         data = load(cfg, slug)
+        # Nach Änderungen an Sperrliste/Freigaben: früher zurückgezogene Seiten erneut prüfen und ggf. wiederherstellen
+        restored = False
+        for v in data["videos"]:
+            if v.get("status") not in ("withdrawn", "skipped") or not v.get("blocked"):
+                continue
+            if v["status"] == "skipped" and v.get("source") != "backfill":
+                continue
+            text = normalize(v["title"] + " " + (v.get("description") or ""))
+            if str(v["id"]) in allowed or not blocked_hit(text, blocked):
+                v["status"] = "published" if v["status"] == "withdrawn" else "backlog"
+                v.pop("blocked", None)
+                stats["wiederhergestellt"] += 1
+                restored = True
+        if restored:
+            save(cfg, slug, data)
         missing = {v["id"] for v in data["videos"] if "description" not in v and v.get("status") in ("published", "new", "backlog")}
         if not missing:
             continue
@@ -440,7 +471,7 @@ def enrich(cfg: dict, store, log=print, max_models: int = 60) -> dict:
                         missing.discard(v["id"])
                         stats["ergaenzt"] += 1
                         changed = True
-                        hit = blocked_hit(normalize(v["title"] + " " + v["description"]), blocked)
+                        hit = None if str(v["id"]) in allowed else blocked_hit(normalize(v["title"] + " " + v["description"]), blocked)
                         if hit and v.get("status") in ("published", "new", "backlog"):
                             v.update(status="withdrawn" if v["status"] == "published" else "skipped", blocked=hit)
                             stats["zurueckgezogen"] += 1
