@@ -182,6 +182,9 @@ def cmd_run(cfg, args) -> int:
     lim = cfg["limits"]
 
     budget = min(args.limit or state.get("daily_pages") or lim["daily_pages"], lim["max_daily_pages"])
+    if not lim.get("topic_pages", True) and not args.limit:
+        print("Neue Ratgeber-Seiten sind pausiert (limits.topic_pages: false); Model-Profile laufen weiter.")
+        budget = 0
     if state["throttle"]["active"]:
         budget = min(budget, cfg["monitor"]["throttle_to"])
         print(f"Drosselung aktiv: höchstens {budget} Seite(n) heute.")

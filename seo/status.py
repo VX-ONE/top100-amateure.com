@@ -80,9 +80,9 @@ def inspect_videos(cfg, svc, sample: int = 200) -> dict:
         pub = v.get("published_at") or ""
         last = (v.get("checked_at") or "")[:10]
         if "indexed" not in v:
-            return (0, pub) if pub and pub <= (today - timedelta(days=3)).isoformat() else None
+            return (0, pub) if pub and pub <= (today - timedelta(days=2)).isoformat() else None
         if not v["indexed"]:
-            return (1, last) if last <= (today - timedelta(days=3)).isoformat() else None
+            return (1, last) if last <= (today - timedelta(days=2)).isoformat() else None
         return (2, last) if last <= (today - timedelta(days=14)).isoformat() else None
     todo = sorted(((due(v), f, d, v) for f, d, v in store_all if due(v) is not None), key=lambda x: x[0])
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
@@ -124,6 +124,35 @@ def inspect_videos(cfg, svc, sample: int = 200) -> dict:
             "checked_today": checked, "dropped_today": dropped, "recovered_today": recovered,
             "not_indexed": len(not_idx), "mature_checked": len(mature),
             "mature_ratio": (sum(1 for v in mature if v["indexed"]) / len(mature)) if mature else None, "ping": ping}
+
+
+def inspect_themes(cfg, svc, sample: int = 100) -> dict:
+    """Themenseiten (/<model>/videos/<thema>/) per URL-Inspection prüfen; Stand in data/videos/_themes.json."""
+    from . import themes as thmod
+    base = cfg["site"]["base_url"].rstrip("/")
+    st = thmod.load_state(cfg)
+    checks = st.setdefault("checks", {})
+    today = date.today()
+    live = [k for k in st["released"] if thmod.load_content(cfg, k)]
+    def due(k):
+        c = checks.get(k)
+        if not c:
+            return (0, st["released"][k]) if st["released"][k] <= (today - timedelta(days=2)).isoformat() else None
+        if not c["indexed"]:
+            return (1, c["checked_at"]) if c["checked_at"][:10] <= (today - timedelta(days=2)).isoformat() else None
+        return (2, c["checked_at"]) if c["checked_at"][:10] <= (today - timedelta(days=14)).isoformat() else None
+    todo = sorted((due(k), k) for k in live if due(k) is not None)[:sample]
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    for _, k in todo:
+        try:
+            r = gsc.inspect(cfg, svc, f"{base}/{k.split('/')[0]}/videos/{k.split('/')[1]}/")
+        except Exception as e:
+            print(f"Themen-Inspection abgebrochen: {e}")
+            break
+        checks[k] = {"indexed": r["indexed"], "coverage": r["coverage"], "checked_at": now}
+    thmod.save_state(cfg, st)
+    known = [checks[k] for k in live if k in checks]
+    return {"live": len(live), "checked": len(known), "indexed": sum(1 for c in known if c["indexed"])}
 
 
 def build(cfg: dict, store) -> tuple[str, Path]:
@@ -254,6 +283,8 @@ def build(cfg: dict, store) -> tuple[str, Path]:
         try:
             vstat = inspect_videos(cfg, svc, sample=int((cfg.get("status") or {}).get("video_inspect_per_day", 200)))
             idx_rows.append(f"| Videoseiten | {vstat['published']} | {vstat['checked_ever']} | {vstat['indexed']} |")
+            tstat = inspect_themes(cfg, svc, sample=int((cfg.get("status") or {}).get("theme_inspect_per_day", 100)))
+            idx_rows.append(f"| Themenseiten | {tstat['live']} | {tstat['checked']} | {tstat['indexed']} |")
         except Exception as e:
             print(f"Video-Indexprüfung fehlgeschlagen: {e}")
     lines += ["## Indexierung (URL-Prüfung der Search Console)", "",

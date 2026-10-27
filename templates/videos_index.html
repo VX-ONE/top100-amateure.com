@@ -30,5 +30,7 @@
   {% for p in range(1, pages_n + 1) %}{% if p == page_no %}<span class="cur">{{ p }}</span>{% elif p == 1 %}<a href="/{{ model_slug }}/videos/">1</a>{% elif p == pages_n or (p - page_no)|abs <= 2 %}<a href="/{{ model_slug }}/videos/seite/{{ p }}/">{{ p }}</a>{% elif (p - page_no)|abs == 3 %}<span class="gap">…</span>{% endif %}{% endfor %}
   {% if next_url %}<a href="{{ next_url }}" rel="next">Ältere &rsaquo;</a>{% endif %}
 </nav>{% endif %}
+{% if archive %}<section class="block"><h2>Ältere {{ m.name }} Pornos entdecken</h2>
+<div class="grid">{% for r in archive %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ m.name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min{% if r.date %} · {{ r.date[8:10] }}.{{ r.date[5:7] }}.{{ r.date[0:4] }}{% endif %}</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div></section>{% endif %}
 <p><a class="more" href="/{{ model_slug }}/">&lsaquo; Zum Profil von {{ m.name }}</a></p>
 {% endblock %}

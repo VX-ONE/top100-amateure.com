@@ -390,6 +390,21 @@ def backfill(cfg: dict, store, log=print) -> dict:
         elif ratio < 0.6:
             per_day = min(per_day, 50)
             log(f"  Backfill gebremst: {ratio:.0%} der Videoseiten (>=10 Tage) indexiert -> {per_day} pro Tag")
+    # Entdeckungs-Bremse: Videoseiten, die >= 4 Tage live und geprüft sind, aber Google noch unbekannt bzw. nur
+    # „gefunden“ (nicht gecrawlt) – dann neue Seiten langsamer freigeben, bis Google aufgeholt hat.
+    d4 = (date.today() - timedelta(days=4)).isoformat()
+    recent = [v for v in allv if v.get("status") == "published" and (v.get("published_at") or "9") <= d4 and "indexed" in v
+              and (v.get("published_at") or "") >= (date.today() - timedelta(days=21)).isoformat()]
+    if len(recent) >= 50:
+        waiting = sum(1 for v in recent if not v["indexed"] and re.search(r"nicht bekannt|Gefunden", v.get("coverage", "")))
+        share = waiting / len(recent)
+        stats["noch_nicht_gecrawlt"] = round(share, 2)
+        if share > 0.75 and per_day > 50:
+            per_day = 50
+            log(f"  Backfill gebremst: {share:.0%} der Videoseiten (4–21 Tage) hat Google noch nicht gecrawlt -> {per_day} pro Tag")
+        elif share > 0.5 and per_day > 100:
+            per_day = 100
+            log(f"  Backfill gebremst: {share:.0%} der Videoseiten (4–21 Tage) hat Google noch nicht gecrawlt -> {per_day} pro Tag")
     if drops >= 10 and per_day > 50:
         per_day = 50
         log(f"  Backfill gebremst: {drops} Videoseiten in 7 Tagen aus dem Index gefallen -> {per_day} pro Tag")
@@ -926,17 +941,35 @@ def collect(cfg: dict, store) -> dict[str, dict]:
     return out
 
 
+def _rot(seq: list, k: int, seed: str) -> list:
+    """Täglich wechselnde Auswahl (gleiches Ergebnis innerhalb eines Tages, damit Builds stabil bleiben)."""
+    if len(seq) <= k:
+        return list(seq)
+    import zlib
+    start = zlib.crc32((seed + date.today().isoformat()).encode()) % len(seq)
+    return (seq[start:] + seq[:start])[:k]
+
+
+def discovery_pool(vids: list[dict], skip: int = 30) -> list[dict]:
+    """Videoseiten, die Google noch nicht indexiert hat (oder noch nicht geprüft wurden) und nicht schon auf der
+    ersten Übersichtsseite stehen: sie bekommen zusätzliche interne Links, damit Google sie findet und crawlt."""
+    return [v for v in vids[skip:] if v.get("indexed") is not True] + [v for v in vids[:skip] if v.get("indexed") is False]
+
+
 def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, collected: dict) -> list[tuple[str, str]]:
     urls = []
     vt, it = env.get_template("video.html"), env.get_template("videos_index.html")
     (site_dir / "img" / "v").mkdir(parents=True, exist_ok=True)
     for slug, d in collected.items():
         m, vids = d["model"], d["videos"]
+        pool = discovery_pool(vids, int(settings(cfg).get("index_per_page", 30)))
         for i, v in enumerate(vids):
             (site_dir / "img" / "v" / f"{v['id']}.svg").write_text(
                 video_svg(m["name"], v["c"].get("cover_line") or "Neues Video", v.get("duration", "")), encoding="utf-8")
             n = len(vids)   # rotierendes Fenster: jedes Video bekommt Links von seinen Nachbarn
             related = [vids[(i + k) % n] for k in range(1, min(7, n))]
+            rel_ids = {x["id"] for x in related} | {v["id"]}
+            related += _rot([x for x in pool if x["id"] not in rel_ids], 3, v["id"])   # + 3 noch nicht indexierte
             prev_v, next_v = (vids[i - 1] if i > 0 else None), (vids[i + 1] if i + 1 < n else None)
             write(v["url"].strip("/") + "/index.html", vt.render(
                 **ctx, v=v, c=v["c"], m=m, model_slug=slug, related=related, prev_v=prev_v, next_v=next_v, canonical=base + v["url"],
@@ -954,6 +987,7 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
             write(path + "index.html", it.render(
                 **ctx, m=m, model_slug=slug, vids=chunk, total=len(vids), page_no=pno, pages_n=pages_n, offset=(pno - 1) * per,
                 themes=d.get("themes") if pno == 1 else [],
+                archive=_rot(pool, 24, slug) if pno == 1 else [],
                 prev_url=prev_url, next_url=next_url, model_link=deeplink(cfg, f"/de/amateur/{platform(m)}/videos/"),
                 canonical=f"{base}/{path}", robots="index,follow",
                 title=index_title(m, len(vids), suffix),
@@ -969,7 +1003,7 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
                   for sl, d in collected.items()]
         write("videos/index.html", env.get_template("videos_hub.html").render(
             **ctx, vids=allv[:48], models=models, total=len(allv), canonical=f"{base}/videos/", robots="index,follow",
-            discover=[v for v in allv[48:] if v.get("indexed") is False][:48],
+            discover=_rot([v for v in allv[48:] if v.get("indexed") is not True], 96, "hub"),
             title="Amateur Videos der Top-Models bei Visit-X: neue Clips",
             description=f"{len(allv)} Amateur-Videos der Top-Models bei Visit-X: neueste Clips, Länge und direkter Link. "
                         "Mit 100 % Aufladebonus über unseren Link.", og_image=f"{base}/logo.png"))

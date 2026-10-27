@@ -188,6 +188,12 @@ indexnow:
   key: "8febf01e7fb558e442278ab8c86bb55f"
   delay_seconds: 150        # Wartezeit nach dem Push, bis Cloudflare die Seite ausgeliefert hat
 
+# Täglicher Statusbericht: URL-Prüfungen pro Tag (Kontingent der Search Console: 2.000 pro Tag und Property;
+# zusätzlich prüft der Tageslauf bis zu gsc.inspect_per_run Model-/Ratgeberseiten)
+status:
+  video_inspect_per_day: 1200
+  theme_inspect_per_day: 150
+
 gsc:
   # Domain-Property: "sc-domain:deine-domain.de"  oder URL-Präfix: "https://deine-domain.de/"
   property: "sc-domain:top100amateure.com"
@@ -198,6 +204,7 @@ gsc:
 # ---------- Mengen und Qualität ----------
 limits:
   daily_pages: 5                        # Start klein, erst erhöhen, wenn Seiten indexiert werden
+  topic_pages: false                    # neue Ratgeber-/Themenartikel pausiert (Chris 27.10.2026: Fokus Model- und Videoseiten)
   max_daily_pages: 30                   # harte Obergrenze, auch bei manueller Angabe
   refresh_per_run: 10          # Seiten aus data/refresh.txt, die pro Lauf neu geschrieben werden
   max_minutes: 80             # Zeitbremse pro Lauf (Workflow-Timeout ist 120 Minuten)

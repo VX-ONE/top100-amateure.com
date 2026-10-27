@@ -324,6 +324,12 @@ def build_site(cfg: dict, store) -> dict:
     parts = {"sitemap-seiten.xml": [x for x in urls if x[0] not in model_urls and x[0] not in vid_set],
              "sitemap-models.xml": [x for x in urls if x[0] in model_urls],
              "sitemap-videos.xml": [x for x in urls if x[0] in vid_set]}
+    # Zusätzliche Sitemap nur mit Seiten, die Google noch nicht indexiert hat (Video- und Themenseiten): wird in der
+    # Search Console separat ausgewertet und zeigt, wie schnell Google aufholt.
+    pending = {base + v["url"] for d in collected.values() for v in d["videos"] if v.get("indexed") is not True}
+    tchecks = thmod.load_state(cfg).get("checks", {})
+    pending |= {base + i["url"] for k, i in live_themes.items() if not (tchecks.get(k) or {}).get("indexed")}
+    parts["sitemap-neu.xml"] = [x for x in urls if x[0] in pending]
     idx = ['<?xml version="1.0" encoding="UTF-8"?>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for name, items in parts.items():
         if items:
