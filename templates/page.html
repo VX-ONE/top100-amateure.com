@@ -31,11 +31,10 @@
   {% endif %}
   <p class="meta">Stand: {{ published }}</p>
   {% if image %}<figure class="hero"><img src="{{ image.svg }}" alt="{{ image.alt }}" width="1200" height="630" fetchpriority="high"></figure>{% endif %}
-  <div class="intro">{{ c.intro|md|safe }}</div>
-
   {% if ctas[0].bonus %}<p class="bonus-bar"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> über unseren Link. <span class="small">Bedingungen bei {{ provider }}.</span>{% if bonus.howto %}<span class="howto">✓ {{ bonus.howto }}</span>{% endif %}</span></p>{% endif %}
   <p class="cta-inline">{% for cta in ctas %}<a class="btn" href="{{ cta.url }}" rel="sponsored nofollow noopener" target="_blank">{{ cta.label }}</a> {% endfor %}<span class="small">Werbung</span></p>
   {% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}
+  <div class="intro">{{ c.intro|md|safe }}</div>
 
   {% if c.key_takeaways %}
   <aside class="takeaways">

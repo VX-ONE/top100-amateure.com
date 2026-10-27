@@ -860,7 +860,7 @@ JS_METRICS = """() => new Promise(done => {
           const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && (r.height < 24 || r.width < 24) && getComputedStyle(e).display !== 'inline';
         }).length;
         const tiny = [...document.querySelectorAll('p,li,a,span')].filter(e => parseFloat(getComputedStyle(e).fontSize) < 12 && e.textContent.trim().length > 3).length;
-        const cta = [...document.querySelectorAll('a[rel~=sponsored].btn')].map(e => e.getBoundingClientRect().top + scrollY)[0];
+        const cta = [...document.querySelectorAll('a[rel~=sponsored].btn, a[rel~=sponsored].bonus-hero')].map(e => e.getBoundingClientRect().top + scrollY)[0];
         done({lcp, cls, fcp, ttfb: nav.responseStart || 0, bytes, requests: res.length + 1, overflow, small, tiny,
              cta_top: cta === undefined ? null : cta, vh: innerHeight});
       }, 2500);
@@ -1029,6 +1029,28 @@ def gsc_checks(cfg: dict, F: Findings, metrics: dict, c: dict) -> None:
     chances = sorted([r for r in q if 4 <= r["position"] <= 20 and r["impressions"] >= 30], key=lambda r: -r["impressions"])
     metrics["chance_queries"] = len(chances)
     metrics["top_chances"] = [f"{r['keys'][0]} – Pos. {r['position']:.1f}, {int(r['impressions'])} Impr." for r in chances[:10]]
+    # Titeltest Videoseiten (Testgruppe „– <Name> Porno“ vs. Kontrolle „– <Name> Video“): 14 Tage vor vs. seit Start
+    tt = (cfg.get("videos") or {}).get("title_test") or {}
+    if tt.get("start"):
+        st0 = date.fromisoformat(tt["start"])
+        test = set(tt.get("models") or [])
+        if end >= st0 + timedelta(days=2):
+            days = min(14, (end - st0).days + 1)
+            per = {"vorher": (st0 - timedelta(days=days), st0 - timedelta(days=1)), "nachher": (st0, st0 + timedelta(days=days - 1))}
+            res = {}
+            for lab, (a0, a1) in per.items():
+                agg = {"Test (Porno)": [0, 0, 0.0], "Kontrolle (Video)": [0, 0, 0.0]}
+                for r in _query(cfg, svc, a0, a1, ["page"], limit=5000):
+                    pth = urlparse(r["keys"][0]).path
+                    if not re.match(r"^/[^/]+/videos/\d", pth):
+                        continue
+                    g = "Test (Porno)" if pth.split("/")[1] in test else "Kontrolle (Video)"
+                    agg[g][0] += r["clicks"]; agg[g][1] += r["impressions"]; agg[g][2] += r["position"] * r["impressions"]
+                res[lab] = {g: {"klicks": int(c_), "impr": int(i_), "ctr": round(c_ / i_, 4) if i_ else 0,
+                                "pos": round(p_ / i_, 1) if i_ else None} for g, (c_, i_, p_) in agg.items()}
+            metrics["title_test"] = {"start": tt["start"], "tage": days, **res}
+        else:
+            metrics["title_test"] = {"start": tt["start"], "hinweis": "Auswertung ab 2 Tagen Daten nach Start"}
     # Markenanteil (Modelnamen/Visit-X) – Information für die Keyword-Map
     model_names = {d["path"].strip("/") for d in c["pages"].values() if d["kind"] == "Model-Profil"}
     clusters = Counter()
@@ -1178,6 +1200,17 @@ def report(F: Findings, metrics: dict, sc: dict, total, coverage, prev: dict | N
     L.append("")
     if metrics.get("clicks_by_cluster_28d"):
         L += ["**Klicks nach Keyword-Cluster (28 Tage):** " + " · ".join(f"{k}: {v:.0f}" for k, v in sorted(metrics["clicks_by_cluster_28d"].items())), ""]
+    if metrics.get("title_test"):
+        t = metrics["title_test"]
+        L += [f"**Titeltest Videoseiten (Start {t['start']}):**", ""]
+        if "hinweis" in t:
+            L += [f"- {t['hinweis']}", ""]
+        else:
+            L += [f"Je {t['tage']} Tage vor und nach dem Start.", "", "| Gruppe | Klicks vorher | Klicks nachher | CTR vorher | CTR nachher | Pos. vorher | Pos. nachher |", "|---|---|---|---|---|---|---|"]
+            for g in ("Test (Porno)", "Kontrolle (Video)"):
+                v0, v1 = t["vorher"][g], t["nachher"][g]
+                L.append(f"| {g} | {v0['klicks']} | {v1['klicks']} | {v0['ctr']:.1%} | {v1['ctr']:.1%} | {v0['pos'] or '–'} | {v1['pos'] or '–'} |")
+            L += ["", "_Entscheidend ist der Unterschied der Veränderung zwischen Test- und Kontrollgruppe (beide laufen zeitgleich)._", ""]
     if metrics.get("porn_queries_28d"):
         pqm = metrics["porn_queries_28d"]
         L += [f"**Suchanfragen mit „Porno/Porn“ (28 Tage):** {pqm['anzahl']} Anfragen, {pqm['klicks']} Klicks, "

@@ -181,7 +181,8 @@ def build_site(cfg: dict, store) -> dict:
         """Bonus hängt am Aktionscode (pc=...) des Standardlinks: jeder Link mit demselben Code zeigt den Hinweis."""
         return bool(cfg["affiliate"].get("bonus")) and bool(_pc) and _pc.group(1) in url
     ctx = {"bonus": cfg["affiliate"].get("bonus") or {}, "site": cfg["site"], "provider": cfg["affiliate"]["provider_name"],
-           "cta_label": cfg["affiliate"]["cta_label"], "year": date.today().year}
+           "cta_label": cfg["affiliate"]["cta_label"], "year": date.today().year,
+           "bonus_url": cfg["affiliate"]["url_template"]}
     topic_cta = cfg["affiliate"].get("topic_cta") or {}
     hubs = set()
     for sl, mt in pages.items():
@@ -292,7 +293,7 @@ def build_site(cfg: dict, store) -> dict:
                          for n, x in enumerate(top_models if sec["key"] == "models" else items)]))
     write("_redirects", "/themen/profile/ /models/ 301\n/themen/profile /models/ 301\n")
     write("index.html", env.get_template("index.html").render(
-        **ctx, sec_data=sec_data, latest=latest, new_videos=newest_videos[:8], videos_total=len(newest_videos), bonus_url=cfg["affiliate"]["url_template"], canonical=f"{base}/", robots="index,follow",
+        **ctx, sec_data=sec_data, latest=latest, new_videos=newest_videos[:8], videos_total=len(newest_videos), canonical=f"{base}/", robots="index,follow",
         top_models_ld=[{"@type": "ListItem", "position": i + 1, "name": m["name"], "url": f"{base}/{m['slug']}/"}
                        for i, m in enumerate(top_models)],
         title=cfg["site"].get("home_title") or cfg["site"]["name"], description=cfg["site"]["tagline"],

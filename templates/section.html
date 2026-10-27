@@ -14,6 +14,7 @@
 <section class="landing slim" style="--c:{{ sec.color }}">
   <h1>{{ sec.title }}</h1>
   <p class="lead">{{ sec.intro }}</p>
+  {% if bonus %}<a class="bonus-hero" href="{{ bonus_url }}" rel="sponsored nofollow noopener" target="_blank"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> bei {{ provider }} über unseren Link<span class="small">Doppeltes Guthaben auf deine Aufladung. Gutscheincode wird automatisch hinterlegt, einfach kostenlos anmelden. Bedingungen bei {{ provider }}. Werbung, 18+.</span></span><span class="go">Sichern &rsaquo;</span></a>{% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}{% endif %}
   {% if tiles %}<p class="chips">{% for t in tiles %}<a class="chip" href="#t-{{ t.topic }}">{{ t.label }} <span>{{ t.count }}</span></a>{% endfor %}</p>{% endif %}
 </section>
 {% if sec.key == "models" %}

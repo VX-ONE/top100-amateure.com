@@ -643,8 +643,8 @@ def title_core(t: str, limit: int) -> str:
     return " ".join(ws).rstrip(".,:;–-& ") or t[:limit]
 
 
-def seo_title(m: dict, v: dict) -> str:
-    suffix = f" – {m['name']} Video"
+def seo_title(m: dict, v: dict, word: str = "Video") -> str:
+    suffix = f" – {m['name']} {word}"
     t = title_core(v["title"], max(24, 68 - len(suffix))) + suffix
     return t + " bei Visit-X" if len(t) < 40 else t
 
@@ -908,12 +908,14 @@ def collect(cfg: dict, store) -> dict[str, dict]:
             vids.append({**v, "title": clean_title(v["title"]), "tags_clean": clean_tags(v.get("tags") or []), "c": c, "url": f"/{slug}/videos/{page_slug(v)}/", "img": f"/img/v/{v['id']}.svg",
                          "link": deeplink(cfg, v["vx_path"]), "secs": mmss(v.get("duration", ""))})
         vids.sort(key=lambda x: int(x["id"]), reverse=True)   # Visit-X-IDs sind chronologisch (neueste zuerst)
+        tt = settings(cfg).get("title_test") or {}
+        word = tt.get("suffix", "Porno") if slug in (tt.get("models") or []) else "Video"
         seen = {}
         for x in vids:   # Seitentitel immer frisch bilden; doppelte (z. B. Serien) -> vollen Titel verwenden
-            seen.setdefault(seo_title(m, x), []).append(x)
+            seen.setdefault(seo_title(m, x, word), []).append(x)
         for t, xs in seen.items():
             for x in xs:
-                x["title_tag"] = t if len(xs) == 1 else f"{clean_title(x['title'])} – {m['name']} Video"
+                x["title_tag"] = t if len(xs) == 1 else f"{clean_title(x['title'])} – {m['name']} {word}"
         dup = Counter(x["title_tag"] for x in vids)
         for x in vids:   # gleicher Originaltitel bei mehreren Videos (Doppel-Upload, Teil 1/2): Datum bzw. Länge ergänzen
             if dup[x["title_tag"]] > 1:

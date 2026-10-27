@@ -5,6 +5,7 @@
 <section class="landing slim" style="--c:{{ section.color }}">
   <h1>{{ label }}</h1>
   {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
+  {% if bonus %}<a class="bonus-hero" href="{{ bonus_url }}" rel="sponsored nofollow noopener" target="_blank"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> bei {{ provider }} über unseren Link<span class="small">Doppeltes Guthaben auf deine Aufladung. Gutscheincode wird automatisch hinterlegt, einfach kostenlos anmelden. Bedingungen bei {{ provider }}. Werbung, 18+.</span></span><span class="go">Sichern &rsaquo;</span></a>{% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}{% endif %}
 </section>
 <h2>Alle Artikel: {{ label }}</h2>
 <div class="grid">{% for i in items %}{{ card(i) }}{% endfor %}</div>
