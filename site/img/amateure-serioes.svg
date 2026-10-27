@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0f766e" />
+<stop offset="1" stop-color="#042f2e" />
+</linearGradient>
+<linearGradient id="sh" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff" />
+<stop offset="1" stop-color="#99f6e4" />
+</linearGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="980" cy="120" r="260" fill="#ffffff" opacity="0.05" />
+<circle cx="120" cy="560" r="200" fill="#ffffff" opacity="0.05" />
+<g transform="translate(790 70)">
+<path d="M160 0 L320 60 L320 250 C320 370 240 440 160 480 C80 440 0 370 0 250 L0 60 Z" fill="url(#sh)" />
+<path d="M160 30 L292 80 L292 250 C292 350 228 412 160 450 C92 412 28 350 28 250 L28 80 Z" fill="#0f766e" />
+<path d="M120 220 L120 190 C120 164 138 146 160 146 C182 146 200 164 200 190 L200 220" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
+<rect x="96" y="215" width="128" height="104" rx="14" fill="#ffffff" />
+<circle cx="160" cy="255" r="14" fill="#042f2e" />
+<rect x="154" y="260" width="12" height="36" rx="5" fill="#042f2e" />
+<circle cx="268" cy="388" r="44" fill="#facc15" />
+<polyline points="247,388 263,404 291,372" fill="none" stroke="#042f2e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<g transform="translate(640 440) rotate(-20)">
+<circle cx="0" cy="0" r="34" fill="none" stroke="#facc15" stroke-width="14" />
+<rect x="30" y="-7" width="120" height="14" fill="#facc15" />
+<rect x="110" y="7" width="12" height="28" fill="#facc15" />
+<rect x="132" y="7" width="12" height="20" fill="#facc15" />
+</g>
+<g transform="translate(70 70)">
+<rect x="0" y="0" width="150" height="96" rx="12" fill="#ffffff" opacity="0.18" />
+<rect x="0" y="22" width="150" height="20" fill="#ffffff" opacity="0.4" />
+<rect x="14" y="62" width="50" height="10" rx="4" fill="#ffffff" opacity="0.6" />
+</g>
+<text x="70" y="360" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="120" fill="#ffffff">Sicher</text>
+<text x="70" y="490" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="120" fill="#facc15">prüfen</text>
+<rect x="74" y="520" width="300" height="10" rx="5" fill="#ffffff" />
+</svg>

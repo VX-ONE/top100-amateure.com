@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#c2410c" />
+<stop offset="1" stop-color="#431407" />
+</linearGradient>
+<radialGradient id="coin" cx="0.35" cy="0.35" r="0.8">
+<stop offset="0" stop-color="#fde68a" />
+<stop offset="1" stop-color="#f59e0b" />
+</radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)" />
+<circle cx="1050" cy="90" r="220" fill="#ffffff" opacity="0.06" />
+<circle cx="120" cy="600" r="200" fill="#000000" opacity="0.12" />
+<g>
+<ellipse cx="800" cy="520" rx="170" ry="30" fill="#000000" opacity="0.25" />
+<rect x="630" y="470" width="340" height="40" rx="8" fill="#d97706" />
+<ellipse cx="800" cy="470" rx="170" ry="34" fill="url(#coin)" />
+<rect x="650" y="420" width="300" height="40" rx="8" fill="#d97706" />
+<ellipse cx="800" cy="420" rx="150" ry="30" fill="url(#coin)" />
+</g>
+<g>
+<circle cx="720" cy="270" r="115" fill="#b45309" />
+<circle cx="720" cy="270" r="105" fill="url(#coin)" />
+<circle cx="720" cy="270" r="80" fill="none" stroke="#b45309" stroke-width="8" />
+<text x="720" y="308" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="100" text-anchor="middle" fill="#92400e">T</text>
+</g>
+<g>
+<rect x="900" y="150" width="190" height="250" rx="16" fill="#fff7ed" transform="rotate(10 995 275)" />
+<rect x="915" y="170" width="160" height="60" rx="6" fill="#1c1917" transform="rotate(10 995 275)" />
+<g fill="#c2410c" transform="rotate(10 995 275)">
+<rect x="915" y="250" width="44" height="34" rx="6" />
+<rect x="968" y="250" width="44" height="34" rx="6" />
+<rect x="1021" y="250" width="44" height="34" rx="6" />
+<rect x="915" y="300" width="44" height="34" rx="6" />
+<rect x="968" y="300" width="44" height="34" rx="6" />
+<rect x="1021" y="300" width="44" height="34" rx="6" />
+<rect x="915" y="350" width="97" height="34" rx="6" />
+</g>
+</g>
+<g transform="rotate(-12 900 120)">
+<polygon points="860,60 1010,60 1050,110 1010,160 860,160" fill="#fef3c7" />
+<circle cx="1010" cy="110" r="10" fill="#431407" />
+<text x="925" y="132" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="60" text-anchor="middle" fill="#c2410c">€</text>
+</g>
+<text x="70" y="330" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="150" fill="#ffffff">Kosten</text>
+<rect x="75" y="370" width="320" height="14" rx="7" fill="#fbbf24" />
+<text x="75" y="450" font-family="system-ui,Arial,sans-serif" font-weight="800" font-size="46" fill="#fed7aa">Tokens &amp; Preise</text>
+</svg>
