@@ -413,6 +413,7 @@ def cmd_keep_pages(cfg, args) -> int:
     """Videoseiten mit Impressionen vor dem Sichtbarkeitsverlust (bis 25.10.2026) aus der Search Console holen
     -> data/videos/_keep_gsc.json (diese Seiten bleiben indexierbar)."""
     from . import status as st
+    from . import videos as vidmod
     from datetime import date as _d
     svc = gsc.service(cfg)
     if not svc:
