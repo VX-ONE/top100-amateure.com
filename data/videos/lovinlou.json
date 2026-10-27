@@ -874,7 +874,10 @@
     "spagat"
    ],
    "date": "2025-04-22",
-   "refreshed_at": "2026-10-27"
+   "refreshed_at": "2026-10-27",
+   "indexed": true,
+   "coverage": "Gesendet und indexiert",
+   "checked_at": "2026-10-27T12:41:07+00:00"
   },
   {
    "id": "20935820",
@@ -887,7 +890,10 @@
    "published_at": "2026-10-20",
    "description": "Ich habe mir einen neuen magischen Rock gekauft - jedes Mal wenn ich mich bücke, habe ich eine andere Überraschung in mir 🤭",
    "tags": [],
-   "date": "2025-03-16"
+   "date": "2025-03-16",
+   "indexed": true,
+   "coverage": "Gesendet und indexiert",
+   "checked_at": "2026-10-27T12:41:07+00:00"
   }
  ],
  "model": "LovinLou",
