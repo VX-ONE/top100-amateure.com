@@ -182,7 +182,7 @@ def build_site(cfg: dict, store) -> dict:
         return bool(cfg["affiliate"].get("bonus")) and bool(_pc) and _pc.group(1) in url
     ctx = {"bonus": cfg["affiliate"].get("bonus") or {}, "site": cfg["site"], "provider": cfg["affiliate"]["provider_name"],
            "cta_label": cfg["affiliate"]["cta_label"], "year": date.today().year,
-           "bonus_url": cfg["affiliate"]["url_template"]}
+           "bonus_url": cfg["affiliate"]["url_template"], "today_de": date.today().strftime("%d.%m.%Y")}
     topic_cta = cfg["affiliate"].get("topic_cta") or {}
     hubs = set()
     for sl, mt in pages.items():

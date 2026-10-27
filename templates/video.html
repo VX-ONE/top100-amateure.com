@@ -27,9 +27,8 @@
   <p class="small">Mehr {{ m.name }} Porn{% if m.name_alt %} und {{ m.name_alt }} Porno{% endif %}: <a href="/{{ model_slug }}/videos/">alle {{ m.name_alt or m.name }} Porn-Videos im Überblick</a></p>
   <div class="vcta">
     <a class="btn" href="{{ v.link }}" rel="sponsored nofollow noopener" target="_blank">▶ Jetzt direkt zum Video</a>
+    {% if bonus %}<p class="bonus-pill"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> – doppeltes Guthaben auf deine Aufladung<small>Gutscheincode über unseren Link automatisch hinterlegt, einfach kostenlos anmelden.</small></span></p>{% endif %}
     {% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}
-    {% if bonus %}<p class="bonus-big">🎁 {{ bonus.badge }}</p>
-    <p class="howto">✓ Einfach kostenlos anmelden: Der Gutscheincode für die doppelte Aufladung ist über unseren Link automatisch hinterlegt.</p>{% endif %}
     <p class="small">Werbung · Nur für Erwachsene ab 18 · Bedingungen bei {{ provider }}</p>
   </div>
   <div class="intro">{{ c.intro|md|safe }}</div>

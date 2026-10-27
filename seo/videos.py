@@ -456,6 +456,14 @@ def enrich(cfg: dict, store, log=print, max_models: int = 60) -> dict:
         # Nach Änderungen an Sperrliste/Freigaben: früher zurückgezogene Seiten erneut prüfen und ggf. wiederherstellen
         restored = False
         for v in data["videos"]:
+            # Sperrliste erweitert? Bereits veröffentlichte/vorgemerkte Videos erneut prüfen und ggf. zurückziehen
+            if v.get("status") in ("published", "new", "backlog") and str(v["id"]) not in allowed:
+                hit = blocked_hit(normalize(v["title"] + " " + (v.get("description") or "")), blocked)
+                if hit:
+                    v.update(status="withdrawn" if v["status"] == "published" else "skipped", blocked=hit)
+                    stats["zurueckgezogen"] += 1
+                    restored = True
+                    continue
             if v.get("status") not in ("withdrawn", "skipped") or not v.get("blocked"):
                 continue
             if v["status"] == "skipped" and v.get("source") != "backfill":

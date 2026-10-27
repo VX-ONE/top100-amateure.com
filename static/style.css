@@ -194,3 +194,6 @@ summary h3{font-size:16px;font-weight:600}
 .tipbox p{margin:6px 0}
 .vtags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
 .vtags span{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--muted)}
+
+.block-head .stamp{font-size:14px;font-weight:600;color:var(--accent);white-space:nowrap}
+.bonus-pill{display:flex;gap:10px;align-items:flex-start;background:#fff1f4;border:2px dashed var(--accent);color:var(--accent);border-radius:14px;padding:10px 14px;margin:12px 0 8px;font-size:17px;line-height:1.35}.bonus-pill .gift{font-size:26px;line-height:1}.bonus-pill strong{font-weight:800}.bonus-pill small{display:block;color:var(--muted);font-size:13px;font-weight:400;margin-top:3px}
