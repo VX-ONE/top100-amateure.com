@@ -65,7 +65,7 @@ affiliate:
 videos:
   top_models: 50              # erste N aktive Models aus data/models.yaml (Reihenfolge = Top-Liste)
   per_model: 30               # neueste N Videos je Model
-  generate_per_run: 320       # neue Videoseiten pro Lauf (Rest folgt im nächsten Lauf)
+  generate_per_run: 0          # PAUSIERT 27.10.2026 während der Ursachenanalyse (vorher 320); neue Videos bleiben in der Warteschlange       # neue Videoseiten pro Lauf (Rest folgt im nächsten Lauf)
   llm_model: "claude-haiku-5-5"
   params: "w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"   # Partnerdaten, werden an den Video-Link gehängt
   backfill_models: 30         # ältere Videos für die ersten N Top-Models nachziehen (chronologisch rückwärts)
