@@ -152,6 +152,8 @@ def _kind(path: str, model_slugs: set[str]) -> str:
         return "Videoseite"
     if re.match(r"^/[^/]+/videos/(seite/\d+/)?$", path) and path != "/videos/":
         return "Video-Übersicht"
+    if re.match(r"^/[^/]+/videos/[a-z][a-z-]*/$", path) and "/seite/" not in path:
+        return "Themenseite"
     if path == "/":
         return "Startseite"
     seg = path.strip("/").split("/")[0]
@@ -455,7 +457,7 @@ def offline_checks(c: dict, F: Findings, cfg: dict, metrics: dict) -> None:
         words_by[d["kind"]].append(d["words"])
     metrics["words_median_by_kind"] = {k: st.median(v) for k, v in words_by.items()}
     thin = [f"{d['url']} ({d['words']} Wörter)" for d in idx.values()
-            if d["kind"] in ("Videoseite", "Model-Profil", "Ratgeber/Themen") and d["words"] < 300]
+            if d["kind"] in ("Videoseite", "Model-Profil", "Ratgeber/Themen", "Themenseite") and d["words"] < 300]
     F.check("Content Quality", "Kein Thin Content (≥ 300 Wörter Hauptinhalt)",
             _ok(len(thin), sum(1 for d in idx.values() if d["kind"] in ("Videoseite", "Model-Profil", "Ratgeber/Themen"))))
     if thin:
@@ -637,11 +639,18 @@ def model_keyword_checks(c: dict, F: Findings, cfg: dict, store, metrics: dict) 
     for p, d in c["pages"].items():
         seg = p.strip("/").split("/")[0]
         name = model_of.get(seg)
-        if not name or d["kind"] not in ("Model-Profil", "Videoseite", "Video-Übersicht"):
+        if not name or d["kind"] not in ("Model-Profil", "Videoseite", "Video-Übersicht", "Themenseite"):
             continue
         alt = alts.get(name, "")
         k = d["kind"]
         tot[k] += 1
+        if k == "Themenseite":   # Pflicht: „<Name> <Thema>“ in Title und H1
+            from .themes import BY_SLUG
+            th = BY_SLUG.get(p.strip("/").split("/")[-1])
+            want = norm(f"{name} {th['label']}") if th else ""
+            if not th or want not in norm(d["title"]) or want not in norm(" ".join(h for l, h in d["headings"] if l == 1)):
+                miss[f"{k}: „<Name> <Thema>“ fehlt in Title/H1"].append(p)
+            continue
         title, h1 = norm(d["title"]), norm(" ".join(h for l, h in d["headings"] if l == 1))
         body = norm(d["full"] + " " + d["title"])
         if k in ("Model-Profil", "Video-Übersicht") and "porn" not in title + h1:

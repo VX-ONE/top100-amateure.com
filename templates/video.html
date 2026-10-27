@@ -38,6 +38,7 @@
   <section><h2>{{ s.h2 }}</h2>{{ s.body|md|safe }}</section>
   {% if loop.first and c.tip and c.tip.body %}<aside class="tipbox"><p class="block-title">💡 {{ c.tip.title or "Tipp" }}</p><p>{{ c.tip.body }}</p></aside>{% endif %}
   {% endfor %}
+  {% if v.themes %}<p class="chips">{% for o in v.themes %}<a class="chip" href="{{ o.url }}">Mehr {{ m.name }} {{ o.label }} <span>{{ o.count }}</span></a>{% endfor %}</p>{% endif %}
   {% if v.tags_clean %}<p class="vtags">{% for t in v.tags_clean %}<span>#{{ t }}</span>{% endfor %}</p>{% endif %}
   {% if key_guides %}<aside class="guides-box"><p class="block-title">Gut zu wissen vor dem Anmelden</p><ul>{% for g in key_guides[:5] %}<li><a href="/{{ g.slug }}/">{{ g.label }}</a></li>{% endfor %}</ul></aside>{% endif %}
   <section class="faq"><h2>Fragen zum {{ m.name }} Porno</h2>

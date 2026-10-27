@@ -953,6 +953,7 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
             suffix = f" – Seite {pno}" if pno > 1 else ""
             write(path + "index.html", it.render(
                 **ctx, m=m, model_slug=slug, vids=chunk, total=len(vids), page_no=pno, pages_n=pages_n, offset=(pno - 1) * per,
+                themes=d.get("themes") if pno == 1 else [],
                 prev_url=prev_url, next_url=next_url, model_link=deeplink(cfg, f"/de/amateur/{platform(m)}/videos/"),
                 canonical=f"{base}/{path}", robots="index,follow",
                 title=index_title(m, len(vids), suffix),

@@ -33,8 +33,10 @@ def _tot(rows: list[dict]) -> dict:
 def _kind(path: str, model_slugs: set[str]) -> str:
     if re.match(r"^/[^/]+/videos/\d", path):
         return "Videoseiten"
-    if path.endswith("/videos/"):
+    if path.endswith("/videos/") or re.match(r"^/[^/]+/videos/seite/\d+/$", path):
         return "Videoübersichten"
+    if re.match(r"^/[^/]+/videos/[a-z][a-z-]*/$", path):
+        return "Themenseiten"
     seg = path.strip("/").split("/")[0] if path.strip("/") else ""
     if seg in model_slugs:
         return "Model-Seiten"

@@ -217,6 +217,8 @@ def build_site(cfg: dict, store) -> dict:
                                "bonus": has_bonus(links[0]["url"])})
     ctx["top_models"] = top_models
     collected = vidmod.collect(cfg, store)
+    from . import themes as thmod
+    live_themes = thmod.attach(cfg, collected)
     ctx["has_videos"] = bool(collected)
     ctx["videostation"] = cfg["affiliate"].get("videostation_url") or cfg["affiliate"]["url_template"]
     newest_videos = sorted((dict(v, model=d["model"]["name"]) for d in collected.values() for v in d["videos"]),
@@ -253,7 +255,7 @@ def build_site(cfg: dict, store) -> dict:
             thumbs[slug] = image["svg"]
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
-            ctas=ctas, is_model=is_model, model_cards=others, vx_profile=_vx_profile(cfg, meta.get("model", "")) if is_model else "", vids=(collected.get(slug) or {}).get("videos", [])[:6], vids_total=len((collected.get(slug) or {}).get("videos", [])), model_name=meta.get("model", ""), model_alt=name_alts.get(meta.get("model", ""), ""),
+            ctas=ctas, is_model=is_model, model_cards=others, vx_profile=_vx_profile(cfg, meta.get("model", "")) if is_model else "", vids=(collected.get(slug) or {}).get("videos", [])[:6], vids_total=len((collected.get(slug) or {}).get("videos", [])), model_themes=(collected.get(slug) or {}).get("themes", []), model_name=meta.get("model", ""), model_alt=name_alts.get(meta.get("model", ""), ""),
             related=rel, topic_label=labels.get(meta["topic"], ""), section=section_of(meta["topic"]),
             hub_url=(f"{base}/models/" if is_model else f"{base}/themen/{meta['topic']}/"),
             published=fmt_date(meta.get("modified_at") or meta["published_at"]), robots="index,follow",
@@ -307,6 +309,7 @@ def build_site(cfg: dict, store) -> dict:
         **ctx, canonical=f"{base}/", robots="noindex,follow", title="Seite nicht gefunden", description=""))
 
     video_urls = vidmod.render(cfg, store, env, ctx, write, site_dir, base, collected)
+    video_urls += thmod.render(cfg, env, ctx, write, base, collected, live_themes)
     urls = [(f"{base}/", max((p["published_at"] for p in pages.values()), default=date.today().isoformat()))]
     urls += [(f"{base}/{x['path']}/", date.today().isoformat()) for x in sec_data if x["count"]]
     urls += [(f"{base}/themen/{t}/", max(pages[i["slug"]]["published_at"] for i in groups[t])) for t in hub_topics]

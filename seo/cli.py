@@ -454,6 +454,17 @@ def cmd_videos(cfg, args) -> int:
         log(f"Texte FEHLER: {type(e).__name__}: {e}\n{traceback.format_exc()[-1500:]}")
         st = {"erzeugt": 0}
     log(f"Texte: {st}")
+    theme_new = []
+    try:   # Themenseiten je Model: schrittweise freischalten, Texte erzeugen
+        from . import themes as thmod
+        coll = vidmod.collect(cfg, store)
+        rel = thmod.release(cfg, coll, log=log)
+        log(f"Themen-Texte: {thmod.generate(cfg, coll, mock_mode=args.mock, log=log)}")
+        theme_new = [f"/{k.split('/')[0]}/videos/{k.split('/')[1]}/" for k in rel.get("neu", []) if thmod.load_content(cfg, k)]
+        log(f"Themenseiten: {dict((k, v) for k, v in rel.items() if k != 'neu')}")
+    except Exception as e:
+        import traceback
+        log(f"Themen FEHLER: {type(e).__name__}: {e}\n{traceback.format_exc()[-1500:]}")
     try:
         info = render.build_site(cfg, store)
         log(f"Seite gebaut: {info['pages']} Seiten, {info['sitemap_urls']} Sitemap-URLs.")
@@ -476,6 +487,7 @@ def cmd_videos(cfg, args) -> int:
     else:
         urls = [base + v["url"] for d in vidmod.collect(cfg, store).values() for v in d["videos"]
                 if v.get("published_at") == today]
+        urls += [base + u for u in theme_new]
         if urls:
             urls += [f"{base}/videos/"]
     log(indexnow.submit(cfg, urls))

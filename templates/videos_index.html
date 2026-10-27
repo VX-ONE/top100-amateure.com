@@ -22,6 +22,7 @@
 </section>
 {% if model_link %}<p><a class="btn" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">▶ Alle {{ m.name }} Videos bei {{ provider }}</a></p>
 {% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}{% endif %}
+{% if themes %}<p class="chips">{% for o in themes %}<a class="chip" href="{{ o.url }}">{{ m.name }} {{ o.label }} <span>{{ o.count }}</span></a>{% endfor %}</p>{% endif %}
 <h2>{% if pages_n and pages_n > 1 %}{{ m.name }} Pornos {{ offset + 1 }}–{{ offset + vids|length }} von {{ total }} (neueste zuerst){% else %}Alle {{ vids|length }} {{ m.name }} Pornos im Überblick{% endif %}</h2>
 <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ m.name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min{% if r.date %} · {{ r.date[8:10] }}.{{ r.date[5:7] }}.{{ r.date[0:4] }}{% endif %}</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
 {% if pages_n and pages_n > 1 %}<nav class="pagination" aria-label="Seiten">

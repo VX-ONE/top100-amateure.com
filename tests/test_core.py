@@ -76,6 +76,21 @@ class ModelKeywords(unittest.TestCase):
         self.assertIn("Pornos", videos.index_title({"name": "LanaGrey"}, 37))
 
 
+class Themen(unittest.TestCase):
+    def test_erkennung(self):
+        from seo import themes
+        self.assertIn("anal", themes.detect({"title": "Anal im Hotel", "tags": []}))
+        self.assertIn("joi", themes.detect({"title": "Deine Wichsanleitung", "tags": []}))
+        self.assertIn("latex", themes.detect({"title": "Abend", "tags": ["Latex"]}))
+        self.assertNotIn("anal", themes.detect({"title": "Kanal-Fahrt", "tags": []}))
+
+    def test_pflichtbegriff_in_pruefung(self):
+        from seo import themes
+        c = {"intro": "Text " * 150, "h2": "Überschrift", "body": "Mehr " * 150, "faq": [{"q": "a", "a": "b"}] * 2}
+        issues = themes.check(c, {"name": "Lia Engel"}, themes.BY_SLUG["anal"], [])
+        self.assertTrue(any("Suchbegriff" in i for i in issues))
+
+
 class Header(unittest.TestCase):
     def test_csp_mit_hash(self):
         with tempfile.TemporaryDirectory() as d:

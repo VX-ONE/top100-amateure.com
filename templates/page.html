@@ -76,6 +76,7 @@
   <section class="block" id="videos">
     <div class="block-head"><h2>Neueste {{ model_name }} Pornos &amp; Videos</h2><a class="more" href="/{{ slug }}/videos/">Alle {{ vids_total }} &rsaquo;</a></div>
     <p>Egal ob du nach {% if model_alt %}{{ model_name }} Porno, {{ model_name }} Porn, {{ model_alt }} Porno oder {{ model_alt }} Porn{% else %}{{ model_name }} Porno oder {{ model_name }} Porn{% endif %} suchst: Bei uns findest du {{ vids_total }} Videos von {{ model_name }} mit eigener Infoseite zu jedem Clip. Hier die neuesten, alle weiteren in der <a href="/{{ slug }}/videos/">Übersicht aller {{ model_name }} Pornos</a>.</p>
+    {% if model_themes %}<p class="chips">{% for o in model_themes %}<a class="chip" href="{{ o.url }}">{{ model_name }} {{ o.label }} <span>{{ o.count }}</span></a>{% endfor %}</p>{% endif %}
     <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ model_name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
   </section>
   {% elif is_model %}
