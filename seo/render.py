@@ -263,7 +263,7 @@ def build_site(cfg: dict, store) -> dict:
         write(f"themen/{t}/index.html", hub_tpl.render(
             **ctx, topic=t, label=labels.get(t, t), intro=intros.get(t, ""), items=groups[t], section=section_of(t),
             canonical=f"{base}/themen/{t}/", robots="index,follow", title=f"{labels.get(t, t)} bei Visit-X: Ratgeber | {cfg['site']['name']}",
-            description=((intros.get(t) or labels.get(t, t)).rstrip(".") + f". {len(groups[t])} Ratgeber-Artikel zu {labels.get(t, t)} im Überblick.")[:158], og_image=""))
+            description=((intros.get(t) or labels.get(t, t)).rstrip(".") + f". {len(groups[t])} Ratgeber-Artikel zu {labels.get(t, t)} im Überblick.")[:158], og_image=f"{base}/logo.png"))
     sec_tpl = env.get_template("section.html")
     sec_data = []
     for sec in SECTIONS:

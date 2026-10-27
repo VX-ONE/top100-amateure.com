@@ -64,7 +64,7 @@ main{max-width:1080px}.article{max-width:760px;margin:0 auto}
 @media(max-width:760px){.stickycta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:10px;align-items:center;justify-content:center;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.12)}
 .stickycta .btn{padding:11px 20px;font-size:15px}.stickycta span{font-size:12px;color:var(--muted)}body{padding-bottom:72px}}
 .intro-text{max-width:820px}
-@media(max-width:760px){.topnav{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;width:100%;padding-bottom:4px;scrollbar-width:none}.topnav::-webkit-scrollbar{display:none}.adnote{font-size:11px;padding:6px 12px}}
+@media(max-width:760px){.topnav{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;width:100%;padding-bottom:4px;scrollbar-width:none}.topnav::-webkit-scrollbar{display:none}.adnote{font-size:12px;padding:6px 12px}}
 /* ---- Bereiche, Model-Karten, Badges (UX-Überarbeitung) ---- */
 .topnav a{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--fg)}
 .topnav a i{width:9px;height:9px;border-radius:50%;background:var(--c)}
@@ -90,7 +90,7 @@ main{max-width:1080px}.article{max-width:760px;margin:0 auto}
 .mbody{display:flex;flex-direction:column;gap:10px;padding:12px 14px 14px}
 .mname{font-weight:700;color:var(--fg);text-decoration:none;font-size:17px}
 .btn-sm{padding:9px 14px;font-size:14px;text-align:center;box-shadow:none}
-.badge{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;color:#fff;background:#0f766e}
+.badge{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:999px;color:#fff;background:#0f766e}
 .k-angebote .badge{background:#ea580c}.k-models .badge{background:#be123c}
 .card.k-angebote{border-top:3px solid #ea580c}.card.k-ratgeber{border-top:3px solid #0f766e}.card.k-models{border-top:3px solid #be123c}
 @media(max-width:760px){
@@ -109,7 +109,7 @@ main{max-width:1080px}.article{max-width:760px;margin:0 auto}
  .grid>.card .card-body{padding:10px 12px;gap:4px}
  .grid>.card .card-body strong{font-size:15px;line-height:1.3}
  .grid>.card .card-body .small{-webkit-line-clamp:2;font-size:13px}
- .badge{font-size:10px;padding:2px 7px}
+ .badge{font-size:12px;padding:2px 7px}
  .block-head h2{font-size:20px}.block-head .more{font-size:14px;white-space:nowrap}
  .grid{gap:10px}
 }

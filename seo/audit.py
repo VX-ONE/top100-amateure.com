@@ -895,6 +895,11 @@ def browser_checks(c: dict, F: Findings, metrics: dict) -> None:
     with_cta = [k for k, v in mob.items() if v.get("cta_top") is not None]
     F.check("Conversion Optimization", "Mobil: Haupt-CTA in den ersten 1,5 Bildschirmhöhen",
             len(above) / len(with_cta) if with_cta else None)
+    low_cta = [f"{k}: erster Button bei {v['cta_top']:.0f} px (Bildschirm {v['vh']} px)" for k, v in mob.items()
+               if v.get("cta_top") is not None and v["cta_top"] >= v["vh"] * 1.5]
+    if low_cta:
+        F.add("P2", "Conversion", "Mobil erscheint der erste Visit-X-Button erst nach mehr als 1,5 Bildschirmhöhen", len(low_cta),
+              low_cta, "Button weiter oben platzieren (Conversion-Funnel → Freigabe)", auto=False)
     for k, v in mob.items():
         if v["lcp"] > 2500:
             F.add("P1", "Performance", f"LCP {v['lcp'] / 1000:.1f} s auf {k}", 1)
@@ -941,7 +946,7 @@ def gsc_checks(cfg: dict, F: Findings, metrics: dict, c: dict) -> None:
         if tot < 30:
             continue
         strong = [r for r in rs if r["impressions"] / tot >= 0.2]
-        if len(strong) >= 2:
+        if len(strong) >= 2 and min(r["position"] for r in strong) > 3:   # Top-3 mit mehreren URLs = Mehrfach-Listing
             cann.append((tot, qq, [urlparse(r["keys"][1]).path for r in strong]))
     cann.sort(reverse=True)
     relevant = sum(1 for rs in byq.values() if sum(r["impressions"] for r in rs) >= 30)

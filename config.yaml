@@ -72,7 +72,7 @@ videos:
   backfill_max: 300           # bis zu so viele Videos je Model insgesamt (neueste zuerst)
   backfill_per_day: 250       # so viele ältere Videos pro Tag freigeben (automatische Bremse bei schlechter Indexierung)
   index_per_page: 30          # Videos je Übersichtsseite /<model>/videos/
-  refresh_per_run: 200        # bestehende Videoseiten pro Lauf auf die neue Textversion (v2) umschreiben
+  refresh_per_run: 400        # bestehende Videoseiten pro Lauf auf die neue Textversion (v2) umschreiben
   new_per_model_per_run: 10   # höchstens so viele neue Videos je Model und Lauf einlesen
   # Zusätzlich gesperrt (Wortanfang) für Videotitel/-beschreibungen: Familie, Schlaf/Heimlich, Schule, Jugend
   # Nur für Videos (unabhängig von der Keyword-Sperrliste): ausgeschlossen bleiben Minderjährigen-Bezug und fehlende

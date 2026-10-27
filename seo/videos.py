@@ -950,7 +950,7 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
                 title=f"{m['name']} Videos: alle {len(vids)} Clips im Überblick{suffix}",
                 description=(f"Alle {len(vids)} {m['name']} Videos bei Visit-X, neueste zuerst: Titel und Länge im Überblick{suffix}. "
                              f"Direkt ansehen mit 100 % Aufladebonus.")[:158],
-                og_image=""))
+                og_image=f"{base}/logo.png"))
             urls.append((f"{base}/{path}", max((v.get("published_at", "") for v in chunk), default="") or date.today().isoformat()))
     if collected:   # Gesamtübersicht /videos/
         allv = sorted((dict(v, model=d["model"]["name"]) for d in collected.values() for v in d["videos"]),
@@ -962,6 +962,6 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
             discover=[v for v in allv[48:] if v.get("indexed") is False][:48],
             title="Amateur Videos der Top-Models bei Visit-X: neue Clips",
             description=f"{len(allv)} Amateur-Videos der Top-Models bei Visit-X: neueste Clips, Länge und direkter Link. "
-                        "Mit 100 % Aufladebonus über unseren Link.", og_image=""))
+                        "Mit 100 % Aufladebonus über unseren Link.", og_image=f"{base}/logo.png"))
         urls.append((f"{base}/videos/", date.today().isoformat()))
     return urls
