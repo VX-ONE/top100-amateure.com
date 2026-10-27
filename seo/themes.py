@@ -33,6 +33,8 @@ THEMES = [
     {"slug": "squirt", "label": "Squirt", "re": r"squirt", "hint": "Squirt-Clips"},
     {"slug": "solo", "label": "Solo", "re": r"\bsolo", "hint": "Solo-Clips"},
     {"slug": "pov", "label": "POV", "re": r"\bpov\b", "hint": "POV-Clips (aus deiner Sicht gefilmt)"},
+    {"slug": "lesbian", "label": "Lesbian", "re": r"lesbian|\blesben|\blesbisch", "hint": "Lesbian-Clips mit zwei Frauen"},
+    {"slug": "gangbang", "label": "Gangbang", "re": r"gangbang", "hint": "Gangbang-Clips"},
     {"slug": "dirty-talk", "label": "Dirty Talk", "re": r"dirty ?talk", "hint": "Dirty-Talk-Clips"},
     {"slug": "dessous", "label": "Dessous", "re": r"dessous|strapse|nylon|strumpf", "hint": "Clips in Dessous und Nylons"},
     {"slug": "massage", "label": "Massage", "re": r"massage", "hint": "Massage-Clips"},
