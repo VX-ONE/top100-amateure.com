@@ -70,7 +70,7 @@ videos:
   params: "w=40150&ws=2610001&pc=2XITGA&vxpAutoFlow"   # Partnerdaten, werden an den Video-Link gehängt
   backfill_models: 30         # ältere Videos für die ersten N Top-Models nachziehen (chronologisch rückwärts)
   backfill_max: 300           # bis zu so viele Videos je Model insgesamt (neueste zuerst)
-  backfill_per_day: 250       # so viele ältere Videos pro Tag freigeben (automatische Bremse bei schlechter Indexierung)
+  backfill_per_day: 0          # PAUSIERT 27.10.2026: Ranking-Einbruch seit 26.10. beobachten (vorher 250)       # so viele ältere Videos pro Tag freigeben (automatische Bremse bei schlechter Indexierung)
   index_per_page: 30          # Videos je Übersichtsseite /<model>/videos/
   # Titeltest (Freigabe Chris 27.10.2026): Testgruppe bekommt „– <Name> Porno“ statt „– <Name> Video“ im Seitentitel der
   # Videoseiten. Gruppen wechseln in der Rangfolge ab (je ca. 760 Videos). Auswertung im Audit (14 Tage vor/nach Start).
@@ -83,7 +83,7 @@ videos:
   themes:
     enabled: true
     min_videos: 5
-    per_day: 40
+    per_day: 0                 # PAUSIERT 27.10.2026 (vorher 40), bestehende 40 Themenseiten bleiben
     generate_per_run: 60        # bestehende Videoseiten pro Lauf auf die neue Textversion (v2) umschreiben
   new_per_model_per_run: 10   # höchstens so viele neue Videos je Model und Lauf einlesen
   # Zusätzlich gesperrt (Wortanfang) für Videotitel/-beschreibungen: Familie, Schlaf/Heimlich, Schule, Jugend
