@@ -561,7 +561,8 @@
    "date": "2025-03-05",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "10655081",
@@ -603,12 +604,13 @@
    "date": "2024-07-18",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   }
  ],
  "model": "Lisa-Mari",
  "platform": "lisa-mari",
- "updated": "2026-10-26",
+ "updated": "2026-10-27",
  "vx_model_id": 13041765,
  "backlog_done": "2026-10-26"
 }

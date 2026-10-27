@@ -552,7 +552,8 @@
    "date": "2025-12-15",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "28032428",
@@ -594,7 +595,8 @@
    "date": "2025-12-12",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "28028177",
@@ -633,7 +635,8 @@
     "Lutschen",
     "Unterwäsche"
    ],
-   "date": "2025-12-09"
+   "date": "2025-12-09",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "28025944",
@@ -671,7 +674,8 @@
    "date": "2025-12-06",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "28018821",
@@ -713,7 +717,8 @@
    "date": "2025-12-01",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "28011002",
@@ -751,7 +756,8 @@
    "date": "2025-11-28",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "28008556",
@@ -793,7 +799,8 @@
    "date": "2025-11-24",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "24612383",
@@ -835,7 +842,8 @@
    "date": "2025-05-29",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "23831862",
@@ -865,7 +873,8 @@
     "petite",
     "spagat"
    ],
-   "date": "2025-04-22"
+   "date": "2025-04-22",
+   "refreshed_at": "2026-10-27"
   },
   {
    "id": "20935820",
@@ -883,7 +892,7 @@
  ],
  "model": "LovinLou",
  "platform": "lovinlou",
- "updated": "2026-10-26",
+ "updated": "2026-10-27",
  "vx_model_id": 12411240,
  "backlog_done": "2026-10-26"
 }
