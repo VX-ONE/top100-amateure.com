@@ -466,11 +466,10 @@ def enrich(cfg: dict, store, log=print, max_models: int = 60) -> dict:
                     continue
             if v.get("status") not in ("withdrawn", "skipped") or not v.get("blocked"):
                 continue
-            if v["status"] == "skipped" and v.get("source") != "backfill":
-                continue
             text = normalize(v["title"] + " " + (v.get("description") or ""))
             if str(v["id"]) in allowed or not blocked_hit(text, blocked):
-                v["status"] = "published" if v["status"] == "withdrawn" else "backlog"
+                v["status"] = ("published" if v["status"] == "withdrawn"
+                               else "backlog" if v.get("source") == "backfill" else "new")
                 v.pop("blocked", None)
                 stats["wiederhergestellt"] += 1
                 restored = True
