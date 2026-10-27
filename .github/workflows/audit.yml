@@ -55,7 +55,7 @@ jobs:
         run: |
           git config user.name "seo-bot"
           git config user.email "seo-bot@users.noreply.github.com"
-          git add reports/*-audit.* reports/audit 2>/dev/null || true
+          for f in reports/*-audit.md reports/*-audit.log reports/audit; do if [ -e "$f" ]; then git add "$f"; fi; done
           git diff --cached --quiet || git commit -m "Audit $(date +%Y-%m-%d)"
           git pull --rebase -q -X theirs && git push -q
       - name: Als GitHub-Issue zustellen

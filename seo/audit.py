@@ -1162,12 +1162,41 @@ def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: 
             fh.write(line + "\n")
     F = Findings()
     metrics: dict = {}
+    import signal
+    import traceback
+
+    class _Timeout(Exception):
+        pass
+
+    def _alarm(*_):
+        raise _Timeout()
+    signal.signal(signal.SIGALRM, _alarm)
+
+    def stage(name: str, cat: str, limit: int, fn, *a):
+        """Führt eine Prüfstufe mit Zeitlimit aus; Fehler oder Zeitüberschreitung landen im Bericht statt den Lauf zu stoppen."""
+        log(f"{name} …")
+        signal.alarm(limit)
+        try:
+            r = fn(*a)
+            log(f"{name} fertig")
+            return r
+        except _Timeout:
+            log(f"{name}: Zeitlimit {limit} s überschritten")
+            F.check(cat, name, None, f"Zeitlimit {limit} s überschritten")
+            F.add("P2", "Audit", f"Prüfstufe „{name}“ abgebrochen (Zeitlimit {limit} s)", 1, auto=True)
+        except Exception as e:
+            log(f"{name} FEHLER: {type(e).__name__}: {e}\n{traceback.format_exc()[-1500:]}")
+            F.check(cat, name, None, f"Fehler: {type(e).__name__}: {e}")
+        finally:
+            signal.alarm(0)
+        return None
+
     log("Audit: lokaler Crawl …")
     c = crawl_local(cfg, store, root)
     offline_checks(c, F, cfg, metrics)
-    repo_checks(F, metrics, root)
     log(f"Audit: Offline-Prüfungen fertig ({metrics['urls_total']} URLs)")
-    workflow_checks(F, metrics)
+    stage("Repository und Tests", "Code Quality", 600, repo_checks, F, metrics, root)
+    stage("Workflow-Statistik", "Scalability", 120, workflow_checks, F, metrics)
     # zurückgezogene Videoseiten (für die Live-Prüfung)
     withdrawn = []
     for f in Path(cfg.get("_data", "data")).joinpath("videos").glob("*.json"):
@@ -1182,20 +1211,11 @@ def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: 
     metrics["withdrawn_videos"] = len(withdrawn)
     ok_live = False
     if live:
-        log("Audit: Live-Prüfung …")
-        ok_live = live_checks(c, F, metrics, cfg, withdrawn)
-        log(f"Audit: Live-Prüfung fertig (erreichbar: {ok_live}, Fehler: {metrics.get('live_bad')}, TTFB {metrics.get('ttfb_median_ms')} ms)")
+        ok_live = bool(stage("Live-Prüfung", "Technical SEO", 600, live_checks, c, F, metrics, cfg, withdrawn))
+        log(f"Live: erreichbar {ok_live}, Fehler {metrics.get('live_bad')}, TTFB {metrics.get('ttfb_median_ms')} ms")
         if ok_live and browser:
-            log("Audit: Labormessung …")
-            try:
-                browser_checks(c, F, metrics)
-            except Exception as e:
-                F.check("Core Web Vitals", "Labormessung", None, f"Fehler: {e}")
-    log("Audit: Search Console …" + (f" (Labor: {len(metrics.get('lab', {}))} Messungen)" if metrics.get("lab") else ""))
-    try:
-        gsc_checks(cfg, F, metrics, c)
-    except Exception as e:
-        F.check("Keyword Strategy", "Search-Console-Daten", None, f"Fehler: {type(e).__name__}: {e}")
+            stage("Labormessung", "Core Web Vitals", 600, browser_checks, c, F, metrics)
+    stage("Search Console", "Keyword Strategy", 600, gsc_checks, cfg, F, metrics, c)
     sc, total, coverage = scores(F)
     today = date.today().isoformat()
     prev = _prev(root, today)
