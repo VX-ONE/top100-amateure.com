@@ -123,13 +123,13 @@
   "pipeline_logs_14d": 21,
   "pipeline_errors_14d": 0,
   "largest_modules": [
-   "audit.py (1267 Zeilen)",
+   "audit.py (1269 Zeilen)",
    "videos.py (967 Zeilen)",
    "cli.py (556 Zeilen)"
   ],
   "tests": "7 Tests, bestanden",
   "workflows_14d": {
-   "Audit": "1/4",
+   "Audit": "2/5",
    "Video-Operator": "19/20",
    "Statusbericht": "6/6",
    "Tageslauf": "16/16"
@@ -137,12 +137,15 @@
   "withdrawn_videos": 41,
   "live_checked": 315,
   "live_bad": 0,
-  "ttfb_median_ms": 170,
-  "ttfb_p90_ms": 212,
+  "ttfb_median_ms": 148,
+  "ttfb_p90_ms": 183,
   "redirects": {
    "http → https": "301 → https://www.top100amateure.com/",
    "ohne www → www": "None → -",
    "ohne Slash → mit Slash": "308 → /models/"
+  },
+  "withdrawn_status": {
+   "404": 20
   },
   "live_headers": {
    "strict-transport-security": "max-age=31536000; includeSubDomains",
@@ -155,11 +158,11 @@
   },
   "lab": {
    "Startseite (mobil)": {
-    "lcp": 528,
+    "lcp": 468,
     "cls": 0,
-    "fcp": 528,
-    "ttfb": 49.399999999965075,
-    "bytes": 17131,
+    "fcp": 468,
+    "ttfb": 70.70000000006985,
+    "bytes": 17056,
     "requests": 8,
     "overflow": false,
     "small": 4,
@@ -168,10 +171,10 @@
     "vh": 844
    },
    "Model-Profil (mobil)": {
-    "lcp": 504,
+    "lcp": 484,
     "cls": 0,
-    "fcp": 480,
-    "ttfb": 49.79999999998836,
+    "fcp": 484,
+    "ttfb": 57.5,
     "bytes": 14913,
     "requests": 5,
     "overflow": false,
@@ -184,8 +187,8 @@
     "lcp": 472,
     "cls": 0,
     "fcp": 472,
-    "ttfb": 162.79999999998836,
-    "bytes": 12385,
+    "ttfb": 162.40000000002328,
+    "bytes": 12438,
     "requests": 5,
     "overflow": false,
     "small": 1,
@@ -194,11 +197,11 @@
     "vh": 844
    },
    "Video-Übersicht (mobil)": {
-    "lcp": 444,
+    "lcp": 468,
     "cls": 0,
-    "fcp": 444,
-    "ttfb": 39.70000000001164,
-    "bytes": 19732,
+    "fcp": 468,
+    "ttfb": 65.09999999997672,
+    "bytes": 19708,
     "requests": 13,
     "overflow": false,
     "small": 0,
@@ -207,11 +210,11 @@
     "vh": 844
    },
    "Ratgeber/Themen (mobil)": {
-    "lcp": 488,
+    "lcp": 484,
     "cls": 0,
-    "fcp": 472,
-    "ttfb": 93.29999999998836,
-    "bytes": 14844,
+    "fcp": 484,
+    "ttfb": 138.10000000009313,
+    "bytes": 14849,
     "requests": 5,
     "overflow": false,
     "small": 1,
@@ -220,10 +223,10 @@
     "vh": 844
    },
    "Hub (mobil)": {
-    "lcp": 464,
+    "lcp": 456,
     "cls": 0,
-    "fcp": 464,
-    "ttfb": 78.79999999998836,
+    "fcp": 456,
+    "ttfb": 75.89999999990687,
     "bytes": 18912,
     "requests": 12,
     "overflow": false,
@@ -233,10 +236,10 @@
     "vh": 844
    },
    "Startseite (desktop)": {
-    "lcp": 204,
+    "lcp": 184,
     "cls": 0,
-    "fcp": 204,
-    "ttfb": 72.79999999998836,
+    "fcp": 184,
+    "ttfb": 62.300000000046566,
     "bytes": 35013,
     "requests": 28,
     "overflow": false,
@@ -246,10 +249,10 @@
     "vh": 900
    },
    "Model-Profil (desktop)": {
-    "lcp": 224,
+    "lcp": 168,
     "cls": 0,
-    "fcp": 224,
-    "ttfb": 105.5,
+    "fcp": 168,
+    "ttfb": 72.90000000002328,
     "bytes": 14913,
     "requests": 5,
     "overflow": false,
@@ -259,10 +262,10 @@
     "vh": 900
    },
    "Videoseite (desktop)": {
-    "lcp": 260,
+    "lcp": 200,
     "cls": 0,
-    "fcp": 240,
-    "ttfb": 63.5,
+    "fcp": 180,
+    "ttfb": 84.90000000002328,
     "bytes": 17376,
     "requests": 11,
     "overflow": false,
@@ -272,11 +275,11 @@
     "vh": 900
    },
    "Video-Übersicht (desktop)": {
-    "lcp": 276,
+    "lcp": 156,
     "cls": 0,
-    "fcp": 276,
-    "ttfb": 96.70000000001164,
-    "bytes": 37075,
+    "fcp": 156,
+    "ttfb": 64.79999999993015,
+    "bytes": 37045,
     "requests": 34,
     "overflow": false,
     "small": 29,
@@ -285,10 +288,10 @@
     "vh": 900
    },
    "Ratgeber/Themen (desktop)": {
-    "lcp": 252,
+    "lcp": 148,
     "cls": 0,
-    "fcp": 248,
-    "ttfb": 98.40000000002328,
+    "fcp": 148,
+    "ttfb": 64.19999999995343,
     "bytes": 14844,
     "requests": 5,
     "overflow": false,
@@ -298,10 +301,10 @@
     "vh": 900
    },
    "Hub (desktop)": {
-    "lcp": 152,
+    "lcp": 176,
     "cls": 0,
-    "fcp": 152,
-    "ttfb": 55.399999999965075,
+    "fcp": 176,
+    "ttfb": 67.20000000006985,
     "bytes": 26934,
     "requests": 21,
     "overflow": false,
@@ -313,9 +316,9 @@
   },
   "gsc_14d": {
    "clicks": 1172,
-   "impr": 6862,
-   "ctr": 0.17079568638880793,
-   "pos": 4.855144272806762
+   "impr": 6863,
+   "ctr": 0.17077079994171646,
+   "pos": 4.854728252950605
   },
   "gsc_prev_14d": {
    "clicks": 0,
@@ -404,21 +407,6 @@
     "/candysamira/videos/28039897-fremdfick-party-fuer-ihn-orgasmus-fuer-mich/",
     "/candysamira/videos/28060370-hotelbar-junger-fremder-eine-nacht-drei-cumshots/",
     "/candysamira/videos/28068119-vom-zimmerservice-zum-rundum-service-mit-mundbesamung/"
-   ],
-   "fix": "",
-   "auto": true
-  },
-  {
-   "prio": "P2",
-   "area": "Indexierung",
-   "text": "Zurückgezogene Videoseiten sind noch erreichbar",
-   "count": 9,
-   "examples": [
-    "/emmasecret/videos/28373928-extremer-3er-unser-ehemaliger-klassenlehrer-fickt-uns-hart/",
-    "/vickyfox/videos/28150567-schnick-schnack-schnuck-eskalation-in-analdruesensaft-27min/",
-    "/candysamira/videos/28199553-privatlehrer-fickt-mich-zum-orgasmus-und-spritz-mir-in-den-m/",
-    "/candysamira/videos/28148386-urlaubs-fremdfick-25-j-pure-energie-mundbesamung-doppelcum/",
-    "/dirtytina/videos/28038615-geile-leckspiele-auf-mallorca/"
    ],
    "fix": "",
    "auto": true
