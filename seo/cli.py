@@ -409,6 +409,25 @@ def cmd_status_report(cfg, args) -> int:
     return 0
 
 
+def cmd_keep_pages(cfg, args) -> int:
+    """Videoseiten mit Impressionen vor dem Sichtbarkeitsverlust (bis 25.10.2026) aus der Search Console holen
+    -> data/videos/_keep_gsc.json (diese Seiten bleiben indexierbar)."""
+    from . import status as st
+    from datetime import date as _d
+    svc = gsc.service(cfg)
+    if not svc:
+        print("Keine Search-Console-Zugangsdaten.")
+        return 2
+    rows = st._query(cfg, svc, _d(2026, 10, 1), _d(2026, 10, 25), ["page"], limit=25000)
+    import re as _re
+    from urllib.parse import urlparse
+    paths = sorted({urlparse(r["keys"][0]).path for r in rows if r["impressions"] > 0 and _re.match(r"^/[^/]+/videos/\d", urlparse(r["keys"][0]).path)})
+    p = vidmod.vdir(cfg) / "_keep_gsc.json"
+    p.write_text(json.dumps({"stand": "2026-10-01 bis 2026-10-25", "paths": paths}, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"{len(paths)} Videoseiten mit Impressionen -> {p}")
+    return 0
+
+
 def cmd_audit(cfg, args) -> int:
     """Zweiwöchentlicher Voll-Audit (Masterprompt) nach reports/<datum>-audit.md + reports/audit/<datum>.json."""
     from . import audit
@@ -555,6 +574,7 @@ def main(argv=None) -> int:
     p.add_argument("--ping-all", action="store_true", help="alle Sitemap-URLs per IndexNow melden")
     p.add_argument("--no-publish", action="store_true")
     sub.add_parser("status-report", help="Täglichen Statusbericht schreiben (Search Console + Pipeline)")
+    sub.add_parser("keep-pages", help="Videoseiten mit Impressionen (bis 25.10.) als indexierbar merken")
     a = sub.add_parser("audit", help="Voll-Audit nach Masterprompt (alle zwei Wochen)")
     a.add_argument("--offline", action="store_true", help="ohne Live-Prüfung der ausgelieferten Seite")
     a.add_argument("--no-browser", action="store_true", help="ohne Labormessung (Playwright)")
@@ -564,7 +584,7 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
     cfg = cfgmod.load(args.config, sandbox=args.sandbox or args.mock)
     return {"import-keywords": cmd_import, "run": cmd_run, "monitor": cmd_monitor, "harvest": cmd_harvest, "optimize": cmd_optimize, "images": cmd_images,
-            "build": cmd_build, "status": cmd_status, "status-report": cmd_status_report, "audit": cmd_audit, "videos": cmd_videos}[args.cmd](cfg, args)
+            "build": cmd_build, "status": cmd_status, "status-report": cmd_status_report, "audit": cmd_audit, "keep-pages": cmd_keep_pages, "videos": cmd_videos}[args.cmd](cfg, args)
 
 
 if __name__ == "__main__":

@@ -916,10 +916,22 @@ def page_slug(v: dict) -> str:
     return f"{v['id']}-{slugify(v['vx_slug'].replace('--', '-'))[:70]}"
 
 
+def index_keep(cfg: dict) -> tuple[int, int, set[str]]:
+    """Index-Auswahl (Chris, 27.10.2026): Index nur für die neuesten N Videos der Top-M-Models und für Videoseiten,
+    die vor dem Einbruch Impressionen hatten (data/videos/_keep_gsc.json); alle anderen Videoseiten: noindex,follow."""
+    s = settings(cfg).get("index_selection") or {}
+    keep = set()
+    f = vdir(cfg) / "_keep_gsc.json"
+    if f.exists():
+        keep = set(json.loads(f.read_text(encoding="utf-8")).get("paths", []))
+    return int(s.get("top_models", 0)), int(s.get("newest", 0)), keep
+
+
 def collect(cfg: dict, store) -> dict[str, dict]:
     """Veröffentlichte Videos je Model-Seiten-Slug, für Templates und Model-Seiten."""
     out = {}
-    for m, slug in model_pages(cfg, store):
+    top_m, newest_n, keep_paths = index_keep(cfg)
+    for rank, (m, slug) in enumerate(model_pages(cfg, store)):
         vids = []
         for v in load(cfg, slug)["videos"]:
             if v.get("status") != "published":
@@ -943,6 +955,8 @@ def collect(cfg: dict, store) -> dict[str, dict]:
             if dup[x["title_tag"]] > 1:
                 d = x.get("date") or ""
                 x["title_tag"] += f" vom {d[8:10]}.{d[5:7]}.{d[:4]}" if len(d) >= 10 else f" ({x.get('duration', '')} min)"
+        for i, x in enumerate(vids):
+            x["noindex"] = bool(top_m) and not ((rank < top_m and i < newest_n) or x["url"] in keep_paths)
         if vids:
             out[slug] = {"model": m, "videos": vids}
     return out
@@ -960,7 +974,8 @@ def _rot(seq: list, k: int, seed: str) -> list:
 def discovery_pool(vids: list[dict], skip: int = 30) -> list[dict]:
     """Videoseiten, die Google noch nicht indexiert hat (oder noch nicht geprüft wurden) und nicht schon auf der
     ersten Übersichtsseite stehen: sie bekommen zusätzliche interne Links, damit Google sie findet und crawlt."""
-    return [v for v in vids[skip:] if v.get("indexed") is not True] + [v for v in vids[:skip] if v.get("indexed") is False]
+    return [v for v in vids[skip:] if v.get("indexed") is not True and not v.get("noindex")] + \
+        [v for v in vids[:skip] if v.get("indexed") is False and not v.get("noindex")]
 
 
 def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, collected: dict) -> list[tuple[str, str]]:
@@ -980,7 +995,8 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
             prev_v, next_v = (vids[i - 1] if i > 0 else None), (vids[i + 1] if i + 1 < n else None)
             write(v["url"].strip("/") + "/index.html", vt.render(
                 **ctx, v=v, c=v["c"], m=m, model_slug=slug, related=related, prev_v=prev_v, next_v=next_v, canonical=base + v["url"],
-                robots="index,follow", title=v["title_tag"], description=trim(v["c"]["meta_description"], 158),
+                robots="noindex,follow" if v.get("noindex") else "index,follow", title=v["title_tag"],
+                description=trim(v["c"]["meta_description"], 158),
                 og_image="", og_type="article"))
             urls.append((base + v["url"], v.get("published_at") or date.today().isoformat()))
         per = int(settings(cfg).get("index_per_page", 30))
@@ -1010,7 +1026,7 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
                   for sl, d in collected.items()]
         write("videos/index.html", env.get_template("videos_hub.html").render(
             **ctx, vids=allv[:48], models=models, total=len(allv), canonical=f"{base}/videos/", robots="index,follow",
-            discover=_rot([v for v in allv[48:] if v.get("indexed") is not True], 96, "hub"),
+            discover=_rot([v for v in allv[48:] if v.get("indexed") is not True and not v.get("noindex")], 96, "hub"),
             title="Amateur Videos der Top-Models bei Visit-X: neue Clips",
             description=f"{len(allv)} Amateur-Videos der Top-Models bei Visit-X: neueste Clips, Länge und direkter Link. "
                         "Mit 100 % Aufladebonus über unseren Link.", og_image=f"{base}/logo.png"))

@@ -18,7 +18,7 @@
     <a class="on" href="/{{ model_slug }}/videos/" aria-current="page">▶ Alle {{ total or vids|length }} Pornos &amp; Videos</a>
     {% if model_link %}<a class="ext" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">Bei {{ provider }} ansehen</a>{% endif %}
   </nav>
-  <p class="lead">Hier findest du alle {{ m.name }} Pornos bei {{ provider }}, neueste zuerst, mit Länge und Datum – egal ob du nach {% if m.name_alt %}{{ m.name }} Porno, {{ m.name }} Porn, {{ m.name_alt }} Porno oder {{ m.name_alt }} Porn{% else %}{{ m.name }} Porno oder {{ m.name }} Porn{% endif %} suchst. Jedes Video hat eine eigene Seite mit Infos und dem direkten Link{% if bonus %}, inklusive {{ bonus.badge }} über unseren Link{% endif %}.</p>
+  <p class="lead">Hier findest du alle {{ m.name }} Pornos bei {{ provider }}{% if m.name_alt %} (auch geschrieben: {{ m.name_alt }}){% endif %}, neueste zuerst, mit Länge und Datum. Jedes Video hat eine eigene Seite mit Infos und dem direkten Link{% if bonus %}, inklusive {{ bonus.badge }} über unseren Link{% endif %}.</p>
 </section>
 {% if model_link %}<p><a class="btn" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">▶ Alle {{ m.name }} Videos bei {{ provider }}</a></p>
 {% if bonus %}<p class="bonus-pill"><span class="gift">🎁</span><span><strong>{{ bonus.badge }}</strong> – doppeltes Guthaben auf deine Aufladung<small>Gutscheincode über unseren Link automatisch hinterlegt, einfach kostenlos anmelden.</small></span></p>{% endif %}

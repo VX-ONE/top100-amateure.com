@@ -1,0 +1,43 @@
+name: Werkzeug
+
+# Einmalige Aufgaben mit Search-Console-Zugriff (manuell gestartet).
+on:
+  workflow_dispatch:
+    inputs:
+      cmd:
+        description: "Befehl"
+        required: true
+        type: choice
+        options: [keep-pages]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Befehl ausführen und Seite neu bauen
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: |
+          python -m seo.cli ${{ inputs.cmd }}
+          python -m seo.cli build
+      - name: Speichern
+        run: |
+          git config user.name "seo-bot"
+          git config user.email "seo-bot@users.noreply.github.com"
+          git add -A data site
+          git diff --cached --quiet || git commit -m "Werkzeug: ${{ inputs.cmd }}"
+          git pull --rebase --autostash -q -X theirs && git push -q

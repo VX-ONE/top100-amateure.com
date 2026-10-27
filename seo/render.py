@@ -320,13 +320,16 @@ def build_site(cfg: dict, store) -> dict:
         out += [f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in items]
         return "\n".join(out + ["</urlset>"]) + "\n"
     model_urls = {f"{base}/{s}/" for s in contents if pages[s].get("topic") == modelmod.TOPIC} | {f"{base}/models/"}
+    noidx = {base + v["url"] for d in collected.values() for v in d["videos"] if v.get("noindex")}
     vid_set = {u for u, _ in video_urls}
     parts = {"sitemap-seiten.xml": [x for x in urls if x[0] not in model_urls and x[0] not in vid_set],
              "sitemap-models.xml": [x for x in urls if x[0] in model_urls],
-             "sitemap-videos.xml": [x for x in urls if x[0] in vid_set]}
+             "sitemap-videos.xml": [x for x in urls if x[0] in vid_set and x[0] not in noidx]}
+    # Seiten mit noindex: vorübergehend eigene Sitemap mit heutigem Datum, damit Google sie bald erneut abruft
+    parts["sitemap-entfernt.xml"] = [(u, date.today().isoformat()) for u, _ in urls if u in noidx]
     # Zusätzliche Sitemap nur mit Seiten, die Google noch nicht indexiert hat (Video- und Themenseiten): wird in der
     # Search Console separat ausgewertet und zeigt, wie schnell Google aufholt.
-    pending = {base + v["url"] for d in collected.values() for v in d["videos"] if v.get("indexed") is not True}
+    pending = {base + v["url"] for d in collected.values() for v in d["videos"] if v.get("indexed") is not True and not v.get("noindex")}
     tchecks = thmod.load_state(cfg).get("checks", {})
     pending |= {base + i["url"] for k, i in live_themes.items() if not (tchecks.get(k) or {}).get("indexed")}
     parts["sitemap-neu.xml"] = [x for x in urls if x[0] in pending]

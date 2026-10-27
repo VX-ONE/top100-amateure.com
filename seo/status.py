@@ -63,13 +63,14 @@ def _delta(a, b, kind="num"):
     return f" ({'+' if d >= 0 else ''}{d:.0f} %)"
 
 
-def inspect_videos(cfg, svc, sample: int = 200) -> dict:
+def inspect_videos(cfg, svc, sample: int = 200, skip: set | None = None) -> dict:
     """Prüft täglich Videoseiten per URL-Inspection.
     Reihenfolge: nie geprüfte (mind. 3 Tage alt) -> nicht indexierte (alle 3 Tage erneut) -> indexierte (alle 14 Tage,
     um Seiten zu erkennen, die aus dem Index fallen). Nicht indexierte und herausgefallene Seiten werden markiert,
     damit sie per IndexNow erneut gemeldet und intern stärker verlinkt werden."""
     base = cfg["site"]["base_url"].rstrip("/")
     today = date.today()
+    skip = skip or set()
     store_all = []
     for f in sorted(vidmod.vdir(cfg).glob("*.json")):
         d = json.loads(f.read_text(encoding="utf-8"))
@@ -77,6 +78,8 @@ def inspect_videos(cfg, svc, sample: int = 200) -> dict:
             if v.get("status") == "published":
                 store_all.append((f, d, v))
     def due(v):
+        if vidmod.page_slug(v) in skip:   # noindex-Seiten nicht mehr prüfen (spart Kontingent)
+            return None
         pub = v.get("published_at") or ""
         last = (v.get("checked_at") or "")[:10]
         if "indexed" not in v:
@@ -281,7 +284,9 @@ def build(cfg: dict, store) -> tuple[str, Path]:
     vstat = None
     if svc is not None:
         try:
-            vstat = inspect_videos(cfg, svc, sample=int((cfg.get("status") or {}).get("video_inspect_per_day", 200)))
+            noidx = {v["url"].rstrip("/").rsplit("/", 1)[-1] for d in vidmod.collect(cfg, store).values()
+                     for v in d["videos"] if v.get("noindex")}
+            vstat = inspect_videos(cfg, svc, sample=int((cfg.get("status") or {}).get("video_inspect_per_day", 200)), skip=noidx)
             idx_rows.append(f"| Videoseiten | {vstat['published']} | {vstat['checked_ever']} | {vstat['indexed']} |")
             tstat = inspect_themes(cfg, svc, sample=int((cfg.get("status") or {}).get("theme_inspect_per_day", 100)))
             idx_rows.append(f"| Themenseiten | {tstat['live']} | {tstat['checked']} | {tstat['indexed']} |")

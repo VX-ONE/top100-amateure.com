@@ -187,6 +187,8 @@ def crawl_local(cfg: dict, store, root: Path) -> dict:
     # Sitemaps
     sm_urls = []
     for f in site.glob("sitemap*.xml"):
+        if f.name == "sitemap-entfernt.xml":   # bewusst noindex-Seiten (damit Google das noindex abholt)
+            continue
         x = f.read_text(encoding="utf-8")
         if "<sitemapindex" in x:
             continue
@@ -657,9 +659,7 @@ def model_keyword_checks(c: dict, F: Findings, cfg: dict, store, metrics: dict) 
             miss[f"{k}: „Porno“ fehlt in Title/H1"].append(p)
         if k == "Model-Profil" and alt and norm(alt) not in title:
             miss[f"{k}: zweite Schreibweise fehlt im Title"].append(p)
-        for kw in modelmod.porn_keywords(name, alt):
-            if norm(kw) not in body:   # ganze Wörter: „ porn “ zählt nicht als „ porno “ und umgekehrt
-                miss[f"{k}: Long-Tail „{kw}“ fehlt"].append(p)
+        # Seit 27.10.2026 keine Pflicht mehr, alle vier Varianten im Text aufzuzählen (wirkt wie Keyword-Stuffing).
     n = sum(tot.values())
     bad = len({p for v in miss.values() for p in v})
     metrics["model_keyword_pages"] = n
