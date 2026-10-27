@@ -217,7 +217,7 @@ def generate(cfg: dict, collected: dict, mock_mode: bool = False, log=print) -> 
         c = load_content(cfg, k)
         if c:
             by_theme.setdefault(k.split("/")[1], []).append(_text(c))
-    llm_cfg = dict(cfg, llm=dict(cfg["llm"], model=(cfg.get("videos") or {}).get("llm_model") or cfg["llm"]["model"], max_tokens=4000))
+    llm_cfg = dict(cfg, llm=dict(cfg["llm"], model=(cfg.get("videos") or {}).get("llm_model") or cfg["llm"]["model"], max_tokens=8000))
     stats = {"erzeugt": 0, "verworfen": 0}
 
     def work(k):
