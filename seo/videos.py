@@ -884,6 +884,12 @@ def video_svg(name: str, line: str, duration: str) -> str:
             '</svg>')
 
 
+def index_title(m: dict, n: int, suffix: str = "") -> str:
+    """Title der Video-Übersicht eines Models: Ziel-URL für „<Name> Pornos“ (Profilseite: „<Name> Porno“)."""
+    t = f"{m['name']} Pornos & Videos: alle {n} Clips{suffix}"
+    return t + " bei Visit-X" if len(t) <= 53 and not suffix else t
+
+
 def page_slug(v: dict) -> str:
     return f"{v['id']}-{slugify(v['vx_slug'].replace('--', '-'))[:70]}"
 
@@ -947,8 +953,9 @@ def render(cfg: dict, store, env, ctx: dict, write, site_dir: Path, base: str, c
                 **ctx, m=m, model_slug=slug, vids=chunk, total=len(vids), page_no=pno, pages_n=pages_n, offset=(pno - 1) * per,
                 prev_url=prev_url, next_url=next_url, model_link=deeplink(cfg, f"/de/amateur/{platform(m)}/videos/"),
                 canonical=f"{base}/{path}", robots="index,follow",
-                title=f"{m['name']} Videos: alle {len(vids)} Clips im Überblick{suffix}",
-                description=(f"Alle {len(vids)} {m['name']} Videos bei Visit-X, neueste zuerst: Titel und Länge im Überblick{suffix}. "
+                title=index_title(m, len(vids), suffix),
+                description=(f"Alle {len(vids)} {m['name']} Pornos und Videos" + (f" ({m['name_alt']})" if m.get("name_alt") else "") +
+                             f" bei Visit-X, neueste zuerst: Titel und Länge im Überblick{suffix}. "
                              f"Direkt ansehen mit 100 % Aufladebonus.")[:158],
                 og_image=f"{base}/logo.png"))
             urls.append((f"{base}/{path}", max((v.get("published_at", "") for v in chunk), default="") or date.today().isoformat()))

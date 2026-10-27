@@ -622,6 +622,50 @@ def offline_checks(c: dict, F: Findings, cfg: dict, metrics: dict) -> None:
     metrics["pages_bytes_median"] = st.median(d["bytes"] for d in pages.values()) if pages else 0
 
 
+def model_keyword_checks(c: dict, F: Findings, cfg: dict, store, metrics: dict) -> None:
+    """Pflicht-Keywords je Model (Vorgabe Chris): „<Name> Porno/Pornos“ und der Name zusammen- und auseinandergeschrieben
+    auf Profil, Video-Übersicht und jeder Videoseite."""
+    from . import models as modelmod
+    alts = {m["name"]: m.get("name_alt", "") for m in modelmod.load_models(cfg)}
+    model_of = {s: p.get("model") for s, p in store.pages().items() if p.get("kind") == "model"}
+    miss = defaultdict(list)
+    tot = Counter()
+
+    def norm(t):
+        return re.sub(r"[\s\-_()]+", " ", t.lower())
+
+    for p, d in c["pages"].items():
+        seg = p.strip("/").split("/")[0]
+        name = model_of.get(seg)
+        if not name or d["kind"] not in ("Model-Profil", "Videoseite", "Video-Übersicht"):
+            continue
+        alt = alts.get(name, "")
+        k = d["kind"]
+        tot[k] += 1
+        head = norm(d["title"] + " " + " ".join(h for l, h in d["headings"] if l <= 2))
+        body = norm(d["full"])
+        forms = [name] + ([alt] if alt else [])
+        porn = re.compile(r"(?:" + "|".join(re.escape(norm(f).strip()) for f in forms) + r")\s+porn", re.I)
+        if k == "Model-Profil":
+            ok_p = bool(porn.search(norm(d["title"]))) and bool(porn.search(norm(" ".join(h for l, h in d["headings"] if l == 1))))
+        elif k == "Video-Übersicht":
+            ok_p = bool(porn.search(norm(d["title"]))) and bool(porn.search(head))
+        else:
+            ok_p = bool(porn.search(head))
+        if not ok_p:
+            miss[f"{k}: „{name} Porno“ fehlt in Title/H1/H2"].append(p)
+        for f in forms:
+            if norm(f).strip() not in (norm(d["title"]) if k == "Model-Profil" else body):
+                miss[f"{k}: Schreibweise „{f}“ fehlt" + (" im Title" if k == "Model-Profil" else "")].append(p)
+    n = sum(tot.values())
+    bad = len({p for v in miss.values() for p in v})
+    metrics["model_keyword_pages"] = n
+    metrics["model_keyword_missing"] = bad
+    F.check("Keyword Strategy", "Model-Keywords (Name + Porno, beide Schreibweisen) auf Profil/Übersicht/Videos", _ok(bad, n))
+    for txt, ps in miss.items():
+        F.add("P1", "Keywords", txt, len(ps), ps)
+
+
 def repo_checks(F: Findings, metrics: dict, root: Path) -> None:
     """Code-Qualität, Geheimnisse im Repository, Pipeline-Zuverlässigkeit der letzten 14 Tage."""
     try:
@@ -1003,6 +1047,11 @@ def gsc_checks(cfg: dict, F: Findings, metrics: dict, c: dict) -> None:
         else:
             clusters["C Allgemein"] += r["clicks"]
     metrics["clicks_by_cluster_28d"] = dict(clusters)
+    pq_rows = [r for r in q if "porn" in r["keys"][0].lower()]
+    metrics["porn_queries_28d"] = {"anzahl": len(pq_rows), "klicks": int(sum(r["clicks"] for r in pq_rows)),
+                                   "impressionen": int(sum(r["impressions"] for r in pq_rows)),
+                                   "top": [f"{r['keys'][0]} – {int(r['clicks'])} Klicks, {int(r['impressions'])} Impr., Pos. {r['position']:.1f}"
+                                           for r in sorted(pq_rows, key=lambda r: -r["impressions"])[:10]]}
     # Indexierung aus den Prüfständen der Pipeline
     idx_known = idx_yes = 0
     for f in Path(cfg.get("_data", "data")).joinpath("videos").glob("*.json"):
@@ -1109,7 +1158,7 @@ def report(F: Findings, metrics: dict, sc: dict, total, coverage, prev: dict | N
             ("orphans", "verwaiste Seiten"), ("depth_max", "max. Klicktiefe"), ("dup_titles", "doppelte Titel"),
             ("missing_desc", "fehlende Descriptions"), ("h1_bad", "Seiten mit H1-Fehler"), ("img_no_alt", "Bilder ohne Alt"),
             ("ld_errors", "JSON-LD-Fehler"), ("similarity_median", "Ähnlichkeit (Median)"), ("near_duplicates", "Beinahe-Duplikate"),
-            ("explicit_pages", "Seiten mit expliziten Wörtern"), ("affiliate_param_bad", "Affiliate-Links ohne Parameter"),
+            ("explicit_pages", "Seiten mit expliziten Wörtern"), ("model_keyword_missing", "Seiten ohne Model-Pflichtkeywords"), ("affiliate_param_bad", "Affiliate-Links ohne Parameter"),
             ("cannibalized_queries", "kannibalisierte Suchanfragen"), ("low_ctr_pages", "Top-10-Seiten mit CTR < 3 %"),
             ("ttfb_median_ms", "TTFB Median (ms)"), ("live_bad", "Live-Fehler (Stichprobe)"),
             ("pipeline_errors_14d", "Pipeline-Fehler 14 Tage")]
@@ -1135,6 +1184,10 @@ def report(F: Findings, metrics: dict, sc: dict, total, coverage, prev: dict | N
     L.append("")
     if metrics.get("clicks_by_cluster_28d"):
         L += ["**Klicks nach Keyword-Cluster (28 Tage):** " + " · ".join(f"{k}: {v:.0f}" for k, v in sorted(metrics["clicks_by_cluster_28d"].items())), ""]
+    if metrics.get("porn_queries_28d"):
+        pqm = metrics["porn_queries_28d"]
+        L += [f"**Suchanfragen mit „Porno/Porn“ (28 Tage):** {pqm['anzahl']} Anfragen, {pqm['klicks']} Klicks, "
+              f"{pqm['impressionen']} Impressionen", ""] + [f"- {x}" for x in pqm["top"]] + [""]
     if metrics.get("top_chances"):
         L += ["**Ranking-Chancen (Position 4–20, meiste Impressionen):**", ""] + [f"- {x}" for x in metrics["top_chances"]] + [""]
     # 6 Technik
@@ -1221,6 +1274,7 @@ def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: 
     log("Audit: lokaler Crawl …")
     c = crawl_local(cfg, store, root)
     offline_checks(c, F, cfg, metrics)
+    model_keyword_checks(c, F, cfg, store, metrics)
     log(f"Audit: Offline-Prüfungen fertig ({metrics['urls_total']} URLs)")
     stage("Repository und Tests", "Code Quality", 300, repo_checks, F, metrics, root)
     stage("Workflow-Statistik", "Scalability", 120, workflow_checks, F, metrics)

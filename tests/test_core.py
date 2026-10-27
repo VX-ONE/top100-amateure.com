@@ -56,6 +56,26 @@ class Affiliate(unittest.TestCase):
                 self.assertEqual(q.get(k, [None])[0], v, f"{l}: {k}")
 
 
+class ModelKeywords(unittest.TestCase):
+    def test_zweite_schreibweise(self):
+        from seo import models
+        self.assertEqual(models.name_alt("Lia Engel"), "LiaEngel")
+        self.assertEqual(models.name_alt("LanaGrey"), "Lana Grey")
+        self.assertEqual(models.name_alt("Lisa-Sophie"), "LisaSophie")
+        self.assertEqual(models.name_alt("Candysamira"), "")
+
+    def test_profil_title_enthaelt_porno_und_beide_schreibweisen(self):
+        t, h = render.model_title("LanaGrey", "Lana Grey")
+        for x in (t, h):
+            self.assertIn("LanaGrey", x)
+            self.assertIn("Lana Grey", x)
+            self.assertIn("Porno", x)
+        self.assertLessEqual(len(t), 65)
+
+    def test_uebersicht_title(self):
+        self.assertIn("Pornos", videos.index_title({"name": "LanaGrey"}, 37))
+
+
 class Header(unittest.TestCase):
     def test_csp_mit_hash(self):
         with tempfile.TemporaryDirectory() as d:

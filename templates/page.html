@@ -25,7 +25,7 @@
   {% if is_model %}
   <nav class="mtabs" aria-label="{{ model_name }}">
     <a class="on" href="/{{ slug }}/" aria-current="page">Profil</a>
-    {% if vids %}<a href="/{{ slug }}/videos/">▶ Alle {{ vids_total }} Videos von {{ model_name }}</a>{% endif %}
+    {% if vids %}<a href="/{{ slug }}/videos/">▶ Alle {{ vids_total }} {{ model_name }} Pornos &amp; Videos</a>{% endif %}
     {% if ctas %}<a class="ext" href="{{ ctas[0].url }}" rel="sponsored nofollow noopener" target="_blank">Zu {{ model_name }} bei {{ provider }}</a>{% endif %}
   </nav>
   {% endif %}
@@ -75,7 +75,8 @@
 
   {% if vids %}
   <section class="block" id="videos">
-    <div class="block-head"><h2>Neueste {{ model_name }} Videos</h2><a class="more" href="/{{ slug }}/videos/">Alle {{ vids_total }} Videos &rsaquo;</a></div>
+    <div class="block-head"><h2>Neueste {{ model_name }} Pornos &amp; Videos</h2><a class="more" href="/{{ slug }}/videos/">Alle {{ vids_total }} &rsaquo;</a></div>
+    <p>Bei uns findest du {{ vids_total }} {{ model_name }} Pornos{% if model_alt %} (auch als {{ model_alt }} gesucht){% endif %} mit eigener Infoseite zu jedem Video. Hier die neuesten, alle weiteren in der <a href="/{{ slug }}/videos/">Übersicht aller {{ model_name }} Pornos</a>.</p>
     <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ model_name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
   </section>
   {% endif %}

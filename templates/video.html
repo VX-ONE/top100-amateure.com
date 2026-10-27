@@ -8,20 +8,20 @@
   {"@type": "BreadcrumbList", "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": site.name, "item": root},
     {"@type": "ListItem", "position": 2, "name": m.name, "item": root + model_slug + "/"},
-    {"@type": "ListItem", "position": 3, "name": m.name + " Videos", "item": root + model_slug + "/videos/"},
+    {"@type": "ListItem", "position": 3, "name": m.name + " Pornos & Videos", "item": root + model_slug + "/videos/"},
     {"@type": "ListItem", "position": 4, "name": v.title, "item": canonical}]}
 ] + ([{"@type": "FAQPage", "mainEntity": faq_ld}] if faq_ld else [])}|tojson }}</script>
 {% endblock %}
 {% block main %}
 <article class="article">
-  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/models/">Top-Models</a> &rsaquo; <a href="/{{ model_slug }}/">{{ m.name }}</a> &rsaquo; <a href="/{{ model_slug }}/videos/">Videos</a></nav>
-  <nav class="mtabs" aria-label="{{ m.name }}"><a href="/{{ model_slug }}/">Profil</a><a class="on" href="/{{ model_slug }}/videos/">▶ Alle {{ m.name }} Videos</a></nav>
+  <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/models/">Top-Models</a> &rsaquo; <a href="/{{ model_slug }}/">{{ m.name }}</a> &rsaquo; <a href="/{{ model_slug }}/videos/">{{ m.name }} Pornos</a></nav>
+  <nav class="mtabs" aria-label="{{ m.name }}"><a href="/{{ model_slug }}/">Profil</a><a class="on" href="/{{ model_slug }}/videos/">▶ Alle {{ m.name }} Pornos &amp; Videos</a></nav>
   <h1>{{ c.h1 or (v.title ~ ' – ' ~ m.name ~ ' Video') }}</h1>
-  <a class="vcover" href="{{ v.link }}" rel="sponsored nofollow noopener" target="_blank"><img src="{{ v.img }}" alt="{{ m.name }} Video: {{ v.title }}" width="1200" height="630" fetchpriority="high"></a>
+  <a class="vcover" href="{{ v.link }}" rel="sponsored nofollow noopener" target="_blank"><img src="{{ v.img }}" alt="{{ m.name }} Porno-Video: {{ v.title }}" width="1200" height="630" fetchpriority="high"></a>
   <ul class="vmeta">
     {% if v.duration %}<li><strong>Länge:</strong> {{ v.duration }} min</li>{% endif %}
     {% if v.date %}<li><strong>Veröffentlicht:</strong> {{ v.date[8:10] }}.{{ v.date[5:7] }}.{{ v.date[0:4] }}</li>{% endif %}
-    <li><strong>Model:</strong> <a href="/{{ model_slug }}/">{{ m.name }}</a></li>
+    <li><strong>Model:</strong> <a href="/{{ model_slug }}/">{{ m.name }}</a>{% if m.name_alt %} ({{ m.name_alt }}){% endif %}</li>
     <li><strong>Format:</strong> Video mit Ton, ab 18</li>
   </ul>
   <div class="vcta">
@@ -39,7 +39,7 @@
   {% endfor %}
   {% if v.tags_clean %}<p class="vtags">{% for t in v.tags_clean %}<span>#{{ t }}</span>{% endfor %}</p>{% endif %}
   {% if key_guides %}<aside class="guides-box"><p class="block-title">Gut zu wissen vor dem Anmelden</p><ul>{% for g in key_guides[:5] %}<li><a href="/{{ g.slug }}/">{{ g.label }}</a></li>{% endfor %}</ul></aside>{% endif %}
-  <section class="faq"><h2>Fragen zum {{ m.name }} Video</h2>
+  <section class="faq"><h2>Fragen zum {{ m.name }} Porno</h2>
   {% for f in c.faq %}<details><summary><h3>{{ f.q }}</h3></summary>{{ f.a|md|safe }}</details>{% endfor %}
   </section>
   <div class="vcta">
@@ -48,12 +48,12 @@
     <p class="howto">✓ Auf {{ provider }} einfach auf „Kostenlos anmelden“ tippen, der Gutscheincode ist hinterlegt.</p>
   </div>
   {% if related %}
-  <section class="block"><div class="block-head"><h2>Weitere {{ m.name }} Videos</h2><a class="more" href="/{{ model_slug }}/videos/">Alle &rsaquo;</a></div>
+  <section class="block"><div class="block-head"><h2>Weitere {{ m.name }} Pornos</h2><a class="more" href="/{{ model_slug }}/videos/">Alle &rsaquo;</a></div>
   <div class="grid">{% for r in related %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ m.name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
   </section>
   {% endif %}
   <nav class="pager" aria-label="Weitere Videos">{% if prev_v %}<a href="{{ prev_v.url }}" rel="prev">&lsaquo; {{ prev_v.title }}</a>{% endif %}{% if next_v %}<a href="{{ next_v.url }}" rel="next">{{ next_v.title }} &rsaquo;</a>{% endif %}</nav>
-  <p><a class="more" href="/{{ model_slug }}/videos/">Alle {{ m.name }} Videos</a> · <a class="more" href="/{{ model_slug }}/">Profil von {{ m.name }}</a></p>
+  <p><a class="more" href="/{{ model_slug }}/videos/">Alle {{ m.name }} Pornos &amp; Videos</a> · <a class="more" href="/{{ model_slug }}/">Profil von {{ m.name }}</a></p>
 </article>
 <div class="stickycta"><a class="btn" href="{{ v.link }}" rel="sponsored nofollow noopener" target="_blank">▶ Zum Video{% if bonus %} · 🎁 100 %{% endif %}</a><span>Werbung · 18+</span></div>
 {% endblock %}

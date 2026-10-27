@@ -6,23 +6,23 @@
   {"@type": "BreadcrumbList", "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": site.name, "item": canonical.split("/" + model_slug + "/")[0] + "/"},
     {"@type": "ListItem", "position": 2, "name": m.name, "item": canonical.split("/videos/")[0] + "/"},
-    {"@type": "ListItem", "position": 3, "name": m.name + " Videos", "item": canonical}]},
+    {"@type": "ListItem", "position": 3, "name": m.name + " Pornos & Videos", "item": canonical}]},
   {"@type": "ItemList", "itemListElement": items}]}|tojson }}</script>
 {% endblock %}
 {% block main %}
 <nav class="crumbs"><a href="/">{{ site.name }}</a> &rsaquo; <a href="/videos/">Videos</a> &rsaquo; <a href="/{{ model_slug }}/">{{ m.name }}</a> &rsaquo; {% if page_no and page_no > 1 %}<a href="/{{ model_slug }}/videos/">Videos</a> &rsaquo; Seite {{ page_no }}{% else %}Videos{% endif %}</nav>
 <section class="landing slim" style="--c:#be123c">
-  <h1>{{ m.name }} Videos{% if page_no and page_no > 1 %} – Seite {{ page_no }}{% else %}: die neuesten Clips{% endif %}</h1>
+  <h1>{{ m.name }} Pornos &amp; Videos{% if page_no and page_no > 1 %} – Seite {{ page_no }}{% else %}: die neuesten Clips{% endif %}</h1>
   <nav class="mtabs" aria-label="{{ m.name }}">
     <a href="/{{ model_slug }}/">Profil</a>
-    <a class="on" href="/{{ model_slug }}/videos/" aria-current="page">▶ Alle {{ total or vids|length }} Videos</a>
+    <a class="on" href="/{{ model_slug }}/videos/" aria-current="page">▶ Alle {{ total or vids|length }} Pornos &amp; Videos</a>
     {% if model_link %}<a class="ext" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">Bei {{ provider }} ansehen</a>{% endif %}
   </nav>
-  <p class="lead">Hier findest du die neuesten {{ m.name }} Videos bei {{ provider }} mit Länge und Datum. Jedes Video hat eine eigene Seite mit Infos und dem direkten Link{% if bonus %}, inklusive {{ bonus.badge }} über unseren Link{% endif %}.</p>
+  <p class="lead">Hier findest du alle {{ m.name }} Pornos{% if m.name_alt %} (auch als {{ m.name_alt }} gesucht){% endif %} bei {{ provider }}, neueste zuerst, mit Länge und Datum. Jedes Video hat eine eigene Seite mit Infos und dem direkten Link{% if bonus %}, inklusive {{ bonus.badge }} über unseren Link{% endif %}.</p>
 </section>
 {% if model_link %}<p><a class="btn" href="{{ model_link }}" rel="sponsored nofollow noopener" target="_blank">▶ Alle {{ m.name }} Videos bei {{ provider }}</a></p>
 {% if payment_note %}<p class="paynote">💳 {{ payment_note }}</p>{% endif %}{% endif %}
-<h2>{% if pages_n and pages_n > 1 %}{{ m.name }} Videos {{ offset + 1 }}–{{ offset + vids|length }} von {{ total }} (neueste zuerst){% else %}Alle {{ vids|length }} {{ m.name }} Videos im Überblick{% endif %}</h2>
+<h2>{% if pages_n and pages_n > 1 %}{{ m.name }} Pornos {{ offset + 1 }}–{{ offset + vids|length }} von {{ total }} (neueste zuerst){% else %}Alle {{ vids|length }} {{ m.name }} Pornos im Überblick{% endif %}</h2>
 <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ m.name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min{% if r.date %} · {{ r.date[8:10] }}.{{ r.date[5:7] }}.{{ r.date[0:4] }}{% endif %}</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
 {% if pages_n and pages_n > 1 %}<nav class="pagination" aria-label="Seiten">
   {% if prev_url %}<a href="{{ prev_url }}" rel="prev">&lsaquo; Neuere</a>{% endif %}

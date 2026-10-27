@@ -144,6 +144,15 @@ def _security_headers(cfg: dict, site_dir: Path) -> None:
         hp.write_text(txt, encoding="utf-8")
 
 
+def model_title(name: str, alt: str) -> tuple[str, str]:
+    """Title und H1 einer Model-Profilseite: Name in beiden Schreibweisen + „Porno“ (wichtigste Long-Tail-Suchanfragen)."""
+    ab = f"{name} ({alt})" if alt else name
+    title = next(t for t in (f"{ab} Porno: Videos, Livecam & Chat bei Visit-X", f"{ab} Porno: Videos, Livecam & Chat",
+                             f"{ab} Porno & Videos bei Visit-X", f"{ab} Porno & Videos", f"{name} Porno & Videos")
+                 if len(t) <= 65 or t.startswith(f"{name} Porno & Videos"))
+    return title, f"{ab} Porno bei Visit-X: Profil, Videos, Livecam und Chat"
+
+
 def build_site(cfg: dict, store) -> dict:
     root: Path = cfg["_root"]
     site_dir: Path = cfg["_site"]
@@ -212,6 +221,7 @@ def build_site(cfg: dict, store) -> dict:
     newest_videos = sorted((dict(v, model=d["model"]["name"]) for d in collected.values() for v in d["videos"]),
                            key=lambda v: int(v["id"]), reverse=True)
     page_tpl = env.get_template("page.html")
+    name_alts = {m["name"]: m.get("name_alt", "") for m in modelmod.load_models(cfg)}
     thumbs: dict[str, str] = {}
     for slug, c in contents.items():
         meta = pages[slug]
@@ -219,6 +229,8 @@ def build_site(cfg: dict, store) -> dict:
         is_model = meta.get("kind") == modelmod.PAGE_KIND
         if is_model:
             c = _fix_case(c, meta.get("primary", ""))
+            t, h = model_title(meta.get("model", ""), name_alts.get(meta.get("model", ""), ""))
+            c = dict(c, title=t, h1=h)
             ctas = [{"label": l["label"], "url": l["url"]} for l in modelmod.links_for(cfg, meta.get("model"))]
         else:
             ctas = []
@@ -240,7 +252,7 @@ def build_site(cfg: dict, store) -> dict:
             thumbs[slug] = image["svg"]
         write(f"{slug}/index.html", page_tpl.render(
             **ctx, c=c, slug=slug, image=image, og_image=(base + image["png"]) if image and image["png"] else "", meta=meta, canonical=f"{base}/{slug}/",
-            ctas=ctas, is_model=is_model, model_cards=others, vx_profile=_vx_profile(cfg, meta.get("model", "")) if is_model else "", vids=(collected.get(slug) or {}).get("videos", [])[:6], vids_total=len((collected.get(slug) or {}).get("videos", [])), model_name=meta.get("model", ""),
+            ctas=ctas, is_model=is_model, model_cards=others, vx_profile=_vx_profile(cfg, meta.get("model", "")) if is_model else "", vids=(collected.get(slug) or {}).get("videos", [])[:6], vids_total=len((collected.get(slug) or {}).get("videos", [])), model_name=meta.get("model", ""), model_alt=name_alts.get(meta.get("model", ""), ""),
             related=rel, topic_label=labels.get(meta["topic"], ""), section=section_of(meta["topic"]),
             hub_url=(f"{base}/models/" if is_model else f"{base}/themen/{meta['topic']}/"),
             published=fmt_date(meta.get("modified_at") or meta["published_at"]), robots="index,follow",

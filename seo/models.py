@@ -30,6 +30,21 @@ def blocked_names(cfg: dict) -> set[str]:
     return {normalize(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()}
 
 
+def name_alt(name: str) -> str:
+    """Zweite Schreibweise des Modelnamens für Suchanfragen: getrennt geschriebene Namen zusammen ("Lia Engel" →
+    "LiaEngel"), zusammengeschriebene getrennt ("LanaGrey" → "Lana Grey"), Bindestrich-Namen zusammen ("Lisa-Sophie" →
+    "LisaSophie"; der Bindestrich gilt bei Google wie ein Leerzeichen). Leer, wenn es keine zweite Schreibweise gibt."""
+    def cap(p: str) -> str:
+        return p[:1].upper() + p[1:].lower() if (p.islower() or (p.isupper() and len(p) >= 3)) else p
+    if re.search(r"[\s-]", name.strip()):
+        parts = [cap(p) for p in re.split(r"[\s-]+", name.strip()) if p]
+        return "".join(parts) if len(parts) > 1 else ""
+    parts = re.findall(r"[A-ZÄÖÜ]?[a-zäöüß]+\d*|[A-ZÄÖÜ]+\d*(?![a-zäöüß])|\d+", name)
+    if len(parts) < 2 or "".join(parts) != name:
+        return ""
+    return " ".join(parts)
+
+
 def load_models(cfg: dict) -> list[dict]:
     p = _models_file(cfg)
     if not p.exists():
@@ -46,6 +61,7 @@ def load_models(cfg: dict) -> list[dict]:
         active = bool(m.get("active", True)) and not (variants & blocked)
         models.append({
             "name": name,
+            "name_alt": str(m.get("name_alt") or name_alt(name)),
             "slug": m.get("slug") or slugify(name),
             "active": active,
             "variants": sorted(variants, key=len, reverse=True),
