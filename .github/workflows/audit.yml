@@ -19,7 +19,7 @@ concurrency:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 75
     steps:
       - name: Nur in geraden Kalenderwochen (alle zwei Wochen)
         id: due
@@ -43,7 +43,7 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: Seite bauen (aktueller Stand) und Audit ausführen
         if: steps.due.outputs.run == 'yes'
-        timeout-minutes: 40
+        timeout-minutes: 50
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
           GH_TOKEN: ${{ github.token }}
@@ -55,9 +55,9 @@ jobs:
         run: |
           git config user.name "seo-bot"
           git config user.email "seo-bot@users.noreply.github.com"
-          for f in reports/*-audit.md reports/*-audit.log reports/audit; do if [ -e "$f" ]; then git add "$f"; fi; done
+          for f in reports/*-audit.md reports/*-audit.log reports/*-audit-stack.log reports/audit; do if [ -e "$f" ]; then git add "$f"; fi; done
           git diff --cached --quiet || git commit -m "Audit $(date +%Y-%m-%d)"
-          git pull --rebase -q -X theirs && git push -q
+          git pull --rebase --autostash -q -X theirs && git push -q
       - name: Als GitHub-Issue zustellen
         if: steps.due.outputs.run == 'yes'
         env:

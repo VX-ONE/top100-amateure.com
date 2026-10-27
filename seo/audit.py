@@ -1162,6 +1162,9 @@ def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: 
             fh.write(line + "\n")
     F = Findings()
     metrics: dict = {}
+    import faulthandler
+    _fh = (root / "reports" / f"{date.today().isoformat()}-audit-stack.log").open("w", encoding="utf-8")
+    faulthandler.dump_traceback_later(300, repeat=True, file=_fh)   # Diagnose bei Hängern: Stacks alle 5 min
     import signal
     import traceback
 
@@ -1195,7 +1198,7 @@ def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: 
     c = crawl_local(cfg, store, root)
     offline_checks(c, F, cfg, metrics)
     log(f"Audit: Offline-Prüfungen fertig ({metrics['urls_total']} URLs)")
-    stage("Repository und Tests", "Code Quality", 600, repo_checks, F, metrics, root)
+    stage("Repository und Tests", "Code Quality", 300, repo_checks, F, metrics, root)
     stage("Workflow-Statistik", "Scalability", 120, workflow_checks, F, metrics)
     # zurückgezogene Videoseiten (für die Live-Prüfung)
     withdrawn = []
@@ -1211,11 +1214,13 @@ def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: 
     metrics["withdrawn_videos"] = len(withdrawn)
     ok_live = False
     if live:
-        ok_live = bool(stage("Live-Prüfung", "Technical SEO", 600, live_checks, c, F, metrics, cfg, withdrawn))
+        ok_live = bool(stage("Live-Prüfung", "Technical SEO", 300, live_checks, c, F, metrics, cfg, withdrawn))
         log(f"Live: erreichbar {ok_live}, Fehler {metrics.get('live_bad')}, TTFB {metrics.get('ttfb_median_ms')} ms")
         if ok_live and browser:
-            stage("Labormessung", "Core Web Vitals", 600, browser_checks, c, F, metrics)
-    stage("Search Console", "Keyword Strategy", 600, gsc_checks, cfg, F, metrics, c)
+            stage("Labormessung", "Core Web Vitals", 420, browser_checks, c, F, metrics)
+    stage("Search Console", "Keyword Strategy", 300, gsc_checks, cfg, F, metrics, c)
+    faulthandler.cancel_dump_traceback_later()
+    _fh.close()
     sc, total, coverage = scores(F)
     today = date.today().isoformat()
     prev = _prev(root, today)
