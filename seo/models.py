@@ -45,6 +45,11 @@ def name_alt(name: str) -> str:
     return " ".join(parts)
 
 
+def porn_keywords(name: str, alt: str = "") -> list[str]:
+    """Pflicht-Long-Tails je Model (Vorgabe Chris): Name + Porno/Porn, in beiden Schreibweisen."""
+    return [f"{n} {w}" for n in ([name] + ([alt] if alt else [])) for w in ("Porno", "Porn")]
+
+
 def load_models(cfg: dict) -> list[dict]:
     p = _models_file(cfg)
     if not p.exists():

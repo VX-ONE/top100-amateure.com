@@ -76,9 +76,11 @@
   {% if vids %}
   <section class="block" id="videos">
     <div class="block-head"><h2>Neueste {{ model_name }} Pornos &amp; Videos</h2><a class="more" href="/{{ slug }}/videos/">Alle {{ vids_total }} &rsaquo;</a></div>
-    <p>Bei uns findest du {{ vids_total }} {{ model_name }} Pornos{% if model_alt %} (auch als {{ model_alt }} gesucht){% endif %} mit eigener Infoseite zu jedem Video. Hier die neuesten, alle weiteren in der <a href="/{{ slug }}/videos/">Übersicht aller {{ model_name }} Pornos</a>.</p>
+    <p>Egal ob du nach {% if model_alt %}{{ model_name }} Porno, {{ model_name }} Porn, {{ model_alt }} Porno oder {{ model_alt }} Porn{% else %}{{ model_name }} Porno oder {{ model_name }} Porn{% endif %} suchst: Bei uns findest du {{ vids_total }} Videos von {{ model_name }} mit eigener Infoseite zu jedem Clip. Hier die neuesten, alle weiteren in der <a href="/{{ slug }}/videos/">Übersicht aller {{ model_name }} Pornos</a>.</p>
     <div class="grid">{% for r in vids %}<a class="card k-models" href="{{ r.url }}"><img src="{{ r.img }}" alt="{{ model_name }} Video: {{ r.title }}" width="1200" height="630" loading="lazy"><span class="card-body"><span class="badge">{{ r.duration }} min</span><h3>{{ r.title }}</h3></span></a>{% endfor %}</div>
   </section>
+  {% elif is_model %}
+  <p>Egal ob du nach {% if model_alt %}{{ model_name }} Porno, {{ model_name }} Porn, {{ model_alt }} Porno oder {{ model_alt }} Porn{% else %}{{ model_name }} Porno oder {{ model_name }} Porn{% endif %} suchst: Die Videos von {{ model_name }} findest du direkt bei {{ provider }}.</p>
   {% endif %}
 
   {% if model_cards %}

@@ -632,7 +632,7 @@ def model_keyword_checks(c: dict, F: Findings, cfg: dict, store, metrics: dict) 
     tot = Counter()
 
     def norm(t):
-        return re.sub(r"[\s\-_()]+", " ", t.lower())
+        return " " + re.sub(r"[\s\-_()„“\"‚‘:;,.!?/]+", " ", t.lower()).strip() + " "
 
     for p, d in c["pages"].items():
         seg = p.strip("/").split("/")[0]
@@ -642,26 +642,20 @@ def model_keyword_checks(c: dict, F: Findings, cfg: dict, store, metrics: dict) 
         alt = alts.get(name, "")
         k = d["kind"]
         tot[k] += 1
-        head = norm(d["title"] + " " + " ".join(h for l, h in d["headings"] if l <= 2))
-        body = norm(d["full"])
-        forms = [name] + ([alt] if alt else [])
-        porn = re.compile(r"(?:" + "|".join(re.escape(norm(f).strip()) for f in forms) + r")\s+porn", re.I)
-        if k == "Model-Profil":
-            ok_p = bool(porn.search(norm(d["title"]))) and bool(porn.search(norm(" ".join(h for l, h in d["headings"] if l == 1))))
-        elif k == "Video-Übersicht":
-            ok_p = bool(porn.search(norm(d["title"]))) and bool(porn.search(head))
-        else:
-            ok_p = bool(porn.search(head))
-        if not ok_p:
-            miss[f"{k}: „{name} Porno“ fehlt in Title/H1/H2"].append(p)
-        for f in forms:
-            if norm(f).strip() not in (norm(d["title"]) if k == "Model-Profil" else body):
-                miss[f"{k}: Schreibweise „{f}“ fehlt" + (" im Title" if k == "Model-Profil" else "")].append(p)
+        title, h1 = norm(d["title"]), norm(" ".join(h for l, h in d["headings"] if l == 1))
+        body = norm(d["full"] + " " + d["title"])
+        if k in ("Model-Profil", "Video-Übersicht") and "porn" not in title + h1:
+            miss[f"{k}: „Porno“ fehlt in Title/H1"].append(p)
+        if k == "Model-Profil" and alt and norm(alt) not in title:
+            miss[f"{k}: zweite Schreibweise fehlt im Title"].append(p)
+        for kw in modelmod.porn_keywords(name, alt):
+            if norm(kw) not in body:   # ganze Wörter: „ porn “ zählt nicht als „ porno “ und umgekehrt
+                miss[f"{k}: Long-Tail „{kw}“ fehlt"].append(p)
     n = sum(tot.values())
     bad = len({p for v in miss.values() for p in v})
     metrics["model_keyword_pages"] = n
     metrics["model_keyword_missing"] = bad
-    F.check("Keyword Strategy", "Model-Keywords (Name + Porno, beide Schreibweisen) auf Profil/Übersicht/Videos", _ok(bad, n))
+    F.check("Keyword Strategy", "Model-Long-Tails (Name/Name zusammen + Porno/Porn) auf Profil/Übersicht/Videos", _ok(bad, n))
     for txt, ps in miss.items():
         F.add("P1", "Keywords", txt, len(ps), ps)
 
