@@ -789,7 +789,9 @@ def live_checks(c: dict, F: Findings, metrics: dict, cfg: dict, withdrawn: list[
     metrics["redirects"] = redir
     # Zurückgezogene Videoseiten: 404 (gewollt) – Info, ob Google sie noch kennt, liefert die Search Console
     wd = [w for w in withdrawn[:20]]
-    wd_bad = [w for w in wd if _fetch(base + w, method="HEAD")[0] not in (404, 410)]
+    wd_st = {w: _fetch(base + w)[0] for w in wd}
+    wd_bad = [f"{w} → {s}" for w, s in wd_st.items() if s == 200]   # nur echte Auslieferung zählt (keine Drosselung/Fehler)
+    metrics["withdrawn_status"] = dict(Counter(str(s) for s in wd_st.values()))
     if wd_bad:
         F.add("P2", "Indexierung", "Zurückgezogene Videoseiten sind noch erreichbar", len(wd_bad), wd_bad)
     # Sicherheitsheader live
