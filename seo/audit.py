@@ -804,20 +804,8 @@ def live_checks(c: dict, F: Findings, metrics: dict, cfg: dict, withdrawn: list[
     return True
 
 
-def browser_checks(c: dict, F: Findings, metrics: dict) -> None:
-    """Labormessung mit Chromium (Playwright): LCP, CLS, FCP, TTFB, Gewicht, Überlauf, Tippziele – mobil + Desktop."""
-    try:
-        from playwright.sync_api import sync_playwright
-    except Exception:
-        F.check("Core Web Vitals", "Labormessung", None, "Playwright nicht installiert")
-        return
-    pages = c["pages"]
-    pick = {}
-    for kind in ("Startseite", "Model-Profil", "Videoseite", "Video-Übersicht", "Ratgeber/Themen", "Hub"):
-        cand = sorted(p for p, d in pages.items() if d["kind"] == kind)
-        if cand:
-            pick[kind] = cand[len(cand) // 2]
-    js_metrics = """() => new Promise(res => {
+
+JS_METRICS = """() => new Promise(done => {
       let lcp = 0, cls = 0;
       new PerformanceObserver(l => { for (const e of l.getEntries()) lcp = e.startTime; }).observe({type: 'largest-contentful-paint', buffered: true});
       new PerformanceObserver(l => { for (const e of l.getEntries()) if (!e.hadRecentInput) cls += e.value; }).observe({type: 'layout-shift', buffered: true});
@@ -833,34 +821,63 @@ def browser_checks(c: dict, F: Findings, metrics: dict) -> None:
         }).length;
         const tiny = [...document.querySelectorAll('p,li,a,span')].filter(e => parseFloat(getComputedStyle(e).fontSize) < 12 && e.textContent.trim().length > 3).length;
         const cta = [...document.querySelectorAll('a[rel~=sponsored].btn')].map(e => e.getBoundingClientRect().top + scrollY)[0];
-        res({lcp, cls, fcp, ttfb: nav.responseStart || 0, bytes, requests: res.length + 1, overflow, small, tiny,
+        done({lcp, cls, fcp, ttfb: nav.responseStart || 0, bytes, requests: res.length + 1, overflow, small, tiny,
              cta_top: cta === undefined ? null : cta, vh: innerHeight});
       }, 2500);
     })"""
-    out = {}
+
+
+def lab_measure(url: str, mode: str) -> dict:
+    """Eine Labormessung (wird als eigener Prozess gestartet: python -m seo.audit lab <url> <mobil|desktop>)."""
+    from playwright.sync_api import sync_playwright
+    vp = {"width": 390, "height": 844} if mode == "mobil" else {"width": 1366, "height": 900}
     with sync_playwright() as pw:
         b = pw.chromium.launch()
-        for mode, vp in (("mobil", {"width": 390, "height": 844}), ("desktop", {"width": 1366, "height": 900})):
-            ctx = b.new_context(viewport=vp, user_agent=UA, is_mobile=mode == "mobil", device_scale_factor=2 if mode == "mobil" else 1)
-            ctx.add_init_script("try{localStorage.setItem('ga_consent','denied')}catch(e){}")
-            for kind, p in pick.items():
-                pg = ctx.new_page()
-                if mode == "mobil":
-                    try:
-                        cdp = ctx.new_cdp_session(pg)
-                        cdp.send("Network.emulateNetworkConditions", {"offline": False, "latency": 150,
-                                 "downloadThroughput": 1.6e6 / 8, "uploadThroughput": 750e3 / 8})
-                        cdp.send("Emulation.setCPUThrottlingRate", {"rate": 4})
-                    except Exception:
-                        pass
-                try:
-                    pg.goto(c["base"] + p, wait_until="load", timeout=30000)
-                    out[f"{kind} ({mode})"] = pg.evaluate(js_metrics)
-                except Exception as e:
-                    out[f"{kind} ({mode})"] = {"error": str(e)[:120]}
-                pg.close()
-            ctx.close()
+        ctx = b.new_context(viewport=vp, user_agent=UA, is_mobile=mode == "mobil", device_scale_factor=2 if mode == "mobil" else 1)
+        ctx.add_init_script("try{localStorage.setItem('ga_consent','denied')}catch(e){}")
+        ctx.set_default_timeout(30000)
+        pg = ctx.new_page()
+        if mode == "mobil":
+            try:
+                cdp = ctx.new_cdp_session(pg)
+                cdp.send("Network.emulateNetworkConditions", {"offline": False, "latency": 150,
+                         "downloadThroughput": 1.6e6 / 8, "uploadThroughput": 750e3 / 8})
+                cdp.send("Emulation.setCPUThrottlingRate", {"rate": 4})
+            except Exception:
+                pass
+        pg.goto(url, wait_until="load", timeout=45000)
+        res = pg.evaluate(JS_METRICS)
         b.close()
+    return res
+
+
+def browser_checks(c: dict, F: Findings, metrics: dict) -> None:
+    """Labormessung mit Chromium (Playwright): LCP, CLS, FCP, TTFB, Gewicht, Überlauf, Tippziele – mobil + Desktop."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except Exception:
+        F.check("Core Web Vitals", "Labormessung", None, "Playwright nicht installiert")
+        return
+    pages = c["pages"]
+    pick = {}
+    for kind in ("Startseite", "Model-Profil", "Videoseite", "Video-Übersicht", "Ratgeber/Themen", "Hub"):
+        cand = sorted(p for p, d in pages.items() if d["kind"] == kind)
+        if cand:
+            pick[kind] = cand[len(cand) // 2]
+    out = {}
+    import sys
+    for mode in ("mobil", "desktop"):
+        for kind, p in pick.items():
+            # Jede Messung in einem eigenen Prozess mit hartem Zeitlimit (Playwright kann sonst hängen bleiben)
+            try:
+                r = subprocess.run([sys.executable, "-m", "seo.audit", "lab", c["base"] + p, mode], capture_output=True,
+                                   text=True, timeout=90)
+                line = (r.stdout.strip().splitlines() or ["{}"])[-1]
+                out[f"{kind} ({mode})"] = json.loads(line) if line.startswith("{") else {"error": (r.stderr or "keine Ausgabe")[-120:]}
+            except subprocess.TimeoutExpired:
+                out[f"{kind} ({mode})"] = {"error": "Zeitlimit 90 s"}
+            except Exception as e:
+                out[f"{kind} ({mode})"] = {"error": str(e)[:120]}
     metrics["lab"] = out
     ok = [v for v in out.values() if "error" not in v]
     if not ok:
@@ -1234,3 +1251,12 @@ def run(cfg: dict, store, root: Path | None = None, live: bool = True, browser: 
     path.write_text(md, encoding="utf-8")
     log(f"Audit: Gesamtnote {total}, {len(F.items)} Funde → {path}")
     return md, path
+
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) == 4 and sys.argv[1] == "lab":
+        try:
+            print(json.dumps(lab_measure(sys.argv[2], sys.argv[3])))
+        except Exception as e:
+            print(json.dumps({"error": f"{type(e).__name__}: {str(e)[:100]}"}))
