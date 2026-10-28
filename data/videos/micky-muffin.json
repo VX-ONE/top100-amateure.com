@@ -1212,7 +1212,10 @@
     "Latex"
    ],
    "date": "2026-04-10",
-   "refreshed_at": "2026-10-27"
+   "refreshed_at": "2026-10-27",
+   "indexed": false,
+   "coverage": "Gefunden – zurzeit nicht indexiert",
+   "checked_at": "2026-10-28T13:32:40+00:00"
   },
   {
    "id": "28077491",
@@ -1277,7 +1280,10 @@
     "Squirt"
    ],
    "date": "2026-04-03",
-   "refreshed_at": "2026-10-28"
+   "refreshed_at": "2026-10-28",
+   "indexed": false,
+   "coverage": "Gefunden – zurzeit nicht indexiert",
+   "checked_at": "2026-10-28T13:32:40+00:00"
   },
   {
    "id": "23954577",

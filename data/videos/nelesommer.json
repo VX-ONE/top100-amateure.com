@@ -1072,7 +1072,10 @@
     "Squirt"
    ],
    "date": "2026-10-25",
-   "refreshed_at": "2026-10-26"
+   "refreshed_at": "2026-10-26",
+   "indexed": false,
+   "coverage": "Gefunden – zurzeit nicht indexiert",
+   "checked_at": "2026-10-28T13:32:40+00:00"
   },
   {
    "id": "28046872",
