@@ -915,7 +915,8 @@
    "date": "2026-07-19",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28272301",
@@ -957,7 +958,8 @@
    "date": "2026-07-12",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28258454",
@@ -996,7 +998,8 @@
    "date": "2026-07-05",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28249911",
@@ -1038,7 +1041,8 @@
    "date": "2026-06-24",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28238248",
@@ -1080,7 +1084,8 @@
    "date": "2026-06-21",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28238253",
@@ -1122,7 +1127,8 @@
    "date": "2026-06-21",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28238227",
@@ -1164,7 +1170,8 @@
    "date": "2026-06-19",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28236626",
@@ -1205,7 +1212,8 @@
    "date": "2026-06-14",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28221484",
@@ -1247,7 +1255,8 @@
    "date": "2026-06-01",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28427081",
@@ -1296,5 +1305,5 @@
  "vx_model_id": 11840262,
  "model": "LeaKirsch",
  "platform": "leakirsch",
- "updated": "2026-10-27"
+ "updated": "2026-10-28"
 }

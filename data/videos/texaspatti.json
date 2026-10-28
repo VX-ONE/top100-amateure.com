@@ -829,7 +829,8 @@
    "date": "2026-05-31",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28207866",
@@ -870,7 +871,8 @@
    "date": "2026-05-30",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28206978",
@@ -912,7 +914,8 @@
    "date": "2026-05-24",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28193746",
@@ -954,7 +957,8 @@
    "date": "2026-05-17",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28185256",
@@ -996,7 +1000,8 @@
    "date": "2026-05-01",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28183334",
@@ -1033,7 +1038,8 @@
    "date": "2026-05-10",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28167844",
@@ -1070,7 +1076,8 @@
    "date": "2026-04-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28163944",
@@ -1110,7 +1117,8 @@
    "date": "2026-04-19",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28152962",
@@ -1152,7 +1160,8 @@
    "date": "2026-04-12",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28152598",
@@ -1194,7 +1203,8 @@
    "date": "2026-05-03",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28419577",
@@ -1272,7 +1282,8 @@
     "Pov",
     "Rollenspiel"
    ],
-   "date": "2026-04-06"
+   "date": "2026-04-06",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28146422",
@@ -10825,7 +10836,7 @@
  ],
  "model": "texaspatti",
  "platform": "texaspatti",
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "vx_model_id": 3128728,
  "backlog_done": "2026-10-26"
 }

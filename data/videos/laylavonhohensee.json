@@ -32,7 +32,8 @@
    "date": "2026-10-18",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "21271316",
@@ -183,7 +184,8 @@
    "date": "2026-09-20",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "21271244",
@@ -305,7 +307,8 @@
    "date": "2026-08-30",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "21270984",
@@ -347,7 +350,8 @@
    "date": "2026-08-23",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "21271337",
@@ -461,7 +465,8 @@
    "date": "2026-07-19",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28276693",
@@ -834,7 +839,8 @@
    "date": "2026-04-05",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "21271507",
@@ -1022,5 +1028,5 @@
  "vx_model_id": 12326418,
  "model": "LaylavonHohensee",
  "platform": "laylavonhohensee",
- "updated": "2026-10-27"
+ "updated": "2026-10-28"
 }

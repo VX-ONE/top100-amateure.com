@@ -428,7 +428,8 @@
    "refresh_fails": 1,
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28222839",
@@ -676,7 +677,8 @@
    "date": "2026-08-28",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28133124",
@@ -718,7 +720,8 @@
    "date": "2026-06-05",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28133118",
@@ -754,7 +757,8 @@
    "date": "2026-06-19",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28133101",
@@ -790,7 +794,8 @@
    "date": "2026-06-12",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28077753",
@@ -825,7 +830,8 @@
    "date": "2026-05-01",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28077749",
@@ -863,7 +869,8 @@
    "date": "2026-05-22",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28077505",
@@ -899,7 +906,8 @@
    "date": "2026-04-17",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28077503",
@@ -940,7 +948,8 @@
    "date": "2026-04-24",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28077489",
@@ -1267,7 +1276,8 @@
     "Rollenspiel",
     "Squirt"
    ],
-   "date": "2026-04-03"
+   "date": "2026-04-03",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "23954577",
@@ -1364,7 +1374,8 @@
     "Anal",
     "Titten"
    ],
-   "date": "2026-03-15"
+   "date": "2026-03-15",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28055426",
@@ -6127,7 +6138,7 @@
  ],
  "model": "Micky-Muffin",
  "platform": "micky-muffin",
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "vx_model_id": 12489735,
  "backlog_done": "2026-10-26"
 }

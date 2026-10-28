@@ -1023,7 +1023,8 @@
    "date": "2026-06-11",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28226796",
@@ -1059,7 +1060,8 @@
    "date": "2026-06-07",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28222424",
@@ -1100,7 +1102,8 @@
    "date": "2026-06-03",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28219186",
@@ -1142,7 +1145,8 @@
    "date": "2026-05-31",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28211953",
@@ -1184,7 +1188,8 @@
    "date": "2026-05-25",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28426548",
@@ -1308,7 +1313,8 @@
     "Sex",
     "Domina"
    ],
-   "date": "2026-05-24"
+   "date": "2026-05-24",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28208271",
@@ -1348,7 +1354,8 @@
     "Anal",
     "Domina"
    ],
-   "date": "2026-05-20"
+   "date": "2026-05-20",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28199592",
@@ -1429,7 +1436,8 @@
     "Scheide",
     "Ritze"
    ],
-   "date": "2026-05-10"
+   "date": "2026-05-10",
+   "refresh_fails": 1
   },
   {
    "id": "28192778",
@@ -1469,7 +1477,8 @@
     "Vibrator",
     "Sextoys"
    ],
-   "date": "2026-05-06"
+   "date": "2026-05-06",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28189568",
@@ -1509,7 +1518,8 @@
     "Blowjob",
     "Titten"
    ],
-   "date": "2026-05-03"
+   "date": "2026-05-03",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28181405",
@@ -1549,7 +1559,8 @@
     "Analverkehr",
     "Lutschen"
    ],
-   "date": "2026-04-26"
+   "date": "2026-04-26",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28176877",
@@ -11010,7 +11021,7 @@
  ],
  "model": "LanaGrey",
  "platform": "lanagrey",
- "updated": "2026-10-27",
- "vx_model_id": null,
+ "updated": "2026-10-28",
+ "vx_model_id": 12135526,
  "backlog_done": "2026-10-26"
 }

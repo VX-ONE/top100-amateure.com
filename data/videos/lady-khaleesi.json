@@ -781,7 +781,8 @@
    "date": "2018-06-12",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "1392374",
@@ -815,7 +816,8 @@
    "date": "2018-05-03",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "1386029",
@@ -845,7 +847,8 @@
    "date": "2018-04-14",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "1383245",
@@ -879,7 +882,8 @@
    "date": "2018-04-06",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "1382674",
@@ -910,7 +914,8 @@
    "date": "2018-04-05",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "1381184",
@@ -951,7 +956,8 @@
    "date": "2018-04-02",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "1368667",
@@ -985,7 +991,8 @@
    "date": "2018-03-06",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "1367796",
@@ -1017,7 +1024,8 @@
    "date": "2018-03-02",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "1353421",
@@ -1045,7 +1053,8 @@
    "date": "2018-01-12",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28436756",
@@ -1087,5 +1096,5 @@
  "vx_model_id": 7767964,
  "model": "Lady-Khaleesi",
  "platform": "lady-khaleesi",
- "updated": "2026-10-27"
+ "updated": "2026-10-28"
 }

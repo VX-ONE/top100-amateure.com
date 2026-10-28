@@ -896,12 +896,13 @@
    "date": "2025-03-16",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   }
  ],
  "model": "LovinLou",
  "platform": "lovinlou",
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "vx_model_id": 12411240,
  "backlog_done": "2026-10-26"
 }

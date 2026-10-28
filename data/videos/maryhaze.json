@@ -710,7 +710,8 @@
    "date": "2026-08-16",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28318725",
@@ -740,7 +741,8 @@
    "date": "2026-08-12",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28310353",
@@ -774,7 +776,8 @@
    "date": "2026-08-08",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28310352",
@@ -804,7 +807,8 @@
    "date": "2026-08-07",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28301134",
@@ -843,7 +847,8 @@
    "date": "2026-08-02",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28294093",
@@ -882,7 +887,8 @@
    "date": "2026-07-28",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28294091",
@@ -923,7 +929,8 @@
    "date": "2026-07-30",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28429639",
@@ -1092,7 +1099,8 @@
     "Squirt",
     "Facial"
    ],
-   "date": "2026-07-26"
+   "date": "2026-07-26",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28248905",
@@ -1190,7 +1198,8 @@
     "Domina",
     "Latex"
    ],
-   "date": "2026-07-19"
+   "date": "2026-07-19",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28278555",
@@ -1218,7 +1227,8 @@
     "Anal",
     "Creampie"
    ],
-   "date": "2026-07-16"
+   "date": "2026-07-16",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28277156",
@@ -1257,7 +1267,8 @@
     "Orgasmus",
     "Solo"
    ],
-   "date": "2026-07-16"
+   "date": "2026-07-16",
+   "refreshed_at": "2026-10-28"
   },
   {
    "id": "28272507",
@@ -2547,7 +2558,7 @@
  ],
  "model": "MaryHaze",
  "platform": "maryhaze",
- "updated": "2026-10-27",
+ "updated": "2026-10-28",
  "vx_model_id": 19250458,
  "backlog_done": "2026-10-26"
 }
