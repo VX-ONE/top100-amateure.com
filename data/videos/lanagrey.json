@@ -1437,7 +1437,8 @@
     "Ritze"
    ],
    "date": "2026-05-10",
-   "refresh_fails": 1
+   "refresh_fails": 1,
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "28192778",
@@ -1596,7 +1597,8 @@
     "Sex",
     "Outdoor"
    ],
-   "date": "2026-04-22"
+   "date": "2026-04-22",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "28168224",
@@ -1636,7 +1638,8 @@
     "Solo",
     "Domina"
    ],
-   "date": "2026-04-14"
+   "date": "2026-04-14",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "28164433",
@@ -11021,7 +11024,7 @@
  ],
  "model": "LanaGrey",
  "platform": "lanagrey",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "vx_model_id": 12135526,
  "backlog_done": "2026-10-26"
 }

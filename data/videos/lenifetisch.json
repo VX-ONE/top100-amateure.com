@@ -836,7 +836,8 @@
    "indexed": true,
    "coverage": "Gesendet und indexiert",
    "checked_at": "2026-10-27T08:54:57+00:00",
-   "refresh_fails": 1
+   "refresh_fails": 1,
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2992255",
@@ -999,7 +1000,8 @@
    "date": "2026-06-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2902305",
@@ -1033,7 +1035,8 @@
    "date": "2026-06-12",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2901352",
@@ -1070,7 +1073,8 @@
    "date": "2026-06-22",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-10-27T08:54:57+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2682251",
@@ -1104,7 +1108,8 @@
    "date": "2026-10-21",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2871250",
@@ -1146,7 +1151,8 @@
    "date": "2026-06-25",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2537683",
@@ -1181,7 +1187,8 @@
    "date": "2026-06-24",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "4336912",
@@ -8900,7 +8907,7 @@
  ],
  "model": "LeniFetisch",
  "platform": "lenifetisch",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "vx_model_id": 10327862,
  "backlog_done": "2026-10-26"
 }

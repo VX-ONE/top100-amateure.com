@@ -1299,7 +1299,8 @@
     "Ritze",
     "Spalte"
    ],
-   "date": "2025-09-14"
+   "date": "2025-09-14",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "19373596",
@@ -1328,7 +1329,8 @@
     "Blowjob",
     "Domina"
    ],
-   "date": "2025-02-13"
+   "date": "2025-02-13",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "19073972",
@@ -1368,7 +1370,8 @@
     "Anal",
     "Blowjob"
    ],
-   "date": "2025-02-09"
+   "date": "2025-02-09",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "18927921",
@@ -2819,7 +2822,7 @@
  ],
  "model": "NeleSommer",
  "platform": "nelesommer",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "vx_model_id": 12600979,
  "backlog_done": "2026-10-26"
 }

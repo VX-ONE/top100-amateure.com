@@ -1373,7 +1373,8 @@
     "Kommen",
     "Wichsanleitung / JOI"
    ],
-   "date": "2026-01-02"
+   "date": "2026-01-02",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "28042760",
@@ -1409,7 +1410,8 @@
     "Solo",
     "Facial"
    ],
-   "date": "2025-12-21"
+   "date": "2025-12-21",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "28034151",
@@ -1449,7 +1451,8 @@
     "Scheide",
     "Ritze"
    ],
-   "date": "2025-12-21"
+   "date": "2025-12-21",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "28010940",
@@ -1489,7 +1492,8 @@
     "Kommen",
     "Creampie"
    ],
-   "date": "2025-11-26"
+   "date": "2025-11-26",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "28007953",
@@ -1529,7 +1533,8 @@
     "Orgasmus",
     "Blowjob"
    ],
-   "date": "2025-11-23"
+   "date": "2025-11-23",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "27997385",
@@ -1568,7 +1573,8 @@
     "Cumshot",
     "Squirt"
    ],
-   "date": "2025-11-16"
+   "date": "2025-11-16",
+   "refresh_fails": 1
   },
   {
    "id": "27988809",
@@ -1608,7 +1614,8 @@
     "Wichsanleitung / JOI",
     "Domina"
    ],
-   "date": "2025-11-09"
+   "date": "2025-11-09",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "27980469",
@@ -10003,7 +10010,7 @@
  ],
  "model": "Chloe-Privat",
  "platform": "chloe-privat",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "vx_model_id": 5435693,
  "backlog_done": "2026-10-26"
 }

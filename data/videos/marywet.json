@@ -618,7 +618,8 @@
    "indexed": true,
    "coverage": "Gesendet und indexiert",
    "checked_at": "2026-10-27T12:41:07+00:00",
-   "refresh_fails": 1
+   "refresh_fails": 1,
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "3474609",
@@ -870,7 +871,8 @@
    "date": "2026-02-06",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "3057051",
@@ -912,7 +914,8 @@
    "date": "2025-12-31",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "3056998",
@@ -954,7 +957,8 @@
    "date": "2025-12-05",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2974367",
@@ -996,7 +1000,8 @@
    "date": "2026-06-07",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2903047",
@@ -1038,7 +1043,8 @@
    "date": "2026-05-31",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2898619",
@@ -1080,7 +1086,8 @@
    "date": "2026-08-09",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2895318",
@@ -1120,7 +1127,8 @@
    "date": "2026-05-01",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T12:41:07+00:00"
+   "checked_at": "2026-10-27T12:41:07+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2172881",
@@ -1162,7 +1170,8 @@
    "date": "2026-09-10",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refresh_fails": 1
   },
   {
    "id": "2795788",
@@ -1204,7 +1213,8 @@
    "date": "2026-03-01",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-27T13:21:35+00:00",
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "2895307",
@@ -10864,7 +10874,7 @@
  ],
  "model": "MaryWet",
  "platform": "marywet",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "vx_model_id": 7532515,
  "backlog_done": "2026-10-26"
 }

@@ -653,7 +653,8 @@
     "Latex"
    ],
    "date": "2024-11-18",
-   "refresh_fails": 1
+   "refresh_fails": 1,
+   "refreshed_at": "2026-10-29"
   },
   {
    "id": "13636056",
@@ -921,5 +922,5 @@
  "vx_model_id": 12237839,
  "model": "bhad-jenny",
  "platform": "bhad-jenny",
- "updated": "2026-10-28"
+ "updated": "2026-10-29"
 }
