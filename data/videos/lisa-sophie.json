@@ -1063,7 +1063,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": false,
    "coverage": "Gefunden – zurzeit nicht indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-10-29T13:44:24+00:00"
   },
   {
    "id": "28226196",
@@ -11323,7 +11323,10 @@
    "date": "2026-10-27",
    "status": "published",
    "seen": "2026-10-27",
-   "published_at": "2026-10-27"
+   "published_at": "2026-10-27",
+   "indexed": false,
+   "coverage": "Gefunden – zurzeit nicht indexiert",
+   "checked_at": "2026-10-29T13:44:24+00:00"
   }
  ],
  "model": "Lisa-Sophie",
