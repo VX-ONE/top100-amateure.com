@@ -1574,7 +1574,8 @@
     "Squirt"
    ],
    "date": "2025-11-16",
-   "refresh_fails": 1
+   "refresh_fails": 1,
+   "refreshed_at": "2026-10-30"
   },
   {
    "id": "27988809",
@@ -10010,7 +10011,7 @@
  ],
  "model": "Chloe-Privat",
  "platform": "chloe-privat",
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "vx_model_id": 5435693,
  "backlog_done": "2026-10-26"
 }

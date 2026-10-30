@@ -1633,7 +1633,8 @@
     "flotter Dreier"
    ],
    "date": "2026-05-03",
-   "refresh_fails": 1
+   "refresh_fails": 1,
+   "refreshed_at": "2026-10-30"
   },
   {
    "id": "28185964",
@@ -6627,7 +6628,7 @@
  ],
  "model": "Egon-Kowalski",
  "platform": "egon-kowalski",
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "vx_model_id": 12184281,
  "backlog_done": "2026-10-26"
 }
