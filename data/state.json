@@ -1,7 +1,9 @@
 {
+  "daily_pages": 10,
   "paused_topics": {},
+  "ramp_updated": "2026-11-02",
   "throttle": {
     "active": false,
-    "updated": "2026-11-01"
+    "updated": "2026-11-02"
   }
 }
