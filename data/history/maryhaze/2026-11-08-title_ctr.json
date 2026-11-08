@@ -1,0 +1,66 @@
+{
+  "cta_text": "Wenn du dir selbst ein Bild machen möchtest, findest du das Profil von MaryHaze und die aktuellen Bedingungen direkt bei Visit-X.",
+  "faq": [
+    {
+      "a": "Bei Visit-X sind über 70 Videos von MaryHaze verfügbar. In der Top-100-Videoübersicht wird sie mit Videos aufgeführt. Den aktuellen Bestand zeigt dir der Anbieter direkt.",
+      "q": "Wie viele Videos von MaryHaze gibt es bei Visit-X?"
+    },
+    {
+      "a": "Ja, MaryHaze zeigt ihre experimentierfreudige, wilde Seite in Videos und in der Livecam. Wann sie online ist, siehst du in ihrem Profil bei Visit-X. Live-Shows und Chat laufen in Echtzeit ab.",
+      "q": "Hat MaryHaze eine Livecam?"
+    },
+    {
+      "a": "Du lädst Guthaben in Euro auf, und der Betrag wird in Tokens umgewandelt. Gängige Zahlungsarten sind Sofortüberweisung, PayPal, Kreditkarte und SEPA. Welche Methode verfügbar ist, zeigt Visit-X beim Aufladen.",
+      "q": "Wie bezahle ich bei Visit-X?"
+    },
+    {
+      "a": "Über den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Der Gutscheincode ist automatisch hinterlegt. Es gelten die Bedingungen von Visit-X.",
+      "q": "Gibt es einen Bonus beim Aufladen?"
+    },
+    {
+      "a": "Nein, die Seite ist ein unabhängiger Ratgeber. Sie wird weder vom Model noch vom Anbieter betrieben. Maßgeblich sind immer die aktuellen Angaben und Bedingungen bei Visit-X.",
+      "q": "Wird diese Seite von MaryHaze oder Visit-X betrieben?"
+    }
+  ],
+  "h1": "MaryHaze: Videos, Livecam und Chat bei Visit-X",
+  "image": {
+    "alt": "Bühnenvorhang mit Scheinwerfern, Bildschirm, Sprechblasen und Sternen auf blauem Hintergrund, Schriftzug MaryH",
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 630\">\n<defs>\n<linearGradient id=\"bg\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n<stop offset=\"0\" stop-color=\"#1d4ed8\" />\n<stop offset=\"1\" stop-color=\"#0b1b4d\" />\n</linearGradient>\n<linearGradient id=\"cu\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n<stop offset=\"0\" stop-color=\"#7f1d3a\" />\n<stop offset=\"0.5\" stop-color=\"#b8284f\" />\n<stop offset=\"1\" stop-color=\"#7f1d3a\" />\n</linearGradient>\n<radialGradient id=\"beam\" cx=\"0.5\" cy=\"0\" r=\"1\">\n<stop offset=\"0\" stop-color=\"#fff7c2\" stop-opacity=\"0.55\" />\n<stop offset=\"1\" stop-color=\"#fff7c2\" stop-opacity=\"0\" />\n</radialGradient>\n</defs>\n<rect width=\"1200\" height=\"630\" fill=\"url(#bg)\" />\n<polygon points=\"300,60 150,630 450,630\" fill=\"url(#beam)\" />\n<polygon points=\"900,60 750,630 1050,630\" fill=\"url(#beam)\" />\n<rect x=\"0\" y=\"0\" width=\"1200\" height=\"40\" fill=\"#0b1b4d\" />\n<circle cx=\"300\" cy=\"60\" r=\"26\" fill=\"#fde68a\" />\n<rect x=\"280\" y=\"30\" width=\"40\" height=\"20\" fill=\"#111827\" />\n<circle cx=\"900\" cy=\"60\" r=\"26\" fill=\"#fde68a\" />\n<rect x=\"880\" y=\"30\" width=\"40\" height=\"20\" fill=\"#111827\" />\n<path d=\"M0 0 H200 Q150 200 190 330 Q150 480 200 630 H0 Z\" fill=\"url(#cu)\" />\n<path d=\"M1200 0 H1000 Q1050 200 1010 330 Q1050 480 1000 630 H1200 Z\" fill=\"url(#cu)\" />\n<path d=\"M70 0 Q40 300 70 630\" stroke=\"#5a1228\" stroke-width=\"6\" fill=\"none\" />\n<path d=\"M130 0 Q100 300 130 630\" stroke=\"#5a1228\" stroke-width=\"6\" fill=\"none\" />\n<path d=\"M1130 0 Q1160 300 1130 630\" stroke=\"#5a1228\" stroke-width=\"6\" fill=\"none\" />\n<path d=\"M1070 0 Q1100 300 1070 630\" stroke=\"#5a1228\" stroke-width=\"6\" fill=\"none\" />\n<rect x=\"400\" y=\"110\" width=\"400\" height=\"230\" rx=\"16\" fill=\"#0f172a\" stroke=\"#e2e8f0\" stroke-width=\"10\" />\n<rect x=\"416\" y=\"126\" width=\"368\" height=\"198\" rx=\"6\" fill=\"#38bdf8\" />\n<polygon points=\"570,165 570,285 670,225\" fill=\"#fff\" />\n<rect x=\"580\" y=\"340\" width=\"40\" height=\"20\" fill=\"#e2e8f0\" />\n<rect x=\"530\" y=\"360\" width=\"140\" height=\"12\" rx=\"6\" fill=\"#e2e8f0\" />\n<path d=\"M240 130 H350 Q365 130 365 145 V200 Q365 215 350 215 H290 L260 245 V215 H240 Q225 215 225 200 V145 Q225 130 240 130 Z\" fill=\"#fff\" />\n<path d=\"M850 160 H960 Q975 160 975 175 V230 Q975 245 960 245 H940 V275 L910 245 H850 Q835 245 835 230 V175 Q835 160 850 160 Z\" fill=\"#fde68a\" />\n<polygon points=\"295,155 301,172 319,172 305,183 310,200 295,190 280,200 285,183 271,172 289,172\" fill=\"#1d4ed8\" />\n<polygon points=\"905,185 910,198 924,198 913,206 917,220 905,212 893,220 897,206 886,198 900,198\" fill=\"#1d4ed8\" />\n<polygon points=\"260,300 268,324 294,324 273,339 281,364 260,349 239,364 247,339 226,324 252,324\" fill=\"#fde68a\" />\n<polygon points=\"940,320 948,344 974,344 953,359 961,384 940,369 919,384 927,359 906,344 932,344\" fill=\"#fff\" />\n<text x=\"600\" y=\"530\" font-family=\"system-ui,Arial,sans-serif\" font-weight=\"800\" font-size=\"120\" fill=\"#fff\" text-anchor=\"middle\" stroke=\"#0b1b4d\" stroke-width=\"3\">MaryHaze</text>\n</svg>"
+  },
+  "intro": "MaryHaze hat ein eigenes Profil bei Visit-X und ist dort mit mehr als 70 Videos vertreten. Wer sie näher kennenlernen möchte, findet beim Anbieter Videos, die Livecam und den Direkt-Chat an einer Stelle. Sie ist schon länger in der Branche aktiv und steht für den natürlichen Stil.\n\nDiese Seite ist ein unabhängiger Ratgeber für Erwachsene ab 18 Jahren. Sie wird weder von MaryHaze noch von Visit-X betrieben. Du erfährst hier, was es bei Visit-X zu diesem Namen gibt, wie Videos, Chat und Live-Shows grundsätzlich funktionieren und worauf du bei Tokens, Aufladen und Abrechnung achten solltest.",
+  "key_takeaways": [
+    "MaryHaze hat ein Profil bei Visit-X, und über 70 Videos sind dort verfügbar.",
+    "Sie wird in der Top-100-Videoübersicht von Visit-X mit Videos aufgeführt.",
+    "Ihr Markenzeichen laut Anbieterangaben: der natürliche Stil mit einer experimentierfreudigen, wilden Seite in Videos und Livecam.",
+    "Bezahlt wird bei Visit-X mit Tokens; der Euro-Betrag wird beim Aufladen umgewandelt.",
+    "Über den Link dieser Seite gibt es einen 100-%-Aufladebonus; es gelten die Bedingungen von Visit-X."
+  ],
+  "meta_description": "MaryHaze bei Visit-X: Über 70 Videos, Livecam und Profil im Überblick – mit Infos zu Tokens, Zahlungsarten und dem Aufladebonus.",
+  "sections": [
+    {
+      "body": "Die wichtigsten Punkte auf einen Blick:\n\n- Bühnenname: MaryHaze\n- Anbieter: Visit-X, dort mit eigenem Profil\n- Videos: über 70 Videos bei Visit-X verfügbar\n- Sichtbarkeit: In der Top-100-Videoübersicht von Visit-X wird MaryHaze mit Videos aufgeführt\n- Erfahrung: schon länger in der Branche aktiv\n- Stil: steht für den natürlichen Stil\n- Persönlichkeit: beschreibt sich als offenen, positiven Menschen, der fast immer gut drauf ist\n- Interessen: liebt die Natur, ihren Garten und kuschelt gern mit ihren Katzen\n- Auftritt: zeigt in Videos und Livecam ihre experimentierfreudige, wilde Seite\n\nDiese Angaben stammen aus den Informationen zum Profil. Alles Weitere, etwa aktuelle Online-Zeiten oder einzelne Videotitel, zeigt dir Visit-X direkt beim Anbieter.",
+      "h2": "Steckbrief: MaryHaze"
+    },
+    {
+      "body": "### Was dich bei den Videos erwartet\n\nMit über 70 Videos ist das Angebot von MaryHaze bei Visit-X breit genug, um sich in Ruhe durchzuklicken. Dass sie in der Top-100-Videoübersicht des Anbieters auftaucht, zeigt, dass ihre Videos dort sichtbar platziert sind. Als Stilrichtung steht der natürliche Auftritt im Vordergrund, dazu kommt laut Profilangaben die experimentierfreudige, wilde Seite.\n\n### So findest du die Videos\n\nÜber den Link dieser Seite landest du zuerst im Videoangebot von Visit-X. Von dort aus kannst du nach dem Namen suchen oder dich über die Übersichten bis zu ihrem Profil klicken. Welche Videos gerade verfügbar sind und was sie kosten, steht jeweils beim Anbieter.\n\n### Nur offizielle Inhalte nutzen\n\nNutze ausschließlich Videos, die Visit-X offiziell bereitstellt. Material aus anderen Quellen, das privat, fremd oder ohne Erlaubnis verbreitet wird, gehört nicht dazu. Über den Anbieter selbst bekommst du außerdem saubere Qualität und weißt, wofür du bezahlst.",
+      "h2": "MaryHaze Videos bei Visit-X"
+    },
+    {
+      "body": "### Livecam: direkt und in Echtzeit\n\nNeben den Videos zeigt MaryHaze ihre wilde, experimentierfreudige Seite auch in der Livecam. Visit-X bietet Live-Cams mit Webcam-Models, Videos und Amateur-Angebote an. Der Unterschied zum Video: Bei der Livecam passiert alles im Moment, und du kannst mit dem Model interagieren.\n\n### Direkt-Chat und Live-Shows allgemein erklärt\n\nIm Direkt-Chat schreibst du mit dem Model, solange es online ist. Live-Shows laufen zeitgleich ab und sind nicht wiederholbar wie ein Video. Ob und wann MaryHaze online ist, siehst du in ihrem Profil bei Visit-X. Die Preismodelle für Chat und Show blendet der Anbieter vor der Nutzung ein. Schau dort kurz nach, bevor du startest.\n\n### Tipps für den Einstieg\n\n- Schau zuerst ins Profil, um ein Gefühl für Stil und Auftritt zu bekommen.\n- Behalte dein Guthaben im Blick, damit es keine Überraschungen gibt.\n- Bleib im Chat freundlich und respektvoll. Ihre offene, positive Art passt zu einem entspannten Umgang.",
+      "h2": "MaryHaze Livecam und Chat"
+    },
+    {
+      "body": "### Wie bezahlt wird\n\nBei Visit-X ist die normale Währung der Euro. Der Betrag, den du bezahlst, wird in Tokens umgewandelt, und mit diesen Tokens bezahlst du beim Anbieter. Ob einzelne Inhalte gratis sind oder was ein Video oder eine Show kostet, legt Visit-X fest. Die aktuellen Bedingungen stehen beim Anbieter.\n\n### Zahlungsarten\n\nGängige Zahlungsarten bei Visit-X sind:\n\n- Sofort bzw. Sofortüberweisung\n- PayPal\n- Kreditkarte\n- SEPA (Lastschrift oder Überweisung)\n\nWelche Methode im Einzelfall angeboten wird, zeigt Visit-X beim Aufladen.\n\n### Aufladebonus\n\nÜber den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus, also doppeltes Guthaben auf die Aufladung. Der Gutscheincode ist dabei automatisch hinterlegt und muss nicht eingegeben werden. Es gelten die Bedingungen von Visit-X. Lies sie vor dem Aufladen durch, damit du weißt, wie der Bonus genau funktioniert.",
+      "h2": "MaryHaze kostenlos? Kosten und Tokens"
+    },
+    {
+      "body": "Der Weg ist unkompliziert: Über den Link dieser Seite kommst du zuerst ins Videoangebot von Visit-X. Die Anmeldung startest du selbst über „Kostenlos anmelden“. Danach lädst du bei Bedarf Guthaben auf, wählst eine Zahlungsart und kannst Videos oder die Livecam nutzen.\n\nWer sich vorher einen Überblick verschaffen will, schaut zuerst Videos und Profil an und entscheidet dann, ob Livecam und Chat dazukommen. So behältst du Kosten und Tempo selbst in der Hand.",
+      "h2": "Zu MaryHaze und Visit-X: Anmeldung und Einstieg"
+    },
+    {
+      "body": "Die Angebote richten sich nur an Erwachsene ab 18 Jahren. Gib persönliche Daten sparsam weiter, wähle ein sicheres Passwort und nutze nur die Zahlungswege, die Visit-X selbst anbietet. Wie der Anbieter mit Daten umgeht, steht in seinen Datenschutzhinweisen.\n\nWenn dir der Stil von MaryHaze nicht zusagt, bietet Visit-X weitere Models, Cams und Amateur-Angebote. Vergleiche dort Profile, Stil und Kosten in Ruhe, bevor du dich entscheidest.",
+      "h2": "MaryHaze: Jugendschutz, Datenschutz und Alternativen"
+    }
+  ],
+  "title": "MaryHaze bei Visit-X: Videos, Livecam und Profil"
+}
