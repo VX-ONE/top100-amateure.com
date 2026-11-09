@@ -1,0 +1,498 @@
+{
+ "date": "2026-11-09",
+ "total": 98,
+ "coverage": 1.0,
+ "scores": {
+  "Technical SEO": 100,
+  "Crawling & Indexability": 96,
+  "On-Page SEO": 98,
+  "Content Quality": 98,
+  "Search Intent Alignment": 96,
+  "Keyword Strategy": 95,
+  "Internal Linking": 100,
+  "Information Architecture": 98,
+  "Structured Data": 100,
+  "Core Web Vitals": 100,
+  "Mobile Experience": 94,
+  "UX/UI": 100,
+  "Accessibility": 100,
+  "Conversion Optimization": 100,
+  "Affiliate Monetization": 100,
+  "Trust & Transparency": 100,
+  "Security": 100,
+  "Code Quality": 100,
+  "Scalability": 92,
+  "Maintainability": 97
+ },
+ "metrics": {
+  "urls_total": 2051,
+  "urls_indexable": 1110,
+  "by_kind": {
+   "Model-Profil": 78,
+   "Ratgeber/Themen": 65,
+   "Videoseite": 1769,
+   "Themenseite": 40,
+   "Video-Übersicht": 80,
+   "Rechtliches": 2,
+   "Startseite": 1,
+   "Hub": 16
+  },
+  "sitemap_urls": 1110,
+  "sitemap_missing": 0,
+  "not_in_sitemap": 0,
+  "canonical_bad": 0,
+  "broken_links": 0,
+  "broken_targets": 0,
+  "orphans": 0,
+  "unreachable": 0,
+  "depth_max": 4,
+  "depth_dist": {
+   "0": 1,
+   "1": 44,
+   "2": 310,
+   "3": 732,
+   "4": 23
+  },
+  "links_internal_avg": 39.2,
+  "inbound_median_by_kind": {
+   "Model-Profil": 123.5,
+   "Ratgeber/Themen": 7,
+   "Themenseite": 10.5,
+   "Video-Übersicht": 116.5,
+   "Videoseite": 9.0,
+   "Startseite": 4098,
+   "Hub": 2072.0
+  },
+  "dup_titles": 0,
+  "dup_desc": 0,
+  "missing_desc": 0,
+  "title_len_bad": 142,
+  "desc_len_bad": 0,
+  "h1_bad": 0,
+  "heading_skips": 0,
+  "og_image_missing": 0,
+  "images": 18312,
+  "img_no_alt": 0,
+  "img_no_dims": 0,
+  "img_formats": {
+   ".svg": 18312
+  },
+  "ld_errors": 0,
+  "ld_types": {
+   "Article": 143,
+   "BreadcrumbList": 2034,
+   "FAQPage": 1952,
+   "WebPage": 1769,
+   "CollectionPage": 123,
+   "ItemList": 124,
+   "WebSite": 1,
+   "Organization": 1
+  },
+  "words_median_by_kind": {
+   "Model-Profil": 1163.0,
+   "Ratgeber/Themen": 1249,
+   "Themenseite": 352.5,
+   "Video-Übersicht": 70.0,
+   "Videoseite": 531.0,
+   "Startseite": 137,
+   "Hub": 52.5
+  },
+  "boilerplate_share_by_kind": {
+   "Model-Profil": 0.072,
+   "Ratgeber/Themen": 0.039,
+   "Themenseite": 0.052,
+   "Video-Übersicht": 0.604,
+   "Videoseite": 0.019,
+   "Startseite": 0.0,
+   "Hub": 0.031
+  },
+  "similarity_median": 0.019,
+  "near_duplicates": 0,
+  "explicit_pages": 0,
+  "affiliate_links": 9252,
+  "affiliate_param_bad": 0,
+  "affiliate_rel_bad": 0,
+  "pages_without_affiliate": 0,
+  "external_hosts": {
+   "www.visit-x.net": 7354,
+   "m.visit-x.net": 1898,
+   "www.flibzee.com": 4
+  },
+  "bonus_mentions": {
+   "100": 1080
+  },
+  "external_scripts": [],
+  "pages_bytes_median": 17421,
+  "model_keyword_pages": 1966,
+  "model_keyword_missing": 0,
+  "secrets_found": 0,
+  "pipeline_logs_14d": 34,
+  "pipeline_errors_14d": 0,
+  "largest_modules": [
+   "audit.py (1359 Zeilen)",
+   "videos.py (1034 Zeilen)",
+   "cli.py (592 Zeilen)"
+  ],
+  "tests": "12 Tests, bestanden",
+  "workflows_14d": {
+   "Statusbericht": "17/17",
+   "Video-Operator": "19/20",
+   "Tageslauf": "15/15",
+   "Audit": "6/9",
+   "Werkzeug": "1/2"
+  },
+  "withdrawn_videos": 41,
+  "live_checked": 362,
+  "live_bad": 0,
+  "ttfb_median_ms": 229,
+  "ttfb_p90_ms": 360,
+  "redirects": {
+   "http → https": "301 → https://www.top100amateure.com/",
+   "ohne www → www": "301 → https://www.top100amateure.com/",
+   "ohne Slash → mit Slash": "308 → /models/"
+  },
+  "withdrawn_status": {
+   "404": 20
+  },
+  "live_headers": {
+   "strict-transport-security": "max-age=31536000; includeSubDomains",
+   "content-security-policy": "default-src 'self'; script-src 'self' 'sha256-AYPOIqR0uSV5TZVX6Eg/TqalNSNwVhLEQrDXTVqMMu4=' https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://*.google.com; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests",
+   "x-content-type-options": "nosniff",
+   "x-frame-options": "DENY",
+   "referrer-policy": "strict-origin-when-cross-origin",
+   "permissions-policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()",
+   "cache-control": "public, max-age=0, must-revalidate"
+  },
+  "lab": {
+   "Startseite (mobil)": {
+    "lcp": 480,
+    "cls": 0,
+    "fcp": 480,
+    "ttfb": 139.20000000001164,
+    "bytes": 17533,
+    "requests": 10,
+    "overflow": false,
+    "small": 4,
+    "tiny": 0,
+    "cta_top": 411.1875,
+    "vh": 844
+   },
+   "Model-Profil (mobil)": {
+    "lcp": 520,
+    "cls": 0,
+    "fcp": 520,
+    "ttfb": 204.80000000001746,
+    "bytes": 15443,
+    "requests": 7,
+    "overflow": false,
+    "small": 2,
+    "tiny": 0,
+    "cta_top": 1062.15625,
+    "vh": 844
+   },
+   "Videoseite (mobil)": {
+    "lcp": 488,
+    "cls": 0,
+    "fcp": 488,
+    "ttfb": 159.79999999998836,
+    "bytes": 13873,
+    "requests": 7,
+    "overflow": false,
+    "small": 1,
+    "tiny": 0,
+    "cta_top": 903.375,
+    "vh": 844
+   },
+   "Video-Übersicht (mobil)": {
+    "lcp": 468,
+    "cls": 0,
+    "fcp": 468,
+    "ttfb": 166.60000000000582,
+    "bytes": 18384,
+    "requests": 15,
+    "overflow": false,
+    "small": 0,
+    "tiny": 0,
+    "cta_top": 880.71875,
+    "vh": 844
+   },
+   "Ratgeber/Themen (mobil)": {
+    "lcp": 552,
+    "cls": 0,
+    "fcp": 516,
+    "ttfb": 225.60000000000582,
+    "bytes": 16127,
+    "requests": 7,
+    "overflow": false,
+    "small": 1,
+    "tiny": 0,
+    "cta_top": 872.625,
+    "vh": 844
+   },
+   "Hub (mobil)": {
+    "lcp": 464,
+    "cls": 0,
+    "fcp": 464,
+    "ttfb": 123.60000000000582,
+    "bytes": 17317,
+    "requests": 12,
+    "overflow": false,
+    "small": 1,
+    "tiny": 0,
+    "cta_top": 585.40625,
+    "vh": 844
+   },
+   "Startseite (desktop)": {
+    "lcp": 256,
+    "cls": 0,
+    "fcp": 256,
+    "ttfb": 171.10000000000582,
+    "bytes": 35652,
+    "requests": 30,
+    "overflow": false,
+    "small": 29,
+    "tiny": 0,
+    "cta_top": 279.8125,
+    "vh": 900
+   },
+   "Model-Profil (desktop)": {
+    "lcp": 268,
+    "cls": 0,
+    "fcp": 268,
+    "ttfb": 178.59999999997672,
+    "bytes": 15443,
+    "requests": 7,
+    "overflow": false,
+    "small": 29,
+    "tiny": 0,
+    "cta_top": 909.796875,
+    "vh": 900
+   },
+   "Videoseite (desktop)": {
+    "lcp": 236,
+    "cls": 0,
+    "fcp": 236,
+    "ttfb": 144.10000000000582,
+    "bytes": 17164,
+    "requests": 11,
+    "overflow": false,
+    "small": 29,
+    "tiny": 0,
+    "cta_top": 796.15625,
+    "vh": 900
+   },
+   "Video-Übersicht (desktop)": {
+    "lcp": 208,
+    "cls": 0,
+    "fcp": 208,
+    "ttfb": 106.70000000001164,
+    "bytes": 20038,
+    "requests": 17,
+    "overflow": false,
+    "small": 29,
+    "tiny": 0,
+    "cta_top": 423.140625,
+    "vh": 900
+   },
+   "Ratgeber/Themen (desktop)": {
+    "lcp": 232,
+    "cls": 0,
+    "fcp": 220,
+    "ttfb": 137.39999999999418,
+    "bytes": 16127,
+    "requests": 7,
+    "overflow": false,
+    "small": 29,
+    "tiny": 0,
+    "cta_top": 815.859375,
+    "vh": 900
+   },
+   "Hub (desktop)": {
+    "lcp": 244,
+    "cls": 0,
+    "fcp": 244,
+    "ttfb": 156,
+    "bytes": 27655,
+    "requests": 23,
+    "overflow": false,
+    "small": 29,
+    "tiny": 0,
+    "cta_top": 298.703125,
+    "vh": 900
+   }
+  },
+  "gsc_14d": {
+   "clicks": 45,
+   "impr": 132,
+   "ctr": 0.3409090909090909,
+   "pos": 4.083333333333333
+  },
+  "gsc_prev_14d": {
+   "clicks": 1172,
+   "impr": 6853,
+   "ctr": 0.17101999124471035,
+   "pos": 4.837297533926748
+  },
+  "gsc_end": "2026-11-08",
+  "cannibalized_queries": 2,
+  "low_ctr_pages": 0,
+  "chance_queries": 6,
+  "top_chances": [
+   "lanagrey – Pos. 4.1, 101 Impr.",
+   "lara cumkitten – Pos. 11.1, 66 Impr.",
+   "lia engel video – Pos. 5.5, 64 Impr.",
+   "lucie bavarina – Pos. 6.8, 63 Impr.",
+   "maryhaze – Pos. 7.6, 45 Impr.",
+   "joleelove – Pos. 10.5, 42 Impr."
+  ],
+  "title_test": {
+   "start": "2026-10-27",
+   "tage": 13,
+   "vorher": {
+    "Test (Porno)": {
+     "klicks": 289,
+     "impr": 1732,
+     "ctr": 0.1669,
+     "pos": 6.2
+    },
+    "Kontrolle (Video)": {
+     "klicks": 490,
+     "impr": 2517,
+     "ctr": 0.1947,
+     "pos": 5.5
+    }
+   },
+   "nachher": {
+    "Test (Porno)": {
+     "klicks": 23,
+     "impr": 59,
+     "ctr": 0.3898,
+     "pos": 2.6
+    },
+    "Kontrolle (Video)": {
+     "klicks": 19,
+     "impr": 53,
+     "ctr": 0.3585,
+     "pos": 2.9
+    }
+   }
+  },
+  "clicks_by_cluster_28d": {
+   "A Modelnamen": 379,
+   "C Allgemein": 52,
+   "B Plattform (Visit-X)": 2
+  },
+  "porn_queries_28d": {
+   "anzahl": 13,
+   "klicks": 5,
+   "impressionen": 29,
+   "top": [
+    "alle lia engel pornos – 1 Klicks, 4 Impr., Pos. 4.0",
+    "nelesommer porn – 0 Klicks, 4 Impr., Pos. 17.2",
+    "lia engel outdoor porn – 1 Klicks, 3 Impr., Pos. 4.0",
+    "texas patti porno wg – 1 Klicks, 3 Impr., Pos. 2.0",
+    "emmi hill porn outdoor – 0 Klicks, 3 Impr., Pos. 4.0",
+    "lia engel mein bester porno – 1 Klicks, 2 Impr., Pos. 3.5",
+    "lia engel porn outdoor – 0 Klicks, 2 Impr., Pos. 4.0",
+    "nelesommer porn leak – 0 Klicks, 2 Impr., Pos. 17.5",
+    "vickyfox porno – 0 Klicks, 2 Impr., Pos. 2.5",
+    "lexy roxx latex porn – 1 Klicks, 1 Impr., Pos. 4.0"
+   ]
+  },
+  "video_index_sample": "811/1327"
+ },
+ "findings": [
+  {
+   "prio": "P1",
+   "area": "Pipeline",
+   "text": "Fehlgeschlagene Workflow-Läufe (14 Tage)",
+   "count": 5,
+   "examples": [
+    "Werkzeug 2026-10-27",
+    "Audit 2026-10-27",
+    "Audit 2026-10-27",
+    "Audit 2026-10-26",
+    "Video-Operator 2026-10-26"
+   ],
+   "fix": "",
+   "auto": true
+  },
+  {
+   "prio": "P1",
+   "area": "Keywords",
+   "text": "Mehrere eigene URLs konkurrieren um dieselbe Suchanfrage",
+   "count": 2,
+   "examples": [
+    "„chloe privat“ (68 Impr.): /chloe-privat/videos/, /chloe-privat/",
+    "„lucie_bavarina“ (45 Impr.): /lucie-bavarina/videos/, /lucie-bavarina/"
+   ],
+   "fix": "Interne Links + Titel auf eine URL ausrichten",
+   "auto": true
+  },
+  {
+   "prio": "P2",
+   "area": "Inhalte",
+   "text": "Wiederholte Textbausteine: 27 identische Sätze auf je ≥ 20 Seiten (Ø 7% des Hauptinhalts)",
+   "count": 27,
+   "examples": [
+    "„🎁 100 % Aufladebonus – doppeltes Guthaben auf deine Aufladung Gutscheincode über unseren L…“ – 120 Seiten",
+    "„Die Anmeldung startest du selbst über „Kostenlos anmelden“.…“ – 82 Seiten",
+    "„Jedes Video hat eine eigene Seite mit Infos und dem direkten Link, inklusive 100 % Auflade…“ – 79 Seiten",
+    "„🎁 100 % Aufladebonus 🎁 100 % Aufladebonus 🎁 100 % Aufladebonus 🎁 100 % Aufladebonus 🎁 100 …“ – 78 Seiten",
+    "„Über den Link dieser Seite gibt es bei Visit-X einen 100-%-Aufladebonus, also doppeltes Gu…“ – 77 Seiten"
+   ],
+   "fix": "",
+   "auto": true
+  },
+  {
+   "prio": "P2",
+   "area": "Architektur",
+   "text": "Seiten tiefer als 3 Klicks",
+   "count": 23,
+   "examples": [
+    "/egon-kowalski/videos/27854682-gloryhole-creampie-fuer-lara/",
+    "/egon-kowalski/videos/28229180-bahnhofsklo-piss-gangbang-mit-2-schlampen/",
+    "/lara-cumkitten/videos/28188625-hoch-das-roeckchen-rein-das-stoeckchen-extrem-selbst-gefickt/",
+    "/lenifetisch/videos/2537683-fussfetisch-extreme-wichs-uns-auf-unsere-schoenen-fuesse/",
+    "/lenifetisch/videos/2682251-bondage-session-mit-neonseilen-danke-an-merlin-aus-berlin/"
+   ],
+   "fix": "",
+   "auto": true
+  },
+  {
+   "prio": "P2",
+   "area": "Suchintention",
+   "text": "Seiten ranken hauptsächlich für Begriffe, die nicht im Titel stehen",
+   "count": 1,
+   "examples": [
+    "/lanagrey/videos/28354211-anal-gonzo-xxl-2026/: „gonzoxxl“"
+   ],
+   "fix": "",
+   "auto": true
+  },
+  {
+   "prio": "P3",
+   "area": "Metadaten",
+   "text": "Title kürzer als 25 oder länger als 65 Zeichen",
+   "count": 142,
+   "examples": [
+    "Verheirateter Mann leeres Zimmer und ich bester – Candysamira Video (67)",
+    "Verbotener Fremdfick! Doppel Cumshot Intensiver – Candysamira Video (67)",
+    "Er schaut Fußball! Ich ficke ein anderen Schwanz – Candysamira Video (68)",
+    "Fremdfick im Luxushotel! Er hat mich so richtig – Candysamira Video (67)",
+    "Der 3te Pimmel! Zwei Männer in zwei Tagen! Pussy – Candysamira Video (68)"
+   ],
+   "fix": "",
+   "auto": true
+  },
+  {
+   "prio": "P3",
+   "area": "Mobil",
+   "text": "4 kleine Tippziele (< 24 px) auf Startseite (mobil)",
+   "count": 4,
+   "examples": [],
+   "fix": "",
+   "auto": true
+  }
+ ]
+}
