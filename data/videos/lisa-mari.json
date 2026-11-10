@@ -20,7 +20,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28381021",
@@ -53,7 +53,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28368690",
@@ -94,7 +94,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28355961",
@@ -134,7 +134,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28344827",
@@ -172,7 +172,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28335459",
@@ -215,7 +215,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28324822",
@@ -257,7 +257,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28313615",
@@ -300,7 +300,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28264388",
@@ -341,9 +341,10 @@
    ],
    "date": "2026-07-12",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-10T15:15:04+00:00",
+   "dropped_at": "2026-11-10"
   },
   {
    "id": "28173442",
@@ -384,9 +385,10 @@
    ],
    "date": "2026-04-19",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T13:21:35+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-10T15:15:04+00:00",
+   "dropped_at": "2026-11-10"
   },
   {
    "id": "28170759",
@@ -439,7 +441,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28123863",
@@ -482,7 +484,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "28120999",
@@ -525,7 +527,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00"
+   "checked_at": "2026-11-10T15:15:04+00:00"
   },
   {
    "id": "20355561",
@@ -565,10 +567,11 @@
     "Vagina"
    ],
    "date": "2025-03-05",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00",
-   "refreshed_at": "2026-10-27"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-10T15:15:04+00:00",
+   "refreshed_at": "2026-10-27",
+   "dropped_at": "2026-11-10"
   },
   {
    "id": "10655081",
@@ -610,7 +613,7 @@
    "date": "2024-07-18",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-10-27T08:54:57+00:00",
+   "checked_at": "2026-11-10T15:15:04+00:00",
    "refreshed_at": "2026-10-27"
   }
  ],
