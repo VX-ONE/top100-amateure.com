@@ -1,12 +1,14 @@
 {
   "daily_pages": 10,
   "paused_topics": {
+    "nischen": "0/5 indexiert",
     "preise": "0/7 indexiert",
+    "sicherheit": "0/4 indexiert",
     "webcam-models": "1/10 indexiert"
   },
   "ramp_updated": "2026-11-02",
   "throttle": {
     "active": true,
-    "updated": "2026-11-21"
+    "updated": "2026-11-22"
   }
 }
