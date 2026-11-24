@@ -18,9 +18,10 @@
    ],
    "date": "2026-09-27",
    "refreshed_at": "2026-10-26",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28381021",
@@ -53,7 +54,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "28368690",
@@ -94,7 +95,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "28355961",
@@ -134,7 +135,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "28344827",
@@ -170,9 +171,10 @@
    ],
    "date": "2026-08-30",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28335459",
@@ -213,9 +215,10 @@
    ],
    "date": "2026-08-23",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28324822",
@@ -257,7 +260,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "28313615",
@@ -300,7 +303,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "28264388",
@@ -441,7 +444,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "28123863",
@@ -482,9 +485,10 @@
    ],
    "date": "2026-03-04",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28120999",
@@ -527,7 +531,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "20355561",
@@ -611,10 +615,11 @@
     "Möpse"
    ],
    "date": "2024-07-18",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-27"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "refreshed_at": "2026-10-27",
+   "dropped_at": "2026-11-24"
   }
  ],
  "model": "Lisa-Mari",

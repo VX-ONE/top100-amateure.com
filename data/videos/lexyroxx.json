@@ -30,9 +30,10 @@
    ],
    "date": "2026-10-05",
    "refreshed_at": "2026-10-26",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28354110",
@@ -69,9 +70,10 @@
    ],
    "date": "2026-09-06",
    "refreshed_at": "2026-10-26",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28346213",
@@ -99,7 +101,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "28342078",
@@ -126,9 +128,10 @@
    ],
    "date": "2026-08-30",
    "refreshed_at": "2026-10-26",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28331004",
@@ -167,9 +170,10 @@
    ],
    "date": "2026-08-20",
    "refreshed_at": "2026-10-26",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28290969",
@@ -206,9 +210,10 @@
    ],
    "date": "2026-07-30",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28290829",
@@ -235,9 +240,10 @@
    ],
    "date": "2026-07-26",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28271269",
@@ -270,9 +276,10 @@
    ],
    "date": "2026-07-12",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28271260",
@@ -296,9 +303,10 @@
    ],
    "date": "2026-07-15",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28252526",
@@ -335,7 +343,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-24T18:20:09+00:00"
   },
   {
    "id": "28243452",
@@ -363,9 +371,10 @@
    ],
    "date": "2026-06-21",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28235386",
@@ -397,9 +406,10 @@
    ],
    "date": "2026-06-14",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28232821",
@@ -462,9 +472,10 @@
    ],
    "date": "2026-05-31",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28211618",
@@ -498,10 +509,11 @@
     "video drehen"
    ],
    "date": "2026-05-17",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-27"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "refreshed_at": "2026-10-27",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28188542",
@@ -526,10 +538,11 @@
     "userdreh"
    ],
    "date": "2026-05-03",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-27"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "refreshed_at": "2026-10-27",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28180082",
@@ -559,7 +572,7 @@
    "date": "2026-04-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
+   "checked_at": "2026-11-24T18:20:09+00:00",
    "refreshed_at": "2026-10-27"
   },
   {
@@ -621,7 +634,7 @@
    "date": "2026-04-12",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
+   "checked_at": "2026-11-24T18:20:09+00:00",
    "refreshed_at": "2026-10-27"
   },
   {
@@ -656,10 +669,11 @@
     "Squirt"
    ],
    "date": "2026-04-05",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-27"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "refreshed_at": "2026-10-27",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28153626",
@@ -686,7 +700,7 @@
    "date": "2026-03-31",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
+   "checked_at": "2026-11-24T18:20:09+00:00",
    "refreshed_at": "2026-10-27"
   },
   {
@@ -726,10 +740,11 @@
     "Facial"
    ],
    "date": "2026-03-30",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-27"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "refreshed_at": "2026-10-27",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28142140",
@@ -764,7 +779,7 @@
    "date": "2026-03-22",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
+   "checked_at": "2026-11-24T18:20:09+00:00",
    "refreshed_at": "2026-10-27"
   },
   {
@@ -790,10 +805,11 @@
     "porno drehen"
    ],
    "date": "2026-03-18",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-28"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "refreshed_at": "2026-10-28",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28126939",
@@ -820,7 +836,7 @@
    "date": "2026-03-08",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
+   "checked_at": "2026-11-24T18:20:09+00:00",
    "refreshed_at": "2026-10-28"
   },
   {
@@ -845,10 +861,11 @@
     "video drehen"
    ],
    "date": "2026-02-22",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-28"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "refreshed_at": "2026-10-28",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28103180",
@@ -902,10 +919,11 @@
     "video mitmachen"
    ],
    "date": "2026-02-08",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-28"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-24T18:20:09+00:00",
+   "refreshed_at": "2026-10-28",
+   "dropped_at": "2026-11-24"
   },
   {
    "id": "28068910",
