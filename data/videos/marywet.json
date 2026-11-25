@@ -15,7 +15,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-23T18:45:11+00:00",
+   "checked_at": "2026-11-25T17:38:13+00:00",
    "dropped_at": "2026-11-10"
   },
   {
@@ -31,9 +31,10 @@
    "tags": [],
    "date": "2026-07-16",
    "refreshed_at": "2026-10-26",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "28187535",
@@ -50,7 +51,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "28152715",
@@ -93,7 +94,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "28142233",
@@ -108,9 +109,10 @@
    "tags": [],
    "date": "2026-03-22",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "28056018",
@@ -149,9 +151,10 @@
    ],
    "date": "2026-01-05",
    "refreshed_at": "2026-10-27",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "28007548",
@@ -194,7 +197,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "28007536",
@@ -237,7 +240,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "27973710",
@@ -254,7 +257,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "27859707",
@@ -293,7 +296,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "27859695",
@@ -336,7 +339,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "27841424",
@@ -372,7 +375,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "22638107",
@@ -415,7 +418,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "6376024",
@@ -498,10 +501,11 @@
     "Vagina"
    ],
    "date": "2025-11-14",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-28"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "refreshed_at": "2026-10-28",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "6375394",
@@ -575,7 +579,7 @@
    "date": "2026-02-13",
    "indexed": true,
    "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
+   "checked_at": "2026-11-25T17:38:13+00:00",
    "refreshed_at": "2026-10-28"
   },
   {
@@ -660,10 +664,11 @@
     "Ritze"
    ],
    "date": "2026-03-08",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-28"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "refreshed_at": "2026-10-28",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "3368419",
@@ -870,10 +875,11 @@
     "Domina"
    ],
    "date": "2026-02-06",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-29"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "refreshed_at": "2026-10-29",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "3057051",
@@ -913,10 +919,11 @@
     "Reizwäsche"
    ],
    "date": "2025-12-31",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-29"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "refreshed_at": "2026-10-29",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "3056998",
@@ -956,10 +963,11 @@
     "Lutschen"
    ],
    "date": "2025-12-05",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-29"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "refreshed_at": "2026-10-29",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "2974367",
@@ -1085,10 +1093,11 @@
     "Scheide"
    ],
    "date": "2026-08-09",
-   "indexed": true,
-   "coverage": "Gesendet und indexiert",
-   "checked_at": "2026-11-10T15:15:04+00:00",
-   "refreshed_at": "2026-10-29"
+   "indexed": false,
+   "coverage": "Gecrawlt – zurzeit nicht indexiert",
+   "checked_at": "2026-11-25T17:38:13+00:00",
+   "refreshed_at": "2026-10-29",
+   "dropped_at": "2026-11-25"
   },
   {
    "id": "2895318",
@@ -1445,7 +1454,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "2906724",
@@ -1658,7 +1667,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "6377727",
@@ -1794,7 +1803,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "2887883",
@@ -1873,7 +1882,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "16447800",
@@ -1917,7 +1926,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "17572771",
@@ -1935,7 +1944,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "16447489",
@@ -1979,7 +1988,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "16449877",
@@ -2023,7 +2032,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "2898647",
@@ -2104,7 +2113,7 @@
    "published_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "1953660",
@@ -2160,7 +2169,7 @@
    "published_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "2116826",
@@ -2294,7 +2303,7 @@
    "published_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "8832344",
@@ -2313,7 +2322,7 @@
    "published_at": "2026-10-27",
    "indexed": false,
    "coverage": "URL ist Google nicht bekannt",
-   "checked_at": "2026-11-23T18:45:11+00:00"
+   "checked_at": "2026-11-25T17:38:13+00:00"
   },
   {
    "id": "7897230",
