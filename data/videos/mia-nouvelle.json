@@ -41,7 +41,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-10"
   },
   {
@@ -139,7 +139,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-25"
   },
   {
@@ -175,7 +175,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00"
+   "checked_at": "2026-11-27T16:59:15+00:00"
   },
   {
    "id": "28084825",
@@ -211,7 +211,7 @@
    "refreshed_at": "2026-10-26",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-25"
   },
   {
@@ -269,7 +269,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-25"
   },
   {
@@ -313,7 +313,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-25"
   },
   {
@@ -357,7 +357,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-25"
   },
   {
@@ -439,7 +439,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-25"
   },
   {
@@ -526,7 +526,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-25"
   },
   {
@@ -828,7 +828,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-10"
   },
   {
@@ -872,7 +872,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-10"
   },
   {
@@ -916,7 +916,7 @@
    "refreshed_at": "2026-10-27",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "dropped_at": "2026-11-25"
   },
   {
@@ -1121,7 +1121,7 @@
    "date": "2025-08-03",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "refreshed_at": "2026-10-28",
    "dropped_at": "2026-11-25"
   },
@@ -1165,7 +1165,7 @@
    "date": "2025-07-20",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "refreshed_at": "2026-10-28",
    "dropped_at": "2026-11-25"
   },
@@ -1209,7 +1209,7 @@
    "date": "2025-06-22",
    "indexed": false,
    "coverage": "Gecrawlt – zurzeit nicht indexiert",
-   "checked_at": "2026-11-25T17:38:13+00:00",
+   "checked_at": "2026-11-27T16:59:15+00:00",
    "refreshed_at": "2026-10-28",
    "dropped_at": "2026-11-10"
   },
